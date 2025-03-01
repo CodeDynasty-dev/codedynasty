@@ -1,0 +1,23 @@
+{
+  "name": "flamboyant",
+  "version": "1.0.0",
+  "description": "A news publishing website",
+  "main": "src/index.html",
+  "scripts": {
+    "build": "npx tailwindcss -i ./src/styles/main.css -o ./dist/styles.css --watch"
+  },
+  "keywords": [
+    "news",
+    "publishing",
+    "website"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.0.9",
+    "autoprefixer": "^10.4.20",
+    "live-server": "^1.2.1",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^4.0.9"
+  }
+}

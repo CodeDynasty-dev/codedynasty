@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>News | Flamboyant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap");
+
+      body {
+        font-family: "Space Grotesk", sans-serif;
+        background-color: #000;
+        color: #fff;
+      }
+
+      .article-gradient {
+        background: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0) 0%,
+          rgba(0, 0, 0, 0.8) 100%
+        );
+      }
+    </style>
+  </head>
+  <body>
+    <header class="fixed w-full top-0 z-50 bg-black">
+      <nav
+        class="container mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <a href="/" class="text-2xl font-bold">FLAMBOYANT</a>
+        <button class="text-white p-2">
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            ></path>
+          </svg>
+        </button>
+      </nav>
+    </header>
+
+    <main class="pt-20">
+      <article class="min-h-screen">
+        <div class="relative h-screen mb-12">
+          <img
+            src="https://theintercept.com/wp-content/uploads/2025/02/AP25056557784557-e1740745741589.jpg?w=2400"
+            alt="Story Image"
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute inset-0 article-gradient flex items-end">
+            <div class="container mx-auto px-6 pb-12">
+              <h1
+                class="text-5xl md:text-7xl font-bold max-w-4xl leading-tight mb-4"
+              >
+                The Future of Technology and its Impact on Society
+              </h1>
+              <p class="text-xl text-gray-300">By John Doe | March 1, 2025</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="container mx-auto px-6">
+          <div
+            class="max-w-3xl mx-auto space-y-8 text-lg leading-relaxed mb-20"
+          >
+            <p class="text-2xl font-light">
+              The rapid advancement of technology continues to reshape our world
+              at an unprecedented pace. From artificial intelligence to
+              biotechnology, innovations are emerging that promise to solve some
+              of humanity's greatest challenges.
+            </p>
+
+            <h2 class="text-4xl font-bold mt-12 mb-6">
+              The Rise of Artificial Intelligence
+            </h2>
+            <p>
+              Artificial intelligence (AI) is no longer a concept confined to
+              science fiction. It's rapidly becoming integrated into various
+              aspects of our daily lives, from virtual assistants to autonomous
+              vehicles.
+            </p>
+          </div>
+        </div>
+      </article>
+    </main>
+
+    <footer class="bg-black border-t border-gray-800 py-12">
+      <div class="container mx-auto px-6">
+        <p class="text-gray-500 text-center">
+          &copy; 2025 Flamboyant. All rights reserved.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
