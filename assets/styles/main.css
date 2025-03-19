@@ -51,6 +51,23 @@ h4,
 .neon-border {
   position: relative;
 }
+@keyframes neonBorder {
+  0% {
+    box-shadow: 0 0 5px #00ffcc, 0 0 15px #00ffcc;
+  }
+  50% {
+    box-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+  }
+  100% {
+    box-shadow: 0 0 5px #00ffcc, 0 0 15px #00ffcc;
+  }
+}
+
+.glow-button {
+  border: 2px solid #00ffcc;
+  padding: 10px 20px;
+  animation: neonBorder 2s infinite alternate;
+}
 
 .neon-border:before {
   content: "";
@@ -78,14 +95,30 @@ h4,
     rgba(255, 0, 204, 0.2)
   );
   backdrop-filter: blur(5px);
+  animation: gridGlow 5s infinite alternate;
+}
+@keyframes gridGlow {
+  0% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.8;
+  }
 }
 
 .code-block {
   font-family: "Space Mono", monospace;
   background: rgba(5, 5, 20, 0.7);
-  border-left: 3px solid var(--primary-color);
+  /* border-left: 3px solid var(--primary-color); */
   padding: 1rem;
   overflow-x: auto;
+  background: rgba(10, 10, 10, 0.95); /* More contrast */
+  box-shadow: 0px 0px 15px rgba(0, 255, 170, 0.3);
+  border-radius: 10px;
+  padding: 16px;
 }
 
 .code-text {

@@ -1,0 +1,75 @@
+/* Base responsive styles */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  h1 {
+    font-size: 2rem !important;
+    line-height: 1.2;
+  }
+
+  h2 {
+    font-size: 1.75rem !important;
+  }
+
+  h3 {
+    font-size: 1.5rem !important;
+  }
+
+  /* Mobile header adjustments */
+  .mobile-header-content {
+    padding-top: 1rem;
+    margin-top: -6rem;
+  }
+
+  /* Code blocks */
+  .code-block {
+    margin-left: -1rem;
+    margin-right: -1rem;
+    border-radius: 0;
+  }
+
+  pre {
+    font-size: 0.875rem;
+    padding: 1rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Author info */
+  .author-info {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .author-info img {
+    margin-bottom: 1rem;
+  }
+
+  /* Comments */
+  .comment-container {
+    padding: 1rem;
+  }
+
+  .comment-replies {
+    margin-left: 1rem;
+    padding-left: 1rem;
+  }
+}
+
+/* Medium devices */
+@media (max-width: 1024px) {
+  .grid-cols-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Small devices */
+@media (max-width: 640px) {
+  .grid-cols-2,
+  .grid-cols-3 {
+    grid-template-columns: 1fr;
+  }
+}

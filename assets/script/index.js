@@ -1,19 +1,3 @@
-// Simple form handling
-document
-  .getElementById("newsletter-form")
-  .addEventListener("submit", function (e) {
-    e.preventDefault();
-    const email = document.getElementById("email-input").value;
-    const feedback = document.getElementById("form-feedback");
-
-    if (email) {
-      feedback.classList.remove("hidden");
-      feedback.querySelector("p").textContent =
-        "Thank you for subscribing! Check your inbox to confirm.";
-      document.getElementById("email-input").value = "";
-    }
-  });
-
 // Add this for 3D hover effect simulation on cards
 const cards = document.querySelectorAll(".card-3d");
 
@@ -44,5 +28,45 @@ const mobileMenuButton = document.getElementById("mobile-menu-button");
 const mobileMenu = document.getElementById("mobile-menu");
 
 mobileMenuButton.addEventListener("click", () => {
-  mobileMenu.classList.toggle("hidden");
+  // mobileMenu.classList.toggle("hidden");
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Handle mobile menu
+  const mobileMenuButton = document.getElementById("mobile-menu-button");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  if (mobileMenuButton && mobileMenu) {
+    mobileMenuButton.addEventListener("click", () => {
+      // mobileMenu.classList.toggle("hidden");
+    });
+  }
+
+  // Responsive tables
+  const tables = document.querySelectorAll("table");
+  tables.forEach((table) => {
+    const wrapper = document.createElement("div");
+    wrapper.classList.add("overflow-x-auto");
+    wrapper.style.webkitOverflowScrolling = "touch";
+    table.parentNode.insertBefore(wrapper, table);
+    wrapper.appendChild(table);
+  });
+
+  // Responsive images
+  const images = document.querySelectorAll("article img");
+  images.forEach((img) => {
+    img.classList.add("max-w-full", "h-auto");
+  });
+
+  // Handle window resize
+  let timeout;
+  window.addEventListener("resize", () => {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => {
+      if (window.innerWidth > 1024) {
+        // mobileMenu.classList.add("hidden");
+        // tocOverlay.classList.add("hidden");
+      }
+    }, 150);
+  });
 });

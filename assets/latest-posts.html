@@ -1,0 +1,2054 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CODEDYNASTY - The Evolution of Blockchain Architecture</title>
+    <meta
+      name="description"
+      content="Exploring next-generation consensus mechanisms and their impact on decentralized systems"
+    />
+    <link rel="stylesheet" href="/bundle.css" />
+    <link rel="stylesheet" href="/styles/main.css" />
+    <link rel="stylesheet" href="/styles/post.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css"
+    />
+  </head>
+  <body>
+    <header
+      class="fixed w-full top-0 z-50 backdrop-blur-md"
+      style="background-color: rgba(5, 5, 16, 0.8)"
+    >
+      <nav class="container mx-auto px-2 md:px-6 py-4">
+        <div class="flex justify-between items-center">
+          <a
+            href="/"
+            class="text-2xl font-bold brand-font flex items-center group"
+            aria-label="CODEDYNASTY Home"
+          >
+            <div class="cube-container mr-3">
+              <div class="cube">
+                <div class="cube-face cube-front"></div>
+                <div class="cube-face cube-back"></div>
+                <div class="cube-face cube-right"></div>
+                <div class="cube-face cube-left"></div>
+                <div class="cube-face cube-top"></div>
+                <div class="cube-face cube-bottom"></div>
+              </div>
+            </div>
+            <span class="glitch-text" data-text="CODEDYNASTY">
+              <span class="text-white">CODE</span
+              ><span style="color: var(--primary-color)">DYNASTY</span>
+            </span>
+          </a>
+
+          <!-- Mobile menu button -->
+          <button id="mobile-menu-button" class="md:hidden" aria-label="Menu">
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="{2}"
+                d="M4 6h16M4 12h16M4 18h16"
+                style="color: var(--text-color)"
+              />
+            </svg>
+          </button>
+
+          <!-- Desktop navigation -->
+          <div class="hidden md:flex gap-8">
+            <a
+              href="/latest-posts.html"
+              class="nav-link hover:text-primary-color transition-colors"
+              style="color: var(--text-color)"
+              >LATEST</a
+            >
+            <a
+              href="https://github.com/CodeDynasty-dev"
+              class="nav-link hover:text-primary-color transition-colors"
+              style="color: var(--text-color)"
+              >GITHUB</a
+            >
+            <a
+              href="/power.html"
+              class="nav-link hover:text-primary-color transition-colors"
+              style="color: var(--text-color)"
+              >LEARN</a
+            >
+            <a
+              href="/future.html"
+              class="nav-link hover:text-primary-color transition-colors"
+              style="color: var(--text-color)"
+              >CONTACT</a
+            >
+          </div>
+        </div>
+
+        <!-- Mobile navigation -->
+        <div id="mobile-menu" class="hidden md:hidden mt-4">
+          <div class="flex flex-col gap-4">
+            <a
+              href="/tech.html"
+              class="nav-link hover:text-primary-color transition-colors"
+              style="color: var(--text-color)"
+              >LATEST</a
+            >
+            <a
+              href="https://github.com/CodeDynasty-dev"
+              class="nav-link hover:text-primary-color transition-colors"
+              style="color: var(--text-color)"
+              >GITHUB</a
+            >
+            <a
+              href="/power.html"
+              class="nav-link hover:text-primary-color transition-colors"
+              style="color: var(--text-color)"
+              >LEARN</a
+            >
+            <a
+              href="/future.html"
+              class="nav-link hover:text-primary-color transition-colors"
+              style="color: var(--text-color)"
+              >CONTACT</a
+            >
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="pt-24 pb-12">
+      <!-- Reading Progress Bar -->
+      <div
+        class="reading-progress-container fixed top-16 left-0 w-full z-40 h-1 bg-transparent"
+      >
+        <div
+          class="reading-progress-bar h-full"
+          style="background-color: var(--primary-color)"
+        ></div>
+      </div>
+
+      <!-- Blog Post Header -->
+      <section class="relative">
+        <!-- Hero Image -->
+        <div class="h-96 md:h-[32rem] w-full relative">
+          <div
+            class="absolute inset-0 bg-gradient-to-b from-transparent to-background z-10"
+            style="
+              background-image: linear-gradient(
+                to bottom,
+                rgba(5, 5, 16, 0.4) 0%,
+                var(--background-color) 100%
+              );
+            "
+          ></div>
+          <img
+            src="https://blog.upay.best/wp-content/uploads/2024/04/Blockchain-Architecture-All-You-Need-to-Know.png"
+            alt="Blockchain Architecture"
+            class="w-full h-full object-cover"
+          />
+        </div>
+
+        <!-- Post Header Content -->
+        <div class="container mx-auto px-6 relative z-20 mt-12">
+          <div class="max-w-4xl mx-auto">
+            <!-- Category Badge -->
+            <div class="mb-6">
+              <span
+                class="inline-block px-3 py-1 rounded-full text-sm tracking-wider font-mono"
+                style="
+                  background-color: rgba(255, 0, 204, 0.2);
+                  color: var(--accent-color);
+                "
+                >DISTRIBUTED.LEDGER</span
+              >
+            </div>
+
+            <!-- Title -->
+            <h1
+              class="text-4xl md:text-5xl font-black mb-6 brand-font terminal-effect"
+              style="color: var(--text-color)"
+            >
+              The Evolution of Blockchain Architecture
+            </h1>
+
+            <!-- Meta Info -->
+            <div class="flex flex-wrap items-center gap-6 mb-8">
+              <!-- Author -->
+              <div class="flex items-center">
+                <div class="w-10 h-10 rounded-full overflow-hidden mr-3">
+                  <img
+                    src="/placeholder.png"
+                    alt="Elena Rodriguez"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <div>
+                  <span
+                    class="block font-medium"
+                    style="color: var(--text-color)"
+                    >Elena Rodriguez</span
+                  >
+                  <span class="text-sm" style="color: var(--text-secondary)"
+                    >Blockchain Architect</span
+                  >
+                </div>
+              </div>
+
+              <!-- Date -->
+              <div class="flex items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 mr-2"
+                  style="color: var(--text-secondary)"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                  />
+                </svg>
+                <time
+                  datetime="2025-03-10"
+                  class="text-sm"
+                  style="color: var(--text-secondary)"
+                  >March 10, 2025</time
+                >
+              </div>
+
+              <!-- Read Time -->
+              <div class="flex items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 mr-2"
+                  style="color: var(--text-secondary)"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                <span class="text-sm" style="color: var (--text-secondary)"
+                  >12 min read</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Blog Content Layout -->
+      <div class="container mx-auto px-4 md:px-6 mt-12">
+        <div class="flex flex-col lg:flex-row gap-8">
+          <!-- Sidebar - Hidden on mobile, shown with button -->
+          <aside class="hidden lg:block w-64 self-start sticky top-24">
+            <div
+              style="background-color: var(--card-bg)"
+              class="rounded-lg p-6 mb-6 neon-border"
+            >
+              <h3
+                class="text-lg font-bold mb-4 brand-font"
+                style="color: var(--text-color)"
+              >
+                TABLE OF CONTENTS
+              </h3>
+              <nav id="toc" class="toc-nav">
+                <ul class="space-y-3">
+                  <li>
+                    <a
+                      href="#introduction"
+                      class="toc-link active"
+                      style="color: var(--text-secondary)"
+                      >Introduction</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#consensus-mechanisms"
+                      class="toc-link"
+                      style="color: var(--text-secondary)"
+                      >Consensus Mechanisms</a
+                    >
+                    <ul class="ml-4 mt-2 space-y-2">
+                      <li>
+                        <a
+                          href="#proof-of-stake"
+                          class="toc-link"
+                          style="color: var(--text-secondary)"
+                          >Proof of Stake</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href="#proof-of-authority"
+                          class="toc-link"
+                          style="color: var(--text-secondary)"
+                          >Proof of Authority</a
+                        >
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a
+                      href="#scalability"
+                      class="toc-link"
+                      style="color: var(--text-secondary)"
+                      >Scalability Solutions</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#sharding"
+                      class="toc-link"
+                      style="color: var(--text-secondary)"
+                      >Sharding</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#future-directions"
+                      class="toc-link"
+                      style="color: var(--text-secondary)"
+                      >Future Directions</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#conclusion"
+                      class="toc-link"
+                      style="color: var(--text-secondary)"
+                      >Conclusion</a
+                    >
+                  </li>
+                </ul>
+              </nav>
+            </div>
+
+            <!-- Share Widget -->
+            <div
+              style="background-color: var(--card-bg)"
+              class="rounded-lg p-6 mb-6 neon-border"
+            >
+              <h3
+                class="text-lg font-bold mb-4 brand-font"
+                style="color: var(--text-color)"
+              >
+                SHARE
+              </h3>
+              <div class="flex space-x-4">
+                <a
+                  href="#"
+                  class="hover-glow w-10 h-10 rounded-full flex items-center justify-center"
+                  style="
+                    background-color: rgba(0, 255, 170, 0.1);
+                    color: var(--primary-color);
+                  "
+                >
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a
+                  href="#"
+                  class="hover-glow w-10 h-10 rounded-full flex items-center justify-center"
+                  style="
+                    background-color: rgba(0, 255, 170, 0.1);
+                    color: var(--primary-color);
+                  "
+                >
+                  <i class="fab fa-linkedin"></i>
+                </a>
+                <a
+                  href="#"
+                  class="hover-glow w-10 h-10 rounded-full flex items-center justify-center"
+                  style="
+                    background-color: rgba(0, 255, 170, 0.1);
+                    color: var(--primary-color);
+                  "
+                >
+                  <i class="fab fa-facebook"></i>
+                </a>
+                <a
+                  href="#"
+                  class="hover-glow w-10 h-10 rounded-full flex items-center justify-center copy-link-button"
+                  style="
+                    background-color: rgba(0, 255, 170, 0.1);
+                    color: var(--primary-color);
+                  "
+                  data-tooltip="Copy Link"
+                >
+                  <i class="fas fa-link"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Tag Cloud -->
+            <div
+              style="background-color: var(--card-bg)"
+              class="rounded-lg p-6 neon-border"
+            >
+              <h3
+                class="text-lg font-bold mb-4 brand-font"
+                style="color: var(--text-color)"
+              >
+                TAGS
+              </h3>
+              <div class="flex flex-wrap gap-2">
+                <a
+                  href="#"
+                  class="px-3 py-1 rounded-full text-sm hover:bg-primary-color hover:text-black transition-colors"
+                  style="
+                    background-color: rgba(0, 255, 170, 0.1);
+                    color: var(--primary-color);
+                  "
+                >
+                  #blockchain
+                </a>
+                <a
+                  href="#"
+                  class="px-3 py-1 rounded-full text-sm hover:bg-primary-color hover:text-black transition-colors"
+                  style="
+                    background-color: rgba(0, 255, 170, 0.1);
+                    color: var(--primary-color);
+                  "
+                >
+                  #consensus
+                </a>
+                <a
+                  href="#"
+                  class="px-3 py-1 rounded-full text-sm hover:bg-primary-color hover:text-black transition-colors"
+                  style="
+                    background-color: rgba(0, 255, 170, 0.1);
+                    color: var(--primary-color);
+                  "
+                >
+                  #decentralization
+                </a>
+                <a
+                  href="#"
+                  class="px-3 py-1 rounded-full text-sm hover:bg-primary-color hover:text-black transition-colors"
+                  style="
+                    background-color: rgba(0, 255, 170, 0.1);
+                    color: var(--primary-color);
+                  "
+                >
+                  #crypto
+                </a>
+                <a
+                  href="#"
+                  class="px-3 py-1 rounded-full text-sm hover:bg-primary-color hover:text-black transition-colors"
+                  style="
+                    background-color: rgba(0, 255, 170, 0.1);
+                    color: var(--primary-color);
+                  "
+                >
+                  #scalability
+                </a>
+              </div>
+            </div>
+          </aside>
+
+          <!-- Main article content -->
+          <article class="flex-1 max-w-4xl">
+            <!-- Mobile TOC Toggle -->
+            <div class="lg:hidden mb-8 red">
+              <button
+                id="mobile-toc-toggle"
+                class="w-full py-3 px-4 rounded-lg flex justify-between items-center"
+                style="
+                  background-color: var(--card-bg);
+                  color: var(--text-color);
+                "
+              >
+                <span class="font-bold">Table of Contents</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </button>
+              <div
+                id="mobile-toc"
+                class="hidden p-4 mt-2 rounded-lg"
+                style="background-color: var(--card-bg)"
+              >
+                <nav class="toc-nav">
+                  <ul class="space-y-3">
+                    <li>
+                      <a
+                        href="#introduction"
+                        class="toc-link active"
+                        style="color: var(--text-secondary)"
+                        >Introduction</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#consensus-mechanisms"
+                        class="toc-link"
+                        style="color: var(--text-secondary)"
+                        >Consensus Mechanisms</a
+                      >
+                      <ul class="ml-4 mt-2 space-y-2">
+                        <li>
+                          <a
+                            href="#proof-of-stake"
+                            class="toc-link"
+                            style="color: var(--text-secondary)"
+                            >Proof of Stake</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="#proof-of-authority"
+                            class="toc-link"
+                            style="color: var(--text-secondary)"
+                            >Proof of Authority</a
+                          >
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a
+                        href="#scalability"
+                        class="toc-link"
+                        style="color: var(--text-secondary)"
+                        >Scalability Solutions</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#sharding"
+                        class="toc-link"
+                        style="color: var(--text-secondary)"
+                        >Sharding</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#future-directions"
+                        class="toc-link"
+                        style="color: var(--text-secondary)"
+                        >Future Directions</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#conclusion"
+                        class="toc-link"
+                        style="color: var(--text-secondary)"
+                        >Conclusion</a
+                      >
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+
+            <!-- Mobile floating action bar -->
+            <div
+              class="lg:hidden fixed bottom-6 right-6 z-40 flex flex-col gap-3"
+            >
+              <button
+                id="mobile-share-button"
+                class="w-12 h-12 rounded-full flex items-center justify-center hover-glow"
+                style="
+                  background-color: var(--card-bg);
+                  color: var(--primary-color);
+                "
+              >
+                <i class="fas fa-share-alt"></i>
+              </button>
+              <a href="#">
+                <button
+                  id="scroll-top"
+                  class="w-12 h-12 rounded-full flex items-center justify-center hover-glow"
+                  style="
+                    background-color: var(--card-bg);
+                    color: var(--primary-color);
+                  "
+                >
+                  <i class="fas fa-arrow-up"></i>
+                </button>
+              </a>
+            </div>
+
+            <!-- Mobile Share Dialog -->
+            <div
+              id="mobile-share-dialog"
+              class="hidden fixed inset-0 z-50 flex items-end justify-center"
+            >
+              <div
+                class="fixed inset-0 bg-black bg-opacity-50"
+                id="mobile-share-overlay"
+              ></div>
+              <div
+                class="relative w-full max-w-md p-6 rounded-t-lg"
+                style="background-color: var(--card-bg)"
+              >
+                <div class="flex justify-between items-center mb-4">
+                  <h3
+                    class="text-lg font-bold"
+                    style="color: var(--text-color)"
+                  >
+                    Share This Article
+                  </h3>
+                  <button
+                    id="close-share-dialog"
+                    class="text-gray-400 hover:text-gray-200"
+                  >
+                    <svg
+                      class="w-6 h-6"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M6 18L18 6M6 6l12 12"
+                      ></path>
+                    </svg>
+                  </button>
+                </div>
+                <div class="grid grid-cols-4 gap-4">
+                  <a href="#" class="flex flex-col items-center">
+                    <div
+                      class="w-12 h-12 rounded-full flex items-center justify-center mb-2"
+                      style="
+                        background-color: rgba(0, 255, 170, 0.1);
+                        color: var(--primary-color);
+                      "
+                    >
+                      <i class="fab fa-twitter fa-lg"></i>
+                    </div>
+                    <span class="text-sm" style="color: var(--text-secondary)"
+                      >Twitter</span
+                    >
+                  </a>
+                  <a href="#" class="flex flex-col items-center">
+                    <div
+                      class="w-12 h-12 rounded-full flex items-center justify-center mb-2"
+                      style="
+                        background-color: rgba(0, 255, 170, 0.1);
+                        color: var(--primary-color);
+                      "
+                    >
+                      <i class="fab fa-linkedin fa-lg"></i>
+                    </div>
+                    <span class="text-sm" style="color: var(--text-secondary)"
+                      >LinkedIn</span
+                    >
+                  </a>
+                  <a href="#" class="flex flex-col items-center">
+                    <div
+                      class="w-12 h-12 rounded-full flex items-center justify-center mb-2"
+                      style="
+                        background-color: rgba(0, 255, 170, 0.1);
+                        color: var(--primary-color);
+                      "
+                    >
+                      <i class="fab fa-facebook fa-lg"></i>
+                    </div>
+                    <span class="text-sm" style="color: var(--text-secondary)"
+                      >Facebook</span
+                    >
+                  </a>
+                  <a
+                    href="#"
+                    class="flex flex-col items-center copy-link-button"
+                    data-tooltip="Link Copied!"
+                  >
+                    <div
+                      class="w-12 h-12 rounded-full flex items-center justify-center mb-2"
+                      style="
+                        background-color: rgba(0, 255, 170, 0.1);
+                        color: var(--primary-color);
+                      "
+                    >
+                      <i class="fas fa-link fa-lg"></i>
+                    </div>
+                    <span class="text-sm" style="color: var(--text-secondary)"
+                      >Copy Link</span
+                    >
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Article Content -->
+            <div class="blog-content" style="color: var(--text-color)">
+              <blockquote
+                class="mb-12 pl-6 border-l-4 italic"
+                style="
+                  border-color: var(--primary-color);
+                  color: var(--text-secondary);
+                "
+              >
+                Blockchain is not just a technology, but a paradigm shift in how
+                we think about trust, transparency, and decentralization in
+                digital systems.
+              </blockquote>
+
+              <section id="introduction" class="mb-12">
+                <h2
+                  class="text-3xl font-bold mb-6 brand-font"
+                  style="color: var(--text-color)"
+                >
+                  Introduction
+                </h2>
+                <p class="mb-4">
+                  Since the introduction of Bitcoin in 2009, blockchain
+                  technology has evolved from a simple distributed ledger to a
+                  sophisticated ecosystem of interconnected technologies. This
+                  evolution has been driven by the need to address the
+                  limitations of early blockchain implementations, particularly
+                  in terms of scalability, energy efficiency, and governance.
+                </p>
+                <p class="mb-4">
+                  In this article, we'll explore the latest advancements in
+                  blockchain architecture, focusing on consensus mechanisms,
+                  scalability solutions, and the future of decentralized
+                  systems. We'll also examine how these technologies are being
+                  applied in various industries, from finance to supply chain
+                  management.
+                </p>
+                <p class="mb-4">
+                  The rapid pace of innovation in this space is creating new
+                  opportunities for developers and businesses alike. By
+                  understanding these advancements, we can better appreciate the
+                  potential of blockchain technology to transform industries and
+                  create new paradigms for digital interaction.
+                </p>
+              </section>
+
+              <section id="consensus-mechanisms" class="mb-12">
+                <h2
+                  class="text-3xl font-bold mb-6 brand-font"
+                  style="color: var(--text-color)"
+                >
+                  Consensus Mechanisms
+                </h2>
+                <p class="mb-4">
+                  At the heart of any blockchain system is its consensus
+                  mechanism—the protocol that determines how agreement is
+                  reached on the state of the network. Early blockchains like
+                  Bitcoin relied on Proof of Work (PoW), which requires miners
+                  to solve complex mathematical puzzles to validate transactions
+                  and create new blocks.
+                </p>
+                <p class="mb-4">
+                  While PoW provides strong security guarantees, it has been
+                  criticized for its high energy consumption and limited
+                  scalability. This has led to the development of alternative
+                  consensus mechanisms that offer different trade-offs between
+                  security, decentralization, and efficiency.
+                </p>
+
+                <div class="flex flex-col md:flex-row gap-4 my-8">
+                  <div
+                    class="flex-1 p-4 rounded-lg"
+                    style="background-color: rgba(0, 255, 170, 0.05)"
+                  >
+                    <h3
+                      class="text-lg font-bold mb-2"
+                      style="color: var(--primary-color)"
+                    >
+                      Proof of Work (PoW)
+                    </h3>
+                    <ul
+                      class="list-disc pl-5 space-y-1"
+                      style="color: var(--text-secondary)"
+                    >
+                      <li>High energy consumption</li>
+                      <li>Strong security guarantees</li>
+                      <li>Limited scalability</li>
+                      <li>Used by Bitcoin and Ethereum 1.0</li>
+                    </ul>
+                  </div>
+                  <div
+                    class="flex-1 p-4 rounded-lg"
+                    style="background-color: rgba(0, 102, 255, 0.05)"
+                  >
+                    <h3
+                      class="text-lg font-bold mb-2"
+                      style="color: var(--secondary-color)"
+                    >
+                      Proof of Stake (PoS)
+                    </h3>
+                    <ul
+                      class="list-disc pl-5 space-y-1"
+                      style="color: var(--text-secondary)"
+                    >
+                      <li>Energy efficient</li>
+                      <li>Economic security model</li>
+                      <li>Better scalability</li>
+                      <li>Used by Ethereum 2.0, Cardano</li>
+                    </ul>
+                  </div>
+                  <div
+                    class="flex-1 p-4 rounded-lg"
+                    style="background-color: rgba(255, 0, 204, 0.05)"
+                  >
+                    <h3
+                      class="text-lg font-bold mb-2"
+                      style="color: var(--accent-color)"
+                    >
+                      Delegated Proof of Stake (DPoS)
+                    </h3>
+                    <ul
+                      class="list-disc pl-5 space-y-1"
+                      style="color: var(--text-secondary)"
+                    >
+                      <li>High throughput</li>
+                      <li>Validator elections</li>
+                      <li>Sacrifices some decentralization</li>
+                      <li>Used by EOS, Tron</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <h3
+                  id="proof-of-stake"
+                  class="text-2xl font-bold mt-8 mb-4 brand-font"
+                  style="color: var(--text-color)"
+                >
+                  Proof of Stake
+                </h3>
+                <p class="mb-4">
+                  Proof of Stake (PoS) has emerged as one of the most popular
+                  alternatives to PoW. In PoS systems, validators are chosen to
+                  create new blocks based on the amount of cryptocurrency they
+                  hold and are willing to "stake" as collateral. This approach
+                  dramatically reduces energy consumption while maintaining
+                  security through economic incentives.
+                </p>
+                <p class="mb-4">
+                  Ethereum's transition from PoW to PoS, known as "The Merge,"
+                  was one of the most significant events in the blockchain space
+                  in recent years. This upgrade reduced Ethereum's energy
+                  consumption by approximately 99.95% while maintaining the
+                  network's security and decentralization.
+                </p>
+
+                <h3
+                  id="proof-of-authority"
+                  class="text-2xl font-bold mt-8 mb-4 brand-font"
+                  style="color: var(--text-color)"
+                >
+                  Proof of Authority
+                </h3>
+                <p class="mb-4">
+                  Proof of Authority (PoA) is a consensus mechanism that relies
+                  on a set of trusted validators to create new blocks. In PoA
+                  networks, validators are typically known entities that have
+                  been vetted and approved by the network. This approach offers
+                  high throughput and low latency, making it suitable for
+                  permissioned blockchain networks.
+                </p>
+                <p class="mb-4">
+                  While PoA sacrifices some decentralization, it provides a
+                  practical solution for enterprise blockchain applications
+                  where the identities of validators are known and can be held
+                  accountable for their actions.
+                </p>
+
+                <div class="code-block my-8">
+                  <div
+                    class="flex items-center justify-between p-3 border-b border-gray-700"
+                  >
+                    <span
+                      class="font-mono text-sm"
+                      style="color: var(--text-secondary)"
+                      >consensus_comparison.js</span
+                    >
+                    <div class="flex gap-2">
+                      <button
+                        class="copy-code-btn px-3 py-1 rounded text-xs hover:bg-gray-700"
+                        style="color: var(--text-secondary)"
+                      >
+                        <i class="far fa-copy mr-1"></i> Copy
+                      </button>
+                    </div>
+                  </div>
+                  <pre><code class="language-javascript">
+// Simplified comparison of consensus mechanisms
+const consensusMechanisms = {
+  proofOfWork: {
+    energyConsumption: 'high',
+    decentralization: 'high',
+    scalability: 'low',
+    security: 'high',
+    examples: ['Bitcoin', 'Ethereum 1.0', 'Litecoin']
+  },
+  proofOfStake: {
+    energyConsumption: 'low',
+    decentralization: 'medium to high',
+    scalability: 'medium to high',
+    security: 'high',
+    examples: ['Ethereum 2.0', 'Cardano', 'Solana']
+  },
+  delegatedProofOfStake: {
+    energyConsumption: 'very low',
+    decentralization: 'medium',
+    scalability: 'high',
+    security: 'medium to high',
+    examples: ['EOS', 'Tron', 'Lisk']
+  },
+  proofOfAuthority: {
+    energyConsumption: 'very low',
+    decentralization: 'low',
+    scalability: 'very high',
+    security: 'medium',
+    examples: ['VeChain', 'POA Network', 'Ethereum Kovan testnet']
+  }
+};
+
+// Function to recommend consensus mechanism based on requirements
+function recommendConsensus(requirements) {
+  // Implementation details...
+}
+                  </code></pre>
+                </div>
+              </section>
+
+              <section id="scalability" class="mb-12">
+                <h2
+                  class="text-3xl font-bold mb-6 brand-font"
+                  style="color: var(--text-color)"
+                >
+                  Scalability Solutions
+                </h2>
+                <p class="mb-4">
+                  Scalability remains one of the biggest challenges for
+                  blockchain networks. As adoption grows, the need for higher
+                  transaction throughput becomes increasingly important. Several
+                  approaches have been developed to address this challenge:
+                </p>
+
+                <div class="mb-8">
+                  <h3
+                    class="text-2xl font-bold mt-8 mb-4 brand-font"
+                    style="color: var(--text-color)"
+                  >
+                    Layer 2 Solutions
+                  </h3>
+                  <p class="mb-4">
+                    Layer 2 solutions are protocols built on top of existing
+                    blockchains (Layer 1) that handle transactions off the main
+                    chain while inheriting its security. These solutions include
+                  </p>
+
+                  <div class="mb-8">
+                    <h4
+                      class="text-xl font-bold mt-4 mb-2"
+                      style="color: var(--text-color)"
+                    >
+                      Rollups
+                    </h4>
+                    <p class="mb-4">
+                      Rollups execute transactions off-chain but post
+                      transaction data on-chain. They come in two main
+                      varieties:
+                    </p>
+                    <ul
+                      class="list-disc pl-8 mb-4"
+                      style="color: var(--text-color)"
+                    >
+                      <li class="mb-2">
+                        <strong>Optimistic Rollups:</strong> Assume transactions
+                        are valid by default and only run computations in case
+                        of disputes. Examples include Optimism and Arbitrum.
+                      </li>
+                      <li class="mb-2">
+                        <strong>ZK-Rollups:</strong> Use zero-knowledge proofs
+                        to validate transactions off-chain and provide
+                        cryptographic proof of their validity. Examples include
+                        StarkNet and zkSync.
+                      </li>
+                    </ul>
+
+                    <h4
+                      class="text-xl font-bold mt-4 mb-2"
+                      style="color: var(--text-color)"
+                    >
+                      State Channels
+                    </h4>
+                    <p class="mb-4">
+                      State channels enable participants to conduct multiple
+                      transactions off-chain while only submitting the final
+                      state to the blockchain. This approach significantly
+                      reduces fees and increases throughput for applications
+                      involving frequent interactions between the same parties.
+                    </p>
+                  </div>
+
+                  <section id="sharding" class="mb-12">
+                    <h2
+                      class="text-3xl font-bold mb-6 brand-font"
+                      style="color: var(--text-color)"
+                    >
+                      Sharding
+                    </h2>
+                    <p class="mb-4">
+                      Sharding is a database partitioning technique adapted for
+                      blockchain networks. It involves splitting the network
+                      into smaller, more manageable pieces called shards. Each
+                      shard processes its own transactions and maintains its own
+                      state, effectively increasing the overall throughput of
+                      the network.
+                    </p>
+
+                    <div class="flex flex-col md:flex-row gap-6 my-8">
+                      <div class="flex-1">
+                        <div
+                          class="rounded-lg p-6 neon-border"
+                          style="background-color: var(--card-bg)"
+                        >
+                          <h3
+                            class="text-xl font-bold mb-4"
+                            style="color: var(--primary-color)"
+                          >
+                            <i class="fas fa-layer-group mr-2"></i> Horizontal
+                            Sharding
+                          </h3>
+                          <p style="color: var(--text-secondary)">
+                            Divides the state of the blockchain across multiple
+                            shards, with each shard handling a subset of
+                            accounts or smart contracts. This approach increases
+                            throughput by allowing parallel processing of
+                            transactions.
+                          </p>
+                        </div>
+                      </div>
+                      <div class="flex-1">
+                        <div
+                          class="rounded-lg p-6 neon-border"
+                          style="background-color: var(--card-bg)"
+                        >
+                          <h3
+                            class="text-xl font-bold mb-4"
+                            style="color: var(--secondary-color)"
+                          >
+                            <i class="fas fa-exchange-alt mr-2"></i> Cross-Shard
+                            Communication
+                          </h3>
+                          <p style="color: var (--text-secondary)">
+                            Enables transactions that span multiple shards,
+                            allowing for complex interactions between different
+                            parts of the network. This communication is
+                            essential for maintaining interoperability across
+                            the sharded network.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <p class="mb-4">
+                      Ethereum 2.0's implementation of sharding, combined with
+                      its shift to Proof of Stake, aims to significantly
+                      increase the network's throughput while maintaining
+                      security and decentralization. This approach has inspired
+                      other blockchain projects to explore similar
+                      architectures.
+                    </p>
+
+                    <div class="code-block my-8">
+                      <div
+                        class="flex items-center justify-between p-3 border-b border-gray-700"
+                      >
+                        <span
+                          class="font-mono text-sm"
+                          style="color: var(--text-secondary)"
+                          >sharding_example.sol</span
+                        >
+                        <div class="flex gap-2">
+                          <button
+                            class="copy-code-btn px-3 py-1 rounded text-xs hover:bg-gray-700"
+                            style="color: var(--text-secondary)"
+                          >
+                            <i class="far fa-copy mr-1"></i> Copy
+                          </button>
+                        </div>
+                      </div>
+                      <pre><code class="language-solidity">
+// Example of a cross-shard transaction in a theoretical sharded blockchain
+contract CrossShardCoordinator {
+    // Mapping to track pending cross-shard transactions
+    mapping(bytes32 => bool) public pendingTransactions;
+    
+    // Event emitted when a cross-shard transaction is initiated
+    event CrossShardTransactionInitiated(
+        uint256 sourceShardId,
+        uint256 targetShardId,
+        address sender,
+        address recipient,
+        uint256 amount,
+        bytes32 transactionId
+    );
+    
+    // Function to initiate a cross-shard transaction
+    function initiateTransaction(
+        uint256 targetShardId,
+        address recipient,
+        uint256 amount
+    ) external returns (bytes32) {
+        // Generate a unique transaction ID
+        bytes32 transactionId = keccak256(
+            abi.encodePacked(
+                block.timestamp,
+                msg.sender,
+                recipient,
+                amount,
+                targetShardId
+            )
+        );
+        
+        // Mark the transaction as pending
+        pendingTransactions[transactionId] = true;
+        
+        // Emit event for the target shard to process
+        emit CrossShardTransactionInitiated(
+            getShardId(), // Current shard ID
+            targetShardId,
+            msg.sender,
+            recipient,
+            amount,
+            transactionId
+        );
+        
+        return transactionId;
+    }
+    
+    // Function to complete a cross-shard transaction
+    function completeTransaction(bytes32 transactionId) external {
+        // Implementation details...
+    }
+    
+    // Helper function to get the current shard ID
+    function getShardId() internal view returns (uint256) {
+        // Implementation details...
+    }
+}
+    </code></pre>
+                    </div>
+                  </section>
+
+                  <section id="future-directions" class="mb-12">
+                    <h2
+                      class="text-3xl font-bold mb-6 brand-font"
+                      style="color: var(--text-color)"
+                    >
+                      Future Directions
+                    </h2>
+                    <p class="mb-4">
+                      As blockchain technology continues to evolve, several
+                      promising directions are emerging that could shape the
+                      future of decentralized systems:
+                    </p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+                      <div
+                        class="rounded-lg p-6"
+                        style="background-color: rgba(0, 255, 170, 0.05)"
+                      >
+                        <h3
+                          class="text-xl font-bold mb-3"
+                          style="color: var(--primary-color)"
+                        >
+                          <i class="fas fa-bolt mr-2"></i> Modular Blockchains
+                        </h3>
+                        <p style="color: var(--text-secondary)">
+                          Breaking down blockchain functionality into
+                          specialized layers (execution, settlement, consensus,
+                          data availability) allows for greater flexibility and
+                          optimization. Projects like Celestia and Polygon Avail
+                          are pioneering this approach.
+                        </p>
+                      </div>
+
+                      <div
+                        class="rounded-lg p-6"
+                        style="background-color: rgba(0, 102, 255, 0.05)"
+                      >
+                        <h3
+                          class="text-xl font-bold mb-3"
+                          style="color: var(--secondary-color)"
+                        >
+                          <i class="fas fa-link mr-2"></i> Interoperability
+                        </h3>
+                        <p style="color: var(--text-secondary)">
+                          Cross-chain protocols and bridges are enabling
+                          seamless communication between different blockchain
+                          networks. This interoperability is crucial for
+                          creating a connected ecosystem of specialized chains.
+                        </p>
+                      </div>
+
+                      <div
+                        class="rounded-lg p-6"
+                        style="background-color: rgba(255, 0, 204, 0.05)"
+                      >
+                        <h3
+                          class="text-xl font-bold mb-3"
+                          style="color: var(--accent-color)"
+                        >
+                          <i class="fas fa-shield-alt mr-2"></i> Zero-Knowledge
+                          Proofs
+                        </h3>
+                        <p style="color: var(--text-secondary)">
+                          ZK-proofs are revolutionizing privacy and scalability
+                          in blockchain systems. They allow for the verification
+                          of computation without revealing the underlying data,
+                          opening up new possibilities for confidential
+                          transactions and efficient validation.
+                        </p>
+                      </div>
+
+                      <div
+                        class="rounded-lg p-6"
+                        style="background-color: rgba(255, 153, 0, 0.05)"
+                      >
+                        <h3
+                          class="text-xl font-bold mb-3"
+                          style="color: #ff9900"
+                        >
+                          <i class="fas fa-code-branch mr-2"></i> Adaptive
+                          Consensus
+                        </h3>
+                        <p style="color: var(--text-secondary)">
+                          Future blockchain systems may dynamically adjust their
+                          consensus parameters based on network conditions,
+                          threat levels, and transaction volumes. This
+                          adaptability could optimize for both security and
+                          performance.
+                        </p>
+                      </div>
+                    </div>
+
+                    <p class="mb-4">
+                      These innovations, combined with ongoing research in
+                      cryptography, distributed systems, and mechanism design,
+                      will continue to push the boundaries of what's possible
+                      with blockchain technology. The focus is increasingly on
+                      creating systems that are not only secure and
+                      decentralized but also practical and user-friendly.
+                    </p>
+                  </section>
+
+                  <section id="conclusion" class="mb-12">
+                    <h2
+                      class="text-3xl font-bold mb-6 brand-font"
+                      style="color: var(--text-color)"
+                    >
+                      Conclusion
+                    </h2>
+                    <p class="mb-4">
+                      The evolution of blockchain architecture represents a
+                      fascinating intersection of cryptography, distributed
+                      systems, economics, and governance. From the early days of
+                      Bitcoin's simple yet revolutionary design to today's
+                      sophisticated multi-layer systems, we've seen remarkable
+                      innovation in addressing the core challenges of
+                      scalability, security, and decentralization.
+                    </p>
+                    <p class="mb-4">
+                      As we look to the future, it's clear that blockchain
+                      technology will continue to evolve in response to new
+                      challenges and opportunities. The most successful systems
+                      will likely be those that strike the right balance between
+                      technical performance and the core values of
+                      decentralization and trustlessness that make blockchain
+                      technology so powerful.
+                    </p>
+                    <p class="mb-4">
+                      For developers and entrepreneurs in this space,
+                      understanding these architectural trends is crucial for
+                      building systems that are not only technically sound but
+                      also aligned with the long-term vision of a more open,
+                      transparent, and user-controlled digital ecosystem.
+                    </p>
+
+                    <div
+                      class="flex items-center p-6 rounded-lg mt-8 neon-border"
+                      style="background-color: var(--card-bg)"
+                    >
+                      <div class="mr-4">
+                        <img
+                          src="/placeholder.png"
+                          alt="Elena Rodriguez"
+                          class="w-16 h-16 rounded-full"
+                        />
+                      </div>
+                      <div>
+                        <h3
+                          class="text-xl font-bold mb-1"
+                          style="color: var(--text-color)"
+                        >
+                          About the Author
+                        </h3>
+                        <p class="mb-2" style="color: var(--text-secondary)">
+                          Elena Rodriguez is a blockchain architect and
+                          researcher with over 8 years of experience in
+                          distributed systems. She has contributed to several
+                          major blockchain projects and regularly speaks at
+                          industry conferences.
+                        </p>
+                        <div class="flex gap-3">
+                          <a
+                            href="#"
+                            class="text-sm hover:underline"
+                            style="color: var(--primary-color)"
+                          >
+                            <i class="fab fa-twitter mr-1"></i>
+                            @elena_blockchain
+                          </a>
+                          <a
+                            href="#"
+                            class="text-sm hover:underline"
+                            style="color: var(--primary-color)"
+                          >
+                            <i class="fab fa-github mr-1"></i> elenarodriguez
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+
+                  <!-- Related Articles -->
+                  <section class="mb-12">
+                    <h2
+                      class="text-3xl font-bold mb-8 brand-font"
+                      style="color: var(--text-color)"
+                    >
+                      Related Articles
+                    </h2>
+
+                    <div
+                      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+                    >
+                      <a href="#" class="block group">
+                        <div class="rounded-lg overflow-hidden mb-4 relative">
+                          <div
+                            class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60 z-10"
+                          ></div>
+                          <img
+                            src="/placeholder.png"
+                            alt="ZK-Rollups Explained"
+                            class="w-full h-48 object-cover transition-transform group-hover:scale-105"
+                          />
+                          <div class="absolute bottom-0 left-0 p-4 z-20">
+                            <span
+                              class="inline-block px-2 py-1 rounded-full text-xs tracking-wider font-mono mb-2"
+                              style="
+                                background-color: rgba(255, 0, 204, 0.2);
+                                color: var(--accent-color);
+                              "
+                              >CRYPTOGRAPHY</span
+                            >
+                          </div>
+                        </div>
+                        <h3
+                          class="text-xl font-bold mb-2 group-hover:text-primary-color transition-colors"
+                          style="color: var(--text-color)"
+                        >
+                          ZK-Rollups Explained: The Future of Ethereum Scaling
+                        </h3>
+                        <p class="mb-2" style="color: var(--text-secondary)">
+                          A deep dive into how zero-knowledge proofs are
+                          revolutionizing blockchain scalability
+                        </p>
+                        <div class="flex items-center">
+                          <span
+                            class="text-sm"
+                            style="color: var(--text-secondary)"
+                            >March 5, 2025</span
+                          >
+                          <span
+                            class="mx-2"
+                            style="color: var(--text-secondary)"
+                            >•</span
+                          >
+                          <span
+                            class="text-sm"
+                            style="color: var(--text-secondary)"
+                            >8 min read</span
+                          >
+                        </div>
+                      </a>
+
+                      <a href="#" class="block group">
+                        <div class="rounded-lg overflow-hidden mb-4 relative">
+                          <div
+                            class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60 z-10"
+                          ></div>
+                          <img
+                            src="/placeholder.png"
+                            alt="Cross-Chain Interoperability"
+                            class="w-full h-48 object-cover transition-transform group-hover:scale-105"
+                          />
+                          <div class="absolute bottom-0 left-0 p-4 z-20">
+                            <span
+                              class="inline-block px-2 py-1 rounded-full text-xs tracking-wider font-mono mb-2"
+                              style="
+                                background-color: rgba(0, 102, 255, 0.2);
+                                color: var(--secondary-color);
+                              "
+                              >INTEROPERABILITY</span
+                            >
+                          </div>
+                        </div>
+                        <h3
+                          class="text-xl font-bold mb-2 group-hover:text-primary-color transition-colors"
+                          style="color: var(--text-color)"
+                        >
+                          Cross-Chain Interoperability: Building the Internet of
+                          Blockchains
+                        </h3>
+                        <p class="mb-2" style="color: var(--text-secondary)">
+                          How protocols like IBC, Polkadot, and Cosmos are
+                          connecting disparate blockchain networks
+                        </p>
+                        <div class="flex items-center">
+                          <span
+                            class="text-sm"
+                            style="color: var(--text-secondary)"
+                            >February 22, 2025</span
+                          >
+                          <span
+                            class="mx-2"
+                            style="color: var(--text-secondary)"
+                            >•</span
+                          >
+                          <span
+                            class="text-sm"
+                            style="color: var(--text-secondary)"
+                            >10 min read</span
+                          >
+                        </div>
+                      </a>
+
+                      <a href="#" class="block group">
+                        <div class="rounded-lg overflow-hidden mb-4 relative">
+                          <div
+                            class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60 z-10"
+                          ></div>
+                          <img
+                            src="/placeholder.png"
+                            alt="Smart Contract Security"
+                            class="w-full h-48 object-cover transition-transform group-hover:scale-105"
+                          />
+                          <div class="absolute bottom-0 left-0 p-4 z-20">
+                            <span
+                              class="inline-block px-2 py-1 rounded-full text-xs tracking-wider font-mono mb-2"
+                              style="
+                                background-color: rgba(0, 255, 170, 0.2);
+                                color: var(--primary-color);
+                              "
+                              >SECURITY</span
+                            >
+                          </div>
+                        </div>
+                        <h3
+                          class="text-xl font-bold mb-2 group-hover:text-primary-color transition-colors"
+                          style="color: var(--text-color)"
+                        >
+                          Smart Contract Security: Best Practices for Blockchain
+                          Developers
+                        </h3>
+                        <p class="mb-2" style="color: var(--text-secondary)">
+                          Essential techniques and tools to protect your smart
+                          contracts from common vulnerabilities
+                        </p>
+                        <div class="flex items-center">
+                          <span
+                            class="text-sm"
+                            style="color: var(--text-secondary)"
+                            >February 15, 2025</span
+                          >
+                          <span
+                            class="mx-2"
+                            style="color: var(--text-secondary)"
+                            >•</span
+                          >
+                          <span
+                            class="text-sm"
+                            style="color: var(--text-secondary)"
+                            >15 min read</span
+                          >
+                        </div>
+                      </a>
+                    </div>
+                  </section>
+
+                  <!-- Newsletter Signup -->
+                  <section class="container mx-auto px-4 md:px-6 mb-20">
+                    <div
+                      class="rounded-lg p-6 md:p-12"
+                      style="background-color: var(--card-bg)"
+                    >
+                      <div class="flex flex-col md:flex-row items-center">
+                        <div
+                          class="flex-1 text-center md:text-left mb-6 md:mb-0 md:mr-8"
+                        >
+                          <h2
+                            class="text-2xl md:text-3xl font-bold mb-4 brand-font"
+                            style="color: var(--text-color)"
+                          >
+                            SUBSCRIBE<span style="color: var(--primary-color)"
+                              >_</span
+                            >
+                          </h2>
+                          <p style="color: var(--text-secondary)" class="mb-4">
+                            Get the latest code snippets and tech insights
+                            delivered to your inbox
+                          </p>
+                          <form class="flex flex-col sm:flex-row gap-3">
+                            <input
+                              type="email"
+                              placeholder="your@email.com"
+                              required
+                              class="flex-1 px-4 py-3 rounded-lg"
+                              style="
+                                background-color: rgba(255, 255, 255, 0.05);
+                                color: var(--text-color);
+                              "
+                            />
+                            <button
+                              type="submit"
+                              class="px-6 py-3 rounded-lg font-bold whitespace-nowrap"
+                              style="
+                                background-color: var(--primary-color);
+                                color: #000;
+                              "
+                            >
+                              EXECUTE( )
+                            </button>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+
+                  <!-- Comment Section -->
+                  <section class="mb-12">
+                    <h2
+                      class="text-3xl font-bold mb-8 brand-font"
+                      style="color: var(--text-color)"
+                    >
+                      Discussion
+                    </h2>
+
+                    <div class="mb-8">
+                      <form>
+                        <div class="mb-4">
+                          <textarea
+                            placeholder="Share your thoughts..."
+                            rows="4"
+                            class="w-full px-4 py-3 rounded-lg mb-2"
+                            style="
+                              background-color: rgba(255, 255, 255, 0.05);
+                              color: var(--text-color);
+                              border: 1px solid rgba(255, 255, 255, 0.1);
+                            "
+                          ></textarea>
+                        </div>
+                        <div class="flex justify-between items-center">
+                          <div class="flex items-center gap-3">
+                            <button
+                              type="button"
+                              class="p-2 rounded"
+                              style="
+                                background-color: rgba(255, 255, 255, 0.05);
+                                color: var(--text-secondary);
+                              "
+                            >
+                              <i class="fas fa-code"></i>
+                            </button>
+                            <button
+                              type="button"
+                              class="p-2 rounded"
+                              style="
+                                background-color: rgba(255, 255, 255, 0.05);
+                                color: var(--text-secondary);
+                              "
+                            >
+                              <i class="fas fa-link"></i>
+                            </button>
+                            <button
+                              type="button"
+                              class="p-2 rounded"
+                              style="
+                                background-color: rgba(255, 255, 255, 0.05);
+                                color: var(--text-secondary);
+                              "
+                            >
+                              <i class="fas fa-image"></i>
+                            </button>
+                          </div>
+                          <button
+                            type="submit"
+                            class="px-6 py-2 rounded-lg font-bold transition-colors hover-glow"
+                            style="
+                              background-color: var(--primary-color);
+                              color: #000;
+                            "
+                          >
+                            Comment
+                          </button>
+                        </div>
+                      </form>
+                    </div>
+
+                    <!-- Comments -->
+                    <div class="space-y-6">
+                      <!-- Comment 1 -->
+                      <div
+                        class="rounded-lg p-6"
+                        style="background-color: var(--card-bg)"
+                      >
+                        <div class="flex items-start mb-4">
+                          <div
+                            class="w-10 h-10 rounded-full overflow-hidden mr-4"
+                          >
+                            <img
+                              src="/placeholder.png"
+                              alt="User Avatar"
+                              class="w-full h-full object-cover"
+                            />
+                          </div>
+                          <div class="flex-1">
+                            <div class="flex justify-between items-center mb-2">
+                              <h4
+                                class="font-bold"
+                                style="color: var(--text-color)"
+                              >
+                                Alex Chen
+                              </h4>
+                              <span
+                                class="text-sm"
+                                style="color: var(--text-secondary)"
+                                >2 days ago</span
+                              >
+                            </div>
+                            <p style="color: var(--text-secondary)">
+                              Great article! I've been following the development
+                              of ZK-rollups closely. Do you think they'll
+                              eventually replace optimistic rollups completely,
+                              or will both approaches coexist?
+                            </p>
+                            <div class="flex items-center gap-4 mt-4">
+                              <button
+                                class="flex items-center gap-1 text-sm"
+                                style="color: var(--text-secondary)"
+                              >
+                                <i class="far fa-heart"></i> 12
+                              </button>
+                              <button
+                                class="flex items-center gap-1 text-sm"
+                                style="color: var(--text-secondary)"
+                              >
+                                <i class="far fa-comment"></i> Reply
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- Reply -->
+                        <div
+                          class="ml-14 mt-4 pl-4 border-l-2"
+                          style="border-color: rgba(255, 255, 255, 0.1)"
+                        >
+                          <div class="flex items-start mb-4">
+                            <div
+                              class="w-8 h-8 rounded-full overflow-hidden mr-3"
+                            >
+                              <img
+                                src="/placeholder.png"
+                                alt="Author Avatar"
+                                class="w-full h-full object-cover"
+                              />
+                            </div>
+                            <div class="flex-1">
+                              <div
+                                class="flex justify-between items-center mb-2"
+                              >
+                                <h4
+                                  class="font-bold"
+                                  style="color: var(--text-color)"
+                                >
+                                  Elena Rodriguez
+                                  <span
+                                    class="text-xs font-normal ml-2 px-2 py-0.5 rounded"
+                                    style="
+                                      background-color: rgba(0, 255, 170, 0.1);
+                                      color: var(--primary-color);
+                                    "
+                                    >Author</span
+                                  >
+                                </h4>
+                                <span
+                                  class="text-sm"
+                                  style="color: var(--text-secondary)"
+                                  >1 day ago</span
+                                >
+                              </div>
+                              <p style="color: var(--text-secondary)">
+                                Thanks for the question, Alex! I think both
+                                approaches will coexist for the foreseeable
+                                future. ZK-rollups offer stronger security
+                                guarantees and faster finality, but optimistic
+                                rollups are currently more compatible with
+                                existing smart contracts. Each has its own
+                                tradeoffs.
+                              </p>
+                              <div class="flex items-center gap-4 mt-4">
+                                <button
+                                  class="flex items-center gap-1 text-sm"
+                                  style="color: var(--text-secondary)"
+                                >
+                                  <i class="far fa-heart"></i> 8
+                                </button>
+                                <button
+                                  class="flex items-center gap-1 text-sm"
+                                  style="color: var(--text-secondary)"
+                                >
+                                  <i class="far fa-comment"></i> Reply
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Comment 2 -->
+                      <div
+                        class="rounded-lg p-6"
+                        style="background-color: var(--card-bg)"
+                      >
+                        <div class="flex items-start">
+                          <div
+                            class="w-10 h-10 rounded-full overflow-hidden mr-4"
+                          >
+                            <img
+                              src="/placeholder.png"
+                              alt="User Avatar"
+                              class="w-full h-full object-cover"
+                            />
+                          </div>
+                          <div class="flex-1">
+                            <div class="flex justify-between items-center mb-2">
+                              <h4
+                                class="font-bold"
+                                style="color: var(--text-color)"
+                              >
+                                Sarah Johnson
+                              </h4>
+                              <span
+                                class="text-sm"
+                                style="color: var(--text-secondary)"
+                                >3 days ago</span
+                              >
+                            </div>
+                            <p style="color: var(--text-secondary)">
+                              I'm curious about the environmental impact of
+                              different consensus mechanisms. While PoS is
+                              certainly more energy-efficient than PoW, are
+                              there any studies comparing the carbon footprint
+                              of various alternative consensus mechanisms?
+                            </p>
+                            <div class="flex items-center gap-4 mt-4">
+                              <button
+                                class="flex items-center gap-1 text-sm"
+                                style="color: var(--text-secondary)"
+                              >
+                                <i class="far fa-heart"></i> 5
+                              </button>
+                              <button
+                                class="flex items-center gap-1 text-sm"
+                                style="color: var(--text-secondary)"
+                              >
+                                <i class="far fa-comment"></i> Reply
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="mt-6 text-center">
+                      <button
+                        class="px-6 py-2 rounded-lg font-bold transition-colors"
+                        style="
+                          background-color: rgba(255, 255, 255, 0.05);
+                          color: var(--text-color);
+                        "
+                      >
+                        Load More Comments
+                      </button>
+                    </div>
+                  </section>
+                </div>
+              </section>
+            </div>
+          </article>
+        </div>
+      </div>
+    </main>
+
+    <!-- Newsletter Section -->
+    <section class="container mx-auto px-4 md:px-6 mb-20">
+      <div
+        class="rounded-lg p-6 md:p-12"
+        style="background-color: var(--card-bg)"
+      >
+        <div class="flex flex-col md:flex-row items-center">
+          <div class="flex-1 text-center md:text-left mb-6 md:mb-0 md:mr-8">
+            <h2
+              class="text-2xl md:text-3xl font-bold mb-4 brand-font"
+              style="color: var(--text-color)"
+            >
+              SUBSCRIBE<span style="color: var(--primary-color)">_</span>
+            </h2>
+            <p style="color: var(--text-secondary)" class="mb-4">
+              Get the latest code snippets and tech insights delivered to your
+              inbox
+            </p>
+            <form class="flex flex-col sm:flex-row gap-3">
+              <input
+                type="email"
+                placeholder="your@email.com"
+                required
+                class="flex-1 px-4 py-3 rounded-lg"
+                style="
+                  background-color: rgba(255, 255, 255, 0.05);
+                  color: var(--text-color);
+                "
+              />
+              <button
+                type="submit"
+                class="px-6 py-3 rounded-lg font-bold whitespace-nowrap"
+                style="background-color: var(--primary-color); color: #000"
+              >
+                EXECUTE( )
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+
+    <footer
+      class="border-t py-12"
+      style="
+        border-color: rgba(255, 255, 255, 0.1);
+        background-color: rgba(5, 5, 16, 0.9);
+      "
+    >
+      <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+          <div>
+            <h3
+              class="text-xl font-bold mb-4 brand-font"
+              style="color: var(--text-color)"
+            >
+              ABOUT US
+            </h3>
+            <p style="color: var(--text-secondary)" class="mb-4">
+              CODEDYNASTY explores the cutting edge of programming, system
+              architecture, and technological innovation.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="hover-glow"
+                style="color: var(--text-secondary)"
+              >
+                <i class="fab fa-twitter fa-lg"></i>
+              </a>
+              <a
+                href="#"
+                class="hover-glow"
+                style="color: var(--text-secondary)"
+              >
+                <i class="fab fa-github fa-lg"></i>
+              </a>
+              <a
+                href="#"
+                class="hover-glow"
+                style="color: var(--text-secondary)"
+              >
+                <i class="fab fa-discord fa-lg"></i>
+              </a>
+              <!-- <a
+                href="#"
+                class="hover-glow"
+                style="color: var(--text-secondary)"
+              >
+                <i class="fab fa-linkedin fa-lg"></i>
+              </a> -->
+            </div>
+          </div>
+          <div>
+            <h3
+              class="text-xl font-bold mb-4 brand-font"
+              style="color: var(--text-color)"
+            >
+              CATEGORIES
+            </h3>
+            <ul class="space-y-2 categories-list">
+              <li class="pl-4">
+                <a
+                  href="#"
+                  class="footer-link hover:text-primary-color transition-colors"
+                  style="color: var(--text-secondary)"
+                  >Development</a
+                >
+              </li>
+              <li class="pl-4">
+                <a
+                  href="#"
+                  class="footer-link hover:text-primary-color transition-colors"
+                  style="color: var(--text-secondary)"
+                  >System Architecture</a
+                >
+              </li>
+              <li class="pl-4">
+                <a
+                  href="#"
+                  class="footer-link hover:text-primary-color transition-colors"
+                  style="color: var(--text-secondary)"
+                  >Future Tech</a
+                >
+              </li>
+              <li class="pl-4">
+                <a
+                  href="#"
+                  class="footer-link hover:text-primary-color transition-colors"
+                  style="color: var(--text-secondary)"
+                  >Tutorials</a
+                >
+              </li>
+              <li class="pl-4">
+                <a
+                  href="#"
+                  class="footer-link hover:text-primary-color transition-colors"
+                  style="color: var(--text-secondary)"
+                  >AI & Machine Learning</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3
+              class="text-xl font-bold mb-4 brand-font"
+              style="color: var(--text-color)"
+            >
+              RESOURCES
+            </h3>
+            <ul class="space-y-2 categories-list">
+              <li class="pl-4">
+                <a
+                  href="#"
+                  class="footer-link hover:text-primary-color transition-colors"
+                  style="color: var(--text-secondary)"
+                  >Documentation</a
+                >
+              </li>
+              <li class="pl-4">
+                <a
+                  href="#"
+                  class="footer-link hover:text-primary-color transition-colors"
+                  style="color: var(--text-secondary)"
+                  >Code Samples</a
+                >
+              </li>
+              <li class="pl-4">
+                <a
+                  href="#"
+                  class="footer-link hover:text-primary-color transition-colors"
+                  style="color: var(--text-secondary)"
+                  >API References</a
+                >
+              </li>
+              <li class="pl-4">
+                <a
+                  href="#"
+                  class="footer-link hover:text-primary-color transition-colors"
+                  style="color: var(--text-secondary)"
+                  >GitHub Repositories</a
+                >
+              </li>
+              <li class="pl-4">
+                <a
+                  href="#"
+                  class="footer-link hover:text-primary-color transition-colors"
+                  style="color: var(--text-secondary)"
+                  >Community Forum</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3
+              class="text-xl font-bold mb-4 brand-font"
+              style="color: var(--text-color)"
+            >
+              JOIN OUR NETWORK
+            </h3>
+            <p style="color: var(--text-secondary)" class="mb-4">
+              Become a contributor and share your expertise with our growing
+              developer community.
+            </p>
+            <a
+              href="#"
+              class="inline-block px-6 py-3 rounded-lg hover-glow button-neon font-mono"
+              style="
+                border: 1px solid var(--primary-color);
+                color: var(--primary-color);
+              "
+            >
+              CONNECT( )
+            </a>
+          </div>
+        </div>
+        <div
+          class="text-center pt-8 border-t"
+          style="border-color: rgba(255, 255, 255, 0.1)"
+        >
+          <p style="color: var(--text-secondary)">&copy; 2025 CODEDYNASTY.</p>
+        </div>
+      </div>
+    </footer>
+    <script src="/script/index.js"></script>
+  </body>
+</html>
