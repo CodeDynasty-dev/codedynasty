@@ -1,4 +1,4 @@
-// filepath: /flamboyant/tailwind.config.js
+// filepath: /codedynasty/tailwind.config.js
 module.exports = {
   content: ["./src/**/*.{html,js}"],
   theme: {

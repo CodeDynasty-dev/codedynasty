@@ -1,11 +1,11 @@
-# Flamboyant News Publishing Site
+# CODEDYNASTY News Publishing Site
 
-Flamboyant is a modern news publishing website designed to deliver the latest news and updates in an engaging and visually appealing manner.
+CODEDYNASTY is a modern news publishing website designed to deliver the latest news and updates in an engaging and visually appealing manner.
 
 ## Project Structure
 
 ```
-flamboyant
+codedynasty
 ├── src
 │   ├── index.html        # Main HTML document
 │   ├── styles            # Directory for CSS styles
@@ -31,13 +31,13 @@ flamboyant
 1. Clone the repository:
 
    ```
-   git clone https://github.com/fridaycandour/flamboyant.git
+   git clone https://github.com/fridaycandour/codedynasty.git
    ```
 
 2. Navigate to the project directory:
 
    ```
-   cd flamboyant
+   cd codedynasty
    ```
 
 3. Install dependencies:
