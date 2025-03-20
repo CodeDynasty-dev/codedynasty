@@ -27,10 +27,6 @@ cards.forEach((card) => {
 const mobileMenuButton = document.getElementById("mobile-menu-button");
 const mobileMenu = document.getElementById("mobile-menu");
 
-mobileMenuButton.addEventListener("click", () => {
-  // mobileMenu.classList.toggle("hidden");
-});
-
 document.addEventListener("DOMContentLoaded", function () {
   // Handle mobile menu
   const mobileMenuButton = document.getElementById("mobile-menu-button");
@@ -38,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (mobileMenuButton && mobileMenu) {
     mobileMenuButton.addEventListener("click", () => {
-      // mobileMenu.classList.toggle("hidden");
+      mobileMenu.classList.toggle("hidden");
     });
   }
 
