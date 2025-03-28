@@ -4,6 +4,11 @@
   "description": "A news publishing website",
   "main": "src/index.html",
   "type": "module",
+  "scripts": {
+    "watch": "docmach",
+    "print": "docmach print",
+    "build": "docmach build"
+  },
   "keywords": [
     "news",
     "publishing",
@@ -22,5 +27,8 @@
     "build-directory": "dist",
     "default-template": "./templates/index.html",
     "assets-folder": "./assets"
+  },
+  "dependencies": {
+    "docmach": "^1.0.3"
   }
 }
