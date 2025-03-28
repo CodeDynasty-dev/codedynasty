@@ -1,4 +1,8 @@
-<docmach type="wrapper" file="fragments/page-structure.html" replacement="content" params="title:friday candour" >
+<docmach
+ type="wrapper"
+ file="fragments/page-structure.html"
+ replacement="content"
+params="title:friday candour" >
 
 <img class="size-45 mx-auto my-12 rounded-[50%]" src="https://avatars.githubusercontent.com/u/75016347?v=4">
 
