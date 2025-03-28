@@ -2,13 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.red {
-  border: 2px red solid;
-}
-.red-a * {
-  border: 2px red solid;
-}
-
 @import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Orbitron:wght@400;600;900&display=swap");
 
 :root {
@@ -347,4 +340,11 @@ h4,
   100% {
     transform: rotateX(360deg) rotateY(360deg);
   }
+}
+
+.red {
+  border: 2px red solid;
+}
+.red-a * {
+  border: 2px red solid;
 }

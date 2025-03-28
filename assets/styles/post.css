@@ -73,3 +73,22 @@
     grid-template-columns: 1fr;
   }
 }
+
+.post blockquote {
+  padding-left: calc(var(--spacing) * 6);
+  border-color: var(--primary-color);
+  color: var(--text-secondary);
+  font-style: italic;
+  border-left-style: var(--tw-border-style);
+  border-left-width: 4px;
+  margin-bottom: calc(var(--spacing) * 12);
+}
+
+.post h1,
+h2 {
+  --tw-font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: calc(var(--spacing) * 6);
+  font-size: var(--text-3xl);
+  line-height: var(--tw-leading, var(--text-3xl--line-height));
+}
