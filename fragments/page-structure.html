@@ -46,7 +46,7 @@
           </a>
 
           <!-- search button -->
-          <button id="search-button" aria-label="search">
+          <button class="md:hidden" id="search-button" aria-label="search">
             <svg
               class="w-6 h-6"
               fill="none"
@@ -85,6 +85,23 @@
 
           <!-- Desktop navigation -->
           <div class="hidden md:flex gap-8">
+            <button id="search-button" aria-label="search">
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="{2}"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                  style="color: var(--text-color)"
+                />
+              </svg>
+            </button>
             <a
               href="https://github.com/CodeDynasty-dev"
               class="nav-link hover:text-primary-color transition-colors"
