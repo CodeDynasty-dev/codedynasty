@@ -81,14 +81,14 @@
   font-style: italic;
   border-left-style: var(--tw-border-style);
   border-left-width: 4px;
-  margin-bottom: calc(var(--spacing) * 12);
+  margin: calc(var(--spacing) * 12) 0;
 }
 
 .post h1,
 h2 {
   --tw-font-weight: var(--font-weight-bold);
   font-weight: var(--font-weight-bold);
-  margin-bottom: calc(var(--spacing) * 6);
+  margin: calc(var(--spacing) * 6) 0;
   font-size: var(--text-3xl);
   line-height: var(--tw-leading, var(--text-3xl--line-height));
 }

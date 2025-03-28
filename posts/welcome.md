@@ -3,101 +3,74 @@ author:friday candour;
 author_title: Software developer;
 time_created: Mar 28 2025;
 time_to_read: 12 min;
-title: boohoof;
-topic: boogooo;
-image: /post-files/Codedynasty.png;
+title: Getting a job in tech part;
+topic: job;
+image: https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fijazzsrohxrdc5h5ixxf.jpeg;
 " >
 
-# boohoo 5
+As important as having a good CV is, having a place showing the work you are doing, or you have done might be more important. If you only have it on a repo on Github or saved on your laptop, it’s no good if you don’t show it.
 
-> [!NOTE]
-> Useful information that users should know, even when skimming content.
+It might be scary at first, and you might feel unsure what you have is worth sharing but it’s for different reasons:
 
-> [!TIP]
-> Helpful advice for doing things better or more easily.
+You can keep track of your progress and really compare what you could achieve months or years ago and appreciate all the progress you’ve made.
+It will force you to practice more.
+It will show what you are capable of.
+Also, recruiters prefer to see something pretty or interesting (or both) in the middle of reviewing CVs.
 
-> [!IMPORTANT]
-> Key information users need to know to achieve their goal.
+## My first portfolio
 
-> [!WARNING]
+**_Inspiration_**
 
-> Urgent info that needs immediate user attention to avoid problems.
+Where to start and how to organise all the ideas might be tough and overwhelming. A habit I’ve got is to check Dribbble. I’m still training my eye so definitely this helps massively to see what is a trend or a good way to organise your site.
 
-> [!CAUTION]
-> Advises about risks or negative outcomes of certain actions.
+Tech stack
+Checking on Github it’s been nearly a year I’ve built my first portfolio which you can find here.
+I built this portfolio using mostly Tailwind CSS and plain HTML. I decided to pick Tailwind over other options such as Bootstrap or Materialize, just to learn something new. I think that’s one of the wonders of tech, you can pick something new and give it a go.
 
-Here is a simple footnote[^1].
+Even though I used mostly Bootstrap in my Bootcamp projects I decided I wanted to try Tailwind as everyone I follow on Twitter was talking wonders about it, and now I know why.
+Tailwind is way more flexible and not as opinionated as Boostrap (you might end up having to use !important way too often on your CSS) and it often behaves in unexpected ways. With Tailwind you’ll have all the control over your classes and your CSS will be really small or even inexistent.
 
-A footnote can also have multiple lines[^2].
+Deployment
+If your site is static and your budget is tight you can always deploy it on Github Pages your URL will include your username and the name of your repo:
 
-[^1]: My reference.
-[^2]:
-    To add line breaks within a footnote, prefix new lines with 2 spaces.
-    This is a second line.
+https://carolinacobo.github.io/portfolio/Once you push to it it will automatically deploy or redeploy, easy right?
 
-# Example headings
+But if you are willing to pay for a domain you can always get a more personal one with your name or something that you feel represents your brand. I used my name for my portfolio so if someone searches my name they’ll get to my portfolio.
+To do the deployment and get the domain I used Vercel. I found the domain I wanted and bought it for $20 a year, which for me has paid off. But there are great options that are free.
 
-## Sample Section
+You only need to go to the site, register, and in the Dashboard, you will find different options on the dashboard to buy the domain, then link your repo and configure the deployment.
+You can also have free domains on Github, and once it’s linked to your Github account it will be really similar to using Github Pages.
 
-## This'll be a _Helpful_ Section About the Greek Letter Θ!
+My new portfolio
+A few days ago I finished my new portfolio, which you can see here. You may notice that the structure is really similar to my first one, but there are major changes in what’s built on. The tech stack I used was:
 
-A heading containing characters not allowed in fragments, UTF-8 characters, two consecutive spaces between the first and second words, and formatting.
+React
+Tailwind CSS
+Next.js
+Why did I use these technologies?
+React is one of the most used frameworks worldwide and also in my current role, I’m working with both React and Tailwind. Any opportunity I might have to work with them I’ll take it, as I know it will benefit me in both my professional and personal work.
 
-## This heading is not unique in the file
+Next.js is an open-source development framework that is built on top of Node.js. This allows React-based web applications functionalities such as server-side rendering and generating static websites, which for blogs or portfolios is great. This wasn’t entirely impossible to do before having Next.js, and it required a lot of tweaking with issues related to caching, server load, etc.
 
-TEXT 1
+On the technical side, Next.js will only load the Javascript that is needed on every page, which makes for much faster page loading times as it won’t load for anything the user is not asking for.
 
-## This heading is not unique in the file
+It can also help you with incremental static regeneration and static site generation. Another way of building more SEO friendly websites and applications, and that means that the site can be easily found.
 
-TEXT 2
+Other options
+There are other tools that can be used as I mentioned above:
 
-# Links to the example headings above
+Bootstrap might be easier if you are using it already in other projects. In my opinion, Tailwind is better and the documentation is easier to follow than in Bootstrap.
+Wix or WordPress are easy, and you can personalise them but you may have to pay to have a better layout that will look different to the free ones. Here you can find a tutorial on how to build on Wix and Portfolio Themes on WordPress if you want somewhere to start.
+Conclusion
+If it’s your first attempt, start with something easy and simple, you can always improve it or just make it brand new! I think having a showcase of your work will take you a long way.
 
-Link to the sample section: [Link Text](#sample-section).
+You can also ask for help from other people, I did when I needed some support as it can be frustrating feeling stuck or not knowing how to solve some problems you might come across.
 
-Link to the helpful section: [Link Text](#thisll-be-a-helpful-section-about-the-greek-letter-Θ).
+Also, I know writing or working on side projects while working full time might be difficult, but it’s also really rewarding having it all together and showing the world what you are capable of!
 
-Link to the first non-unique section: [Link Text](#this-heading-is-not-unique-in-the-file).
+Thanks for reading, I really appreciate your time! 🎉 If you need any help please reach out!
 
-Link to the second non-unique section: [Link Text](#this-heading-is-not-unique-in-the-file-1).
-
-```js
-// Simplified comparison of consensus mechanisms
-const consensusMechanisms = {
-  proofOfWork: {
-    energyConsumption: "high",
-    decentralization: "high",
-    scalability: "low",
-    security: "high",
-    examples: ["Bitcoin", "Ethereum 1.0", "Litecoin"],
-  },
-  proofOfStake: {
-    energyConsumption: "low",
-    decentralization: "medium to high",
-    scalability: "medium to high",
-    security: "high",
-    examples: ["Ethereum 2.0", "Cardano", "Solana"],
-  },
-  delegatedProofOfStake: {
-    energyConsumption: "very low",
-    decentralization: "medium",
-    scalability: "high",
-    security: "medium to high",
-    examples: ["EOS", "Tron", "Lisk"],
-  },
-  proofOfAuthority: {
-    energyConsumption: "very low",
-    decentralization: "low",
-    scalability: "very high",
-    security: "medium",
-    examples: ["VeChain", "POA Network", "Ethereum Kovan testnet"],
-  },
-};
-
-// Function to recommend consensus mechanism based on requirements
-function recommendConsensus(requirements) {
-  // Implementation details....
-}
-```
+Next week I’ll be sharing another post about personalising the Readme file on Github and how I’m starting to get into the habit of writing, so please subscribe so you will receive it on your email when it’s out!
+If you have any questions feel free to drop me a message on LinkedIn or send me an email. 😊
 
 </docmach>
