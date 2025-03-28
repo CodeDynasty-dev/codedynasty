@@ -92,3 +92,8 @@ h2 {
   font-size: var(--text-3xl);
   line-height: var(--tw-leading, var(--text-3xl--line-height));
 }
+
+.post li {
+  list-style: disc;
+  margin: 4px 0;
+}

@@ -1,66 +1,126 @@
-<docmach type="wrapper" file="fragments/page-structure.html" replacement="content" >
+<docmach type="wrapper" file="fragments/page-structure.html" replacement="content" params="title:friday candour" >
 
-# Hi there! 👋 I am Friday Candour.
+<img class="size-45 mx-auto my-12 rounded-[50%]" src="https://avatars.githubusercontent.com/u/75016347?v=4">
 
-Passionate about reshaping the tech landscape, with continuous exploration, learning, rebuilding the "wheels" and striving in creativity.
+# Hi there! 👋 I’m Friday Candour
 
-## 🚀 Technologies & Tools
+Imagine a world where technology doesn’t just function—it inspires.
+<br>
+<br>
 
-- 🐧 I'm a Linux enthusiast with experience across some languages but most expecially:
-  - JavaScript/TypeScript: Building Web software, tools and applications.
-  - Front-end and back-end development with various frameworks and libraries (Golang, React, Express, Laravel and C# ...).
-  - React Native and Flutter: Creating cross-platform mobile experiences with React Native and Flutter.
-  - Golang and Zig: Mastering efficient and high-performance programming.
-  -
+I am Friday Candour, a tech Engineer on a mission to reshape the digital landscape.
+Ever since I first booted up a Linux machine, I’ve been hooked on the power of code to turn wild ideas into reality. Driven by curiosity and a passion for innovation, I craft tools and solutions that solve problems and spark creativity.
+<br>
+Like a scientist unraveling the deep secrets, I dive into code to push the boundaries of what’s possible
+<br>
+<br>
+—let’s create something extraordinary together!
+<br>
+<br>
 
-## 🛠️ Featured Projects
+## Technologies I Use
+
+My toolkit and my expertise are my superpower, honed for building impactful solutions:
+
+- **🐧 Linux**: I'm a Linux enthusiast with experience across some languages but most especially.
+  - **JavaScript/TypeScript**: My go-to for crafting dynamic, user-focused web experiences in less time.
+  - **Frameworks & Libraries**: React, nextjs, Vue and angular for Frontend, Express, jetpath and bunks for robust back-ends, I build seamless applications with tools like these.
+  - **React Native & Flutter**: For building cross-platform mobile apps that feel native and perform flawlessly.
+  - **Golang & Zig**: My choice for high-performance applications.
+
+These aren’t just tools—they’re the building blocks I use to turn visions into reality.
+
+<br>
+<br>
+
+## Featured Projects
+
+Here’s where my passion meets action. These projects showcase my engineering skills and innovative spirit:
+
+<br>
+
+- **[Cradova](https://github.com/Codedynasty-dev/cradova)**  
+  _Empowering developers to build lightning-fast Single Page Applications with ease._  
+  Inspired by vanilla javascript, Cradova is a framework that simplifies complexity. It’s fast, modern, and built for creativity.
+
+<br>
+<br>
 
 [![Cradova Web Framework](https://github-readme-stats.vercel.app/api/pin/?username=Codedynasty-dev&repo=cradova)](https://github.com/Codedynasty-dev/cradova)
 
-[Cradova](https://github.com/Codedynasty-dev/cradova) - Empowering the creation of Single Page Applications and PWAs.
-Fast, simple, and modern – designed for high-performance web apps.
+<br>
+
+- **[Exabase DBMS](https://github.com/Codedynasty-dev/Exabase)**  
+  _Enabling seamless scaling and data consistency in a distributed world._  
+  Think of Exabase as a symphony of nodes, each playing in perfect harmony—like emergent behavior in complex systems. This NoSQL database delivers performance and reliability, ready to power the data-driven future. thats said, it's still in active development.
+
+<br>
+<br>
 
 [![Exabase DBMS](https://github-readme-stats.vercel.app/api/pin/?username=Codedynasty-dev&repo=Exabase)](https://github.com/Codedynasty-dev/Exabase)
 
-[Exabase DBMS](https://github.com/Codedynasty-dev/Exabase) - A scaling focused distributed nosql database with good performance and strong data consistency.
+<br>
+
+- **[JetPath](https://github.com/Codedynasty-dev/JetPath)**  
+  _Accelerating server-side development with minimalist power._  
+  JetPath is simplicity and blazingly speed for server-side applications— Built for Node, Deno, and Bun.js.
+  it makes server-side coding fast and fun. Ready to speed up your backend? Let’s make it happen!
+
+<br>
+<br>
 
 [![JetPath](https://github-readme-stats.vercel.app/api/pin/?username=Codedynasty-dev&repo=JetPath)](https://github.com/Codedynasty-dev/JetPath)
 
-[JetPath](https://github.com/Codedynasty-dev/JetPath) - A fast and minimalist framework for Node, Deno and Bun.js. Embrace a new server app DX with speed included.
+<br>
+<br>
 
-## 📬 Get in Touch
+## My Approach
 
+Great software blends creativity and precision. I tackle every project with a scientist’s curiosity—experimenting, exploring, refining and getting user feedback, delivering useful solutions to problems. Collaboration fuels me; I thrive when ideas flow freely and innovation becomes a team effort. Let’s work together!
+
+<br>
+<br>
+
+## What’s Cooking?
+
+- Building tools that empower creators and techies.
+- Diving into distributed systems and performance optimization.
+- Exploring AI’s intersection with software to craft smarter solutions.  
+  I’m always learning, always evolving—because in tech, standing still isn’t an option.
+
+<br>
+<br>
+
+## 📬 Let’s Connect and Create!
+
+Got a bold idea, a tricky problem, or just want to geek out over code? hit me on my socials.
+<br>
+<br>
+
+<div class="flex gap-2">
 <a href="https://www.twitter.com/fridaycandour" alt="Follow Me on Twitter"> 
     <img src="https://img.shields.io/badge/twitter-%231DA1F2.svg?&style=for-the-badge&logo=twitter&logoColor=white" />
 </a>
 <a href="https://www.linkedin.com/in/friday-candour-8a18011a5/" alt="Connect on LinkedIn"> 
   <img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />
-</a>&nbsp;
+</a>
 <a href="mailto:fridaycandours@gmail.com">
   <img src="https://img.shields.io/badge/email me-%23D14836.svg?&style=for-the-badge&logo=gmail&logoColor=white" />
-</a>&nbsp;&nbsp;
-
+</a>
 <a href="https://api.whatsapp.com/send?phone=2348166948755&text=Hello%20Friday,%20I%20got%20your%20contact%20from%20your%20Github%20profile" alt="Connect on Whatsapp"> 
     <img src="https://img.shields.io/badge/WHATSAPP-%2325D366.svg?&style=for-the-badge&logo=whatsapp&logoColor=white" />
 </a>
+</div>
 
-<!-- links to your social media accounts -->
+<br>
+<br>
 
-[1]: https://mobile.twitter.com/fridaycandour
-[2]: https://github.com/fridaycandour
-[3]: https://www.linkedin.com/in/friday-candour-8a18011a5
+## 🚀 Join My Journey
 
-## 💡 Currently...
+If my work sparks something in you, let’s amplify it together! Star my repos, share your feedback, or partner with me to reshape the future. Your support drives innovation—.
 
-Building innovative tools for the tech ecosystem, with an insatiable appetite for learning.
+<br>
 
-## 👯 Collaboration & Opportunities
-
-- 🌟 Open to collaborations on ambitious projects.
-- 🔍 Actively seeking job opportunities to contribute to impactful solutions and problem-solving businesses.
-
-⭐ Support My Work
-
-If you're excited about my journey and the projects I've built, consider supporting me! Contributions, feedback, and collaborations are always welcome. Let's reshape the future together. 🚀
+**_"Infinite scrolling won't solve your tech debt - I will."_**
 
 </docmach>
