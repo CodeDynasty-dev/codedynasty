@@ -9,6 +9,8 @@ author_img: https://media2.dev.to/dynamic/image/width=320,height=320,fit=cover,g
 image: https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fijazzsrohxrdc5h5ixxf.jpeg;
 " >
 
+<docmach type="function" params="tags: blockchain, consensus, decentralization, crypto, scalability;" file="fragments/tags.js" />
+ 
 As important as having a good CV is, having a place showing the work you are doing, or you have done might be more important. If you only have it on a repo on Github or saved on your laptop, it’s no good if you don’t show it.
 
 It might be scary at first, and you might feel unsure what you have is worth sharing but it’s for different reasons:

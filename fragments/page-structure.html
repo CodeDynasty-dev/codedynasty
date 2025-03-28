@@ -159,53 +159,48 @@
             <div class="blog-content prose" style="color: var(--text-color)">
               {{ content }}
             </div>
-            <!-- Newsletter Signup -->
-            <section class="container mx-auto px-4 md:px-6 mb-20">
-              <div
-                class="rounded-lg p-6 md:p-12"
-                style="background-color: var(--card-bg)"
+     
+    <!-- Newsletter Section -->
+    <section class="container max-w-4xl mx-auto px-4 md:px-6 mb-20">
+      <div
+        class="rounded-lg p-6 md:p-12"
+        style="background-color: var(--card-bg)"
+      >
+        <div class="flex flex-col md:flex-row items-center">
+          <div class="flex-1 text-center md:text-left mb-6 md:mb-0 md:mr-8">
+            <h2
+              class="text-2xl md:text-3xl font-bold mb-4 brand-font"
+              style="color: var(--text-color)"
+            >
+              SUBSCRIBE<span style="color: var(--primary-color)">_</span>
+            </h2>
+            <p style="color: var(--text-secondary)" class="mb-4">
+              Get the latest code snippets and tech insights delivered to your
+              inbox
+            </p>
+            <form class="flex flex-col sm:flex-row gap-3">
+              <input
+                type="email"
+                placeholder="your@email.com"
+                required
+                class="flex-1 px-4 py-3 rounded-lg"
+                style="
+                  background-color: rgba(255, 255, 255, 0.05);
+                  color: var(--text-color);
+                "
+              />
+              <button
+                type="submit"
+                class="px-6 py-3 rounded-lg font-bold whitespace-nowrap"
+                style="background-color: var(--primary-color); color: #000"
               >
-                <div class="flex flex-col md:flex-row items-center">
-                  <div
-                    class="flex-1 text-center md:text-left mb-6 md:mb-0 md:mr-8"
-                  >
-                    <h2
-                      class="text-2xl md:text-3xl font-bold mb-4 brand-font"
-                      style="color: var(--text-color)"
-                    >
-                      SUBSCRIBE<span style="color: var(--primary-color)"
-                        >_</span
-                      >
-                    </h2>
-                    <p style="color: var(--text-secondary)" class="mb-4">
-                      Get the latest code snippets and tech insights delivered
-                      to your inbox
-                    </p>
-                    <form class="flex flex-col sm:flex-row gap-3">
-                      <input
-                        type="email"
-                        placeholder="your@email.com"
-                        required
-                        class="flex-1 px-4 py-3 rounded-lg"
-                        style="
-                          background-color: rgba(255, 255, 255, 0.05);
-                          color: var(--text-color);
-                        "
-                      />
-                      <button
-                        type="submit"
-                        class="px-6 py-3 rounded-lg font-bold whitespace-nowrap"
-                        style="
-                          background-color: var(--primary-color);
-                          color: #000;
-                        "
-                      >
-                        EXECUTE( )
-                      </button>
-                    </form>
-                  </div>
-                </div>
-              </div>
+                EXECUTE( )
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
             </section>
 
             <!-- Comment Section -->

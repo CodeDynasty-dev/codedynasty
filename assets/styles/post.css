@@ -96,6 +96,7 @@ h2 {
 .post li {
   list-style: disc;
   margin: 4px 0;
+  list-style-position: inside;
 }
 
 .post a {

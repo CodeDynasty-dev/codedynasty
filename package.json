@@ -22,6 +22,6 @@
     "assets-folder": "./assets"
   },
   "dependencies": {
-    "docmach": "^1.0.3"
+    "docmach": "file:../../../zips/docmach-1.0.3.tgz"
   }
 }

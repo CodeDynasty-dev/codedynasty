@@ -270,12 +270,7 @@
 
           <!-- Systems Section -->
           <div style="background-color: var(--card-bg)" class="p-8 rounded-lg">
-            <h2
-              class="text-3xl font-bold mb-8 brand-font"
-              style="color: var(--text-color)"
-            >
-              AI<span style="color: var(--primary-color)">.</span>ML
-            </h2>
+          
             <div class="space-y-6">
               <a href="/posts/welcome.html" class="block group">
                 <article class="flex gap-4 items-start group">
@@ -830,50 +825,48 @@
         </div>
       </section>
 
-      <!-- Newsletter Section -->
-      <section class="container mx-auto px-6 mb-20">
-        <div
-          style="background-color: var(--card-bg)"
-          class="rounded-lg p-12 text-center relative overflow-hidden"
-        >
-          <div class="absolute inset-0 grid-line-bg opacity-30"></div>
-          <div class="relative z-10">
+    
+    <!-- Newsletter Section -->
+    <section class="container max-w-4xl mx-auto px-4 md:px-6 mb-20">
+      <div
+        class="rounded-lg p-6 md:p-12"
+        style="background-color: var(--card-bg)"
+      >
+        <div class="flex flex-col md:flex-row items-center">
+          <div class="flex-1 text-center md:text-left mb-6 md:mb-0 md:mr-8">
             <h2
-              class="text-3xl font-bold mb-4 brand-font terminal-effect inline-block"
+              class="text-2xl md:text-3xl font-bold mb-4 brand-font"
               style="color: var(--text-color)"
             >
               SUBSCRIBE<span style="color: var(--primary-color)">_</span>
             </h2>
-            <p style="color: var(--text-secondary)" class="mb-8">
+            <p style="color: var(--text-secondary)" class="mb-4">
               Get the latest code snippets and tech insights delivered to your
               inbox
             </p>
-            <form id="newsletter-form" class="max-w-md mx-auto flex gap-4">
+            <form class="flex flex-col sm:flex-row gap-3">
               <input
                 type="email"
-                id="email-input"
                 placeholder="your@email.com"
                 required
-                class="flex-1 px-4 py-3 rounded-lg focus:outline-none focus:border-primary-color font-mono"
-                style="background-color: rgba(5, 5, 20, 0.7); border: 1px solid rgba(0, 255, 170, 0.3); color: var(--text-color)"
+                class="flex-1 px-4 py-3 rounded-lg"
+                style="
+                  background-color: rgba(255, 255, 255, 0.05);
+                  color: var(--text-color);
+                "
               />
               <button
                 type="submit"
-                id="subscribe-button"
-                class="button-neon hover-glow px-6 py-3 rounded-lg transition-colors font-mono"
-                style="background-color: transparent; border: 1px solid var(--primary-color); color: var(--primary-color)"
+                class="px-6 py-3 rounded-lg font-bold whitespace-nowrap"
+                style="background-color: var(--primary-color); color: #000"
               >
                 EXECUTE( )
               </button>
             </form>
-            <div id="form-feedback" class="mt-4 hidden">
-              <p style="color: var(--primary-color)">
-                <!-- Feedback message will be inserted here -->
-              </p>
-            </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
     </main>
 
     <footer
