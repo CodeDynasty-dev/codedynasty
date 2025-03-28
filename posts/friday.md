@@ -74,9 +74,11 @@ Here’s where my passion meets action. These projects showcase my engineering s
 <br>
 <br>
 
+**_No it doesn't end there. check this github [organization](https://github.com/CodeDynasty-dev)_**
+
 ## My Approach
 
-Great software blends creativity and precision. I tackle every project with a scientist’s curiosity—experimenting, exploring, refining and getting user feedback, delivering useful solutions to problems. Collaboration fuels me; I thrive when ideas flow freely and innovation becomes a team effort. Let’s work together!
+Great software is a blends of creativity and quality. I tackle every project with a test driven development, exploring, refining and getting user feedback, delivering useful solutions to problems. Collaboration fuels me; I thrive when ideas flow freely and innovation becomes a team effort. Let’s work together!
 
 <br>
 <br>

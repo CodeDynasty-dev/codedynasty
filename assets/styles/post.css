@@ -97,3 +97,8 @@ h2 {
   list-style: disc;
   margin: 4px 0;
 }
+
+.post a {
+  text-decoration: underline;
+  color: var(--primary-color);
+}
