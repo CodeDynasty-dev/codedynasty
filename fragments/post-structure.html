@@ -4,8 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CODEDYNASTY - {{title}}</title>
-
-    <link rel="shortcut icon" href="/imgs/logo-invert.png" type="image/png" />
     <link rel="stylesheet" href="/bundle.css" />
     <link rel="stylesheet" href="/styles/main.css" />
     <link rel="stylesheet" href="/styles/post.css" />
@@ -17,10 +15,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css"
     />
-    <meta
-      name="description"
-      content="Exploring next-generation consensus mechanisms and their impact on decentralized systems"
-    />
+    <meta name="description" content="{{ description }}" />
   </head>
   <body>
     <header
@@ -49,6 +44,25 @@
               ><span style="color: var(--primary-color)">DYNASTY</span>
             </span>
           </a>
+
+          <!-- search button -->
+          <button id="search-button" aria-label="search">
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="{2}"
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                style="color: var(--text-color)"
+              />
+            </svg>
+          </button>
 
           <!-- Mobile menu button -->
           <button id="mobile-menu-button" class="md:hidden" aria-label="Menu">
@@ -252,88 +266,6 @@
         <div class="flex flex-col lg:flex-row gap-8">
           <!-- Sidebar - Hidden on mobile, shown with button -->
           <aside class="hidden lg:block w-64 self-start sticky top-24">
-            <div
-              style="background-color: var(--card-bg)"
-              class="rounded-lg p-6 mb-6 neon-border"
-            >
-              <h3
-                class="text-lg font-bold mb-4 brand-font"
-                style="color: var(--text-color)"
-              >
-                TABLE OF CONTENTS
-              </h3>
-              <nav id="toc" class="toc-nav">
-                <ul class="space-y-3">
-                  <li>
-                    <a
-                      href="#introduction"
-                      class="toc-link active"
-                      style="color: var(--text-secondary)"
-                      >Introduction</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="#consensus-mechanisms"
-                      class="toc-link"
-                      style="color: var(--text-secondary)"
-                      >Consensus Mechanisms</a
-                    >
-                    <ul class="ml-4 mt-2 space-y-2">
-                      <li>
-                        <a
-                          href="#proof-of-stake"
-                          class="toc-link"
-                          style="color: var(--text-secondary)"
-                          >Proof of Stake</a
-                        >
-                      </li>
-                      <li>
-                        <a
-                          href="#proof-of-authority"
-                          class="toc-link"
-                          style="color: var(--text-secondary)"
-                          >Proof of Authority</a
-                        >
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a
-                      href="#scalability"
-                      class="toc-link"
-                      style="color: var(--text-secondary)"
-                      >Scalability Solutions</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="#sharding"
-                      class="toc-link"
-                      style="color: var(--text-secondary)"
-                      >Sharding</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="#future-directions"
-                      class="toc-link"
-                      style="color: var(--text-secondary)"
-                      >Future Directions</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="#conclusion"
-                      class="toc-link"
-                      style="color: var(--text-secondary)"
-                      >Conclusion</a
-                    >
-                  </li>
-                </ul>
-              </nav>
-            </div>
-
             <!-- Share Widget -->
             <div
               style="background-color: var(--card-bg)"
@@ -458,111 +390,9 @@
 
           <!-- Main article content -->
           <article class="flex-1 max-w-4xl post">
-            <!-- Mobile TOC Toggle -->
-            <div class="lg:hidden mb-8 red">
-              <button
-                id="mobile-toc-toggle"
-                class="w-full py-3 px-4 rounded-lg flex justify-between items-center"
-                style="
-                  background-color: var(--card-bg);
-                  color: var(--text-color);
-                "
-              >
-                <span class="font-bold">Table of Contents</span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-5 w-5"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                    clip-rule="evenodd"
-                  />
-                </svg>
-              </button>
-              <div
-                id="mobile-toc"
-                class="hidden p-4 mt-2 rounded-lg"
-                style="background-color: var(--card-bg)"
-              >
-                <nav class="toc-nav">
-                  <ul class="space-y-3">
-                    <li>
-                      <a
-                        href="#introduction"
-                        class="toc-link active"
-                        style="color: var(--text-secondary)"
-                        >Introduction</a
-                      >
-                    </li>
-                    <li>
-                      <a
-                        href="#consensus-mechanisms"
-                        class="toc-link"
-                        style="color: var(--text-secondary)"
-                        >Consensus Mechanisms</a
-                      >
-                      <ul class="ml-4 mt-2 space-y-2">
-                        <li>
-                          <a
-                            href="#proof-of-stake"
-                            class="toc-link"
-                            style="color: var(--text-secondary)"
-                            >Proof of Stake</a
-                          >
-                        </li>
-                        <li>
-                          <a
-                            href="#proof-of-authority"
-                            class="toc-link"
-                            style="color: var(--text-secondary)"
-                            >Proof of Authority</a
-                          >
-                        </li>
-                      </ul>
-                    </li>
-                    <li>
-                      <a
-                        href="#scalability"
-                        class="toc-link"
-                        style="color: var(--text-secondary)"
-                        >Scalability Solutions</a
-                      >
-                    </li>
-                    <li>
-                      <a
-                        href="#sharding"
-                        class="toc-link"
-                        style="color: var(--text-secondary)"
-                        >Sharding</a
-                      >
-                    </li>
-                    <li>
-                      <a
-                        href="#future-directions"
-                        class="toc-link"
-                        style="color: var(--text-secondary)"
-                        >Future Directions</a
-                      >
-                    </li>
-                    <li>
-                      <a
-                        href="#conclusion"
-                        class="toc-link"
-                        style="color: var(--text-secondary)"
-                        >Conclusion</a
-                      >
-                    </li>
-                  </ul>
-                </nav>
-              </div>
-            </div>
-
             <!-- Mobile floating action bar -->
             <div
-              class="lg:hidden fixed bottom-6 right-6 z-40 flex flex-col gap-3 red"
+              class="lg:hidden fixed bottom-6 right-6 z-40 flex flex-col gap-3"
             >
               <button
                 id="mobile-share-button"

@@ -5,7 +5,7 @@ time_created: Mar 28 2025;
 time_to_read: 12 min;
 title: boohoof;
 topic: boogooo;
-image: /Codedynasty.png
+image: /post-files/Codedynasty.png;
 " >
 
 # boohoo 5
@@ -20,14 +20,11 @@ image: /Codedynasty.png
 > Key information users need to know to achieve their goal.
 
 > [!WARNING]
+
 > Urgent info that needs immediate user attention to avoid problems.
 
 > [!CAUTION]
 > Advises about risks or negative outcomes of certain actions.
-
-- [x] #739
-- [ ] https://github.com/octo-org/octo-repo/issues/740
-- [ ] Add delight to the experience when all tasks are complete :tada:
 
 Here is a simple footnote[^1].
 
@@ -102,19 +99,5 @@ function recommendConsensus(requirements) {
   // Implementation details....
 }
 ```
-
-> hello world
-
-## abc
-
-- 1 2 3
-- 4 5 6
-- 7 8 9
-
-1. One
-2. Two
-3. Three
-
-> hello world
 
 </docmach>
