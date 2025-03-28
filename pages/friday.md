@@ -74,7 +74,7 @@ Here’s where my passion meets action. These projects showcase my engineering s
 <br>
 <br>
 
-**_No it doesn't end there. check this github [organization](https://github.com/CodeDynasty-dev)_**
+**_No that's not all! check out more on this github [organization](https://github.com/CodeDynasty-dev)_**
 
 ## My Approach
 
