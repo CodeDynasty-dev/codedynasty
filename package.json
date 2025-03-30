@@ -18,7 +18,6 @@
   "license": "MIT",
   "docmach": {
     "build-directory": "dist",
-    "default-template": "./templates/index.html",
     "assets-folder": "./assets"
   },
   "dependencies": {

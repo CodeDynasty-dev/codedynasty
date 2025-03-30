@@ -13,26 +13,19 @@ Imagine a world where technology doesn’t just function—it inspires.
 <br>
 
 I am Friday Candour, a tech Engineer on a mission to reshape the digital landscape.
-Ever since I first booted up a Linux machine, I’ve been hooked on the power of code to turn wild ideas into reality. Driven by curiosity and a passion for innovation, I craft tools and solutions that solve problems and spark creativity.
-<br>
-Like a scientist unraveling the deep secrets, I dive into code to push the boundaries of what’s possible
-<br>
-<br>
-—let’s create something extraordinary together!
+Ever since I first booted up a Linux machine, I’ve been hooked on the power of code to turn wild ideas into reality. Driven by curiosity and a passion for innovation, I create tools and solutions that solve problems.
 <br>
 <br>
 
 ## Technologies I Use
 
-My toolkit and my expertise are my superpower, honed for building impactful solutions:
+My toolkit and my expertise are my superpower:
 
 - **🐧 Linux**: I'm a Linux enthusiast with experience across some languages but most especially.
   - **JavaScript/TypeScript**: My go-to for crafting dynamic, user-focused web experiences in less time.
-  - **Frameworks & Libraries**: React, nextjs, Vue and angular for Frontend, Express, jetpath and bunks for robust back-ends, I build seamless applications with tools like these.
+  - **Frameworks & Libraries**: React, Nextjs, Vue and Angular for Frontend, Express, Jetpath and Bunjs for robust back-ends, I build seamless applications with tools like these.
   - **React Native & Flutter**: For building cross-platform mobile apps that feel native and perform flawlessly.
   - **Golang & Zig**: My choice for high-performance applications.
-
-These aren’t just tools—they’re the building blocks I use to turn visions into reality.
 
 <br>
 <br>
