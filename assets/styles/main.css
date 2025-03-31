@@ -257,7 +257,7 @@ h4,
 
 .glitch-text {
   position: relative;
-  display: inline;
+  display: flex;
 }
 .glitch-text span {
   width: fit-content;
