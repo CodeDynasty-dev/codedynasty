@@ -257,12 +257,19 @@ h4,
 
 .glitch-text {
   position: relative;
+  display: inline;
+}
+.glitch-text span {
+  width: fit-content;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .glitch-text:hover:after {
   content: attr(data-text);
   position: absolute;
-  left: 2px;
+  left: 0px;
   top: 0;
   color: var(--accent-color);
   overflow: hidden;
