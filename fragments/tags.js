@@ -10,7 +10,7 @@ export default function (params) {
                     color: var(--primary-color);
                   "
                 >
-                  #${tag}
+                  #${tag.trim()}
                 </a>`
             )}
             </div>`;

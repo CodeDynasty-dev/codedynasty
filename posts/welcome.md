@@ -4,7 +4,7 @@ author_title: Software developer;
 time_created: Mar 28 2025;
 time_to_read: 12 min;
 title: Getting a job in tech part;
-topic: job;
+topic: About;
 author_img: https://media2.dev.to/dynamic/image/width=320,height=320,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Fuser%2Fprofile_image%2F369301%2F4309ad1b-390e-4da6-91fc-e7929fcc3ad6.jpg;
 image: https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fijazzsrohxrdc5h5ixxf.jpeg;
 " >
