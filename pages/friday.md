@@ -2,7 +2,7 @@
  type="wrapper"
  file="fragments/page-structure.html"
  replacement="content"
-params="title:friday candour" >
+params="title:friday candour; description: Friday Candour's portfolio" >
 
 <img class="size-45 mx-auto my-12 rounded-[50%]" src="https://avatars.githubusercontent.com/u/75016347?v=4">
 
