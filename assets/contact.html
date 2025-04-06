@@ -10,6 +10,40 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     />
+    <link rel="shortcut icon" href="logo.png" type="image/png" />
+    <!-- Added inline styles for modern look -->
+    <style>
+      .hero-modern {
+        background: linear-gradient(rgba(5, 5, 16, 0.7), rgba(5, 5, 16, 0.7)),
+          url("/assets/contact-bg.jpg");
+        background-size: cover;
+        background-position: center;
+      }
+      .form-input {
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        transition: box-shadow 0.2s, border-color 0.2s;
+      }
+      .form-input:focus {
+        outline: none;
+        border-color: var(--primary-color);
+        box-shadow: 0 0 8px var(--primary-color);
+        background-color: rgba(255, 255, 255, 0.15);
+      }
+      .neon-button {
+        background: linear-gradient(
+          45deg,
+          var(--primary-color),
+          var(--secondary-color)
+        );
+        border: none;
+        box-shadow: 0 0 10px var(--primary-color);
+        transition: transform 0.2s, box-shadow 0.2s;
+      }
+      .neon-button:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 15px var(--primary-color);
+      }
+    </style>
   </head>
   <body>
     <header
@@ -95,7 +129,6 @@
                 />
               </svg>
             </a>
-
             <a
               href="/power.html"
               class="nav-link hover:text-primary-color transition-colors"
@@ -144,226 +177,102 @@
     </header>
 
     <main class="pt-20">
-      <!-- Hero Section -->
-      <section class="min-h-[24rem] relative mb-20">
+      <!-- Updated Hero Section with modern background -->
+      <section class="min-h-[38rem] relative mb-20 hero-modern">
         <div class="hero-gradient absolute inset-0 opacity-90"></div>
         <div class="absolute inset-0 grid-line-bg"></div>
         <div class="relative h-full flex items-center justify-center py-30">
           <div class="container mx-auto px-6 text-center">
-            <div class="code-block max-w-2xl lg:mx-auto mb-12 text-left">
-              <input
-                type="text"
-                placeholder="Search for title and #tags"
-                class="w-full h-full outline-none"
-              />
-            </div>
-            <a
-              href="#featured"
-              class="inline-block px-8 py-4 bg-transparent border border-solid hover-glow button-neon flex items-center gap-2 rounded-lg"
-              style="
-                border-color: var(--primary-color);
-                color: var(--primary-color);
-              "
+            <h1
+              class="text-5xl lg:text-6xl font-extrabold mb-8 tracking-tight terminal-effect inline-block"
+              style="color: #fff; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8)"
             >
-              <i class="fas fa-search" style="color: gold"></i> SEARCH
+              Get in Touch
+            </h1>
+            <p
+              class="mb-8 text-xl"
+              style="color: #eee; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8)"
+            >
+              We’re here to help. Drop us a line and we’ll respond ASAP.
+            </p>
+            <a
+              href="#contact-form"
+              class="inline-block px-8 py-4 border hover-glow button-neon flex items-center gap-2 rounded-lg neon-button"
+            >
+              CONTACT US
             </a>
           </div>
         </div>
       </section>
 
-      <!-- Categories with Featured Articles -->
-      <section class="container mx-auto px-6 mb-20">
-        <div class="flex tems-center mb-12">
-          <div
-            class="h-px bg-gradient-to-l from-transparent to-primary-color flex-grow"
-            style="
-              background-image: linear-gradient(
-                to left,
-                transparent,
-                var(--primary-color)
-              );
-            "
-          ></div>
-        </div>
-        <div class="grid grid-cols-1 gap-12">
-          <!-- Dev Section -->
-          <div style="background-color: var(--card-bg)" class="p-8 rounded-lg">
-            <div class="space-y-6">
-              <a href="/posts/welcome.html" class="block group">
-                <article class="flex gap-4 items-start group">
-                  <img
-                    src="/placeholder.png"
-                    alt="Dev article thumbnail"
-                    class="w-24 h-24 object-cover rounded"
-                  />
-                  <div>
-                    <h3
-                      class="text-xl font-bold group-hover:text-primary-color transition-colors brand-font"
-                      style="color: var(--text-color)"
-                    >
-                      Neovim: The IDE of the Future
-                    </h3>
-                    <p style="color: var(--text-secondary)" class="mt-2">
-                      How Neovim is revolutionizing code editing with its
-                      modular architecture
-                    </p>
-                  </div>
-                </article>
-              </a>
-
-              <a href="/posts/welcome.html" class="block group">
-                <article class="flex gap-4 items-start group">
-                  <img
-                    src="/placeholder.png"
-                    alt="Dev article thumbnail"
-                    class="w-24 h-24 object-cover rounded"
-                  />
-                  <div>
-                    <h3
-                      class="text-xl font-bold group-hover:text-primary-color transition-colors brand-font"
-                      style="color: var(--text-color)"
-                    >
-                      GitHub Copilot X: AI Pair Programming
-                    </h3>
-                    <p style="color: var(--text-secondary)" class="mt-2">
-                      How AI is transforming the way developers write and review
-                      code
-                    </p>
-                  </div>
-                </article>
-              </a>
-
-              <a href="/posts/welcome.html" class="block group">
-                <article class="flex gap-4 items-start group">
-                  <img
-                    src="/placeholder.png"
-                    alt="Dev article thumbnail"
-                    class="w-24 h-24 object-cover rounded"
-                  />
-                  <div>
-                    <h3
-                      class="text-xl font-bold group-hover:text-primary-color transition-colors brand-font"
-                      style="color: var(--text-color)"
-                    >
-                      Docker Evolution: The Future of Containerization
-                    </h3>
-                    <p style="color: var(--text-secondary)" class="mt-2">
-                      Exploring the latest innovations in container
-                      orchestration and management
-                    </p>
-                  </div>
-                </article>
-              </a>
-
-              <a href="/posts/welcome.html" class="block group">
-                <article class="flex gap-4 items-start group">
-                  <img
-                    src="/placeholder.png"
-                    alt="Systems article thumbnail"
-                    class="w-24 h-24 object-cover rounded"
-                  />
-                  <div>
-                    <h3
-                      class="text-xl font-bold group-hover:text-primary-color transition-colors brand-font"
-                      style="color: var(--text-color)"
-                    >
-                      Microservices: Breaking Down Monoliths
-                    </h3>
-                    <p style="color: var(--text-secondary)" class="mt-2">
-                      Best practices for transforming legacy systems into
-                      scalable microservices
-                    </p>
-                  </div>
-                </article>
-              </a>
-
-              <a href="/posts/welcome.html" class="block group">
-                <article class="flex gap-4 items-start group">
-                  <img
-                    src="/placeholder.png"
-                    alt="Systems article thumbnail"
-                    class="w-24 h-24 object-cover rounded"
-                  />
-                  <div>
-                    <h3
-                      class="text-xl font-bold group-hover:text-primary-color transition-colors brand-font"
-                      style="color: var(--text-color)"
-                    >
-                      Event-Driven Architecture: The Real-Time Revolution
-                    </h3>
-                    <p style="color: var(--text-secondary)" class="mt-2">
-                      How event-driven systems are transforming enterprise
-                      applications
-                    </p>
-                  </div>
-                </article>
-              </a>
-
-              <a href="/posts/welcome.html" class="block group">
-                <article class="flex gap-4 items-start group">
-                  <img
-                    src="/placeholder.png"
-                    alt="Systems article thumbnail"
-                    class="w-24 h-24 object-cover rounded"
-                  />
-                  <div>
-                    <h3
-                      class="text-xl font-bold group-hover:text-primary-color transition-colors brand-font"
-                      style="color: var(--text-color)"
-                    >
-                      Infrastructure as Code: The DevOps Revolution
-                    </h3>
-                    <p style="color: var(--text-secondary)" class="mt-2">
-                      How IaC is transforming the way teams manage and deploy
-                      infrastructure
-                    </p>
-                  </div>
-                </article>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Newsletter Section -->
-      <section class="container max-w-4xl mx-auto px-4 md:px-6 mb-20">
+      <!-- New, Modern Contact Form Section -->
+      <section id="contact-form" class="container mx-auto px-6 mb-20">
         <div
-          class="rounded-lg p-6 md:p-12"
-          style="background-color: var(--card-bg)"
+          class="rounded-lg p-8 md:p-12"
+          style="
+            background-color: var(--card-bg);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+          "
         >
-          <div class="flex flex-col md:flex-row items-center">
-            <div class="flex-1 text-center md:text-left mb-6 md:mb-0 md:mr-8">
-              <h2
-                class="text-2xl md:text-3xl font-bold mb-4 brand-font"
-                style="color: var(--text-color)"
-              >
-                SUBSCRIBE<span style="color: var(--primary-color)">_</span>
-              </h2>
-              <p style="color: var(--text-secondary)" class="mb-4">
-                Get the latest code snippets and tech insights delivered to your
-                inbox
-              </p>
-              <form class="flex flex-col sm:flex-row gap-3">
-                <input
-                  type="email"
-                  placeholder="your@email.com"
-                  required
-                  class="flex-1 px-4 py-3 rounded-lg"
-                  style="
-                    background-color: rgba(255, 255, 255, 0.05);
-                    color: var(--text-color);
-                  "
-                />
-                <button
-                  type="submit"
-                  class="px-6 py-3 rounded-lg font-bold whitespace-nowrap"
-                  style="background-color: var(--primary-color); color: #000"
-                >
-                  EXECUTE( )
-                </button>
-              </form>
-            </div>
-          </div>
+          <h2
+            class="text-3xl font-bold mb-6 brand-font"
+            style="color: var(--text-color)"
+          >
+            Contact Us
+          </h2>
+          <form class="flex flex-col gap-6">
+            <input
+              type="text"
+              name="name"
+              placeholder="Your Name"
+              required
+              class="form-input px-4 py-3 rounded-lg"
+              style="
+                background-color: rgba(255, 255, 255, 0.1);
+                color: var(--text-color);
+              "
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Your Email"
+              required
+              class="form-input px-4 py-3 rounded-lg"
+              style="
+                background-color: rgba(255, 255, 255, 0.1);
+                color: var(--text-color);
+              "
+            />
+            <input
+              type="text"
+              name="subject"
+              placeholder="Subject"
+              required
+              class="form-input px-4 py-3 rounded-lg"
+              style="
+                background-color: rgba(255, 255, 255, 0.1);
+                color: var(--text-color);
+              "
+            />
+            <textarea
+              name="message"
+              rows="6"
+              placeholder="Your Message"
+              required
+              class="form-input px-4 py-3 rounded-lg"
+              style="
+                background-color: rgba(255, 255, 255, 0.1);
+                color: var(--text-color);
+              "
+            ></textarea>
+            <button
+              type="submit"
+              class="px-8 py-4 rounded-lg font-bold neon-button"
+              style="color: #000"
+            >
+              Send Message
+            </button>
+          </form>
         </div>
       </section>
     </main>
@@ -566,7 +475,7 @@
           class="text-center pt-8 border-t"
           style="border-color: rgba(255, 255, 255, 0.1)"
         >
-          <p style="color: var(--text-secondary)">
+          <p style="color: var (--text-secondary)">
             &copy; 2025 CODEDYNASTY. <span class="code-text"></span>
           </p>
         </div>
