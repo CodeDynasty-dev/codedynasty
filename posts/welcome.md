@@ -1,11 +1,11 @@
 <docmach type="wrapper" file="fragments/post-structure.html" replacement="content" params="
-author:CodeDynasty Team;
-author_title: Innovation Architects;
+author:Friday Candour;
+author_title: Software Developer;
 time_created: Apr 1 2025;
 time_to_read: 8 min;
 title: Welcome to CodeDynasty: Building Modern Software for Humanity;
 topic: Community;
-author_img: /logo.png;
+author_img: https://avatars.githubusercontent.com/u/75016347;
 image: /placeholder.png;
 " >
 

@@ -5,7 +5,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Orbitron:wght@400;600;900&display=swap");
 
 :root {
-  --primary-color: #00ffaa;
+  --primary-color: #17bafb;
   --secondary-color: #0066ff;
   --accent-color: #ff00cc;
   --dark-bg: #050510;
@@ -83,12 +83,12 @@ h4,
 .hero-gradient {
   background: linear-gradient(
     135deg,
-    rgba(0, 102, 255, 0.4),
-    rgba(0, 255, 170, 0.4),
-    rgba(255, 0, 204, 0.2)
+    rgba(23, 186, 251, 0.3),
+    rgba(0, 102, 255, 0.2),
+    rgba(23, 186, 251, 0.1)
   );
-  backdrop-filter: blur(5px);
-  animation: gridGlow 5s infinite alternate;
+  backdrop-filter: blur(10px);
+  animation: gridGlow 4s ease-in-out infinite alternate;
 }
 @keyframes gridGlow {
   0% {

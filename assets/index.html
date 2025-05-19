@@ -3,14 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CODEDYNASTY</title>
+    <title>CodeDynasty</title>
     <link rel="stylesheet" href="/bundle.css" />
     <link rel="stylesheet" href="/styles/main.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-    >
-    <link rel="shortcut icon" href="logo.png" type="image/png">
+    />
+    <link rel="shortcut icon" href="logo.png" type="image/png" />
   </head>
   <body>
     <header
@@ -22,16 +22,26 @@
           <a
             href="/"
             class="text-2xl font-bold brand-font flex items-center group"
-            aria-label="CODEDYNASTY Home"
+            aria-label="CodeDynasty Home"
           >
-          <img src="logo.png" class="size-12 md:mr-1 glitch-text gap-0" data-text="C" alt="">
-            <span class="glitch-text" data-text="ODEDYNASTY">
-              <span class="text-white">ODE</span>
-              <span class="!text-[#00ffaa]">D</span> 
-              <span>YNASTY</span> 
+            <img
+              src="logo.png"
+              class="size-12 md:mr-2 glitch-text gap-0"
+              data-text="C"
+              alt=""
+            />
+            <span class="glitch-text text-[#17bafb]" data-text="ODEDYNASTY">
+              <span>ode</span>
+              <span>D</span>
+              <span>ynasty</span>
             </span>
           </a>
-   <a href="/search.html" class="md:hidden" id="search-button" aria-label="search">
+          <a
+            href="/search.html"
+            class="md:hidden"
+            id="search-button"
+            aria-label="search"
+          >
             <svg
               class="w-6 h-6"
               fill="none"
@@ -69,38 +79,42 @@
 
           <!-- Desktop navigation -->
           <div class="hidden md:flex gap-8">
-               <a href="/search.html" id="search-button" aria-label="search">
-            <svg
-              class="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
+            <a href="/search.html" id="search-button" aria-label="search">
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="{2}"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                  style="color: var(--text-color)"
+                />
+              </svg>
+            </a>
+            <a
+              href="/power.html"
+              class="nav-link hover:text-primary-color transition-colors"
+              style="color: var(--text-color)"
+              >VIDEOS</a
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="{2}"
-                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                style="color: var(--text-color)"
-              />
-            </svg>
-          </a>
-          <a
-          href="/power.html"
-          class="nav-link hover:text-primary-color transition-colors"
-          style="color: var(--text-color)"
-          >VIDEOS</a>
-          <a
-            href="https://github.com/CodeDynasty-dev"
-            class="nav-link hover:text-primary-color transition-colors"
-            style="color: var(--text-color)"
-          >GITHUB</a>
-          <a
-          href="/contact.html"
-          class="nav-link hover:text-primary-color transition-colors"
-          style="color: var(--text-color)"
-          >CONTACT</a>
+            <a
+              href="https://github.com/CodeDynasty-dev"
+              class="nav-link hover:text-primary-color transition-colors"
+              style="color: var(--text-color)"
+              target="_blank"
+              >GITHUB</a
+            >
+            <a
+              href="/contact.html"
+              class="nav-link hover:text-primary-color transition-colors"
+              style="color: var(--text-color)"
+              >CONTACT</a
+            >
           </div>
         </div>
 
@@ -108,20 +122,24 @@
         <div id="mobile-menu" class="hidden mt-4">
           <div class="flex flex-col gap-4">
             <a
-            href="/power.html"
-            class="nav-link hover:text-primary-color transition-colors"
-            style="color: var(--text-color)"
-            >VIDEOS</a>
+              href="/power.html"
+              class="nav-link hover:text-primary-color transition-colors"
+              style="color: var(--text-color)"
+              >VIDEOS</a
+            >
             <a
               href="https://github.com/CodeDynasty-dev"
               class="nav-link hover:text-primary-color transition-colors"
               style="color: var(--text-color)"
-            >GITHUB</a>
+              target="_blank"
+              >GITHUB</a
+            >
             <a
               href="/contact.html"
               class="nav-link hover:text-primary-color transition-colors"
               style="color: var(--text-color)"
-            >CONTACT</a>
+              >CONTACT</a
+            >
           </div>
         </div>
       </nav>
@@ -141,9 +159,7 @@
               Building modern software for humanity
             </h1>
             <div class="code-block max-w-2xl lg:mx-auto mb-12 text-left">
-              <pre
-                class="whitespace-pre-wrap"
-              >
+              <pre class="whitespace-pre-wrap">
 <span class="text-yellow-400">class</span> <span class="text-orange-400">Innovation</span> {
 <span class="text-blue-400">public:</span>
     <span class="text-blue-400">std::string</span> build(<span class="text-blue-400">const std::string&</span> vision) {
@@ -153,13 +169,15 @@
 
 <span class="text-orange-400">Innovation</span> innovation;
 <span class="text-blue-400">return</span> innovation.build(<span class="text-green-400">"humanity"</span>);
-        </pre
-              >
+        </pre>
             </div>
             <a
               href="#featured"
               class="inline-block px-8 py-4 bg-transparent border border-solid hover-glow button-neon flex items-center gap-2 rounded-lg"
-              style="border-color: var(--primary-color); color: var(--primary-color)"
+              style="
+                border-color: var(--primary-color);
+                color: var(--primary-color);
+              "
             >
               <i class="fas fa-crown" style="color: gold"></i> GET STARTED
             </a>
@@ -172,9 +190,14 @@
         <div class="flex items-center mb-12">
           <div
             class="h-px bg-gradient-to-r from-transparent to-primary-color flex-grow"
-            style="background-image: linear-gradient(to right, transparent, var(--primary-color))"
-          >
-          </div>
+            style="
+              background-image: linear-gradient(
+                to right,
+                transparent,
+                var(--primary-color)
+              );
+            "
+          ></div>
           <h2
             class="text-4xl font-bold px-4 brand-font"
             style="color: var(--text-color)"
@@ -183,14 +206,18 @@
           </h2>
           <div
             class="h-px bg-gradient-to-l from-transparent to-primary-color flex-grow"
-            style="background-image: linear-gradient(to left, transparent, var(--primary-color))"
-          >
-          </div>
+            style="
+              background-image: linear-gradient(
+                to left,
+                transparent,
+                var(--primary-color)
+              );
+            "
+          ></div>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
           <!-- Dev Section -->
           <div style="background-color: var(--card-bg)" class="p-8 rounded-lg">
-          
             <div class="space-y-6">
               <a href="/posts/welcome.html" class="block group">
                 <article class="flex gap-4 items-start group">
@@ -262,7 +289,6 @@
 
           <!-- Systems Section -->
           <div style="background-color: var(--card-bg)" class="p-8 rounded-lg">
-          
             <div class="space-y-6">
               <a href="/posts/welcome.html" class="block group">
                 <article class="flex gap-4 items-start group">
@@ -335,13 +361,18 @@
       </section>
 
       <!-- Latest News Grid -->
-      <section class="container mx-auto px-6 mb-20">
+      <!-- <section class="container mx-auto px-6 mb-20">
         <div class="flex items-center mb-12">
           <div
             class="h-px bg-gradient-to-r from-transparent to-primary-color flex-grow"
-            style="background-image: linear-gradient(to right, transparent, var(--primary-color))"
-          >
-          </div>
+            style="
+              background-image: linear-gradient(
+                to right,
+                transparent,
+                var(--primary-color)
+              );
+            "
+          ></div>
           <h2
             class="text-4xl font-bold px-4 brand-font"
             style="color: var(--text-color)"
@@ -350,9 +381,14 @@
           </h2>
           <div
             class="h-px bg-gradient-to-l from-transparent to-primary-color flex-grow"
-            style="background-image: linear-gradient(to left, transparent, var(--primary-color))"
-          >
-          </div>
+            style="
+              background-image: linear-gradient(
+                to left,
+                transparent,
+                var(--primary-color)
+              );
+            "
+          ></div>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
@@ -372,7 +408,8 @@
                 <span
                   style="color: var(--primary-color)"
                   class="text-sm font-mono"
-                >RUNTIME.SYSTEMS</span>
+                  >RUNTIME.SYSTEMS</span
+                >
                 <h3
                   class="text-xl font-bold my-2 group-hover:text-primary-color transition-colors brand-font"
                   style="color: var(--text-color)"
@@ -383,7 +420,8 @@
                   datetime="2025-03-15"
                   class="text-sm"
                   style="color: var(--text-secondary)"
-                >March 15, 2025</time>
+                  >March 15, 2025</time
+                >
               </div>
             </a>
           </article>
@@ -404,7 +442,8 @@
                 <span
                   style="color: var(--primary-color)"
                   class="text-sm font-mono"
-                >GRAPHQL.API</span>
+                  >GRAPHQL.API</span
+                >
                 <h3
                   class="text-xl font-bold my-2 group-hover:text-primary-color transition-colors brand-font"
                   style="color: var(--text-color)"
@@ -415,7 +454,8 @@
                   datetime="2025-03-14"
                   class="text-sm"
                   style="color: var(--text-secondary)"
-                >March 14, 2025</time>
+                  >March 14, 2025</time
+                >
               </div>
             </a>
           </article>
@@ -436,7 +476,8 @@
                 <span
                   style="color: var(--primary-color)"
                   class="text-sm font-mono"
-                >SERVERLESS.CLOUD</span>
+                  >SERVERLESS.CLOUD</span
+                >
                 <h3
                   class="text-xl font-bold my-2 group-hover:text-primary-color transition-colors brand-font"
                   style="color: var(--text-color)"
@@ -447,7 +488,8 @@
                   datetime="2025-03-13"
                   class="text-sm"
                   style="color: var(--text-secondary)"
-                >March 13, 2025</time>
+                  >March 13, 2025</time
+                >
               </div>
             </a>
           </article>
@@ -468,7 +510,8 @@
                 <span
                   style="color: var(--primary-color)"
                   class="text-sm font-mono"
-                >RUST.SYSTEMS</span>
+                  >RUST.SYSTEMS</span
+                >
                 <h3
                   class="text-xl font-bold my-2 group-hover:text-primary-color transition-colors brand-font"
                   style="color: var(--text-color)"
@@ -479,15 +522,16 @@
                   datetime="2025-03-12"
                   class="text-sm"
                   style="color: var(--text-secondary)"
-                >March 12, 2025</time>
+                  >March 12, 2025</time
+                >
               </div>
             </a>
           </article>
         </div>
-      </section>
+      </section> -->
 
       <!-- Code Tutorials Section -->
-      <section id="featured" class="container mx-auto px-6 mb-20">
+      <!-- <section id="featured" class="container mx-auto px-6 mb-20">
         <div class="flex items-center mb-12">
           <div
             class="h-px bg-gradient-to-r from-transparent to-primary-color flex-grow"
@@ -659,15 +703,20 @@
             </a>
           </div>
         </div>
-      </section>
+      </section> -->
       <!-- Featured Stories -->
       <section class="container mx-auto px-6 mb-20">
         <div class="flex items-center mb-12">
           <div
             class="h-px bg-gradient-to-r from-transparent to-primary-color flex-grow"
-            style="background-image: linear-gradient(to right, transparent, var(--primary-color))"
-          >
-          </div>
+            style="
+              background-image: linear-gradient(
+                to right,
+                transparent,
+                var(--primary-color)
+              );
+            "
+          ></div>
           <h2
             class="text-4xl font-bold px-4 brand-font"
             style="color: var(--text-color)"
@@ -676,9 +725,14 @@
           </h2>
           <div
             class="h-px bg-gradient-to-l from-transparent to-primary-color flex-grow"
-            style="background-image: linear-gradient(to left, transparent, var(--primary-color))"
-          >
-          </div>
+            style="
+              background-image: linear-gradient(
+                to left,
+                transparent,
+                var(--primary-color)
+              );
+            "
+          ></div>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -690,9 +744,14 @@
               <div class="aspect-video overflow-hidden relative">
                 <div
                   class="absolute inset-0 bg-gradient-to-b from-transparent to-card-bg z-10"
-                  style="background-image: linear-gradient(to bottom, transparent 60%, var(--card-bg) 100%)"
-                >
-                </div>
+                  style="
+                    background-image: linear-gradient(
+                      to bottom,
+                      transparent 60%,
+                      var(--card-bg) 100%
+                    );
+                  "
+                ></div>
                 <img
                   src="/placeholder.png"
                   alt="Neural Networks"
@@ -703,7 +762,8 @@
                 <span
                   style="color: var(--primary-color)"
                   class="text-sm tracking-wider font-mono"
-                >NEURAL.NETWORKS</span>
+                  >NEURAL.NETWORKS</span
+                >
                 <h3
                   class="text-2xl font-bold mb-4 group-hover:text-primary-color transition-colors brand-font"
                   style="color: var(--text-color)"
@@ -734,9 +794,14 @@
               <div class="aspect-video overflow-hidden relative">
                 <div
                   class="absolute inset-0 bg-gradient-to-b from-transparent to-card-bg z-10"
-                  style="background-image: linear-gradient(to bottom, transparent 60%, var(--card-bg) 100%)"
-                >
-                </div>
+                  style="
+                    background-image: linear-gradient(
+                      to bottom,
+                      transparent 60%,
+                      var(--card-bg) 100%
+                    );
+                  "
+                ></div>
                 <img
                   src="/placeholder.png"
                   alt="Quantum Computing"
@@ -747,7 +812,8 @@
                 <span
                   style="color: var(--primary-color)"
                   class="text-sm tracking-wider font-mono"
-                >QUANTUM.SYSTEMS</span>
+                  >QUANTUM.SYSTEMS</span
+                >
                 <h3
                   class="text-2xl font-bold mb-4 group-hover:text-primary-color transition-colors brand-font"
                   style="color: var(--text-color)"
@@ -779,9 +845,14 @@
               <div class="aspect-video overflow-hidden relative">
                 <div
                   class="absolute inset-0 bg-gradient-to-b from-transparent to-card-bg z-10"
-                  style="background-image: linear-gradient(to bottom, transparent 60%, var(--card-bg) 100%)"
-                >
-                </div>
+                  style="
+                    background-image: linear-gradient(
+                      to bottom,
+                      transparent 60%,
+                      var(--card-bg) 100%
+                    );
+                  "
+                ></div>
                 <img
                   src="/placeholder.png"
                   alt="Blockchain Architecture"
@@ -792,7 +863,8 @@
                 <span
                   style="color: var(--primary-color)"
                   class="text-sm tracking-wider font-mono"
-                >DISTRIBUTED.LEDGER</span>
+                  >DISTRIBUTED.LEDGER</span
+                >
                 <h3
                   class="text-2xl font-bold mb-4 group-hover:text-primary-color transition-colors brand-font"
                   style="color: var(--text-color)"
@@ -817,53 +889,55 @@
         </div>
       </section>
 
-    
-    <!-- Newsletter Section -->
-    <section class="container max-w-4xl mx-auto px-4 md:px-6 mb-20">
-      <div
-        class="rounded-lg p-6 md:p-12"
-        style="background-color: var(--card-bg)"
-      >
-        <div class="flex flex-col md:flex-row items-center">
-          <div class="flex-1 text-center md:text-left mb-6 md:mb-0 md:mr-8">
-            <h2
-              class="text-2xl md:text-3xl font-bold mb-4 brand-font"
-              style="color: var(--text-color)"
-            >
-              SUBSCRIBE<span style="color: var(--primary-color)">_</span>
-            </h2>
-            <p style="color: var(--text-secondary)" class="mb-4">
-              Get the latest code snippets and tech insights delivered to your
-              inbox
-            </p>
-            <form class="flex flex-col sm:flex-row gap-3">
-              <input
-                type="email"
-                placeholder="your@email.com"
-                required
-                class="flex-1 px-4 py-3 rounded-lg"
-                style="
-                  background-color: rgba(255, 255, 255, 0.05);
-                  color: var(--text-color);
-                "
-              />
-              <button
-                type="submit"
-                class="px-6 py-3 rounded-lg font-bold whitespace-nowrap"
-                style="background-color: var(--primary-color); color: #000"
+      <!-- Newsletter Section -->
+      <section class="container max-w-4xl mx-auto px-4 md:px-6 mb-20">
+        <div
+          class="rounded-lg p-6 md:p-12"
+          style="background-color: var(--card-bg)"
+        >
+          <div class="flex flex-col md:flex-row items-center">
+            <div class="flex-1 text-center md:text-left mb-6 md:mb-0 md:mr-8">
+              <h2
+                class="text-2xl md:text-3xl font-bold mb-4 brand-font"
+                style="color: var(--text-color)"
               >
-                EXECUTE( )
-              </button>
-            </form>
+                SUBSCRIBE<span style="color: var(--primary-color)">_</span>
+              </h2>
+              <p style="color: var(--text-secondary)" class="mb-4">
+                Get the latest code snippets and tech insights delivered to your
+                inbox
+              </p>
+              <form class="flex flex-col sm:flex-row gap-3">
+                <input
+                  type="email"
+                  placeholder="your@email.com"
+                  required
+                  class="flex-1 px-4 py-3 rounded-lg"
+                  style="
+                    background-color: rgba(255, 255, 255, 0.05);
+                    color: var(--text-color);
+                  "
+                />
+                <button
+                  type="submit"
+                  class="px-6 py-3 rounded-lg font-bold whitespace-nowrap"
+                  style="background-color: var(--primary-color); color: #000"
+                >
+                  EXECUTE( )
+                </button>
+              </form>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
     </main>
 
     <footer
       class="border-t py-12"
-      style="border-color: rgba(255, 255, 255, 0.1); background-color: rgba(5, 5, 16, 0.9)"
+      style="
+        border-color: rgba(255, 255, 255, 0.1);
+        background-color: rgba(5, 5, 16, 0.9);
+      "
     >
       <div class="container mx-auto px-6">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
@@ -875,7 +949,7 @@
               ABOUT US
             </h3>
             <p style="color: var(--text-secondary)" class="mb-4">
-              CODEDYNASTY explores the cutting edge of programming, system
+              CodeDynasty explores the cutting edge of programming, system
               architecture, and technological innovation.
             </p>
             <div class="flex space-x-4">
@@ -942,35 +1016,40 @@
                   href="#"
                   class="footer-link hover:text-primary-color transition-colors"
                   style="color: var(--text-secondary)"
-                >Development</a>
+                  >Development</a
+                >
               </li>
               <li class="pl-4">
                 <a
                   href="#"
                   class="footer-link hover:text-primary-color transition-colors"
                   style="color: var(--text-secondary)"
-                >System Architecture</a>
+                  >System Architecture</a
+                >
               </li>
               <li class="pl-4">
                 <a
                   href="#"
                   class="footer-link hover:text-primary-color transition-colors"
                   style="color: var(--text-secondary)"
-                >Future Tech</a>
+                  >Future Tech</a
+                >
               </li>
               <li class="pl-4">
                 <a
                   href="#"
                   class="footer-link hover:text-primary-color transition-colors"
                   style="color: var(--text-secondary)"
-                >Tutorials</a>
+                  >Tutorials</a
+                >
               </li>
               <li class="pl-4">
                 <a
                   href="#"
                   class="footer-link hover:text-primary-color transition-colors"
                   style="color: var(--text-secondary)"
-                >AI & Machine Learning</a>
+                  >AI & Machine Learning</a
+                >
               </li>
             </ul>
           </div>
@@ -987,35 +1066,40 @@
                   href="#"
                   class="footer-link hover:text-primary-color transition-colors"
                   style="color: var(--text-secondary)"
-                >Documentation</a>
+                  >Documentation</a
+                >
               </li>
               <li class="pl-4">
                 <a
                   href="#"
                   class="footer-link hover:text-primary-color transition-colors"
                   style="color: var(--text-secondary)"
-                >Code Samples</a>
+                  >Code Samples</a
+                >
               </li>
               <li class="pl-4">
                 <a
                   href="#"
                   class="footer-link hover:text-primary-color transition-colors"
                   style="color: var(--text-secondary)"
-                >API References</a>
+                  >API References</a
+                >
               </li>
               <li class="pl-4">
                 <a
                   href="#"
                   class="footer-link hover:text-primary-color transition-colors"
                   style="color: var(--text-secondary)"
-                >GitHub Repositories</a>
+                  >GitHub Repositories</a
+                >
               </li>
               <li class="pl-4">
                 <a
                   href="#"
                   class="footer-link hover:text-primary-color transition-colors"
                   style="color: var(--text-secondary)"
-                >Community Forum</a>
+                  >Community Forum</a
+                >
               </li>
             </ul>
           </div>
@@ -1033,7 +1117,10 @@
             <a
               href="#"
               class="inline-block px-6 py-3 rounded-lg hover-glow button-neon font-mono"
-              style="border: 1px solid var(--primary-color); color: var(--primary-color)"
+              style="
+                border: 1px solid var(--primary-color);
+                color: var(--primary-color);
+              "
             >
               CONNECT( )
             </a>
@@ -1044,8 +1131,7 @@
           style="border-color: rgba(255, 255, 255, 0.1)"
         >
           <p style="color: var(--text-secondary)">
-            &copy; 2025 CODEDYNASTY. <span class="code-text"
-            ></span>
+            &copy; 2025 CodeDynasty. <span class="code-text"></span>
           </p>
         </div>
       </div>

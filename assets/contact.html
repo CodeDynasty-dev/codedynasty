@@ -55,18 +55,19 @@
           <a
             href="/"
             class="text-2xl font-bold brand-font flex items-center group"
-            aria-label="CODEDYNASTY Home"
+            aria-label="CodeDynasty Home"
           >
             <img
               src="logo.png"
-              class="size-12 md:mr-1 glitch-text gap-0"
+              class="size-12 md:mr-2 glitch-text gap-0"
               data-text="C"
               alt=""
             />
-            <span class="glitch-text" data-text="ODEDYNASTY">
-              <span class="text-white">ODE</span>
-              <span class="!text-[#00ffaa]">D</span>
-              <span>YNASTY</span>
+            <span class="glitch-text text-[#17bafb]" data-text="ODEDYNASTY">
+              <span>ode</span>
+
+              <span>D</span>
+              <span>ynasty</span>
             </span>
           </a>
           <a
@@ -245,6 +246,261 @@
               Send Message
             </button>
           </form>
+        </div>
+      </section>
+      <!-- Extra Features Section: Interactive Map and Live Chat -->
+      <!-- <section id="contact-extra" class="container mx-auto px-6 mb-20">
+        <div
+          class="rounded-lg p-8 md:p-12"
+          style="
+            background-color: var(--card-bg);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+          "
+        >
+          <h2
+            class="text-3xl font-bold mb-6 brand-font"
+            style="color: var(--text-color)"
+          >
+            Our Location
+          </h2> 
+          <div style="width: 100%; height: 300px">
+            <iframe
+              width="100%"
+              height="100%"
+              frameborder="0"
+              style="border: 0"
+              src="https://www.google.com/maps/embed/v1/place?q=ugbowo&key=AIzaSyAOVYRIgupAurZup5y1PRh8Ismb1A3lLao"
+              allowfullscreen
+            >
+            </iframe>
+          </div>
+        </div>
+      </section> -->
+
+      <!-- Featured Stories -->
+      <section class="container mx-auto px-6 mb-20">
+        <div class="flex items-center mb-12">
+          <div
+            class="h-px bg-gradient-to-r from-transparent to-primary-color flex-grow"
+            style="
+              background-image: linear-gradient(
+                to right,
+                transparent,
+                var(--primary-color)
+              );
+            "
+          ></div>
+          <h2
+            class="text-4xl font-bold px-4 brand-font"
+            style="color: var(--text-color)"
+          >
+            FEATURED ALGORITHMS
+          </h2>
+          <div
+            class="h-px bg-gradient-to-l from-transparent to-primary-color flex-grow"
+            style="
+              background-image: linear-gradient(
+                to left,
+                transparent,
+                var(--primary-color)
+              );
+            "
+          ></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <article
+            class="group cursor-pointer card-3d rounded-lg overflow-hidden"
+            style="background-color: var(--card-bg)"
+          >
+            <div class="card-3d-inner">
+              <div class="aspect-video overflow-hidden relative">
+                <div
+                  class="absolute inset-0 bg-gradient-to-b from-transparent to-card-bg z-10"
+                  style="
+                    background-image: linear-gradient(
+                      to bottom,
+                      transparent 60%,
+                      var(--card-bg) 100%
+                    );
+                  "
+                ></div>
+                <img
+                  src="/placeholder.png"
+                  alt="Neural Networks"
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+              </div>
+              <div class="p-6 relative">
+                <span
+                  style="color: var(--primary-color)"
+                  class="text-sm tracking-wider font-mono"
+                  >NEURAL.NETWORKS</span
+                >
+                <h3
+                  class="text-2xl font-bold mb-4 group-hover:text-primary-color transition-colors brand-font"
+                  style="color: var(--text-color)"
+                >
+                  Generative Adversarial Networks: The Future of AI Development
+                </h3>
+                <p style="color: var(--text-secondary)" class="mb-4">
+                  How GANs are revolutionizing the way developers approach
+                  machine learning models
+                </p>
+                <div
+                  class="flex items-center text-sm"
+                  style="color: var(--text-secondary)"
+                >
+                  <span>By Sarah Chen</span>
+                  <span class="mx-2">•</span>
+                  <time datetime="2025-03-15">March 15, 2025</time>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="group cursor-pointer card-3d rounded-lg overflow-hidden"
+            style="background-color: var(--card-bg)"
+          >
+            <div class="card-3d-inner">
+              <div class="aspect-video overflow-hidden relative">
+                <div
+                  class="absolute inset-0 bg-gradient-to-b from-transparent to-card-bg z-10"
+                  style="
+                    background-image: linear-gradient(
+                      to bottom,
+                      transparent 60%,
+                      var(--card-bg) 100%
+                    );
+                  "
+                ></div>
+                <img
+                  src="/placeholder.png"
+                  alt="Quantum Computing"
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+              </div>
+              <div class="p-6 relative">
+                <span
+                  style="color: var(--primary-color)"
+                  class="text-sm tracking-wider font-mono"
+                  >QUANTUM.SYSTEMS</span
+                >
+                <h3
+                  class="text-2xl font-bold mb-4 group-hover:text-primary-color transition-colors brand-font"
+                  style="color: var(--text-color)"
+                >
+                  Quantum Computing: Breaking the Barriers of Classical
+                  Computing
+                </h3>
+                <p style="color: var(--text-secondary)" class="mb-4">
+                  How quantum algorithms are solving problems deemed impossible
+                  for classical computers
+                </p>
+                <div
+                  class="flex items-center text-sm"
+                  style="color: var(--text-secondary)"
+                >
+                  <span>By Marcus Wu</span>
+                  <span class="mx-2">•</span>
+                  <time datetime="2025-03-12">March 12, 2025</time>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="group cursor-pointer card-3d rounded-lg overflow-hidden"
+            style="background-color: var(--card-bg)"
+          >
+            <div class="card-3d-inner">
+              <div class="aspect-video overflow-hidden relative">
+                <div
+                  class="absolute inset-0 bg-gradient-to-b from-transparent to-card-bg z-10"
+                  style="
+                    background-image: linear-gradient(
+                      to bottom,
+                      transparent 60%,
+                      var(--card-bg) 100%
+                    );
+                  "
+                ></div>
+                <img
+                  src="/placeholder.png"
+                  alt="Blockchain Architecture"
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+              </div>
+              <div class="p-6 relative">
+                <span
+                  style="color: var(--primary-color)"
+                  class="text-sm tracking-wider font-mono"
+                  >DISTRIBUTED.LEDGER</span
+                >
+                <h3
+                  class="text-2xl font-bold mb-4 group-hover:text-primary-color transition-colors brand-font"
+                  style="color: var(--text-color)"
+                >
+                  The Evolution of Blockchain Architecture
+                </h3>
+                <p style="color: var(--text-secondary)" class="mb-4">
+                  Exploring next-generation consensus mechanisms and their
+                  impact on decentralized systems
+                </p>
+                <div
+                  class="flex items-center text-sm"
+                  style="color: var(--text-secondary)"
+                >
+                  <span>By Elena Rodriguez</span>
+                  <span class="mx-2">•</span>
+                  <time datetime="2025-03-10">March 10, 2025</time>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Newsletter Section -->
+      <section class="container max-w-4xl mx-auto px-4 md:px-6 mb-20">
+        <div
+          class="rounded-lg p-6 md:p-12"
+          style="background-color: var(--card-bg)"
+        >
+          <div class="flex flex-col md:flex-row items-center">
+            <div class="flex-1 text-center md:text-left mb-6 md:mb-0 md:mr-8">
+              <h2
+                class="text-2xl md:text-3xl font-bold mb-4 brand-font"
+                style="color: var(--text-color)"
+              >
+                SUBSCRIBE<span style="color: var(--primary-color)">_</span>
+              </h2>
+              <p style="color: var(--text-secondary)" class="mb-4">
+                Get the latest code snippets and tech insights delivered to your
+                inbox
+              </p>
+              <form class="flex flex-col sm:flex-row gap-3">
+                <input
+                  type="email"
+                  placeholder="your@email.com"
+                  required
+                  class="flex-1 px-4 py-3 rounded-lg"
+                  style="
+                    background-color: rgba(255, 255, 255, 0.05);
+                    color: var(--text-color);
+                  "
+                />
+                <button
+                  type="submit"
+                  class="px-6 py-3 rounded-lg font-bold whitespace-nowrap"
+                  style="background-color: var(--primary-color); color: #000"
+                >
+                  EXECUTE( )
+                </button>
+              </form>
+            </div>
+          </div>
         </div>
       </section>
     </main>

@@ -37,7 +37,7 @@
             />
             <span class="glitch-text" data-text="ODEDYNASTY">
               <span class="text-white">ODE</span>
-              <span class="!text-[#00ffaa]">D</span>
+              <span class="!text-[#17bafb]">D</span>
               <span>YNASTY</span>
             </span>
           </a>
@@ -478,21 +478,31 @@
             </div>
 
             <!-- Article Content -->
-            <div class="blog-content prose" style="color: var(--text-color)">
+            <div
+              class="blog-content prose"
+              style="color: var(--text-color); margin-bottom: 5rem"
+            >
               {{ content }}
             </div>
-            <div
-              id="modern-comments"
-              data-worker-url="http://0.0.0.0:3000"
-              data-public-key="67eab341.l20MXkbl1jIq_PeZfxy--mdwHCreiofUEN2u6AwM3pA.ImpvaG5kb2VAZ21haWwuY29tIg"
-            >
-              Loading Comments...
-            </div>
+
             <script
-              src="https://cdn.jsdelivr.net/npm/commentpilot/plugin.js"
+              src="https://giscus.app/client.js"
+              data-repo="codedynasty-dev/codedynasty"
+              data-repo-id="R_kgDOOBViSg"
+              data-category="Ideas"
+              data-category-id="DIC_kwDOOBViSs4CqU7E"
+              data-mapping="pathname"
+              data-strict="1"
+              data-reactions-enabled="1"
+              data-emit-metadata="0"
+              data-input-position="top"
+              data-theme="catppuccin_macchiato"
+              data-lang="en"
+              data-loading="lazy"
+              crossorigin="anonymous"
               async
-              defer
             ></script>
+
             <!-- Related Articles -->
             <section class="mb-12">
               <h2
@@ -636,250 +646,6 @@
                     >
                   </div>
                 </a>
-              </div>
-            </section>
-
-            <!-- Comment Section -->
-            <section class="mb-12 hidden">
-              <h2
-                class="text-3xl font-bold mb-8 brand-font"
-                style="color: var(--text-color)"
-              >
-                Discussion
-              </h2>
-
-              <div class="mb-8">
-                <form>
-                  <div class="mb-4">
-                    <textarea
-                      placeholder="Share your thoughts..."
-                      rows="4"
-                      class="w-full px-4 py-3 rounded-lg mb-2"
-                      style="
-                        background-color: rgba(255, 255, 255, 0.05);
-                        color: var(--text-color);
-                        border: 1px solid rgba(255, 255, 255, 0.1);
-                      "
-                    ></textarea>
-                  </div>
-                  <div class="flex justify-between items-center">
-                    <div class="flex items-center gap-3">
-                      <button
-                        type="button"
-                        class="p-2 rounded"
-                        style="
-                          background-color: rgba(255, 255, 255, 0.05);
-                          color: var(--text-secondary);
-                        "
-                      >
-                        <i class="fas fa-code"></i>
-                      </button>
-                      <button
-                        type="button"
-                        class="p-2 rounded"
-                        style="
-                          background-color: rgba(255, 255, 255, 0.05);
-                          color: var(--text-secondary);
-                        "
-                      >
-                        <i class="fas fa-link"></i>
-                      </button>
-                      <button
-                        type="button"
-                        class="p-2 rounded"
-                        style="
-                          background-color: rgba(255, 255, 255, 0.05);
-                          color: var(--text-secondary);
-                        "
-                      >
-                        <i class="fas fa-image"></i>
-                      </button>
-                    </div>
-                    <button
-                      type="submit"
-                      class="px-6 py-2 rounded-lg font-bold transition-colors hover-glow"
-                      style="
-                        background-color: var(--primary-color);
-                        color: #000;
-                      "
-                    >
-                      Comment
-                    </button>
-                  </div>
-                </form>
-              </div>
-
-              <!-- Comments -->
-              <div class="space-y-6">
-                <!-- Comment 1 -->
-                <div
-                  class="rounded-lg p-6"
-                  style="background-color: var(--card-bg)"
-                >
-                  <div class="flex items-start mb-4">
-                    <div class="w-10 h-10 rounded-full overflow-hidden mr-4">
-                      <img
-                        src="/placeholder.png"
-                        alt="User Avatar"
-                        class="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div class="flex-1">
-                      <div class="flex justify-between items-center mb-2">
-                        <h4 class="font-bold" style="color: var(--text-color)">
-                          Alex Chen
-                        </h4>
-                        <span
-                          class="text-sm"
-                          style="color: var(--text-secondary)"
-                          >2 days ago</span
-                        >
-                      </div>
-                      <p style="color: var(--text-secondary)">
-                        Great article! I've been following the development of
-                        ZK-rollups closely. Do you think they'll eventually
-                        replace optimistic rollups completely, or will both
-                        approaches coexist?
-                      </p>
-                      <div class="flex items-center gap-4 mt-4">
-                        <button
-                          class="flex items-center gap-1 text-sm"
-                          style="color: var(--text-secondary)"
-                        >
-                          <i class="far fa-heart"></i> 12
-                        </button>
-                        <button
-                          class="flex items-center gap-1 text-sm"
-                          style="color: var(--text-secondary)"
-                        >
-                          <i class="far fa-comment"></i> Reply
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Reply -->
-                  <div
-                    class="ml-14 mt-4 pl-4 border-l-2"
-                    style="border-color: rgba(255, 255, 255, 0.1)"
-                  >
-                    <div class="flex items-start mb-4">
-                      <div class="w-8 h-8 rounded-full overflow-hidden mr-3">
-                        <img
-                          src="/placeholder.png"
-                          alt="Author Avatar"
-                          class="w-full h-full object-cover"
-                        />
-                      </div>
-                      <div class="flex-1">
-                        <div class="flex justify-between items-center mb-2">
-                          <h4
-                            class="font-bold"
-                            style="color: var(--text-color)"
-                          >
-                            Elena Rodriguez
-                            <span
-                              class="text-xs font-normal ml-2 px-2 py-0.5 rounded"
-                              style="
-                                background-color: rgba(0, 255, 170, 0.1);
-                                color: var(--primary-color);
-                              "
-                              >Author</span
-                            >
-                          </h4>
-                          <span
-                            class="text-sm"
-                            style="color: var(--text-secondary)"
-                            >1 day ago</span
-                          >
-                        </div>
-                        <p style="color: var(--text-secondary)">
-                          Thanks for the question, Alex! I think both approaches
-                          will coexist for the foreseeable future. ZK-rollups
-                          offer stronger security guarantees and faster
-                          finality, but optimistic rollups are currently more
-                          compatible with existing smart contracts. Each has its
-                          own tradeoffs.
-                        </p>
-                        <div class="flex items-center gap-4 mt-4">
-                          <button
-                            class="flex items-center gap-1 text-sm"
-                            style="color: var(--text-secondary)"
-                          >
-                            <i class="far fa-heart"></i> 8
-                          </button>
-                          <button
-                            class="flex items-center gap-1 text-sm"
-                            style="color: var(--text-secondary)"
-                          >
-                            <i class="far fa-comment"></i> Reply
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Comment 2 -->
-                <div
-                  class="rounded-lg p-6"
-                  style="background-color: var(--card-bg)"
-                >
-                  <div class="flex items-start">
-                    <div class="w-10 h-10 rounded-full overflow-hidden mr-4">
-                      <img
-                        src="/placeholder.png"
-                        alt="User Avatar"
-                        class="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div class="flex-1">
-                      <div class="flex justify-between items-center mb-2">
-                        <h4 class="font-bold" style="color: var(--text-color)">
-                          Sarah Johnson
-                        </h4>
-                        <span
-                          class="text-sm"
-                          style="color: var(--text-secondary)"
-                          >3 days ago</span
-                        >
-                      </div>
-                      <p style="color: var(--text-secondary)">
-                        I'm curious about the environmental impact of different
-                        consensus mechanisms. While PoS is certainly more
-                        energy-efficient than PoW, are there any studies
-                        comparing the carbon footprint of various alternative
-                        consensus mechanisms?
-                      </p>
-                      <div class="flex items-center gap-4 mt-4">
-                        <button
-                          class="flex items-center gap-1 text-sm"
-                          style="color: var(--text-secondary)"
-                        >
-                          <i class="far fa-heart"></i> 5
-                        </button>
-                        <button
-                          class="flex items-center gap-1 text-sm"
-                          style="color: var(--text-secondary)"
-                        >
-                          <i class="far fa-comment"></i> Reply
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="mt-6 text-center">
-                <button
-                  class="px-6 py-2 rounded-lg font-bold transition-colors"
-                  style="
-                    background-color: rgba(255, 255, 255, 0.05);
-                    color: var(--text-color);
-                  "
-                >
-                  Load More Comments
-                </button>
               </div>
             </section>
           </article>
