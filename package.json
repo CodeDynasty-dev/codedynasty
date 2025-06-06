@@ -20,7 +20,7 @@
     "build-directory": "dist",
     "assets-folder": "./assets"
   },
-  "dependencies": {
-    "docmach": "^1.0.4"
+  "devDependencies": {
+    "docmach": "^1.0.18"
   }
 }
