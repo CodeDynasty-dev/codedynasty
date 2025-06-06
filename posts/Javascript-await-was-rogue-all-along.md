@@ -1,8 +1,8 @@
 <docmach type="wrapper" file="fragments/post-structure.html" replacement="content" params="
 author:Friday Candour;
 author_title: Software Developer;
-time_created: Apr 1 2025;
-time_to_read: 8 min;
+time_created: Jun 6 2025;
+time_to_read: 3 min;
 title: Javascript await was rogue all along;
 topic: Development;
 author_img: https://avatars.githubusercontent.com/u/75016347;
