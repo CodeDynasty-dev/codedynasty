@@ -7,7 +7,7 @@ title: Javascript await was rogue all along;
 topic: Development;
 author_img: https://avatars.githubusercontent.com/u/75016347;
 image: /post-images/then.png;
-description: Don't tell me you don't know await is rogue too, jess christ.;
+description: Don’t tell me you don’t know await is rogue too, Tell me what is going here..;
 " >
 
 <docmach type="function" params="tags:Js,await,thenable,then,Promise" file="fragments/tags.js" />
