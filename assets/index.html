@@ -48,12 +48,9 @@
     />
   </head>
   <body>
-    <header
-      class="fixed w-full top-0 z-50 backdrop-blur-md"
-      style="background-color: rgba(5, 5, 16, 0.8)"
-    >
-      <nav class="container mx-auto px-2 md:px-6 py-4">
-        <div class="flex justify-between items-center px-4">
+    <header class="fixed w-full top-0 z-50 backdrop-blur-xl">
+      <nav class="container mx-auto px-4">
+        <div class="flex justify-between items-center h-20">
           <a
             href="/"
             class="text-2xl font-bold brand-font flex items-center group"
@@ -71,50 +68,12 @@
               <span>ynasty</span>
             </span>
           </a>
-          <a
-            href="/search.html"
-            class="md:hidden"
-            id="search-button"
-            aria-label="search"
-          >
-            <svg
-              class="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
+          <div class="hidden md:flex items-center space-x-8">
+            <a
+              href="/search.html"
+              class="relative p-2 rounded-lg transition-all duration-300 hover:bg-white/5"
+              aria-label="search"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="{2}"
-                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                style="color: var(--text-color)"
-              />
-            </svg>
-          </a>
-          <!-- Mobile menu button -->
-          <button id="mobile-menu-button" class="md:hidden" aria-label="Menu">
-            <svg
-              class="w-8 h-8"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="{2}"
-                d="M4 6h16M4 12h16M4 18h16"
-                style="color: var(--text-color)"
-              />
-            </svg>
-          </button>
-
-          <!-- Desktop navigation -->
-          <div class="hidden md:flex gap-8">
-            <a href="/search.html" id="search-button" aria-label="search">
               <svg
                 class="w-6 h-6"
                 fill="none"
@@ -133,35 +92,13 @@
             </a>
             <a
               href="/power.html"
-              class="nav-link hover:text-primary-color transition-colors"
-              style="color: var(--text-color)"
-              >VIDEOS</a
+              class="nav-link group relative overflow-hidden px-4 py-2"
             >
-            <a
-              href="https://github.com/CodeDynasty-dev"
-              class="nav-link hover:text-primary-color transition-colors"
-              style="color: var(--text-color)"
-              target="_blank"
-              >GITHUB</a
-            >
-            <a
-              href="/contact.html"
-              class="nav-link hover:text-primary-color transition-colors"
-              style="color: var(--text-color)"
-              >CONTACT</a
-            >
-          </div>
-        </div>
-
-        <!-- Mobile navigation -->
-        <div id="mobile-menu" class="hidden mt-4">
-          <div class="flex flex-col gap-4">
-            <a
-              href="/power.html"
-              class="nav-link hover:text-primary-color transition-colors"
-              style="color: var(--text-color)"
-              >VIDEOS</a
-            >
+              <span class="relative z-10">VIDEOS</span>
+              <div
+                class="absolute inset-0 bg-white/5 scale-x-0 group-hover:scale-x-100 transition-transform origin-left"
+              ></div>
+            </a>
             <a
               href="https://github.com/CodeDynasty-dev"
               class="nav-link hover:text-primary-color transition-colors"
@@ -182,11 +119,12 @@
 
     <main class="pt-20">
       <!-- Hero Section -->
-      <section class="min-h-[38rem] relative mb-20">
-        <div class="hero-gradient absolute inset-0 opacity-90"></div>
-        <div class="absolute inset-0 grid-line-bg"></div>
-        <div class="relative h-full flex items-center justify-center py-30">
-          <div class="container mx-auto px-6 text-center">
+      <section class="relative min-h-[85vh] grid-pattern">
+        <div
+          class="absolute inset-0 bg-gradient-to-b from-transparent via-dark-bg/50 to-dark-bg"
+        ></div>
+        <div class="container mx-auto px-4 relative z-10">
+          <div class="max-w-4xl mx-auto text-center pt-32">
             <h1
               class="text-4xl lg:text-5xl font-black mb-8 tracking-tight terminal-effect inline-block"
               style="color: var(--text-color)"
@@ -221,7 +159,7 @@
       </section>
 
       <!-- Categories with Featured Articles -->
-      <section class="container mx-auto px-6 mb-20">
+      <section class="container mx-auto px-4 py-24">
         <div class="flex items-center mb-12">
           <div
             class="h-px bg-gradient-to-r from-transparent to-primary-color flex-grow"
@@ -398,7 +336,7 @@
         </div>
       </section>
 
-      <section class="container mx-auto px-6 mb-20">
+      <section class="container mx-auto px-4 py-24">
         <div class="flex items-center mb-12">
           <div
             class="h-px bg-gradient-to-r from-transparent to-primary-color flex-grow"
