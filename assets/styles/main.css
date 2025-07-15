@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Orbitron:wght@400;600;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;900&display=swap");
 
 :root {
   --primary-color: #17bafb;
@@ -14,10 +14,11 @@
   --text-secondary: #a0a0cc;
   --glass-border: rgba(255, 255, 255, 0.1);
   --glass-shine: rgba(255, 255, 255, 0.05);
+  font-family: "Verdana", sans-serif;
 }
 
 body {
-  font-family: "Space Mono", monospace;
+  font-family: "Verdana", sans-serif;
   background-color: var(--dark-bg);
   color: var(--text-color);
   background-image: radial-gradient(
@@ -36,8 +37,6 @@ body {
 
 h1,
 h2,
-h3,
-h4,
 .brand-font {
   font-family: "Orbitron", sans-serif;
   letter-spacing: 0.05em;
@@ -104,13 +103,15 @@ h4,
   }
 }
 
+pre,
 .code-block {
   font-family: "Space Mono", monospace;
   background: rgba(5, 5, 20, 0.7);
   /* border-left: 3px solid var(--primary-color); */
   padding: 1rem;
+  margin: 3rem auto;
   overflow-x: auto;
-  background: rgba(10, 10, 10, 0.95); /* More contrast */
+  background: rgba(10, 10, 10, 0.95); /* Custom styles for CodeDynasty */
   box-shadow: 0px 0px 15px rgba(0, 255, 170, 0.3);
   border-radius: 10px;
   padding: 16px;
@@ -398,4 +399,81 @@ h4,
       transparent 1px
     ),
     linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+}
+
+/* Starfield Animation */
+@keyframes move-stars {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-2000px);
+  }
+}
+
+#stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: transparent;
+  background-image: radial-gradient(white 1px, transparent 1px);
+  background-size: 50px 50px;
+  opacity: 0.5;
+  animation: move-stars 200s linear infinite;
+}
+
+#stars2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: transparent;
+  background-image: radial-gradient(white 1px, transparent 1px);
+  background-size: 100px 100px;
+  opacity: 0.3;
+  animation: move-stars 150s linear infinite;
+}
+
+#stars3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: transparent;
+  background-image: radial-gradient(white 1px, transparent 1px);
+  background-size: 150px 150px;
+  opacity: 0.1;
+  animation: move-stars 100s linear infinite;
+}
+
+/* Glow Animation */
+@keyframes glow {
+  0%,
+  100% {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3),
+      0 0 20px rgba(255, 255, 255, 0.3), 0 0 30px rgba(29, 185, 251, 0.3),
+      0 0 40px rgba(29, 185, 251, 0.3);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.5),
+      0 0 30px rgba(255, 255, 255, 0.5), 0 0 40px rgba(29, 185, 251, 0.5),
+      0 0 50px rgba(29, 185, 251, 0.5);
+  }
+}
+
+.animate-glow {
+  animation: glow 4s ease-in-out infinite;
 }
