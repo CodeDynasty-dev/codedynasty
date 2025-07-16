@@ -23,10 +23,6 @@ cards.forEach((card) => {
   });
 });
 
-// Mobile menu toggle
-const mobileMenuButton = document.getElementById("mobile-menu-button");
-const mobileMenu = document.getElementById("mobile-menu");
-
 // Share functionality
 function setupShareButtons() {
   const currentUrl = encodeURIComponent(window.location.href);
@@ -105,7 +101,6 @@ function setupShareButtons() {
 
 document.addEventListener("DOMContentLoaded", function () {
   // Handle mobile menu
-  const mobileMenuButton = document.getElementById("mobile-menu-button");
   const mobileMenu = document.getElementById("mobile-menu");
 
   if (mobileMenuButton && mobileMenu) {
