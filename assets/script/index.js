@@ -27,6 +27,82 @@ cards.forEach((card) => {
 const mobileMenuButton = document.getElementById("mobile-menu-button");
 const mobileMenu = document.getElementById("mobile-menu");
 
+// Share functionality
+function setupShareButtons() {
+  const currentUrl = encodeURIComponent(window.location.href);
+  const title = encodeURIComponent(document.title);
+  const text = encodeURIComponent(
+    document.querySelector('meta[name="description"]')?.content || ""
+  );
+
+  // Share URLs for different platforms
+  const shareUrls = {
+    twitter: `https://twitter.com/intent/tweet?url=${currentUrl}&text=${title}`,
+    linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${currentUrl}`,
+    facebook: `https://www.facebook.com/sharer/sharer.php?u=${currentUrl}&quote=${title}`,
+    copy: window.location.href,
+  };
+
+  // Set up share buttons
+  const shareButtons = document.querySelectorAll(
+    '[class*="fa-twitter"], [class*="fa-linkedin"], [class*="fa-facebook"], [class*="fa-link"]'
+  );
+
+  shareButtons.forEach((button) => {
+    button.closest("a").addEventListener("click", (e) => {
+      e.preventDefault();
+      const platform = button.classList.contains("fa-twitter")
+        ? "twitter"
+        : button.classList.contains("fa-linkedin")
+        ? "linkedin"
+        : button.classList.contains("fa-facebook")
+        ? "facebook"
+        : "copy";
+
+      if (platform === "copy") {
+        navigator.clipboard.writeText(currentUrl).then(() => {
+          // Show tooltip or feedback
+          const tooltip = button.closest(".copy-link-button");
+          if (tooltip) {
+            const originalTitle = tooltip.getAttribute("data-tooltip");
+            tooltip.setAttribute("data-tooltip", "Copied!");
+            setTimeout(() => {
+              tooltip.setAttribute(
+                "data-tooltip",
+                originalTitle || "Copy Link"
+              );
+            }, 2000);
+          }
+        });
+      } else {
+        window.open(shareUrls[platform], "_blank", "width=600,height=400");
+      }
+    });
+  });
+
+  // Mobile share dialog
+  const mobileShareButton = document.getElementById("mobile-share-button");
+  const mobileShareDialog = document.getElementById("mobile-share-dialog");
+  const mobileShareOverlay = document.getElementById("mobile-share-overlay");
+  const closeShareDialog = document.getElementById("close-share-dialog");
+
+  if (mobileShareButton && mobileShareDialog) {
+    mobileShareButton.addEventListener("click", () => {
+      mobileShareDialog.classList.remove("hidden");
+      document.body.style.overflow = "hidden";
+    });
+  }
+
+  const closeShare = () => {
+    mobileShareDialog.classList.add("hidden");
+    document.body.style.overflow = "";
+  };
+
+  if (mobileShareOverlay)
+    mobileShareOverlay.addEventListener("click", closeShare);
+  if (closeShareDialog) closeShareDialog.addEventListener("click", closeShare);
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   // Handle mobile menu
   const mobileMenuButton = document.getElementById("mobile-menu-button");
@@ -35,6 +111,21 @@ document.addEventListener("DOMContentLoaded", function () {
   if (mobileMenuButton && mobileMenu) {
     mobileMenuButton.addEventListener("click", () => {
       mobileMenu.classList.toggle("hidden");
+    });
+  }
+
+  // Setup share functionality
+  setupShareButtons();
+
+  // Scroll to top button
+  const scrollTopButton = document.getElementById("scroll-top");
+  if (scrollTopButton) {
+    scrollTopButton.addEventListener("click", (e) => {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
     });
   }
 
@@ -65,4 +156,26 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }, 150);
   });
+
+  document.querySelectorAll("code").forEach((innerCode) => {
+    if (innerCode.classList.length === 0) return;
+    innerCode.innerHTML = fixBrokenHighlightHTML(innerCode.innerHTML);
+  });
 });
+
+function fixBrokenHighlightHTML(html) {
+  return (
+    html
+      // Remove <p> and </p> inside code
+      .replace(/<\/?p>/gi, "")
+
+      // Remove nested <pre><code> and </code></pre>
+      .replace(/<pre><code>/gi, "")
+      .replace(/<\/code><\/pre>/gi, "")
+
+      // Fix double-escaped tags like &lt;span&gt; → <span>
+      .replace(/&lt;/g, "<")
+      .replace(/&gt;/g, ">")
+      .replace(/&amp;/g, "&")
+  );
+}

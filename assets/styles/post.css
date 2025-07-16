@@ -96,10 +96,52 @@ h2 {
 .post li {
   list-style: disc;
   margin: 4px 0;
-  list-style-position: inside;
 }
 
 .post a {
   text-decoration: underline;
   color: var(--primary-color);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #0f111a;
+  color: #c1f5ff;
+  font-family: "Fira Code", monospace;
+  box-shadow: 0 0 8px rgba(0, 255, 255, 0.1);
+  border: 1px solid #1f2937;
+}
+
+th,
+td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid #1a202c;
+}
+
+th {
+  background-color: #1a1c28;
+  color: #17bafb;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+}
+
+tr:nth-child(even) {
+  background-color: #131622;
+}
+
+tr:hover {
+  background-color: #1e2230;
+  transition: background-color 0.2s ease;
+}
+
+caption {
+  caption-side: top;
+  padding: 0.5rem;
+  color: #17bafb;
+  font-weight: bold;
+  text-align: left;
+  font-size: 1rem;
 }
