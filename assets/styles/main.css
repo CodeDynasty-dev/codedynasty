@@ -41,6 +41,12 @@ h2,
   font-family: "Orbitron", sans-serif;
   letter-spacing: 0.05em;
 }
+h3,
+h4,
+h5,
+h6 {
+  margin: 1rem auto;
+}
 
 .neon-border {
   position: relative;
@@ -106,15 +112,19 @@ h2,
 pre,
 .code-block {
   font-family: "Space Mono", monospace;
-  background: rgba(5, 5, 20, 0.7);
+  background: rgba(10, 10, 10, 0.95);
+  /* background: rgba(5, 5, 20, 0.7); */
   /* border-left: 3px solid var(--primary-color); */
   padding: 1rem;
   margin: 3rem auto;
   overflow-x: auto;
-  background: rgba(10, 10, 10, 0.95); /* Custom styles for CodeDynasty */
-  box-shadow: 0px 0px 15px rgba(0, 255, 170, 0.3);
+  /* Custom styles for CodeDynasty */
+  /* box-shadow: 0px 0px 15px rgba(0, 255, 170, 0.3); */
   border-radius: 10px;
   padding: 16px;
+
+  display: inline-block;
+  overflow-x: auto;
 }
 
 .code-text {
