@@ -53,65 +53,22 @@
     >
       <nav class="container mx-auto px-6">
         <div class="flex justify-between items-center h-24">
-          <a
-            href="/"
-            class="flex items-center group relative"
-            aria-label="CodeDynasty Home"
-          >
-            <div
-              class="relative w-14 h-14 mr-3 group-hover:scale-110 transition-transform duration-500"
-            >
-              <img
-                src="logo.png"
-                class="absolute inset-0 object-cover w-full h-full opacity-70"
-                alt="CodeDynasty Logo"
-              />
-              <div
-                class="absolute inset-0 bg-primary-color/10 rounded-full group-hover:bg-primary-color/20 transition-colors duration-500"
-              ></div>
-              <div
-                class="absolute inset-0 bg-primary-color/5 rounded-full animate-pulse"
-              ></div>
+       
+         <a href="/" class="flex items-center" aria-label="CodeDynasty Home">
+            <div class="w-12 h-12 mr-3">
+              <img src="logo.png" class="w-full h-full object-cover opacity-70" alt="CodeDynasty Logo" />
             </div>
-            <span
-              class="relative z-10 glitch-text text-2xltext-[#17bafb]"
-              data-text="ODEDYNASTY"
-            >
-              <span
-                class="group-hover:translate-x-1 transition-transform duration-300"
-                >ode</span
-              >
-              <span
-                class="group-hover:translate-x-2 transition-transform duration-300"
-                >D</span
-              >
-              <span
-                class="group-hover:translate-x-3 transition-transform duration-300"
-                >ynasty</span
-              >
-            </span>
+            <span class="text-2xl text-[#17bafb] font-bold">CodeDynasty</span>
           </a>
+             <!-- Mobile menu button -->
+          <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none" aria-label="Toggle menu">
+            <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+          </button>
+          <!-- Desktop Navigation -->
           <div class="hidden md:flex items-center space-x-8">
-            <a
-              href="/search.html"
-              class="relative p-2 rounded-lg transition-all duration-300 hover:bg-white/5"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                />
-              </svg>
-            </a>
-            <a
+                   <a
               href="https://discord.codedynasty.dev"
               class="relative overflow-hidden px-4 py-2 text-white/80 hover:text-white transition-colors group"
             >
@@ -143,6 +100,73 @@
         </div>
       </nav>
     </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-lg transform -translate-x-full transition-transform duration-300 ease-in-out md:hidden">
+      <div class="container mx-auto px-6 py-8 h-full flex flex-col">
+        <div class="flex justify-between items-center mb-12">
+          <a href="/" class="flex items-center" aria-label="CodeDynasty Home">
+            <div class="w-12 h-12 mr-3">
+              <img src="logo.png" class="w-full h-full object-cover opacity-70" alt="CodeDynasty Logo" />
+            </div>
+            <span class="text-2xl text-[#17bafb] font-bold">CodeDynasty</span>
+          </a>
+          <button id="close-mobile-menu" class="text-white/70 hover:text-white transition-colors">
+            <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <nav class="flex-1 flex flex-col space-y-6">
+       
+          <a href="https://discord.codedynasty.dev" class="text-white/80 hover:text-white text-xl py-3 px-4 rounded-lg hover:bg-white/5 transition-colors">
+            Discord
+          </a>
+          <a href="https://github.com/CodeDynasty-dev" target="_blank" class="text-white/80 hover:text-white text-xl py-3 px-4 rounded-lg hover:bg-white/5 transition-colors">
+            GitHub
+          </a>
+          <a href="/contact.html" class="text-white/80 hover:text-white text-xl py-3 px-4 rounded-lg hover:bg-white/5 transition-colors">
+            Contact
+          </a>
+        </nav>
+        <div class="pt-6 border-t border-white/10 mt-auto">
+          <p class="text-white/50 text-sm text-center">© 2023 CodeDynasty. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Mobile menu functionality
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const closeMobileMenu = document.getElementById('close-mobile-menu');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const body = document.body;
+
+      function toggleMobileMenu() {
+        mobileMenu.classList.toggle('translate-x-0');
+        mobileMenu.classList.toggle('-translate-x-full');
+        body.classList.toggle('overflow-hidden');
+      }
+
+      mobileMenuButton.addEventListener('click', toggleMobileMenu);
+      closeMobileMenu.addEventListener('click', toggleMobileMenu);
+
+      // Close menu when clicking on a link
+      document.querySelectorAll('#mobile-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.remove('translate-x-0');
+          mobileMenu.classList.add('-translate-x-full');
+          body.classList.remove('overflow-hidden');
+        });
+      });
+
+      // Close menu when pressing Escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && mobileMenu.classList.contains('translate-x-0')) {
+          toggleMobileMenu();
+        }
+      });
+    </script>
 
     <main class="pt-24">
       <!-- Hero Section -->
@@ -637,6 +661,53 @@
                   <span
                     class="text-primary-color text-sm tracking-wider font-mono"
                     >STATIC.SITE.GENERATOR</span
+                  >
+                  <h3 class="text-xl font-bold text-white mt-2 brand-font">
+                    Docmach
+                  </h3>
+                  <p class="text-white/60 mt-2 text-sm">
+                    A Markdown-powered static site generator designed for blogs
+                    and project documentation.
+                  </p>
+                  <div class="mt-4 flex items-center text-sm text-white/60">
+                    <span class="flex items-center mr-4">
+                      <svg
+                        class="w-4 h-4 mr-1"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+                        />
+                      </svg>
+                      1
+                    </span>
+                    <span class="text-xs">TypeScript • MIT License</span>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-black/30 border-t border-white/10">
+      <div class="container mx-auto px-4 py-12">
+        <div
+          class="text-center pt-8 border-t"
+          style="border-color: rgba(255, 255, 255, 0.1)"
+        >
+          <p style="color: var(--text-secondary)">
+            &copy; 2025 CodeDynasty. <span class="code-text"></span>
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script src="/script/index.js"></script>
+  </body>
+</html>
+
                   >
                   <h3 class="text-xl font-bold text-white mt-2 brand-font">
                     Docmach
