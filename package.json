@@ -22,5 +22,8 @@
   },
   "devDependencies": {
     "docmach": "^1.0.18"
+  },
+  "dependencies": {
+    "source-map": "^0.7.6"
   }
 }
