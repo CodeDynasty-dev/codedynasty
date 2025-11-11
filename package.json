@@ -5,9 +5,9 @@
   "main": "src/index.html",
   "type": "module",
   "scripts": {
-    "watch": "docmach",
-    "print": "docmach print",
-    "build": "docmach build"
+    "watch": "bun run node_modules/docmach/dist/index.js",
+    "print": "bun run node_modules/docmach/dist/index.js print",
+    "build": "bun run node_modules/docmach/dist/index.js build"
   },
   "keywords": [
     "news",

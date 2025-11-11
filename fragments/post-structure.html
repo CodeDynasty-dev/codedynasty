@@ -17,685 +17,364 @@
     />
     <meta name="description" content="{{ description }}" />
     <meta name="keywords" content="code, programming, development" />
-    <meta name="author" content="CodeDynasty" />
+    <meta name="author" content="{{ author }}" />
     <meta name="robots" content="index, follow" />
-    <meta name="theme-color" content="#17bafb" />
-    <meta name="og:title" content="{{ title }}" />
-    <meta name="og:description" content="{{ description }}" />
-    <meta name="og:url" content="https://codedynasty.dev" />
-    <meta name="og:image" content="{{ image }}" />
+    <meta name="theme-color" content="#6366f1" />
+    <meta property="og:title" content="{{ title }}" />
+    <meta property="og:description" content="{{ description }}" />
+    <meta property="og:url" content="https://codedynasty.dev" />
+    <meta property="og:image" content="{{ image }}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="CodeDynasty" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="{{ title }}" />
     <meta name="twitter:description" content="{{ description }}" />
     <meta name="twitter:image" content="{{ image }}" />
-    <meta name="twitter:image:src" content="{{ image }}" />
-    <meta property="og:type" content="article" />
-    <meta property="og:title" content="{{ title }}" />
-    <meta property="og:site_name" content="CodeDynasty" />
-    <meta name="twitter:site" content="@codedynasty" />
-    <meta name="twitter:creator" content="@" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:widgets:new-embed-design" content="on" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="format-detection" content="telephone=no" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-    <meta name="apple-mobile-web-app-title" content="CodeDynasty" />
-    <meta name="msapplication-TileColor" content="#17bafb" />
-    <meta name="msapplication-TileImage" content="logo.png" />
-    <meta name="application-name" content="CodeDynasty" />
-    <meta
-      name="msapplication-tooltip"
-      content="CodeDynasty - The place for code"
-    />
-    <meta name="msapplication-starturl" content="/" />
-    <meta name="msapplication-window" content="width=800;height=600" />
-    <meta
-      name="msapplication-task"
-      content="name=CodeDynasty;action-uri=/;icon-uri=/logo.png"
-    />
   </head>
   <body>
-    <header class="fixed w-full top-0 z-50 bg-black/30 backdrop-blur-2xl border-b border-white/10">
+    <!-- Navigation -->
+    <header class="fixed w-full top-0 z-50 nav-modern">
       <nav class="container mx-auto px-6">
-        <div class="flex justify-between items-center h-24">
-          <a
-            href="/"
-            class="flex items-center group relative"
-            aria-label="CodeDynasty Home"
-          >
-            <div class="relative w-14 h-14 mr-3 group-hover:scale-110 transition-transform duration-500">
+        <div class="flex justify-between items-center h-20">
+          <a href="/" class="flex items-center group" aria-label="CodeDynasty Home">
+            <div class="w-10 h-10 mr-3 transition-transform duration-300 group-hover:scale-110">
               <img
                 src="/logo.png"
-                class="absolute inset-0 object-cover w-full h-full opacity-70"
+                class="w-full h-full object-cover rounded-lg"
                 alt="CodeDynasty Logo"
               />
-              <div class="absolute inset-0 bg-primary-color/10 rounded-full group-hover:bg-primary-color/20 transition-colors duration-500"></div>
-              <div class="absolute inset-0 bg-primary-color/5 rounded-full animate-pulse"></div>
             </div>
-            <span class="relative z-10 glitch-text text-[#17bafb] text-2xl" data-text="ODEDYNASTY">
-              <span class="group-hover:translate-x-1 transition-transform duration-300">ode</span>
-              <span class="group-hover:translate-x-2 transition-transform duration-300">D</span>
-              <span class="group-hover:translate-x-3 transition-transform duration-300">ynasty</span>
-            </span>
+            <span class="text-xl font-bold text-white">CodeDynasty</span>
           </a>
-          <div class="hidden md:flex items-center space-x-8">
-            <a href="/search.html" class="relative p-2 rounded-lg transition-all duration-300 hover:bg-white/5">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                />
-              </svg>
-            </a>
-            <a href="https://discord.codedynasty.dev" class="relative overflow-hidden px-4 py-2 text-white/80 hover:text-white transition-colors group">
-              <span class="relative z-10">DISCORD</span>
-              <div class="absolute inset-0 bg-primary-color/10 group-hover:bg-primary-color/20 transition-colors duration-300"></div>
-            </a>
-            <a href="https://github.com/CodeDynasty-dev" class="relative overflow-hidden px-4 py-2 text-white/80 hover:text-white transition-colors group" target="_blank">
-              <span class="relative z-10">GITHUB</span>
-              <div class="absolute inset-0 bg-primary-color/10 group-hover:bg-primary-color/20 transition-colors duration-300"></div>
-            </a>
-            <a href="/contact.html" class="relative overflow-hidden px-4 py-2 text-white/80 hover:text-white transition-colors group">
-              <span class="relative z-10">CONTACT</span>
-              <div class="absolute inset-0 bg-primary-color/10 group-hover:bg-primary-color/20 transition-colors duration-300"></div>
-            </a>
-          </div>
-        </div>
-      </nav>
-    </header>
-            <svg
-              class="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="{2}"
-                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                style="color: var(--text-color)"
-              />
-            </svg>
-          </a>
-
+          
           <!-- Mobile menu button -->
-          <button id="mobile-menu-button" class="md:hidden" aria-label="Menu">
-            <svg
-              class="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="{2}"
-                d="M4 6h16M4 12h16M4 18h16"
-                style="color: var(--text-color)"
-              />
+          <button
+            id="mobile-menu-button"
+            class="md:hidden text-white focus:outline-none"
+            aria-label="Toggle menu"
+          >
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
             </svg>
           </button>
-
-          <!-- Desktop navigation -->
-          <div class="hidden md:flex gap-8">
+          
+          <!-- Desktop Navigation -->
+          <div class="hidden md:flex items-center space-x-2">
             <a
               href="https://discord.codedynasty.dev"
-              class="nav-link hover:text-primary-color transition-colors"
-              style="color: var(--text-color)"
-              >DISCORD</a
+              class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors rounded-lg hover:bg-white/5"
             >
+              Discord
+            </a>
             <a
               href="https://github.com/CodeDynasty-dev"
-              class="nav-link hover:text-primary-color transition-colors"
-              style="color: var(--text-color)"
-              >GITHUB</a
+              class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors rounded-lg hover:bg-white/5"
+              target="_blank"
             >
+              GitHub
+            </a>
             <a
               href="/contact.html"
-              class="nav-link hover:text-primary-color transition-colors"
-              style="color: var(--text-color)"
-              >CONTACT</a
+              class="px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg hover:shadow-lg hover:shadow-indigo-500/50 transition-all"
             >
-          </div>
-        </div>
-
-        <!-- Mobile navigation -->
-        <div id="mobile-menu" class="hidden md:hidden mt-4">
-          <div class="flex flex-col gap-4">
-            <a
-              href="https://discord.codedynasty.dev"
-              class="nav-link hover:text-primary-color transition-colors"
-              style="color: var(--text-color)"
-              >DISCORD</a
-            >
-            <a
-              href="https://github.com/CodeDynasty-dev"
-              class="nav-link hover:text-primary-color transition-colors"
-              style="color: var(--text-color)"
-              >GITHUB</a
-            >
-            <a
-              href="/contact.html"
-              class="nav-link hover:text-primary-color transition-colors"
-              style="color: var(--text-color)"
-              >CONTACT</a
-            >
+              Contact
+            </a>
           </div>
         </div>
       </nav>
     </header>
 
-    <main class="pt-24 pb-12 overflow-x-auto">
+    <!-- Mobile Menu Overlay -->
+    <div
+      id="mobile-menu"
+      class="fixed inset-0 z-50 bg-black/95 backdrop-blur-lg transform -translate-x-full transition-transform duration-300 ease-in-out md:hidden"
+    >
+      <div class="container mx-auto px-6 py-8 h-full flex flex-col">
+        <div class="flex justify-between items-center mb-12">
+          <a href="/" class="flex items-center" aria-label="CodeDynasty Home">
+            <div class="w-10 h-10 mr-3">
+              <img src="/logo.png" class="w-full h-full object-cover rounded-lg" alt="CodeDynasty Logo" />
+            </div>
+            <span class="text-xl font-bold text-white">CodeDynasty</span>
+          </a>
+          <button id="close-mobile-menu" class="text-white/70 hover:text-white transition-colors">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <nav class="flex-1 flex flex-col space-y-4">
+          <a href="https://discord.codedynasty.dev" class="text-white/80 hover:text-white text-lg py-3 px-4 rounded-lg hover:bg-white/5 transition-colors">
+            Discord
+          </a>
+          <a href="https://github.com/CodeDynasty-dev" target="_blank" class="text-white/80 hover:text-white text-lg py-3 px-4 rounded-lg hover:bg-white/5 transition-colors">
+            GitHub
+          </a>
+          <a href="/contact.html" class="text-white/80 hover:text-white text-lg py-3 px-4 rounded-lg hover:bg-white/5 transition-colors">
+            Contact
+          </a>
+        </nav>
+        <div class="pt-6 border-t border-white/10 mt-auto">
+          <p class="text-white/50 text-sm text-center">© 2025 CodeDynasty. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+
+    <main class="pt-20 pb-12">
       <!-- Reading Progress Bar -->
       <div class="reading-progress-container fixed top-20 left-0 w-full z-40 h-1 bg-transparent">
-        <div class="reading-progress-bar h-full bg-gradient-to-r from-primary-color/20 via-primary-color/40 to-primary-color/20" style="width: 0%"></div>
+        <div class="reading-progress-bar h-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500" style="width: 0%"></div>
       </div>
 
-      <!-- Blog Post Header -->
-      <section class="relative">
-        <!-- Hero Image -->
-        <div class="h-96 md:h-[32rem] w-full relative">
-          <div
-            class="absolute inset-0 bg-gradient-to-b from-transparent to-background z-10"
-            style="
-              background-image: linear-gradient(
-                to bottom,
-                rgba(5, 5, 16, 0.4) 0%,
-                var(--background-color) 100%
-              );
-            "
-          ></div>
-          <img
-            src="{{ image }}"
-            alt="Blockchain Architecture"
-            class="w-full h-full object-cover"
-          />
-        </div>
-
-        <!-- Post Header Content -->
-        <div class="container mx-auto px-6 relative z-20 mt-12">
+      <!-- Article Header -->
+      <section class="relative py-16 md:py-24">
+        <div class="container mx-auto px-4 md:px-6">
           <div class="max-w-4xl mx-auto">
             <!-- Category Badge -->
             <div class="mb-6">
-              <span
-                class="inline-block px-3 py-1 rounded-full text-sm tracking-wider font-mono bg-card-bg border border-white/10 backdrop-blur-sm"
-                style="color: var(--accent-color)"
-                >{{ topic }}</span
-              >
+              <span class="badge">{{ topic }}</span>
             </div>
 
             <!-- Title -->
-            <h1
-              class="text-4xl md:text-5xl font-black mb-6 brand-font terminal-effect"
-              style="color: var(--text-color)"
-            >
+            <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
               {{ title }}
             </h1>
 
             <!-- Meta Info -->
-            <div class="flex flex-wrap items-center gap-6 mb-8 text-white/80">
+            <div class="flex flex-wrap items-center gap-6 text-slate-400">
               <!-- Author -->
               <div class="flex items-center">
-                <div class="w-10 h-10 rounded-full overflow-hidden mr-3 bg-card-bg border border-white/10">
-                  <img
-                    src="{{ author_img }}"
-                    alt="{{ author }}"
-                    class="w-full h-full object-cover"
-                  />
+                <div class="w-12 h-12 rounded-full overflow-hidden mr-3 bg-gradient-to-br from-indigo-500 to-purple-500 p-0.5">
+                  <div class="w-full h-full rounded-full overflow-hidden bg-slate-900">
+                    <img
+                      src="{{ author_img }}"
+                      alt="{{ author }}"
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
                 </div>
                 <div>
-                  <span class="block font-medium text-white/80">{{ author }}</span>
-                  <span class="text-sm text-white/60">{{ author_title }}</span>
+                  <span class="block font-medium text-white">{{ author }}</span>
+                  <span class="text-sm text-slate-500">{{ author_title }}</span>
                 </div>
               </div>
 
-              <!-- Date -->
-              <div class="flex items-center">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-5 w-5 mr-2"
-                  style="color: var(--text-secondary)"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                  />
-                </svg>
-                <time
-                  datetime="2025-03-10"
-                  class="text-sm"
-                  style="color: var(--text-secondary)"
-                  >{{ time_created }}</time
-                >
-              </div>
-
-              <!-- Read Time -->
-              <div class="flex items-center">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-5 w-5 mr-2"
-                  style="color: var(--text-secondary)"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
-                <span class="text-sm" style="color: var(--text-secondary)"
-                  >{{ time_to_read }}</span
-                >
+              <!-- Date & Read Time -->
+              <div class="flex items-center gap-4 text-sm">
+                <div class="flex items-center">
+                  <svg class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  </svg>
+                  <time datetime="{{ time_created }}">{{ time_created }}</time>
+                </div>
+                <div class="flex items-center">
+                  <svg class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span>{{ time_to_read }}</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Blog Content Layout -->
-      <div class="container mx-auto px-4 md:px-6 mt-12">
-        <div class="flex flex-col lg:flex-row gap-8">
-          <!-- Sidebar - Hidden on mobile, shown with button -->
-          <aside class="hidden lg:block w-64 self-start sticky top-24">
-            <!-- Share Widget -->
-            <div
-              class="bg-card-bg/90 backdrop-blur-sm border border-white/10 rounded-lg p-6 mb-6"
-            >
-              <h3
-                class="text-lg font-bold mb-4 brand-font"
-                style="color: var(--text-color)"
+      <!-- Hero Image -->
+      <section class="mb-16">
+        <div class="container mx-auto px-4 md:px-6">
+          <div class="max-w-5xl mx-auto">
+            <div class="aspect-video overflow-hidden rounded-2xl">
+              <img
+                src="{{ image }}"
+                alt="{{ title }}"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Article Content -->
+      <div class="container mx-auto px-4 md:px-6">
+        <div class="flex flex-col lg:flex-row gap-12 max-w-7xl mx-auto">
+          <!-- Sidebar - Share Widget -->
+          <aside class="hidden lg:block w-20 self-start sticky top-32">
+            <div class="flex flex-col items-center gap-4">
+              <span class="text-xs text-slate-500 font-medium mb-2">SHARE</span>
+              <a
+                href="#"
+                class="w-12 h-12 rounded-full flex items-center justify-center bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400"
               >
-                SHARE
-              </h3>
-              <div class="flex space-x-4">
-                <a
-                  href="#"
-                  class="hover-glow w-10 h-10 rounded-full flex items-center justify-center"
-                  style="
-                    background-color: rgba(0, 255, 170, 0.1);
-                    color: var(--primary-color);
-                  "
-                >
-                  <i class="fab fa-twitter"></i>
-                </a>
-                <a
-                  href="#"
-                  class="hover-glow w-10 h-10 rounded-full flex items-center justify-center"
-                  style="
-                    background-color: rgba(0, 255, 170, 0.1);
-                    color: var(--primary-color);
-                  "
-                >
-                  <i class="fab fa-linkedin"></i>
-                </a>
-                <a
-                  href="#"
-                  class="hover-glow w-10 h-10 rounded-full flex items-center justify-center"
-                  style="
-                    background-color: rgba(0, 255, 170, 0.1);
-                    color: var(--primary-color);
-                  "
-                >
-                  <i class="fab fa-facebook"></i>
-                </a>
-                <a
-                  href="#"
-                  class="hover-glow w-10 h-10 rounded-full flex items-center justify-center copy-link-button"
-                  style="
-                    background-color: rgba(0, 255, 170, 0.1);
-                    color: var(--primary-color);
-                  "
-                  data-tooltip="Copy Link"
-                >
-                  <i class="fas fa-link"></i>
-                </a>
-              </div>
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a
+                href="#"
+                class="w-12 h-12 rounded-full flex items-center justify-center bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400"
+              >
+                <i class="fab fa-linkedin"></i>
+              </a>
+              <a
+                href="#"
+                class="w-12 h-12 rounded-full flex items-center justify-center bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400"
+              >
+                <i class="fab fa-facebook"></i>
+              </a>
+              <a
+                href="#"
+                class="w-12 h-12 rounded-full flex items-center justify-center bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400 copy-link-button"
+                data-tooltip="Copy Link"
+              >
+                <i class="fas fa-link"></i>
+              </a>
             </div>
           </aside>
 
-          <!-- Main article content -->
+          <!-- Main Content -->
           <article class="flex-1 max-w-4xl post">
-            <!-- Mobile floating action bar -->
-            <div
-              class="lg:hidden fixed bottom-6 right-6 z-40 flex flex-col gap-3"
-            >
-              <button
-                id="mobile-share-button"
-                class="w-12 h-12 rounded-full flex items-center justify-center hover-glow"
-                style="
-                  background-color: var(--card-bg);
-                  color: var(--primary-color);
-                "
-              >
-                <i class="fas fa-share-alt"></i>
-              </button>
-              <a href="#">
-                <button
-                  id="scroll-top"
-                  class="w-12 h-12 rounded-full flex items-center justify-center hover-glow"
-                  style="
-                    background-color: var(--card-bg);
-                    color: var(--primary-color);
-                  "
-                >
-                  <i class="fas fa-arrow-up"></i>
-                </button>
-              </a>
-            </div>
-
-            <!-- Mobile Share Dialog -->
-            <div
-              id="mobile-share-dialog"
-              class="hidden fixed inset-0 z-50 flex items-end justify-center"
-            >
-              <div
-                class="fixed inset-0 bg-black bg-opacity-50"
-                id="mobile-share-overlay"
-              ></div>
-              <div
-                class="relative w-full max-w-md p-6 rounded-t-lg"
-                style="background-color: var(--card-bg)"
-              >
-                <div class="flex justify-between items-center mb-4">
-                  <h3
-                    class="text-lg font-bold"
-                    style="color: var(--text-color)"
-                  >
-                    Share This Article
-                  </h3>
-                  <button
-                    id="close-share-dialog"
-                    class="text-gray-400 hover:text-gray-200"
-                  >
-                    <svg
-                      class="w-6 h-6"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M6 18L18 6M6 6l12 12"
-                      ></path>
-                    </svg>
-                  </button>
-                </div>
-                <div class="grid grid-cols-4 gap-4">
-                  <a href="#" class="flex flex-col items-center">
-                    <div
-                      class="w-12 h-12 rounded-full flex items-center justify-center mb-2"
-                      style="
-                        background-color: rgba(0, 255, 170, 0.1);
-                        color: var(--primary-color);
-                      "
-                    >
-                      <i class="fab fa-twitter fa-lg"></i>
-                    </div>
-                    <span class="text-sm" style="color: var(--text-secondary)"
-                      >Twitter</span
-                    >
-                  </a>
-                  <a href="#" class="flex flex-col items-center">
-                    <div
-                      class="w-12 h-12 rounded-full flex items-center justify-center mb-2"
-                      style="
-                        background-color: rgba(0, 255, 170, 0.1);
-                        color: var(--primary-color);
-                      "
-                    >
-                      <i class="fab fa-linkedin fa-lg"></i>
-                    </div>
-                    <span class="text-sm" style="color: var(--text-secondary)"
-                      >LinkedIn</span
-                    >
-                  </a>
-                  <a href="#" class="flex flex-col items-center">
-                    <div
-                      class="w-12 h-12 rounded-full flex items-center justify-center mb-2"
-                      style="
-                        background-color: rgba(0, 255, 170, 0.1);
-                        color: var(--primary-color);
-                      "
-                    >
-                      <i class="fab fa-facebook fa-lg"></i>
-                    </div>
-                    <span class="text-sm" style="color: var(--text-secondary)"
-                      >Facebook</span
-                    >
-                  </a>
-                  <a
-                    href="#"
-                    class="flex flex-col items-center copy-link-button"
-                    data-tooltip="Link Copied!"
-                  >
-                    <div
-                      class="w-12 h-12 rounded-full flex items-center justify-center mb-2"
-                      style="
-                        background-color: rgba(0, 255, 170, 0.1);
-                        color: var(--primary-color);
-                      "
-                    >
-                      <i class="fas fa-link fa-lg"></i>
-                    </div>
-                    <span class="text-sm" style="color: var(--text-secondary)"
-                      >Copy Link</span
-                    >
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <!-- Article Content -->
-            <div
-              class="blog-content prose"
-              style="color: var(--text-color); margin-bottom: 5rem"
-            >
+            <div class="blog-content prose prose-invert prose-lg max-w-none">
               {{ content }}
             </div>
 
-            <script
-              src="https://giscus.app/client.js"
-              data-repo="codedynasty-dev/codedynasty"
-              data-repo-id="R_kgDOOBViSg"
-              data-category="Ideas"
-              data-category-id="DIC_kwDOOBViSs4CqU7E"
-              data-mapping="pathname"
-              data-strict="1"
-              data-reactions-enabled="1"
-              data-emit-metadata="0"
-              data-input-position="top"
-              data-theme="catppuccin_macchiato"
-              data-lang="en"
-              data-loading="lazy"
-              crossorigin="anonymous"
-              async
-            ></script>
-
-            <!-- Related Articles -->
-            <!-- <section class="mb-12">
-              <h2
-                class="text-3xl font-bold mb-8 brand-font"
-                style="color: var(--text-color)"
-              >
-                Related Articles
-              </h2>
-
-              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <a href="#" class="block group">
-                  <div class="rounded-lg overflow-hidden mb-4 relative">
-                    <div
-                      class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60 z-10"
-                    ></div>
-                    <img
-                      src="/placeholder.png"
-                      alt="ZK-Rollups Explained"
-                      class="w-full h-48 object-cover transition-transform group-hover:scale-105"
-                    />
-                    <div class="absolute bottom-0 left-0 p-4 z-20">
-                      <span
-                        class="inline-block px-2 py-1 rounded-full text-xs tracking-wider font-mono mb-2"
-                        style="
-                          background-color: rgba(255, 0, 204, 0.2);
-                          color: var(--accent-color);
-                        "
-                        >CRYPTOGRAPHY</span
-                      >
-                    </div>
-                  </div>
-                  <h3
-                    class="text-xl font-bold mb-2 group-hover:text-primary-color transition-colors"
-                    style="color: var(--text-color)"
-                  >
-                    ZK-Rollups Explained: The Future of Ethereum Scaling
-                  </h3>
-                  <p class="mb-2" style="color: var(--text-secondary)">
-                    A deep dive into how zero-knowledge proofs are
-                    revolutionizing blockchain scalability
-                  </p>
-                  <div class="flex items-center">
-                    <span class="text-sm" style="color: var(--text-secondary)"
-                      >March 5, 2025</span
-                    >
-                    <span class="mx-2" style="color: var(--text-secondary)"
-                      >•</span
-                    >
-                    <span class="text-sm" style="color: var(--text-secondary)"
-                      >8 min read</span
-                    >
-                  </div>
-                </a>
-
-                <a href="#" class="block group">
-                  <div class="rounded-lg overflow-hidden mb-4 relative">
-                    <div
-                      class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60 z-10"
-                    ></div>
-                    <img
-                      src="/placeholder.png"
-                      alt="Cross-Chain Interoperability"
-                      class="w-full h-48 object-cover transition-transform group-hover:scale-105"
-                    />
-                    <div class="absolute bottom-0 left-0 p-4 z-20">
-                      <span
-                        class="inline-block px-2 py-1 rounded-full text-xs tracking-wider font-mono mb-2"
-                        style="
-                          background-color: rgba(0, 102, 255, 0.2);
-                          color: var(--secondary-color);
-                        "
-                        >INTEROPERABILITY</span
-                      >
-                    </div>
-                  </div>
-                  <h3
-                    class="text-xl font-bold mb-2 group-hover:text-primary-color transition-colors"
-                    style="color: var(--text-color)"
-                  >
-                    Cross-Chain Interoperability: Building the Internet of
-                    Blockchains
-                  </h3>
-                  <p class="mb-2" style="color: var(--text-secondary)">
-                    How protocols like IBC, Polkadot, and Cosmos are connecting
-                    disparate blockchain networks
-                  </p>
-                  <div class="flex items-center">
-                    <span class="text-sm" style="color: var(--text-secondary)"
-                      >February 22, 2025</span
-                    >
-                    <span class="mx-2" style="color: var(--text-secondary)"
-                      >•</span
-                    >
-                    <span class="text-sm" style="color: var(--text-secondary)"
-                      >10 min read</span
-                    >
-                  </div>
-                </a>
-
-                <a href="#" class="block group">
-                  <div class="rounded-lg overflow-hidden mb-4 relative">
-                    <div
-                      class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-60 z-10"
-                    ></div>
-                    <img
-                      src="/placeholder.png"
-                      alt="Smart Contract Security"
-                      class="w-full h-48 object-cover transition-transform group-hover:scale-105"
-                    />
-                    <div class="absolute bottom-0 left-0 p-4 z-20">
-                      <span
-                        class="inline-block px-2 py-1 rounded-full text-xs tracking-wider font-mono mb-2"
-                        style="
-                          background-color: rgba(0, 255, 170, 0.2);
-                          color: var(--primary-color);
-                        "
-                        >SECURITY</span
-                      >
-                    </div>
-                  </div>
-                  <h3
-                    class="text-xl font-bold mb-2 group-hover:text-primary-color transition-colors"
-                    style="color: var(--text-color)"
-                  >
-                    Smart Contract Security: Best Practices for Blockchain
-                    Developers
-                  </h3>
-                  <p class="mb-2" style="color: var(--text-secondary)">
-                    Essential techniques and tools to protect your smart
-                    contracts from common vulnerabilities
-                  </p>
-                  <div class="flex items-center">
-                    <span class="text-sm" style="color: var(--text-secondary)"
-                      >February 15, 2025</span
-                    >
-                    <span class="mx-2" style="color: var(--text-secondary)"
-                      >•</span
-                    >
-                    <span class="text-sm" style="color: var(--text-secondary)"
-                      >15 min read</span
-                    >
-                  </div>
-                </a>
-              </div>
-            </section> -->
+            <!-- Comments Section -->
+            <div class="mt-16 pt-16 border-t border-white/10">
+              <script
+                src="https://giscus.app/client.js"
+                data-repo="codedynasty-dev/codedynasty"
+                data-repo-id="R_kgDOOBViSg"
+                data-category="Ideas"
+                data-category-id="DIC_kwDOOBViSs4CqU7E"
+                data-mapping="pathname"
+                data-strict="1"
+                data-reactions-enabled="1"
+                data-emit-metadata="0"
+                data-input-position="top"
+                data-theme="noborder_dark"
+                data-lang="en"
+                data-loading="lazy"
+                crossorigin="anonymous"
+                async
+              ></script>
+            </div>
           </article>
+        </div>
+      </div>
+
+      <!-- Mobile Floating Actions -->
+      <div class="lg:hidden fixed bottom-6 right-6 z-40 flex flex-col gap-3">
+        <button
+          id="mobile-share-button"
+          class="w-14 h-14 rounded-full flex items-center justify-center bg-gradient-to-r from-indigo-500 to-purple-500 text-white shadow-lg hover:shadow-xl transition-all"
+        >
+          <i class="fas fa-share-alt"></i>
+        </button>
+        <a href="#" id="scroll-top">
+          <button
+            class="w-14 h-14 rounded-full flex items-center justify-center bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 transition-all"
+          >
+            <i class="fas fa-arrow-up"></i>
+          </button>
+        </a>
+      </div>
+
+      <!-- Mobile Share Dialog -->
+      <div
+        id="mobile-share-dialog"
+        class="hidden fixed inset-0 z-50 flex items-end justify-center"
+      >
+        <div class="fixed inset-0 bg-black/80 backdrop-blur-sm" id="mobile-share-overlay"></div>
+        <div class="relative w-full max-w-md p-6 rounded-t-2xl bg-slate-900 border-t border-white/10">
+          <div class="flex justify-between items-center mb-6">
+            <h3 class="text-lg font-bold text-white">Share This Article</h3>
+            <button id="close-share-dialog" class="text-slate-400 hover:text-white">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+              </svg>
+            </button>
+          </div>
+          <div class="grid grid-cols-4 gap-4">
+            <a href="#" class="flex flex-col items-center">
+              <div class="w-14 h-14 rounded-full flex items-center justify-center mb-2 bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400">
+                <i class="fab fa-twitter fa-lg"></i>
+              </div>
+              <span class="text-xs text-slate-400">Twitter</span>
+            </a>
+            <a href="#" class="flex flex-col items-center">
+              <div class="w-14 h-14 rounded-full flex items-center justify-center mb-2 bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400">
+                <i class="fab fa-linkedin fa-lg"></i>
+              </div>
+              <span class="text-xs text-slate-400">LinkedIn</span>
+            </a>
+            <a href="#" class="flex flex-col items-center">
+              <div class="w-14 h-14 rounded-full flex items-center justify-center mb-2 bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400">
+                <i class="fab fa-facebook fa-lg"></i>
+              </div>
+              <span class="text-xs text-slate-400">Facebook</span>
+            </a>
+            <a href="#" class="flex flex-col items-center copy-link-button" data-tooltip="Copied!">
+              <div class="w-14 h-14 rounded-full flex items-center justify-center mb-2 bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400">
+                <i class="fas fa-link fa-lg"></i>
+              </div>
+              <span class="text-xs text-slate-400">Copy</span>
+            </a>
+          </div>
         </div>
       </div>
     </main>
 
-    <footer class="bg-black/30 border-t border-white/10">
-      <div class="container mx-auto px-4 py-12">
-        <div
-          class="text-center pt-8 border-t"
-          style="border-color: rgba(255, 255, 255, 0.1)"
-        >
-          <p style="color: var(--text-secondary)">
-            &copy; 2025 CodeDynasty. <span class="code-text"></span>
+    <!-- Footer -->
+    <footer class="bg-black/30 border-t border-white/10 py-12">
+      <div class="container mx-auto px-4">
+        <div class="text-center">
+          <p class="text-slate-500 text-sm">
+            &copy; 2025 CodeDynasty. Building modern software for humanity.
           </p>
         </div>
       </div>
     </footer>
+
     <script src="/script/index.js"></script>
+    <script>
+      // Mobile menu functionality
+      const mobileMenuButton = document.getElementById("mobile-menu-button");
+      const closeMobileMenu = document.getElementById("close-mobile-menu");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const body = document.body;
+
+      function toggleMobileMenu() {
+        mobileMenu.classList.toggle("translate-x-0");
+        mobileMenu.classList.toggle("-translate-x-full");
+        body.classList.toggle("overflow-hidden");
+      }
+
+      if (mobileMenuButton && closeMobileMenu && mobileMenu) {
+        mobileMenuButton.addEventListener("click", toggleMobileMenu);
+        closeMobileMenu.addEventListener("click", toggleMobileMenu);
+
+        document.querySelectorAll("#mobile-menu a").forEach((link) => {
+          link.addEventListener("click", () => {
+            mobileMenu.classList.remove("translate-x-0");
+            mobileMenu.classList.add("-translate-x-full");
+            body.classList.remove("overflow-hidden");
+          });
+        });
+
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape" && mobileMenu.classList.contains("translate-x-0")) {
+            toggleMobileMenu();
+          }
+        });
+      }
+
+      // Reading progress bar
+      window.addEventListener('scroll', () => {
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        const progressBar = document.querySelector('.reading-progress-bar');
+        if (progressBar) {
+          progressBar.style.width = scrolled + '%';
+        }
+      });
+    </script>
   </body>
 </html>

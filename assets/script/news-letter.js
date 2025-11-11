@@ -13,4 +13,3 @@ document
       document.getElementById("email-input").value = "";
     }
   });
- 

@@ -18,100 +18,19 @@
     <meta name="description" content="{{ description }}" />
   </head>
   <body>
-    <header
-      class="fixed w-full top-0 z-50 bg-black/30 backdrop-blur-2xl border-b border-white/10"
-    >
+    <header class="fixed w-full top-0 z-50 nav-modern">
       <nav class="container mx-auto px-6">
-        <div class="flex justify-between items-center h-24">
-          <a
-            href="/"
-            class="flex items-center group relative"
-            aria-label="CodeDynasty Home"
-          >
-            <div
-              class="relative w-14 h-14 mr-3 group-hover:scale-110 transition-transform duration-500"
-            >
+        <div class="flex justify-between items-center h-20">
+          <a href="/" class="flex items-center group" aria-label="CodeDynasty Home">
+            <div class="w-10 h-10 mr-3 transition-transform duration-300 group-hover:scale-110">
               <img
                 src="/logo.png"
-                class="absolute inset-0 object-cover w-full h-full opacity-70"
+                class="w-full h-full object-cover rounded-lg"
                 alt="CodeDynasty Logo"
               />
-              <div
-                class="absolute inset-0 bg-primary-color/10 rounded-full group-hover:bg-primary-color/20 transition-colors duration-500"
-              ></div>
-              <div
-                class="absolute inset-0 bg-primary-color/5 rounded-full animate-pulse"
-              ></div>
             </div>
-            <span
-              class="relative z-10 glitch-text text-2xl text-[#17bafb]"
-              data-text="ODEDYNASTY"
-            >
-              <span
-                class="group-hover:translate-x-1 transition-transform duration-300"
-                >ode</span
-              >
-              <span
-                class="group-hover:translate-x-2 transition-transform duration-300"
-                >D</span
-              >
-              <span
-                class="group-hover:translate-x-3 transition-transform duration-300"
-                >ynasty</span
-              >
-            </span>
+            <span class="text-xl font-bold text-white">CodeDynasty</span>
           </a>
-
-          <!-- Desktop Navigation -->
-          <div class="hidden md:flex items-center space-x-8">
-            <a
-              href="/search.html"
-              class="relative p-2 rounded-lg transition-all duration-300 hover:bg-white/5"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                />
-              </svg>
-            </a>
-            <a
-              href="https://discord.codedynasty.dev"
-              class="relative overflow-hidden px-4 py-2 text-white/80 hover:text-white transition-colors group"
-            >
-              <span class="relative z-10">DISCORD</span>
-              <div
-                class="absolute inset-0 bg-primary-color/10 group-hover:bg-primary-color/20 transition-colors duration-300"
-              ></div>
-            </a>
-            <a
-              href="https://github.com/CodeDynasty-dev"
-              class="relative overflow-hidden px-4 py-2 text-white/80 hover:text-white transition-colors group"
-              target="_blank"
-            >
-              <span class="relative z-10">GITHUB</span>
-              <div
-                class="absolute inset-0 bg-primary-color/10 group-hover:bg-primary-color/20 transition-colors duration-300"
-              ></div>
-            </a>
-            <a
-              href="/contact.html"
-              class="relative overflow-hidden px-4 py-2 text-white/80 hover:text-white transition-colors group"
-            >
-              <span class="relative z-10">CONTACT</span>
-              <div
-                class="absolute inset-0 bg-primary-color/10 group-hover:bg-primary-color/20 transition-colors duration-300"
-              ></div>
-            </a>
-          </div>
 
           <!-- Mobile menu button -->
           <button
@@ -119,20 +38,33 @@
             class="md:hidden text-white focus:outline-none"
             aria-label="Toggle menu"
           >
-            <svg
-              class="h-8 w-8"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M4 6h16M4 12h16m-7 6h7"
-              />
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
             </svg>
           </button>
+
+          <!-- Desktop Navigation -->
+          <div class="hidden md:flex items-center space-x-2">
+            <a
+              href="https://discord.codedynasty.dev"
+              class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors rounded-lg hover:bg-white/5"
+            >
+              Discord
+            </a>
+            <a
+              href="https://github.com/CodeDynasty-dev"
+              class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors rounded-lg hover:bg-white/5"
+              target="_blank"
+            >
+              GitHub
+            </a>
+            <a
+              href="/contact.html"
+              class="px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg hover:shadow-lg hover:shadow-indigo-500/50 transition-all"
+            >
+              Contact
+            </a>
+          </div>
         </div>
       </nav>
     </header>
@@ -140,64 +72,35 @@
     <!-- Mobile Menu Overlay -->
     <div
       id="mobile-menu"
-      class="fixed inset-0 z-40 bg-black/90 backdrop-blur-lg transform translate-x-full transition-transform duration-300 ease-in-out md:hidden"
+      class="fixed inset-0 z-50 bg-black/95 backdrop-blur-lg transform -translate-x-full transition-transform duration-300 ease-in-out md:hidden"
     >
       <div class="container mx-auto px-6 py-8 h-full flex flex-col">
         <div class="flex justify-between items-center mb-12">
           <a href="/" class="flex items-center" aria-label="CodeDynasty Home">
-            <div class="w-12 h-12 mr-3">
-              <img
-                src="/logo.png"
-                class="w-full h-full object-cover opacity-70"
-                alt="CodeDynasty Logo"
-              />
+            <div class="w-10 h-10 mr-3">
+              <img src="/logo.png" class="w-full h-full object-cover rounded-lg" alt="CodeDynasty Logo" />
             </div>
-            <span class="text-2xl text-[#17bafb] font-bold">CodeDynasty</span>
+            <span class="text-xl font-bold text-white">CodeDynasty</span>
           </a>
-          <button
-            id="close-mobile-menu"
-            class="text-white/70 hover:text-white transition-colors"
-          >
-            <svg
-              class="h-8 w-8"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M6 18L18 6M6 6l12 12"
-              />
+          <button id="close-mobile-menu" class="text-white/70 hover:text-white transition-colors">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
         </div>
-        <nav class="flex-1 flex flex-col space-y-6">
-          <a
-            href="https://discord.codedynasty.dev"
-            class="text-white/80 hover:text-white text-xl py-3 px-4 rounded-lg hover:bg-white/5 transition-colors"
-          >
+        <nav class="flex-1 flex flex-col space-y-4">
+          <a href="https://discord.codedynasty.dev" class="text-white/80 hover:text-white text-lg py-3 px-4 rounded-lg hover:bg-white/5 transition-colors">
             Discord
           </a>
-          <a
-            href="https://github.com/CodeDynasty-dev"
-            target="_blank"
-            class="text-white/80 hover:text-white text-xl py-3 px-4 rounded-lg hover:bg-white/5 transition-colors"
-          >
+          <a href="https://github.com/CodeDynasty-dev" target="_blank" class="text-white/80 hover:text-white text-lg py-3 px-4 rounded-lg hover:bg-white/5 transition-colors">
             GitHub
           </a>
-          <a
-            href="/contact.html"
-            class="text-white/80 hover:text-white text-xl py-3 px-4 rounded-lg hover:bg-white/5 transition-colors"
-          >
+          <a href="/contact.html" class="text-white/80 hover:text-white text-lg py-3 px-4 rounded-lg hover:bg-white/5 transition-colors">
             Contact
           </a>
         </nav>
         <div class="pt-6 border-t border-white/10 mt-auto">
-          <p class="text-white/50 text-sm text-center">
-            © 2023 CodeDynasty. All rights reserved.
-          </p>
+          <p class="text-white/50 text-sm text-center">© 2025 CodeDynasty. All rights reserved.</p>
         </div>
       </div>
     </div>
@@ -240,29 +143,21 @@
       }
     </script>
 
-    <main class="pt-24 pb-12 overflow-x-auto">
-      <!-- Blog Content Layout -->
+    <main class="pt-20 pb-12">
       <div class="container mx-auto px-4 md:px-6 mt-12">
-        <div class="flex flex-col lg:flex-row gap-8">
-          <!-- Main article content -->
-          <article class="flex-1 mx-auto max-w-5xl post">
-            <!-- Article Content -->
-            <div class="blog-content prose" style="color: var(--text-color)">
-              {{ content }}
-            </div>
-          </article>
-        </div>
+        <article class="mx-auto max-w-4xl post">
+          <div class="blog-content prose prose-invert prose-lg">
+            {{ content }}
+          </div>
+        </article>
       </div>
     </main>
 
-    <footer class="bg-black/30 border-t border-white/10">
-      <div class="container mx-auto px-4 py-12">
-        <div
-          class="text-center pt-8 border-t"
-          style="border-color: rgba(255, 255, 255, 0.1)"
-        >
-          <p style="color: var(--text-secondary)">
-            &copy; 2025 CodeDynasty. <span class="code-text"></span>
+    <footer class="bg-black/30 border-t border-white/10 py-12">
+      <div class="container mx-auto px-4">
+        <div class="text-center">
+          <p class="text-slate-500 text-sm">
+            &copy; 2025 CodeDynasty. Building modern software for humanity.
           </p>
         </div>
       </div>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CodeDynasty</title>
+    <title>CodeDynasty - Modern Software for Humanity</title>
     <link rel="stylesheet" href="/bundle.css" />
     <link rel="stylesheet" href="/styles/main.css" />
     <link
@@ -11,107 +11,65 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     />
     <link rel="shortcut icon" href="logo.png" type="image/png" />
-    <meta name="description" content="CodeDynasty - The place for code" />
-    <meta name="keywords" content="code, programming, development" />
+    <meta name="description" content="CodeDynasty - Building modern, performant software that empowers developers" />
+    <meta name="keywords" content="code, programming, development, open source" />
     <meta name="author" content="CodeDynasty" />
     <meta name="robots" content="index, follow" />
-    <meta name="theme-color" content="#17bafb" />
-    <meta name="og:title" content="CodeDynasty - The place for code" />
-    <meta name="og:description" content="CodeDynasty - The place for code" />
-    <meta name="og:type" content="website" />
-    <meta name="og:url" content="https://codedynasty.dev" />
-    <meta name="og:image" content="logo.png" />
+    <meta name="theme-color" content="#6366f1" />
+    <meta property="og:title" content="CodeDynasty - Modern Software for Humanity" />
+    <meta property="og:description" content="Building modern, performant software that empowers developers" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://codedynasty.dev" />
+    <meta property="og:image" content="logo.png" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="CodeDynasty - The place for code" />
-    <meta
-      name="twitter:description"
-      content="CodeDynasty - The place for code"
-    />
-    <meta name="twitter:image" content="logo.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="format-detection" content="telephone=no" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-    <meta name="apple-mobile-web-app-title" content="CodeDynasty" />
-    <meta name="msapplication-TileColor" content="#17bafb" />
-    <meta name="msapplication-TileImage" content="logo.png" />
-    <meta name="application-name" content="CodeDynasty" />
-    <meta
-      name="msapplication-tooltip"
-      content="CodeDynasty - The place for code"
-    />
-    <meta name="msapplication-starturl" content="/" />
-    <meta name="msapplication-window" content="width=800;height=600" />
-    <meta
-      name="msapplication-task"
-      content="name=CodeDynasty;action-uri=/;icon-uri=/logo.png"
-    />
   </head>
   <body>
-    <header
-      class="fixed w-full top-0 z-50 bg-black/30 backdrop-blur-2xl border-b border-white/10"
-    >
+    <!-- Navigation -->
+    <header class="fixed w-full top-0 z-50 nav-modern">
       <nav class="container mx-auto px-6">
-        <div class="flex justify-between items-center h-24">
-          <a href="/" class="flex items-center" aria-label="CodeDynasty Home">
-            <div class="w-12 h-12 mr-3">
+        <div class="flex justify-between items-center h-20">
+          <a href="/" class="flex items-center group" aria-label="CodeDynasty Home">
+            <div class="w-10 h-10 mr-3 transition-transform duration-300 group-hover:scale-110">
               <img
                 src="logo.png"
-                class="w-full h-full object-cover opacity-70"
+                class="w-full h-full object-cover rounded-lg"
                 alt="CodeDynasty Logo"
               />
             </div>
-            <span class="text-2xl text-[#17bafb] font-bold">CodeDynasty</span>
+            <span class="text-xl font-bold text-white">CodeDynasty</span>
           </a>
+          
           <!-- Mobile menu button -->
           <button
             id="mobile-menu-button"
             class="md:hidden text-white focus:outline-none"
             aria-label="Toggle menu"
           >
-            <svg
-              class="h-8 w-8"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M4 6h16M4 12h16m-7 6h7"
-              />
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
             </svg>
           </button>
+          
           <!-- Desktop Navigation -->
-          <div class="hidden md:flex items-center space-x-8">
+          <div class="hidden md:flex items-center space-x-2">
             <a
               href="https://discord.codedynasty.dev"
-              class="relative overflow-hidden px-4 py-2 text-white/80 hover:text-white transition-colors group"
+              class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors rounded-lg hover:bg-white/5"
             >
-              <span class="relative z-10">DISCORD</span>
-              <div
-                class="absolute inset-0 bg-primary-color/10 group-hover:bg-primary-color/20 transition-colors duration-300"
-              ></div>
+              Discord
             </a>
             <a
               href="https://github.com/CodeDynasty-dev"
-              class="relative overflow-hidden px-4 py-2 text-white/80 hover:text-white transition-colors group"
+              class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors rounded-lg hover:bg-white/5"
               target="_blank"
             >
-              <span class="relative z-10">GITHUB</span>
-              <div
-                class="absolute inset-0 bg-primary-color/10 group-hover:bg-primary-color/20 transition-colors duration-300"
-              ></div>
+              GitHub
             </a>
             <a
               href="/contact.html"
-              class="relative overflow-hidden px-4 py-2 text-white/80 hover:text-white transition-colors group"
+              class="px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg hover:shadow-lg hover:shadow-indigo-500/50 transition-all"
             >
-              <span class="relative z-10">CONTACT</span>
-              <div
-                class="absolute inset-0 bg-primary-color/10 group-hover:bg-primary-color/20 transition-colors duration-300"
-              ></div>
+              Contact
             </a>
           </div>
         </div>
@@ -121,68 +79,551 @@
     <!-- Mobile Menu Overlay -->
     <div
       id="mobile-menu"
-      class="fixed inset-0 z-50 bg-black/90 backdrop-blur-lg transform -translate-x-full transition-transform duration-300 ease-in-out md:hidden"
+      class="fixed inset-0 z-50 bg-black/95 backdrop-blur-lg transform -translate-x-full transition-transform duration-300 ease-in-out md:hidden"
     >
       <div class="container mx-auto px-6 py-8 h-full flex flex-col">
         <div class="flex justify-between items-center mb-12">
           <a href="/" class="flex items-center" aria-label="CodeDynasty Home">
-            <div class="w-12 h-12 mr-3">
-              <img
-                src="logo.png"
-                class="w-full h-full object-cover opacity-70"
-                alt="CodeDynasty Logo"
-              />
+            <div class="w-10 h-10 mr-3">
+              <img src="logo.png" class="w-full h-full object-cover rounded-lg" alt="CodeDynasty Logo" />
             </div>
-            <span class="text-2xl text-[#17bafb] font-bold">CodeDynasty</span>
+            <span class="text-xl font-bold text-white">CodeDynasty</span>
           </a>
-          <button
-            id="close-mobile-menu"
-            class="text-white/70 hover:text-white transition-colors"
-          >
-            <svg
-              class="h-8 w-8"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M6 18L18 6M6 6l12 12"
-              />
+          <button id="close-mobile-menu" class="text-white/70 hover:text-white transition-colors">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
         </div>
-        <nav class="flex-1 flex flex-col space-y-6">
-          <a
-            href="https://discord.codedynasty.dev"
-            class="text-white/80 hover:text-white text-xl py-3 px-4 rounded-lg hover:bg-white/5 transition-colors"
-          >
+        <nav class="flex-1 flex flex-col space-y-4">
+          <a href="https://discord.codedynasty.dev" class="text-white/80 hover:text-white text-lg py-3 px-4 rounded-lg hover:bg-white/5 transition-colors">
             Discord
           </a>
-          <a
-            href="https://github.com/CodeDynasty-dev"
-            target="_blank"
-            class="text-white/80 hover:text-white text-xl py-3 px-4 rounded-lg hover:bg-white/5 transition-colors"
-          >
+          <a href="https://github.com/CodeDynasty-dev" target="_blank" class="text-white/80 hover:text-white text-lg py-3 px-4 rounded-lg hover:bg-white/5 transition-colors">
             GitHub
           </a>
-          <a
-            href="/contact.html"
-            class="text-white/80 hover:text-white text-xl py-3 px-4 rounded-lg hover:bg-white/5 transition-colors"
-          >
+          <a href="/contact.html" class="text-white/80 hover:text-white text-lg py-3 px-4 rounded-lg hover:bg-white/5 transition-colors">
             Contact
           </a>
         </nav>
         <div class="pt-6 border-t border-white/10 mt-auto">
-          <p class="text-white/50 text-sm text-center">
-            © 2023 CodeDynasty. All rights reserved.
-          </p>
+          <p class="text-white/50 text-sm text-center">© 2025 CodeDynasty. All rights reserved.</p>
         </div>
       </div>
     </div>
 
+    <main class="pt-20">
+      <!-- Hero Section -->
+      <section class="hero-premium relative overflow-hidden">
+        <!-- Animated Background with Mesh Gradient -->
+        <div class="absolute inset-0">
+          <div class="absolute inset-0 bg-gradient-to-br from-indigo-950 via-purple-950 to-black"></div>
+          <div id="stars"></div>
+          <div id="stars2"></div>
+          <div id="stars3"></div>
+          <!-- Animated Gradient Orbs -->
+          <div class="gradient-orb gradient-orb-1"></div>
+          <div class="gradient-orb gradient-orb-2"></div>
+          <div class="gradient-orb gradient-orb-3"></div>
+          <!-- Grid Pattern Overlay -->
+          <div class="absolute inset-0 bg-grid-pattern opacity-20"></div>
+        </div>
+
+        <!-- Floating Particles -->
+        <div id="particles-container" class="absolute inset-0 overflow-hidden pointer-events-none"></div>
+
+        <div class="relative z-10 flex flex-col items-center justify-center text-center px-4 max-w-6xl mx-auto py-32">
+          <!-- Animated Badge -->
+          <div class="badge-premium mb-8 fade-in-up">
+            <span class="badge-glow"></span>
+            <svg class="w-4 h-4 mr-2 animate-pulse-slow" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+            </svg>
+            <span class="relative z-10">Open Source First</span>
+          </div>
+
+          <!-- Main Heading with Text Animation -->
+          <h1 class="hero-title text-6xl md:text-8xl font-black text-white leading-none mb-8 fade-in-up" style="animation-delay: 0.1s">
+            Engineering the
+            <span class="block mt-2">
+              <span class="gradient-text-premium animate-gradient">Future</span>
+            </span>
+          </h1>
+
+          <!-- Subtitle with Typing Effect -->
+          <p class="text-xl md:text-2xl text-slate-300 max-w-3xl mb-12 fade-in-up leading-relaxed" style="animation-delay: 0.2s">
+            Building <span class="text-indigo-400 font-semibold">modern</span>, <span class="text-purple-400 font-semibold">performant</span> software that empowers developers and delights users. Open source tools for the next generation.
+          </p>
+
+          <!-- Stats Bar -->
+          <div class="flex flex-wrap justify-center gap-8 mb-12 fade-in-up" style="animation-delay: 0.3s">
+            <div class="stat-item">
+              <div class="stat-number gradient-text-premium">6+</div>
+              <div class="stat-label">Open Source Projects</div>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <div class="stat-number gradient-text-premium">100+</div>
+              <div class="stat-label">GitHub Stars</div>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <div class="stat-number gradient-text-premium">∞</div>
+              <div class="stat-label">Possibilities</div>
+            </div>
+          </div>
+
+          <!-- CTA Buttons -->
+          <div class="flex flex-col sm:flex-row items-center gap-4 fade-in-up" style="animation-delay: 0.4s">
+            <a
+              href="https://github.com/CodeDynasty-dev"
+              class="btn-premium group"
+            >
+              <span class="btn-premium-glow"></span>
+              <span class="relative z-10 flex items-center">
+                <span class="mr-2">Explore Projects</span>
+                <svg class="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                </svg>
+              </span>
+            </a>
+            <a
+              href="/contact.html"
+              class="btn-secondary-premium group"
+            >
+              <span class="relative z-10 flex items-center">
+                <span class="mr-2">Get in Touch</span>
+                <svg class="w-5 h-5 transition-transform duration-300 group-hover:rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                </svg>
+              </span>
+            </a>
+          </div>
+
+          <!-- Scroll Indicator -->
+          <div class="scroll-indicator fade-in-up" style="animation-delay: 0.5s">
+            <div class="scroll-indicator-line"></div>
+            <div class="scroll-indicator-dot"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Trust Indicators / Social Proof -->
+      <section class="py-16 border-y border-white/5 bg-black/20 backdrop-blur-sm">
+        <div class="container mx-auto px-4">
+          <div class="flex flex-wrap items-center justify-center gap-12 opacity-60">
+            <div class="flex items-center gap-3">
+              <i class="fab fa-github text-3xl text-white"></i>
+              <div>
+                <div class="text-sm text-slate-400">Trusted on</div>
+                <div class="text-white font-semibold">GitHub</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <i class="fab fa-npm text-3xl text-white"></i>
+              <div>
+                <div class="text-sm text-slate-400">Published on</div>
+                <div class="text-white font-semibold">NPM</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <i class="fas fa-code text-3xl text-white"></i>
+              <div>
+                <div class="text-sm text-slate-400">Built with</div>
+                <div class="text-white font-semibold">TypeScript</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <i class="fas fa-shield-alt text-3xl text-white"></i>
+              <div>
+                <div class="text-sm text-slate-400">Licensed</div>
+                <div class="text-white font-semibold">MIT</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Why Choose Us Section -->
+      <section class="section-padding bg-gradient-to-b from-black/30 to-transparent">
+        <div class="container mx-auto px-4">
+          <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
+              Why <span class="gradient-text-premium">CodeDynasty</span>
+            </h2>
+            <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+              We're not just building tools—we're crafting experiences that developers love
+            </p>
+          </div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            <!-- Feature 1 -->
+            <div class="feature-card group">
+              <div class="feature-icon">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-3">Lightning Fast</h3>
+              <p class="text-slate-400">Built for performance from the ground up. Every millisecond counts.</p>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="feature-card group">
+              <div class="feature-icon">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-3">Developer First</h3>
+              <p class="text-slate-400">Intuitive APIs and excellent documentation. Start building in minutes.</p>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="feature-card group">
+              <div class="feature-icon">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-3">Type Safe</h3>
+              <p class="text-slate-400">Full TypeScript support with excellent type inference and safety.</p>
+            </div>
+
+            <!-- Feature 4 -->
+            <div class="feature-card group">
+              <div class="feature-icon">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-3">Fully Customizable</h3>
+              <p class="text-slate-400">Adapt to your needs. Every aspect is configurable and extensible.</p>
+            </div>
+
+            <!-- Feature 5 -->
+            <div class="feature-card group">
+              <div class="feature-icon">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-3">Community Driven</h3>
+              <p class="text-slate-400">Join thousands of developers building the future together.</p>
+            </div>
+
+            <!-- Feature 6 -->
+            <div class="feature-card group">
+              <div class="feature-icon">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-3">Cloud Ready</h3>
+              <p class="text-slate-400">Deploy anywhere. Edge, serverless, or traditional—we've got you covered.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Latest Articles Section -->
+      <section class="section-padding">
+        <div class="container mx-auto px-4">
+          <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
+              Latest <span class="gradient-text-premium">Articles</span>
+            </h2>
+            <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+              Deep dives into modern web development, JavaScript internals, and software architecture
+            </p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            <!-- Article 1 -->
+            <a href="/posts/JavaScript-Microtasks-A-deep-look-and-comparision-to-defer.html" class="group modern-card">
+              <div class="aspect-video overflow-hidden rounded-lg mb-4">
+                <img
+                  src="/post-images/micro-task.jpg"
+                  alt="JavaScript Microtasks"
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+              </div>
+              <div class="badge mb-3">JavaScript</div>
+              <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-indigo-400 transition-colors">
+                JavaScript Microtasks: A Comprehensive Guide
+              </h3>
+              <p class="text-slate-400 mb-4 line-clamp-2">
+                Master JavaScript's microtask queue and queueMicrotask() API to build more responsive web applications
+              </p>
+              <div class="flex items-center text-sm text-slate-500">
+                <span>Read article</span>
+                <svg class="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </div>
+            </a>
+
+            <!-- Article 2 -->
+            <a href="/posts/Javascript-await-was-rogue-all-along.html" class="group modern-card">
+              <div class="aspect-video overflow-hidden rounded-lg mb-4">
+                <img
+                  src="/post-images/then.png"
+                  alt="JavaScript Await"
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+              </div>
+              <div class="badge mb-3">JavaScript</div>
+              <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-indigo-400 transition-colors">
+                Javascript await was rogue all along
+              </h3>
+              <p class="text-slate-400 mb-4 line-clamp-2">
+                Discover the hidden behaviors and gotchas of async/await in JavaScript
+              </p>
+              <div class="flex items-center text-sm text-slate-500">
+                <span>Read article</span>
+                <svg class="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Open Source Projects Section -->
+      <section class="section-padding bg-gradient-to-b from-transparent to-black/30">
+        <div class="container mx-auto px-4">
+          <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
+              Open Source <span class="gradient-text">Projects</span>
+            </h2>
+            <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+              Building modern software for humanity. Explore our open source contributions.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+            <!-- Jetpath -->
+            <a href="https://github.com/CodeDynasty-dev/Jetpath" target="_blank" class="project-card modern-card group">
+              <div class="aspect-video overflow-hidden bg-gradient-to-br from-blue-500/20 to-purple-600/20 flex items-center justify-center rounded-lg mb-4">
+                <div class="text-white text-5xl font-bold">JP</div>
+              </div>
+              <div class="badge mb-3">API Framework</div>
+              <h3 class="text-xl font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors">
+                Jetpath
+              </h3>
+              <p class="text-slate-400 text-sm mb-4">
+                A performance-first cross-runtime API framework without the boilerplate.
+              </p>
+              <div class="flex items-center text-xs text-slate-500">
+                <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                </svg>
+                <span class="mr-3">16</span>
+                <span>TypeScript • MIT</span>
+              </div>
+            </a>
+
+            <!-- Cradova -->
+            <a href="https://github.com/CodeDynasty-dev/Cradova" target="_blank" class="project-card modern-card group">
+              <div class="aspect-video overflow-hidden bg-gradient-to-br from-green-500/20 to-teal-600/20 flex items-center justify-center rounded-lg mb-4">
+                <div class="text-white text-5xl font-bold">C</div>
+              </div>
+              <div class="badge mb-3">UI Framework</div>
+              <h3 class="text-xl font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors">
+                Cradova
+              </h3>
+              <p class="text-slate-400 text-sm mb-4">
+                A modern UI framework for building fast and responsive web applications.
+              </p>
+              <div class="flex items-center text-xs text-slate-500">
+                <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                </svg>
+                <span class="mr-3">28</span>
+                <span>JavaScript • MIT</span>
+              </div>
+            </a>
+
+            <!-- Exabase -->
+            <a href="https://github.com/CodeDynasty-dev/Exabase" target="_blank" class="project-card modern-card group">
+              <div class="aspect-video overflow-hidden bg-gradient-to-br from-red-500/20 to-pink-600/20 flex items-center justify-center rounded-lg mb-4">
+                <div class="text-white text-5xl font-bold">E</div>
+              </div>
+              <div class="badge mb-3">Database</div>
+              <h3 class="text-xl font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors">
+                Exabase
+              </h3>
+              <p class="text-slate-400 text-sm mb-4">
+                A scaling focused distributed NoSQL database with strong data consistency.
+              </p>
+              <div class="flex items-center text-xs text-slate-500">
+                <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                </svg>
+                <span class="mr-3">7</span>
+                <span>Go • MIT</span>
+              </div>
+            </a>
+
+            <!-- Jetflare -->
+            <a href="https://github.com/CodeDynasty-dev/Jetflare" target="_blank" class="project-card modern-card group">
+              <div class="aspect-video overflow-hidden bg-gradient-to-br from-yellow-500/20 to-orange-600/20 flex items-center justify-center rounded-lg mb-4">
+                <div class="text-white text-5xl font-bold">JF</div>
+              </div>
+              <div class="badge mb-3">API Client</div>
+              <h3 class="text-xl font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors">
+                Jetflare
+              </h3>
+              <p class="text-slate-400 text-sm mb-4">
+                A type-safe API client with built-in error handling and caching.
+              </p>
+              <div class="flex items-center text-xs text-slate-500">
+                <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                </svg>
+                <span class="mr-3">3</span>
+                <span>TypeScript • MIT</span>
+              </div>
+            </a>
+
+            <!-- SQLiteBruv -->
+            <a href="https://github.com/CodeDynasty-dev/SQLiteBruv" target="_blank" class="project-card modern-card group">
+              <div class="aspect-video overflow-hidden bg-gradient-to-br from-purple-500/20 to-indigo-600/20 flex items-center justify-center rounded-lg mb-4">
+                <div class="text-white text-5xl font-bold">SB</div>
+              </div>
+              <div class="badge mb-3">Database ORM</div>
+              <h3 class="text-xl font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors">
+                SQLiteBruv
+              </h3>
+              <p class="text-slate-400 text-sm mb-4">
+                A type-safe SQLite query builder with D1/Turso support.
+              </p>
+              <div class="flex items-center text-xs text-slate-500">
+                <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                </svg>
+                <span class="mr-3">17</span>
+                <span>TypeScript • MIT</span>
+              </div>
+            </a>
+
+            <!-- Docmach -->
+            <a href="https://github.com/CodeDynasty-dev/Docmach" target="_blank" class="project-card modern-card group">
+              <div class="aspect-video overflow-hidden bg-gradient-to-br from-cyan-500/20 to-blue-600/20 flex items-center justify-center rounded-lg mb-4">
+                <div class="text-white text-5xl font-bold">D</div>
+              </div>
+              <div class="badge mb-3">Static Site Generator</div>
+              <h3 class="text-xl font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors">
+                Docmach
+              </h3>
+              <p class="text-slate-400 text-sm mb-4">
+                A Markdown-powered static site generator for blogs and documentation.
+              </p>
+              <div class="flex items-center text-xs text-slate-500">
+                <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                </svg>
+                <span class="mr-3">1</span>
+                <span>TypeScript • MIT</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto text-center relative z-10">
+          <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+            Stay in the <span class="gradient-text-premium">Loop</span>
+          </h2>
+          <p class="text-slate-400 text-lg mb-8">
+            Get the latest updates on our projects, articles, and developer insights delivered to your inbox.
+          </p>
+          <form class="newsletter-form">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              class="newsletter-input"
+              required
+              aria-label="Email address"
+            />
+            <button type="submit" class="btn-premium">
+              <span class="btn-premium-glow"></span>
+              <span class="relative z-10">Subscribe</span>
+            </button>
+          </form>
+          <p class="text-slate-500 text-sm mt-4">
+            No spam, unsubscribe anytime. We respect your privacy.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black/30 border-t border-white/10 py-16">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+          <!-- Brand Column -->
+          <div class="md:col-span-2">
+            <div class="flex items-center mb-4">
+              <img src="logo.png" alt="CodeDynasty" class="w-10 h-10 rounded-lg mr-3" />
+              <span class="text-xl font-bold text-white">CodeDynasty</span>
+            </div>
+            <p class="text-slate-400 mb-6 max-w-md">
+              Building modern, performant software that empowers developers and delights users. Open source tools for the next generation.
+            </p>
+            <div class="flex gap-4">
+              <a href="https://github.com/CodeDynasty-dev" target="_blank" class="social-link">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="https://discord.codedynasty.dev" class="social-link">
+                <i class="fab fa-discord"></i>
+              </a>
+              <a href="https://twitter.com/codedynasty" target="_blank" class="social-link">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div>
+            <h3 class="text-white font-semibold mb-4">Quick Links</h3>
+            <ul class="space-y-3">
+              <li><a href="/" class="text-slate-400 hover:text-white transition-colors">Home</a></li>
+              <li><a href="/posts" class="text-slate-400 hover:text-white transition-colors">Blog</a></li>
+              <li><a href="https://github.com/CodeDynasty-dev" class="text-slate-400 hover:text-white transition-colors">Projects</a></li>
+              <li><a href="/contact.html" class="text-slate-400 hover:text-white transition-colors">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Resources -->
+          <div>
+            <h3 class="text-white font-semibold mb-4">Resources</h3>
+            <ul class="space-y-3">
+              <li><a href="https://github.com/CodeDynasty-dev" class="text-slate-400 hover:text-white transition-colors">Documentation</a></li>
+              <li><a href="https://discord.codedynasty.dev" class="text-slate-400 hover:text-white transition-colors">Community</a></li>
+              <li><a href="https://github.com/CodeDynasty-dev" class="text-slate-400 hover:text-white transition-colors">GitHub</a></li>
+              <li><a href="/contact.html" class="text-slate-400 hover:text-white transition-colors">Support</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p class="text-slate-500 text-sm">
+            &copy; 2025 CodeDynasty. Building modern software for humanity.
+          </p>
+          <div class="flex gap-6 text-sm">
+            <a href="/privacy" class="text-slate-500 hover:text-white transition-colors">Privacy</a>
+            <a href="/terms" class="text-slate-500 hover:text-white transition-colors">Terms</a>
+            <a href="/license" class="text-slate-500 hover:text-white transition-colors">License</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/script/index.js"></script>
     <script>
       // Mobile menu functionality
       const mobileMenuButton = document.getElementById("mobile-menu-button");
@@ -196,549 +637,24 @@
         body.classList.toggle("overflow-hidden");
       }
 
-      mobileMenuButton.addEventListener("click", toggleMobileMenu);
-      closeMobileMenu.addEventListener("click", toggleMobileMenu);
+      if (mobileMenuButton && closeMobileMenu && mobileMenu) {
+        mobileMenuButton.addEventListener("click", toggleMobileMenu);
+        closeMobileMenu.addEventListener("click", toggleMobileMenu);
 
-      // Close menu when clicking on a link
-      document.querySelectorAll("#mobile-menu a").forEach((link) => {
-        link.addEventListener("click", () => {
-          mobileMenu.classList.remove("translate-x-0");
-          mobileMenu.classList.add("-translate-x-full");
-          body.classList.remove("overflow-hidden");
+        document.querySelectorAll("#mobile-menu a").forEach((link) => {
+          link.addEventListener("click", () => {
+            mobileMenu.classList.remove("translate-x-0");
+            mobileMenu.classList.add("-translate-x-full");
+            body.classList.remove("overflow-hidden");
+          });
         });
-      });
 
-      // Close menu when pressing Escape key
-      document.addEventListener("keydown", (e) => {
-        if (
-          e.key === "Escape" &&
-          mobileMenu.classList.contains("translate-x-0")
-        ) {
-          toggleMobileMenu();
-        }
-      });
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape" && mobileMenu.classList.contains("translate-x-0")) {
+            toggleMobileMenu();
+          }
+        });
+      }
     </script>
-
-    <main class="pt-24">
-      <!-- Hero Section -->
-      <section class="relative h-[90vh] overflow-hidden">
-        <!-- Animated Background -->
-        <div class="absolute inset-0 bg-black">
-          <div id="stars"></div>
-          <div id="stars2"></div>
-          <div id="stars3"></div>
-        </div>
-        <div
-          class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"
-        ></div>
-
-        <!-- Content -->
-        <div
-          class="relative z-10 flex flex-col items-center justify-center h-full text-center px-4"
-        >
-          <h1
-            class="text-5xl md:text-7xl font-extrabold text-white leading-tight tracking-tighter animate-glow"
-          >
-            Engineering the Future
-          </h1>
-          <p class="mt-6 text-lg md:text-xl text-white/70 max-w-3xl">
-            We are building modern software for humanity.
-          </p>
-          <div class="mt-10 flex flex-col sm:flex-row items-center gap-6">
-            <a
-              href="https://github.com/CodeDynasty-dev"
-              class="group relative inline-flex items-center justify-center px-8 py-4 bg-white/5 border border-white/20 rounded-lg text-white font-semibold transition-all duration-300 hover:bg-white/10"
-            >
-              <span class="mr-2">Open Source Projects</span>
-              <svg
-                class="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M17 8l4 4m0 0l-4 4m4-4H3"
-                ></path>
-              </svg>
-            </a>
-            <a
-              href="/contact.html"
-              class="text-white/60 hover:text-white transition-colors duration-300"
-            >
-              Get in Touch
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <!-- Categories with Featured Articles -->
-      <section class="container mx-auto px-4 py-24">
-        <div class="flex items-center mb-12">
-          <div
-            class="h-px bg-gradient-to-r from-transparent to-primary-color flex-grow"
-            style="
-              background-image: linear-gradient(
-                to right,
-                transparent,
-                var(--primary-color)
-              );
-            "
-          ></div>
-          <h2
-            class="text-4xl font-bold px-4 brand-font"
-            style="color: var(--text-color)"
-          >
-            LATEST
-          </h2>
-          <div
-            class="h-px bg-gradient-to-l from-transparent to-primary-color flex-grow"
-            style="
-              background-image: linear-gradient(
-                to left,
-                transparent,
-                var(--primary-color)
-              );
-            "
-          ></div>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <!-- Dev Section -->
-          <div style="background-color: var(--card-bg)" class="p-8 rounded-lg">
-            <div class="space-y-6">
-              <a
-                href="/posts/JavaScript-Microtasks-A-deep-look-and-comparision-to-defer.html"
-                class="block group"
-              >
-                <article class="flex gap-4 items-start group">
-                  <img
-                    src="/post-images/micro-task.jpg"
-                    alt="Systems article thumbnail"
-                    class="w-24 h-24 object-cover rounded"
-                  />
-                  <div>
-                    <h3
-                      class="text-xl font-bold group-hover:text-primary-color transition-colors brand-font"
-                      style="color: var(--text-color)"
-                    >
-                      JavaScript Microtasks: A Comprehensive Guide and the Event
-                      Loop
-                    </h3>
-                    <p style="color: var(--text-secondary)" class="mt-2">
-                      Master JavaScript's microtask queue and queueMicrotask()
-                      API to build more responsive web applications with
-                      optimized rendering and state management
-                    </p>
-                  </div>
-                </article>
-              </a>
-            </div>
-          </div>
-
-          <!-- Systems Section -->
-          <div style="background-color: var(--card-bg)" class="p-8 rounded-lg">
-            <div class="space-y-6">
-              <a
-                href="/posts/Javascript-await-was-rogue-all-along.html"
-                class="block group"
-              >
-                <article class="flex gap-4 items-start group">
-                  <img
-                    src="/post-images/then.png"
-                    alt="Dev article thumbnail"
-                    class="w-24 h-24 object-cover rounded"
-                  />
-                  <div>
-                    <h3
-                      class="text-xl font-bold group-hover:text-primary-color transition-colors brand-font"
-                      style="color: var(--text-color)"
-                    >
-                      Javascript await was rogue all along
-                    </h3>
-                    <p style="color: var(--text-secondary)" class="mt-2">
-                      Don’t tell me you don’t know await is rogue too, Tell me
-                      what is going here..
-                    </p>
-                  </div>
-                </article>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Featured Section -->
-      <section id="featured" class="py-24">
-        <div class="container mx-auto px-4">
-          <div class="text-center mb-16">
-            <h2
-              class="text-4xl font-extrabold text-white tracking-tight sm:text-5xl brand-font"
-            >
-              From the Blog
-            </h2>
-            <p class="mt-4 text-xl text-white/60">
-              Insights on development, design, and the future of technology.
-            </p>
-          </div>
-
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Card 1 -->
-            <a
-              href="/posts/Javascript-await-was-rogue-all-along.html"
-              class="block group"
-            >
-              <div
-                class="glass-card rounded-xl p-8 h-full flex flex-col transition-all duration-300 group-hover:border-primary-color/50 group-hover:scale-105"
-              >
-                <h3 class="text-2xl font-bold text-white brand-font">
-                  Javascript await was rogue all along
-                </h3>
-                <p class="text-white/60 mt-4 flex-grow">
-                  Don’t tell me you don’t know await is rogue too, Tell me what
-                  is going here...
-                </p>
-                <div
-                  class="mt-6 flex items-center justify-between text-sm text-white/50"
-                >
-                  <span>Development</span>
-                  <span>Read More &rarr;</span>
-                </div>
-              </div>
-            </a>
-
-            <!-- Card 2 -->
-            <a
-              href="/posts/JavaScript-Microtasks-A-deep-look-and-comparision-to-defer.html"
-              class="block group"
-            >
-              <div
-                class="glass-card rounded-xl p-8 h-full flex flex-col transition-all duration-300 group-hover:border-primary-color/50 group-hover:scale-105"
-              >
-                <h3 class="text-2xl font-bold text-white brand-font">
-                  JavaScript Microtasks: A Comprehensive Guide and the Event
-                  Loop
-                </h3>
-                <p class="text-white/60 mt-4 flex-grow">
-                  Master JavaScript's microtask queue and queueMicrotask() API
-                  to build more responsive web applications with optimized
-                  rendering and state management
-                </p>
-                <div
-                  class="mt-6 flex items-center justify-between text-sm text-white/50"
-                >
-                  <span>Development</span>
-                  <span>Read More &rarr;</span>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <!-- Open Source Projects Section -->
-      <section class="py-24">
-        <div class="container mx-auto px-4">
-          <div class="text-center mb-16">
-            <h2
-              class="text-4xl font-extrabold text-white tracking-tight sm:text-5xl brand-font"
-            >
-              Our Open Source Projects
-            </h2>
-            <p class="mt-4 text-xl text-white/60">
-              Building modern software for humanity. Explore our open source
-              contributions.
-            </p>
-          </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Jetpath -->
-            <a
-              href="https://github.com/CodeDynasty-dev/Jetpath"
-              target="_blank"
-              class="block"
-            >
-              <div
-                class="glass-card rounded-xl overflow-hidden group transition-all duration-300 hover:scale-105 hover:border-primary-color/50 h-full"
-              >
-                <div
-                  class="aspect-video overflow-hidden bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center"
-                >
-                  <div class="text-white text-5xl font-bold">JP</div>
-                </div>
-                <div class="p-6">
-                  <span
-                    class="text-primary-color text-sm tracking-wider font-mono"
-                    >API.FRAMEWORK</span
-                  >
-                  <h3 class="text-xl font-bold text-white mt-2 brand-font">
-                    Jetpath
-                  </h3>
-                  <p class="text-white/60 mt-2 text-sm">
-                    A performance-first cross-runtime API framework without the
-                    boilerplate.
-                  </p>
-                  <div class="mt-4 flex items-center text-sm text-white/60">
-                    <span class="flex items-center mr-4">
-                      <svg
-                        class="w-4 h-4 mr-1"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
-                        />
-                      </svg>
-                      16
-                    </span>
-                    <span class="text-xs">TypeScript • MIT License</span>
-                  </div>
-                </div>
-              </div>
-            </a>
-
-            <!-- Cradova -->
-            <a
-              href="https://github.com/CodeDynasty-dev/Cradova"
-              target="_blank"
-              class="block"
-            >
-              <div
-                class="glass-card rounded-xl overflow-hidden group transition-all duration-300 hover:scale-105 hover:border-primary-color/50 h-full"
-              >
-                <div
-                  class="aspect-video overflow-hidden bg-gradient-to-br from-green-500 to-teal-600 flex items-center justify-center"
-                >
-                  <div class="text-white text-5xl font-bold">C</div>
-                </div>
-                <div class="p-6">
-                  <span
-                    class="text-primary-color text-sm tracking-wider font-mono"
-                    >UI.FRAMEWORK</span
-                  >
-                  <h3 class="text-xl font-bold text-white mt-2 brand-font">
-                    Cradova
-                  </h3>
-                  <p class="text-white/60 mt-2 text-sm">
-                    A modern UI framework for building fast and responsive web
-                    applications.
-                  </p>
-                  <div class="mt-4 flex items-center text-sm text-white/60">
-                    <span class="flex items-center mr-4">
-                      <svg
-                        class="w-4 h-4 mr-1"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
-                        />
-                      </svg>
-                      28
-                    </span>
-                    <span class="text-xs">JavaScript • MIT License</span>
-                  </div>
-                </div>
-              </div>
-            </a>
-
-            <!-- Exabase -->
-            <a
-              href="https://github.com/CodeDynasty-dev/Exabase"
-              target="_blank"
-              class="block"
-            >
-              <div
-                class="glass-card rounded-xl overflow-hidden group transition-all duration-300 hover:scale-105 hover:border-primary-color/50 h-full"
-              >
-                <div
-                  class="aspect-video overflow-hidden bg-gradient-to-br from-red-500 to-pink-600 flex items-center justify-center"
-                >
-                  <div class="text-white text-5xl font-bold">E</div>
-                </div>
-                <div class="p-6">
-                  <span
-                    class="text-primary-color text-sm tracking-wider font-mono"
-                    >DATABASE</span
-                  >
-                  <h3 class="text-xl font-bold text-white mt-2 brand-font">
-                    Exabase
-                  </h3>
-                  <p class="text-white/60 mt-2 text-sm">
-                    A scaling focused distributed NoSQL database with good
-                    performance and strong data consistency.
-                  </p>
-                  <div class="mt-4 flex items-center text-sm text-white/60">
-                    <span class="flex items-center mr-4">
-                      <svg
-                        class="w-4 h-4 mr-1"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
-                        />
-                      </svg>
-                      7
-                    </span>
-                    <span class="text-xs">Go • MIT License</span>
-                  </div>
-                </div>
-              </div>
-            </a>
-
-            <!-- Jetflare -->
-            <a
-              href="https://github.com/CodeDynasty-dev/Jetflare"
-              target="_blank"
-              class="block"
-            >
-              <div
-                class="glass-card rounded-xl overflow-hidden group transition-all duration-300 hover:scale-105 hover:border-primary-color/50 h-full"
-              >
-                <div
-                  class="aspect-video overflow-hidden bg-gradient-to-br from-yellow-500 to-orange-600 flex items-center justify-center"
-                >
-                  <div class="text-white text-5xl font-bold">JF</div>
-                </div>
-                <div class="p-6">
-                  <span
-                    class="text-primary-color text-sm tracking-wider font-mono"
-                    >API.CLIENT</span
-                  >
-                  <h3 class="text-xl font-bold text-white mt-2 brand-font">
-                    Jetflare
-                  </h3>
-                  <p class="text-white/60 mt-2 text-sm">
-                    A type-safe API client for web applications with built-in
-                    error handling and caching.
-                  </p>
-                  <div class="mt-4 flex items-center text-sm text-white/60">
-                    <span class="flex items-center mr-4">
-                      <svg
-                        class="w-4 h-4 mr-1"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
-                        />
-                      </svg>
-                      3
-                    </span>
-                    <span class="text-xs">TypeScript • MIT License</span>
-                  </div>
-                </div>
-              </div>
-            </a>
-
-            <!-- SQLiteBruv -->
-            <a
-              href="https://github.com/CodeDynasty-dev/SQLiteBruv"
-              target="_blank"
-              class="block"
-            >
-              <div
-                class="glass-card rounded-xl overflow-hidden group transition-all duration-300 hover:scale-105 hover:border-primary-color/50 h-full"
-              >
-                <div
-                  class="aspect-video overflow-hidden bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center"
-                >
-                  <div class="text-white text-5xl font-bold">SB</div>
-                </div>
-                <div class="p-6">
-                  <span
-                    class="text-primary-color text-sm tracking-wider font-mono"
-                    >DATABASE.ORM</span
-                  >
-                  <h3 class="text-xl font-bold text-white mt-2 brand-font">
-                    SQLiteBruv
-                  </h3>
-                  <p class="text-white/60 mt-2 text-sm">
-                    A type-safe, secure SQLite query builder with D1/Turso
-                    support and built-in migrations.
-                  </p>
-                  <div class="mt-4 flex items-center text-sm text-white/60">
-                    <span class="flex items-center mr-4">
-                      <svg
-                        class="w-4 h-4 mr-1"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
-                        />
-                      </svg>
-                      17
-                    </span>
-                    <span class="text-xs">TypeScript • MIT License</span>
-                  </div>
-                </div>
-              </div>
-            </a>
-
-            <!-- Docmach -->
-            <a
-              href="https://github.com/CodeDynasty-dev/Docmach"
-              target="_blank"
-              class="block"
-            >
-              <div
-                class="glass-card rounded-xl overflow-hidden group transition-all duration-300 hover:scale-105 hover:border-primary-color/50 h-full"
-              >
-                <div
-                  class="aspect-video overflow-hidden bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center"
-                >
-                  <div class="text-white text-5xl font-bold">D</div>
-                </div>
-                <div class="p-6">
-                  <span
-                    class="text-primary-color text-sm tracking-wider font-mono"
-                    >STATIC.SITE.GENERATOR</span
-                  >
-                  <h3 class="text-xl font-bold text-white mt-2 brand-font">
-                    Docmach
-                  </h3>
-                  <p class="text-white/60 mt-2 text-sm">
-                    A Markdown-powered static site generator designed for blogs
-                    and project documentation.
-                  </p>
-                  <div class="mt-4 flex items-center text-sm text-white/60">
-                    <span class="flex items-center mr-4">
-                      <svg
-                        class="w-4 h-4 mr-1"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
-                        />
-                      </svg>
-                      1
-                    </span>
-                    <span class="text-xs">TypeScript • MIT License</span>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="bg-black/30 border-t border-white/10">
-      <div class="container mx-auto px-4 py-12">
-        <div
-          class="text-center pt-8 border-t"
-          style="border-color: rgba(255, 255, 255, 0.1)"
-        >
-          <p style="color: var(--text-secondary)">
-            &copy; 2025 CodeDynasty. <span class="code-text"></span>
-          </p>
-        </div>
-      </div>
-    </footer>
-    <script src="/script/index.js"></script>
   </body>
 </html>
