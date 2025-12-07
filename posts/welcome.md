@@ -13,7 +13,7 @@ image: /codedynasty-bg.png;
 
 # Welcome to CodeDynasty
 
-At CodeDynasty, we believe in the power of innovation using code. We're making considerable effort to build new free software and modernize existing ones, as well educating those who want to a step deeper into programming.
+At CodeDynasty, we believe in the power of innovation using code. We're making considerable effort to build new free software and modernize existing ones, as well educating those who want to go a step deeper into programming.
 
 ## What We Offer
 
