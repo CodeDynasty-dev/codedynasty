@@ -14,9 +14,8 @@ cards.forEach((card) => {
     const rotateY = (centerX - x) / 20;
 
     this.querySelector(
-      ".card-3d-inner",
-    ).style.transform =
-      `translateZ(20px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+      ".card-3d-inner"
+    ).style.transform = `translateZ(20px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
   });
 
   card.addEventListener("mouseleave", function () {
@@ -29,22 +28,20 @@ function setupShareButtons() {
   const currentUrl = encodeURIComponent(window.location.href);
   const title = encodeURIComponent(document.title);
   const text = encodeURIComponent(
-    document.querySelector('meta[name="description"]')?.content || "",
+    document.querySelector('meta[name="description"]')?.content || ""
   );
 
   // Share URLs for different platforms
   const shareUrls = {
     twitter: `https://twitter.com/intent/tweet?url=${currentUrl}&text=${title}`,
-    linkedin:
-      `https://www.linkedin.com/sharing/share-offsite/?url=${currentUrl}`,
-    facebook:
-      `https://www.facebook.com/sharer/sharer.php?u=${currentUrl}&quote=${title}`,
+    linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${currentUrl}`,
+    facebook: `https://www.facebook.com/sharer/sharer.php?u=${currentUrl}&quote=${title}`,
     copy: window.location.href,
   };
 
   // Set up share buttons
   const shareButtons = document.querySelectorAll(
-    '[class*="fa-twitter"], [class*="fa-linkedin"], [class*="fa-facebook"], [class*="fa-link"]',
+    '[class*="fa-twitter"], [class*="fa-linkedin"], [class*="fa-facebook"], [class*="fa-link"]'
   );
 
   shareButtons.forEach((button) => {
@@ -68,7 +65,7 @@ function setupShareButtons() {
             setTimeout(() => {
               tooltip.setAttribute(
                 "data-tooltip",
-                originalTitle || "Copy Link",
+                originalTitle || "Copy Link"
               );
             }, 2000);
           }
@@ -160,41 +157,255 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // Floating Particles System
+
 function initFloatingParticles() {
   const container = document.getElementById("particles-container");
   if (!container) return;
 
-  const particleCount = 30;
+  // Create Canvas for supernova
+  const canvas = document.createElement("canvas");
+  canvas.id = "supernova-canvas";
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  container.appendChild(canvas);
 
-  for (let i = 0; i < particleCount; i++) {
-    createParticle(container, i);
+  const ctx = canvas.getContext("2d");
+  let particles = [];
+  let energyWaves = [];
+  const centerX = canvas.width / 2;
+  const centerY = canvas.height / 2;
+  let time = 0;
+
+  // Supernova Particle - Explosive outward motion
+  class SupernovaParticle {
+    constructor(burstPhase = 0) {
+      const angle = Math.random() * Math.PI * 2;
+      const velocity = 2 + Math.random() * 4;
+      
+      this.x = centerX;
+      this.y = centerY;
+      this.vx = Math.cos(angle) * velocity;
+      this.vy = Math.sin(angle) * velocity;
+      this.size = Math.random() * 3 + 1;
+      this.life = 1;
+      this.decay = 0.003 + Math.random() * 0.005;
+      this.color = Math.random() > 0.5 ? [251, 191, 36] : [14, 165, 233];
+      this.trail = [];
+      this.maxTrailLength = 15;
+      this.burstPhase = burstPhase;
+    }
+
+    update() {
+      // Add current position to trail
+      this.trail.push({ x: this.x, y: this.y, life: this.life });
+      if (this.trail.length > this.maxTrailLength) {
+        this.trail.shift();
+      }
+
+      // Update position with acceleration
+      this.x += this.vx;
+      this.y += this.vy;
+      
+      // Slight gravity and drag
+      this.vy += 0.02;
+      this.vx *= 0.99;
+      this.vy *= 0.99;
+      
+      // Decay life
+      this.life -= this.decay;
+      
+      return this.life > 0;
+    }
+
+    draw() {
+      // Draw trail
+      this.trail.forEach((point, index) => {
+        const trailLife = (index / this.trail.length) * point.life;
+        const trailSize = this.size * trailLife;
+        
+        ctx.beginPath();
+        ctx.arc(point.x, point.y, trailSize, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(${this.color[0]}, ${this.color[1]}, ${this.color[2]}, ${trailLife * 0.6})`;
+        ctx.fill();
+      });
+
+      // Draw particle with glow
+      ctx.shadowBlur = 20;
+      ctx.shadowColor = `rgba(${this.color[0]}, ${this.color[1]}, ${this.color[2]}, ${this.life})`;
+      
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(${this.color[0]}, ${this.color[1]}, ${this.color[2]}, ${this.life})`;
+      ctx.fill();
+      
+      ctx.shadowBlur = 0;
+    }
   }
+
+  // Energy Wave - Expanding rings
+  class EnergyWave {
+    constructor() {
+      this.radius = 0;
+      this.maxRadius = Math.max(canvas.width, canvas.height);
+      this.speed = 3 + Math.random() * 2;
+      this.opacity = 1;
+      this.color = Math.random() > 0.5 ? [251, 191, 36] : [14, 165, 233];
+    }
+
+    update() {
+      this.radius += this.speed;
+      this.opacity = 1 - (this.radius / this.maxRadius);
+      return this.radius < this.maxRadius;
+    }
+
+    draw() {
+      ctx.beginPath();
+      ctx.arc(centerX, centerY, this.radius, 0, Math.PI * 2);
+      ctx.strokeStyle = `rgba(${this.color[0]}, ${this.color[1]}, ${this.color[2]}, ${this.opacity * 0.5})`;
+      ctx.lineWidth = 2;
+      ctx.stroke();
+      
+      // Inner glow
+      ctx.strokeStyle = `rgba(${this.color[0]}, ${this.color[1]}, ${this.color[2]}, ${this.opacity * 0.3})`;
+      ctx.lineWidth = 6;
+      ctx.stroke();
+    }
+  }
+
+  // Create initial burst
+  function createBurst() {
+    const burstSize = 50 + Math.random() * 50;
+    for (let i = 0; i < burstSize; i++) {
+      particles.push(new SupernovaParticle(time));
+    }
+    energyWaves.push(new EnergyWave());
+  }
+
+  // Initial burst
+  createBurst();
+
+  // Periodic bursts
+  setInterval(() => {
+    createBurst();
+  }, 2000);
+
+  // Animation loop
+  function animate() {
+    time++;
+    
+    // Fade effect for trails
+    ctx.fillStyle = "rgba(0, 0, 0, 0.1)";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    // Draw pulsing core
+    const coreSize = 30 + Math.sin(time * 0.05) * 10;
+    const coreGlow = 40 + Math.sin(time * 0.05) * 20;
+    
+    ctx.shadowBlur = coreGlow;
+    ctx.shadowColor = "rgba(251, 191, 36, 0.8)";
+    ctx.beginPath();
+    ctx.arc(centerX, centerY, coreSize, 0, Math.PI * 2);
+    ctx.fillStyle = "rgba(251, 191, 36, 0.9)";
+    ctx.fill();
+    
+    ctx.shadowBlur = coreGlow * 1.5;
+    ctx.shadowColor = "rgba(14, 165, 233, 0.6)";
+    ctx.beginPath();
+    ctx.arc(centerX, centerY, coreSize * 0.7, 0, Math.PI * 2);
+    ctx.fillStyle = "rgba(14, 165, 233, 0.8)";
+    ctx.fill();
+    
+    ctx.shadowBlur = 0;
+
+    // Update and draw energy waves
+    energyWaves = energyWaves.filter(wave => {
+      wave.update();
+      wave.draw();
+      return wave.opacity > 0;
+    });
+
+    // Update and draw particles
+    particles = particles.filter(particle => {
+      const alive = particle.update();
+      if (alive) particle.draw();
+      return alive;
+    });
+
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+
+  // Handle resize
+  window.addEventListener("resize", () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  });
+
+  // Add supernova overlay elements
+  createSupernovaOverlays(container);
 }
 
-function createParticle(container, index) {
-  const particle = document.createElement("div");
-  particle.className = "particle";
+function createSupernovaOverlays(container) {
+  // Supernova core
+  const core = document.createElement("div");
+  core.className = "supernova-core";
+  container.appendChild(core);
 
-  // Random positioning
-  particle.style.left = Math.random() * 100 + "%";
-  particle.style.animationDelay = (index * 0.5) + "s";
-  particle.style.animationDuration = (10 + Math.random() * 10) + "s";
+  // Energy rings
+  for (let i = 0; i < 5; i++) {
+    const ring = document.createElement("div");
+    ring.className = "energy-ring";
+    ring.style.animationDelay = i * 0.8 + "s";
+    container.appendChild(ring);
+  }
 
-  // Random size
-  const size = 2 + Math.random() * 4;
-  particle.style.width = size + "px";
-  particle.style.height = size + "px";
+  // Shockwaves
+  for (let i = 0; i < 3; i++) {
+    const shockwave = document.createElement("div");
+    shockwave.className = "shockwave";
+    shockwave.style.animationDelay = i * 1 + "s";
+    container.appendChild(shockwave);
+  }
 
-  // Random color variation
-  const colors = [
-    "rgba(99, 102, 241, 0.6)",
-    "rgba(139, 92, 246, 0.6)",
-    "rgba(236, 72, 153, 0.6)",
-    "rgba(245, 158, 11, 0.6)",
-  ];
-  particle.style.background = colors[Math.floor(Math.random() * colors.length)];
+  // Stellar flares (rotating beams)
+  for (let i = 0; i < 12; i++) {
+    const flare = document.createElement("div");
+    flare.className = "stellar-flare";
+    flare.style.transform = `rotate(${i * 30}deg)`;
+    flare.style.animationDelay = i * 0.1 + "s";
+    container.appendChild(flare);
+  }
 
-  container.appendChild(particle);
+  // Nebula clouds
+  for (let i = 0; i < 3; i++) {
+    const nebula = document.createElement("div");
+    nebula.className = "nebula-cloud";
+    nebula.style.left = Math.random() * 60 + 20 + "%";
+    nebula.style.top = Math.random() * 60 + 20 + "%";
+    nebula.style.background = i % 2 === 0
+      ? "radial-gradient(circle, rgba(14, 165, 233, 0.3), transparent)"
+      : "radial-gradient(circle, rgba(251, 191, 36, 0.2), transparent)";
+    nebula.style.animationDelay = i * 3 + "s";
+    container.appendChild(nebula);
+  }
+
+  // Cosmic dust
+  const dust = document.createElement("div");
+  dust.className = "cosmic-dust";
+  container.appendChild(dust);
+
+  // Plasma waves
+  for (let i = 0; i < 2; i++) {
+    const plasma = document.createElement("div");
+    plasma.className = "plasma-wave";
+    plasma.style.animationDelay = i * 4 + "s";
+    container.appendChild(plasma);
+  }
+}
+    gridLine.style.animationDelay = i * 1 + "s";
+    container.appendChild(gridLine);
+  }
 }
 
 // Scroll Animations
@@ -229,7 +440,7 @@ function initParallaxEffect() {
     const parallaxElements = hero.querySelectorAll(".gradient-orb");
 
     parallaxElements.forEach((el, index) => {
-      const speed = 0.5 + (index * 0.2);
+      const speed = 0.5 + index * 0.2;
       el.style.transform = `translateY(${scrolled * speed}px)`;
     });
   });
@@ -244,7 +455,7 @@ function initParallaxEffect() {
 
     const orbs = hero.querySelectorAll(".gradient-orb");
     orbs.forEach((orb, index) => {
-      const speed = 20 + (index * 10);
+      const speed = 20 + index * 10;
       orb.style.transform = `translate(${xPercent * speed}px, ${
         yPercent * speed
       }px)`;
@@ -303,7 +514,7 @@ function initNewsletterForm() {
         // Success animation
         showNotification(
           "Successfully subscribed! Check your inbox.",
-          "success",
+          "success"
         );
 
         // Confetti effect
@@ -330,7 +541,7 @@ function initNewsletterForm() {
       console.error("Newsletter subscription error:", error);
       showNotification(
         "Oops! Something went wrong. Please try again.",
-        "error",
+        "error"
       );
 
       // Reset button
@@ -365,8 +576,8 @@ function showNotification(message, type = "info") {
   notification.innerHTML = `
     <div class="notification-content">
       <span class="notification-icon">${
-    type === "success" ? "✓" : type === "error" ? "✕" : "ℹ"
-  }</span>
+        type === "success" ? "✓" : type === "error" ? "✕" : "ℹ"
+      }</span>
       <span class="notification-message">${message}</span>
     </div>
     <button class="notification-close" onclick="this.parentElement.remove()">×</button>
