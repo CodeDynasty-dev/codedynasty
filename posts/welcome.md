@@ -6,7 +6,7 @@ time_to_read: 8 min;
 title: Welcome to CodeDynasty: Building Modern Software for Humanity;
 topic: Community;
 author_img: https://avatars.githubusercontent.com/u/75016347;
-image: /placeholder.png;
+image: /codedynasty-bg.png;
 " >
 
 <docmach type="function" params="tags: innovation, development, community, future-tech, ai" file="fragments/tags.js" />

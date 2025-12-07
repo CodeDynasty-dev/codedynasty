@@ -7,3 +7,5 @@ fov
 .kiro
 instructions.md
 transcript.txt
+.vscode/settings.json
+.DS_Store

@@ -6,7 +6,7 @@ time_to_read:11 min;
 title:Tiny Recursive Models and the Design of Efficient Reasoning Systems;
 topic:Efficient recursive models for logical reasoning;
 author_img:https://avatars.githubusercontent.com/u/75016347;
-image:placeholder;
+image:/post-images/tlm.webp;
 description:An exploration of hierarchical and tiny recursion models as an alternative to scaling large language models for structured reasoning tasks;
 ">
 
@@ -16,7 +16,7 @@ description:An exploration of hierarchical and tiny recursion models as an alter
 
 Modern AI practice is dominated by a simple intuition: scale solves everything. Larger models, more data, and more compute are assumed to deliver better intelligence across the board. Benchmarks and marketing material reinforce this narrative, often blurring the line between pattern recognition and genuine reasoning.
 
-Recently, a different design direction has appeared. Instead of adding more parameters, these approaches add more *thinking*. Hierarchical and recursive models such as the Hierarchical Reasoning Model (HRM) and the Tiny Recursion Model (TRM) demonstrate that small, carefully structured networks can match or outperform much larger systems on tightly specified reasoning tasks. They do this not by memorising more, but by reorganising how computation unfolds over time.
+Recently, a different design direction has appeared. Instead of adding more parameters, these approaches add more _thinking_. Hierarchical and recursive models such as the Hierarchical Reasoning Model (HRM) and the Tiny Recursion Model (TRM) demonstrate that small, carefully structured networks can match or outperform much larger systems on tightly specified reasoning tasks. They do this not by memorising more, but by reorganising how computation unfolds over time.
 
 This article looks at how these models work, why they matter, and what they imply for the design of reasoning systems.
 
@@ -194,7 +194,7 @@ It is tempting to interpret these results as evidence that large‑scale languag
 
 Their significance lies elsewhere:
 
-- They provide *existence proofs* that small models can solve hard logical problems when given the right inductive biases.
+- They provide _existence proofs_ that small models can solve hard logical problems when given the right inductive biases.
 - They challenge the assumption that the only way to improve reasoning is to add more parameters.
 - They expand the design space of AI systems towards more explicit control flow, internal state, and recursive computation.
 
@@ -224,6 +224,6 @@ The trade‑off is clear:
 - Large models offer broad competence and flexibility but demand substantial resources and data.
 - Tiny recursive models offer narrow, precise reasoning in well‑structured domains with far lower resource requirements.
 
-Good systems design rarely chooses between extremes. Instead, it composes different components, each shaped to its problem. Recursive reasoning modules are a useful addition to that toolkit—a reminder that how a model *thinks* can matter as much as how big it is.
+Good systems design rarely chooses between extremes. Instead, it composes different components, each shaped to its problem. Recursive reasoning modules are a useful addition to that toolkit—a reminder that how a model _thinks_ can matter as much as how big it is.
 
 </docmach>

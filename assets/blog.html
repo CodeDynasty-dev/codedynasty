@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog - CodeDynasty</title>
+    <link rel="stylesheet" href="/bundle.css" />
+    <link rel="stylesheet" href="/styles/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="shortcut icon" href="logo.png" type="image/png" />
+    <meta
+      name="description"
+      content="CodeDynasty Blog - Technical articles on modern software development, AI, and technology innovation"
+    />
+    <meta
+      name="keywords"
+      content="code, programming, development, blog, articles, tutorials"
+    />
+    <meta name="author" content="CodeDynasty" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#6366f1" />
+    <meta property="og:title" content="Blog - CodeDynasty" />
+    <meta
+      property="og:description"
+      content="Technical articles on modern software development, AI, and technology innovation"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://codedynasty.dev/blog" />
+    <meta property="og:image" content="logo.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <header class="fixed w-full top-0 z-50 nav-modern">
+      <nav class="container mx-auto px-6">
+        <div class="flex justify-between items-center h-20">
+          <a
+            href="/"
+            class="flex items-center group"
+            aria-label="CodeDynasty Home"
+          >
+            <div
+              class="w-10 h-10 mr-3 transition-transform duration-300 group-hover:scale-110"
+            >
+              <img
+                src="logo.png"
+                class="w-full h-full object-cover rounded-lg"
+                alt="CodeDynasty Logo"
+              />
+            </div>
+            <span class="text-xl font-bold text-white">CodeDynasty</span>
+          </a>
+
+          <!-- Mobile menu button -->
+          <button
+            id="mobile-menu-button"
+            class="md:hidden text-white focus:outline-none"
+            aria-label="Toggle menu"
+          >
+            <svg
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16m-7 6h7"
+              />
+            </svg>
+          </button>
+
+          <!-- Desktop Navigation -->
+          <div class="hidden md:flex items-center space-x-2">
+            <a
+              href="/"
+              class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors rounded-lg hover:bg-white/5"
+            >
+              Home
+            </a>
+            <a
+              href="/blog.html"
+              class="px-4 py-2 text-sm font-medium text-white bg-white/10 rounded-lg"
+            >
+              Blog
+            </a>
+            <a
+              href="https://discord.codedynasty.dev"
+              class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors rounded-lg hover:bg-white/5"
+            >
+              Discord
+            </a>
+            <a
+              href="https://github.com/CodeDynasty-dev"
+              class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors rounded-lg hover:bg-white/5"
+              target="_blank"
+            >
+              GitHub
+            </a>
+            <a
+              href="/contact.html"
+              class="px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg hover:shadow-lg hover:shadow-indigo-500/50 transition-all"
+            >
+              Contact
+            </a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div
+      id="mobile-menu"
+      class="fixed inset-0 z-50 bg-black/95 backdrop-blur-lg transform -translate-x-full transition-transform duration-300 ease-in-out md:hidden"
+    >
+      <div class="container mx-auto px-6 py-8 h-full flex flex-col">
+        <div class="flex justify-between items-center mb-12">
+          <a href="/" class="flex items-center" aria-label="CodeDynasty Home">
+            <div class="w-10 h-10 mr-3">
+              <img
+                src="logo.png"
+                class="w-full h-full object-cover rounded-lg"
+                alt="CodeDynasty Logo"
+              />
+            </div>
+            <span class="text-xl font-bold text-white">CodeDynasty</span>
+          </a>
+          <button
+            id="close-mobile-menu"
+            class="text-white/70 hover:text-white transition-colors"
+          >
+            <svg
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+        </div>
+        <nav class="flex-1 flex flex-col space-y-4">
+          <a
+            href="/"
+            class="text-white/80 hover:text-white text-lg py-3 px-4 rounded-lg hover:bg-white/5 transition-colors"
+          >
+            Home
+          </a>
+          <a
+            href="/blog.html"
+            class="text-white text-lg py-3 px-4 rounded-lg bg-white/10"
+          >
+            Blog
+          </a>
+          <a
+            href="https://discord.codedynasty.dev"
+            class="text-white/80 hover:text-white text-lg py-3 px-4 rounded-lg hover:bg-white/5 transition-colors"
+          >
+            Discord
+          </a>
+          <a
+            href="https://github.com/CodeDynasty-dev"
+            target="_blank"
+            class="text-white/80 hover:text-white text-lg py-3 px-4 rounded-lg hover:bg-white/5 transition-colors"
+          >
+            GitHub
+          </a>
+          <a
+            href="/contact.html"
+            class="text-white/80 hover:text-white text-lg py-3 px-4 rounded-lg hover:bg-white/5 transition-colors"
+          >
+            Contact
+          </a>
+        </nav>
+        <div class="pt-6 border-t border-white/10 mt-auto">
+          <p class="text-white/50 text-sm text-center">
+            © 2025 CodeDynasty. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <main class="pt-20">
+      <!-- Hero Section -->
+      <section
+        class="relative overflow-hidden bg-gradient-to-b from-indigo-950/50 via-purple-950/30 to-black py-24"
+      >
+        <div class="absolute inset-0">
+          <div id="stars"></div>
+          <div id="stars2"></div>
+          <div id="stars3"></div>
+          <div class="gradient-orb gradient-orb-1"></div>
+          <div class="gradient-orb gradient-orb-2"></div>
+        </div>
+
+        <div class="relative z-10 container mx-auto px-4 text-center">
+          <div class="badge-premium mb-8 inline-flex">
+            <span class="badge-glow"></span>
+            <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+              <path
+                d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z"
+              />
+            </svg>
+            <span class="relative z-10">Technical Blog</span>
+          </div>
+
+          <h1
+            class="text-5xl md:text-7xl font-black text-white leading-none mb-6"
+          >
+            Our <span class="gradient-text-premium">Blog</span>
+          </h1>
+
+          <p
+            class="text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto leading-relaxed"
+          >
+            Deep dives into modern web development, AI, system architecture, and
+            cutting-edge technology
+          </p>
+        </div>
+      </section>
+
+      <!-- Blog Posts Grid -->
+      <section class="section-padding bg-black">
+        <div class="container mx-auto px-4">
+          <div
+            id="blog-posts-container"
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto"
+          >
+            <!-- Posts will be dynamically loaded here -->
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-white/10 py-16">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+          <div class="md:col-span-2">
+            <div class="flex items-center mb-6">
+              <div class="w-10 h-10 mr-3">
+                <img
+                  src="logo.png"
+                  class="w-full h-full object-cover rounded-lg"
+                  alt="CodeDynasty Logo"
+                />
+              </div>
+              <span class="text-xl font-bold text-white">CodeDynasty</span>
+            </div>
+            <p class="text-slate-400 mb-6 max-w-md">
+              Building modern, performant software that empowers developers and
+              delights users. Open source tools for the next generation.
+            </p>
+            <div class="flex gap-4">
+              <a
+                href="https://github.com/CodeDynasty-dev"
+                class="w-10 h-10 rounded-lg bg-white/5 hover:bg-white/10 flex items-center justify-center text-slate-400 hover:text-white transition-colors"
+                target="_blank"
+                aria-label="GitHub"
+              >
+                <i class="fab fa-github text-xl"></i>
+              </a>
+              <a
+                href="https://discord.codedynasty.dev"
+                class="w-10 h-10 rounded-lg bg-white/5 hover:bg-white/10 flex items-center justify-center text-slate-400 hover:text-white transition-colors"
+                aria-label="Discord"
+              >
+                <i class="fab fa-discord text-xl"></i>
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-white font-semibold mb-4">Quick Links</h3>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="/"
+                  class="text-slate-400 hover:text-white transition-colors"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/blog.html"
+                  class="text-slate-400 hover:text-white transition-colors"
+                  >Blog</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://github.com/CodeDynasty-dev"
+                  class="text-slate-400 hover:text-white transition-colors"
+                  >Projects</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-white font-semibold mb-4">Community</h3>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="https://discord.codedynasty.dev"
+                  class="text-slate-400 hover:text-white transition-colors"
+                  >Discord</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://github.com/CodeDynasty-dev"
+                  class="text-slate-400 hover:text-white transition-colors"
+                  >GitHub</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/contact.html"
+                  class="text-slate-400 hover:text-white transition-colors"
+                  >Support</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4"
+        >
+          <p class="text-slate-500 text-sm">
+            &copy; 2025 CodeDynasty. Building modern software for humanity.
+          </p>
+          <div class="flex gap-6 text-sm">
+            <a
+              href="/privacy"
+              class="text-slate-500 hover:text-white transition-colors"
+              >Privacy</a
+            >
+            <a
+              href="/terms"
+              class="text-slate-500 hover:text-white transition-colors"
+              >Terms</a
+            >
+            <a
+              href="/license"
+              class="text-slate-500 hover:text-white transition-colors"
+              >License</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/script/index.js"></script>
+    <script>
+      // Mobile menu functionality
+      const mobileMenuButton = document.getElementById("mobile-menu-button");
+      const closeMobileMenu = document.getElementById("close-mobile-menu");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const body = document.body;
+
+      function toggleMobileMenu() {
+        mobileMenu.classList.toggle("translate-x-0");
+        mobileMenu.classList.toggle("-translate-x-full");
+        body.classList.toggle("overflow-hidden");
+      }
+
+      if (mobileMenuButton && closeMobileMenu && mobileMenu) {
+        mobileMenuButton.addEventListener("click", toggleMobileMenu);
+        closeMobileMenu.addEventListener("click", toggleMobileMenu);
+
+        document.querySelectorAll("#mobile-menu a").forEach((link) => {
+          link.addEventListener("click", () => {
+            mobileMenu.classList.remove("translate-x-0");
+            mobileMenu.classList.add("-translate-x-full");
+            body.classList.remove("overflow-hidden");
+          });
+        });
+
+        document.addEventListener("keydown", (e) => {
+          if (
+            e.key === "Escape" &&
+            mobileMenu.classList.contains("translate-x-0")
+          ) {
+            toggleMobileMenu();
+          }
+        });
+      }
+
+      // Load all blog posts
+      async function loadAllBlogPosts() {
+        try {
+          const response = await fetch("/docmach-manifest.json");
+          const manifest = await response.json();
+
+          // Filter only posts from the /posts directory
+          const posts = manifest.pages.filter(
+            (page) =>
+              page.sourcePath.startsWith("posts/") &&
+              page.docmachTags &&
+              page.docmachTags.length > 0
+          );
+
+          // Sort posts by date (latest first)
+          posts.sort((a, b) => {
+            const aParams =
+              a.docmachTags.find((tag) => tag.type === "wrapper")?.params || {};
+            const bParams =
+              b.docmachTags.find((tag) => tag.type === "wrapper")?.params || {};
+            const aDate = new Date(aParams.time_created || 0);
+            const bDate = new Date(bParams.time_created || 0);
+            return bDate - aDate;
+          });
+
+          const postsContainer = document.getElementById(
+            "blog-posts-container"
+          );
+          if (!postsContainer) return;
+
+          postsContainer.innerHTML = "";
+
+          // Render all posts
+          posts.forEach((post) => {
+            const params =
+              post.docmachTags.find((tag) => tag.type === "wrapper")?.params ||
+              {};
+            const title = params.title || "Untitled";
+            const description = params.description || "";
+            const image = params.image || "/placeholder.png";
+            const topic = params.topic || "Article";
+            const timeCreated = params.time_created || "";
+            const timeToRead = params.time_to_read || "";
+            const link = post.link;
+
+            const articleHTML = `
+              <a href="${link}" class="group modern-card">
+                <div class="aspect-video overflow-hidden rounded-lg mb-4">
+                  <img
+                    src="${image}"
+                    alt="${title}"
+                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                </div>
+                <div class="flex items-center gap-2 mb-3">
+                  <div class="badge">${topic.split(",")[0].trim()}</div>
+                  ${
+                    timeToRead
+                      ? `<span class="text-xs text-slate-500">${timeToRead}</span>`
+                      : ""
+                  }
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3 group-hover:text-indigo-400 transition-colors line-clamp-2">
+                  ${title}
+                </h3>
+                <p class="text-slate-400 text-sm mb-4 line-clamp-3">
+                  ${description}
+                </p>
+                <div class="flex items-center justify-between text-xs text-slate-500">
+                  <span>${timeCreated}</span>
+                  <div class="flex items-center">
+                    <span>Read more</span>
+                    <svg
+                      class="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </a>
+            `;
+
+            postsContainer.innerHTML += articleHTML;
+          });
+
+          // Show message if no posts
+          if (posts.length === 0) {
+            postsContainer.innerHTML =
+              '<p class="text-slate-400 text-center col-span-full">No articles available yet.</p>';
+          }
+        } catch (error) {
+          console.error("Error loading blog posts:", error);
+          const postsContainer = document.getElementById(
+            "blog-posts-container"
+          );
+          if (postsContainer) {
+            postsContainer.innerHTML =
+              '<p class="text-slate-400 text-center col-span-full">Unable to load articles at this time.</p>';
+          }
+        }
+      }
+
+      // Load posts when DOM is ready
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", loadAllBlogPosts);
+      } else {
+        loadAllBlogPosts();
+      }
+    </script>
+  </body>
+</html>

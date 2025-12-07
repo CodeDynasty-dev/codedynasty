@@ -6,7 +6,7 @@ time_to_read:10 min;
 title:Byte Latent Transformers and Tokenization-Free Language Models;
 topic:Tokenizer-free byte-level language modeling and dynamic patching;
 author_img:https://avatars.githubusercontent.com/u/75016347;
-image:placeholder;
+image:/post-images/blt.png;
 description:An exploration of byte latent transformers as a tokenizer-free architecture that learns directly from raw bytes using dynamic entropy-based patching;
 ">
 
@@ -58,7 +58,7 @@ BLT’s input pipeline has three distinct stages:
 
 1. **Byte embedding with local context.**
 2. **Entropy-based patching.**
-3. **Patch-level representations for the main transformer.
+3. \*\*Patch-level representations for the main transformer.
 
 Each stage exists to compensate for what would otherwise be a weakness of raw bytes.
 
@@ -100,7 +100,7 @@ Once patches have been formed, BLT proceeds in three stages:
 
 1. **Local encoder.**
 2. **Latent global transformer.**
-3. **Local decoder.
+3. \*\*Local decoder.
 
 This architecture mirrors the intuition that:
 
