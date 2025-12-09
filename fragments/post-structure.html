@@ -23,21 +23,27 @@
     <meta property="og:title" content="{{ title }}" />
     <meta property="og:description" content="{{ description }}" />
     <meta property="og:url" content="https://codedynasty.dev" />
-    <meta property="og:image" content="{{ image }}" />
+    <meta property="og:image" content="https://codedynasty.dev{{ image }}" />
     <meta property="og:type" content="article" />
     <meta property="og:site_name" content="CodeDynasty" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="{{ title }}" />
     <meta name="twitter:description" content="{{ description }}" />
-    <meta name="twitter:image" content="{{ image }}" />
+    <meta name="twitter:image" content="https://codedynasty.dev{{ image }}" />
   </head>
   <body>
     <!-- Navigation -->
     <header class="fixed w-full top-0 z-50 nav-modern">
       <nav class="container mx-auto px-6">
         <div class="flex justify-between items-center h-20">
-          <a href="/" class="flex items-center group" aria-label="CodeDynasty Home">
-            <div class="w-10 h-10 mr-3 transition-transform duration-300 group-hover:scale-110">
+          <a
+            href="/"
+            class="flex items-center group"
+            aria-label="CodeDynasty Home"
+          >
+            <div
+              class="w-10 h-10 mr-3 transition-transform duration-300 group-hover:scale-110"
+            >
               <img
                 src="/logo.png"
                 class="w-full h-full object-cover rounded-lg"
@@ -46,18 +52,28 @@
             </div>
             <span class="text-xl font-bold text-white">CodeDynasty</span>
           </a>
-          
+
           <!-- Mobile menu button -->
           <button
             id="mobile-menu-button"
             class="md:hidden text-white focus:outline-none"
             aria-label="Toggle menu"
           >
-            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+            <svg
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16m-7 6h7"
+              />
             </svg>
           </button>
-          
+
           <!-- Desktop Navigation -->
           <div class="hidden md:flex items-center space-x-2">
             <a
@@ -93,37 +109,71 @@
         <div class="flex justify-between items-center mb-12">
           <a href="/" class="flex items-center" aria-label="CodeDynasty Home">
             <div class="w-10 h-10 mr-3">
-              <img src="/logo.png" class="w-full h-full object-cover rounded-lg" alt="CodeDynasty Logo" />
+              <img
+                src="/logo.png"
+                class="w-full h-full object-cover rounded-lg"
+                alt="CodeDynasty Logo"
+              />
             </div>
             <span class="text-xl font-bold text-white">CodeDynasty</span>
           </a>
-          <button id="close-mobile-menu" class="text-white/70 hover:text-white transition-colors">
-            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          <button
+            id="close-mobile-menu"
+            class="text-white/70 hover:text-white transition-colors"
+          >
+            <svg
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              />
             </svg>
           </button>
         </div>
         <nav class="flex-1 flex flex-col space-y-4">
-          <a href="https://discord.codedynasty.dev" class="text-white/80 hover:text-white text-lg py-3 px-4 rounded-lg hover:bg-white/5 transition-colors">
+          <a
+            href="https://discord.codedynasty.dev"
+            class="text-white/80 hover:text-white text-lg py-3 px-4 rounded-lg hover:bg-white/5 transition-colors"
+          >
             Discord
           </a>
-          <a href="https://github.com/CodeDynasty-dev" target="_blank" class="text-white/80 hover:text-white text-lg py-3 px-4 rounded-lg hover:bg-white/5 transition-colors">
+          <a
+            href="https://github.com/CodeDynasty-dev"
+            target="_blank"
+            class="text-white/80 hover:text-white text-lg py-3 px-4 rounded-lg hover:bg-white/5 transition-colors"
+          >
             GitHub
           </a>
-          <a href="/contact.html" class="text-white/80 hover:text-white text-lg py-3 px-4 rounded-lg hover:bg-white/5 transition-colors">
+          <a
+            href="/contact.html"
+            class="text-white/80 hover:text-white text-lg py-3 px-4 rounded-lg hover:bg-white/5 transition-colors"
+          >
             Contact
           </a>
         </nav>
         <div class="pt-6 border-t border-white/10 mt-auto">
-          <p class="text-white/50 text-sm text-center">© 2025 CodeDynasty. All rights reserved.</p>
+          <p class="text-white/50 text-sm text-center">
+            © 2025 CodeDynasty. All rights reserved.
+          </p>
         </div>
       </div>
     </div>
 
     <main class="pt-20 pb-12">
       <!-- Reading Progress Bar -->
-      <div class="reading-progress-container fixed top-20 left-0 w-full z-40 h-1 bg-transparent">
-        <div class="reading-progress-bar h-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500" style="width: 0%"></div>
+      <div
+        class="reading-progress-container fixed top-20 left-0 w-full z-40 h-1 bg-transparent"
+      >
+        <div
+          class="reading-progress-bar h-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"
+          style="width: 0%"
+        ></div>
       </div>
 
       <!-- Article Header -->
@@ -136,7 +186,9 @@
             </div>
 
             <!-- Title -->
-            <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+            <h1
+              class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight"
+            >
               {{ title }}
             </h1>
 
@@ -144,8 +196,12 @@
             <div class="flex flex-wrap items-center gap-6 text-slate-400">
               <!-- Author -->
               <div class="flex items-center">
-                <div class="w-12 h-12 rounded-full overflow-hidden mr-3 bg-gradient-to-br from-indigo-500 to-purple-500 p-0.5">
-                  <div class="w-full h-full rounded-full overflow-hidden bg-slate-900">
+                <div
+                  class="w-12 h-12 rounded-full overflow-hidden mr-3 bg-gradient-to-br from-indigo-500 to-purple-500 p-0.5"
+                >
+                  <div
+                    class="w-full h-full rounded-full overflow-hidden bg-slate-900"
+                  >
                     <img
                       src="{{ author_img }}"
                       alt="{{ author }}"
@@ -162,14 +218,34 @@
               <!-- Date & Read Time -->
               <div class="flex items-center gap-4 text-sm">
                 <div class="flex items-center">
-                  <svg class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  <svg
+                    class="h-4 w-4 mr-2"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                    />
                   </svg>
                   <time datetime="{{ time_created }}">{{ time_created }}</time>
                 </div>
                 <div class="flex items-center">
-                  <svg class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  <svg
+                    class="h-4 w-4 mr-2"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
                   </svg>
                   <span>{{ time_to_read }}</span>
                 </div>
@@ -281,37 +357,67 @@
         id="mobile-share-dialog"
         class="hidden fixed inset-0 z-50 flex items-end justify-center"
       >
-        <div class="fixed inset-0 bg-black/80 backdrop-blur-sm" id="mobile-share-overlay"></div>
-        <div class="relative w-full max-w-md p-6 rounded-t-2xl bg-slate-900 border-t border-white/10">
+        <div
+          class="fixed inset-0 bg-black/80 backdrop-blur-sm"
+          id="mobile-share-overlay"
+        ></div>
+        <div
+          class="relative w-full max-w-md p-6 rounded-t-2xl bg-slate-900 border-t border-white/10"
+        >
           <div class="flex justify-between items-center mb-6">
             <h3 class="text-lg font-bold text-white">Share This Article</h3>
-            <button id="close-share-dialog" class="text-slate-400 hover:text-white">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            <button
+              id="close-share-dialog"
+              class="text-slate-400 hover:text-white"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"
+                ></path>
               </svg>
             </button>
           </div>
           <div class="grid grid-cols-4 gap-4">
             <a href="#" class="flex flex-col items-center">
-              <div class="w-14 h-14 rounded-full flex items-center justify-center mb-2 bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400">
+              <div
+                class="w-14 h-14 rounded-full flex items-center justify-center mb-2 bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400"
+              >
                 <i class="fab fa-twitter fa-lg"></i>
               </div>
               <span class="text-xs text-slate-400">Twitter</span>
             </a>
             <a href="#" class="flex flex-col items-center">
-              <div class="w-14 h-14 rounded-full flex items-center justify-center mb-2 bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400">
+              <div
+                class="w-14 h-14 rounded-full flex items-center justify-center mb-2 bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400"
+              >
                 <i class="fab fa-linkedin fa-lg"></i>
               </div>
               <span class="text-xs text-slate-400">LinkedIn</span>
             </a>
             <a href="#" class="flex flex-col items-center">
-              <div class="w-14 h-14 rounded-full flex items-center justify-center mb-2 bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400">
+              <div
+                class="w-14 h-14 rounded-full flex items-center justify-center mb-2 bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400"
+              >
                 <i class="fab fa-facebook fa-lg"></i>
               </div>
               <span class="text-xs text-slate-400">Facebook</span>
             </a>
-            <a href="#" class="flex flex-col items-center copy-link-button" data-tooltip="Copied!">
-              <div class="w-14 h-14 rounded-full flex items-center justify-center mb-2 bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400">
+            <a
+              href="#"
+              class="flex flex-col items-center copy-link-button"
+              data-tooltip="Copied!"
+            >
+              <div
+                class="w-14 h-14 rounded-full flex items-center justify-center mb-2 bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400"
+              >
                 <i class="fas fa-link fa-lg"></i>
               </div>
               <span class="text-xs text-slate-400">Copy</span>
@@ -359,20 +465,26 @@
         });
 
         document.addEventListener("keydown", (e) => {
-          if (e.key === "Escape" && mobileMenu.classList.contains("translate-x-0")) {
+          if (
+            e.key === "Escape" &&
+            mobileMenu.classList.contains("translate-x-0")
+          ) {
             toggleMobileMenu();
           }
         });
       }
 
       // Reading progress bar
-      window.addEventListener('scroll', () => {
-        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      window.addEventListener("scroll", () => {
+        const winScroll =
+          document.body.scrollTop || document.documentElement.scrollTop;
+        const height =
+          document.documentElement.scrollHeight -
+          document.documentElement.clientHeight;
         const scrolled = (winScroll / height) * 100;
-        const progressBar = document.querySelector('.reading-progress-bar');
+        const progressBar = document.querySelector(".reading-progress-bar");
         if (progressBar) {
-          progressBar.style.width = scrolled + '%';
+          progressBar.style.width = scrolled + "%";
         }
       });
     </script>
