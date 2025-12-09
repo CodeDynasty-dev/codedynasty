@@ -1,7 +1,7 @@
 <docmach type="wrapper" file="fragments/post-structure.html" replacement="content" params="
 author:Friday Candour;
 author_title: Software Developer;
-time_created: Jul 16 2025;
+time_created:Jul 16 2025;
 time_to_read: 5 min;
 title: JavaScript Microtasks: A Comprehensive Guide and the Event Loop;
 topic: Development, JavaScript, Performance, Event loop, Microtasks, Promises, queueMicrotask, Web Development, Asynchronous Programming;

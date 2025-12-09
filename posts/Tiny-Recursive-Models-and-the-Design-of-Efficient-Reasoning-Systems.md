@@ -1,7 +1,7 @@
 <docmach type="wrapper" file="fragments/post-structure.html" replacement="content" params="
 author:Friday Candour;
 author_title: Software Developer;
-time_created:2025-12-05;
+time_created:2025 12 05;
 time_to_read:11 min;
 title:Tiny Recursive Models and the Design of Efficient Reasoning Systems;
 topic:Efficient recursive models for logical reasoning;

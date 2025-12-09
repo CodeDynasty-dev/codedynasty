@@ -1,7 +1,7 @@
 <docmach type="wrapper" file="fragments/post-structure.html" replacement="content" params="
 author:Friday Candour;
 author_title: Software Developer;
-time_created:2025-12-05;
+time_created:2025 12 05;
 time_to_read:10 min;
 title:Byte Latent Transformers and Tokenization-Free Language Models;
 topic:Tokenizer-free byte-level language modeling and dynamic patching;

@@ -1,7 +1,7 @@
 <docmach type="wrapper" file="fragments/post-structure.html" replacement="content" params="
 author:Friday Candour;
 author_title:Software Developer;
-time_created:December 9, 2024;
+time_created:09 12 2025;
 time_to_read:12 min;
 title:Ten Essential Papers for Understanding Modern AI Engineering;
 topic:AI Engineering, Machine Learning, Research;
