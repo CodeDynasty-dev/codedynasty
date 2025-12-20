@@ -33,7 +33,7 @@ import torch
 
 x = torch.ones(5, 5)
 y = x + 1
-````
+```
 
 The addition looks trivial. It is not. The operation constructs a graph. The graph will matter later.
 
