@@ -21,6 +21,6 @@
     "assets-folder": "./assets"
   },
   "devDependencies": {
-    "docmach": "^1.1.0"
+    "docmach": "^1.1.2"
   }
 }
