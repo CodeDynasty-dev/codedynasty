@@ -6,7 +6,7 @@ time_to_read:9 minutes;
 title:Starting PyTorch From the Middle;
 topic:PyTorch fundamentals through model construction;
 author_img:https://avatars.githubusercontent.com/u/75016347;
-image:https://placehold.co/1200x630;
+image: /post-images/pytorch_seo.avif;
 description:A pragmatic entry into PyTorch that begins with models, not mechanics, and works backward to tensors as design constraints.
 ">
 
@@ -115,3 +115,7 @@ The unpleasant truth is that an untrained model is useless. Structure precedes l
 That is acceptable.
 
 The framework optimizes for explicitness, not safety. You are expected to know when linearity is insufficient. The library will not remind you.
+
+
+
+</docmach>
