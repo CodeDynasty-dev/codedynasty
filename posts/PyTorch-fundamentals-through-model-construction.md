@@ -1,4 +1,3 @@
-````
 <docmach type="wrapper" file="fragments/post-structure.html" replacement="content" params="
 author:Friday Candour;
 author_title: Software Developer;
