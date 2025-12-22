@@ -14,7 +14,7 @@ description:A structured self-study roadmap mirroring Stanford's AI graduate cer
 
 ## The Curriculum Problem
 
-Stanford's AI graduate certificate costs between \\$19,000 and $ 24,000. The knowledge it delivers, however, exists freely across the internet. The challenge is not access but structure. Most self-learners fail not from lack of resources but from lack of sequencing.
+Stanford's AI graduate certificate costs between \\$19,000 and \\$24,000. The knowledge it delivers, however, exists freely across the internet. The challenge is not access but structure. Most self-learners fail not from lack of resources but from lack of sequencing.
 
 What follows is a reconstruction of that sequence using publicly available materials. The timeline mirrors Stanford's part-time track: one to three years depending on prior background and weekly commitment.
 
