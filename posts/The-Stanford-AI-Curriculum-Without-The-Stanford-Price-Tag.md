@@ -171,6 +171,8 @@ conv_layer = nn.Sequential(
 
 This takes a 3-channel image and produces 64 feature maps. The pattern repeats with variations across most vision architectures.
 
+Full piece by Jean Lee [Download here](https://docs.google.com/document/d/13jq-bv-9LjessYm4UfVFd8lnLgt0puCvkb7QR916Uz0/edit?tab=t.0)
+
 ## The Missing Piece
 
 Curriculum completion is not competence. The gap between understanding concepts and building systems is substantial. Projects bridge it partially. Production experience bridges it fully.
