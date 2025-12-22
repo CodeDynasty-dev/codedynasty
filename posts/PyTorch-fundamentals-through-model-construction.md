@@ -4,7 +4,7 @@ author_title: Software Developer;
 time_created:2025 12 20;
 time_to_read:9 minutes;
 title:Starting PyTorch From the Middle;
-topic:PyTorch fundamentals through model construction;
+topic:PyTorch fundamentals;
 author_img:https://avatars.githubusercontent.com/u/75016347;
 image: /post-images/pytorch_seo.avif;
 description:A pragmatic entry into PyTorch that begins with models, not mechanics, and works backward to tensors as design constraints.
@@ -24,7 +24,7 @@ I prefer to start where the pressure is: the model.
 
 A tensor is PyTorch’s fundamental unit of computation. It resembles an array. That resemblance is misleading.
 
-An array stores values. A tensor stores values *and intent*. Shape, device placement, gradient history. These attributes exist so the system can reason about change.
+An array stores values. A tensor stores values _and intent_. Shape, device placement, gradient history. These attributes exist so the system can reason about change.
 
 Formally, a tensor is an element of a vector space with structure sufficient to support automatic differentiation. Practically, it is how PyTorch avoids asking you to write Jacobians by hand.
 
@@ -115,7 +115,5 @@ The unpleasant truth is that an untrained model is useless. Structure precedes l
 That is acceptable.
 
 The framework optimizes for explicitness, not safety. You are expected to know when linearity is insufficient. The library will not remind you.
-
-
 
 </docmach>

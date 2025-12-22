@@ -198,7 +198,7 @@ Their significance lies elsewhere:
 - They challenge the assumption that the only way to improve reasoning is to add more parameters.
 - They expand the design space of AI systems towards more explicit control flow, internal state, and recursive computation.
 
-For practitioners, the main question is not “Will tiny recursive models replace large language models?”, but “Where in my system do I need structured reasoning, and could a small recursive component serve that role better than a monolithic model?”
+For starters, the main question is not “Will tiny recursive models replace large language models?”, but “Where in my system do I need structured reasoning, and could a small recursive component serve that role better than a monolithic model?”
 
 Possible application areas include:
 

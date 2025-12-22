@@ -283,7 +283,7 @@ On the challenging side:
 - Tooling and ecosystem support for byte-level models are less mature than for token-based systems.
 - Interpreting internal representations can be harder when everything is expressed at the byte level.
 
-For practitioners, the interesting question is not whether BLT replaces existing architectures, but where its properties match the problem at hand. If you are building systems that must operate across many scripts, tolerate noisy input, or run under tight inference budgets, it is worth considering architectures that remove the tokenizer as a fixed dependency.
+For beginners, the interesting question is not whether BLT replaces existing architectures, but where its properties match the problem at hand. If you are building systems that must operate across many scripts, tolerate noisy input, or run under tight inference budgets, it is worth considering architectures that remove the tokenizer as a fixed dependency.
 
 BLT’s contribution is to show that such architectures can be competitive at scale. It reminds us that the choice of unit—character, byte, token, patch—is a design decision, not a law of nature. Treating that decision as a first-class part of the architecture opens up new ways to shape how our models think.
 
