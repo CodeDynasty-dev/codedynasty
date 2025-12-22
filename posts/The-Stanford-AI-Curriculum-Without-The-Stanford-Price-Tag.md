@@ -171,7 +171,7 @@ conv_layer = nn.Sequential(
 
 This takes a 3-channel image and produces 64 feature maps. The pattern repeats with variations across most vision architectures.
 
-Futher Explainations direct resourse links by Jean Lee (Founder of Exaltitude) [Download here](https://docs.google.com/document/d/13jq-bv-9LjessYm4UfVFd8lnLgt0puCvkb7QR916Uz0/edit?tab=t.0)
+Futher Explainations direct resource links by Jean Lee (Founder of Exaltitude) [Download here](https://docs.google.com/document/d/13jq-bv-9LjessYm4UfVFd8lnLgt0puCvkb7QR916Uz0/edit?tab=t.0)
 
 ## The Missing Piece
 
