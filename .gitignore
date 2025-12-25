@@ -5,8 +5,9 @@ arise_backup
 my_email_module.py
 fov
 .kiro
-instructions.md
-instructions-forum.md
-transcript.txt
 .vscode/settings.json
 .DS_Store
+
+instructions-forum.md
+instructions.md
+transcript.txt
