@@ -8,6 +8,8 @@ fov
 .vscode/settings.json
 .DS_Store
 research
+**.parquet
+**.csv
 
 instructions-forum.md
 instructions.md
