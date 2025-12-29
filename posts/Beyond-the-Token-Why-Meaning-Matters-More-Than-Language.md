@@ -6,7 +6,7 @@ time_to_read:7 min;
 title:Beyond the Token: Why Meaning Matters More Than Language;
 topic:Artificial Intelligence;
 author_img:https://avatars.githubusercontent.com/u/75016347;
-image:../post_images/beyond_the_token_vjepa_architecture.webp;
+image:../post-images/beyond_the_token_vjepa_architecture.webp;
 description:An examination of Meta's V-JEPA architecture and the shift from generative token prediction to latent semantic understanding in AI systems.;
 ">
 
