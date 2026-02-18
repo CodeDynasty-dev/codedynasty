@@ -14,7 +14,7 @@ The next era of AI is not LLMs, it's something else,
 
 One thing that really interests me about the future of AI are the enormous potential uses.
 
-My fellow rib cages, see, LLM are language models, they are not good at reasoning about spatial thinking and hierarchical planning critical, by design that's not their domain, but why are AI companies keep shoving LLMs into every possible application?
+LLM are language models, they are not good at reasoning about spatial thinking and hierarchical planning critical, by design that's not their domain, but why are AI companies keep shoving LLMs into every possible application?
 
 it's like trying to fly to space with an airplane, it's not going to work, it's not their domain.
 
