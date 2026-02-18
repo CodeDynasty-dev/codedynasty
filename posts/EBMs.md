@@ -6,7 +6,7 @@ time_to_read: 5 min;
 title: Energy-Based Models (EBMs);
 topic: Machine Learning;
 author_img: https://avatars.githubusercontent.com/u/75016347;
-image: /post-images/unused-1-Models.png;
+image: /post-images/ebms.png;
 description: The next era of AI is not LLMs, it's something else, and it's fascinating;
 ">
 
@@ -14,11 +14,11 @@ The next era of AI is not LLMs, it's something else,
 
 One thing that really interests me about the future of AI are the enormous potential uses.
 
-Rib cages, see, LLM are language models, they are not good at reasoning about spatial thinking and hierarchical planning critical, by design that's not their domain, but why are AI companies keep shoving LLMs into every possible application?
+My fellow rib cages, see, LLM are language models, they are not good at reasoning about spatial thinking and hierarchical planning critical, by design that's not their domain, but why are AI companies keep shoving LLMs into every possible application?
 
 it's like trying to fly to space with an airplane, it's not going to work, it's not their domain.
 
-This also pins down the reason why we won't AI cracking every domain anytime soon.
+This also pins down the reason why we won't see AI cracking every domain anytime soon.
 
 recently we saw meta AI chief leaving to found a new company focused on none language dependent models.
 
@@ -34,7 +34,7 @@ EBMs (Energy Landscape Mapping) take input data and transform it into an abstrac
 
 ### Probability and Energy Minimization
 
-![The next era of AI is not LLMs, it's something else, ](/post-images/1xpJ-DEt5aVeDJHROJlnvmA.webp)
+[![The next era of AI is not LLMs, it's something else, ](/post-images/1xpJ-DEt5aVeDJHROJlnvmA.webp)](/)
 
 Highly probable scenarios are represented as low-energy points or "valleys" in the landscape.
 Less probable scenarios appear as high-energy points or "peaks".
@@ -67,10 +67,14 @@ Modern EBMs often use deep neural networks to parameterize their energy function
 The result is a model that is fast, small, and can reason about spatial thinking and hierarchical planning without relying on language.
 
 
-The interesting is the new direction and how more effective it can be.
+The interesting is the new direction and how more effective it can be, 
+
+i personally played with the demonstration at [https://sudoku.logicalintelligence.com/](https://sudoku.logicalintelligence.com/)
+
+It's really fascinating how it can solve sudoku puzzles faster than any llm and it does so in 0.24s, while no current LLM could even find a solution to the problem, like fking seriously.
 
 Sources:
 
-https://www.youtube.com/watch?v=rvwBsWDOFIE
+[https://www.youtube.com/watch?v=rvwBsWDOFIE](https://www.youtube.com/watch?v=rvwBsWDOFIE)
 
 </docmach>
