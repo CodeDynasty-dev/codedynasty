@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beyond Calculus: The Mathematics Every Developer Should Reconsider - CodeDynasty</title>
+    <link rel="stylesheet" href="/bundle.css" />
+    <link rel="stylesheet" href="/styles/main.css" />
+    <link rel="stylesheet" href="/styles/post.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css"
+    />
+    <meta name="description" content="Most developers stop at calculus. Here's what they're missing and why it matters more than they think." />
+    <meta name="keywords" content="code, programming, development" />
+    <meta name="author" content="Friday Candour" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#6366f1" />
+    <meta property="og:title" content="Beyond Calculus: The Mathematics Every Developer Should Reconsider" />
+    <meta property="og:description" content="Most developers stop at calculus. Here's what they're missing and why it matters more than they think." />
+    <meta property="og:url" content="https://codedynasty.dev" />
+    <meta property="og:image" content="https://codedynasty.dev/post-images/rm373batch13-086.jpg" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="CodeDynasty" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Beyond Calculus: The Mathematics Every Developer Should Reconsider" />
+    <meta name="twitter:description" content="Most developers stop at calculus. Here's what they're missing and why it matters more than they think." />
+    <meta name="twitter:image" content="https://codedynasty.dev/post-images/rm373batch13-086.jpg" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <style>
+      .katex-display,
+      .katex,
+      .katex-mathml,
+      .katex-html {
+        display: inline !important;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <header class="fixed w-full top-0 z-50 nav-modern">
+      <nav class="container mx-auto px-6">
+        <div class="flex justify-between items-center h-20">
+          <a
+            href="/"
+            class="flex items-center group"
+            aria-label="CodeDynasty Home"
+          >
+            <div
+              class="w-10 h-10 mr-3 transition-transform duration-300 group-hover:scale-110"
+            >
+              <img
+                src="/logo.png"
+                class="w-full h-full object-cover rounded-lg"
+                alt="CodeDynasty Logo"
+              />
+            </div>
+            <span class="text-xl font-bold text-white">CodeDynasty</span>
+          </a>
+
+          <!-- Mobile menu button -->
+          <button
+            id="mobile-menu-button"
+            class="md:hidden text-white focus:outline-none"
+            aria-label="Toggle menu"
+          >
+            <svg
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16m-7 6h7"
+              />
+            </svg>
+          </button>
+
+          <!-- Desktop Navigation -->
+          <div class="hidden md:flex items-center space-x-2">
+            <a
+              href="/blog.html"
+              class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors rounded-lg hover:bg-white/5"
+            >
+              Blog
+            </a>
+            <a
+              href="https://discord.codedynasty.dev"
+              class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors rounded-lg hover:bg-white/5"
+            >
+              Discord
+            </a>
+            <a
+              href="https://github.com/CodeDynasty-dev"
+              class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors rounded-lg hover:bg-white/5"
+              target="_blank"
+            >
+              GitHub
+            </a>
+            <a
+              href="/contact.html"
+              class="px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg hover:shadow-lg hover:shadow-indigo-500/50 transition-all"
+            >
+              Contact
+            </a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div
+      id="mobile-menu"
+      class="fixed inset-0 z-50 bg-black/95 backdrop-blur-lg transform -translate-x-full transition-transform duration-300 ease-in-out md:hidden"
+    >
+      <div class="container mx-auto px-6 py-8 h-full flex flex-col">
+        <div class="flex justify-between items-center mb-12">
+          <a href="/" class="flex items-center" aria-label="CodeDynasty Home">
+            <div class="w-10 h-10 mr-3">
+              <img
+                src="/logo.png"
+                class="w-full h-full object-cover rounded-lg"
+                alt="CodeDynasty Logo"
+              />
+            </div>
+            <span class="text-xl font-bold text-white">CodeDynasty</span>
+          </a>
+          <button
+            id="close-mobile-menu"
+            class="text-white/70 hover:text-white transition-colors"
+          >
+            <svg
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+        </div>
+        <nav class="flex-1 flex flex-col space-y-4">
+          <a
+            href="https://discord.codedynasty.dev"
+            class="text-white/80 hover:text-white text-lg py-3 px-4 rounded-lg hover:bg-white/5 transition-colors"
+          >
+            Discord
+          </a>
+          <a
+            href="https://github.com/CodeDynasty-dev"
+            target="_blank"
+            class="text-white/80 hover:text-white text-lg py-3 px-4 rounded-lg hover:bg-white/5 transition-colors"
+          >
+            GitHub
+          </a>
+          <a
+            href="/contact.html"
+            class="text-white/80 hover:text-white text-lg py-3 px-4 rounded-lg hover:bg-white/5 transition-colors"
+          >
+            Contact
+          </a>
+        </nav>
+        <div class="pt-6 border-t border-white/10 mt-auto">
+          <p class="text-white/50 text-sm text-center">
+            © 2025 CodeDynasty. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <main class="pt-20 pb-12">
+      <!-- Reading Progress Bar -->
+      <div
+        class="reading-progress-container fixed top-20 left-0 w-full z-40 h-1 bg-transparent"
+      >
+    <div
+  class="reading-progress-bar h-full bg-gradient-to-r from-blue-500 via-purple-500 to-yellow-500 bg-[length:200%_100%]"
+  style="width: 0%"
+></div>
+      </div>
+
+      <!-- Article Header -->
+      <section class="relative py-16 md:py-24">
+        <div class="container mx-auto px-4 md:px-6">
+          <div class="max-w-4xl mx-auto">
+            <!-- Category Badge -->
+            <div class="mb-6">
+              <span class="badge">Mathematics</span>
+            </div>
+
+            <!-- Title -->
+            <h1
+              class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight"
+            >
+              Beyond Calculus: The Mathematics Every Developer Should Reconsider
+            </h1>
+
+            <!-- Meta Info -->
+            <div class="flex flex-wrap items-center gap-6 text-slate-400">
+              <!-- Author -->
+              <div class="flex items-center">
+                <div
+                  class="w-12 h-12 rounded-full overflow-hidden mr-3 bg-gradient-to-br from-indigo-500 to-purple-500 p-0.5"
+                >
+                  <div
+                    class="w-full h-full rounded-full overflow-hidden bg-slate-900"
+                  >
+                    <img
+                      src="https://avatars.githubusercontent.com/u/75016347"
+                      alt="Friday Candour"
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <span class="block font-medium text-white">Friday Candour</span>
+                  <span class="text-sm text-slate-500">Software Developer</span>
+                </div>
+              </div>
+
+              <!-- Date & Read Time -->
+              <div class="flex items-center gap-4 text-sm">
+                <div class="flex items-center">
+                  <svg
+                    class="h-4 w-4 mr-2"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                    />
+                  </svg>
+                  <time datetime="2025 12 24">2025 12 24</time>
+                </div>
+                <div class="flex items-center">
+                  <svg
+                    class="h-4 w-4 mr-2"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                  <span>8 min</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Hero Image -->
+      <section class="mb-16">
+        <div class="container mx-auto px-4 md:px-6">
+          <div class="max-w-5xl mx-auto">
+            <div class="aspect-video overflow-hidden rounded-2xl">
+              <img
+                src="/post-images/rm373batch13-086.jpg"
+                alt="Beyond Calculus: The Mathematics Every Developer Should Reconsider"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Article Content -->
+      <div class="container mx-auto px-4 md:px-6">
+        <div class="flex flex-col lg:flex-row gap-12 max-w-7xl mx-auto">
+          <!-- Sidebar - Share Widget -->
+          <aside class="hidden lg:block w-20 self-start sticky top-32">
+            <div class="flex flex-col items-center gap-4">
+              <span class="text-xs text-slate-500 font-medium mb-2">SHARE</span>
+              <a
+                href="#"
+                class="w-12 h-12 rounded-full flex items-center justify-center bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400"
+              >
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a
+                href="#"
+                class="w-12 h-12 rounded-full flex items-center justify-center bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400"
+              >
+                <i class="fab fa-linkedin"></i>
+              </a>
+              <a
+                href="#"
+                class="w-12 h-12 rounded-full flex items-center justify-center bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400"
+              >
+                <i class="fab fa-facebook"></i>
+              </a>
+              <a
+                href="#"
+                class="w-12 h-12 rounded-full flex items-center justify-center bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400 copy-link-button"
+                data-tooltip="Copy Link"
+              >
+                <i class="fas fa-link"></i>
+              </a>
+            </div>
+          </aside>
+
+          <!-- Main Content -->
+          <article class="flex-1 max-w-4xl post">
+            <div class="blog-content prose prose-invert prose-lg max-w-none">
+              <docmach type="function" params="tags:mathematics,linear-algebra,topology,number-theory,proof-based-mathematics,computer-science,learning" file="fragments/tags.js" />
+<h2>The Gap Nobody Talks About</h2>
+<p>Most computer science curricula end where mathematics gets interesting. You learn calculus, some linear algebra, a bit of probability. Then you're done. The assumption seems to be that this is sufficient for building software. It isn't.</p>
+<p>The real problem isn't that you learned the wrong things. It's that you stopped too early. There's a chasm between undergraduate mathematics and the deeper structures that actually shape how we think about computation, correctness, and design. Crossing it changes how you approach problems.</p>
+<h2>Proof-Based Mathematics: Where Rigor Becomes Clarity</h2>
+<p>Most CS programs teach mathematics procedurally. You learn <em>how</em> to compute, not <em>why</em> it works. Proof-based courses flip this. They force you to reason about structure itself.</p>
+<p>A proof-based linear algebra course is the natural next step. If you've already done the computational version, you've seen matrices and vector spaces as tools. The proof-based version shows you they're <em>concepts</em>—abstract structures with properties that matter. Eigenvectors stop being &quot;things you compute&quot; and become fundamental objects with geometric meaning.</p>
+<p>Real analysis follows naturally. It's where calculus gets honest about what limits actually mean. The epsilon-delta definition of continuity feels pedantic until you realize it's the only definition that generalizes. Once you internalize it, you see continuity everywhere—in topology, in functional programming, in distributed systems.</p>
+<h2>Topology: The Shape of Space Itself</h2>
+<p>Topology is the study of properties that survive deformation. It sounds abstract because it is. But that abstraction is precisely why it matters.</p>
+<p>In topology, you learn that continuity has a definition that doesn't depend on distance. You learn about open sets, closed sets, compactness. These aren't just mathematical curiosities. They're the language for reasoning about structure when the specific numbers don't matter.</p>
+<p>For developers, topology appears in unexpected places. When you reason about the behavior of a system under perturbation, you're thinking topologically. When you design abstractions that remain valid across different implementations, you're using topological thinking.</p>
+<p>Start with Munkres if you're serious. It's dense but precise.</p>
+<h2>Number Theory: The Unreasonable Effectiveness of Patterns</h2>
+<p>Number theory has a reputation for being impractical. It's also one of the most rewarding areas to study.</p>
+<p>The Ulam spiral is a good entry point—plot the integers on a grid, mark the primes. Patterns emerge that shouldn't exist. They do. Number theory is full of these moments where simple questions lead to profound structures.</p>
+<p>Beyond the intellectual satisfaction, number theory connects to cryptography, to algorithm analysis, to the foundations of computation itself. The deeper you go, the more you realize that primes and divisibility aren't just arithmetic—they're fundamental to how information can be encoded and protected.</p>
+<h2>Differential Forms: Calculus Reframed</h2>
+<p>If you've done multivariable calculus, you've computed line integrals and surface integrals. You've probably thought of them as projections onto infinitesimal elements. That's not wrong, but it's incomplete.</p>
+<p>Differential forms give you a language where these operations are <em>maps</em>—functions that do something simple but profound. A 1-form is a machine that eats vectors and spits out numbers. A 2-form eats pairs of vectors. Integration becomes composition of these maps.</p>
+<p>This reframing doesn't just make the mathematics cleaner. It extends your reach. Geometric algebra, which captures quantum physics more naturally than standard vector calculus, becomes accessible. You start seeing the same structures everywhere.</p>
+<h2>Fermi Estimation: Mathematics as Judgment</h2>
+<p>Not all mathematics is about proof and rigor. Fermi estimation—the art of making educated guesses—is mathematics as craft.</p>
+<p>Given a question like &quot;how many piano tuners are in Chicago?&quot;, you break it into estimable pieces. Population, fraction with pianos, tunings per year, tunings per technician. You make reasonable assumptions and multiply. The answer is usually within an order of magnitude of reality.</p>
+<p>This is mathematics as reasoning under uncertainty. It's practical in ways that pure mathematics isn't. And it's a skill that atrophies without practice. MIT's &quot;Street Fighting Mathematics&quot; course teaches it explicitly. The book by Sanjoy Mahajan is worth reading.</p>
+<h2>Probabilistic Modeling: Beyond Basic Statistics</h2>
+<p>Basic statistics teaches you hypothesis testing and distributions. Probabilistic modeling goes deeper.</p>
+<p>Gaussian mixture models, Bayesian networks, plate notation—these are languages for expressing uncertainty in complex systems. They're not just statistical tools. They're ways of thinking about how information flows through a system.</p>
+<p>If you've done functional programming, you've already internalized some of this. Monads are a way of composing computations with effects. Probabilistic models are computations with uncertainty as an effect.</p>
+<h2>Computer Graphics: Mathematics with Immediate Feedback</h2>
+<p>Computer graphics is where linear algebra meets algorithms and produces something you can see.</p>
+<p>This matters because visualization changes how you understand mathematics. Transformations become intuitive. Eigenvectors stop being abstract and become axes of rotation. The mathematics doesn't change, but your relationship to it does.</p>
+<h2>The Discipline Problem</h2>
+<p>Here's what nobody mentions: studying difficult mathematics requires sustained effort. You can't accumulate understanding one hour a day. The topics don't stick without immersion.</p>
+<p>This is a feature, not a bug. Mathematics at this level demands that you think differently. It's not about memorizing techniques. It's about internalizing structures. That takes time and mental energy.</p>
+<p>The payoff is that once you internalize these structures, they become tools for thinking. You start seeing them in code, in system design, in how problems decompose.</p>
+<h2>Where to Start</h2>
+<p>If you're serious, here's a reasonable path:</p>
+<ol>
+<li>
+<p><strong>Proof-based linear algebra</strong> if you haven't done it. Axler's book is excellent. His treatment of eigenvectors is particularly good—it builds intuition before computation.</p>
+</li>
+<li>
+<p><strong>Real analysis</strong> or <strong>topology</strong>. Real analysis is more foundational. Topology is more immediately rewarding. Pick based on what draws you.</p>
+</li>
+<li>
+<p><strong>Number theory</strong> for intellectual satisfaction. It connects to everything eventually.</p>
+</li>
+<li>
+<p><strong>Differential forms</strong> if you want to deepen your calculus understanding.</p>
+</li>
+<li>
+<p><strong>Probabilistic modeling</strong> if you want something practical and connected to machine learning.</p>
+</li>
+</ol>
+<p>The order matters less than the commitment. Pick something that genuinely interests you. Mathematics at this level is too demanding to study out of obligation.</p>
+<h2>The Practical Observation</h2>
+<p>The developers who think most clearly about system design tend to have studied mathematics beyond the curriculum. Not because they use theorems directly, but because the discipline of mathematical thinking changes how they approach problems.</p>
+<p>You don't need to become a mathematician. You need to think like one for long enough that it becomes natural. After that, you can apply that thinking to code, to architecture, to any domain where clarity matters.</p>
+<p>The gap between undergraduate mathematics and real mathematical thinking is larger than most people realize. Crossing it is worth the effort.</p>
+
+            </div>
+
+            <!-- Comments Section -->
+            <div class="mt-16 pt-16 border-t border-white/10">
+              <script
+                src="https://giscus.app/client.js"
+                data-repo="codedynasty-dev/codedynasty"
+                data-repo-id="R_kgDOOBViSg"
+                data-category="Ideas"
+                data-category-id="DIC_kwDOOBViSs4CqU7E"
+                data-mapping="pathname"
+                data-strict="1"
+                data-reactions-enabled="1"
+                data-emit-metadata="0"
+                data-input-position="top"
+                data-theme="noborder_dark"
+                data-lang="en"
+                data-loading="lazy"
+                crossorigin="anonymous"
+                async
+              ></script>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- Mobile Floating Actions -->
+      <div class="lg:hidden fixed bottom-6 right-6 z-40 flex flex-col gap-3">
+        <button
+          id="mobile-share-button"
+          class="w-14 h-14 rounded-full flex items-center justify-center bg-gradient-to-r from-indigo-500 to-purple-500 text-white shadow-lg hover:shadow-xl transition-all"
+        >
+          <i class="fas fa-share-alt"></i>
+        </button>
+        <a href="#" id="scroll-top">
+          <button
+            class="w-14 h-14 rounded-full flex items-center justify-center bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 transition-all"
+          >
+            <i class="fas fa-arrow-up"></i>
+          </button>
+        </a>
+      </div>
+
+      <!-- Mobile Share Dialog -->
+      <!-- <div
+        id="mobile-share-dialog"
+        class="hidden fixed inset-0 z-50 flex items-end justify-center"
+      >
+        <div
+          class="fixed inset-0 bg-black/80 backdrop-blur-sm"
+          id="mobile-share-overlay"
+        ></div>
+        <div
+          class="relative w-full max-w-md p-6 rounded-t-2xl bg-slate-900 border-t border-white/10"
+        >
+          <div class="flex justify-between items-center mb-6">
+            <h3 class="text-lg font-bold text-white">Share This Article</h3>
+            <button
+              id="close-share-dialog"
+              class="text-slate-400 hover:text-white"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"
+                ></path>
+              </svg>
+            </button>
+          </div>
+          <div class="grid grid-cols-4 gap-4">
+            <a href="#" class="flex flex-col items-center">
+              <div
+                class="w-14 h-14 rounded-full flex items-center justify-center mb-2 bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400"
+              >
+                <i class="fab fa-twitter fa-lg"></i>
+              </div>
+              <span class="text-xs text-slate-400">Twitter</span>
+            </a>
+            <a href="#" class="flex flex-col items-center">
+              <div
+                class="w-14 h-14 rounded-full flex items-center justify-center mb-2 bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400"
+              >
+                <i class="fab fa-linkedin fa-lg"></i>
+              </div>
+              <span class="text-xs text-slate-400">LinkedIn</span>
+            </a>
+            <a href="#" class="flex flex-col items-center">
+              <div
+                class="w-14 h-14 rounded-full flex items-center justify-center mb-2 bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400"
+              >
+                <i class="fab fa-facebook fa-lg"></i>
+              </div>
+              <span class="text-xs text-slate-400">Facebook</span>
+            </a>
+            <a
+              href="#"
+              class="flex flex-col items-center copy-link-button"
+              data-tooltip="Copied!"
+            >
+              <div
+                class="w-14 h-14 rounded-full flex items-center justify-center mb-2 bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400"
+              >
+                <i class="fas fa-link fa-lg"></i>
+              </div>
+              <span class="text-xs text-slate-400">Copy</span>
+            </a>
+          </div>
+        </div>
+      </div> -->
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black/30 border-t border-white/10 py-12">
+      <div class="container mx-auto px-4">
+        <div class="text-center">
+          <p class="text-slate-500 text-sm">
+            &copy; 2025 CodeDynasty. Building modern software for humanity.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/script/index.js"></script>
+    <script>
+      // Mobile menu functionality
+      const mobileMenuButton = document.getElementById("mobile-menu-button");
+      const closeMobileMenu = document.getElementById("close-mobile-menu");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const body = document.body;
+
+      function toggleMobileMenu() {
+        mobileMenu.classList.toggle("translate-x-0");
+        mobileMenu.classList.toggle("-translate-x-full");
+        body.classList.toggle("overflow-hidden");
+      }
+
+      if (mobileMenuButton && closeMobileMenu && mobileMenu) {
+        mobileMenuButton.addEventListener("click", toggleMobileMenu);
+        closeMobileMenu.addEventListener("click", toggleMobileMenu);
+
+        document.querySelectorAll("#mobile-menu a").forEach((link) => {
+          link.addEventListener("click", () => {
+            mobileMenu.classList.remove("translate-x-0");
+            mobileMenu.classList.add("-translate-x-full");
+            body.classList.remove("overflow-hidden");
+          });
+        });
+
+        document.addEventListener("keydown", (e) => {
+          if (
+            e.key === "Escape" &&
+            mobileMenu.classList.contains("translate-x-0")
+          ) {
+            toggleMobileMenu();
+          }
+        });
+      }
+
+      // Reading progress bar
+      window.addEventListener("scroll", () => {
+        const winScroll =
+          document.body.scrollTop || document.documentElement.scrollTop;
+        const height =
+          document.documentElement.scrollHeight -
+          document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        const progressBar = document.querySelector(".reading-progress-bar");
+        if (progressBar) {
+          progressBar.style.width = scrolled + "%";
+        }
+      });
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        renderMathInElement(document.body, {
+          delimiters: [
+            { left: "$", right: "$", display: true },
+            { left: "$", right: "$", display: false },
+          ],
+        });
+      });
+    </script>
+  </body>
+</html>
+

@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Microtasks: A Comprehensive Guide and the Event Loop - CodeDynasty</title>
+    <link rel="stylesheet" href="/bundle.css" />
+    <link rel="stylesheet" href="/styles/main.css" />
+    <link rel="stylesheet" href="/styles/post.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css"
+    />
+    <meta name="description" content="Master JavaScript's microtask queue and queueMicrotask() API to build more responsive web applications with optimized rendering and state management" />
+    <meta name="keywords" content="code, programming, development" />
+    <meta name="author" content="Friday Candour" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#6366f1" />
+    <meta property="og:title" content="JavaScript Microtasks: A Comprehensive Guide and the Event Loop" />
+    <meta property="og:description" content="Master JavaScript's microtask queue and queueMicrotask() API to build more responsive web applications with optimized rendering and state management" />
+    <meta property="og:url" content="https://codedynasty.dev" />
+    <meta property="og:image" content="https://codedynasty.dev/post-images/micro-task.jpg" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="CodeDynasty" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="JavaScript Microtasks: A Comprehensive Guide and the Event Loop" />
+    <meta name="twitter:description" content="Master JavaScript's microtask queue and queueMicrotask() API to build more responsive web applications with optimized rendering and state management" />
+    <meta name="twitter:image" content="https://codedynasty.dev/post-images/micro-task.jpg" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <style>
+      .katex-display,
+      .katex,
+      .katex-mathml,
+      .katex-html {
+        display: inline !important;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <header class="fixed w-full top-0 z-50 nav-modern">
+      <nav class="container mx-auto px-6">
+        <div class="flex justify-between items-center h-20">
+          <a
+            href="/"
+            class="flex items-center group"
+            aria-label="CodeDynasty Home"
+          >
+            <div
+              class="w-10 h-10 mr-3 transition-transform duration-300 group-hover:scale-110"
+            >
+              <img
+                src="/logo.png"
+                class="w-full h-full object-cover rounded-lg"
+                alt="CodeDynasty Logo"
+              />
+            </div>
+            <span class="text-xl font-bold text-white">CodeDynasty</span>
+          </a>
+
+          <!-- Mobile menu button -->
+          <button
+            id="mobile-menu-button"
+            class="md:hidden text-white focus:outline-none"
+            aria-label="Toggle menu"
+          >
+            <svg
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16m-7 6h7"
+              />
+            </svg>
+          </button>
+
+          <!-- Desktop Navigation -->
+          <div class="hidden md:flex items-center space-x-2">
+            <a
+              href="/blog.html"
+              class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors rounded-lg hover:bg-white/5"
+            >
+              Blog
+            </a>
+            <a
+              href="https://discord.codedynasty.dev"
+              class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors rounded-lg hover:bg-white/5"
+            >
+              Discord
+            </a>
+            <a
+              href="https://github.com/CodeDynasty-dev"
+              class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors rounded-lg hover:bg-white/5"
+              target="_blank"
+            >
+              GitHub
+            </a>
+            <a
+              href="/contact.html"
+              class="px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg hover:shadow-lg hover:shadow-indigo-500/50 transition-all"
+            >
+              Contact
+            </a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div
+      id="mobile-menu"
+      class="fixed inset-0 z-50 bg-black/95 backdrop-blur-lg transform -translate-x-full transition-transform duration-300 ease-in-out md:hidden"
+    >
+      <div class="container mx-auto px-6 py-8 h-full flex flex-col">
+        <div class="flex justify-between items-center mb-12">
+          <a href="/" class="flex items-center" aria-label="CodeDynasty Home">
+            <div class="w-10 h-10 mr-3">
+              <img
+                src="/logo.png"
+                class="w-full h-full object-cover rounded-lg"
+                alt="CodeDynasty Logo"
+              />
+            </div>
+            <span class="text-xl font-bold text-white">CodeDynasty</span>
+          </a>
+          <button
+            id="close-mobile-menu"
+            class="text-white/70 hover:text-white transition-colors"
+          >
+            <svg
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+        </div>
+        <nav class="flex-1 flex flex-col space-y-4">
+          <a
+            href="https://discord.codedynasty.dev"
+            class="text-white/80 hover:text-white text-lg py-3 px-4 rounded-lg hover:bg-white/5 transition-colors"
+          >
+            Discord
+          </a>
+          <a
+            href="https://github.com/CodeDynasty-dev"
+            target="_blank"
+            class="text-white/80 hover:text-white text-lg py-3 px-4 rounded-lg hover:bg-white/5 transition-colors"
+          >
+            GitHub
+          </a>
+          <a
+            href="/contact.html"
+            class="text-white/80 hover:text-white text-lg py-3 px-4 rounded-lg hover:bg-white/5 transition-colors"
+          >
+            Contact
+          </a>
+        </nav>
+        <div class="pt-6 border-t border-white/10 mt-auto">
+          <p class="text-white/50 text-sm text-center">
+            © 2025 CodeDynasty. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <main class="pt-20 pb-12">
+      <!-- Reading Progress Bar -->
+      <div
+        class="reading-progress-container fixed top-20 left-0 w-full z-40 h-1 bg-transparent"
+      >
+    <div
+  class="reading-progress-bar h-full bg-gradient-to-r from-blue-500 via-purple-500 to-yellow-500 bg-[length:200%_100%]"
+  style="width: 0%"
+></div>
+      </div>
+
+      <!-- Article Header -->
+      <section class="relative py-16 md:py-24">
+        <div class="container mx-auto px-4 md:px-6">
+          <div class="max-w-4xl mx-auto">
+            <!-- Category Badge -->
+            <div class="mb-6">
+              <span class="badge">Development, JavaScript, Performance, Event loop, Microtasks, Promises, queueMicrotask, Web Development, Asynchronous Programming</span>
+            </div>
+
+            <!-- Title -->
+            <h1
+              class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight"
+            >
+              JavaScript Microtasks: A Comprehensive Guide and the Event Loop
+            </h1>
+
+            <!-- Meta Info -->
+            <div class="flex flex-wrap items-center gap-6 text-slate-400">
+              <!-- Author -->
+              <div class="flex items-center">
+                <div
+                  class="w-12 h-12 rounded-full overflow-hidden mr-3 bg-gradient-to-br from-indigo-500 to-purple-500 p-0.5"
+                >
+                  <div
+                    class="w-full h-full rounded-full overflow-hidden bg-slate-900"
+                  >
+                    <img
+                      src="https://avatars.githubusercontent.com/u/75016347"
+                      alt="Friday Candour"
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <span class="block font-medium text-white">Friday Candour</span>
+                  <span class="text-sm text-slate-500">Software Developer</span>
+                </div>
+              </div>
+
+              <!-- Date & Read Time -->
+              <div class="flex items-center gap-4 text-sm">
+                <div class="flex items-center">
+                  <svg
+                    class="h-4 w-4 mr-2"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                    />
+                  </svg>
+                  <time datetime="Jul 16 2025">Jul 16 2025</time>
+                </div>
+                <div class="flex items-center">
+                  <svg
+                    class="h-4 w-4 mr-2"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                  <span>5 min</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Hero Image -->
+      <section class="mb-16">
+        <div class="container mx-auto px-4 md:px-6">
+          <div class="max-w-5xl mx-auto">
+            <div class="aspect-video overflow-hidden rounded-2xl">
+              <img
+                src="/post-images/micro-task.jpg"
+                alt="JavaScript Microtasks: A Comprehensive Guide and the Event Loop"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Article Content -->
+      <div class="container mx-auto px-4 md:px-6">
+        <div class="flex flex-col lg:flex-row gap-12 max-w-7xl mx-auto">
+          <!-- Sidebar - Share Widget -->
+          <aside class="hidden lg:block w-20 self-start sticky top-32">
+            <div class="flex flex-col items-center gap-4">
+              <span class="text-xs text-slate-500 font-medium mb-2">SHARE</span>
+              <a
+                href="#"
+                class="w-12 h-12 rounded-full flex items-center justify-center bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400"
+              >
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a
+                href="#"
+                class="w-12 h-12 rounded-full flex items-center justify-center bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400"
+              >
+                <i class="fab fa-linkedin"></i>
+              </a>
+              <a
+                href="#"
+                class="w-12 h-12 rounded-full flex items-center justify-center bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400"
+              >
+                <i class="fab fa-facebook"></i>
+              </a>
+              <a
+                href="#"
+                class="w-12 h-12 rounded-full flex items-center justify-center bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400 copy-link-button"
+                data-tooltip="Copy Link"
+              >
+                <i class="fas fa-link"></i>
+              </a>
+            </div>
+          </aside>
+
+          <!-- Main Content -->
+          <article class="flex-1 max-w-4xl post">
+            <div class="blog-content prose prose-invert prose-lg max-w-none">
+              <docmach type="function" params="tags:JavaScript,Event Loop,Microtasks,Promises,Performance,queueMicrotask,Web Development,Asynchronous Programming" file="fragments/tags.js" />
+<h1>The Event Loop</h1>
+<p>The event loop is the backbone of JavaScript's concurrency model, enabling non-blocking I/O operations while maintaining a single-threaded execution context.</p>
+<h2>The Three-Tiered Execution Model</h2>
+<p>At its core, JavaScript's runtime operates on three fundamental components that work in harmony:</p>
+<ol>
+<li><strong>Call Stack</strong>: The synchronous execution context where function calls are stacked and processed in a last-in-first-out (LIFO) manner.</li>
+<li><strong>Macrotask Queue</strong>: Handles scheduled operations like <code>setTimeout</code>, <code>setInterval</code>, I/O operations, and UI rendering events.</li>
+<li><strong>Microtask Queue</strong>: A high-priority queue for <code>Promise</code> callbacks, <code>queueMicrotask()</code> callbacks, and <code>MutationObserver</code> callbacks.</li>
+</ol>
+<h3>The Event Loop's Execution Cycle</h3>
+<pre><code class="language-plaintext">1. Execute all synchronous code until the call stack is empty
+2. Process all microtasks in the queue until it&#x27;s completely empty
+3. Perform rendering operations (layout, paint) if needed
+4. Execute one macrotask from the queue
+5. Repeat the cycle
+</code></pre>
+<p>What makes microtasks particularly powerful is their execution timing—they run immediately after the current synchronous code completes, before the browser performs any rendering or processes other macrotasks. This behavior is crucial for maintaining UI consistency during complex operations and is the foundation for many modern web APIs and frameworks.</p>
+<p>Consider a typical scenario in a modern web application:</p>
+<pre><code class="language-javascript"><span class="hljs-comment">// Update user profile and UI</span>
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;saveButton&quot;</span>).<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&quot;click&quot;</span>, <span class="hljs-title function_">async</span> () =&gt; {
+  <span class="hljs-comment">// 1. Show loading state</span>
+  <span class="hljs-title function_">updateLoadingState</span>(<span class="hljs-literal">true</span>);
+
+  <span class="hljs-keyword">try</span> {
+    <span class="hljs-comment">// 2. Save data asynchronously</span>
+    <span class="hljs-keyword">await</span> <span class="hljs-title function_">saveUserData</span>(userData);
+
+    <span class="hljs-comment">// 3. Update UI with success message</span>
+    <span class="hljs-title function_">showSuccessMessage</span>(<span class="hljs-string">&quot;Profile updated!&quot;</span>);
+
+    <span class="hljs-comment">// 4. Fetch and display updated data</span>
+    <span class="hljs-keyword">const</span> updatedData = <span class="hljs-keyword">await</span> <span class="hljs-title function_">fetchUserData</span>();
+    <span class="hljs-title function_">updateUI</span>(updatedData);
+  } <span class="hljs-keyword">catch</span> (error) {
+    <span class="hljs-comment">// 5. Handle errors</span>
+    <span class="hljs-title function_">showErrorMessage</span>(<span class="hljs-string">&quot;Update failed: &quot;</span> + error.<span class="hljs-property">message</span>);
+  } <span class="hljs-keyword">finally</span> {
+    <span class="hljs-comment">// 6. Hide loading state</span>
+    <span class="hljs-title function_">updateLoadingState</span>(<span class="hljs-literal">false</span>);
+  }
+});
+</code></pre>
+<p>In this example, understanding the event loop helps explain why the loading state updates immediately, how error handling works, and why certain UI updates might appear to be batched together. The microtask queue ensures that promise callbacks (<code>.then()</code>, <code>.catch()</code>, <code>.finally()</code>) execute in a predictable order, maintaining application state consistency.</p>
+<h2><code>queueMicrotask()</code></h2>
+<p>Introduced in modern browsers, <code>queueMicrotask()</code> provides developers with direct access to the microtask queue, offering fine-grained control over when code executes in the event loop. Unlike <code>setTimeout()</code> or <code>requestAnimationFrame()</code>, which schedule macrotasks, <code>queueMicrotask()</code> ensures your code runs after the current task completes but before the browser performs any rendering.</p>
+<h3>Atomic State Updates in Action</h3>
+<p>Consider a complex UI component that needs to update multiple related state variables:</p>
+<pre><code class="language-javascript"><span class="hljs-keyword">class</span> <span class="hljs-title class_">ThemeManager</span> {
+  <span class="hljs-title function_">constructor</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">theme</span> = {
+      <span class="hljs-attr">darkMode</span>: <span class="hljs-literal">false</span>,
+      <span class="hljs-attr">contrast</span>: <span class="hljs-string">&quot;normal&quot;</span>,
+      <span class="hljs-attr">fontSize</span>: <span class="hljs-number">16</span>,
+    };
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">isRendering</span> = <span class="hljs-literal">false</span>;
+  }
+
+  <span class="hljs-title function_">updateTheme</span>(<span class="hljs-params">updates</span>) {
+    <span class="hljs-comment">// 1. Update the theme state</span>
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">theme</span> = { ...<span class="hljs-variable language_">this</span>.<span class="hljs-property">theme</span>, ...updates };
+
+    <span class="hljs-comment">// 2. Schedule a single render for all pending changes</span>
+    <span class="hljs-keyword">if</span> (!<span class="hljs-variable language_">this</span>.<span class="hljs-property">isRendering</span>) {
+      <span class="hljs-variable language_">this</span>.<span class="hljs-property">isRendering</span> = <span class="hljs-literal">true</span>;
+
+      <span class="hljs-title function_">queueMicrotask</span>(<span class="hljs-function">() =&gt;</span> {
+        <span class="hljs-comment">// 3. Perform the actual DOM updates</span>
+        <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">applyThemeToDOM</span>();
+        <span class="hljs-variable language_">this</span>.<span class="hljs-property">isRendering</span> = <span class="hljs-literal">false</span>;
+      });
+    }
+  }
+
+  <span class="hljs-title function_">applyThemeToDOM</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-comment">// Apply theme changes to the document</span>
+    <span class="hljs-variable language_">document</span>.<span class="hljs-property">documentElement</span>.<span class="hljs-property">style</span>.<span class="hljs-title function_">setProperty</span>(
+      <span class="hljs-string">&quot;--background-color&quot;</span>,
+      <span class="hljs-variable language_">this</span>.<span class="hljs-property">theme</span>.<span class="hljs-property">darkMode</span> ? <span class="hljs-string">&quot;#1a1a1a&quot;</span> : <span class="hljs-string">&quot;#ffffff&quot;</span>
+    );
+  }
+}
+
+<span class="hljs-keyword">const</span> themeManager = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ThemeManager</span>();
+
+themeManager.<span class="hljs-title function_">updateTheme</span>({ <span class="hljs-attr">darkMode</span>: <span class="hljs-literal">true</span> });
+themeManager.<span class="hljs-title function_">updateTheme</span>({ <span class="hljs-attr">contrast</span>: <span class="hljs-string">&quot;high&quot;</span> });
+themeManager.<span class="hljs-title function_">updateTheme</span>({ <span class="hljs-attr">fontSize</span>: <span class="hljs-number">20</span> });
+
+<span class="hljs-comment">// ThemeManager will only perform one DOM update</span>
+</code></pre>
+<h3>Key Benefits of Microtask Batching</h3>
+<ol>
+<li><strong>Efficient Rendering</strong>: Multiple state changes within the same tick are batched into a single render pass, reducing layout thrashing and improving performance.</li>
+<li><strong>Deterministic Execution</strong>: Microtasks execute in a predictable order, making it easier to reason about application state.</li>
+<li><strong>Consistent UI State</strong>: By deferring DOM updates until all synchronous code completes, you avoid showing intermediate states to users.</li>
+<li><strong>Improved Performance</strong>: Reduces the number of browser reflows and repaints, leading to smoother animations and interactions.</li>
+</ol>
+<h3>Practical Example: Form Submission</h3>
+<pre><code class="language-javascript"><span class="hljs-keyword">class</span> <span class="hljs-title class_">FormController</span> {
+  <span class="hljs-title function_">constructor</span>(<span class="hljs-params">formElement</span>) {
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">form</span> = formElement;
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">isSubmitting</span> = <span class="hljs-literal">false</span>;
+    <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">setupEventListeners</span>();
+  }
+
+  <span class="hljs-title function_">setupEventListeners</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">form</span>.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&quot;submit&quot;</span>, <span class="hljs-title function_">async</span> (e) =&gt; {
+      e.<span class="hljs-title function_">preventDefault</span>();
+
+      <span class="hljs-keyword">if</span> (<span class="hljs-variable language_">this</span>.<span class="hljs-property">isSubmitting</span>) <span class="hljs-keyword">return</span>;
+      <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">setSubmitting</span>(<span class="hljs-literal">true</span>);
+
+      <span class="hljs-keyword">try</span> {
+        <span class="hljs-keyword">const</span> formData = <span class="hljs-keyword">new</span> <span class="hljs-title class_">FormData</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">form</span>);
+        <span class="hljs-keyword">const</span> response = <span class="hljs-keyword">await</span> <span class="hljs-title function_">fetch</span>(<span class="hljs-string">&quot;/api/submit&quot;</span>, {
+          <span class="hljs-attr">method</span>: <span class="hljs-string">&quot;POST&quot;</span>,
+          <span class="hljs-attr">body</span>: formData,
+        });
+
+        <span class="hljs-keyword">if</span> (!response.<span class="hljs-property">ok</span>) <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Error</span>(<span class="hljs-string">&quot;Submission failed&quot;</span>);
+
+        <span class="hljs-comment">// Use microtask to ensure state updates before showing success</span>
+        <span class="hljs-title function_">queueMicrotask</span>(<span class="hljs-function">() =&gt;</span> {
+          <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">showSuccessMessage</span>();
+          <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">resetForm</span>();
+        });
+      } <span class="hljs-keyword">catch</span> (error) {
+        <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">showError</span>(error.<span class="hljs-property">message</span>);
+      } <span class="hljs-keyword">finally</span> {
+        <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">setSubmitting</span>(<span class="hljs-literal">false</span>);
+      }
+    });
+  }
+
+  <span class="hljs-title function_">setSubmitting</span>(<span class="hljs-params">isSubmitting</span>) {
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">isSubmitting</span> = isSubmitting;
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">form</span>
+      .<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&#x27;button[type=&quot;submit&quot;]&#x27;</span>)
+      .<span class="hljs-title function_">toggleAttribute</span>(<span class="hljs-string">&quot;disabled&quot;</span>, isSubmitting);
+  }
+}
+</code></pre>
+<p>This example demonstrates how microtasks can be used to manage complex UI states during form submission, ensuring a smooth user experience even when dealing with asynchronous operations.</p>
+<h2>Microtasks and Promises: Understanding the Execution Order</h2>
+<p>The relationship between <code>queueMicrotask()</code> and Promises is fundamental to mastering JavaScript's asynchronous behavior. While they both use the microtask queue, understanding their precise interaction is crucial for writing predictable code.</p>
+<h3>Execution Order</h3>
+<pre><code class="language-javascript"><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Script start&quot;</span>);
+
+<span class="hljs-comment">// Macrotask</span>
+<span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;setTimeout&quot;</span>), <span class="hljs-number">0</span>);
+
+<span class="hljs-comment">// Microtasks</span>
+<span class="hljs-title function_">queueMicrotask</span>(<span class="hljs-function">() =&gt;</span> {
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Microtask 1&quot;</span>);
+  <span class="hljs-comment">// This will be queued but executed in the same microtask checkpoint</span>
+  <span class="hljs-title function_">queueMicrotask</span>(<span class="hljs-function">() =&gt;</span> <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Nested Microtask 1&quot;</span>));
+});
+
+<span class="hljs-comment">// Promise that resolves immediately</span>
+<span class="hljs-title class_">Promise</span>.<span class="hljs-title function_">resolve</span>()
+  .<span class="hljs-title function_">then</span>(<span class="hljs-function">() =&gt;</span> {
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Promise 1&quot;</span>);
+    <span class="hljs-comment">// This creates another microtask</span>
+    <span class="hljs-title function_">queueMicrotask</span>(<span class="hljs-function">() =&gt;</span> <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Nested Microtask 2&quot;</span>));
+  })
+  .<span class="hljs-title function_">then</span>(<span class="hljs-function">() =&gt;</span> {
+    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Promise 2&quot;</span>);
+  });
+
+<span class="hljs-title function_">queueMicrotask</span>(<span class="hljs-function">() =&gt;</span> <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Microtask 2&quot;</span>));
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Script end&quot;</span>);
+
+<span class="hljs-comment">/* Output:
+Script start
+Script end
+Microtask 1
+Promise 1
+Microtask 2
+Nested Microtask 1
+Promise 2
+Nested Microtask 2
+setTimeout
+*/</span>
+</code></pre>
+<h3>Key Insights:</h3>
+<ol>
+<li>
+<p><strong>Unified Microtask Queue</strong>: Both use the same microtask queue, maintaining a strict FIFO (First-In-First-Out) order.</p>
+</li>
+<li>
+<p><strong>Microtask Checkpoint</strong>: The microtask queue is processed completely before the next macrotask or render cycle.</p>
+</li>
+<li>
+<p><strong>Promise Chaining</strong>: Each <code>.then()</code> creates a new microtask. When a promise resolves, its callbacks are queued in the microtask queue.</p>
+</li>
+</ol>
+<h3>Practical Implications</h3>
+<p>Understanding this behavior is crucial when:</p>
+<ul>
+<li><strong>Implementing Custom Schedulers</strong>: Building your own async utilities or state management systems.</li>
+<li><strong>Testing</strong>: Writing reliable tests for asynchronous code.</li>
+</ul>
+<pre><code class="language-javascript"><span class="hljs-comment">// Example: Implementing a simple scheduler</span>
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Scheduler</span> {
+  <span class="hljs-title function_">constructor</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">queue</span> = [];
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">isProcessing</span> = <span class="hljs-literal">false</span>;
+  }
+
+  <span class="hljs-title function_">addTask</span>(<span class="hljs-params">task</span>) {
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">queue</span>.<span class="hljs-title function_">push</span>(task);
+    <span class="hljs-keyword">if</span> (!<span class="hljs-variable language_">this</span>.<span class="hljs-property">isProcessing</span>) {
+      <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">processQueue</span>();
+    }
+  }
+
+  <span class="hljs-keyword">async</span> <span class="hljs-title function_">processQueue</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">isProcessing</span> = <span class="hljs-literal">true</span>;
+
+    <span class="hljs-keyword">while</span> (<span class="hljs-variable language_">this</span>.<span class="hljs-property">queue</span>.<span class="hljs-property">length</span> &gt; <span class="hljs-number">0</span>) {
+      <span class="hljs-keyword">const</span> task = <span class="hljs-variable language_">this</span>.<span class="hljs-property">queue</span>.<span class="hljs-title function_">shift</span>();
+
+      <span class="hljs-comment">// Wrap each task in a microtask for consistent timing</span>
+      <span class="hljs-keyword">await</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve</span>) =&gt;</span> {
+        <span class="hljs-title function_">queueMicrotask</span>(<span class="hljs-title function_">async</span> () =&gt; {
+          <span class="hljs-keyword">try</span> {
+            <span class="hljs-keyword">await</span> <span class="hljs-title function_">task</span>();
+          } <span class="hljs-keyword">catch</span> (error) {
+            <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">error</span>(<span class="hljs-string">&quot;Task failed:&quot;</span>, error);
+          }
+          <span class="hljs-title function_">resolve</span>();
+        });
+      });
+    }
+
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">isProcessing</span> = <span class="hljs-literal">false</span>;
+  }
+}
+
+<span class="hljs-comment">// Usage</span>
+<span class="hljs-keyword">const</span> scheduler = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Scheduler</span>();
+scheduler.<span class="hljs-title function_">addTask</span>(<span class="hljs-function">() =&gt;</span> <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Task 1&quot;</span>));
+scheduler.<span class="hljs-title function_">addTask</span>(
+  <span class="hljs-function">() =&gt;</span>
+    <span class="hljs-keyword">new</span> <span class="hljs-title class_">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve</span>) =&gt;</span> {
+      <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Task 2 - Start&quot;</span>);
+      <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> {
+        <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Task 2 - Complete&quot;</span>);
+        <span class="hljs-title function_">resolve</span>();
+      }, <span class="hljs-number">1000</span>);
+    })
+);
+</code></pre>
+<h3>Common Pitfalls to Avoid</h3>
+<ol>
+<li>
+<p><strong>Microtask Recursion</strong>:</p>
+<pre><code class="language-javascript"><span class="hljs-comment">// ❌ Dangerous: Infinite microtask loop</span>
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">infiniteMicrotask</span>(<span class="hljs-params"></span>) {
+  <span class="hljs-title function_">queueMicrotask</span>(infiniteMicrotask);
+}
+</code></pre>
+</li>
+<li>
+<p><strong>Mixing Microtasks and Macrotasks</strong>:</p>
+<pre><code class="language-javascript"><span class="hljs-comment">// 🤔 Potentially confusing execution order</span>
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Start&quot;</span>);
+
+<span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Macrotask&quot;</span>));
+
+<span class="hljs-title class_">Promise</span>.<span class="hljs-title function_">resolve</span>().<span class="hljs-title function_">then</span>(<span class="hljs-function">() =&gt;</span> {
+  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Microtask 1&quot;</span>);
+  <span class="hljs-title function_">queueMicrotask</span>(<span class="hljs-function">() =&gt;</span> <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Nested Microtask&quot;</span>));
+});
+
+<span class="hljs-title function_">queueMicrotask</span>(<span class="hljs-function">() =&gt;</span> <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Microtask 2&quot;</span>));
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;End&quot;</span>);
+
+<span class="hljs-comment">/* Output:
+Start
+End
+Microtask 1
+Microtask 2
+Nested Microtask
+Macrotask
+*/</span>
+</code></pre>
+</li>
+<li>
+<p><strong>Blocking the Event Loop</strong>:</p>
+<pre><code class="language-javascript"><span class="hljs-comment">// ⚠️ Blocks the main thread</span>
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">blockingOperation</span>(<span class="hljs-params"></span>) {
+  <span class="hljs-keyword">const</span> end = <span class="hljs-title class_">Date</span>.<span class="hljs-title function_">now</span>() + <span class="hljs-number">5000</span>; <span class="hljs-comment">// Block for 5 seconds</span>
+  <span class="hljs-keyword">while</span> (<span class="hljs-title class_">Date</span>.<span class="hljs-title function_">now</span>() &lt; end) {}
+  <span class="hljs-title function_">queueMicrotask</span>(<span class="hljs-function">() =&gt;</span> <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;This will be delayed&quot;</span>));
+}
+</code></pre>
+</li>
+</ol>
+<p>Taking note of these will help you write more predictable and performant asynchronous JavaScript code.</p>
+<h2>Comparing with Go's <code>defer</code></h2>
+<h3>Go's Defer</h3>
+<pre><code class="language-go"><span class="hljs-comment">// Go</span>
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">processFile</span><span class="hljs-params">()</span></span> {
+  file := open(<span class="hljs-string">&quot;data.txt&quot;</span>)
+  <span class="hljs-keyword">defer</span> file.Close() <span class="hljs-comment">// Executes when function returns</span>
+  parse(file)
+}
+</code></pre>
+<h3>JavaScript's Microtask</h3>
+<pre><code class="language-javascript"><span class="hljs-comment">// Update user profile and UI</span>
+<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;saveButton&quot;</span>).<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&quot;click&quot;</span>, <span class="hljs-title function_">async</span> () =&gt; {
+  <span class="hljs-comment">// 1. Show loading state</span>
+  <span class="hljs-title function_">updateLoadingState</span>(<span class="hljs-literal">true</span>);
+
+  <span class="hljs-keyword">try</span> {
+    <span class="hljs-comment">// 2. Save data asynchronously</span>
+    <span class="hljs-keyword">await</span> <span class="hljs-title function_">saveUserData</span>(userData);
+
+    <span class="hljs-comment">// 3. Update UI with success message</span>
+    <span class="hljs-title function_">showSuccessMessage</span>(<span class="hljs-string">&quot;Profile updated!&quot;</span>);
+
+    <span class="hljs-comment">// 4. Fetch and display updated data</span>
+    <span class="hljs-keyword">const</span> updatedData = <span class="hljs-keyword">await</span> <span class="hljs-title function_">fetchUserData</span>();
+    <span class="hljs-title function_">updateUI</span>(updatedData);
+  } <span class="hljs-keyword">catch</span> (error) {
+    <span class="hljs-comment">// 5. Handle errors</span>
+    <span class="hljs-title function_">showErrorMessage</span>(<span class="hljs-string">&quot;Update failed: &quot;</span> + error.<span class="hljs-property">message</span>);
+  } <span class="hljs-keyword">finally</span> {
+    <span class="hljs-comment">// 6. Hide loading state</span>
+    <span class="hljs-title function_">updateLoadingState</span>(<span class="hljs-literal">false</span>);
+  }
+});
+<span class="hljs-string">``</span><span class="hljs-string">`0
+
+### Key Differences:
+
+| Feature               | JavaScript Microtasks    | Go&#x27;s `</span>defer<span class="hljs-string">`          |
+| --------------------- | ------------------------ | --------------------- |
+| **Execution Trigger** | When call stack is empty | When function returns |
+| **Processing Order**  | FIFO (queue)             | LIFO (stack)          |
+| **Asynchronous**      | Yes                      | No                    |
+| **Primary Use Case**  | Batched UI updates       | Resource cleanup      |
+
+### Debugging Microtask Issues
+
+Chrome DevTools provides excellent support for debugging microtask-related issues:
+
+1. **Performance Tab**: Record a performance profile to identify microtask-related performance bottlenecks.
+2. **Console API**: Use `</span><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">trace</span>()<span class="hljs-string">` within microtasks to understand their call hierarchy.
+3. **Breakpoints**: Set breakpoints in microtasks to inspect the call stack and closure variables.
+
+### Recommended Use Cases
+
+#### 1. UI State Batching and Consistency
+
+#### 2. High-Priority Operations
+
+#### 3. DOM Synchronization with `</span><span class="hljs-title class_">MutationObserver</span><span class="hljs-string">`
+
+#### 4. Performance Optimization: Preventing Layout Thrashing
+
+### When to Avoid Microtasks
+
+#### 1. CPU-Intensive Tasks
+
+#### 2. Deeply Recursive Operations
+
+#### 3. Time-Critical Operations
+
+## Further Reading
+
+### Core Specifications and Documentation
+
+- [WHATWG HTML Living Standard: Event Loops](https://html.spec.whatwg.org/multipage/webappapis.html#event-loops) - The definitive specification for how event loops work in browsers
+- [MDN: queueMicrotask()](https://developer.mozilla.org/en-US/docs/Web/API/queueMicrotask) - Comprehensive documentation and examples
+- [ECMAScript® 2024 Language Specification: Jobs and Job Queues](https://tc39.es/ecma262/#sec-jobs-and-job-queues) - The JavaScript standard&#x27;s take on job queues
+
+### In-Depth Articles
+
+- [Tasks, microtasks, queues and schedules](https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/) by Jake Archibald - A classic explanation with interactive examples
+- [The JavaScript Event Loop: Explained](https://blog.sessionstack.com/how-javascript-works-event-loop-and-the-rise-of-async-programming-5-ways-to-better-coding-with-2f077c4438b5) - Detailed look at the event loop mechanics
+- [When to Use queueMicrotask() vs requestIdleCallback()](https://web.dev/optimize-long-tasks/) - Performance optimization guide
+
+### Browser Implementation Details
+
+- [Chromium&#x27;s Microtask Implementation](https://chromium.googlesource.com/chromium/src/+/main/docs/microtasks.md) - How Chrome handles microtasks
+- [Firefox&#x27;s Event Loop Processing Model](https://firefox-source-docs.mozilla.org/dom/event_loop_processing_model.html) - Firefox&#x27;s approach to event loop processing
+- [WebKit&#x27;s Event Loop Design](https://trac.webkit.org/wiki/WebKitEventLoop) - WebKit&#x27;s event loop architecture
+
+### Advanced Topics
+
+- [The Microtask Queue in Depth](https://www.ecma-international.org/ecma-262/10.0/index.html#sec-jobs-and-job-queues) - Technical deep dive from the ECMAScript spec
+- [Microtasks and the Browser Rendering Pipeline](https://developers.google.com/web/fundamentals/performance/rendering) - How microtasks interact with rendering
+- [Optimizing JavaScript for the Main Thread](https://web.dev/optimizing-content-efficiency-javascript/) - Performance optimization strategies
+
+### Real-World Applications
+
+- [React&#x27;s Concurrent Mode and Scheduling](https://reactjs.org/docs/concurrent-mode-intro.html) - How React uses scheduling for better performance
+- [Vue.js Reactivity in Depth](https://vuejs.org/guide/extras/reactivity-in-depth.html) - Vue&#x27;s reactivity system and microtasks
+- [Angular&#x27;s Change Detection](https://angular.io/guide/change-detection) - How Angular leverages zones and change detection
+
+### Final Thoughts
+
+By following the best practices outlined in this article and being mindful of potential pitfalls, you can leverage microtasks to create smoother, more responsive web applications that provide an excellent user experience.
+
+#### Always consider the right tool for the job
+
+Remember that while microtasks are a powerful feature, they&#x27;re just one part of the larger JavaScript concurrency model. Always consider the broader context of your application and choose the right tool for the job, whether that&#x27;s microtasks, `</span>requestAnimationFrame<span class="hljs-string">`, `</span>requestIdleCallback<span class="hljs-string">`, or Web Workers.
+
+#### Bye for now
+
+Happy coding, and please share your thoughts in the comments.</span></code></pre>
+
+            </div>
+
+            <!-- Comments Section -->
+            <div class="mt-16 pt-16 border-t border-white/10">
+              <script
+                src="https://giscus.app/client.js"
+                data-repo="codedynasty-dev/codedynasty"
+                data-repo-id="R_kgDOOBViSg"
+                data-category="Ideas"
+                data-category-id="DIC_kwDOOBViSs4CqU7E"
+                data-mapping="pathname"
+                data-strict="1"
+                data-reactions-enabled="1"
+                data-emit-metadata="0"
+                data-input-position="top"
+                data-theme="noborder_dark"
+                data-lang="en"
+                data-loading="lazy"
+                crossorigin="anonymous"
+                async
+              ></script>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- Mobile Floating Actions -->
+      <div class="lg:hidden fixed bottom-6 right-6 z-40 flex flex-col gap-3">
+        <button
+          id="mobile-share-button"
+          class="w-14 h-14 rounded-full flex items-center justify-center bg-gradient-to-r from-indigo-500 to-purple-500 text-white shadow-lg hover:shadow-xl transition-all"
+        >
+          <i class="fas fa-share-alt"></i>
+        </button>
+        <a href="#" id="scroll-top">
+          <button
+            class="w-14 h-14 rounded-full flex items-center justify-center bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 transition-all"
+          >
+            <i class="fas fa-arrow-up"></i>
+          </button>
+        </a>
+      </div>
+
+      <!-- Mobile Share Dialog -->
+      <!-- <div
+        id="mobile-share-dialog"
+        class="hidden fixed inset-0 z-50 flex items-end justify-center"
+      >
+        <div
+          class="fixed inset-0 bg-black/80 backdrop-blur-sm"
+          id="mobile-share-overlay"
+        ></div>
+        <div
+          class="relative w-full max-w-md p-6 rounded-t-2xl bg-slate-900 border-t border-white/10"
+        >
+          <div class="flex justify-between items-center mb-6">
+            <h3 class="text-lg font-bold text-white">Share This Article</h3>
+            <button
+              id="close-share-dialog"
+              class="text-slate-400 hover:text-white"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"
+                ></path>
+              </svg>
+            </button>
+          </div>
+          <div class="grid grid-cols-4 gap-4">
+            <a href="#" class="flex flex-col items-center">
+              <div
+                class="w-14 h-14 rounded-full flex items-center justify-center mb-2 bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400"
+              >
+                <i class="fab fa-twitter fa-lg"></i>
+              </div>
+              <span class="text-xs text-slate-400">Twitter</span>
+            </a>
+            <a href="#" class="flex flex-col items-center">
+              <div
+                class="w-14 h-14 rounded-full flex items-center justify-center mb-2 bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400"
+              >
+                <i class="fab fa-linkedin fa-lg"></i>
+              </div>
+              <span class="text-xs text-slate-400">LinkedIn</span>
+            </a>
+            <a href="#" class="flex flex-col items-center">
+              <div
+                class="w-14 h-14 rounded-full flex items-center justify-center mb-2 bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400"
+              >
+                <i class="fab fa-facebook fa-lg"></i>
+              </div>
+              <span class="text-xs text-slate-400">Facebook</span>
+            </a>
+            <a
+              href="#"
+              class="flex flex-col items-center copy-link-button"
+              data-tooltip="Copied!"
+            >
+              <div
+                class="w-14 h-14 rounded-full flex items-center justify-center mb-2 bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400"
+              >
+                <i class="fas fa-link fa-lg"></i>
+              </div>
+              <span class="text-xs text-slate-400">Copy</span>
+            </a>
+          </div>
+        </div>
+      </div> -->
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black/30 border-t border-white/10 py-12">
+      <div class="container mx-auto px-4">
+        <div class="text-center">
+          <p class="text-slate-500 text-sm">
+            &copy; 2025 CodeDynasty. Building modern software for humanity.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/script/index.js"></script>
+    <script>
+      // Mobile menu functionality
+      const mobileMenuButton = document.getElementById("mobile-menu-button");
+      const closeMobileMenu = document.getElementById("close-mobile-menu");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const body = document.body;
+
+      function toggleMobileMenu() {
+        mobileMenu.classList.toggle("translate-x-0");
+        mobileMenu.classList.toggle("-translate-x-full");
+        body.classList.toggle("overflow-hidden");
+      }
+
+      if (mobileMenuButton && closeMobileMenu && mobileMenu) {
+        mobileMenuButton.addEventListener("click", toggleMobileMenu);
+        closeMobileMenu.addEventListener("click", toggleMobileMenu);
+
+        document.querySelectorAll("#mobile-menu a").forEach((link) => {
+          link.addEventListener("click", () => {
+            mobileMenu.classList.remove("translate-x-0");
+            mobileMenu.classList.add("-translate-x-full");
+            body.classList.remove("overflow-hidden");
+          });
+        });
+
+        document.addEventListener("keydown", (e) => {
+          if (
+            e.key === "Escape" &&
+            mobileMenu.classList.contains("translate-x-0")
+          ) {
+            toggleMobileMenu();
+          }
+        });
+      }
+
+      // Reading progress bar
+      window.addEventListener("scroll", () => {
+        const winScroll =
+          document.body.scrollTop || document.documentElement.scrollTop;
+        const height =
+          document.documentElement.scrollHeight -
+          document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        const progressBar = document.querySelector(".reading-progress-bar");
+        if (progressBar) {
+          progressBar.style.width = scrolled + "%";
+        }
+      });
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        renderMathInElement(document.body, {
+          delimiters: [
+            { left: "$", right: "$", display: true },
+            { left: "$", right: "$", display: false },
+          ],
+        });
+      });
+    </script>
+  </body>
+</html>
+

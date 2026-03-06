@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ten Essential Papers for Understanding Modern AI Engineering - CodeDynasty</title>
+    <link rel="stylesheet" href="/bundle.css" />
+    <link rel="stylesheet" href="/styles/main.css" />
+    <link rel="stylesheet" href="/styles/post.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css"
+    />
+    <meta name="description" content="A curated exploration of the foundational research papers that shaped modern AI engineering, from transformers to model alignment and practical deployment strategies." />
+    <meta name="keywords" content="code, programming, development" />
+    <meta name="author" content="Friday Candour" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#6366f1" />
+    <meta property="og:title" content="Ten Essential Papers for Understanding Modern AI Engineering" />
+    <meta property="og:description" content="A curated exploration of the foundational research papers that shaped modern AI engineering, from transformers to model alignment and practical deployment strategies." />
+    <meta property="og:url" content="https://codedynasty.dev" />
+    <meta property="og:image" content="https://codedynasty.dev/post-images/transformer.png" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="CodeDynasty" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Ten Essential Papers for Understanding Modern AI Engineering" />
+    <meta name="twitter:description" content="A curated exploration of the foundational research papers that shaped modern AI engineering, from transformers to model alignment and practical deployment strategies." />
+    <meta name="twitter:image" content="https://codedynasty.dev/post-images/transformer.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <style>
+      .katex-display,
+      .katex,
+      .katex-mathml,
+      .katex-html {
+        display: inline !important;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <header class="fixed w-full top-0 z-50 nav-modern">
+      <nav class="container mx-auto px-6">
+        <div class="flex justify-between items-center h-20">
+          <a
+            href="/"
+            class="flex items-center group"
+            aria-label="CodeDynasty Home"
+          >
+            <div
+              class="w-10 h-10 mr-3 transition-transform duration-300 group-hover:scale-110"
+            >
+              <img
+                src="/logo.png"
+                class="w-full h-full object-cover rounded-lg"
+                alt="CodeDynasty Logo"
+              />
+            </div>
+            <span class="text-xl font-bold text-white">CodeDynasty</span>
+          </a>
+
+          <!-- Mobile menu button -->
+          <button
+            id="mobile-menu-button"
+            class="md:hidden text-white focus:outline-none"
+            aria-label="Toggle menu"
+          >
+            <svg
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16m-7 6h7"
+              />
+            </svg>
+          </button>
+
+          <!-- Desktop Navigation -->
+          <div class="hidden md:flex items-center space-x-2">
+            <a
+              href="/blog.html"
+              class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors rounded-lg hover:bg-white/5"
+            >
+              Blog
+            </a>
+            <a
+              href="https://discord.codedynasty.dev"
+              class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors rounded-lg hover:bg-white/5"
+            >
+              Discord
+            </a>
+            <a
+              href="https://github.com/CodeDynasty-dev"
+              class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors rounded-lg hover:bg-white/5"
+              target="_blank"
+            >
+              GitHub
+            </a>
+            <a
+              href="/contact.html"
+              class="px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg hover:shadow-lg hover:shadow-indigo-500/50 transition-all"
+            >
+              Contact
+            </a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div
+      id="mobile-menu"
+      class="fixed inset-0 z-50 bg-black/95 backdrop-blur-lg transform -translate-x-full transition-transform duration-300 ease-in-out md:hidden"
+    >
+      <div class="container mx-auto px-6 py-8 h-full flex flex-col">
+        <div class="flex justify-between items-center mb-12">
+          <a href="/" class="flex items-center" aria-label="CodeDynasty Home">
+            <div class="w-10 h-10 mr-3">
+              <img
+                src="/logo.png"
+                class="w-full h-full object-cover rounded-lg"
+                alt="CodeDynasty Logo"
+              />
+            </div>
+            <span class="text-xl font-bold text-white">CodeDynasty</span>
+          </a>
+          <button
+            id="close-mobile-menu"
+            class="text-white/70 hover:text-white transition-colors"
+          >
+            <svg
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+        </div>
+        <nav class="flex-1 flex flex-col space-y-4">
+          <a
+            href="https://discord.codedynasty.dev"
+            class="text-white/80 hover:text-white text-lg py-3 px-4 rounded-lg hover:bg-white/5 transition-colors"
+          >
+            Discord
+          </a>
+          <a
+            href="https://github.com/CodeDynasty-dev"
+            target="_blank"
+            class="text-white/80 hover:text-white text-lg py-3 px-4 rounded-lg hover:bg-white/5 transition-colors"
+          >
+            GitHub
+          </a>
+          <a
+            href="/contact.html"
+            class="text-white/80 hover:text-white text-lg py-3 px-4 rounded-lg hover:bg-white/5 transition-colors"
+          >
+            Contact
+          </a>
+        </nav>
+        <div class="pt-6 border-t border-white/10 mt-auto">
+          <p class="text-white/50 text-sm text-center">
+            © 2025 CodeDynasty. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <main class="pt-20 pb-12">
+      <!-- Reading Progress Bar -->
+      <div
+        class="reading-progress-container fixed top-20 left-0 w-full z-40 h-1 bg-transparent"
+      >
+    <div
+  class="reading-progress-bar h-full bg-gradient-to-r from-blue-500 via-purple-500 to-yellow-500 bg-[length:200%_100%]"
+  style="width: 0%"
+></div>
+      </div>
+
+      <!-- Article Header -->
+      <section class="relative py-16 md:py-24">
+        <div class="container mx-auto px-4 md:px-6">
+          <div class="max-w-4xl mx-auto">
+            <!-- Category Badge -->
+            <div class="mb-6">
+              <span class="badge">AI Engineering, Machine Learning, Research</span>
+            </div>
+
+            <!-- Title -->
+            <h1
+              class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight"
+            >
+              Ten Essential Papers for Understanding Modern AI Engineering
+            </h1>
+
+            <!-- Meta Info -->
+            <div class="flex flex-wrap items-center gap-6 text-slate-400">
+              <!-- Author -->
+              <div class="flex items-center">
+                <div
+                  class="w-12 h-12 rounded-full overflow-hidden mr-3 bg-gradient-to-br from-indigo-500 to-purple-500 p-0.5"
+                >
+                  <div
+                    class="w-full h-full rounded-full overflow-hidden bg-slate-900"
+                  >
+                    <img
+                      src="https://avatars.githubusercontent.com/u/75016347"
+                      alt="Friday Candour"
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <span class="block font-medium text-white">Friday Candour</span>
+                  <span class="text-sm text-slate-500">Software Developer</span>
+                </div>
+              </div>
+
+              <!-- Date & Read Time -->
+              <div class="flex items-center gap-4 text-sm">
+                <div class="flex items-center">
+                  <svg
+                    class="h-4 w-4 mr-2"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                    />
+                  </svg>
+                  <time datetime="09 12 2025">09 12 2025</time>
+                </div>
+                <div class="flex items-center">
+                  <svg
+                    class="h-4 w-4 mr-2"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                  <span>12 min</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Hero Image -->
+      <section class="mb-16">
+        <div class="container mx-auto px-4 md:px-6">
+          <div class="max-w-5xl mx-auto">
+            <div class="aspect-video overflow-hidden rounded-2xl">
+              <img
+                src="/post-images/transformer.png"
+                alt="Ten Essential Papers for Understanding Modern AI Engineering"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Article Content -->
+      <div class="container mx-auto px-4 md:px-6">
+        <div class="flex flex-col lg:flex-row gap-12 max-w-7xl mx-auto">
+          <!-- Sidebar - Share Widget -->
+          <aside class="hidden lg:block w-20 self-start sticky top-32">
+            <div class="flex flex-col items-center gap-4">
+              <span class="text-xs text-slate-500 font-medium mb-2">SHARE</span>
+              <a
+                href="#"
+                class="w-12 h-12 rounded-full flex items-center justify-center bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400"
+              >
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a
+                href="#"
+                class="w-12 h-12 rounded-full flex items-center justify-center bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400"
+              >
+                <i class="fab fa-linkedin"></i>
+              </a>
+              <a
+                href="#"
+                class="w-12 h-12 rounded-full flex items-center justify-center bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400"
+              >
+                <i class="fab fa-facebook"></i>
+              </a>
+              <a
+                href="#"
+                class="w-12 h-12 rounded-full flex items-center justify-center bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400 copy-link-button"
+                data-tooltip="Copy Link"
+              >
+                <i class="fas fa-link"></i>
+              </a>
+            </div>
+          </aside>
+
+          <!-- Main Content -->
+          <article class="flex-1 max-w-4xl post">
+            <div class="blog-content prose prose-invert prose-lg max-w-none">
+              <docmach type="function" params="tags:AI,machine-learning,transformers,LLMs,research-papers,model-architecture,fine-tuning,RAG,agents,quantization" file="fragments/tags.js" />
+<p>The field of AI engineering has evolved rapidly over the past several years, driven by a series of breakthrough research papers. Understanding these foundational works provides essential context for the design decisions and trade-offs we face when building production AI systems today.</p>
+<h2>The Transformer Revolution</h2>
+<p>Neural networks have existed since the 1940s, yet their recent prominence stems from a specific architectural innovation. In 2017, researchers at Google published &quot;Attention Is All You Need,&quot; introducing the transformer architecture. This paper addressed three fundamental limitations of prior approaches:</p>
+<p><strong>Sequential Processing Constraints</strong>: Recurrent and convolutional networks processed text step-by-step, creating bottlenecks in training speed.</p>
+<p><strong>Long-Range Dependencies</strong>: These architectures struggled to connect information appearing far apart in documents.</p>
+<p><strong>Parallelization Limitations</strong>: The sequential nature made it difficult to distribute work across multiple GPUs effectively.</p>
+<p>The transformer's self-attention mechanism allows the model to examine all words in a sequence simultaneously, determining which relationships matter. This enables massive parallelization, improves context handling, and makes scaling more favorable. Nearly every modern language model descends from this design.</p>
+<h2>Scale and In-Context Learning</h2>
+<p>The 2020 paper &quot;Language Models are Few-Shot Learners&quot; (GPT-3) demonstrated an unexpected capability: sufficiently large transformer models can perform new tasks from minimal examples provided in the prompt, without task-specific fine-tuning.</p>
+<p>The research team trained a large decoder-only transformer and systematically evaluated it across multiple tasks using only prompt variations:</p>
+<ul>
+<li><strong>Zero-shot</strong>: Instructions alone</li>
+<li><strong>One-shot</strong>: A single example</li>
+<li><strong>Few-shot</strong>: A handful of examples</li>
+</ul>
+<p>The breakthrough was not architectural. It demonstrated that scale combined with prompting unlocks in-context learning—the model infers tasks from patterns in the prompt itself. This reframed system design: instead of training specialized models for each task, we can often prompt a general model appropriately.</p>
+<p>However, scale alone does not solve all problems. Subsequent work revealed the importance of alignment.</p>
+<h2>Model Alignment Through Human Feedback</h2>
+<p>The 2022 paper &quot;Training Language Models to Follow Instructions with Human Feedback&quot; (InstructGPT) addressed models that respond unhelpfully or produce toxic outputs. The approach uses reinforcement learning from human feedback (RLHF):</p>
+<ol>
+<li><strong>Supervised Fine-Tuning</strong>: Train on examples of desired behavior</li>
+<li><strong>Reward Model Training</strong>: Learn to prefer better answers based on human rankings</li>
+<li><strong>Policy Optimization</strong>: Adjust the base model to produce answers the reward model prefers</li>
+</ol>
+<p>The key finding: a smaller aligned model can outperform a much larger unaligned one because it follows directions and respects user intent. More recent advances include Direct Preference Optimization (DPO), which learns from ranked preferences without an explicit reward model.</p>
+<h2>Parameter-Efficient Fine-Tuning</h2>
+<p>While in-context learning and alignment improve model behavior, domain-specific tasks often require fine-tuning. Full fine-tuning updates all model weights, demanding significant compute resources.</p>
+<p>The 2021 LoRA (Low-Rank Adaptation) paper provided a practical alternative. Instead of updating all weights, LoRA inserts small low-rank adapter matrices that nudge the large weight matrices in a low-dimensional direction. Only these adapters are trained, keeping the base model frozen.</p>
+<p>This results in:</p>
+<ul>
+<li>10,000× fewer trainable parameters</li>
+<li>~3× lower GPU memory usage</li>
+<li>Single-GPU fine-tuning feasibility</li>
+</ul>
+<p>LoRA transformed fine-tuning from a research project into a practical engineering tool. Combined with quantization techniques, it enables even greater efficiency gains.</p>
+<h2>Retrieval-Augmented Generation</h2>
+<p>Language models face a fundamental limitation: they only know what was in their training data. The 2020 paper &quot;Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks&quot; proposed a solution: before generating an answer, retrieve relevant documents and let the model read them.</p>
+<p>This addresses two issues:</p>
+<p><strong>Outdated Knowledge</strong>: Access information beyond the training data cutoff date</p>
+<p><strong>Hallucination</strong>: Ground responses in retrieved sources rather than memorized patterns</p>
+<p>The pattern has become standard in production systems. However, implementation quality matters significantly. Effective RAG systems require careful attention to:</p>
+<ul>
+<li>Document chunking strategies</li>
+<li>Indexing approaches</li>
+<li>Search ranking algorithms</li>
+<li>Query rewriting techniques</li>
+<li>Multi-step retrieval pipelines</li>
+<li>Faithfulness evaluation</li>
+</ul>
+<p>Often, retrieval quality matters more than the specific base model chosen.</p>
+<h2>Agent Architectures</h2>
+<p>While powerful models with data access are valuable, they require orchestration to accomplish tasks autonomously. &quot;The Rise and Potential of Large Language Model Based Agents&quot; (2023) surveys the agent design space, proposing a conceptual framework:</p>
+<p><strong>Brain</strong>: The LLM plans and decides next actions</p>
+<p><strong>Perception</strong>: The agent reads context—tool results, files, web pages, memory</p>
+<p><strong>Action</strong>: It executes steps—API calls, tool invocations, writes—then observes results and iterates</p>
+<p>The survey covers common patterns: single agents, multi-agent teams, human-agent collaboration, and emergent behaviors in agent societies. Practical considerations include:</p>
+<ul>
+<li>Clear tool schemas</li>
+<li>Guardrails preventing runaway loops</li>
+<li>Result verification mechanisms</li>
+<li>Evaluation methodologies</li>
+</ul>
+<h2>Sparse Models and Mixture of Experts</h2>
+<p>The &quot;Switch Transformers&quot; paper demonstrated how to scale to trillion-parameter models efficiently using sparse computation. The mixture-of-experts approach employs many specialized sub-networks (experts), with a router selecting which single expert processes each token.</p>
+<p>This conditional computation strategy stores many parameters but activates only a small fraction per token, reducing inference cost while maintaining capacity. The trade-off: serving sparse models introduces engineering complexity around load balancing, latency management, and bottleneck avoidance.</p>
+<p>Many teams choose moderately-sized dense models combined with retrieval and tooling, finding the total engineering effort lower.</p>
+<h2>Model Compression Through Distillation</h2>
+<p>The 2019 Distil BERT paper showed that knowledge distillation—teaching a smaller student model to mimic a larger teacher—can retain most accuracy at a fraction of the cost.</p>
+<p>DistilBERT achieved:</p>
+<ul>
+<li>40% fewer parameters</li>
+<li>60% faster inference</li>
+<li>97% of BERT's language understanding</li>
+</ul>
+<p>This matters for edge deployment scenarios with tight latency budgets, limited memory, privacy constraints, or no internet access. Compact models running on devices unlock numerous practical applications.</p>
+<h2>Quantization for Efficient Inference</h2>
+<p>Quantization stores model weights using fewer bits (e.g., 8-bit integers instead of 32-bit floats), reducing memory and accelerating computation. The challenge is preserving accuracy.</p>
+<p>The 2022 LLM.int8() paper was the first to demonstrate effective quantization at multi-billion parameter scale. The key insight: a tiny number of outlier features—individual channels with unusually large activations—break naive quantization.</p>
+<p>The solution uses mixed precision: quantize most features at int8, keep outliers at FP16/BF16. This roughly halves memory for large components while preserving quality, making single-GPU inference feasible for models previously requiring clusters.</p>
+<p>Combined with LoRA, this enables efficient task-specific fine-tuning.</p>
+<h2>Standardizing Model Integration</h2>
+<p>Anthropic's 2024 Model Context Protocol (MCP) addresses a practical challenge: connecting models to external systems. Rather than hand-coding integrations for each database, API, or tool, MCP provides an open standard.</p>
+<p>MCP servers expose tools, resources, and prompts in a standard schema. Any MCP-capable client—IDEs, agent runtimes, chat applications—can discover capabilities, invoke tools, stream results, and maintain shared context.</p>
+<p>This standardization reduces integration effort and enables composable AI systems.</p>
+<h2>Reflections on the Trade-Off Space</h2>
+<p>These ten papers represent different aspects of the AI engineering challenge: architectural foundations, scaling strategies, alignment techniques, efficiency optimizations, and practical integration patterns.</p>
+<p>Several themes emerge:</p>
+<p><strong>Scale vs. Efficiency</strong>: Larger models offer capabilities, but practical deployment often favors smaller, optimized models with good tooling.</p>
+<p><strong>Generality vs. Specialization</strong>: General models with prompting compete with fine-tuned specialists. The choice depends on task diversity, data availability, and maintenance burden.</p>
+<p><strong>Capability vs. Control</strong>: More powerful models require more sophisticated alignment and guardrails.</p>
+<p><strong>Research vs. Engineering</strong>: Breakthrough papers demonstrate possibilities; production systems require careful attention to retrieval quality, evaluation, monitoring, and operational concerns.</p>
+<p>The field continues evolving rapidly. These foundational papers provide context for understanding current systems and anticipating future developments. The engineering challenge lies not just in understanding the research, but in making thoughtful trade-offs when building systems that work reliably in production.</p>
+
+            </div>
+
+            <!-- Comments Section -->
+            <div class="mt-16 pt-16 border-t border-white/10">
+              <script
+                src="https://giscus.app/client.js"
+                data-repo="codedynasty-dev/codedynasty"
+                data-repo-id="R_kgDOOBViSg"
+                data-category="Ideas"
+                data-category-id="DIC_kwDOOBViSs4CqU7E"
+                data-mapping="pathname"
+                data-strict="1"
+                data-reactions-enabled="1"
+                data-emit-metadata="0"
+                data-input-position="top"
+                data-theme="noborder_dark"
+                data-lang="en"
+                data-loading="lazy"
+                crossorigin="anonymous"
+                async
+              ></script>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- Mobile Floating Actions -->
+      <div class="lg:hidden fixed bottom-6 right-6 z-40 flex flex-col gap-3">
+        <button
+          id="mobile-share-button"
+          class="w-14 h-14 rounded-full flex items-center justify-center bg-gradient-to-r from-indigo-500 to-purple-500 text-white shadow-lg hover:shadow-xl transition-all"
+        >
+          <i class="fas fa-share-alt"></i>
+        </button>
+        <a href="#" id="scroll-top">
+          <button
+            class="w-14 h-14 rounded-full flex items-center justify-center bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 transition-all"
+          >
+            <i class="fas fa-arrow-up"></i>
+          </button>
+        </a>
+      </div>
+
+      <!-- Mobile Share Dialog -->
+      <!-- <div
+        id="mobile-share-dialog"
+        class="hidden fixed inset-0 z-50 flex items-end justify-center"
+      >
+        <div
+          class="fixed inset-0 bg-black/80 backdrop-blur-sm"
+          id="mobile-share-overlay"
+        ></div>
+        <div
+          class="relative w-full max-w-md p-6 rounded-t-2xl bg-slate-900 border-t border-white/10"
+        >
+          <div class="flex justify-between items-center mb-6">
+            <h3 class="text-lg font-bold text-white">Share This Article</h3>
+            <button
+              id="close-share-dialog"
+              class="text-slate-400 hover:text-white"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"
+                ></path>
+              </svg>
+            </button>
+          </div>
+          <div class="grid grid-cols-4 gap-4">
+            <a href="#" class="flex flex-col items-center">
+              <div
+                class="w-14 h-14 rounded-full flex items-center justify-center mb-2 bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400"
+              >
+                <i class="fab fa-twitter fa-lg"></i>
+              </div>
+              <span class="text-xs text-slate-400">Twitter</span>
+            </a>
+            <a href="#" class="flex flex-col items-center">
+              <div
+                class="w-14 h-14 rounded-full flex items-center justify-center mb-2 bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400"
+              >
+                <i class="fab fa-linkedin fa-lg"></i>
+              </div>
+              <span class="text-xs text-slate-400">LinkedIn</span>
+            </a>
+            <a href="#" class="flex flex-col items-center">
+              <div
+                class="w-14 h-14 rounded-full flex items-center justify-center mb-2 bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400"
+              >
+                <i class="fab fa-facebook fa-lg"></i>
+              </div>
+              <span class="text-xs text-slate-400">Facebook</span>
+            </a>
+            <a
+              href="#"
+              class="flex flex-col items-center copy-link-button"
+              data-tooltip="Copied!"
+            >
+              <div
+                class="w-14 h-14 rounded-full flex items-center justify-center mb-2 bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400"
+              >
+                <i class="fas fa-link fa-lg"></i>
+              </div>
+              <span class="text-xs text-slate-400">Copy</span>
+            </a>
+          </div>
+        </div>
+      </div> -->
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black/30 border-t border-white/10 py-12">
+      <div class="container mx-auto px-4">
+        <div class="text-center">
+          <p class="text-slate-500 text-sm">
+            &copy; 2025 CodeDynasty. Building modern software for humanity.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/script/index.js"></script>
+    <script>
+      // Mobile menu functionality
+      const mobileMenuButton = document.getElementById("mobile-menu-button");
+      const closeMobileMenu = document.getElementById("close-mobile-menu");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const body = document.body;
+
+      function toggleMobileMenu() {
+        mobileMenu.classList.toggle("translate-x-0");
+        mobileMenu.classList.toggle("-translate-x-full");
+        body.classList.toggle("overflow-hidden");
+      }
+
+      if (mobileMenuButton && closeMobileMenu && mobileMenu) {
+        mobileMenuButton.addEventListener("click", toggleMobileMenu);
+        closeMobileMenu.addEventListener("click", toggleMobileMenu);
+
+        document.querySelectorAll("#mobile-menu a").forEach((link) => {
+          link.addEventListener("click", () => {
+            mobileMenu.classList.remove("translate-x-0");
+            mobileMenu.classList.add("-translate-x-full");
+            body.classList.remove("overflow-hidden");
+          });
+        });
+
+        document.addEventListener("keydown", (e) => {
+          if (
+            e.key === "Escape" &&
+            mobileMenu.classList.contains("translate-x-0")
+          ) {
+            toggleMobileMenu();
+          }
+        });
+      }
+
+      // Reading progress bar
+      window.addEventListener("scroll", () => {
+        const winScroll =
+          document.body.scrollTop || document.documentElement.scrollTop;
+        const height =
+          document.documentElement.scrollHeight -
+          document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        const progressBar = document.querySelector(".reading-progress-bar");
+        if (progressBar) {
+          progressBar.style.width = scrolled + "%";
+        }
+      });
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        renderMathInElement(document.body, {
+          delimiters: [
+            { left: "$", right: "$", display: true },
+            { left: "$", right: "$", display: false },
+          ],
+        });
+      });
+    </script>
+  </body>
+</html>
+

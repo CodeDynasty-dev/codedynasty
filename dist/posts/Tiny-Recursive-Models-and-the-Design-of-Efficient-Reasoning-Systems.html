@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tiny Recursive Models and the Design of Efficient Reasoning Systems - CodeDynasty</title>
+    <link rel="stylesheet" href="/bundle.css" />
+    <link rel="stylesheet" href="/styles/main.css" />
+    <link rel="stylesheet" href="/styles/post.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css"
+    />
+    <meta name="description" content="An exploration of hierarchical and tiny recursion models as an alternative to scaling large language models for structured reasoning tasks" />
+    <meta name="keywords" content="code, programming, development" />
+    <meta name="author" content="Friday Candour" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#6366f1" />
+    <meta property="og:title" content="Tiny Recursive Models and the Design of Efficient Reasoning Systems" />
+    <meta property="og:description" content="An exploration of hierarchical and tiny recursion models as an alternative to scaling large language models for structured reasoning tasks" />
+    <meta property="og:url" content="https://codedynasty.dev" />
+    <meta property="og:image" content="https://codedynasty.dev/post-images/tlm.webp" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="CodeDynasty" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Tiny Recursive Models and the Design of Efficient Reasoning Systems" />
+    <meta name="twitter:description" content="An exploration of hierarchical and tiny recursion models as an alternative to scaling large language models for structured reasoning tasks" />
+    <meta name="twitter:image" content="https://codedynasty.dev/post-images/tlm.webp" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <style>
+      .katex-display,
+      .katex,
+      .katex-mathml,
+      .katex-html {
+        display: inline !important;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <header class="fixed w-full top-0 z-50 nav-modern">
+      <nav class="container mx-auto px-6">
+        <div class="flex justify-between items-center h-20">
+          <a
+            href="/"
+            class="flex items-center group"
+            aria-label="CodeDynasty Home"
+          >
+            <div
+              class="w-10 h-10 mr-3 transition-transform duration-300 group-hover:scale-110"
+            >
+              <img
+                src="/logo.png"
+                class="w-full h-full object-cover rounded-lg"
+                alt="CodeDynasty Logo"
+              />
+            </div>
+            <span class="text-xl font-bold text-white">CodeDynasty</span>
+          </a>
+
+          <!-- Mobile menu button -->
+          <button
+            id="mobile-menu-button"
+            class="md:hidden text-white focus:outline-none"
+            aria-label="Toggle menu"
+          >
+            <svg
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16m-7 6h7"
+              />
+            </svg>
+          </button>
+
+          <!-- Desktop Navigation -->
+          <div class="hidden md:flex items-center space-x-2">
+            <a
+              href="/blog.html"
+              class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors rounded-lg hover:bg-white/5"
+            >
+              Blog
+            </a>
+            <a
+              href="https://discord.codedynasty.dev"
+              class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors rounded-lg hover:bg-white/5"
+            >
+              Discord
+            </a>
+            <a
+              href="https://github.com/CodeDynasty-dev"
+              class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors rounded-lg hover:bg-white/5"
+              target="_blank"
+            >
+              GitHub
+            </a>
+            <a
+              href="/contact.html"
+              class="px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg hover:shadow-lg hover:shadow-indigo-500/50 transition-all"
+            >
+              Contact
+            </a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div
+      id="mobile-menu"
+      class="fixed inset-0 z-50 bg-black/95 backdrop-blur-lg transform -translate-x-full transition-transform duration-300 ease-in-out md:hidden"
+    >
+      <div class="container mx-auto px-6 py-8 h-full flex flex-col">
+        <div class="flex justify-between items-center mb-12">
+          <a href="/" class="flex items-center" aria-label="CodeDynasty Home">
+            <div class="w-10 h-10 mr-3">
+              <img
+                src="/logo.png"
+                class="w-full h-full object-cover rounded-lg"
+                alt="CodeDynasty Logo"
+              />
+            </div>
+            <span class="text-xl font-bold text-white">CodeDynasty</span>
+          </a>
+          <button
+            id="close-mobile-menu"
+            class="text-white/70 hover:text-white transition-colors"
+          >
+            <svg
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+        </div>
+        <nav class="flex-1 flex flex-col space-y-4">
+          <a
+            href="https://discord.codedynasty.dev"
+            class="text-white/80 hover:text-white text-lg py-3 px-4 rounded-lg hover:bg-white/5 transition-colors"
+          >
+            Discord
+          </a>
+          <a
+            href="https://github.com/CodeDynasty-dev"
+            target="_blank"
+            class="text-white/80 hover:text-white text-lg py-3 px-4 rounded-lg hover:bg-white/5 transition-colors"
+          >
+            GitHub
+          </a>
+          <a
+            href="/contact.html"
+            class="text-white/80 hover:text-white text-lg py-3 px-4 rounded-lg hover:bg-white/5 transition-colors"
+          >
+            Contact
+          </a>
+        </nav>
+        <div class="pt-6 border-t border-white/10 mt-auto">
+          <p class="text-white/50 text-sm text-center">
+            © 2025 CodeDynasty. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <main class="pt-20 pb-12">
+      <!-- Reading Progress Bar -->
+      <div
+        class="reading-progress-container fixed top-20 left-0 w-full z-40 h-1 bg-transparent"
+      >
+    <div
+  class="reading-progress-bar h-full bg-gradient-to-r from-blue-500 via-purple-500 to-yellow-500 bg-[length:200%_100%]"
+  style="width: 0%"
+></div>
+      </div>
+
+      <!-- Article Header -->
+      <section class="relative py-16 md:py-24">
+        <div class="container mx-auto px-4 md:px-6">
+          <div class="max-w-4xl mx-auto">
+            <!-- Category Badge -->
+            <div class="mb-6">
+              <span class="badge">Efficient recursive models for logical reasoning</span>
+            </div>
+
+            <!-- Title -->
+            <h1
+              class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight"
+            >
+              Tiny Recursive Models and the Design of Efficient Reasoning Systems
+            </h1>
+
+            <!-- Meta Info -->
+            <div class="flex flex-wrap items-center gap-6 text-slate-400">
+              <!-- Author -->
+              <div class="flex items-center">
+                <div
+                  class="w-12 h-12 rounded-full overflow-hidden mr-3 bg-gradient-to-br from-indigo-500 to-purple-500 p-0.5"
+                >
+                  <div
+                    class="w-full h-full rounded-full overflow-hidden bg-slate-900"
+                  >
+                    <img
+                      src="https://avatars.githubusercontent.com/u/75016347"
+                      alt="Friday Candour"
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <span class="block font-medium text-white">Friday Candour</span>
+                  <span class="text-sm text-slate-500">Software Developer</span>
+                </div>
+              </div>
+
+              <!-- Date & Read Time -->
+              <div class="flex items-center gap-4 text-sm">
+                <div class="flex items-center">
+                  <svg
+                    class="h-4 w-4 mr-2"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                    />
+                  </svg>
+                  <time datetime="2025 12 05">2025 12 05</time>
+                </div>
+                <div class="flex items-center">
+                  <svg
+                    class="h-4 w-4 mr-2"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                  <span>11 min</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Hero Image -->
+      <section class="mb-16">
+        <div class="container mx-auto px-4 md:px-6">
+          <div class="max-w-5xl mx-auto">
+            <div class="aspect-video overflow-hidden rounded-2xl">
+              <img
+                src="/post-images/tlm.webp"
+                alt="Tiny Recursive Models and the Design of Efficient Reasoning Systems"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Article Content -->
+      <div class="container mx-auto px-4 md:px-6">
+        <div class="flex flex-col lg:flex-row gap-12 max-w-7xl mx-auto">
+          <!-- Sidebar - Share Widget -->
+          <aside class="hidden lg:block w-20 self-start sticky top-32">
+            <div class="flex flex-col items-center gap-4">
+              <span class="text-xs text-slate-500 font-medium mb-2">SHARE</span>
+              <a
+                href="#"
+                class="w-12 h-12 rounded-full flex items-center justify-center bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400"
+              >
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a
+                href="#"
+                class="w-12 h-12 rounded-full flex items-center justify-center bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400"
+              >
+                <i class="fab fa-linkedin"></i>
+              </a>
+              <a
+                href="#"
+                class="w-12 h-12 rounded-full flex items-center justify-center bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400"
+              >
+                <i class="fab fa-facebook"></i>
+              </a>
+              <a
+                href="#"
+                class="w-12 h-12 rounded-full flex items-center justify-center bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400 copy-link-button"
+                data-tooltip="Copy Link"
+              >
+                <i class="fas fa-link"></i>
+              </a>
+            </div>
+          </aside>
+
+          <!-- Main Content -->
+          <article class="flex-1 max-w-4xl post">
+            <div class="blog-content prose prose-invert prose-lg max-w-none">
+              <docmach type="function" params="tags:AI,recursive-models,ARC-AGI,reasoning-systems,HRM,TRM,model-architecture" file="fragments/tags.js" />
+<h1>Tiny Recursive Models and the Design of Efficient Reasoning Systems</h1>
+<p>Modern AI practice is dominated by a simple intuition: scale solves everything. Larger models, more data, and more compute are assumed to deliver better intelligence across the board. Benchmarks and marketing material reinforce this narrative, often blurring the line between pattern recognition and genuine reasoning.</p>
+<p>Recently, a different design direction has appeared. Instead of adding more parameters, these approaches add more <em>thinking</em>. Hierarchical and recursive models such as the Hierarchical Reasoning Model (HRM) and the Tiny Recursion Model (TRM) demonstrate that small, carefully structured networks can match or outperform much larger systems on tightly specified reasoning tasks. They do this not by memorising more, but by reorganising how computation unfolds over time.</p>
+<p>This article looks at how these models work, why they matter, and what they imply for the design of reasoning systems.</p>
+<h2>Benchmarks, Domains, and Expectations</h2>
+<p>Before examining the models themselves, it is important to understand the problem they are designed to solve.</p>
+<h3>The ARC-AGI benchmark</h3>
+<p>The ARC-AGI benchmark is built around grid puzzles. Each instance consists of several input–output examples, where both input and output are small coloured grids. The task is to infer the transformation that maps input grids to output grids, then apply the same transformation to a new test grid.</p>
+<p>If this sounds close to an IQ test, that is largely the point. The benchmark is intended to stress a system’s ability to discover and apply abstract rules under tight constraints:</p>
+<ul>
+<li><strong>Structured inputs and outputs.</strong> The model never sees natural language. It only observes coloured cells on a grid.</li>
+<li><strong>Few examples.</strong> Each task provides only a handful of demonstrations of the underlying rule.</li>
+<li><strong>Combinatorial variety.</strong> Rules can involve symmetry, counting, masking, replication, and composition of these primitives.</li>
+</ul>
+<p>In this setting, we do not need a model that can summarise documents or role‑play. We need a system that can maintain and refine hypotheses over a small, discrete state.</p>
+<h3>Task‑specific, not general intelligence</h3>
+<p>Models such as HRM and TRM are not general language models. They do not generate text, operate a chat interface, or trade off between many different capabilities. Instead, they:</p>
+<ul>
+<li>Accept a representation of grids as input.</li>
+<li>Maintain an internal scratchpad representing a candidate solution.</li>
+<li>Iteratively refine that scratchpad until a halting policy decides that the answer is ready.</li>
+</ul>
+<p>Measuring these models on the same benchmark charts as large language models can be misleading. The real comparison is not “tiny model beats trillion‑parameter system at everything”, but rather “tiny model beats large, general system on its home turf: constrained logical puzzles”. This is still interesting, but for different reasons.</p>
+<h2>Hierarchical Reasoning Model (HRM)</h2>
+<p>The Hierarchical Reasoning Model is one of the first widely discussed architectures in this space. Its key idea is temporal hierarchy: different parts of the network operate at different speeds and with different responsibilities.</p>
+<h3>Two time scales, two roles</h3>
+<p>HRM splits its processing into two cooperating transformer networks:</p>
+<ul>
+<li><strong>Fast network (inner loop).</strong> Runs many micro‑steps. It updates a hidden scratchpad that encodes the current reasoning state: provisional hypotheses, partial transforms on the grid, and intermediate features.</li>
+<li><strong>Slow network (outer loop).</strong> Runs less frequently. It reads the scratchpad, makes larger strategic adjustments, and decides how the fast network should behave next.</li>
+</ul>
+<p>Intuitively, the fast network performs local edits, while the slow network acts as a coarse‑grained controller. The scratchpad connects the two.</p>
+<h3>Halting and refinement</h3>
+<p>HRM introduces a halting mechanism so that the model can decide when it has thought enough about a particular instance. The slow network includes a “halting head” that estimates whether further refinement is likely to improve the answer.</p>
+<p>At a high level, the process looks like this:</p>
+<ol>
+<li>Initialise a latent state from the input grids.</li>
+<li>Run several fast steps to adjust the scratchpad.</li>
+<li>Run one slow step to update global strategy and query the halting head.</li>
+<li>If not halted, repeat.</li>
+<li>When halted, decode the final scratchpad into an output grid.</li>
+</ol>
+<p>The important property is that the amount of computation spent on a problem is not fixed. Harder instances can trigger more iterations of the loop, while simpler ones terminate early.</p>
+<h3>Training under an equilibrium assumption</h3>
+<p>Training such a system naively would require back‑propagating through many repeated inner‑loop steps, which is expensive. HRM sidesteps this by assuming that the fast inner loop would converge to a stable state if allowed to run long enough. Instead of unrolling every micro‑step, it approximates gradients as if this stable equilibrium had already been reached.</p>
+<p>This equilibrium assumption reduces compute and memory costs, but it introduces ambiguity:</p>
+<ul>
+<li>The inner loop is not truly run to equilibrium in practice.</li>
+<li>Gradients are computed under an approximation that may not match the actual runtime trajectory.</li>
+</ul>
+<p>Despite this, empirical performance on ARC‑AGI is impressive. The model demonstrates that temporal hierarchy and internal refinement are viable tools for boosting reasoning without scaling parameter counts dramatically.</p>
+<h2>Tiny Recursion Model (TRM)</h2>
+<p>The Tiny Recursion Model builds on the same intuition—spend more compute on thinking rather than on parameters—but addresses several of HRM’s conceptual and training issues. It does so by making the design more explicit and the training procedure more faithful to the model’s actual behaviour.</p>
+<h3>Functional separation of states</h3>
+<p>TRM starts from a simpler, more functional interpretation of the two‑state structure:</p>
+<ul>
+<li><strong>Scratchpad.</strong> A workspace where intermediate reasoning steps are written.</li>
+<li><strong>Canvas.</strong> A more stable representation of the current answer.</li>
+</ul>
+<p>The key decision is to keep these roles separate. If both “thinking” and “answer” live in the same state, updates that improve the provisional answer can interfere with the ongoing reasoning process. Maintaining two states prevents this interference and provides a clearer interface between local edits and final outputs.</p>
+<p>TRM does not rely on a biological analogy to justify this structure. It is simply a clean separation of concerns.</p>
+<h3>Training on the actual loop</h3>
+<p>TRM dispenses with the equilibrium assumption. Instead, it trains on exactly the loop it runs at inference time:</p>
+<ol>
+<li>Initialise scratchpad and canvas from the input.</li>
+<li>For a fixed number of steps:
+<ul>
+<li>Update the scratchpad according to the current canvas and input.</li>
+<li>Apply a controlled update from the scratchpad to the canvas.</li>
+</ul>
+</li>
+<li>Read the final canvas as the answer and back‑propagate through the entire unrolled loop.</li>
+</ol>
+<p>There is no hidden assumption that the loop will converge if extended indefinitely. The model is trained on the real, finite sequence of updates that it will execute in production.</p>
+<p>A simplified pseudo‑code sketch makes the structure more concrete:</p>
+<pre><code class="language-python">scratch = init_scratch(input_grids)
+canvas = init_canvas(input_grids)
+
+<span class="hljs-keyword">for</span> step <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(NUM_STEPS):
+    scratch = fast_update(scratch, canvas, input_grids)
+    canvas = slow_update(canvas, scratch)
+
+output_grid = decode(canvas)
+loss = task_loss(output_grid, target_grid)
+loss.backward()
+</code></pre>
+<p>The details of <code>fast_update</code> and <code>slow_update</code> involve small transformers or MLPs, but the overall pattern is a recursive refinement of a shared canvas, driven by a separate scratchpad.</p>
+<h3>Scaling down, not up</h3>
+<p>An interesting feature of TRM is how it behaves under scaling. Instead of adding layers and parameters, the authors report better generalisation by:</p>
+<ul>
+<li><strong>Reducing depth.</strong> Fewer layers reduce the model’s capacity to memorise scarce data.</li>
+<li><strong>Increasing recursion.</strong> More refinement steps on a small model allow it to approximate complex transformations despite limited capacity.</li>
+</ul>
+<p>In one configuration, a two‑layer TRM outperforms deeper variants on reasoning tasks, despite having fewer parameters. The model remains small—on the order of seven million parameters—yet achieves strong scores on ARC‑AGI and related benchmarks.</p>
+<p>This runs counter to the usual scaling laws observed for general‑purpose language models, where larger models trained on vast corpora tend to generalise better. Here, the limiting factor is not the diversity of natural language, but the scarcity of high‑quality, structured reasoning data.</p>
+<h3>Attention versus MLP</h3>
+<p>TRM also illustrates that attention mechanisms are not universally superior. For tasks with limited context and relatively small grids—for example, a standard Sudoku—an MLP‑based variant can outperform attention‑based versions. When the grid grows (such as a 30×30 maze or a larger ARC instance), attention becomes useful again because it handles longer contexts more effectively.</p>
+<p>The lesson is straightforward: the right inductive bias depends on the structure and scale of the input. There is no single architecture that optimises all regimes.</p>
+<h2>Design Implications for Reasoning Systems</h2>
+<p>From a software design perspective, HRM and TRM make a simple but powerful point: internal control flow matters. Instead of treating a model as a single forward pass from input to output, we can treat it as a small program that calls itself, revises its state, and decides when to stop.</p>
+<p>Several design themes emerge.</p>
+<h3>Separate workspace from answer</h3>
+<p>Maintaining a distinct scratchpad and canvas mirrors common practices in program design:</p>
+<ul>
+<li><strong>Separate mutable working state</strong> from externally visible outputs.</li>
+<li>Allow the working state to go through inconsistent or speculative phases.</li>
+<li>Only commit changes to the answer representation when they pass some internal check.</li>
+</ul>
+<p>In a reasoning system, this separation allows the model to explore alternative hypotheses without corrupting its best current guess. TRM’s explicit two‑state design is a concrete architectural expression of this principle.</p>
+<h3>Use recursion to trade time for parameters</h3>
+<p>Recursive refinement offers a controlled way to exchange parameters for computation:</p>
+<ul>
+<li><strong>More parameters</strong> concentrate capability into a single, expensive step.</li>
+<li><strong>More recursion</strong> spreads capability over many cheap steps that reuse the same small network.</li>
+</ul>
+<p>When data is limited and tasks are well‑structured, the second option can be preferable. It also aligns more closely with how human reasoning often works: small, repeated updates rather than a single leap from premise to conclusion.</p>
+<h3>Control halting explicitly</h3>
+<p>Hard‑coding a fixed number of thinking steps is simple but brittle. Some instances require more scrutiny than others. Models like HRM introduce an explicit halting policy so that the system can allocate more computation to hard problems and less to easy ones.</p>
+<p>In implementation terms, this looks like another prediction head that estimates “is this good enough?”. The choice of loss function and training signals for this head are design decisions in their own right.</p>
+<p>From a system viewpoint, halting is also an interface to resource management: it tells the runtime when to stop spending compute on a given instance.</p>
+<h3>Match architecture to data</h3>
+<p>HRM and TRM both highlight an often under‑emphasised point: architectural decisions are only meaningful relative to the data regime.</p>
+<ul>
+<li>When data is scarce and tasks are tightly specified, over‑parameterisation quickly leads to overfitting.</li>
+<li>In those regimes, smaller models with more internal computation can generalise better.</li>
+<li>When input contexts grow or tasks become more varied, attention and scale regain their appeal.</li>
+</ul>
+<p>Designing reasoning systems therefore starts with a clear statement of the domain: grid puzzles, code transformations, theorem proving, planning, or something else. The architecture should be chosen to match that domain, not inherited wholesale from large language modelling.</p>
+<h2>Beyond Benchmarks</h2>
+<p>It is tempting to interpret these results as evidence that large‑scale language modelling is fundamentally misguided. That would be an overreach. HRM and TRM are highly specialised tools, effective on problems with constrained structure and well‑defined rules.</p>
+<p>Their significance lies elsewhere:</p>
+<ul>
+<li>They provide <em>existence proofs</em> that small models can solve hard logical problems when given the right inductive biases.</li>
+<li>They challenge the assumption that the only way to improve reasoning is to add more parameters.</li>
+<li>They expand the design space of AI systems towards more explicit control flow, internal state, and recursive computation.</li>
+</ul>
+<p>For starters, the main question is not “Will tiny recursive models replace large language models?”, but “Where in my system do I need structured reasoning, and could a small recursive component serve that role better than a monolithic model?”</p>
+<p>Possible application areas include:</p>
+<ul>
+<li>Constraint‑based subroutines: scheduling, routing, puzzle‑like components inside larger workflows.</li>
+<li>Verification passes: small models that check or refine the outputs of a broader generative system.</li>
+<li>Domain‑specific reasoning engines: for code transformations, formal manipulation of data structures, or symbolic tasks.</li>
+</ul>
+<p>In each case, the recursive model plays a targeted role rather than acting as a general conversational interface.</p>
+<h2>Reflecting on the Trade‑offs</h2>
+<p>Scaling large models has delivered remarkable capabilities, especially in natural language. Recursive models such as HRM and TRM show that this is not the only axis along which we can move. By:</p>
+<ul>
+<li>Separating workspace from answer,</li>
+<li>Allowing internal loops of computation,</li>
+<li>Controlling halting explicitly, and</li>
+<li>Matching architecture to data regimes,</li>
+</ul>
+<p>we can extract surprising amounts of reasoning ability from small parameter counts.</p>
+<p>The trade‑off is clear:</p>
+<ul>
+<li>Large models offer broad competence and flexibility but demand substantial resources and data.</li>
+<li>Tiny recursive models offer narrow, precise reasoning in well‑structured domains with far lower resource requirements.</li>
+</ul>
+<p>Good systems design rarely chooses between extremes. Instead, it composes different components, each shaped to its problem. Recursive reasoning modules are a useful addition to that toolkit—a reminder that how a model <em>thinks</em> can matter as much as how big it is.</p>
+
+            </div>
+
+            <!-- Comments Section -->
+            <div class="mt-16 pt-16 border-t border-white/10">
+              <script
+                src="https://giscus.app/client.js"
+                data-repo="codedynasty-dev/codedynasty"
+                data-repo-id="R_kgDOOBViSg"
+                data-category="Ideas"
+                data-category-id="DIC_kwDOOBViSs4CqU7E"
+                data-mapping="pathname"
+                data-strict="1"
+                data-reactions-enabled="1"
+                data-emit-metadata="0"
+                data-input-position="top"
+                data-theme="noborder_dark"
+                data-lang="en"
+                data-loading="lazy"
+                crossorigin="anonymous"
+                async
+              ></script>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- Mobile Floating Actions -->
+      <div class="lg:hidden fixed bottom-6 right-6 z-40 flex flex-col gap-3">
+        <button
+          id="mobile-share-button"
+          class="w-14 h-14 rounded-full flex items-center justify-center bg-gradient-to-r from-indigo-500 to-purple-500 text-white shadow-lg hover:shadow-xl transition-all"
+        >
+          <i class="fas fa-share-alt"></i>
+        </button>
+        <a href="#" id="scroll-top">
+          <button
+            class="w-14 h-14 rounded-full flex items-center justify-center bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 transition-all"
+          >
+            <i class="fas fa-arrow-up"></i>
+          </button>
+        </a>
+      </div>
+
+      <!-- Mobile Share Dialog -->
+      <!-- <div
+        id="mobile-share-dialog"
+        class="hidden fixed inset-0 z-50 flex items-end justify-center"
+      >
+        <div
+          class="fixed inset-0 bg-black/80 backdrop-blur-sm"
+          id="mobile-share-overlay"
+        ></div>
+        <div
+          class="relative w-full max-w-md p-6 rounded-t-2xl bg-slate-900 border-t border-white/10"
+        >
+          <div class="flex justify-between items-center mb-6">
+            <h3 class="text-lg font-bold text-white">Share This Article</h3>
+            <button
+              id="close-share-dialog"
+              class="text-slate-400 hover:text-white"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"
+                ></path>
+              </svg>
+            </button>
+          </div>
+          <div class="grid grid-cols-4 gap-4">
+            <a href="#" class="flex flex-col items-center">
+              <div
+                class="w-14 h-14 rounded-full flex items-center justify-center mb-2 bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400"
+              >
+                <i class="fab fa-twitter fa-lg"></i>
+              </div>
+              <span class="text-xs text-slate-400">Twitter</span>
+            </a>
+            <a href="#" class="flex flex-col items-center">
+              <div
+                class="w-14 h-14 rounded-full flex items-center justify-center mb-2 bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400"
+              >
+                <i class="fab fa-linkedin fa-lg"></i>
+              </div>
+              <span class="text-xs text-slate-400">LinkedIn</span>
+            </a>
+            <a href="#" class="flex flex-col items-center">
+              <div
+                class="w-14 h-14 rounded-full flex items-center justify-center mb-2 bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400"
+              >
+                <i class="fab fa-facebook fa-lg"></i>
+              </div>
+              <span class="text-xs text-slate-400">Facebook</span>
+            </a>
+            <a
+              href="#"
+              class="flex flex-col items-center copy-link-button"
+              data-tooltip="Copied!"
+            >
+              <div
+                class="w-14 h-14 rounded-full flex items-center justify-center mb-2 bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400"
+              >
+                <i class="fas fa-link fa-lg"></i>
+              </div>
+              <span class="text-xs text-slate-400">Copy</span>
+            </a>
+          </div>
+        </div>
+      </div> -->
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black/30 border-t border-white/10 py-12">
+      <div class="container mx-auto px-4">
+        <div class="text-center">
+          <p class="text-slate-500 text-sm">
+            &copy; 2025 CodeDynasty. Building modern software for humanity.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/script/index.js"></script>
+    <script>
+      // Mobile menu functionality
+      const mobileMenuButton = document.getElementById("mobile-menu-button");
+      const closeMobileMenu = document.getElementById("close-mobile-menu");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const body = document.body;
+
+      function toggleMobileMenu() {
+        mobileMenu.classList.toggle("translate-x-0");
+        mobileMenu.classList.toggle("-translate-x-full");
+        body.classList.toggle("overflow-hidden");
+      }
+
+      if (mobileMenuButton && closeMobileMenu && mobileMenu) {
+        mobileMenuButton.addEventListener("click", toggleMobileMenu);
+        closeMobileMenu.addEventListener("click", toggleMobileMenu);
+
+        document.querySelectorAll("#mobile-menu a").forEach((link) => {
+          link.addEventListener("click", () => {
+            mobileMenu.classList.remove("translate-x-0");
+            mobileMenu.classList.add("-translate-x-full");
+            body.classList.remove("overflow-hidden");
+          });
+        });
+
+        document.addEventListener("keydown", (e) => {
+          if (
+            e.key === "Escape" &&
+            mobileMenu.classList.contains("translate-x-0")
+          ) {
+            toggleMobileMenu();
+          }
+        });
+      }
+
+      // Reading progress bar
+      window.addEventListener("scroll", () => {
+        const winScroll =
+          document.body.scrollTop || document.documentElement.scrollTop;
+        const height =
+          document.documentElement.scrollHeight -
+          document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        const progressBar = document.querySelector(".reading-progress-bar");
+        if (progressBar) {
+          progressBar.style.width = scrolled + "%";
+        }
+      });
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        renderMathInElement(document.body, {
+          delimiters: [
+            { left: "$", right: "$", display: true },
+            { left: "$", right: "$", display: false },
+          ],
+        });
+      });
+    </script>
+  </body>
+</html>
+

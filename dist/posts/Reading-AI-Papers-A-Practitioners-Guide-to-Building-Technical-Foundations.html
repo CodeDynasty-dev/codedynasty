@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reading AI Papers: the guide you need - CodeDynasty</title>
+    <link rel="stylesheet" href="/bundle.css" />
+    <link rel="stylesheet" href="/styles/main.css" />
+    <link rel="stylesheet" href="/styles/post.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css"
+    />
+    <meta name="description" content="A structured approach to reading AI research papers efficiently, with five foundational papers that explain the architecture behind modern language models." />
+    <meta name="keywords" content="code, programming, development" />
+    <meta name="author" content="Friday Candour" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#6366f1" />
+    <meta property="og:title" content="Reading AI Papers: the guide you need" />
+    <meta property="og:description" content="A structured approach to reading AI research papers efficiently, with five foundational papers that explain the architecture behind modern language models." />
+    <meta property="og:url" content="https://codedynasty.dev" />
+    <meta property="og:image" content="https://codedynasty.dev/post-images/reading-ai-papers.jpeg" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="CodeDynasty" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Reading AI Papers: the guide you need" />
+    <meta name="twitter:description" content="A structured approach to reading AI research papers efficiently, with five foundational papers that explain the architecture behind modern language models." />
+    <meta name="twitter:image" content="https://codedynasty.dev/post-images/reading-ai-papers.jpeg" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <style>
+      .katex-display,
+      .katex,
+      .katex-mathml,
+      .katex-html {
+        display: inline !important;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <header class="fixed w-full top-0 z-50 nav-modern">
+      <nav class="container mx-auto px-6">
+        <div class="flex justify-between items-center h-20">
+          <a
+            href="/"
+            class="flex items-center group"
+            aria-label="CodeDynasty Home"
+          >
+            <div
+              class="w-10 h-10 mr-3 transition-transform duration-300 group-hover:scale-110"
+            >
+              <img
+                src="/logo.png"
+                class="w-full h-full object-cover rounded-lg"
+                alt="CodeDynasty Logo"
+              />
+            </div>
+            <span class="text-xl font-bold text-white">CodeDynasty</span>
+          </a>
+
+          <!-- Mobile menu button -->
+          <button
+            id="mobile-menu-button"
+            class="md:hidden text-white focus:outline-none"
+            aria-label="Toggle menu"
+          >
+            <svg
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16m-7 6h7"
+              />
+            </svg>
+          </button>
+
+          <!-- Desktop Navigation -->
+          <div class="hidden md:flex items-center space-x-2">
+            <a
+              href="/blog.html"
+              class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors rounded-lg hover:bg-white/5"
+            >
+              Blog
+            </a>
+            <a
+              href="https://discord.codedynasty.dev"
+              class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors rounded-lg hover:bg-white/5"
+            >
+              Discord
+            </a>
+            <a
+              href="https://github.com/CodeDynasty-dev"
+              class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors rounded-lg hover:bg-white/5"
+              target="_blank"
+            >
+              GitHub
+            </a>
+            <a
+              href="/contact.html"
+              class="px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg hover:shadow-lg hover:shadow-indigo-500/50 transition-all"
+            >
+              Contact
+            </a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div
+      id="mobile-menu"
+      class="fixed inset-0 z-50 bg-black/95 backdrop-blur-lg transform -translate-x-full transition-transform duration-300 ease-in-out md:hidden"
+    >
+      <div class="container mx-auto px-6 py-8 h-full flex flex-col">
+        <div class="flex justify-between items-center mb-12">
+          <a href="/" class="flex items-center" aria-label="CodeDynasty Home">
+            <div class="w-10 h-10 mr-3">
+              <img
+                src="/logo.png"
+                class="w-full h-full object-cover rounded-lg"
+                alt="CodeDynasty Logo"
+              />
+            </div>
+            <span class="text-xl font-bold text-white">CodeDynasty</span>
+          </a>
+          <button
+            id="close-mobile-menu"
+            class="text-white/70 hover:text-white transition-colors"
+          >
+            <svg
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+        </div>
+        <nav class="flex-1 flex flex-col space-y-4">
+          <a
+            href="https://discord.codedynasty.dev"
+            class="text-white/80 hover:text-white text-lg py-3 px-4 rounded-lg hover:bg-white/5 transition-colors"
+          >
+            Discord
+          </a>
+          <a
+            href="https://github.com/CodeDynasty-dev"
+            target="_blank"
+            class="text-white/80 hover:text-white text-lg py-3 px-4 rounded-lg hover:bg-white/5 transition-colors"
+          >
+            GitHub
+          </a>
+          <a
+            href="/contact.html"
+            class="text-white/80 hover:text-white text-lg py-3 px-4 rounded-lg hover:bg-white/5 transition-colors"
+          >
+            Contact
+          </a>
+        </nav>
+        <div class="pt-6 border-t border-white/10 mt-auto">
+          <p class="text-white/50 text-sm text-center">
+            © 2025 CodeDynasty. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <main class="pt-20 pb-12">
+      <!-- Reading Progress Bar -->
+      <div
+        class="reading-progress-container fixed top-20 left-0 w-full z-40 h-1 bg-transparent"
+      >
+    <div
+  class="reading-progress-bar h-full bg-gradient-to-r from-blue-500 via-purple-500 to-yellow-500 bg-[length:200%_100%]"
+  style="width: 0%"
+></div>
+      </div>
+
+      <!-- Article Header -->
+      <section class="relative py-16 md:py-24">
+        <div class="container mx-auto px-4 md:px-6">
+          <div class="max-w-4xl mx-auto">
+            <!-- Category Badge -->
+            <div class="mb-6">
+              <span class="badge">Machine Learning</span>
+            </div>
+
+            <!-- Title -->
+            <h1
+              class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight"
+            >
+              Reading AI Papers: the guide you need
+            </h1>
+
+            <!-- Meta Info -->
+            <div class="flex flex-wrap items-center gap-6 text-slate-400">
+              <!-- Author -->
+              <div class="flex items-center">
+                <div
+                  class="w-12 h-12 rounded-full overflow-hidden mr-3 bg-gradient-to-br from-indigo-500 to-purple-500 p-0.5"
+                >
+                  <div
+                    class="w-full h-full rounded-full overflow-hidden bg-slate-900"
+                  >
+                    <img
+                      src="https://avatars.githubusercontent.com/u/75016347"
+                      alt="Friday Candour"
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <span class="block font-medium text-white">Friday Candour</span>
+                  <span class="text-sm text-slate-500">Software Developer</span>
+                </div>
+              </div>
+
+              <!-- Date & Read Time -->
+              <div class="flex items-center gap-4 text-sm">
+                <div class="flex items-center">
+                  <svg
+                    class="h-4 w-4 mr-2"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                    />
+                  </svg>
+                  <time datetime="2025 12 22">2025 12 22</time>
+                </div>
+                <div class="flex items-center">
+                  <svg
+                    class="h-4 w-4 mr-2"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                  <span>8 min read</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Hero Image -->
+      <section class="mb-16">
+        <div class="container mx-auto px-4 md:px-6">
+          <div class="max-w-5xl mx-auto">
+            <div class="aspect-video overflow-hidden rounded-2xl">
+              <img
+                src="/post-images/reading-ai-papers.jpeg"
+                alt="Reading AI Papers: the guide you need"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Article Content -->
+      <div class="container mx-auto px-4 md:px-6">
+        <div class="flex flex-col lg:flex-row gap-12 max-w-7xl mx-auto">
+          <!-- Sidebar - Share Widget -->
+          <aside class="hidden lg:block w-20 self-start sticky top-32">
+            <div class="flex flex-col items-center gap-4">
+              <span class="text-xs text-slate-500 font-medium mb-2">SHARE</span>
+              <a
+                href="#"
+                class="w-12 h-12 rounded-full flex items-center justify-center bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400"
+              >
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a
+                href="#"
+                class="w-12 h-12 rounded-full flex items-center justify-center bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400"
+              >
+                <i class="fab fa-linkedin"></i>
+              </a>
+              <a
+                href="#"
+                class="w-12 h-12 rounded-full flex items-center justify-center bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400"
+              >
+                <i class="fab fa-facebook"></i>
+              </a>
+              <a
+                href="#"
+                class="w-12 h-12 rounded-full flex items-center justify-center bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400 copy-link-button"
+                data-tooltip="Copy Link"
+              >
+                <i class="fas fa-link"></i>
+              </a>
+            </div>
+          </aside>
+
+          <!-- Main Content -->
+          <article class="flex-1 max-w-4xl post">
+            <div class="blog-content prose prose-invert prose-lg max-w-none">
+              <docmach type="function" params="tags:transformers,large language models,RAG,MCP,research papers,machine learning,GPT,attention mechanism,synthetic data" file="fragments/tags.js" />
+<p>There's a persistent gap between how beginners learn AI and how researchers do. Tutorials optimize for immediate gratification. Papers optimize for precision. The difference matters when you're trying to understand <em>why</em> something works, not just <em>how</em> to call an API.</p>
+<h2>The Reading Problem</h2>
+<p>Most developers approach papers like documentation start at the top, read every word, hope it clicks. This fails spectacularly. Research papers aren't written for sequential consumption. They're structured for peer review, which means dense methodology sections, extensive related work citations, and conclusions that assume you've internalized the preceding thirty pages.</p>
+<p>The fix is simple: treat reading as triage, not study.</p>
+<h2>A Practical Reading Method</h2>
+<p>Spend roughly 10% of your time on initial assessment. Skim titles, abstracts, figures. Figures are underrated a good architecture diagram tells you more about a paper's contribution than three pages of prose.</p>
+<p>For papers that pass this filter:</p>
+<ol>
+<li>Read introduction and conclusion first</li>
+<li>Scan related work to understand positioning</li>
+<li>Dive into methodology only if the framing holds up</li>
+<li>Skip freely even experts do this</li>
+</ol>
+<p>The goal isn't comprehension of every equation. It's building a mental model of what the paper contributes and where it fits.</p>
+<p>Andrew Ng suggests 15-20 papers for basic understanding of a topic, 50-100 for expertise. That's reasonable for research roles. For beginners, I'd argue five papers read well beats twenty papers skimmed poorly.</p>
+<h2>Five Papers That Matter</h2>
+<p>These aren't the only important papers. They're a coherent sequence that explains how we got from recurrent networks to agentic systems.</p>
+<h3><a href="https://arxiv.org/pdf/1706.03762">Attention Is All You Need (2017)</a></h3>
+<p>The transformer paper. Before this, sequence models processed text token-by-token using recurrent architectures. The computational graph looked roughly like:</p>
+<pre><code>h_t = f(h_{t-1}, x_t)
+</code></pre>
+<p>Each hidden state depended on the previous one. Sequential dependency meant sequential computation. Training was slow; long-range dependencies were hard to capture.</p>
+<p>Transformers replaced this with self-attention:</p>
+<p>$\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V$</p>
+<p>Every position attends to every other position simultaneously. The computational cost is quadratic in sequence length, but the parallelism makes it faster in practice for the sequence lengths that matter.</p>
+<p>This architectural shift made large language models feasible. Everything that followed—GPT, BERT, the current generation of models builds on this foundation.</p>
+<h3><a href="https://arxiv.org/pdf/2005.14165">GPT-3: Language Models are Few-Shot Learners (2020)</a></h3>
+<p>The scaling paper. GPT-3 demonstrated that model capability isn't just about architecture it's about scale. At 175 billion parameters, the model exhibited emergent behaviors: abilities that appeared without explicit training.</p>
+<p>The key insight was in-context learning. Instead of fine-tuning for each task:</p>
+<pre><code class="language-python"><span class="hljs-comment"># Traditional approach</span>
+model = load_pretrained()
+model.fine_tune(task_specific_data)
+output = model.predict(<span class="hljs-built_in">input</span>)
+
+<span class="hljs-comment"># In-context learning</span>
+prompt = <span class="hljs-string">&quot;&quot;&quot;
+Translate English to French:
+sea otter =&gt; loutre de mer
+cheese =&gt; fromage
+hello =&gt; &quot;&quot;&quot;</span>
+output = model.complete(prompt)  <span class="hljs-comment"># &quot;bonjour&quot;</span>
+</code></pre>
+<p>The model learns the task from examples in the prompt itself. No gradient updates. No task-specific training data. Just pattern matching at scale.</p>
+<p>This shifted the optimization target from model weights to prompt construction. Prompt engineering emerged not as a gimmick but as a genuine skill the quality of instructions directly controls output quality.</p>
+<h3><a href="https://arxiv.org/abs/2404.07503">Synthetic Data for LLM Training (2024)</a></h3>
+<p>Real-world training data has limits. There's only so much high-quality text on the internet, and models are approaching that ceiling. Synthetic data training examples generated by other models offers a path forward.</p>
+<p>The research suggests three constraints:</p>
+<ol>
+<li>Synthetic data works best when combined with real data</li>
+<li>Training exclusively on synthetic data causes quality degradation over time</li>
+<li>Verification mechanisms are essential</li>
+</ol>
+<p>The degradation problem is particularly interesting. Models trained on their own outputs tend toward mode collapse—they lose diversity and start producing increasingly generic responses. The solution isn't avoiding synthetic data; it's treating it as augmentation rather than replacement.</p>
+<h3><a href="https://arxiv.org/abs/2312.10997">Retrieval-Augmented Generation (2020)</a></h3>
+<p>Large language models have a fundamental limitation: their knowledge is frozen at training time. RAG addresses this by retrieving relevant documents before generation.</p>
+<p>The architecture has evolved through three phases:</p>
+<p><strong>Naive RAG</strong>: Retrieve documents, concatenate with query, generate response.</p>
+<pre><code class="language-python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">naive_rag</span>(<span class="hljs-params">query, retriever, generator</span>):
+    docs = retriever.search(query, k=<span class="hljs-number">5</span>)
+    context = <span class="hljs-string">&quot;\n&quot;</span>.join(docs)
+    <span class="hljs-keyword">return</span> generator.complete(<span class="hljs-string">f&quot;<span class="hljs-subst">{context}</span>\n\nQuestion: <span class="hljs-subst">{query}</span>&quot;</span>)
+</code></pre>
+<p><strong>Advanced RAG</strong>: Adds pre-retrieval query expansion and post-retrieval reranking.</p>
+<p><strong>Modular RAG</strong>: Treats each component as swappable. Different retrievers for different domains. Custom rerankers. Iterative retrieval for complex queries.</p>
+<p>RAG doesn't solve hallucination—models can still generate plausible-sounding nonsense. But it makes answers verifiable. You can trace claims back to source documents. That's a meaningful improvement in reliability.</p>
+<h3><a href="Https://arxiv.org/abs/2503.23278">Model Context Protocol (2025)</a></h3>
+<p>MCP addresses a different problem: action, not knowledge. RAG gives models access to information. MCP gives them the ability to <em>do things</em>.</p>
+<p>Before MCP, connecting a model to external tools meant custom integrations for every combination of model and service. MCP standardizes this interface:</p>
+<pre><code class="language-json"><span class="hljs-punctuation">{</span>
+  <span class="hljs-attr">&quot;tool&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;database_query&quot;</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">&quot;parameters&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+    <span class="hljs-attr">&quot;query&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;SELECT * FROM users WHERE active = true&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;database&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;production&quot;</span>
+  <span class="hljs-punctuation">}</span>
+<span class="hljs-punctuation">}</span>
+</code></pre>
+<p>The model describes what it wants to do. The MCP layer handles execution. This enables multi-step workflows: fetch data from one system, process it, send results to another.</p>
+<p>RAG + MCP together represent the current direction of AI systems. Models that can both <em>know</em> things (via retrieval) and <em>do</em> things (via tool use). The gap between chatbot and agent narrows considerably.</p>
+<h2>Where to Find More</h2>
+<p>Four sources worth knowing:</p>
+<ul>
+<li><strong>Hugging Face Papers</strong>: Organized by model and dataset, easy to browse trending work</li>
+<li><strong>This AI</strong>: Historical organization by topic and era, useful for tracing evolution</li>
+<li><strong>Deep Learning Monitor</strong>: Fresh papers with topic filtering, good for staying current</li>
+<li><strong>arXiv</strong>: The canonical source, though navigation requires knowing what you're looking for</li>
+</ul>
+<h2>The Trade-off Space</h2>
+<p>Reading papers is slow. The payoff isn't immediate. You won't ship features faster next week because you understood the attention mechanism this week.</p>
+<p>But there's a compounding effect. Each paper builds context for the next. Architectural intuitions transfer across domains. When the next paradigm shift happens and it will you'll recognize it faster if you understood the previous ones.</p>
+<p>Following this flow helps you play the longer game.</p>
+
+            </div>
+
+            <!-- Comments Section -->
+            <div class="mt-16 pt-16 border-t border-white/10">
+              <script
+                src="https://giscus.app/client.js"
+                data-repo="codedynasty-dev/codedynasty"
+                data-repo-id="R_kgDOOBViSg"
+                data-category="Ideas"
+                data-category-id="DIC_kwDOOBViSs4CqU7E"
+                data-mapping="pathname"
+                data-strict="1"
+                data-reactions-enabled="1"
+                data-emit-metadata="0"
+                data-input-position="top"
+                data-theme="noborder_dark"
+                data-lang="en"
+                data-loading="lazy"
+                crossorigin="anonymous"
+                async
+              ></script>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- Mobile Floating Actions -->
+      <div class="lg:hidden fixed bottom-6 right-6 z-40 flex flex-col gap-3">
+        <button
+          id="mobile-share-button"
+          class="w-14 h-14 rounded-full flex items-center justify-center bg-gradient-to-r from-indigo-500 to-purple-500 text-white shadow-lg hover:shadow-xl transition-all"
+        >
+          <i class="fas fa-share-alt"></i>
+        </button>
+        <a href="#" id="scroll-top">
+          <button
+            class="w-14 h-14 rounded-full flex items-center justify-center bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 transition-all"
+          >
+            <i class="fas fa-arrow-up"></i>
+          </button>
+        </a>
+      </div>
+
+      <!-- Mobile Share Dialog -->
+      <!-- <div
+        id="mobile-share-dialog"
+        class="hidden fixed inset-0 z-50 flex items-end justify-center"
+      >
+        <div
+          class="fixed inset-0 bg-black/80 backdrop-blur-sm"
+          id="mobile-share-overlay"
+        ></div>
+        <div
+          class="relative w-full max-w-md p-6 rounded-t-2xl bg-slate-900 border-t border-white/10"
+        >
+          <div class="flex justify-between items-center mb-6">
+            <h3 class="text-lg font-bold text-white">Share This Article</h3>
+            <button
+              id="close-share-dialog"
+              class="text-slate-400 hover:text-white"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"
+                ></path>
+              </svg>
+            </button>
+          </div>
+          <div class="grid grid-cols-4 gap-4">
+            <a href="#" class="flex flex-col items-center">
+              <div
+                class="w-14 h-14 rounded-full flex items-center justify-center mb-2 bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400"
+              >
+                <i class="fab fa-twitter fa-lg"></i>
+              </div>
+              <span class="text-xs text-slate-400">Twitter</span>
+            </a>
+            <a href="#" class="flex flex-col items-center">
+              <div
+                class="w-14 h-14 rounded-full flex items-center justify-center mb-2 bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400"
+              >
+                <i class="fab fa-linkedin fa-lg"></i>
+              </div>
+              <span class="text-xs text-slate-400">LinkedIn</span>
+            </a>
+            <a href="#" class="flex flex-col items-center">
+              <div
+                class="w-14 h-14 rounded-full flex items-center justify-center mb-2 bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400"
+              >
+                <i class="fab fa-facebook fa-lg"></i>
+              </div>
+              <span class="text-xs text-slate-400">Facebook</span>
+            </a>
+            <a
+              href="#"
+              class="flex flex-col items-center copy-link-button"
+              data-tooltip="Copied!"
+            >
+              <div
+                class="w-14 h-14 rounded-full flex items-center justify-center mb-2 bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400"
+              >
+                <i class="fas fa-link fa-lg"></i>
+              </div>
+              <span class="text-xs text-slate-400">Copy</span>
+            </a>
+          </div>
+        </div>
+      </div> -->
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black/30 border-t border-white/10 py-12">
+      <div class="container mx-auto px-4">
+        <div class="text-center">
+          <p class="text-slate-500 text-sm">
+            &copy; 2025 CodeDynasty. Building modern software for humanity.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/script/index.js"></script>
+    <script>
+      // Mobile menu functionality
+      const mobileMenuButton = document.getElementById("mobile-menu-button");
+      const closeMobileMenu = document.getElementById("close-mobile-menu");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const body = document.body;
+
+      function toggleMobileMenu() {
+        mobileMenu.classList.toggle("translate-x-0");
+        mobileMenu.classList.toggle("-translate-x-full");
+        body.classList.toggle("overflow-hidden");
+      }
+
+      if (mobileMenuButton && closeMobileMenu && mobileMenu) {
+        mobileMenuButton.addEventListener("click", toggleMobileMenu);
+        closeMobileMenu.addEventListener("click", toggleMobileMenu);
+
+        document.querySelectorAll("#mobile-menu a").forEach((link) => {
+          link.addEventListener("click", () => {
+            mobileMenu.classList.remove("translate-x-0");
+            mobileMenu.classList.add("-translate-x-full");
+            body.classList.remove("overflow-hidden");
+          });
+        });
+
+        document.addEventListener("keydown", (e) => {
+          if (
+            e.key === "Escape" &&
+            mobileMenu.classList.contains("translate-x-0")
+          ) {
+            toggleMobileMenu();
+          }
+        });
+      }
+
+      // Reading progress bar
+      window.addEventListener("scroll", () => {
+        const winScroll =
+          document.body.scrollTop || document.documentElement.scrollTop;
+        const height =
+          document.documentElement.scrollHeight -
+          document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        const progressBar = document.querySelector(".reading-progress-bar");
+        if (progressBar) {
+          progressBar.style.width = scrolled + "%";
+        }
+      });
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        renderMathInElement(document.body, {
+          delimiters: [
+            { left: "$", right: "$", display: true },
+            { left: "$", right: "$", display: false },
+          ],
+        });
+      });
+    </script>
+  </body>
+</html>
+
+<!-- 
+https://arxiv.org/pdf/1706.03762
+https://arxiv.org/pdf/2005.14165
+https://arxiv.org/abs/2404.07503
+https://arxiv.org/abs/2312.10997
+Https://arxiv.org/abs/2503.23278 
+-->

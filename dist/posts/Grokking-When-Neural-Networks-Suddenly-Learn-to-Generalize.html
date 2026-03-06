@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grokking: When Neural Networks Suddenly Learn to Generalize - CodeDynasty</title>
+    <link rel="stylesheet" href="/bundle.css" />
+    <link rel="stylesheet" href="/styles/main.css" />
+    <link rel="stylesheet" href="/styles/post.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css"
+    />
+    <meta name="description" content="An exploration of grokking—the phenomenon where neural networks abruptly transition from memorization to genuine learning—and what it reveals about transformer internals." />
+    <meta name="keywords" content="code, programming, development" />
+    <meta name="author" content="Friday Candour" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#6366f1" />
+    <meta property="og:title" content="Grokking: When Neural Networks Suddenly Learn to Generalize" />
+    <meta property="og:description" content="An exploration of grokking—the phenomenon where neural networks abruptly transition from memorization to genuine learning—and what it reveals about transformer internals." />
+    <meta property="og:url" content="https://codedynasty.dev" />
+    <meta property="og:image" content="https://codedynasty.dev/post-images/0_T9RFAIgw6R2p8q9A.webp" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="CodeDynasty" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Grokking: When Neural Networks Suddenly Learn to Generalize" />
+    <meta name="twitter:description" content="An exploration of grokking—the phenomenon where neural networks abruptly transition from memorization to genuine learning—and what it reveals about transformer internals." />
+    <meta name="twitter:image" content="https://codedynasty.dev/post-images/0_T9RFAIgw6R2p8q9A.webp" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <style>
+      .katex-display,
+      .katex,
+      .katex-mathml,
+      .katex-html {
+        display: inline !important;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <header class="fixed w-full top-0 z-50 nav-modern">
+      <nav class="container mx-auto px-6">
+        <div class="flex justify-between items-center h-20">
+          <a
+            href="/"
+            class="flex items-center group"
+            aria-label="CodeDynasty Home"
+          >
+            <div
+              class="w-10 h-10 mr-3 transition-transform duration-300 group-hover:scale-110"
+            >
+              <img
+                src="/logo.png"
+                class="w-full h-full object-cover rounded-lg"
+                alt="CodeDynasty Logo"
+              />
+            </div>
+            <span class="text-xl font-bold text-white">CodeDynasty</span>
+          </a>
+
+          <!-- Mobile menu button -->
+          <button
+            id="mobile-menu-button"
+            class="md:hidden text-white focus:outline-none"
+            aria-label="Toggle menu"
+          >
+            <svg
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16m-7 6h7"
+              />
+            </svg>
+          </button>
+
+          <!-- Desktop Navigation -->
+          <div class="hidden md:flex items-center space-x-2">
+            <a
+              href="/blog.html"
+              class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors rounded-lg hover:bg-white/5"
+            >
+              Blog
+            </a>
+            <a
+              href="https://discord.codedynasty.dev"
+              class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors rounded-lg hover:bg-white/5"
+            >
+              Discord
+            </a>
+            <a
+              href="https://github.com/CodeDynasty-dev"
+              class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors rounded-lg hover:bg-white/5"
+              target="_blank"
+            >
+              GitHub
+            </a>
+            <a
+              href="/contact.html"
+              class="px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg hover:shadow-lg hover:shadow-indigo-500/50 transition-all"
+            >
+              Contact
+            </a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div
+      id="mobile-menu"
+      class="fixed inset-0 z-50 bg-black/95 backdrop-blur-lg transform -translate-x-full transition-transform duration-300 ease-in-out md:hidden"
+    >
+      <div class="container mx-auto px-6 py-8 h-full flex flex-col">
+        <div class="flex justify-between items-center mb-12">
+          <a href="/" class="flex items-center" aria-label="CodeDynasty Home">
+            <div class="w-10 h-10 mr-3">
+              <img
+                src="/logo.png"
+                class="w-full h-full object-cover rounded-lg"
+                alt="CodeDynasty Logo"
+              />
+            </div>
+            <span class="text-xl font-bold text-white">CodeDynasty</span>
+          </a>
+          <button
+            id="close-mobile-menu"
+            class="text-white/70 hover:text-white transition-colors"
+          >
+            <svg
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+        </div>
+        <nav class="flex-1 flex flex-col space-y-4">
+          <a
+            href="https://discord.codedynasty.dev"
+            class="text-white/80 hover:text-white text-lg py-3 px-4 rounded-lg hover:bg-white/5 transition-colors"
+          >
+            Discord
+          </a>
+          <a
+            href="https://github.com/CodeDynasty-dev"
+            target="_blank"
+            class="text-white/80 hover:text-white text-lg py-3 px-4 rounded-lg hover:bg-white/5 transition-colors"
+          >
+            GitHub
+          </a>
+          <a
+            href="/contact.html"
+            class="text-white/80 hover:text-white text-lg py-3 px-4 rounded-lg hover:bg-white/5 transition-colors"
+          >
+            Contact
+          </a>
+        </nav>
+        <div class="pt-6 border-t border-white/10 mt-auto">
+          <p class="text-white/50 text-sm text-center">
+            © 2025 CodeDynasty. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <main class="pt-20 pb-12">
+      <!-- Reading Progress Bar -->
+      <div
+        class="reading-progress-container fixed top-20 left-0 w-full z-40 h-1 bg-transparent"
+      >
+    <div
+  class="reading-progress-bar h-full bg-gradient-to-r from-blue-500 via-purple-500 to-yellow-500 bg-[length:200%_100%]"
+  style="width: 0%"
+></div>
+      </div>
+
+      <!-- Article Header -->
+      <section class="relative py-16 md:py-24">
+        <div class="container mx-auto px-4 md:px-6">
+          <div class="max-w-4xl mx-auto">
+            <!-- Category Badge -->
+            <div class="mb-6">
+              <span class="badge">Machine Learning</span>
+            </div>
+
+            <!-- Title -->
+            <h1
+              class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight"
+            >
+              Grokking: When Neural Networks Suddenly Learn to Generalize
+            </h1>
+
+            <!-- Meta Info -->
+            <div class="flex flex-wrap items-center gap-6 text-slate-400">
+              <!-- Author -->
+              <div class="flex items-center">
+                <div
+                  class="w-12 h-12 rounded-full overflow-hidden mr-3 bg-gradient-to-br from-indigo-500 to-purple-500 p-0.5"
+                >
+                  <div
+                    class="w-full h-full rounded-full overflow-hidden bg-slate-900"
+                  >
+                    <img
+                      src="https://avatars.githubusercontent.com/u/75016347"
+                      alt="Friday Candour"
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <span class="block font-medium text-white">Friday Candour</span>
+                  <span class="text-sm text-slate-500">Software Developer</span>
+                </div>
+              </div>
+
+              <!-- Date & Read Time -->
+              <div class="flex items-center gap-4 text-sm">
+                <div class="flex items-center">
+                  <svg
+                    class="h-4 w-4 mr-2"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                    />
+                  </svg>
+                  <time datetime="2025 12 21">2025 12 21</time>
+                </div>
+                <div class="flex items-center">
+                  <svg
+                    class="h-4 w-4 mr-2"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                  <span>12 min read</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Hero Image -->
+      <section class="mb-16">
+        <div class="container mx-auto px-4 md:px-6">
+          <div class="max-w-5xl mx-auto">
+            <div class="aspect-video overflow-hidden rounded-2xl">
+              <img
+                src="/post-images/0_T9RFAIgw6R2p8q9A.webp"
+                alt="Grokking: When Neural Networks Suddenly Learn to Generalize"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Article Content -->
+      <div class="container mx-auto px-4 md:px-6">
+        <div class="flex flex-col lg:flex-row gap-12 max-w-7xl mx-auto">
+          <!-- Sidebar - Share Widget -->
+          <aside class="hidden lg:block w-20 self-start sticky top-32">
+            <div class="flex flex-col items-center gap-4">
+              <span class="text-xs text-slate-500 font-medium mb-2">SHARE</span>
+              <a
+                href="#"
+                class="w-12 h-12 rounded-full flex items-center justify-center bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400"
+              >
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a
+                href="#"
+                class="w-12 h-12 rounded-full flex items-center justify-center bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400"
+              >
+                <i class="fab fa-linkedin"></i>
+              </a>
+              <a
+                href="#"
+                class="w-12 h-12 rounded-full flex items-center justify-center bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400"
+              >
+                <i class="fab fa-facebook"></i>
+              </a>
+              <a
+                href="#"
+                class="w-12 h-12 rounded-full flex items-center justify-center bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400 copy-link-button"
+                data-tooltip="Copy Link"
+              >
+                <i class="fas fa-link"></i>
+              </a>
+            </div>
+          </aside>
+
+          <!-- Main Content -->
+          <article class="flex-1 max-w-4xl post">
+            <div class="blog-content prose prose-invert prose-lg max-w-none">
+              <docmach type="function" params="tags:grokking,transformers,mechanistic interpretability,neural networks,modular arithmetic,deep learning,AI research" file="fragments/tags.js" />
+<h2>The Accidental Discovery</h2>
+<p>In 2021, an OpenAI researcher went on vacation and left a model training. Upon return, they found something unexpected: a model that had appeared stuck for thousands of training steps had suddenly generalized perfectly. This accident birthed the study of <em>grokking</em>—a term borrowed from Robert Heinlein's 1961 novel <em>Stranger in a Strange Land</em>, meaning to understand something so thoroughly that you merge with it.</p>
+<p>The phenomenon is genuinely strange. A model fits training data in a few hundred steps, then appears dormant for thousands more, then abruptly achieves perfect test accuracy. What mechanism could possibly explain this?</p>
+<h2>The Setup: Modular Arithmetic</h2>
+<p>The experimental setup is deliberately minimal. Take modular addition with a modulus of 113:</p>
+<p>$
+(x + y) \mod 113
+$</p>
+<p>This creates a bounded problem space. Inputs are one-hot encoded vectors of length 114 (113 digits plus an equals sign). The model sees patterns like:</p>
+<pre><code>Input:  [0,1,0,...,0] [0,0,1,...,0] [0,0,0,...,1]  →  represents &quot;1 + 2 =&quot;
+Output: [0,0,0,1,...,0]                            →  represents &quot;3&quot;
+</code></pre>
+<p>From the model's perspective, there's no inherent meaning to these symbols. It's just learning to map sparse input patterns to sparse output patterns. The fact that we've labeled position 1 as &quot;one&quot; and position 2 as &quot;two&quot; is entirely our convention.</p>
+<h2>What the Model Actually Learns</h2>
+<p>Here's where it gets interesting. If you probe the activations of a trained model—specifically the neurons in the second layer of the MLP block—you find wave-like structures. Plot neuron outputs as you sweep through input values, and you see sinusoids.</p>
+<p>Taking a discrete Fourier transform reveals dominant frequencies like $\frac{8\pi}{113}$. The model has learned to compute sines and cosines of its inputs.</p>
+<p>But why trigonometry for addition?</p>
+<h2>The Clock Analogy</h2>
+<p>Modular arithmetic is circular. A 2-hour meeting starting at 11 AM ends at 1 PM: $(11 + 2) \mod 12 = 1$. Analog clocks implement this physically—the circular motion of hands matches the modulo operation.</p>
+<p>The model appears to exploit this same structure. Early in the network, sparse linear probes reveal that the embedding layer computes approximations of:</p>
+<p>$
+\cos\left(\frac{8\pi x}{113}\right), \quad \sin\left(\frac{8\pi x}{113}\right)
+$</p>
+<p>Plotting cosine on the x-axis and sine on the y-axis produces a circle as you sweep through input values. The model has learned a circular representation.</p>
+<h2>The Trigonometric Identity Trick</h2>
+<p>Computing sines and cosines of $x$ and $y$ separately doesn't solve the problem. We need $x + y$, not $\cos(x) + \cos(y)$.</p>
+<p>The attention layer can easily sum these trigonometric functions. But that's not what we need. We need to add the <em>angles</em> themselves.</p>
+<p>Here's the clever part. In the MLP's second layer, the strongest frequency component of certain neurons is $\cos(x) \cdot \cos(y)$. Other neurons show $\sin(x) \cdot \sin(y)$. The following layer takes weighted sums of these outputs.</p>
+<p>When you subtract:</p>
+<p>$
+\cos(x)\cos(y) - \sin(x)\sin(y) = \cos(x + y)
+$</p>
+<p>This is the cosine sum-of-angles identity. The network has effectively learned to use this trigonometric identity to convert products of sines and cosines into a function of $x + y$.</p>
+<p>The resulting activation surfaces show diagonal symmetry. A neuron that fires maximally when $x + y = 65$ will fire for $(0, 65)$, $(20, 45)$, $(40, 25)$, and $(65, 0)$—all pairs summing to 65. It will also fire for $(66, 112)$ and $(112, 66)$, since $178 \mod 113 = 65$.</p>
+<h2>Why Grokking Happens</h2>
+<p>The training dynamics now make sense. Early in training, the model memorizes. It fits the training data through brute-force pattern matching. The sinusoidal structures don't exist yet.</p>
+<p>During the &quot;dormant&quot; phase where metrics appear flat, the model is slowly building these trigonometric representations. The structures are forming, but they haven't yet overtaken the memorized solution.</p>
+<p>Neel Nanda and collaborators introduced a metric called <em>excluded loss</em>: measure performance after removing information at the key frequencies. This metric climbs steadily during the dormant phase, revealing that the model is increasingly relying on frequency-domain representations even as standard metrics stay flat.</p>
+<p>Grokking occurs not when the sinusoidal structures complete, but during a subsequent &quot;cleanup phase&quot; where the model actively removes the memorized examples it relied on earlier.</p>
+<pre><code class="language-python"><span class="hljs-comment"># Conceptual illustration of excluded loss</span>
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">excluded_loss</span>(<span class="hljs-params">model_output, target, excluded_freq</span>):
+    <span class="hljs-comment"># Remove frequency component from output</span>
+    filtered = remove_frequency(model_output, excluded_freq)
+    <span class="hljs-keyword">return</span> cross_entropy(filtered, target)
+
+<span class="hljs-comment"># During dormant phase:</span>
+<span class="hljs-comment"># - Standard loss: flat</span>
+<span class="hljs-comment"># - Excluded loss: climbing (model using excluded frequencies more)</span>
+</code></pre>
+<h2>The Anthropic Extension</h2>
+<p>Recent work from Anthropic (<a href="https://arxiv.org/html/2502.01774v1">arXiv:2502.01774</a>) applies similar analysis to Claude 3.5 Haiku, examining how the model decides when to insert line breaks. The model represents character count on a six-dimensional manifold—somewhat analogous to the circular structures in our toy model.</p>
+<p>The team found what they call a &quot;QK twist&quot;: helix-like geometries in the attention heads that rotate relative to each other. A character count of 70 aligns with a line width of 75 after rotation, creating a consistent offset that lets the model estimate remaining space before line end.</p>
+<p>Compared to Haiku's full capabilities, line-break detection is trivial. But finding such clean mechanisms in a production model is encouraging.</p>
+<h2>The Limits of Understanding</h2>
+<p>This is the most complex AI model we fully understand. That's a strong claim, and deliberately provocative. A single-layer transformer doing modular arithmetic is vanishingly simple compared to GPT-4's hundreds of billions of parameters.</p>
+<p>Yet even here, the analysis required:</p>
+<ul>
+<li>Probing intermediate activations across thousands of input combinations</li>
+<li>Fourier analysis to identify learned frequencies</li>
+<li>Constructing sparse linear probes to extract clean signals</li>
+<li>Designing new metrics (excluded loss) to reveal hidden dynamics</li>
+</ul>
+<p>Scale this to a model with 96 layers and 200,000 vocabulary tokens, and the combinatorial explosion becomes intractable. We can find isolated mechanisms—like Anthropic's line-break circuit—but comprehensive understanding remains distant.</p>
+<h2>A Note on Alien Intelligence</h2>
+<p>Karpathy recently remarked that training LLMs feels less like building animal intelligence and more like summoning ghosts. The term &quot;grokking&quot; fits this framing. It originates from a complex Martian language in Heinlein's novel, carrying connotations of something fundamentally alien.</p>
+<p>We communicate with these models in human language, but that's a thin veneer. One layer deeper, we find absurdly complex patterns—Fourier components, trigonometric identities, six-dimensional manifolds. The model didn't learn these because we taught them. It discovered them because they solve the optimization problem.</p>
+<p>Whether this makes future AI feel more alien or more human remains genuinely uncertain. What's clear is that the gap between what we can observe (input-output behavior) and what we can explain (internal mechanisms) grows wider with each parameter we add.</p>
+
+            </div>
+
+            <!-- Comments Section -->
+            <div class="mt-16 pt-16 border-t border-white/10">
+              <script
+                src="https://giscus.app/client.js"
+                data-repo="codedynasty-dev/codedynasty"
+                data-repo-id="R_kgDOOBViSg"
+                data-category="Ideas"
+                data-category-id="DIC_kwDOOBViSs4CqU7E"
+                data-mapping="pathname"
+                data-strict="1"
+                data-reactions-enabled="1"
+                data-emit-metadata="0"
+                data-input-position="top"
+                data-theme="noborder_dark"
+                data-lang="en"
+                data-loading="lazy"
+                crossorigin="anonymous"
+                async
+              ></script>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- Mobile Floating Actions -->
+      <div class="lg:hidden fixed bottom-6 right-6 z-40 flex flex-col gap-3">
+        <button
+          id="mobile-share-button"
+          class="w-14 h-14 rounded-full flex items-center justify-center bg-gradient-to-r from-indigo-500 to-purple-500 text-white shadow-lg hover:shadow-xl transition-all"
+        >
+          <i class="fas fa-share-alt"></i>
+        </button>
+        <a href="#" id="scroll-top">
+          <button
+            class="w-14 h-14 rounded-full flex items-center justify-center bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 transition-all"
+          >
+            <i class="fas fa-arrow-up"></i>
+          </button>
+        </a>
+      </div>
+
+      <!-- Mobile Share Dialog -->
+      <!-- <div
+        id="mobile-share-dialog"
+        class="hidden fixed inset-0 z-50 flex items-end justify-center"
+      >
+        <div
+          class="fixed inset-0 bg-black/80 backdrop-blur-sm"
+          id="mobile-share-overlay"
+        ></div>
+        <div
+          class="relative w-full max-w-md p-6 rounded-t-2xl bg-slate-900 border-t border-white/10"
+        >
+          <div class="flex justify-between items-center mb-6">
+            <h3 class="text-lg font-bold text-white">Share This Article</h3>
+            <button
+              id="close-share-dialog"
+              class="text-slate-400 hover:text-white"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"
+                ></path>
+              </svg>
+            </button>
+          </div>
+          <div class="grid grid-cols-4 gap-4">
+            <a href="#" class="flex flex-col items-center">
+              <div
+                class="w-14 h-14 rounded-full flex items-center justify-center mb-2 bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400"
+              >
+                <i class="fab fa-twitter fa-lg"></i>
+              </div>
+              <span class="text-xs text-slate-400">Twitter</span>
+            </a>
+            <a href="#" class="flex flex-col items-center">
+              <div
+                class="w-14 h-14 rounded-full flex items-center justify-center mb-2 bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400"
+              >
+                <i class="fab fa-linkedin fa-lg"></i>
+              </div>
+              <span class="text-xs text-slate-400">LinkedIn</span>
+            </a>
+            <a href="#" class="flex flex-col items-center">
+              <div
+                class="w-14 h-14 rounded-full flex items-center justify-center mb-2 bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400"
+              >
+                <i class="fab fa-facebook fa-lg"></i>
+              </div>
+              <span class="text-xs text-slate-400">Facebook</span>
+            </a>
+            <a
+              href="#"
+              class="flex flex-col items-center copy-link-button"
+              data-tooltip="Copied!"
+            >
+              <div
+                class="w-14 h-14 rounded-full flex items-center justify-center mb-2 bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400"
+              >
+                <i class="fas fa-link fa-lg"></i>
+              </div>
+              <span class="text-xs text-slate-400">Copy</span>
+            </a>
+          </div>
+        </div>
+      </div> -->
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black/30 border-t border-white/10 py-12">
+      <div class="container mx-auto px-4">
+        <div class="text-center">
+          <p class="text-slate-500 text-sm">
+            &copy; 2025 CodeDynasty. Building modern software for humanity.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/script/index.js"></script>
+    <script>
+      // Mobile menu functionality
+      const mobileMenuButton = document.getElementById("mobile-menu-button");
+      const closeMobileMenu = document.getElementById("close-mobile-menu");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const body = document.body;
+
+      function toggleMobileMenu() {
+        mobileMenu.classList.toggle("translate-x-0");
+        mobileMenu.classList.toggle("-translate-x-full");
+        body.classList.toggle("overflow-hidden");
+      }
+
+      if (mobileMenuButton && closeMobileMenu && mobileMenu) {
+        mobileMenuButton.addEventListener("click", toggleMobileMenu);
+        closeMobileMenu.addEventListener("click", toggleMobileMenu);
+
+        document.querySelectorAll("#mobile-menu a").forEach((link) => {
+          link.addEventListener("click", () => {
+            mobileMenu.classList.remove("translate-x-0");
+            mobileMenu.classList.add("-translate-x-full");
+            body.classList.remove("overflow-hidden");
+          });
+        });
+
+        document.addEventListener("keydown", (e) => {
+          if (
+            e.key === "Escape" &&
+            mobileMenu.classList.contains("translate-x-0")
+          ) {
+            toggleMobileMenu();
+          }
+        });
+      }
+
+      // Reading progress bar
+      window.addEventListener("scroll", () => {
+        const winScroll =
+          document.body.scrollTop || document.documentElement.scrollTop;
+        const height =
+          document.documentElement.scrollHeight -
+          document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        const progressBar = document.querySelector(".reading-progress-bar");
+        if (progressBar) {
+          progressBar.style.width = scrolled + "%";
+        }
+      });
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        renderMathInElement(document.body, {
+          delimiters: [
+            { left: "$", right: "$", display: true },
+            { left: "$", right: "$", display: false },
+          ],
+        });
+      });
+    </script>
+  </body>
+</html>
+

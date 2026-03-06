@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Backpropagation, Gradients, and Computational Graphs - CodeDynasty</title>
+    <link rel="stylesheet" href="/bundle.css" />
+    <link rel="stylesheet" href="/styles/main.css" />
+    <link rel="stylesheet" href="/styles/post.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css"
+    />
+    <meta name="description" content="A clear explanation of backpropagation as gradient propagation over computational graphs, with design trade-offs for building differentiable systems" />
+    <meta name="keywords" content="code, programming, development" />
+    <meta name="author" content="Friday Candour" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#6366f1" />
+    <meta property="og:title" content="Backpropagation, Gradients, and Computational Graphs" />
+    <meta property="og:description" content="A clear explanation of backpropagation as gradient propagation over computational graphs, with design trade-offs for building differentiable systems" />
+    <meta property="og:url" content="https://codedynasty.dev" />
+    <meta property="og:image" content="https://codedynasty.dev/post-images/Error_surface_of_a_linear_neuron_with_two_input_weights.png" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="CodeDynasty" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Backpropagation, Gradients, and Computational Graphs" />
+    <meta name="twitter:description" content="A clear explanation of backpropagation as gradient propagation over computational graphs, with design trade-offs for building differentiable systems" />
+    <meta name="twitter:image" content="https://codedynasty.dev/post-images/Error_surface_of_a_linear_neuron_with_two_input_weights.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <style>
+      .katex-display,
+      .katex,
+      .katex-mathml,
+      .katex-html {
+        display: inline !important;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <header class="fixed w-full top-0 z-50 nav-modern">
+      <nav class="container mx-auto px-6">
+        <div class="flex justify-between items-center h-20">
+          <a
+            href="/"
+            class="flex items-center group"
+            aria-label="CodeDynasty Home"
+          >
+            <div
+              class="w-10 h-10 mr-3 transition-transform duration-300 group-hover:scale-110"
+            >
+              <img
+                src="/logo.png"
+                class="w-full h-full object-cover rounded-lg"
+                alt="CodeDynasty Logo"
+              />
+            </div>
+            <span class="text-xl font-bold text-white">CodeDynasty</span>
+          </a>
+
+          <!-- Mobile menu button -->
+          <button
+            id="mobile-menu-button"
+            class="md:hidden text-white focus:outline-none"
+            aria-label="Toggle menu"
+          >
+            <svg
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16m-7 6h7"
+              />
+            </svg>
+          </button>
+
+          <!-- Desktop Navigation -->
+          <div class="hidden md:flex items-center space-x-2">
+            <a
+              href="/blog.html"
+              class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors rounded-lg hover:bg-white/5"
+            >
+              Blog
+            </a>
+            <a
+              href="https://discord.codedynasty.dev"
+              class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors rounded-lg hover:bg-white/5"
+            >
+              Discord
+            </a>
+            <a
+              href="https://github.com/CodeDynasty-dev"
+              class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors rounded-lg hover:bg-white/5"
+              target="_blank"
+            >
+              GitHub
+            </a>
+            <a
+              href="/contact.html"
+              class="px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg hover:shadow-lg hover:shadow-indigo-500/50 transition-all"
+            >
+              Contact
+            </a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div
+      id="mobile-menu"
+      class="fixed inset-0 z-50 bg-black/95 backdrop-blur-lg transform -translate-x-full transition-transform duration-300 ease-in-out md:hidden"
+    >
+      <div class="container mx-auto px-6 py-8 h-full flex flex-col">
+        <div class="flex justify-between items-center mb-12">
+          <a href="/" class="flex items-center" aria-label="CodeDynasty Home">
+            <div class="w-10 h-10 mr-3">
+              <img
+                src="/logo.png"
+                class="w-full h-full object-cover rounded-lg"
+                alt="CodeDynasty Logo"
+              />
+            </div>
+            <span class="text-xl font-bold text-white">CodeDynasty</span>
+          </a>
+          <button
+            id="close-mobile-menu"
+            class="text-white/70 hover:text-white transition-colors"
+          >
+            <svg
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+        </div>
+        <nav class="flex-1 flex flex-col space-y-4">
+          <a
+            href="https://discord.codedynasty.dev"
+            class="text-white/80 hover:text-white text-lg py-3 px-4 rounded-lg hover:bg-white/5 transition-colors"
+          >
+            Discord
+          </a>
+          <a
+            href="https://github.com/CodeDynasty-dev"
+            target="_blank"
+            class="text-white/80 hover:text-white text-lg py-3 px-4 rounded-lg hover:bg-white/5 transition-colors"
+          >
+            GitHub
+          </a>
+          <a
+            href="/contact.html"
+            class="text-white/80 hover:text-white text-lg py-3 px-4 rounded-lg hover:bg-white/5 transition-colors"
+          >
+            Contact
+          </a>
+        </nav>
+        <div class="pt-6 border-t border-white/10 mt-auto">
+          <p class="text-white/50 text-sm text-center">
+            © 2025 CodeDynasty. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <main class="pt-20 pb-12">
+      <!-- Reading Progress Bar -->
+      <div
+        class="reading-progress-container fixed top-20 left-0 w-full z-40 h-1 bg-transparent"
+      >
+    <div
+  class="reading-progress-bar h-full bg-gradient-to-r from-blue-500 via-purple-500 to-yellow-500 bg-[length:200%_100%]"
+  style="width: 0%"
+></div>
+      </div>
+
+      <!-- Article Header -->
+      <section class="relative py-16 md:py-24">
+        <div class="container mx-auto px-4 md:px-6">
+          <div class="max-w-4xl mx-auto">
+            <!-- Category Badge -->
+            <div class="mb-6">
+              <span class="badge">Machine Learning</span>
+            </div>
+
+            <!-- Title -->
+            <h1
+              class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight"
+            >
+              Backpropagation, Gradients, and Computational Graphs
+            </h1>
+
+            <!-- Meta Info -->
+            <div class="flex flex-wrap items-center gap-6 text-slate-400">
+              <!-- Author -->
+              <div class="flex items-center">
+                <div
+                  class="w-12 h-12 rounded-full overflow-hidden mr-3 bg-gradient-to-br from-indigo-500 to-purple-500 p-0.5"
+                >
+                  <div
+                    class="w-full h-full rounded-full overflow-hidden bg-slate-900"
+                  >
+                    <img
+                      src="https://avatars.githubusercontent.com/u/75016347"
+                      alt="Friday Candour"
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <span class="block font-medium text-white">Friday Candour</span>
+                  <span class="text-sm text-slate-500">Software Developer</span>
+                </div>
+              </div>
+
+              <!-- Date & Read Time -->
+              <div class="flex items-center gap-4 text-sm">
+                <div class="flex items-center">
+                  <svg
+                    class="h-4 w-4 mr-2"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                    />
+                  </svg>
+                  <time datetime="2025 12 10">2025 12 10</time>
+                </div>
+                <div class="flex items-center">
+                  <svg
+                    class="h-4 w-4 mr-2"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                  <span>6 min</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Hero Image -->
+      <section class="mb-16">
+        <div class="container mx-auto px-4 md:px-6">
+          <div class="max-w-5xl mx-auto">
+            <div class="aspect-video overflow-hidden rounded-2xl">
+              <img
+                src="/post-images/Error_surface_of_a_linear_neuron_with_two_input_weights.png"
+                alt="Backpropagation, Gradients, and Computational Graphs"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Article Content -->
+      <div class="container mx-auto px-4 md:px-6">
+        <div class="flex flex-col lg:flex-row gap-12 max-w-7xl mx-auto">
+          <!-- Sidebar - Share Widget -->
+          <aside class="hidden lg:block w-20 self-start sticky top-32">
+            <div class="flex flex-col items-center gap-4">
+              <span class="text-xs text-slate-500 font-medium mb-2">SHARE</span>
+              <a
+                href="#"
+                class="w-12 h-12 rounded-full flex items-center justify-center bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400"
+              >
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a
+                href="#"
+                class="w-12 h-12 rounded-full flex items-center justify-center bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400"
+              >
+                <i class="fab fa-linkedin"></i>
+              </a>
+              <a
+                href="#"
+                class="w-12 h-12 rounded-full flex items-center justify-center bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400"
+              >
+                <i class="fab fa-facebook"></i>
+              </a>
+              <a
+                href="#"
+                class="w-12 h-12 rounded-full flex items-center justify-center bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400 copy-link-button"
+                data-tooltip="Copy Link"
+              >
+                <i class="fas fa-link"></i>
+              </a>
+            </div>
+          </aside>
+
+          <!-- Main Content -->
+          <article class="flex-1 max-w-4xl post">
+            <div class="blog-content prose prose-invert prose-lg max-w-none">
+              <docmach type="function" params="tags: machine-learning, backpropagation, gradient-descent, computational-graphs, chain-rule, optimization, neural-networks, differentiable-programming" file="fragments/tags.js" />
+<h1>Backpropagation, Gradients, and Computational Graphs</h1>
+<p>Most modern machine learning systems learn with the same tool. Architectures vary, data differs, and objectives change, yet the training loop is remarkably consistent: compute a loss, propagate gradients, adjust parameters. This uniformity is both the strength of the field and a design constraint developers must respect. In this piece I describe backpropagation as a disciplined way to move information through a differentiable program and highlight the design implications that matter in practice.</p>
+<h2>Terms and sequence</h2>
+<ul>
+<li><strong>Model</strong>: a function <code>ŷ = f(x; k)</code> with inputs <code>x</code> and parameters <code>k</code>.</li>
+<li><strong>Parameters</strong>: tunable numbers <code>k = (k0, k1, …)</code>; training updates them.</li>
+<li><strong>Loss</strong>: a scalar <code>L(k)</code> measuring how poorly the model fits the task.</li>
+<li><strong>Derivative</strong>: local rate of change; for one variable, <code>dL/dk</code>.</li>
+<li><strong>Partial derivative</strong>: rate of change with respect to one variable while others are held fixed, <code>∂L/∂k_j</code>.</li>
+<li><strong>Gradient</strong>: vector of partials <code>∇L(k) = (∂L/∂k_0, …)</code>; points uphill.</li>
+<li><strong>Learning rate</strong>: a small step size <code>η</code> that scales updates.</li>
+<li><strong>Forward pass</strong>: compute <code>L</code> from inputs and current parameters.</li>
+<li><strong>Backward pass</strong>: compute <code>∇L</code> by applying the chain rule over the program’s computation graph.</li>
+</ul>
+<p>This vocabulary is enough to reason about most training systems.</p>
+<h2>A concrete starting point: curve fitting</h2>
+<p>Consider a simple approximation problem. We have points <code>(x_i, y_i)</code> and want a smooth function that predicts <code>y</code> from <code>x</code>. One practical choice is a degree-5 polynomial:</p>
+<pre><code>ŷ(x) = k0 + k1 x + k2 x^2 + k3 x^3 + k4 x^4 + k5 x^5
+</code></pre>
+<p>Define the loss as the sum of squared errors:</p>
+<pre><code>L(k) = Σ_i (y_i − ŷ(x_i))^2
+</code></pre>
+<p>The objective is to find <code>k* = argmin_k L(k)</code>.</p>
+<p>Two observations shape the solution:</p>
+<ul>
+<li><strong>Optimization target</strong>: <code>L</code> depends only on the parameters when the data is fixed.</li>
+<li><strong>Direction information</strong>: if we know the gradient, we know how to change <code>k</code> to reduce <code>L</code>.</li>
+</ul>
+<h2>Gradient descent in one look</h2>
+<p>Gradient descent updates parameters in the opposite direction of the gradient:</p>
+<pre><code>k ← k − η ∇L(k)
+</code></pre>
+<p>For the polynomial, the partial derivative has a useful structure:</p>
+<pre><code>∂L/∂k_j = Σ_i −2 (y_i − ŷ(x_i)) · x_i^j
+</code></pre>
+<p>This pattern repeats across many models: a residual term <code>(y − ŷ)</code> multiplied by a feature term, summed over the dataset.</p>
+<h2>Why backpropagation?</h2>
+<p>For simple models we can derive gradients by hand. Real models compose many operations: matrix multiplies, nonlinearities, normalizations, and joins of intermediate results. Hand derivation becomes error-prone.</p>
+<p>Backpropagation is a systematic application of the chain rule over a computation graph. It lets us compute <code>∇L</code> for any program built from differentiable primitives.</p>
+<h2>Computation graphs and the chain rule</h2>
+<p>Think of the forward pass as a directed acyclic graph where nodes are values and edges apply operations. The loss <code>L</code> sits at the right; data and parameters sit at the left. Each edge is one of a small set of well-understood operations: add, multiply, power, log, exp, matrix multiply, activation.</p>
+<p>The chain rule tells us how to move sensitivities backward through each operation.</p>
+<ul>
+<li><strong>Addition</strong>: if <code>C = A + B</code>, then <code>∂L/∂A = ∂L/∂C</code> and <code>∂L/∂B = ∂L/∂C</code>.</li>
+<li><strong>Multiplication</strong>: if <code>C = A * B</code>, then <code>∂L/∂A = (∂L/∂C) · B</code> and <code>∂L/∂B = (∂L/∂C) · A</code>.</li>
+<li><strong>Power (square)</strong>: if <code>C = A^2</code>, then <code>∂L/∂A = (∂L/∂C) · 2A</code>.</li>
+<li><strong>Split/merge</strong>: when a value feeds multiple branches, add the gradients from each branch.</li>
+</ul>
+<p>By applying these local rules in reverse topological order, we obtain <code>∂L/∂k_j</code> for every parameter <code>k_j</code>.</p>
+<h3>Tiny worked example</h3>
+<pre><code># Forward
+z = a * b
+c = z + d
+L = c^2
+
+# Backward
+∂L/∂L = 1
+∂L/∂c = 2c
+∂L/∂z = ∂L/∂c * 1
+∂L/∂d = ∂L/∂c * 1
+∂L/∂a = ∂L/∂z * b
+∂L/∂b = ∂L/∂z * a
+</code></pre>
+<p>The pattern scales. Replace scalars with vectors and matrices and the rules hold with appropriate linear algebra.</p>
+<h2>A minimal gradient descent sketch</h2>
+<p>The following sketch shows a plain polynomial fit with an explicit gradient. It is intentionally small to communicate the pattern.</p>
+<pre><code class="language-python"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">poly_predict</span>(<span class="hljs-params">x, k</span>):
+    <span class="hljs-comment"># k: shape (6,)</span>
+    powers = np.vstack([x**j <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">6</span>)])  <span class="hljs-comment"># shape (6, N)</span>
+    <span class="hljs-keyword">return</span> (k[:, <span class="hljs-literal">None</span>] * powers).<span class="hljs-built_in">sum</span>(axis=<span class="hljs-number">0</span>)      <span class="hljs-comment"># shape (N,)</span>
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">poly_gradients</span>(<span class="hljs-params">x, y, k</span>):
+    y_hat = poly_predict(x, k)
+    residual = (y - y_hat)                        <span class="hljs-comment"># shape (N,)</span>
+    grads = np.array([-<span class="hljs-number">2</span> * (residual * (x ** j)).<span class="hljs-built_in">sum</span>() <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">6</span>)])
+    <span class="hljs-keyword">return</span> grads, (residual**<span class="hljs-number">2</span>).<span class="hljs-built_in">sum</span>()
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">fit_poly</span>(<span class="hljs-params">x, y, steps=<span class="hljs-number">2000</span>, lr=<span class="hljs-number">1e-3</span></span>):
+    k = np.zeros(<span class="hljs-number">6</span>)
+    <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(steps):
+        g, loss = poly_gradients(x, y, k)
+        k -= lr * g
+    <span class="hljs-keyword">return</span> k
+</code></pre>
+<p>Replace <code>poly_*</code> with your model’s forward pass and gradients (or let an autodiff engine produce <code>g</code>), keep the loop, and you have the training core.</p>
+<h2>Design implications for engineers</h2>
+<p>Backpropagation is not only a math fact; it shapes how we design systems.</p>
+<ul>
+<li>
+<p><strong>Differentiability as a design constraint</strong></p>
+<ul>
+<li>Prefer operations with well-behaved derivatives.</li>
+<li>Avoid discrete choices in the forward path (e.g., <code>argmax</code>); use smooth relaxations (e.g., <code>softmax</code>) when training requires gradients.</li>
+<li>If you must use nondifferentiable steps, isolate them after the loss or use surrogate gradients.</li>
+</ul>
+</li>
+<li>
+<p><strong>Numerical stability</strong></p>
+<ul>
+<li>Saturating activations slow learning; prefer non-saturating variants or combine with normalization.</li>
+<li>Keep values in safe ranges (e.g., <code>logsumexp</code> for stability, clipping for extreme values).</li>
+<li>Initialization and normalization (LayerNorm, BatchNorm) improve gradient flow.</li>
+</ul>
+</li>
+<li>
+<p><strong>Step size and schedules</strong></p>
+<ul>
+<li>The learning rate <code>η</code> trades speed for stability. Too small: slow. Too large: divergence.</li>
+<li>Schedules (cosine decay, warmup) and adaptive optimizers (Adam, Adagrad) change the effective step size but preserve the backprop structure.</li>
+</ul>
+</li>
+<li>
+<p><strong>Batching and vectorization</strong></p>
+<ul>
+<li>Compute losses and gradients over minibatches to reduce variance and exploit hardware.</li>
+<li>Write the forward pass in terms of batched primitives; the backward pass becomes fast for free.</li>
+</ul>
+</li>
+<li>
+<p><strong>Observability</strong></p>
+<ul>
+<li>Inspect gradient norms by layer. Exploding signals suggest clipping; vanishing suggests architectural or initialization changes.</li>
+<li>Plot the loss across steps. Plateaus often imply poor step size or ill-conditioned geometry.</li>
+</ul>
+</li>
+<li>
+<p><strong>Memory vs. compute</strong></p>
+<ul>
+<li>Backprop stores intermediates for the backward pass. On large models, this dominates memory use.</li>
+<li>Techniques such as gradient checkpointing trade extra compute for lower memory by recomputing parts of the forward during backward.</li>
+</ul>
+</li>
+<li>
+<p><strong>Interfaces and boundaries</strong></p>
+<ul>
+<li>Cleanly separate model definition, loss computation, optimizer step, and data pipeline.</li>
+<li>When composing modules, prefer pure functions with explicit inputs/outputs so the graph remains transparent to autodiff.</li>
+</ul>
+</li>
+</ul>
+<h2>When backprop struggles</h2>
+<ul>
+<li><strong>Discontinuities</strong>: hard thresholding and data-dependent control flow can make gradients zero or undefined. Use smooth approximations during training.</li>
+<li><strong>Poor conditioning</strong>: narrow valleys slow descent. Normalization, skip connections, and second-order preconditioning (approximate) improve progress.</li>
+<li><strong>Long dependency chains</strong>: recurrent computations exacerbate vanishing/exploding gradients. Use gating (LSTM/GRU), residual paths, or attention.</li>
+<li><strong>Objective mismatch</strong>: if the loss does not reflect the true goal, the gradients point in the wrong direction. Design the loss to encode the real trade-offs.</li>
+</ul>
+<h2>A short checklist</h2>
+<ul>
+<li>Define <code>f(x; k)</code> and a single scalar <code>L</code>.</li>
+<li>Ensure all forward primitives are differentiable and numerically stable.</li>
+<li>Confirm gradients by finite differences on a small problem.</li>
+<li>Monitor loss, gradient norms, and a task metric.</li>
+<li>Start with a conservative <code>η</code>, then tune.</li>
+</ul>
+<h2>Closing reflection</h2>
+<p>Backpropagation is a disciplined way to push information about error through a program. It rewards designs that are explicit, differentiable, and well-conditioned. The trade-off space is familiar: speed vs. stability, expressiveness vs. gradient quality, memory vs. compute. The algorithm stays the same; the craft is in building models—and losses—that give it the right surface to descend.</p>
+
+            </div>
+
+            <!-- Comments Section -->
+            <div class="mt-16 pt-16 border-t border-white/10">
+              <script
+                src="https://giscus.app/client.js"
+                data-repo="codedynasty-dev/codedynasty"
+                data-repo-id="R_kgDOOBViSg"
+                data-category="Ideas"
+                data-category-id="DIC_kwDOOBViSs4CqU7E"
+                data-mapping="pathname"
+                data-strict="1"
+                data-reactions-enabled="1"
+                data-emit-metadata="0"
+                data-input-position="top"
+                data-theme="noborder_dark"
+                data-lang="en"
+                data-loading="lazy"
+                crossorigin="anonymous"
+                async
+              ></script>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- Mobile Floating Actions -->
+      <div class="lg:hidden fixed bottom-6 right-6 z-40 flex flex-col gap-3">
+        <button
+          id="mobile-share-button"
+          class="w-14 h-14 rounded-full flex items-center justify-center bg-gradient-to-r from-indigo-500 to-purple-500 text-white shadow-lg hover:shadow-xl transition-all"
+        >
+          <i class="fas fa-share-alt"></i>
+        </button>
+        <a href="#" id="scroll-top">
+          <button
+            class="w-14 h-14 rounded-full flex items-center justify-center bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 transition-all"
+          >
+            <i class="fas fa-arrow-up"></i>
+          </button>
+        </a>
+      </div>
+
+      <!-- Mobile Share Dialog -->
+      <!-- <div
+        id="mobile-share-dialog"
+        class="hidden fixed inset-0 z-50 flex items-end justify-center"
+      >
+        <div
+          class="fixed inset-0 bg-black/80 backdrop-blur-sm"
+          id="mobile-share-overlay"
+        ></div>
+        <div
+          class="relative w-full max-w-md p-6 rounded-t-2xl bg-slate-900 border-t border-white/10"
+        >
+          <div class="flex justify-between items-center mb-6">
+            <h3 class="text-lg font-bold text-white">Share This Article</h3>
+            <button
+              id="close-share-dialog"
+              class="text-slate-400 hover:text-white"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"
+                ></path>
+              </svg>
+            </button>
+          </div>
+          <div class="grid grid-cols-4 gap-4">
+            <a href="#" class="flex flex-col items-center">
+              <div
+                class="w-14 h-14 rounded-full flex items-center justify-center mb-2 bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400"
+              >
+                <i class="fab fa-twitter fa-lg"></i>
+              </div>
+              <span class="text-xs text-slate-400">Twitter</span>
+            </a>
+            <a href="#" class="flex flex-col items-center">
+              <div
+                class="w-14 h-14 rounded-full flex items-center justify-center mb-2 bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400"
+              >
+                <i class="fab fa-linkedin fa-lg"></i>
+              </div>
+              <span class="text-xs text-slate-400">LinkedIn</span>
+            </a>
+            <a href="#" class="flex flex-col items-center">
+              <div
+                class="w-14 h-14 rounded-full flex items-center justify-center mb-2 bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400"
+              >
+                <i class="fab fa-facebook fa-lg"></i>
+              </div>
+              <span class="text-xs text-slate-400">Facebook</span>
+            </a>
+            <a
+              href="#"
+              class="flex flex-col items-center copy-link-button"
+              data-tooltip="Copied!"
+            >
+              <div
+                class="w-14 h-14 rounded-full flex items-center justify-center mb-2 bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400"
+              >
+                <i class="fas fa-link fa-lg"></i>
+              </div>
+              <span class="text-xs text-slate-400">Copy</span>
+            </a>
+          </div>
+        </div>
+      </div> -->
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black/30 border-t border-white/10 py-12">
+      <div class="container mx-auto px-4">
+        <div class="text-center">
+          <p class="text-slate-500 text-sm">
+            &copy; 2025 CodeDynasty. Building modern software for humanity.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/script/index.js"></script>
+    <script>
+      // Mobile menu functionality
+      const mobileMenuButton = document.getElementById("mobile-menu-button");
+      const closeMobileMenu = document.getElementById("close-mobile-menu");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const body = document.body;
+
+      function toggleMobileMenu() {
+        mobileMenu.classList.toggle("translate-x-0");
+        mobileMenu.classList.toggle("-translate-x-full");
+        body.classList.toggle("overflow-hidden");
+      }
+
+      if (mobileMenuButton && closeMobileMenu && mobileMenu) {
+        mobileMenuButton.addEventListener("click", toggleMobileMenu);
+        closeMobileMenu.addEventListener("click", toggleMobileMenu);
+
+        document.querySelectorAll("#mobile-menu a").forEach((link) => {
+          link.addEventListener("click", () => {
+            mobileMenu.classList.remove("translate-x-0");
+            mobileMenu.classList.add("-translate-x-full");
+            body.classList.remove("overflow-hidden");
+          });
+        });
+
+        document.addEventListener("keydown", (e) => {
+          if (
+            e.key === "Escape" &&
+            mobileMenu.classList.contains("translate-x-0")
+          ) {
+            toggleMobileMenu();
+          }
+        });
+      }
+
+      // Reading progress bar
+      window.addEventListener("scroll", () => {
+        const winScroll =
+          document.body.scrollTop || document.documentElement.scrollTop;
+        const height =
+          document.documentElement.scrollHeight -
+          document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        const progressBar = document.querySelector(".reading-progress-bar");
+        if (progressBar) {
+          progressBar.style.width = scrolled + "%";
+        }
+      });
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        renderMathInElement(document.body, {
+          delimiters: [
+            { left: "$", right: "$", display: true },
+            { left: "$", right: "$", display: false },
+          ],
+        });
+      });
+    </script>
+  </body>
+</html>
+

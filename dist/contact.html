@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact - CodeDynasty</title>
+    <link rel="stylesheet" href="/bundle.css" />
+    <link rel="stylesheet" href="/styles/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="shortcut icon" href="logo.png" type="image/png" />
+    <meta
+      name="description"
+      content="Contact CodeDynasty - Get in touch with us"
+    />
+    <meta name="keywords" content="contact, code, programming, development" />
+    <meta name="author" content="CodeDynasty" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#17bafb" />
+    <meta name="og:title" content="Contact - CodeDynasty" />
+    <meta
+      name="og:description"
+      content="Contact CodeDynasty - Get in touch with us"
+    />
+    <meta name="og:type" content="website" />
+    <meta name="og:url" content="https://codedynasty.dev/contact" />
+    <meta name="og:image" content="logo.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Contact - CodeDynasty" />
+    <meta
+      name="twitter:description"
+      content="Contact CodeDynasty - Get in touch with us"
+    />
+    <meta name="twitter:image" content="logo.png" />
+  </head>
+  <body>
+    <header
+      class="fixed w-full top-0 z-50 bg-black/30 backdrop-blur-2xl border-b border-white/10"
+    >
+      <nav class="container mx-auto px-6">
+        <div class="flex justify-between items-center h-24">
+          <a
+            href="/"
+            class="flex items-center group relative"
+            aria-label="CodeDynasty Home"
+          >
+            <div
+              class="relative w-14 h-14 mr-3 group-hover:scale-110 transition-transform duration-500"
+            >
+              <img
+                src="logo.png"
+                class="absolute inset-0 object-cover w-full h-full opacity-70"
+                alt="CodeDynasty Logo"
+              />
+              <div
+                class="absolute inset-0 bg-primary-color/10 rounded-full group-hover:bg-primary-color/20 transition-colors duration-500"
+              ></div>
+              <div
+                class="absolute inset-0 bg-primary-color/5 rounded-full animate-pulse"
+              ></div>
+            </div>
+            <span
+              class="relative z-10 glitch-text text-2xl text-[#17bafb]"
+              data-text="ODEDYNASTY"
+            >
+              <span
+                class="group-hover:translate-x-1 transition-transform duration-300"
+                >ode</span
+              >
+              <span
+                class="group-hover:translate-x-2 transition-transform duration-300"
+                >D</span
+              >
+              <span
+                class="group-hover:translate-x-3 transition-transform duration-300"
+                >ynasty</span
+              >
+            </span>
+          </a>
+          <div class="hidden md:flex items-center space-x-8">
+            <a
+              href="https://discord.codedynasty.dev"
+              class="relative overflow-hidden px-4 py-2 text-white/80 hover:text-white transition-colors group"
+              >DISCORD</a
+            >
+            <a
+              href="https://github.com/CodeDynasty-dev"
+              class="relative overflow-hidden px-4 py-2 text-white/80 hover:text-white transition-colors group"
+              target="_blank"
+              >GITHUB</a
+            >
+            <a
+              href="/contact.html"
+              class="relative overflow-hidden px-4 py-2 text-white/80 hover:text-white transition-colors group"
+              >CONTACT</a
+            >
+          </div>
+          <!-- Mobile menu button -->
+          <button
+            id="mobile-menu-button"
+            class="md:hidden text-white focus:outline-none"
+            aria-label="Toggle menu"
+          >
+            <svg
+              class="h-8 w-8"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16m-7 6h7"
+              />
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </header>
+    <!-- Mobile Menu Overlay -->
+    <div
+      id="mobile-menu"
+      class="fixed inset-0 z-40 bg-black/90 backdrop-blur-lg transform translate-x-full transition-transform duration-300 ease-in-out md:hidden"
+    >
+      <div class="container mx-auto px-6 py-8 h-full flex flex-col">
+        <div class="flex justify-between items-center mb-12">
+          <a href="/" class="flex items-center" aria-label="CodeDynasty Home">
+            <div class="w-12 h-12 mr-3">
+              <img
+                src="/logo.png"
+                class="w-full h-full object-cover opacity-70"
+                alt="CodeDynasty Logo"
+              />
+            </div>
+            <span class="text-2xl text-[#17bafb] font-bold">CodeDynasty</span>
+          </a>
+          <button
+            id="close-mobile-menu"
+            class="text-white/70 hover:text-white transition-colors"
+          >
+            <svg
+              class="h-8 w-8"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+        </div>
+        <nav class="flex-1 flex flex-col space-y-6">
+          <a
+            href="https://discord.codedynasty.dev"
+            class="text-white/80 hover:text-white text-xl py-3 px-4 rounded-lg hover:bg-white/5 transition-colors"
+          >
+            Discord
+          </a>
+          <a
+            href="https://github.com/CodeDynasty-dev"
+            target="_blank"
+            class="text-white/80 hover:text-white text-xl py-3 px-4 rounded-lg hover:bg-white/5 transition-colors"
+          >
+            GitHub
+          </a>
+          <a
+            href="/contact.html"
+            class="text-white/80 hover:text-white text-xl py-3 px-4 rounded-lg hover:bg-white/5 transition-colors"
+          >
+            Contact
+          </a>
+        </nav>
+        <div class="pt-6 border-t border-white/10 mt-auto">
+          <p class="text-white/50 text-sm text-center">
+            © 2023 CodeDynasty. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Mobile menu functionality
+      const mobileMenuButton = document.getElementById("mobile-menu-button");
+      const closeMobileMenu = document.getElementById("close-mobile-menu");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const body = document.body;
+
+      function toggleMobileMenu() {
+        mobileMenu.classList.toggle("translate-x-0");
+        mobileMenu.classList.toggle("translate-x-full");
+        body.classList.toggle("overflow-hidden");
+      }
+
+      if (mobileMenuButton && closeMobileMenu && mobileMenu) {
+        mobileMenuButton.addEventListener("click", toggleMobileMenu);
+        closeMobileMenu.addEventListener("click", toggleMobileMenu);
+
+        // Close menu when clicking on a link
+        document.querySelectorAll("#mobile-menu a").forEach((link) => {
+          link.addEventListener("click", () => {
+            mobileMenu.classList.remove("translate-x-0");
+            mobileMenu.classList.add("translate-x-full");
+            body.classList.remove("overflow-hidden");
+          });
+        });
+
+        // Close menu when pressing Escape key
+        document.addEventListener("keydown", (e) => {
+          if (
+            e.key === "Escape" &&
+            mobileMenu.classList.contains("translate-x-0")
+          ) {
+            toggleMobileMenu();
+          }
+        });
+      }
+    </script>
+    <main class="pt-24">
+      <!-- Contact Info Section -->
+      <section class="py-24">
+        <div class="container mx-auto px-4">
+          <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-12">
+              <h2
+                class="text-4xl font-extrabold text-white tracking-tight mb-4 brand-font"
+              >
+                Connect With Us
+              </h2>
+              <div
+                class="h-px bg-gradient-to-r from-transparent to-primary-color flex-grow"
+              ></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div
+                class="bg-black/30 backdrop-blur-xl rounded-xl p-6 text-center"
+              >
+                <div class="text-primary-color text-2xl mb-4">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-white mb-2">Email</h3>
+                <p class="text-white/80">
+                  <a
+                    href="mailto:contact@codedynasty.dev"
+                    class="hover:text-primary-color transition-colors"
+                  >
+                    contact@codedynasty.dev
+                  </a>
+                </p>
+              </div>
+
+              <div
+                class="bg-black/30 backdrop-blur-xl rounded-xl p-6 text-center"
+              >
+                <div class="text-primary-color text-2xl mb-4">
+                  <i class="fab fa-github"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-white mb-2">GitHub</h3>
+                <p class="text-white/80">
+                  <a
+                    href="https://github.com/CodeDynasty-dev"
+                    target="_blank"
+                    class="hover:text-primary-color transition-colors"
+                  >
+                    CodeDynasty-dev
+                  </a>
+                </p>
+              </div>
+
+              <div
+                class="bg-black/30 backdrop-blur-xl rounded-xl p-6 text-center"
+              >
+                <div class="text-primary-color text-2xl mb-4">
+                  <i class="fas fa-comments"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-white mb-2">Discord</h3>
+                <a href="https://discord.codedynasty.dev">
+                  <p class="text-white/80">Join our community</p>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="bg-black/30 border-t border-white/10">
+      <div class="container mx-auto px-4 py-12">
+        <div
+          class="text-center pt-8 border-t"
+          style="border-color: rgba(255, 255, 255, 0.1)"
+        >
+          <p style="color: var(--text-secondary)">
+            &copy; 2025 CodeDynasty. <span class="code-text"></span>
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

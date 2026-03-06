@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CODEDYNASTY - friday candour</title>
+    <link rel="stylesheet" href="/bundle.css" />
+    <link rel="stylesheet" href="/styles/main.css" />
+    <link rel="stylesheet" href="/styles/post.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css"
+    />
+    <meta name="description" content="Friday Candour's portfolio" />
+  </head>
+  <body>
+    <header class="fixed w-full top-0 z-50 nav-modern">
+      <nav class="container mx-auto px-6">
+        <div class="flex justify-between items-center h-20">
+          <a href="/" class="flex items-center group" aria-label="CodeDynasty Home">
+            <div class="w-10 h-10 mr-3 transition-transform duration-300 group-hover:scale-110">
+              <img
+                src="/logo.png"
+                class="w-full h-full object-cover rounded-lg"
+                alt="CodeDynasty Logo"
+              />
+            </div>
+            <span class="text-xl font-bold text-white">CodeDynasty</span>
+          </a>
+
+          <!-- Mobile menu button -->
+          <button
+            id="mobile-menu-button"
+            class="md:hidden text-white focus:outline-none"
+            aria-label="Toggle menu"
+          >
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+          </button>
+
+          <!-- Desktop Navigation -->
+          <div class="hidden md:flex items-center space-x-2">
+            <a
+              href="/blog.html"
+              class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors rounded-lg hover:bg-white/5"
+            >
+              Blog
+            </a>
+            <a
+              href="https://discord.codedynasty.dev"
+              class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors rounded-lg hover:bg-white/5"
+            >
+              Discord
+            </a>
+            <a
+              href="https://github.com/CodeDynasty-dev"
+              class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors rounded-lg hover:bg-white/5"
+              target="_blank"
+            >
+              GitHub
+            </a>
+            <a
+              href="/contact.html"
+              class="px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg hover:shadow-lg hover:shadow-indigo-500/50 transition-all"
+            >
+              Contact
+            </a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div
+      id="mobile-menu"
+      class="fixed inset-0 z-50 bg-black/95 backdrop-blur-lg transform -translate-x-full transition-transform duration-300 ease-in-out md:hidden"
+    >
+      <div class="container mx-auto px-6 py-8 h-full flex flex-col">
+        <div class="flex justify-between items-center mb-12">
+          <a href="/" class="flex items-center" aria-label="CodeDynasty Home">
+            <div class="w-10 h-10 mr-3">
+              <img src="/logo.png" class="w-full h-full object-cover rounded-lg" alt="CodeDynasty Logo" />
+            </div>
+            <span class="text-xl font-bold text-white">CodeDynasty</span>
+          </a>
+          <button id="close-mobile-menu" class="text-white/70 hover:text-white transition-colors">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <nav class="flex-1 flex flex-col space-y-4">
+          <a href="https://discord.codedynasty.dev" class="text-white/80 hover:text-white text-lg py-3 px-4 rounded-lg hover:bg-white/5 transition-colors">
+            Discord
+          </a>
+          <a href="https://github.com/CodeDynasty-dev" target="_blank" class="text-white/80 hover:text-white text-lg py-3 px-4 rounded-lg hover:bg-white/5 transition-colors">
+            GitHub
+          </a>
+          <a href="/contact.html" class="text-white/80 hover:text-white text-lg py-3 px-4 rounded-lg hover:bg-white/5 transition-colors">
+            Contact
+          </a>
+        </nav>
+        <div class="pt-6 border-t border-white/10 mt-auto">
+          <p class="text-white/50 text-sm text-center">© 2025 CodeDynasty. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Mobile menu functionality
+      const mobileMenuButton = document.getElementById("mobile-menu-button");
+      const closeMobileMenu = document.getElementById("close-mobile-menu");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const body = document.body;
+
+      function toggleMobileMenu() {
+        mobileMenu.classList.toggle("translate-x-0");
+        mobileMenu.classList.toggle("translate-x-full");
+        body.classList.toggle("overflow-hidden");
+      }
+
+      if (mobileMenuButton && closeMobileMenu && mobileMenu) {
+        mobileMenuButton.addEventListener("click", toggleMobileMenu);
+        closeMobileMenu.addEventListener("click", toggleMobileMenu);
+
+        // Close menu when clicking on a link
+        document.querySelectorAll("#mobile-menu a").forEach((link) => {
+          link.addEventListener("click", () => {
+            mobileMenu.classList.remove("translate-x-0");
+            mobileMenu.classList.add("translate-x-full");
+            body.classList.remove("overflow-hidden");
+          });
+        });
+
+        // Close menu when pressing Escape key
+        document.addEventListener("keydown", (e) => {
+          if (
+            e.key === "Escape" &&
+            mobileMenu.classList.contains("translate-x-0")
+          ) {
+            toggleMobileMenu();
+          }
+        });
+      }
+    </script>
+
+    <main class="pt-20 pb-12">
+      <div class="container mx-auto px-4 md:px-6 mt-12">
+        <article class="mx-auto max-w-4xl post">
+          <div class="blog-content prose prose-invert prose-lg">
+            <img class="size-45 mx-auto my-12 rounded-[50%]" src="https://avatars.githubusercontent.com/u/75016347?v=4">
+<h1>Hi there! 👋 I’m Friday Candour</h1>
+<p>Imagine a world where technology doesn’t just function—it inspires.
+<br>
+<br></p>
+<p>I am Friday Candour, a tech Engineer on a mission to reshape the digital landscape.
+Ever since I first booted up a Linux machine, I’ve been hooked on the power of code to turn wild ideas into reality. Driven by curiosity and a passion for innovation, I create tools and solutions that solve problems.
+<br>
+<br></p>
+<h2>Technologies I Use</h2>
+<p>My toolkit and my expertise are my superpower:</p>
+<ul>
+<li><strong>🐧 Linux</strong>: I'm a Linux enthusiast with experience across some languages but most especially.
+<ul>
+<li><strong>JavaScript/TypeScript</strong>: My go-to for crafting dynamic, user-focused web experiences in less time.</li>
+<li><strong>Frameworks &amp; Libraries</strong>: React, Nextjs, Vue and Angular for Frontend, Express, Jetpath and Bunjs for robust back-ends, I build seamless applications with tools like these.</li>
+<li><strong>React Native &amp; Flutter</strong>: For building cross-platform mobile apps that feel native and perform flawlessly.</li>
+<li><strong>Golang &amp; Zig</strong>: My choice for high-performance applications.</li>
+</ul>
+</li>
+</ul>
+<br>
+<br>
+<h2>Featured Projects</h2>
+<p>Here’s where my passion meets action. These projects showcase my engineering skills and innovative spirit:</p>
+<br>
+<ul>
+<li><strong><a href="https://github.com/Codedynasty-dev/cradova">Cradova</a></strong><br>
+<em>Empowering developers to build lightning-fast Single Page Applications with ease.</em><br>
+Inspired by vanilla javascript, Cradova is a framework that simplifies complexity. It’s fast, modern, and built for creativity.</li>
+</ul>
+<br>
+<br>
+<p><a href="https://github.com/Codedynasty-dev/cradova"><img src="https://github-readme-stats.vercel.app/api/pin/?username=Codedynasty-dev&amp;repo=cradova" alt="Cradova Web Framework"></a></p>
+<br>
+<ul>
+<li><strong><a href="https://github.com/Codedynasty-dev/Exabase">Exabase DBMS</a></strong><br>
+<em>Enabling seamless scaling and data consistency in a distributed world.</em><br>
+Think of Exabase as a symphony of nodes, each playing in perfect harmony—like emergent behavior in complex systems. This NoSQL database delivers performance and reliability, ready to power the data-driven future. thats said, it's still in active development.</li>
+</ul>
+<br>
+<br>
+<p><a href="https://github.com/Codedynasty-dev/Exabase"><img src="https://github-readme-stats.vercel.app/api/pin/?username=Codedynasty-dev&amp;repo=Exabase" alt="Exabase DBMS"></a></p>
+<br>
+<ul>
+<li><strong><a href="https://github.com/Codedynasty-dev/JetPath">JetPath</a></strong><br>
+<em>Accelerating server-side development with minimalist power.</em><br>
+JetPath is simplicity and blazingly speed for server-side applications— Built for Node, Deno, and Bun.js.
+it makes server-side coding fast and fun. Ready to speed up your backend? Let’s make it happen!</li>
+</ul>
+<br>
+<br>
+<p><a href="https://github.com/Codedynasty-dev/JetPath"><img src="https://github-readme-stats.vercel.app/api/pin/?username=Codedynasty-dev&amp;repo=JetPath" alt="JetPath"></a></p>
+<br>
+<br>
+<p><strong><em>No that's not all! check out more on this github <a href="https://github.com/CodeDynasty-dev">organization</a></em></strong></p>
+<h2>My Approach</h2>
+<p>Great software is a blends of creativity and quality. I tackle every project with a test driven development, exploring, refining and getting user feedback, delivering useful solutions to problems. Collaboration fuels me; I thrive when ideas flow freely and innovation becomes a team effort. Let’s work together!</p>
+<br>
+<br>
+<h2>What’s Cooking?</h2>
+<ul>
+<li>Building tools that empower creators and techies.</li>
+<li>Diving into distributed systems and performance optimization.</li>
+<li>Exploring AI’s intersection with software to craft smarter solutions.<br>
+I’m always learning, always evolving—because in tech, standing still isn’t an option.</li>
+</ul>
+<br>
+<br>
+<h2>📬 Let’s Connect and Create!</h2>
+<p>Got a bold idea, a tricky problem, or just want to geek out over code? hit me on my socials.
+<br>
+<br></p>
+<div class="flex gap-2">
+<a href="https://www.twitter.com/fridaycandour" alt="Follow Me on Twitter"> 
+    <img src="https://img.shields.io/badge/twitter-%231DA1F2.svg?&style=for-the-badge&logo=twitter&logoColor=white" />
+</a>
+<a href="https://www.linkedin.com/in/friday-candour-8a18011a5/" alt="Connect on LinkedIn"> 
+  <img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />
+</a>
+<a href="mailto:fridaycandours@gmail.com">
+  <img src="https://img.shields.io/badge/email me-%23D14836.svg?&style=for-the-badge&logo=gmail&logoColor=white" />
+</a>
+<a href="https://api.whatsapp.com/send?phone=2348166948755&text=Hello%20Friday,%20I%20got%20your%20contact%20from%20your%20Github%20profile" alt="Connect on Whatsapp"> 
+    <img src="https://img.shields.io/badge/WHATSAPP-%2325D366.svg?&style=for-the-badge&logo=whatsapp&logoColor=white" />
+</a>
+</div>
+<br>
+<br>
+<h2>🚀 Join My Journey</h2>
+<p>If my work sparks something in you, let’s amplify it together! Star my repos, share your feedback, or partner with me to reshape the future. Your support drives innovation—.</p>
+<br>
+<p><strong><em>&quot;Infinite scrolling won't solve your tech debt - I will.&quot;</em></strong></p>
+
+          </div>
+        </article>
+      </div>
+    </main>
+
+    <footer class="bg-black/30 border-t border-white/10 py-12">
+      <div class="container mx-auto px-4">
+        <div class="text-center">
+          <p class="text-slate-500 text-sm">
+            &copy; 2025 CodeDynasty. Building modern software for humanity.
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script src="/script/index.js"></script>
+  </body>
+</html>
+
+<!-- codedynasty CDX-01 dynacore canon, cathedral-of-code atmosphere, engineered void dominance, fractured-grid asymmetry, monolith-before-motion rule, obsidian depth field with restrained signal-blue ignition lines only, titanium-glass material realism, high-contrast volumetric light shafts cutting through controlled darkness, weight-first composition logic, dense negative space discipline, macro-scale structural presence, zero stock-photo language, proprietary system-forge aesthetic, anti-template rendering law -->

@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CODEDYNASTY - Machine Learning Classroom</title>
+    <link rel="stylesheet" href="/bundle.css" />
+    <link rel="stylesheet" href="/styles/main.css" />
+    <link rel="stylesheet" href="/styles/post.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css"
+    />
+    <meta name="description" content="Machine Learning Classroom" />
+  </head>
+  <body>
+    <header class="fixed w-full top-0 z-50 nav-modern">
+      <nav class="container mx-auto px-6">
+        <div class="flex justify-between items-center h-20">
+          <a href="/" class="flex items-center group" aria-label="CodeDynasty Home">
+            <div class="w-10 h-10 mr-3 transition-transform duration-300 group-hover:scale-110">
+              <img
+                src="/logo.png"
+                class="w-full h-full object-cover rounded-lg"
+                alt="CodeDynasty Logo"
+              />
+            </div>
+            <span class="text-xl font-bold text-white">CodeDynasty</span>
+          </a>
+
+          <!-- Mobile menu button -->
+          <button
+            id="mobile-menu-button"
+            class="md:hidden text-white focus:outline-none"
+            aria-label="Toggle menu"
+          >
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+          </button>
+
+          <!-- Desktop Navigation -->
+          <div class="hidden md:flex items-center space-x-2">
+            <a
+              href="/blog.html"
+              class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors rounded-lg hover:bg-white/5"
+            >
+              Blog
+            </a>
+            <a
+              href="https://discord.codedynasty.dev"
+              class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors rounded-lg hover:bg-white/5"
+            >
+              Discord
+            </a>
+            <a
+              href="https://github.com/CodeDynasty-dev"
+              class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors rounded-lg hover:bg-white/5"
+              target="_blank"
+            >
+              GitHub
+            </a>
+            <a
+              href="/contact.html"
+              class="px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg hover:shadow-lg hover:shadow-indigo-500/50 transition-all"
+            >
+              Contact
+            </a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div
+      id="mobile-menu"
+      class="fixed inset-0 z-50 bg-black/95 backdrop-blur-lg transform -translate-x-full transition-transform duration-300 ease-in-out md:hidden"
+    >
+      <div class="container mx-auto px-6 py-8 h-full flex flex-col">
+        <div class="flex justify-between items-center mb-12">
+          <a href="/" class="flex items-center" aria-label="CodeDynasty Home">
+            <div class="w-10 h-10 mr-3">
+              <img src="/logo.png" class="w-full h-full object-cover rounded-lg" alt="CodeDynasty Logo" />
+            </div>
+            <span class="text-xl font-bold text-white">CodeDynasty</span>
+          </a>
+          <button id="close-mobile-menu" class="text-white/70 hover:text-white transition-colors">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <nav class="flex-1 flex flex-col space-y-4">
+          <a href="https://discord.codedynasty.dev" class="text-white/80 hover:text-white text-lg py-3 px-4 rounded-lg hover:bg-white/5 transition-colors">
+            Discord
+          </a>
+          <a href="https://github.com/CodeDynasty-dev" target="_blank" class="text-white/80 hover:text-white text-lg py-3 px-4 rounded-lg hover:bg-white/5 transition-colors">
+            GitHub
+          </a>
+          <a href="/contact.html" class="text-white/80 hover:text-white text-lg py-3 px-4 rounded-lg hover:bg-white/5 transition-colors">
+            Contact
+          </a>
+        </nav>
+        <div class="pt-6 border-t border-white/10 mt-auto">
+          <p class="text-white/50 text-sm text-center">© 2025 CodeDynasty. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Mobile menu functionality
+      const mobileMenuButton = document.getElementById("mobile-menu-button");
+      const closeMobileMenu = document.getElementById("close-mobile-menu");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const body = document.body;
+
+      function toggleMobileMenu() {
+        mobileMenu.classList.toggle("translate-x-0");
+        mobileMenu.classList.toggle("translate-x-full");
+        body.classList.toggle("overflow-hidden");
+      }
+
+      if (mobileMenuButton && closeMobileMenu && mobileMenu) {
+        mobileMenuButton.addEventListener("click", toggleMobileMenu);
+        closeMobileMenu.addEventListener("click", toggleMobileMenu);
+
+        // Close menu when clicking on a link
+        document.querySelectorAll("#mobile-menu a").forEach((link) => {
+          link.addEventListener("click", () => {
+            mobileMenu.classList.remove("translate-x-0");
+            mobileMenu.classList.add("translate-x-full");
+            body.classList.remove("overflow-hidden");
+          });
+        });
+
+        // Close menu when pressing Escape key
+        document.addEventListener("keydown", (e) => {
+          if (
+            e.key === "Escape" &&
+            mobileMenu.classList.contains("translate-x-0")
+          ) {
+            toggleMobileMenu();
+          }
+        });
+      }
+    </script>
+
+    <main class="pt-20 pb-12">
+      <div class="container mx-auto px-4 md:px-6 mt-12">
+        <article class="mx-auto max-w-4xl post">
+          <div class="blog-content prose prose-invert prose-lg">
+            <h1>Machine Learning Classroom</h1>
+<p>We are going to build cool ml projects, that is the main goal.</p>
+<h1>for the next two months</h1>
+<p>Only Sat–Sun. 2 days per week, 8 weeks total, okay.</p>
+<hr>
+<h2>Weekend-by-Weekend Plan</h2>
+<table>
+<thead>
+<tr>
+<th>Weekend</th>
+<th>Core Goal</th>
+<th>One-Line Task</th>
+<th>Essential Resource</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1</strong></td>
+<td>Python &amp; NumPy</td>
+<td>“Write a 2-layer NN in pure NumPy.”</td>
+<td><a href="https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632/">Hands-On ML, Ch. 2–9</a></td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td>Linear → Logistic</td>
+<td>“From scratch logistic regression on Iris.”</td>
+<td><a href="https://www.amazon.com/dp/199957950X">The Hundred-Page ML Book, §1–5</a></td>
+</tr>
+<tr>
+<td><strong>3</strong></td>
+<td>Loss Landscapes</td>
+<td>“Add L2, dropout, early-stopping.”</td>
+<td><a href="https://www.deeplearningbook.org/">Deep Learning, Ch. 7</a></td>
+</tr>
+<tr>
+<td><strong>4</strong></td>
+<td>Convolutions</td>
+<td>“Pure NumPy CNN on CIFAR-10.”</td>
+<td><a href="https://github.com/eriklindernoren/ML-From-Scratch/blob/master/mlfromscratch/deep_learning/convolutional_neural_network.py">CNN from Scratch Notebook</a></td>
+</tr>
+<tr>
+<td><strong>5</strong></td>
+<td>Autograd Engine</td>
+<td>“Build micro autograd in &lt;200 lines.”</td>
+<td><a href="https://youtu.be/VMj-3S1tku0">MicroGrad Walkthrough</a></td>
+</tr>
+<tr>
+<td><strong>6</strong></td>
+<td>Optimizers</td>
+<td>“Implement Adam &amp; RMSprop.”</td>
+<td><a href="https://cs231n.github.io/optimization-1/">Optimization for DL course notes</a></td>
+</tr>
+<tr>
+<td><strong>7</strong></td>
+<td>Generative</td>
+<td>“Train a VAE on CelebA 64×64.”</td>
+<td><a href="https://github.com/AntixK/PyTorch-VAE/blob/master/models/vanilla_vae.py">VAE from Scratch</a></td>
+</tr>
+<tr>
+<td><strong>8</strong></td>
+<td>Deploy &amp; Invent</td>
+<td>“Wrap your best model in a REST API.”</td>
+<td><a href="https://fastapi.tiangolo.com/tutorial/">FastAPI ML Serving Guide</a></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2>Libraries needed?</h2>
+<pre><code class="language-bash">pip install numpy matplotlib tqdm requests fastapi uvicorn
+</code></pre>
+<hr>
+<h2>Our Weekend Routine (needs review?)</h2>
+<ol>
+<li><strong>Sat 09:00-12:00</strong> – Read the “Essential Resource” for that weekend.</li>
+<li><strong>Sat 14:00-18:00</strong> – Code &amp; debug.</li>
+<li><strong>Sun 09:00-12:00</strong> – Improve &amp; benchmark.</li>
+<li><strong>Sun 14:00-17:00</strong> – Push to GitHub?.</li>
+</ol>
+<hr>
+<h2>Bookshelf (needs review?)</h2>
+<ul>
+<li><strong>Hands-On ML</strong> – practical APIs after you build from scratch</li>
+<li><strong>The Hundred-Page ML Book</strong> – theory in one sitting</li>
+<li><a href="https://d2l.ai/">Dive into Deep Learning</a> – free HTML</li>
+<li><a href="https://www.deeplearningbook.org/">Deep Learning</a> – free PDF</li>
+</ul>
+<hr>
+<h2>Deliverable (needs review?)</h2>
+<p>After 8 weekends: GitHub repo with</p>
+<ul>
+<li>8 notebooks summarries (one per weekend)</li>
+<li>A tiny invention? hmm</li>
+</ul>
+<h2>Foundational Topics</h2>
+<table>
+<thead>
+<tr>
+<th>Topics</th>
+<th>Resources</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Python Refresher</td>
+<td>• <a href="https://www.py4e.com/">Python for Everybody</a> (free course)</td>
+</tr>
+<tr>
+<td>Linear Algebra Crash</td>
+<td>• <a href="https://youtu.be/fNk_zzaMoSs">3Blue1Brown Essence of LA</a> (YouTube)</td>
+</tr>
+<tr>
+<td>Build a Perceptron</td>
+<td>• <a href="https://github.com/eriklindernoren/ML-From-Scratch/blob/master/mlfromscratch/supervised_learning/perceptron.py">Perceptron from Scratch Notebook</a></td>
+</tr>
+<tr>
+<td>NumPy &amp; Matplotlib</td>
+<td>• <a href="https://numpy.org/devdocs/user/quickstart.html">Official NumPy Tutorial</a></td>
+</tr>
+<tr>
+<td>Feed-Forward Neural Net</td>
+<td>• <a href="https://nnfs.io/">Neural Networks from Scratch Book</a> (PDF)</td>
+</tr>
+<tr>
+<td>Train on MNIST</td>
+<td>• <a href="https://github.com/hsjeong5/MNIST-for-Numpy">MNIST in NumPy</a></td>
+</tr>
+<tr>
+<td>Backprop Deep-Dive</td>
+<td>• <a href="https://colah.github.io/posts/2015-08-Backprop/">Calculus on Backprop</a></td>
+</tr>
+<tr>
+<td>Implement SGD &amp; Adam</td>
+<td>• <a href="https://github.com/llSourcell/How_to_use_Adam_Optimizer_in_TensorFlow">Optimization Algorithms Code</a></td>
+</tr>
+<tr>
+<td>Regularization Tricks</td>
+<td>• <a href="https://arxiv.org/abs/1207.0580">Dropout Paper</a></td>
+</tr>
+<tr>
+<td>Build ConvNet</td>
+<td>• <a href="https://github.com/eriklindernoren/ML-From-Scratch/blob/master/mlfromscratch/deep_learning/convolutional_neural_network.py">ConvNet from Scratch</a></td>
+</tr>
+<tr>
+<td>Experiment on CIFAR-10</td>
+<td>• <a href="https://www.cs.toronto.edu/~kriz/cifar.html">CIFAR-10 Dataset</a></td>
+</tr>
+<tr>
+<td>Invent Something Small</td>
+<td>• <a href="https://github.com/topics/ml-project-ideas">Ideas List</a></td>
+</tr>
+</tbody>
+</table>
+<h1>When done what goals are achieved?</h1>
+<table>
+<thead>
+<tr>
+<th>Artifact</th>
+<th>Level</th>
+<th>What It Means</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>8 clean notebooks</strong></td>
+<td>Beginner → Intermediate</td>
+<td>Each notebook trains a model <strong>from scratch in pure NumPy</strong>: 2-layer NN, logistic reg, CNN, VAE, etc.</td>
+</tr>
+<tr>
+<td><strong>Custom autograd engine</strong></td>
+<td>Intermediate</td>
+<td>~200 lines of code that can compute gradients for any feed-forward graph you design.</td>
+</tr>
+<tr>
+<td><strong>Working CNN on CIFAR-10</strong></td>
+<td>Intermediate</td>
+<td>70 %+ accuracy without PyTorch/TensorFlow; proves you understand convolutions, backprop, and optimization.</td>
+</tr>
+<tr>
+<td><strong>VAE that samples faces</strong></td>
+<td>Intermediate</td>
+<td>Generates 64×64 celebrity faces; you coded the re-parameterization trick yourself.</td>
+</tr>
+<tr>
+<td><strong>Personal GitHub portfolio</strong></td>
+<td>Showcase</td>
+<td>One repo, clear timeline, reproducible notebooks → instant credibility for any future collaborator.</td>
+</tr>
+<tr>
+<td><strong>Mental model</strong></td>
+<td>Advanced</td>
+<td>You can open any new paper and implement it in raw NumPy because you’ve already done the moving parts.</td>
+</tr>
+</tbody>
+</table>
+
+          </div>
+        </article>
+      </div>
+    </main>
+
+    <footer class="bg-black/30 border-t border-white/10 py-12">
+      <div class="container mx-auto px-4">
+        <div class="text-center">
+          <p class="text-slate-500 text-sm">
+            &copy; 2025 CodeDynasty. Building modern software for humanity.
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script src="/script/index.js"></script>
+  </body>
+</html>
+

@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Stanford AI Curriculum Without The Stanford Price Tag - CodeDynasty</title>
+    <link rel="stylesheet" href="/bundle.css" />
+    <link rel="stylesheet" href="/styles/main.css" />
+    <link rel="stylesheet" href="/styles/post.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css"
+    />
+    <meta name="description" content="A structured self-study roadmap mirroring Stanford's AI graduate certificate program using entirely free resources." />
+    <meta name="keywords" content="code, programming, development" />
+    <meta name="author" content="Friday Candour" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#6366f1" />
+    <meta property="og:title" content="The Stanford AI Curriculum Without The Stanford Price Tag" />
+    <meta property="og:description" content="A structured self-study roadmap mirroring Stanford's AI graduate certificate program using entirely free resources." />
+    <meta property="og:url" content="https://codedynasty.dev" />
+    <meta property="og:image" content="https://codedynasty.dev/post-images/stanford-curriculum-price-tag.jpeg" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="CodeDynasty" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="The Stanford AI Curriculum Without The Stanford Price Tag" />
+    <meta name="twitter:description" content="A structured self-study roadmap mirroring Stanford's AI graduate certificate program using entirely free resources." />
+    <meta name="twitter:image" content="https://codedynasty.dev/post-images/stanford-curriculum-price-tag.jpeg" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <style>
+      .katex-display,
+      .katex,
+      .katex-mathml,
+      .katex-html {
+        display: inline !important;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <header class="fixed w-full top-0 z-50 nav-modern">
+      <nav class="container mx-auto px-6">
+        <div class="flex justify-between items-center h-20">
+          <a
+            href="/"
+            class="flex items-center group"
+            aria-label="CodeDynasty Home"
+          >
+            <div
+              class="w-10 h-10 mr-3 transition-transform duration-300 group-hover:scale-110"
+            >
+              <img
+                src="/logo.png"
+                class="w-full h-full object-cover rounded-lg"
+                alt="CodeDynasty Logo"
+              />
+            </div>
+            <span class="text-xl font-bold text-white">CodeDynasty</span>
+          </a>
+
+          <!-- Mobile menu button -->
+          <button
+            id="mobile-menu-button"
+            class="md:hidden text-white focus:outline-none"
+            aria-label="Toggle menu"
+          >
+            <svg
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16m-7 6h7"
+              />
+            </svg>
+          </button>
+
+          <!-- Desktop Navigation -->
+          <div class="hidden md:flex items-center space-x-2">
+            <a
+              href="/blog.html"
+              class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors rounded-lg hover:bg-white/5"
+            >
+              Blog
+            </a>
+            <a
+              href="https://discord.codedynasty.dev"
+              class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors rounded-lg hover:bg-white/5"
+            >
+              Discord
+            </a>
+            <a
+              href="https://github.com/CodeDynasty-dev"
+              class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors rounded-lg hover:bg-white/5"
+              target="_blank"
+            >
+              GitHub
+            </a>
+            <a
+              href="/contact.html"
+              class="px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg hover:shadow-lg hover:shadow-indigo-500/50 transition-all"
+            >
+              Contact
+            </a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div
+      id="mobile-menu"
+      class="fixed inset-0 z-50 bg-black/95 backdrop-blur-lg transform -translate-x-full transition-transform duration-300 ease-in-out md:hidden"
+    >
+      <div class="container mx-auto px-6 py-8 h-full flex flex-col">
+        <div class="flex justify-between items-center mb-12">
+          <a href="/" class="flex items-center" aria-label="CodeDynasty Home">
+            <div class="w-10 h-10 mr-3">
+              <img
+                src="/logo.png"
+                class="w-full h-full object-cover rounded-lg"
+                alt="CodeDynasty Logo"
+              />
+            </div>
+            <span class="text-xl font-bold text-white">CodeDynasty</span>
+          </a>
+          <button
+            id="close-mobile-menu"
+            class="text-white/70 hover:text-white transition-colors"
+          >
+            <svg
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+        </div>
+        <nav class="flex-1 flex flex-col space-y-4">
+          <a
+            href="https://discord.codedynasty.dev"
+            class="text-white/80 hover:text-white text-lg py-3 px-4 rounded-lg hover:bg-white/5 transition-colors"
+          >
+            Discord
+          </a>
+          <a
+            href="https://github.com/CodeDynasty-dev"
+            target="_blank"
+            class="text-white/80 hover:text-white text-lg py-3 px-4 rounded-lg hover:bg-white/5 transition-colors"
+          >
+            GitHub
+          </a>
+          <a
+            href="/contact.html"
+            class="text-white/80 hover:text-white text-lg py-3 px-4 rounded-lg hover:bg-white/5 transition-colors"
+          >
+            Contact
+          </a>
+        </nav>
+        <div class="pt-6 border-t border-white/10 mt-auto">
+          <p class="text-white/50 text-sm text-center">
+            © 2025 CodeDynasty. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <main class="pt-20 pb-12">
+      <!-- Reading Progress Bar -->
+      <div
+        class="reading-progress-container fixed top-20 left-0 w-full z-40 h-1 bg-transparent"
+      >
+    <div
+  class="reading-progress-bar h-full bg-gradient-to-r from-blue-500 via-purple-500 to-yellow-500 bg-[length:200%_100%]"
+  style="width: 0%"
+></div>
+      </div>
+
+      <!-- Article Header -->
+      <section class="relative py-16 md:py-24">
+        <div class="container mx-auto px-4 md:px-6">
+          <div class="max-w-4xl mx-auto">
+            <!-- Category Badge -->
+            <div class="mb-6">
+              <span class="badge">Machine Learning</span>
+            </div>
+
+            <!-- Title -->
+            <h1
+              class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight"
+            >
+              The Stanford AI Curriculum Without The Stanford Price Tag
+            </h1>
+
+            <!-- Meta Info -->
+            <div class="flex flex-wrap items-center gap-6 text-slate-400">
+              <!-- Author -->
+              <div class="flex items-center">
+                <div
+                  class="w-12 h-12 rounded-full overflow-hidden mr-3 bg-gradient-to-br from-indigo-500 to-purple-500 p-0.5"
+                >
+                  <div
+                    class="w-full h-full rounded-full overflow-hidden bg-slate-900"
+                  >
+                    <img
+                      src="https://avatars.githubusercontent.com/u/75016347"
+                      alt="Friday Candour"
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <span class="block font-medium text-white">Friday Candour</span>
+                  <span class="text-sm text-slate-500">Software Developer</span>
+                </div>
+              </div>
+
+              <!-- Date & Read Time -->
+              <div class="flex items-center gap-4 text-sm">
+                <div class="flex items-center">
+                  <svg
+                    class="h-4 w-4 mr-2"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                    />
+                  </svg>
+                  <time datetime="2025 12 22">2025 12 22</time>
+                </div>
+                <div class="flex items-center">
+                  <svg
+                    class="h-4 w-4 mr-2"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                  <span>8 min read</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Hero Image -->
+      <section class="mb-16">
+        <div class="container mx-auto px-4 md:px-6">
+          <div class="max-w-5xl mx-auto">
+            <div class="aspect-video overflow-hidden rounded-2xl">
+              <img
+                src="/post-images/stanford-curriculum-price-tag.jpeg"
+                alt="The Stanford AI Curriculum Without The Stanford Price Tag"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Article Content -->
+      <div class="container mx-auto px-4 md:px-6">
+        <div class="flex flex-col lg:flex-row gap-12 max-w-7xl mx-auto">
+          <!-- Sidebar - Share Widget -->
+          <aside class="hidden lg:block w-20 self-start sticky top-32">
+            <div class="flex flex-col items-center gap-4">
+              <span class="text-xs text-slate-500 font-medium mb-2">SHARE</span>
+              <a
+                href="#"
+                class="w-12 h-12 rounded-full flex items-center justify-center bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400"
+              >
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a
+                href="#"
+                class="w-12 h-12 rounded-full flex items-center justify-center bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400"
+              >
+                <i class="fab fa-linkedin"></i>
+              </a>
+              <a
+                href="#"
+                class="w-12 h-12 rounded-full flex items-center justify-center bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400"
+              >
+                <i class="fab fa-facebook"></i>
+              </a>
+              <a
+                href="#"
+                class="w-12 h-12 rounded-full flex items-center justify-center bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400 copy-link-button"
+                data-tooltip="Copy Link"
+              >
+                <i class="fas fa-link"></i>
+              </a>
+            </div>
+          </aside>
+
+          <!-- Main Content -->
+          <article class="flex-1 max-w-4xl post">
+            <div class="blog-content prose prose-invert prose-lg max-w-none">
+              <docmach type="function" params="tags:artificial intelligence,machine learning,self-study,stanford,deep learning,python,linear algebra,computer vision" file="fragments/tags.js" />
+<h2>The Curriculum Problem</h2>
+<p>Stanford's AI graduate certificate costs between \$19,000 and \$24,000. The knowledge it delivers, however, exists freely across the internet. The challenge is not access but structure. Most self-learners fail not from lack of resources but from lack of sequencing.</p>
+<p>What follows is a reconstruction of that sequence using publicly available materials. The timeline mirrors Stanford's part-time track: one to three years depending on prior background and weekly commitment.</p>
+<h2>Phase One: Mathematical Foundations</h2>
+<p>AI without mathematics is pattern matching without understanding. Three areas require attention before touching any model.</p>
+<h3>Calculus</h3>
+<p>Derivatives, integrals, and the fundamental theorems. These appear constantly in optimization and gradient-based learning. The chain rule alone underpins backpropagation.</p>
+<p>Consider a simple gradient descent update:</p>
+<p>$\theta_{t+1} = \theta_t - \alpha \nabla_\theta J(\theta)$</p>
+<p>Where $\alpha$ is the learning rate and $\nabla_\theta J(\theta)$ is the gradient of the cost function. Without calculus, this is incantation.</p>
+<p>Khan Academy covers this adequately. MIT OpenCourseWare provides more rigor. Budget four to six weeks.</p>
+<h3>Linear Algebra</h3>
+<p>Matrix operations, vector spaces, linear transformations. Neural networks are fundamentally matrix multiplications with nonlinearities.</p>
+<p>A simple forward pass:</p>
+<pre><code class="language-python"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">forward</span>(<span class="hljs-params">X, W1, W2</span>):
+    hidden = np.maximum(<span class="hljs-number">0</span>, X @ W1)  <span class="hljs-comment"># ReLU activation</span>
+    output = hidden @ W2
+    <span class="hljs-keyword">return</span> output
+</code></pre>
+<p>The <code>@</code> operator is matrix multiplication. If this looks foreign, spend time here. Sheldon Axler's &quot;Linear Algebra Done Right&quot; is excellent. Gilbert Strang's MIT course is free and thorough. Four to six weeks.</p>
+<h3>Probability and Statistics</h3>
+<p>Random variables, distributions, conditional probability, Bayes' theorem, linear regression. Machine learning is applied statistics with computational muscle.</p>
+<p>Bayes' theorem in its useful form:</p>
+<p>$P(H|E) = \frac{P(E|H) \cdot P(H)}{P(E)}$</p>
+<p>MIT OpenCourseWare's &quot;Introduction to Probability and Statistics&quot; covers the essentials. The central limit theorem and inference with unknown priors matter more than most tutorials suggest.</p>
+<h2>Phase Two: Programming Infrastructure</h2>
+<p>Mathematics provides the theory. Code provides the implementation.</p>
+<h3>Linux Command Line</h3>
+<p>Most AI infrastructure runs on Linux. Basic navigation, file manipulation, and shell scripting are prerequisites. Ubuntu's beginner guide suffices. One to two weeks.</p>
+<h3>Object-Oriented Programming</h3>
+<p>Data types, control flow, functions, classes. These are not optional. Code Academy offers adequate coverage.</p>
+<h3>Data Structures and Algorithms</h3>
+<p>Lists, stacks, sorting, searching. Model optimization often reduces to algorithmic efficiency.</p>
+<pre><code class="language-python"><span class="hljs-comment"># Binary search: O(log n) vs linear search: O(n)</span>
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">binary_search</span>(<span class="hljs-params">arr, target</span>):
+    left, right = <span class="hljs-number">0</span>, <span class="hljs-built_in">len</span>(arr) - <span class="hljs-number">1</span>
+    <span class="hljs-keyword">while</span> left &lt;= right:
+        mid = (left + right) // <span class="hljs-number">2</span>
+        <span class="hljs-keyword">if</span> arr[mid] == target:
+            <span class="hljs-keyword">return</span> mid
+        <span class="hljs-keyword">elif</span> arr[mid] &lt; target:
+            left = mid + <span class="hljs-number">1</span>
+        <span class="hljs-keyword">else</span>:
+            right = mid - <span class="hljs-number">1</span>
+    <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>
+</code></pre>
+<p>Four to six weeks.</p>
+<h3>Python and Its Ecosystem</h3>
+<p>Python is the lingua franca of AI. Google's Python class provides the basics. &quot;Automate the Boring Stuff&quot; offers practical reinforcement.</p>
+<p>The libraries matter more than the language:</p>
+<pre><code class="language-python"><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+<span class="hljs-keyword">import</span> torch
+<span class="hljs-keyword">import</span> torch.nn <span class="hljs-keyword">as</span> nn
+
+<span class="hljs-comment"># A minimal neural network in PyTorch</span>
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">SimpleNet</span>(nn.Module):
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, input_dim, hidden_dim, output_dim</span>):
+        <span class="hljs-built_in">super</span>().__init__()
+        <span class="hljs-variable language_">self</span>.fc1 = nn.Linear(input_dim, hidden_dim)
+        <span class="hljs-variable language_">self</span>.fc2 = nn.Linear(hidden_dim, output_dim)
+        <span class="hljs-variable language_">self</span>.relu = nn.ReLU()
+
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">forward</span>(<span class="hljs-params">self, x</span>):
+        x = <span class="hljs-variable language_">self</span>.relu(<span class="hljs-variable language_">self</span>.fc1(x))
+        <span class="hljs-keyword">return</span> <span class="hljs-variable language_">self</span>.fc2(x)
+</code></pre>
+<p>NumPy for numerical operations. PyTorch or TensorFlow for deep learning. Pandas for data manipulation. Budget eight to fourteen weeks total.</p>
+<h2>Phase Three: AI Fundamentals</h2>
+<p>Two paths diverge here. Broader AI covers constraint satisfaction, Markov decision processes, graphical models, and logic. Machine learning focuses on algorithms that learn from data.</p>
+<p>The machine learning path is more immediately applicable. Start there unless you have specific interest in symbolic AI or robotics.</p>
+<h3>Core Machine Learning</h3>
+<p>Supervised learning: given inputs and outputs, learn the mapping. Unsupervised learning: given only inputs, find structure. Reinforcement learning: learn through interaction and reward.</p>
+<p>Stanford's CS229 materials are freely available. Andrew Ng's 216-page course notes remain one of the best introductions to the field. His Coursera specialization provides video format if that suits your learning style.</p>
+<p>Fast.ai takes a different approach: practical first, theory later. Both work. Choose based on how you learn.</p>
+<p>The loss function for linear regression:</p>
+<p>$J(\theta) = \frac{1}{2m} \sum_{i=1}^{m} (h_\theta(x^{(i)}) - y^{(i)})^2$</p>
+<p>This is mean squared error. Minimizing it gives you the best fit. Gradient descent finds that minimum iteratively.</p>
+<h3>Projects</h3>
+<p>Stanford requires project work. Self-study should too. Three directions:</p>
+<ol>
+<li>Apply existing algorithms to new domains</li>
+<li>Develop novel algorithmic approaches</li>
+<li>Explore theoretical properties</li>
+</ol>
+<p>Review papers from ICML or NeurIPS for inspiration. Stanford publishes past student projects publicly.</p>
+<h2>Phase Four: Specialization</h2>
+<p>Deep learning, computer vision, natural language processing, reinforcement learning, robotics. Pick based on interest and career direction.</p>
+<p>Stanford's advanced courses are largely available on YouTube. CS231n for vision. CS224n for NLP. CS234 for reinforcement learning.</p>
+<p>A simple convolutional layer for image processing:</p>
+<pre><code class="language-python"><span class="hljs-keyword">import</span> torch.nn <span class="hljs-keyword">as</span> nn
+
+conv_layer = nn.Sequential(
+    nn.Conv2d(<span class="hljs-number">3</span>, <span class="hljs-number">64</span>, kernel_size=<span class="hljs-number">3</span>, padding=<span class="hljs-number">1</span>),
+    nn.BatchNorm2d(<span class="hljs-number">64</span>),
+    nn.ReLU(),
+    nn.MaxPool2d(<span class="hljs-number">2</span>, <span class="hljs-number">2</span>)
+)
+</code></pre>
+<p>This takes a 3-channel image and produces 64 feature maps. The pattern repeats with variations across most vision architectures.</p>
+<p>Futher Explainations direct resource links by Jean Lee (Founder of Exaltitude) <a href="https://docs.google.com/document/d/13jq-bv-9LjessYm4UfVFd8lnLgt0puCvkb7QR916Uz0/edit?tab=t.0">Download here</a></p>
+<h2>The Missing Piece</h2>
+<p>Curriculum completion is not competence. The gap between understanding concepts and building systems is substantial. Projects bridge it partially. Production experience bridges it fully.</p>
+<p>The free resources match Stanford's content. They cannot match the peer pressure, deadlines, and networking that tuition buys. Self-study requires self-discipline. Most who start do not finish.</p>
+<p>The path exists. Walking it is another matter entirely.</p>
+
+            </div>
+
+            <!-- Comments Section -->
+            <div class="mt-16 pt-16 border-t border-white/10">
+              <script
+                src="https://giscus.app/client.js"
+                data-repo="codedynasty-dev/codedynasty"
+                data-repo-id="R_kgDOOBViSg"
+                data-category="Ideas"
+                data-category-id="DIC_kwDOOBViSs4CqU7E"
+                data-mapping="pathname"
+                data-strict="1"
+                data-reactions-enabled="1"
+                data-emit-metadata="0"
+                data-input-position="top"
+                data-theme="noborder_dark"
+                data-lang="en"
+                data-loading="lazy"
+                crossorigin="anonymous"
+                async
+              ></script>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- Mobile Floating Actions -->
+      <div class="lg:hidden fixed bottom-6 right-6 z-40 flex flex-col gap-3">
+        <button
+          id="mobile-share-button"
+          class="w-14 h-14 rounded-full flex items-center justify-center bg-gradient-to-r from-indigo-500 to-purple-500 text-white shadow-lg hover:shadow-xl transition-all"
+        >
+          <i class="fas fa-share-alt"></i>
+        </button>
+        <a href="#" id="scroll-top">
+          <button
+            class="w-14 h-14 rounded-full flex items-center justify-center bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 transition-all"
+          >
+            <i class="fas fa-arrow-up"></i>
+          </button>
+        </a>
+      </div>
+
+      <!-- Mobile Share Dialog -->
+      <!-- <div
+        id="mobile-share-dialog"
+        class="hidden fixed inset-0 z-50 flex items-end justify-center"
+      >
+        <div
+          class="fixed inset-0 bg-black/80 backdrop-blur-sm"
+          id="mobile-share-overlay"
+        ></div>
+        <div
+          class="relative w-full max-w-md p-6 rounded-t-2xl bg-slate-900 border-t border-white/10"
+        >
+          <div class="flex justify-between items-center mb-6">
+            <h3 class="text-lg font-bold text-white">Share This Article</h3>
+            <button
+              id="close-share-dialog"
+              class="text-slate-400 hover:text-white"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"
+                ></path>
+              </svg>
+            </button>
+          </div>
+          <div class="grid grid-cols-4 gap-4">
+            <a href="#" class="flex flex-col items-center">
+              <div
+                class="w-14 h-14 rounded-full flex items-center justify-center mb-2 bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400"
+              >
+                <i class="fab fa-twitter fa-lg"></i>
+              </div>
+              <span class="text-xs text-slate-400">Twitter</span>
+            </a>
+            <a href="#" class="flex flex-col items-center">
+              <div
+                class="w-14 h-14 rounded-full flex items-center justify-center mb-2 bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400"
+              >
+                <i class="fab fa-linkedin fa-lg"></i>
+              </div>
+              <span class="text-xs text-slate-400">LinkedIn</span>
+            </a>
+            <a href="#" class="flex flex-col items-center">
+              <div
+                class="w-14 h-14 rounded-full flex items-center justify-center mb-2 bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400"
+              >
+                <i class="fab fa-facebook fa-lg"></i>
+              </div>
+              <span class="text-xs text-slate-400">Facebook</span>
+            </a>
+            <a
+              href="#"
+              class="flex flex-col items-center copy-link-button"
+              data-tooltip="Copied!"
+            >
+              <div
+                class="w-14 h-14 rounded-full flex items-center justify-center mb-2 bg-white/5 hover:bg-indigo-500/20 border border-white/10 hover:border-indigo-500/50 transition-all text-slate-400 hover:text-indigo-400"
+              >
+                <i class="fas fa-link fa-lg"></i>
+              </div>
+              <span class="text-xs text-slate-400">Copy</span>
+            </a>
+          </div>
+        </div>
+      </div> -->
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black/30 border-t border-white/10 py-12">
+      <div class="container mx-auto px-4">
+        <div class="text-center">
+          <p class="text-slate-500 text-sm">
+            &copy; 2025 CodeDynasty. Building modern software for humanity.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/script/index.js"></script>
+    <script>
+      // Mobile menu functionality
+      const mobileMenuButton = document.getElementById("mobile-menu-button");
+      const closeMobileMenu = document.getElementById("close-mobile-menu");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const body = document.body;
+
+      function toggleMobileMenu() {
+        mobileMenu.classList.toggle("translate-x-0");
+        mobileMenu.classList.toggle("-translate-x-full");
+        body.classList.toggle("overflow-hidden");
+      }
+
+      if (mobileMenuButton && closeMobileMenu && mobileMenu) {
+        mobileMenuButton.addEventListener("click", toggleMobileMenu);
+        closeMobileMenu.addEventListener("click", toggleMobileMenu);
+
+        document.querySelectorAll("#mobile-menu a").forEach((link) => {
+          link.addEventListener("click", () => {
+            mobileMenu.classList.remove("translate-x-0");
+            mobileMenu.classList.add("-translate-x-full");
+            body.classList.remove("overflow-hidden");
+          });
+        });
+
+        document.addEventListener("keydown", (e) => {
+          if (
+            e.key === "Escape" &&
+            mobileMenu.classList.contains("translate-x-0")
+          ) {
+            toggleMobileMenu();
+          }
+        });
+      }
+
+      // Reading progress bar
+      window.addEventListener("scroll", () => {
+        const winScroll =
+          document.body.scrollTop || document.documentElement.scrollTop;
+        const height =
+          document.documentElement.scrollHeight -
+          document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        const progressBar = document.querySelector(".reading-progress-bar");
+        if (progressBar) {
+          progressBar.style.width = scrolled + "%";
+        }
+      });
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        renderMathInElement(document.body, {
+          delimiters: [
+            { left: "$", right: "$", display: true },
+            { left: "$", right: "$", display: false },
+          ],
+        });
+      });
+    </script>
+  </body>
+</html>
+

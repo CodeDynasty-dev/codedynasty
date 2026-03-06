@@ -1,0 +1,62 @@
+<p>You are provided with a forum discussion in ./transcript.txt. Convert it into a refined blog post written in the style of Martin Fowler. Maintain Fowler’s characteristics:</p>
+<p>Opens with a framing insight or contextual tension.</p>
+<p>Defines terminology precisely and in sequence.</p>
+<p>Breaks complex ideas into conceptual chunks.</p>
+<p>Uses short, clear sentences with calm authority.</p>
+<p>Provides small illustrative examples (code where relevant).</p>
+<p>Focuses on reasoning, trade-offs, and design implications.</p>
+<p>Avoids hype, overly emotional tone, or clickbait behavior.</p>
+<p>TRANSFORMATION REQUIREMENTS:</p>
+<p>Derive the title from the transcript content.</p>
+<p>Make it concept-driven, not sensational.</p>
+<p>Should reflect the central idea or technical insight.</p>
+<p>Calculate reading time based on the final output (estimate 200 words/min).</p>
+<p>Be creative add code sample and mathematical equations when it's relevant.</p>
+<p>Use today’s date unless instructed otherwise.</p>
+<p>Update docmach parameters so they match the derived title, topic, description, and tag set.</p>
+<p>Tags must reflect the technical themes of the transcript.</p>
+<p>Write the blog post in Markdown.</p>
+<p>Structure it with section headers.</p>
+<p>Ensure eliminated personalised talks inn the youtube transcript to ensure technical clarity.</p>
+<p>Include code samples only where useful for clarity.</p>
+<p>Write this as a technically fluent human practitioner (Martin Fowler), not an explainer.
+Assume reader competence.
+Vary depth unevenly.
+Avoid summaries and balanced coverage.
+Allow mild bias and selective impatience.
+Omit obvious angles without comment.
+Use abrupt transitions and domain shorthand.</p>
+<p>Write from the perspective of someone who has already internalized this material and is selectively impatient with it. Allow mild bias, preference, or dismissal where appropriate allow reader feel the enegy. Avoid neutral academic framing unless necessary.</p>
+<p>Close with a short reflective note, similar to Fowler’s habit of summarizing the trade-off space or End with a practical observation, a limitation, or a forward-looking uncertainty instead..</p>
+<p>use this exact time format for time_created: {today’s date} like 2025 12 05 is a sample.</p>
+<p>Ensure the result is placed inside the wrapper exactly as shown below.</p>
+<p>Replace only the parameters.</p>
+<p>Replace {the blogpost here} with the generated article content.</p>
+<p>OUTPUT TEMPLATE THE MODEL MUST FOLLOW</p>
+<pre><code>&lt;docmach type=&quot;wrapper&quot; file=&quot;fragments/post-structure.html&quot; replacement=&quot;content&quot; params=&quot;
+author:Friday Candour;
+author_title: Software Developer;
+time_created:{today’s date};
+time_to_read:{auto-calculated reading time};
+title:{derived title};
+topic:{derived topic};
+author_img:https://avatars.githubusercontent.com/u/75016347;
+image:{pick appropriate image or leave as placeholder};
+description:{one-sentence summary of the article};
+&quot;&gt;
+
+&lt;docmach type=&quot;function&quot; params=&quot;tags:{comma-separated derived tags}&quot; file=&quot;fragments/tags.js&quot; /&gt;
+
+{the blogpost here}
+
+&lt;/docmach&gt;
+</code></pre>
+<p>Save the post to a file according to it's title to ./posts/ but ensure no space in the file name, instead of space use a - instead.</p>
+<p>EXTRA INSTRUCTIONS:</p>
+<ol>
+<li>If the transcript is not in English, translate it into English before processing.</li>
+<li>do not use - in words that does not occure naturally with - in the english language, for example, do not use - in words like &quot;i-am&quot; or &quot;i-was&quot; instead use &quot;i am&quot; or &quot;i was&quot;.</li>
+<li>avoid using the word &quot;practitional&quot;, use something simple instead.</li>
+<li>when choosing a title, optimise for maximum clicks rate, be care for each words you use, ensure intrigue and attraction but do not be clickbait, be real.</li>
+<li>Only use \(...\) and \[...\] as an inline delimiter for maths equations</li>
+</ol>
