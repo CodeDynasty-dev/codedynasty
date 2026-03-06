@@ -2,7 +2,7 @@
 author:Friday Candour;
 author_title: Software Developer;
 time_created: 2026 02 18;
-time_to_read: 5 min;
+time_to_read: 4 min;
 title: Energy-Based Models (EBMs);
 topic: Machine Learning;
 author_img: https://avatars.githubusercontent.com/u/75016347;
