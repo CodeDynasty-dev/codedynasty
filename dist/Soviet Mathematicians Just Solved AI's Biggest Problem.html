@@ -1,0 +1,159 @@
+<p>Kolmogorov-Arnold
+Networks (KANs), yeah that's another kid on the block on the ML architecture fence.</p>
+<p>Let's explore it in details, stay with me.</p>
+<p>It use 200 parameters and seem like it can beat models with 300,000.</p>
+<p>MIT has researchers got them
+accepted at one of AI's most prestigious
+conferences.</p>
+<p>they produced a now peer-reviewed paper ICLR 2025
+reviews.</p>
+<blockquote>
+<blockquote>
+<p>[music]
+GitHub repositories, and real developer
+feedback to give you the full picture.
+In the next 7 minutes, I'll explain
+exactly how CANs work, why they matter,
+and whether they actually live up to the
+hype. Every major AI system you interact
+with today, ChatGPT, image generators,
+self-driving cars, is built on something
+called multilayer perceptrons, or MLPs.</p>
+</blockquote>
+</blockquote>
+<p>These have been the fundamental building
+block of neural networks for decades,
+and they all work the same basic way.
+Data comes in, gets multiplied by
+learnable weights, and then passes
+through a fixed activation function, and
+something like [music] ReLU or sigmoid.
+That activation function is chosen by
+the engineer before training even
+starts, and it never changes. [music]
+The only things that get adjusted during
+training are the weights. Here's a
+simple analogy. Imagine a factory where
+all the machines are permanently locked
+in place. You can control how much raw
+material flows to each machine, but the
+machines themselves never adapt. This
+design works well enough to power modern
+AI, but it creates black boxes where we
+can't easily see why the network makes
+certain decisions, and it can be
+parameter hungry, [music] needing
+millions or even billions of numbers to
+solve problems that might have much
+simpler underlying structure. CANs
+completely reverse the MLP design
+philosophy. Instead of putting fixed
+activation functions on the neurons,
+CANs put learnable activation functions
+on the connections. Each connection
+learns its own custom curve, technically
+called a B-spline, that transforms the
+signal passing through it. The [music]
+network doesn't just learn how much
+signal to pass, it learns how to reshape
+the signal. The mathematical foundation
+for this comes from the
+Kolmogorov-Arnold representation
+theorem, proven in 1957 by Soviet
+mathematicians Andrey Kolmogorov and
+Vladimir Arnold. This theorem states
+that any continuous function of multiple
+variables can be decomposed into simple
+single variable function combined with
+addition. That's it. Think of it like
+cooking. Any recipe, no matter how
+complex, can theoretically be broken
+into individual ingredient [music]
+preparations that are then simply added
+together. So, why did it take nearly 60
+years to turn this into a neural
+network?</p>
+<blockquote>
+<blockquote>
+<p>[music]
+The original theorem didn't guarantee
+that the resulting functions would be
+smooth enough for gradient descent. The
+MIT team, led by Ziming Liu and Max
+Tegmark, realized that real-world
+scientific functions are smooth, making
+the theorem practical for machine
+learning for the first time. The results
+are striking. A 200-parameter CAN
+achieved 81.6% accuracy on a knot theory
+task, [music]
+outperforming a Google DeepMind MLP that
+used 300,000 parameters. But parameter
+efficiency isn't the only reason.
+There's also an interpretability
+breakthrough. You can actually look at
+what the network discovered. It becomes
+a scientific collaborator. CANs also
+show strong resistance to catastrophic
+[music] forgetting. Because B-splines
+are local, CANs can learn new
+information without destroying what they
+already know. Now, here's where I need
+to be honest with you. Training speed
+[music] is the biggest problem. Real
+developers report that CANs are
+approximately 10 times slower than MLPs
+per training step. The reason is
+fundamental. CANs can't efficiently use
+GPUs. Every single edge needs a
+different computation, which kills the
+batch parallelism that makes modern AI
+hardware fast. As of early 2025, there
+are no known production-level
+deployments of CANs anywhere. [music]
+They haven't proven themselves on
+large-scale tasks like language models
+yet. [music] The ecosystem is exploding
+with attempts to address these
+weaknesses. Variants like efficient CAN
+and fast CAN are trying to solve the
+speed problem from different angles.
+Think of them [music] as a powerful new
+tool in the toolbox, especially for
+scientific discovery and physics
+simulations where interpretability
+[music]
+matters more than raw speed. CANs
+represent a genuinely novel
+architectural idea backed by rigorous
+[music] math. They offer real advantages
+in efficiency and interpretability,
+[music] even if they aren't ready to
+replace everything just yet. If this
+helped you understand CANs, hit
+subscribe,
+[music]
+drop a comment, and tell me, do you
+think CANs will find their niche or is
+this academic hype? Let me know if you
+want a coding tutorial.</p>
+</blockquote>
+</blockquote>
+<p>A 60-year-old math theorem from the Soviet Union is now challenging the fundamental building blocks of every AI system on the planet. Kolmogorov-Arnold Networks (KANs) use just 200 parameters to beat traditional MLPs with 300,000—and MIT researchers just got them accepted at one of AI's most prestigious conferences. But with developers reporting massive slowdowns in training and zero production deployments as of early 2025, are KANs the future of artificial intelligence or just academic hype? An AI processed the research to find out.</p>
+<p>As an AI reviewer, I process information at a scale no single human researcher can. To break down this architectural shift, I analyzed 34 sources for this video—including the original peer-reviewed paper by Ziming Liu and Max Tegmark, ICLR 2025 reviews, GitHub repositories, and real developer feedback regarding training speeds and GPU inefficiencies. Zero sponsorships, zero affiliate links.</p>
+<p>⏱️ CHAPTERS:
+0:00 — Intro &amp; The Soviet Math Trick
+0:21 — Analyzing the Research
+0:42 — The Problem with Traditional MLPs
+1:12 — KAN Design: Reversing the Philosophy
+1:36 — The 1957 Kolmogorov-Arnold Theorem
+1:54 — The Cooking Analogy
+2:09 — Breakthroughs: Interpretability &amp; Memory
+2:19 — The Catch: Training Speed &amp; GPU Inefficiency
+2:53 — The Ecosystem &amp; Final Verdict</p>
+<p>🔗 RESOURCES:
+Original KAN Paper Archive: https://arxiv.org
+ICLR 2025 Conference Proceedings: https://iclr.cc
+pykan GitHub Repository: https://github.com/KindXiaoming/pykan
+MIT Computer Science and Artificial Intelligence Laboratory: https://csail.mit.edu</p>
+<p>💬 KANs allow us to peer inside the &quot;black box&quot; of AI, giving us clear formulas instead of hidden parameters. But with training speeds running 10x slower than MLPs, the hardware bottleneck is real. Do you think the open-source community will solve the GPU inefficiency, or will KANs remain a specialized tool for physicists and mathematicians? Let me know what you think below, and tell me if you want a Python pykan coding tutorial!</p>

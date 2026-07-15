@@ -1,0 +1,516 @@
+<h1>Air — Style Reference</h1>
+<blockquote>
+<p>midnight sky through glass sculpture</p>
+</blockquote>
+<p><strong>Theme:</strong> dark</p>
+<p>Air uses a dark, atmospheric canvas with full-bleed cloud photography and sculptural glass-like 3D forms as its primary visual mode. The type system is the brand: a single sans-serif at moderate weights carries everything from nav to body, while compressed and cursive display cuts break in for emphasis — one italic word (&quot;AI&quot;) in cursive sets a confident, slightly playful tone against the otherwise restrained UI. Components are lightweight — minimal elevation, thin borders, small radii, and near-transparent surfaces — letting the imagery carry emotion while the interface stays functional and fast.</p>
+<h2>Tokens — Colors</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+<th>Token</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Whiteout</td>
+<td><code>#ffffff</code></td>
+<td><code>--color-whiteout</code></td>
+<td>Primary text on dark surfaces, nav button borders, hairline strokes, card surfaces over photographic backgrounds</td>
+</tr>
+<tr>
+<td>Haze</td>
+<td><code>#f5f5f5</code></td>
+<td><code>--color-haze</code></td>
+<td>Card surfaces, input fields, subtle button fills on dark backgrounds — the off-white layer that sits above the dark canvas</td>
+</tr>
+<tr>
+<td>Ink</td>
+<td><code>#1b1b1b</code></td>
+<td><code>--color-ink</code></td>
+<td>Body and heading text on light surfaces, button borders on light cards</td>
+</tr>
+<tr>
+<td>Black Void</td>
+<td><code>#000000</code></td>
+<td><code>--color-black-void</code></td>
+<td>Navigation borders, link underlines, deepest contrast layer on white surfaces</td>
+</tr>
+<tr>
+<td>Twilight Blue</td>
+<td><code>#426188</code></td>
+<td><code>--color-twilight-blue</code></td>
+<td>Heading text on dark backgrounds — the only chromatic text color, a desaturated steel blue that reads as cool and atmospheric rather than vivid</td>
+</tr>
+<tr>
+<td>Signal Blue</td>
+<td><code>#2b7fff</code></td>
+<td><code>--color-signal-blue</code></td>
+<td>Blue text accent for links, tags, and emphasized short phrases. Do not promote it to the primary CTA color</td>
+</tr>
+</tbody>
+</table>
+<h2>Tokens — Typography</h2>
+<h3>Control — Primary interface typeface — carries everything from navigation labels to body text to button text at a consistent medium weight, creating visual quietness · <code>--font-control</code></h3>
+<ul>
+<li><strong>Substitute:</strong> Inter, system-ui</li>
+<li><strong>Weights:</strong> 500 (body, nav, buttons, links) + 400 (long-form body)</li>
+<li><strong>Sizes:</strong> 12px, 13px, 14px, 16px, 20px</li>
+<li><strong>Line height:</strong> 1.10 (display-adjacent) / 1.40 / 1.50 (body)</li>
+<li><strong>Role:</strong> Primary interface typeface — carries everything from navigation labels to body text to button text at a consistent medium weight, creating visual quietness</li>
+</ul>
+<h3>Control Compressed — Ultra-large display headlines (e.g. &quot;MAKE IT ONCE.&quot;) — extreme weight and tight leading create poster-scale impact, always uppercase, always dominant · <code>--font-control-compressed</code></h3>
+<ul>
+<li><strong>Substitute:</strong> Anton, Druk Wide</li>
+<li><strong>Weights:</strong> 900</li>
+<li><strong>Sizes:</strong> 259px</li>
+<li><strong>Line height:</strong> 0.85</li>
+<li><strong>Role:</strong> Ultra-large display headlines (e.g. &quot;MAKE IT ONCE.&quot;) — extreme weight and tight leading create poster-scale impact, always uppercase, always dominant</li>
+</ul>
+<h3>Control Cursive — Italic accent for emphasis within headlines — used for words like &quot;AI&quot; or &quot;real&quot; to add personality against the geometric sans body · <code>--font-control-cursive</code></h3>
+<ul>
+<li><strong>Substitute:</strong> Caveat, Reenie Beanie</li>
+<li><strong>Weights:</strong> 400, 500</li>
+<li><strong>Sizes:</strong> 20px, 32px, 56px</li>
+<li><strong>Line height:</strong> 1.00, 1.10, 1.50</li>
+<li><strong>Role:</strong> Italic accent for emphasis within headlines — used for words like &quot;AI&quot; or &quot;real&quot; to add personality against the geometric sans body</li>
+</ul>
+<h3>Control TNT — Alternative display variant for headlines — same scale as cursive but upright, used for taglines and feature headlines · <code>--font-control-tnt</code></h3>
+<ul>
+<li><strong>Substitute:</strong> Inter, sans-serif</li>
+<li><strong>Weights:</strong> 400, 500</li>
+<li><strong>Sizes:</strong> 20px, 32px, 56px</li>
+<li><strong>Line height:</strong> 1.00, 1.10, 1.50</li>
+<li><strong>Role:</strong> Alternative display variant for headlines — same scale as cursive but upright, used for taglines and feature headlines</li>
+</ul>
+<h3>Type Scale</h3>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Size</th>
+<th>Line Height</th>
+<th>Letter Spacing</th>
+<th>Token</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>caption</td>
+<td>13px</td>
+<td>1.5</td>
+<td>—</td>
+<td><code>--text-caption</code></td>
+</tr>
+<tr>
+<td>body</td>
+<td>16px</td>
+<td>1.5</td>
+<td>—</td>
+<td><code>--text-body</code></td>
+</tr>
+<tr>
+<td>subheading</td>
+<td>20px</td>
+<td>1.4</td>
+<td>—</td>
+<td><code>#ffffff</code>0</td>
+</tr>
+<tr>
+<td>heading</td>
+<td>32px</td>
+<td>1.1</td>
+<td>—</td>
+<td><code>#ffffff</code>1</td>
+</tr>
+<tr>
+<td>heading-lg</td>
+<td>56px</td>
+<td>1</td>
+<td>—</td>
+<td><code>#ffffff</code>2</td>
+</tr>
+<tr>
+<td>display</td>
+<td>259px</td>
+<td>0.85</td>
+<td>—</td>
+<td><code>#ffffff</code>3</td>
+</tr>
+</tbody>
+</table>
+<h2>Tokens — Spacing &amp; Shapes</h2>
+<p><strong>Base unit:</strong> 4px</p>
+<p><strong>Density:</strong> comfortable</p>
+<h3>Spacing Scale</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+<th>Token</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4</td>
+<td>4px</td>
+<td><code>#ffffff</code>4</td>
+</tr>
+<tr>
+<td>8</td>
+<td>8px</td>
+<td><code>#ffffff</code>5</td>
+</tr>
+<tr>
+<td>12</td>
+<td>12px</td>
+<td><code>#ffffff</code>6</td>
+</tr>
+<tr>
+<td>16</td>
+<td>16px</td>
+<td><code>#ffffff</code>7</td>
+</tr>
+<tr>
+<td>20</td>
+<td>20px</td>
+<td><code>#ffffff</code>8</td>
+</tr>
+<tr>
+<td>24</td>
+<td>24px</td>
+<td><code>#ffffff</code>9</td>
+</tr>
+<tr>
+<td>32</td>
+<td>32px</td>
+<td><code>--color-whiteout</code>0</td>
+</tr>
+<tr>
+<td>48</td>
+<td>48px</td>
+<td><code>--color-whiteout</code>1</td>
+</tr>
+<tr>
+<td>52</td>
+<td>52px</td>
+<td><code>--color-whiteout</code>2</td>
+</tr>
+<tr>
+<td>64</td>
+<td>64px</td>
+<td><code>--color-whiteout</code>3</td>
+</tr>
+<tr>
+<td>80</td>
+<td>80px</td>
+<td><code>--color-whiteout</code>4</td>
+</tr>
+<tr>
+<td>120</td>
+<td>120px</td>
+<td><code>--color-whiteout</code>5</td>
+</tr>
+</tbody>
+</table>
+<h3>Border Radius</h3>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cards</td>
+<td>12px</td>
+</tr>
+<tr>
+<td>pills</td>
+<td>9999px</td>
+</tr>
+<tr>
+<td>images</td>
+<td>11px</td>
+</tr>
+<tr>
+<td>inputs</td>
+<td>4px</td>
+</tr>
+<tr>
+<td>buttons</td>
+<td>8px</td>
+</tr>
+</tbody>
+</table>
+<h3>Layout</h3>
+<ul>
+<li><strong>Page max-width:</strong> 1150px</li>
+<li><strong>Section gap:</strong> 48px</li>
+<li><strong>Card padding:</strong> 20px</li>
+<li><strong>Element gap:</strong> 8px</li>
+</ul>
+<h2>Components</h2>
+<h3>Ghost Navigation Button</h3>
+<p><strong>Role:</strong> Primary nav CTA — transparent fill on dark canvas</p>
+<p>Transparent background, 1px white border, white text, 8px radius, 10px 16px padding. Used for &quot;Start for free&quot; and &quot;Book a demo&quot; in the nav bar.</p>
+<h3>Solid Light Button</h3>
+<p><strong>Role:</strong> Secondary action on light cards</p>
+<p>#f5f5f5 background, #1b1b1b text, 1px #1b1b1b border, 8px radius, 8px 16px padding. Used on the photo upload card area.</p>
+<h3>Pill Toggle Button</h3>
+<p><strong>Role:</strong> Segmented control or filter chip</p>
+<p>Fully rounded (16777220px ≈ pill), semi-transparent dark background (oklab 10% black), black text. Used for feature toggles and category filters.</p>
+<h3>Underline Link</h3>
+<p><strong>Role:</strong> Inline text link</p>
+<p>Transparent background, 2px bottom underline, text in Signal Blue (#2b7fff) or Ink (#1b1b1b), 8px horizontal padding. Underline is the primary affordance — no color fill.</p>
+<h3>Haze Card</h3>
+<p><strong>Role:</strong> Content card on dark background</p>
+<p>#f5f5f5 background, 12px radius, 20px padding, no shadow, no border. Sits as a light island on the dark photographic canvas.</p>
+<h3>Image Card with Radius</h3>
+<p><strong>Role:</strong> Media container for photo grids</p>
+<p>Transparent background, 11px or 14px radius, no padding, no shadow. Holds product imagery and screenshot grids.</p>
+<h3>Text Input</h3>
+<p><strong>Role:</strong> Form field</p>
+<p>#f5f5f5 background, #1b1b1b text, 1px border at rgba(0,0,0,0.1), 4px radius, 10px padding all sides. Minimal chrome — relies on background contrast rather than border weight.</p>
+<h3>Logo Bar Row</h3>
+<p><strong>Role:</strong> Client/partner logo grid</p>
+<p>Single-row or two-row grid of monochrome logos on the dark canvas, 32px column gap, 48px row gap. Logos rendered in white or semi-transparent white.</p>
+<h3>Full-Bleed Photographic Section</h3>
+<p><strong>Role:</strong> Hero and atmospheric sections</p>
+<p>Full-viewport-height sections with photographic background (clouds, glass sculpture), centered headline overlay in Whiteout or Twilight Blue, no border, no container constraint. Carries the brand's emotional weight.</p>
+<h3>Compressed Display Headline</h3>
+<p><strong>Role:</strong> Poster-scale statement</p>
+<p>Control Compressed 900 weight at 259px, line-height 0.85, uppercase, Whiteout text. Bleeds to viewport edges. Used sparingly for maximum-impact statements.</p>
+<h3>Dual-Style Headline</h3>
+<p><strong>Role:</strong> Headline mixing upright and cursive</p>
+<p>Combines Control Cursive italic (56px) for emphasized words with Control TNT upright for the rest. Creates typographic tension — the italic word carries personality while the upright stays grounded.</p>
+<h3>Feature Section Header</h3>
+<p><strong>Role:</strong> Section title block</p>
+<p>Control 500 at 20px for subheading, Control Cursive or TNT at 32–56px for the main title. Center-aligned on dark background, generous 48px gap above and below.</p>
+<h2>Do's and Don'ts</h2>
+<h3>Do</h3>
+<ul>
+<li>Use Control at weight 500 for all body, nav, button, and link text — consistency of weight creates visual calm</li>
+<li>Set all buttons and interactive elements to 8px border-radius</li>
+<li>Apply 4px radius to form inputs only</li>
+<li>Use #f5f5f5 (Haze) for card surfaces and inputs on dark backgrounds</li>
+<li>Use #ffffff (Whiteout) for borders and text on dark surfaces</li>
+<li>Use #1b1b1b (Ink) for text and borders on light surfaces</li>
+<li>Break headlines with one italic word in Control Cursive against upright Control TNT or Control</li>
+</ul>
+<h3>Don't</h3>
+<ul>
+<li>Don't use solid filled colored buttons — buttons are ghost (transparent + border) or haze (light fill) only</li>
+<li>Don't apply shadows or elevation to cards — surfaces are flat with borders or background contrast only</li>
+<li>Don't use more than one saturated accent color per page — Signal Blue is for links only, not for buttons or backgrounds</li>
+<li>Don't set body text below 16px or above 500 weight — the type system is deliberately restrained</li>
+<li>Don't use rounded pill shapes for anything except toggle/filter controls</li>
+<li>Don't introduce new radii — stick to 4px (inputs), 8px (buttons), 11–14px (cards/images)</li>
+<li>Don't use gradients — the design relies on photography and flat color contrast for depth</li>
+</ul>
+<h2>Surfaces</h2>
+<table>
+<thead>
+<tr>
+<th>Level</th>
+<th>Name</th>
+<th>Value</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Dark Canvas</td>
+<td><code>--color-whiteout</code>6</td>
+<td>Base background behind photographic sections, footer, and dark UI moments</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Haze Card</td>
+<td><code>--color-whiteout</code>7</td>
+<td>Light card surface sitting on top of dark photography — off-white card on dark sky</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Whiteout</td>
+<td><code>--color-whiteout</code>8</td>
+<td>Pure white for inputs and elevated form surfaces</td>
+</tr>
+</tbody>
+</table>
+<h2>Elevation</h2>
+<p>No elevation. Surfaces distinguish themselves through background color and 1px borders, not shadows. Cards float on the dark canvas by virtue of being lighter, not by casting shadows.</p>
+<h2>Imagery</h2>
+<p>Full-bleed photographic sections are the primary visual language — moody sky/cloud photography with sculptural translucent glass forms rendered in 3D. The imagery is atmospheric and slightly surreal, occupying the entire viewport with no container constraint. Product UI is shown via contained screenshots in light cards (Haze) that sit as islands on the dark photographic background. Logo bars are monochrome white on the dark canvas. The visual density is image-heavy at section-level but text-dominant in feature breakdowns.</p>
+<h2>Layout</h2>
+<p>Full-bleed dark sections with photographic backgrounds alternate with centered content blocks. The page max-width is 1150px for text and card grids, but hero and atmospheric sections break to full viewport. Navigation is a minimal top bar (72px height) with left-aligned links and right-aligned actions. Feature sections follow a consistent pattern: centered headline + subtitle, then content arranged in 2-column or 3-column grids with 24px gutters. Display headlines (Control Compressed at 259px) bleed to viewport edges. Logo grids use a single horizontal row with generous spacing. Footer sits on the dark canvas with light text.</p>
+<h2>Agent Prompt Guide</h2>
+<p>Quick Color Reference:</p>
+<ul>
+<li>text on dark: #ffffff (Whiteout)</li>
+<li>text on light: #1b1b1b (Ink)</li>
+<li>background canvas: #000000 (Black Void)</li>
+<li>card surface: #f5f5f5 (Haze)</li>
+<li>input surface: #f5f5f5 (Haze)</li>
+<li>link text: #2b7fff (Signal Blue)</li>
+<li>heading accent on dark: #426188 (Twilight Blue)</li>
+<li>primary action: no distinct CTA color</li>
+</ul>
+<p>Example Component Prompts:</p>
+<ol>
+<li>
+<p>Create a ghost nav button: transparent background, 1px solid #ffffff border, #ffffff text, 8px radius, 10px vertical and 16px horizontal padding, Control font weight 500 at 14px.</p>
+</li>
+<li>
+<p>Create a Haze card: #f5f5f5 background, 12px radius, 20px padding all sides, no shadow, no border. Place centered on a #000000 dark canvas.</p>
+</li>
+<li>
+<p>Create a text input: #f5f5f5 background, 1px solid rgba(0,0,0,0.1) border, 4px radius, 10px padding all sides, #1b1b1b text, Control font weight 500 at 16px.</p>
+</li>
+<li>
+<p>Create a compressed display headline: Control Compressed at 259px, weight 900, line-height 0.85, uppercase, #ffffff color, bleeding to viewport edges.</p>
+</li>
+<li>
+<p>Create a dual-style headline: first line in Control TNT weight 500 at 56px, line-height 1.0, #ffffff. Second line with one word in Control Cursive weight 400 italic at 56px, remaining words upright. Both centered on dark canvas.</p>
+</li>
+</ol>
+<h2>Similar Brands</h2>
+<ul>
+<li><strong>Linear</strong> — Same dark-canvas aesthetic with minimal chrome, transparent ghost buttons, and type-driven hierarchy — both let typography carry the brand rather than color or illustration</li>
+<li><strong>Vercel</strong> — Full-bleed dark sections with centered headlines, monochrome interface, and restrained accent color usage — both rely on photographic or gradient atmospheric backgrounds</li>
+<li><strong>Framer</strong> — Bold display typography (compressed/condensed faces) over dark backgrounds with sparse UI chrome — both use poster-scale type as the hero moment</li>
+<li><strong>Pitch</strong> — Dark-first product interface with ghost buttons, thin borders, flat card surfaces, and no shadows — components are distinguished by background contrast rather than elevation</li>
+</ul>
+<h2>Quick Start</h2>
+<h3>CSS Custom Properties</h3>
+<pre><code class="language-css"><span class="hljs-selector-pseudo">:root</span> {
+  <span class="hljs-comment">/* Colors */</span>
+  <span class="hljs-attr">--color-whiteout</span>: <span class="hljs-number">#ffffff</span>;
+  <span class="hljs-attr">--color-haze</span>: <span class="hljs-number">#f5f5f5</span>;
+  <span class="hljs-attr">--color-ink</span>: <span class="hljs-number">#1b1b1b</span>;
+  <span class="hljs-attr">--color-black-void</span>: <span class="hljs-number">#000000</span>;
+  <span class="hljs-attr">--color-twilight-blue</span>: <span class="hljs-number">#426188</span>;
+  <span class="hljs-attr">--color-signal-blue</span>: <span class="hljs-number">#2b7fff</span>;
+
+  <span class="hljs-comment">/* Typography — Font Families */</span>
+  <span class="hljs-attr">--font-control</span>: <span class="hljs-string">&#x27;Control&#x27;</span>, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, <span class="hljs-string">&quot;Segoe UI&quot;</span>, Roboto, sans-serif;
+  <span class="hljs-attr">--font-control-compressed</span>: <span class="hljs-string">&#x27;Control Compressed&#x27;</span>, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, <span class="hljs-string">&quot;Segoe UI&quot;</span>, Roboto, sans-serif;
+  <span class="hljs-attr">--font-control-cursive</span>: <span class="hljs-string">&#x27;Control Cursive&#x27;</span>, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, <span class="hljs-string">&quot;Segoe UI&quot;</span>, Roboto, sans-serif;
+  <span class="hljs-attr">--font-control-tnt</span>: <span class="hljs-string">&#x27;Control TNT&#x27;</span>, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, <span class="hljs-string">&quot;Segoe UI&quot;</span>, Roboto, sans-serif;
+
+  <span class="hljs-comment">/* Typography — Scale */</span>
+  <span class="hljs-attr">--text-caption</span>: <span class="hljs-number">13px</span>;
+  <span class="hljs-attr">--leading-caption</span>: <span class="hljs-number">1.5</span>;
+  <span class="hljs-attr">--text-body</span>: <span class="hljs-number">16px</span>;
+  <span class="hljs-attr">--leading-body</span>: <span class="hljs-number">1.5</span>;
+  <span class="hljs-attr">--text-subheading</span>: <span class="hljs-number">20px</span>;
+  <span class="hljs-attr">--leading-subheading</span>: <span class="hljs-number">1.4</span>;
+  <span class="hljs-attr">--text-heading</span>: <span class="hljs-number">32px</span>;
+  <span class="hljs-attr">--leading-heading</span>: <span class="hljs-number">1.1</span>;
+  <span class="hljs-attr">--text-heading-lg</span>: <span class="hljs-number">56px</span>;
+  <span class="hljs-attr">--leading-heading-lg</span>: <span class="hljs-number">1</span>;
+  <span class="hljs-attr">--text-display</span>: <span class="hljs-number">259px</span>;
+  <span class="hljs-attr">--leading-display</span>: <span class="hljs-number">0.85</span>;
+
+  <span class="hljs-comment">/* Typography — Weights */</span>
+  <span class="hljs-attr">--font-weight-regular</span>: <span class="hljs-number">400</span>;
+  <span class="hljs-attr">--font-weight-medium</span>: <span class="hljs-number">500</span>;
+  <span class="hljs-attr">--font-weight-black</span>: <span class="hljs-number">900</span>;
+
+  <span class="hljs-comment">/* Spacing */</span>
+  <span class="hljs-attr">--spacing-unit</span>: <span class="hljs-number">4px</span>;
+  <span class="hljs-attr">--spacing-4</span>: <span class="hljs-number">4px</span>;
+  <span class="hljs-attr">--spacing-8</span>: <span class="hljs-number">8px</span>;
+  <span class="hljs-attr">--spacing-12</span>: <span class="hljs-number">12px</span>;
+  <span class="hljs-attr">--spacing-16</span>: <span class="hljs-number">16px</span>;
+  <span class="hljs-attr">--spacing-20</span>: <span class="hljs-number">20px</span>;
+  <span class="hljs-attr">--spacing-24</span>: <span class="hljs-number">24px</span>;
+  <span class="hljs-attr">--spacing-32</span>: <span class="hljs-number">32px</span>;
+  <span class="hljs-attr">--spacing-48</span>: <span class="hljs-number">48px</span>;
+  <span class="hljs-attr">--spacing-52</span>: <span class="hljs-number">52px</span>;
+  <span class="hljs-attr">--spacing-64</span>: <span class="hljs-number">64px</span>;
+  <span class="hljs-attr">--spacing-80</span>: <span class="hljs-number">80px</span>;
+  <span class="hljs-attr">--spacing-120</span>: <span class="hljs-number">120px</span>;
+
+  <span class="hljs-comment">/* Layout */</span>
+  <span class="hljs-attr">--page-max-width</span>: <span class="hljs-number">1150px</span>;
+  <span class="hljs-attr">--section-gap</span>: <span class="hljs-number">48px</span>;
+  <span class="hljs-attr">--card-padding</span>: <span class="hljs-number">20px</span>;
+  <span class="hljs-attr">--element-gap</span>: <span class="hljs-number">8px</span>;
+
+  <span class="hljs-comment">/* Border Radius */</span>
+  <span class="hljs-attr">--radius-md</span>: <span class="hljs-number">4px</span>;
+  <span class="hljs-attr">--radius-lg</span>: <span class="hljs-number">8px</span>;
+  <span class="hljs-attr">--radius-lg-2</span>: <span class="hljs-number">11px</span>;
+  <span class="hljs-attr">--radius-xl</span>: <span class="hljs-number">14px</span>;
+
+  <span class="hljs-comment">/* Named Radii */</span>
+  <span class="hljs-attr">--radius-cards</span>: <span class="hljs-number">12px</span>;
+  <span class="hljs-attr">--radius-pills</span>: <span class="hljs-number">9999px</span>;
+  <span class="hljs-attr">--radius-images</span>: <span class="hljs-number">11px</span>;
+  <span class="hljs-attr">--radius-inputs</span>: <span class="hljs-number">4px</span>;
+  <span class="hljs-attr">--radius-buttons</span>: <span class="hljs-number">8px</span>;
+
+  <span class="hljs-comment">/* Surfaces */</span>
+  <span class="hljs-attr">--surface-dark-canvas</span>: <span class="hljs-number">#000000</span>;
+  <span class="hljs-attr">--surface-haze-card</span>: <span class="hljs-number">#f5f5f5</span>;
+  <span class="hljs-attr">--surface-whiteout</span>: <span class="hljs-number">#ffffff</span>;
+}
+</code></pre>
+<h3>Tailwind v4</h3>
+<pre><code class="language-css"><span class="hljs-keyword">@theme</span> {
+  <span class="hljs-comment">/* Colors */</span>
+  <span class="hljs-attr">--color-whiteout</span>: <span class="hljs-number">#ffffff</span>;
+  <span class="hljs-attr">--color-haze</span>: <span class="hljs-number">#f5f5f5</span>;
+  <span class="hljs-attr">--color-ink</span>: <span class="hljs-number">#1b1b1b</span>;
+  <span class="hljs-attr">--color-black-void</span>: <span class="hljs-number">#000000</span>;
+  <span class="hljs-attr">--color-twilight-blue</span>: <span class="hljs-number">#426188</span>;
+  <span class="hljs-attr">--color-signal-blue</span>: <span class="hljs-number">#2b7fff</span>;
+
+  <span class="hljs-comment">/* Typography */</span>
+  <span class="hljs-attr">--font-control</span>: <span class="hljs-string">&#x27;Control&#x27;</span>, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, <span class="hljs-string">&quot;Segoe UI&quot;</span>, Roboto, sans-serif;
+  <span class="hljs-attr">--font-control-compressed</span>: <span class="hljs-string">&#x27;Control Compressed&#x27;</span>, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, <span class="hljs-string">&quot;Segoe UI&quot;</span>, Roboto, sans-serif;
+  <span class="hljs-attr">--font-control-cursive</span>: <span class="hljs-string">&#x27;Control Cursive&#x27;</span>, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, <span class="hljs-string">&quot;Segoe UI&quot;</span>, Roboto, sans-serif;
+  <span class="hljs-attr">--font-control-tnt</span>: <span class="hljs-string">&#x27;Control TNT&#x27;</span>, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, <span class="hljs-string">&quot;Segoe UI&quot;</span>, Roboto, sans-serif;
+
+  <span class="hljs-comment">/* Typography — Scale */</span>
+  <span class="hljs-attr">--text-caption</span>: <span class="hljs-number">13px</span>;
+  <span class="hljs-attr">--leading-caption</span>: <span class="hljs-number">1.5</span>;
+  <span class="hljs-attr">--text-body</span>: <span class="hljs-number">16px</span>;
+  <span class="hljs-attr">--leading-body</span>: <span class="hljs-number">1.5</span>;
+  <span class="hljs-attr">--text-subheading</span>: <span class="hljs-number">20px</span>;
+  <span class="hljs-attr">--leading-subheading</span>: <span class="hljs-number">1.4</span>;
+  <span class="hljs-attr">--text-heading</span>: <span class="hljs-number">32px</span>;
+  <span class="hljs-attr">--leading-heading</span>: <span class="hljs-number">1.1</span>;
+  <span class="hljs-attr">--text-heading-lg</span>: <span class="hljs-number">56px</span>;
+  <span class="hljs-attr">--leading-heading-lg</span>: <span class="hljs-number">1</span>;
+  <span class="hljs-attr">--text-display</span>: <span class="hljs-number">259px</span>;
+  <span class="hljs-attr">--leading-display</span>: <span class="hljs-number">0.85</span>;
+
+  <span class="hljs-comment">/* Spacing */</span>
+  <span class="hljs-attr">--spacing-4</span>: <span class="hljs-number">4px</span>;
+  <span class="hljs-attr">--spacing-8</span>: <span class="hljs-number">8px</span>;
+  <span class="hljs-attr">--spacing-12</span>: <span class="hljs-number">12px</span>;
+  <span class="hljs-attr">--spacing-16</span>: <span class="hljs-number">16px</span>;
+  <span class="hljs-attr">--spacing-20</span>: <span class="hljs-number">20px</span>;
+  <span class="hljs-attr">--spacing-24</span>: <span class="hljs-number">24px</span>;
+  <span class="hljs-attr">--spacing-32</span>: <span class="hljs-number">32px</span>;
+  <span class="hljs-attr">--spacing-48</span>: <span class="hljs-number">48px</span>;
+  <span class="hljs-attr">--spacing-52</span>: <span class="hljs-number">52px</span>;
+  <span class="hljs-attr">--spacing-64</span>: <span class="hljs-number">64px</span>;
+  <span class="hljs-attr">--spacing-80</span>: <span class="hljs-number">80px</span>;
+  <span class="hljs-attr">--spacing-120</span>: <span class="hljs-number">120px</span>;
+
+  <span class="hljs-comment">/* Border Radius */</span>
+  <span class="hljs-attr">--radius-md</span>: <span class="hljs-number">4px</span>;
+  <span class="hljs-attr">--radius-lg</span>: <span class="hljs-number">8px</span>;
+  <span class="hljs-attr">--radius-lg-2</span>: <span class="hljs-number">11px</span>;
+  <span class="hljs-attr">--radius-xl</span>: <span class="hljs-number">14px</span>;
+}
+</code></pre>

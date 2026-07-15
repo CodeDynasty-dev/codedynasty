@@ -19,7 +19,7 @@
     />
     <meta name="author" content="CodeDynasty" />
     <meta name="robots" content="index, follow" />
-    <meta name="theme-color" content="#0ea5e9" />
+    <meta name="theme-color" content="#000000" />
     <!-- og -->
     <meta property="og:title" content="CodeDynasty" />
     <meta
@@ -31,7 +31,7 @@
     <meta property="og:image" content="https://codedynasty.dev/logo.png" />
     <meta property="og:site_name" content="CodeDynasty" />
     <!-- x -->
-    <meta property="twitter:title" content="Cradova - Beautifully Simple" />
+    <meta property="twitter:title" content="CodeDynasty" />
     <meta property="twitter:type" content="website" />
     <meta
       property="twitter:description"
@@ -46,24 +46,22 @@
   </head>
   <body>
     <!-- Navigation -->
-    <header class="fixed w-full top-0 z-50 nav-modern">
+    <header class="fixed w-full top-0 z-50 border-b border-white/10 bg-black/85 backdrop-blur-md">
       <nav class="container mx-auto px-6">
-        <div class="flex justify-between items-center h-20">
+        <div class="flex justify-between items-center h-[72px]">
           <a
             href="/"
             class="flex items-center group"
             aria-label="CodeDynasty Home"
           >
-            <div
-              class="w-10 h-10 mr-3 transition-transform duration-300 group-hover:scale-110"
-            >
+            <div class="w-10 h-10 mr-3">
               <img
                 src="logo.png"
-                class="w-full h-full object-cover rounded-lg"
+                class="w-full h-full object-cover rounded-[11px]"
                 alt="CodeDynasty Logo"
               />
             </div>
-            <span class="text-xl font-bold text-white">CodeDynasty</span>
+            <span class="text-xl font-medium text-white">CodeDynasty</span>
           </a>
 
           <!-- Mobile menu button -->
@@ -88,29 +86,29 @@
           </button>
 
           <!-- Desktop Navigation -->
-          <div class="hidden md:flex items-center space-x-2">
+          <div class="hidden md:flex items-center space-x-4">
             <a
               href="/blog.html"
-              class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors rounded-lg hover:bg-white/5"
+              class="px-3 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors"
             >
               Blog
             </a>
             <a
               href="https://discord.codedynasty.dev"
-              class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors rounded-lg hover:bg-white/5"
+              class="px-3 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors"
             >
               Discord
             </a>
             <a
               href="https://github.com/CodeDynasty-dev"
-              class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors rounded-lg hover:bg-white/5"
+              class="px-3 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors"
               target="_blank"
             >
               GitHub
             </a>
             <a
               href="/contact.html"
-              class="px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-sky-500 to-blue-600 rounded-lg hover:shadow-lg hover:shadow-sky-500/50 transition-all"
+              class="btn-ghost-nav"
             >
               Contact
             </a>
@@ -130,11 +128,11 @@
             <div class="w-10 h-10 mr-3">
               <img
                 src="logo.png"
-                class="w-full h-full object-cover rounded-lg"
+                class="w-full h-full object-cover rounded-[11px]"
                 alt="CodeDynasty Logo"
               />
             </div>
-            <span class="text-xl font-bold text-white">CodeDynasty</span>
+            <span class="text-xl font-medium text-white">CodeDynasty</span>
           </a>
           <button
             id="close-mobile-menu"
@@ -190,184 +188,91 @@
       </div>
     </div>
 
-    <main class="pt-20">
+    <main class="pt-[72px]">
       <!-- Hero Section -->
-      <section class="hero-premium relative overflow-hidden">
-        <!-- Animated Background with Mesh Gradient -->
-        <div class="absolute inset-0">
-          <div
-            class="absolute inset-0 bg-gradient-to-br from-sky-950 via-blue-950 to-black"
-          ></div>
-          <div id="stars"></div>
-          <div id="stars2"></div>
-          <div id="stars3"></div>
-          <!-- Animated Gradient Orbs -->
-          <div class="gradient-orb gradient-orb-1"></div>
-          <div class="gradient-orb gradient-orb-2"></div>
-          <div class="gradient-orb gradient-orb-3"></div>
-          <!-- Grid Pattern Overlay -->
-          <div class="absolute inset-0 bg-grid-pattern opacity-20"></div>
-        </div>
-
-        <!-- Floating Particles -->
-        <div
-          id="particles-container"
-          class="absolute inset-0 overflow-hidden pointer-events-none"
-        ></div>
-
-        <div
-          class="relative z-10 flex flex-col items-center justify-center text-center px-4 max-w-6xl mx-auto py-32"
-        >
-          <!-- Animated Badge -->
-          <div class="badge-premium mb-8 fade-in-up">
-            <span class="badge-glow"></span>
-            <svg
-              class="w-4 h-4 mr-2 animate-pulse-slow"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-            >
-              <path
-                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-              />
-            </svg>
-            <span class="relative z-10">Open Source First</span>
+      <section class="section-photo-bleed" style="background-image: url('/air-bg.png');">
+        <div class="relative z-10 flex flex-col items-center justify-center text-center px-4 max-w-6xl mx-auto py-16">
+          <!-- Pill Badge -->
+          <div class="inline-block px-3 py-1 text-xs font-medium text-white bg-white/10 rounded-[9999px] uppercase tracking-wider mb-8">
+            Open Source First
           </div>
 
-          <!-- Main Heading with Text Animation -->
-          <h1
-            class="hero-title text-6xl md:text-8xl font-black text-white leading-none mb-8 fade-in-up"
-            style="animation-delay: 0.1s"
-          >
-            Engineering the
-            <span class="block mt-2">
-              <span class="gradient-text-premium animate-gradient">Future</span>
-            </span>
-          </h1>
+          <!-- Main Heading (Compressed Display Headline) -->
+          <h1 class="headline-display mb-6">MAKE IT ONCE.</h1>
 
-          <!-- Subtitle with Typing Effect -->
-          <p
-            class="text-xl md:text-2xl text-slate-300 max-w-3xl mb-12 fade-in-up leading-relaxed"
-            style="animation-delay: 0.2s"
-          >
-            Building <span class="text-sky-400 font-semibold">modern</span>,
-            <span class="text-amber-400 font-semibold">performant</span>
-            software that empowers developers and delights users. Open source
-            tools for the next generation.
+          <!-- Dual-Style Subheading -->
+          <h2 class="headline-dual mb-8 text-center max-w-3xl">
+            Engineering the <span class="cursive-word">future</span> of open source tools.
+          </h2>
+
+          <!-- Subtitle -->
+          <p class="text-lg md:text-xl text-slate-300 max-w-2xl mb-12 leading-relaxed">
+            Building modern, performant software that empowers developers. CodeDynasty delivers modular, type-safe, and blazing fast solutions for the web ecosystem.
           </p>
 
           <!-- Stats Bar -->
-          <div
-            class="flex flex-wrap justify-center gap-8 mb-12 fade-in-up"
-            style="animation-delay: 0.3s"
-          >
-            <div class="stat-item">
-              <div class="stat-number gradient-text-premium">6+</div>
-              <div class="stat-label">Open Source Projects</div>
+          <div class="flex flex-wrap justify-center gap-12 mb-12">
+            <div class="text-center">
+              <div class="text-twilight-blue font-medium text-4xl mb-1">6+</div>
+              <div class="text-slate-400 text-sm uppercase tracking-wider">Projects</div>
             </div>
-            <div class="stat-divider"></div>
-            <div class="stat-item">
-              <div class="stat-number gradient-text-premium">100+</div>
-              <div class="stat-label">GitHub Stars</div>
+            <div class="h-10 w-[1px] bg-white/10 self-center hidden sm:block"></div>
+            <div class="text-center">
+              <div class="text-twilight-blue font-medium text-4xl mb-1">100+</div>
+              <div class="text-slate-400 text-sm uppercase tracking-wider">GitHub Stars</div>
             </div>
-            <div class="stat-divider"></div>
-            <div class="stat-item">
-              <div class="stat-number gradient-text-premium">∞</div>
-              <div class="stat-label">Possibilities</div>
+            <div class="h-10 w-[1px] bg-white/10 self-center hidden sm:block"></div>
+            <div class="text-center">
+              <div class="text-twilight-blue font-medium text-4xl mb-1">∞</div>
+              <div class="text-slate-400 text-sm uppercase tracking-wider">Possibilities</div>
             </div>
           </div>
 
           <!-- CTA Buttons -->
-          <div
-            class="flex flex-col sm:flex-row items-center gap-4 fade-in-up"
-            style="animation-delay: 0.4s"
-          >
+          <div class="flex flex-col sm:flex-row items-center gap-4">
             <a
               href="https://github.com/CodeDynasty-dev"
-              class="btn-premium group"
+              class="btn-ghost-nav text-base font-medium"
             >
-              <span class="btn-premium-glow"></span>
-              <span class="relative z-10 flex items-center">
-                <span class="mr-2">Explore Projects</span>
-                <svg
-                  class="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M17 8l4 4m0 0l-4 4m4-4H3"
-                  ></path>
-                </svg>
-              </span>
+              Explore Projects
             </a>
-            <a href="/contact.html" class="btn-secondary-premium group">
-              <span class="relative z-10 flex items-center">
-                <span class="mr-2">Get in Touch</span>
-                <svg
-                  class="w-5 h-5 transition-transform duration-300 group-hover:rotate-45"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M14 5l7 7m0 0l-7 7m7-7H3"
-                  ></path>
-                </svg>
-              </span>
+            <a href="/contact.html" class="btn-solid-light text-base font-medium">
+              Get in Touch
             </a>
-          </div>
-
-          <!-- Scroll Indicator -->
-          <div
-            class="scroll-indicator fade-in-up"
-            style="animation-delay: 0.5s"
-          >
-            <div class="scroll-indicator-line"></div>
-            <div class="scroll-indicator-dot"></div>
           </div>
         </div>
       </section>
 
       <!-- Trust Indicators / Social Proof -->
-      <section
-        class="py-16 border-y border-white/5 bg-black/20 backdrop-blur-sm"
-      >
+      <section class="py-16 border-y border-white/5 bg-black">
         <div class="container mx-auto px-4">
-          <div
-            class="flex flex-wrap items-center justify-center gap-12 opacity-60"
-          >
+          <div class="flex flex-wrap items-center justify-center gap-16 opacity-70">
             <div class="flex items-center gap-3">
-              <i class="fab fa-github text-3xl text-white"></i>
+              <i class="fab fa-github text-2xl text-white"></i>
               <div>
-                <div class="text-sm text-slate-400">Trusted on</div>
-                <div class="text-white font-semibold">GitHub</div>
+                <div class="text-xs text-slate-400">Trusted on</div>
+                <div class="text-white font-medium">GitHub</div>
               </div>
             </div>
             <div class="flex items-center gap-3">
-              <i class="fab fa-npm text-3xl text-white"></i>
+              <i class="fab fa-npm text-2xl text-white"></i>
               <div>
-                <div class="text-sm text-slate-400">Published on</div>
-                <div class="text-white font-semibold">NPM</div>
+                <div class="text-xs text-slate-400">Published on</div>
+                <div class="text-white font-medium">NPM</div>
               </div>
             </div>
             <div class="flex items-center gap-3">
-              <i class="fas fa-code text-3xl text-white"></i>
+              <i class="fas fa-code text-2xl text-white"></i>
               <div>
-                <div class="text-sm text-slate-400">Built with</div>
-                <div class="text-white font-semibold">TypeScript</div>
+                <div class="text-xs text-slate-400">Built with</div>
+                <div class="text-white font-medium">TypeScript</div>
               </div>
             </div>
             <div class="flex items-center gap-3">
-              <i class="fas fa-shield-alt text-3xl text-white"></i>
+              <i class="fas fa-shield-alt text-2xl text-white"></i>
               <div>
-                <div class="text-sm text-slate-400">Licensed</div>
-                <div class="text-white font-semibold">MIT</div>
+                <div class="text-xs text-slate-400">Licensed</div>
+                <div class="text-white font-medium">MIT</div>
               </div>
             </div>
           </div>
@@ -375,26 +280,20 @@
       </section>
 
       <!-- Why Choose Us Section -->
-      <section
-        class="section-padding bg-gradient-to-b from-black/30 to-transparent"
-      >
+      <section class="py-24 bg-black">
         <div class="container mx-auto px-4">
-          <div class="text-center mb-16">
-            <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
-              Why <span class="gradient-text-premium">CodeDynasty</span>
+          <!-- Feature Section Header -->
+          <div class="feature-section-header">
+            <div class="sub">Core Pillars</div>
+            <h2 class="title">
+              Why <span class="cursive-word">CodeDynasty</span>
             </h2>
-            <p class="text-slate-400 text-lg max-w-2xl mx-auto">
-              We're not just building tools—we're crafting experiences that
-              developers love
-            </p>
           </div>
 
-          <div
-            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto"
-          >
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             <!-- Feature 1 -->
-            <div class="feature-card group">
-              <div class="feature-icon">
+            <div class="card-haze">
+              <div class="text-twilight-blue text-3xl mb-4">
                 <svg
                   class="w-8 h-8"
                   fill="none"
@@ -409,16 +308,15 @@
                   />
                 </svg>
               </div>
-              <h3 class="text-xl font-bold text-white mb-3">Lightning Fast</h3>
-              <p class="text-slate-400">
-                Built for performance from the ground up. Every millisecond
-                counts.
+              <h3 class="text-xl font-medium mb-3">Lightning Fast</h3>
+              <p class="text-ink/80 text-sm">
+                Built for performance from the ground up. Speed, caching, and clean execution are baked into every module.
               </p>
             </div>
 
             <!-- Feature 2 -->
-            <div class="feature-card group">
-              <div class="feature-icon">
+            <div class="card-haze">
+              <div class="text-twilight-blue text-3xl mb-4">
                 <svg
                   class="w-8 h-8"
                   fill="none"
@@ -433,16 +331,15 @@
                   />
                 </svg>
               </div>
-              <h3 class="text-xl font-bold text-white mb-3">Developer First</h3>
-              <p class="text-slate-400">
-                Intuitive APIs and excellent documentation. Start building in
-                minutes.
+              <h3 class="text-xl font-medium mb-3">Developer First</h3>
+              <p class="text-ink/80 text-sm">
+                Intuitive API design and detailed documentation. Zero bloat, maximum developer ergonomics.
               </p>
             </div>
 
             <!-- Feature 3 -->
-            <div class="feature-card group">
-              <div class="feature-icon">
+            <div class="card-haze">
+              <div class="text-twilight-blue text-3xl mb-4">
                 <svg
                   class="w-8 h-8"
                   fill="none"
@@ -457,16 +354,15 @@
                   />
                 </svg>
               </div>
-              <h3 class="text-xl font-bold text-white mb-3">Type Safe</h3>
-              <p class="text-slate-400">
-                Full TypeScript support with excellent type inference and
-                safety.
+              <h3 class="text-xl font-medium mb-3">Type Safe</h3>
+              <p class="text-ink/80 text-sm">
+                Full TypeScript integration with strict contracts and type inference. Reduce runtime errors to zero.
               </p>
             </div>
 
             <!-- Feature 4 -->
-            <div class="feature-card group">
-              <div class="feature-icon">
+            <div class="card-haze">
+              <div class="text-twilight-blue text-3xl mb-4">
                 <svg
                   class="w-8 h-8"
                   fill="none"
@@ -481,18 +377,15 @@
                   />
                 </svg>
               </div>
-              <h3 class="text-xl font-bold text-white mb-3">
-                Fully Customizable
-              </h3>
-              <p class="text-slate-400">
-                Adapt to your needs. Every aspect is configurable and
-                extensible.
+              <h3 class="text-xl font-medium mb-3">Fully Customizable</h3>
+              <p class="text-ink/80 text-sm">
+                Modularity allows you to customize and extend behaviors without hacking core components.
               </p>
             </div>
 
             <!-- Feature 5 -->
-            <div class="feature-card group">
-              <div class="feature-icon">
+            <div class="card-haze">
+              <div class="text-twilight-blue text-3xl mb-4">
                 <svg
                   class="w-8 h-8"
                   fill="none"
@@ -507,17 +400,15 @@
                   />
                 </svg>
               </div>
-              <h3 class="text-xl font-bold text-white mb-3">
-                Community Driven
-              </h3>
-              <p class="text-slate-400">
-                Join thousands of developers building the future together.
+              <h3 class="text-xl font-medium mb-3">Community Driven</h3>
+              <p class="text-ink/80 text-sm">
+                Built openly. We integrate issues, feature requests, and community contributions to build better ecosystems.
               </p>
             </div>
 
             <!-- Feature 6 -->
-            <div class="feature-card group">
-              <div class="feature-icon">
+            <div class="card-haze">
+              <div class="text-twilight-blue text-3xl mb-4">
                 <svg
                   class="w-8 h-8"
                   fill="none"
@@ -532,10 +423,9 @@
                   />
                 </svg>
               </div>
-              <h3 class="text-xl font-bold text-white mb-3">Cloud Ready</h3>
-              <p class="text-slate-400">
-                Deploy anywhere. Edge, serverless, or traditional—we've got you
-                covered.
+              <h3 class="text-xl font-medium mb-3">Cloud Ready</h3>
+              <p class="text-ink/80 text-sm">
+                Perfect runtime abstraction for serverless, edge architectures, or docker containers. Deploy anywhere instantly.
               </p>
             </div>
           </div>
@@ -543,17 +433,16 @@
       </section>
 
       <!-- Latest Articles Section -->
-      <section class="section-padding">
+      <section class="py-24 bg-black">
         <div class="container mx-auto px-4">
-          <div class="text-center mb-16">
-            <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
-              Latest <span class="gradient-text-premium">Articles</span>
+          <!-- Feature Section Header -->
+          <div class="feature-section-header">
+            <div class="sub">Insights & Analysis</div>
+            <h2 class="title">
+              Latest <span class="cursive-word">Articles</span>
             </h2>
-            <p class="text-slate-400 text-lg max-w-2xl mx-auto">
-              Deep dives into modern web development, JavaScript internals, and
-              software architecture
-            </p>
           </div>
+
           <div
             id="articles-container"
             class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto"
@@ -563,93 +452,52 @@
 
           <!-- CTA to Blog Page -->
           <div class="text-center mt-16">
-            <a href="/blog.html" class="btn-premium group inline-flex">
-              <span class="btn-premium-glow"></span>
-              <span class="relative z-10 flex items-center">
-                <svg
-                  class="w-5 h-5 mr-2"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"
-                  />
-                </svg>
-                <span class="mr-2">Explore All Articles</span>
-                <svg
-                  class="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M17 8l4 4m0 0l-4 4m4-4H3"
-                  />
-                </svg>
-              </span>
+            <a href="/blog.html" class="btn-solid-light inline-flex text-base font-medium">
+              <span class="mr-2">Explore All Articles</span>
+              <svg
+                class="w-5 h-5 transition-transform duration-300"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
+              </svg>
             </a>
-            <p class="text-slate-500 text-sm mt-4">
-              Discover more technical insights and tutorials
-            </p>
           </div>
         </div>
       </section>
 
       <!-- Open Source Projects Section -->
-      <section
-        class="section-padding bg-gradient-to-b from-transparent to-black/30"
-      >
+      <section class="py-24 bg-black">
         <div class="container mx-auto px-4">
-          <div class="text-center mb-16">
-            <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
-              Open Source <span class="gradient-text">Projects</span>
+          <!-- Feature Section Header -->
+          <div class="feature-section-header">
+            <div class="sub">Our Creations</div>
+            <h2 class="title">
+              Open Source <span class="cursive-word">Projects</span>
             </h2>
-            <p class="text-slate-400 text-lg max-w-2xl mx-auto">
-              Building modern software for humanity. Explore our open source
-              contributions.
-            </p>
           </div>
-          <div
-            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto"
-          >
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             <!-- Jetpath -->
             <a
               href="https://github.com/CodeDynasty-dev/Jetpath"
               target="_blank"
-              class="project-card modern-card group"
+              class="modern-card group"
             >
-              <div
-                class="aspect-video overflow-hidden bg-gradient-to-br from-sky-500/20 to-blue-600/20 flex items-center justify-center rounded-lg mb-4"
-              >
-                <div class="text-white text-5xl font-bold">JP</div>
+              <div class="aspect-video overflow-hidden bg-black flex items-center justify-center rounded-[11px] mb-4">
+                <div class="text-white text-5xl font-medium" style="font-family: var(--font-control-tnt)">JP</div>
               </div>
-              <div class="badge mb-3">API Framework</div>
-              <h3
-                class="text-xl font-bold text-white mb-2 group-hover:text-sky-400 transition-colors"
-              >
-                Jetpath
-              </h3>
-              <p class="text-slate-400 text-sm mb-4">
-                A performance-first cross-runtime API framework without the
-                boilerplate.
-              </p>
-              <div class="flex items-center text-xs text-slate-500">
-                <svg
-                  class="w-4 h-4 mr-1"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
-                  />
-                </svg>
+              <div class="badge">API Framework</div>
+              <h3>Jetpath</h3>
+              <p>A performance-first cross-runtime API framework without the boilerplate.</p>
+              <div class="flex items-center text-xs text-ink/60">
+                <i class="fab fa-github mr-1"></i>
                 <span class="mr-3">16</span>
                 <span>TypeScript • MIT</span>
               </div>
@@ -659,33 +507,16 @@
             <a
               href="https://github.com/CodeDynasty-dev/Cradova"
               target="_blank"
-              class="project-card modern-card group"
+              class="modern-card group"
             >
-              <div
-                class="aspect-video overflow-hidden bg-gradient-to-br from-green-500/20 to-teal-600/20 flex items-center justify-center rounded-lg mb-4"
-              >
-                <div class="text-white text-5xl font-bold">C</div>
+              <div class="aspect-video overflow-hidden bg-black flex items-center justify-center rounded-[11px] mb-4">
+                <div class="text-white text-5xl font-medium" style="font-family: var(--font-control-tnt)">C</div>
               </div>
-              <div class="badge mb-3">UI Framework</div>
-              <h3
-                class="text-xl font-bold text-white mb-2 group-hover:text-sky-400 transition-colors"
-              >
-                Cradova
-              </h3>
-              <p class="text-slate-400 text-sm mb-4">
-                A modern UI framework for building fast and responsive web
-                applications.
-              </p>
-              <div class="flex items-center text-xs text-slate-500">
-                <svg
-                  class="w-4 h-4 mr-1"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
-                  />
-                </svg>
+              <div class="badge">UI Framework</div>
+              <h3>Cradova</h3>
+              <p>A modern UI framework for building fast and responsive web applications.</p>
+              <div class="flex items-center text-xs text-ink/60">
+                <i class="fab fa-github mr-1"></i>
                 <span class="mr-3">28</span>
                 <span>JavaScript • MIT</span>
               </div>
@@ -695,33 +526,16 @@
             <a
               href="https://github.com/CodeDynasty-dev/Exabase"
               target="_blank"
-              class="project-card modern-card group"
+              class="modern-card group"
             >
-              <div
-                class="aspect-video overflow-hidden bg-gradient-to-br from-red-500/20 to-pink-600/20 flex items-center justify-center rounded-lg mb-4"
-              >
-                <div class="text-white text-5xl font-bold">E</div>
+              <div class="aspect-video overflow-hidden bg-black flex items-center justify-center rounded-[11px] mb-4">
+                <div class="text-white text-5xl font-medium" style="font-family: var(--font-control-tnt)">E</div>
               </div>
-              <div class="badge mb-3">Database</div>
-              <h3
-                class="text-xl font-bold text-white mb-2 group-hover:text-sky-400 transition-colors"
-              >
-                Exabase
-              </h3>
-              <p class="text-slate-400 text-sm mb-4">
-                A scaling focused distributed NoSQL database with strong data
-                consistency.
-              </p>
-              <div class="flex items-center text-xs text-slate-500">
-                <svg
-                  class="w-4 h-4 mr-1"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
-                  />
-                </svg>
+              <div class="badge">Database</div>
+              <h3>Exabase</h3>
+              <p>A scaling focused distributed NoSQL database with strong data consistency.</p>
+              <div class="flex items-center text-xs text-ink/60">
+                <i class="fab fa-github mr-1"></i>
                 <span class="mr-3">7</span>
                 <span>Go • MIT</span>
               </div>
@@ -731,32 +545,16 @@
             <a
               href="https://github.com/CodeDynasty-dev/Jetflare"
               target="_blank"
-              class="project-card modern-card group"
+              class="modern-card group"
             >
-              <div
-                class="aspect-video overflow-hidden bg-gradient-to-br from-yellow-500/20 to-orange-600/20 flex items-center justify-center rounded-lg mb-4"
-              >
-                <div class="text-white text-5xl font-bold">JF</div>
+              <div class="aspect-video overflow-hidden bg-black flex items-center justify-center rounded-[11px] mb-4">
+                <div class="text-white text-5xl font-medium" style="font-family: var(--font-control-tnt)">JF</div>
               </div>
-              <div class="badge mb-3">API Client</div>
-              <h3
-                class="text-xl font-bold text-white mb-2 group-hover:text-sky-400 transition-colors"
-              >
-                Jetflare
-              </h3>
-              <p class="text-slate-400 text-sm mb-4">
-                A type-safe API client with built-in error handling and caching.
-              </p>
-              <div class="flex items-center text-xs text-slate-500">
-                <svg
-                  class="w-4 h-4 mr-1"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
-                  />
-                </svg>
+              <div class="badge">API Client</div>
+              <h3>Jetflare</h3>
+              <p>A type-safe API client with built-in error handling and caching.</p>
+              <div class="flex items-center text-xs text-ink/60">
+                <i class="fab fa-github mr-1"></i>
                 <span class="mr-3">3</span>
                 <span>TypeScript • MIT</span>
               </div>
@@ -766,32 +564,16 @@
             <a
               href="https://github.com/CodeDynasty-dev/SQLiteBruv"
               target="_blank"
-              class="project-card modern-card group"
+              class="modern-card group"
             >
-              <div
-                class="aspect-video overflow-hidden bg-gradient-to-br from-amber-500/20 to-yellow-600/20 flex items-center justify-center rounded-lg mb-4"
-              >
-                <div class="text-white text-5xl font-bold">SB</div>
+              <div class="aspect-video overflow-hidden bg-black flex items-center justify-center rounded-[11px] mb-4">
+                <div class="text-white text-5xl font-medium" style="font-family: var(--font-control-tnt)">SB</div>
               </div>
-              <div class="badge mb-3">Database ORM</div>
-              <h3
-                class="text-xl font-bold text-white mb-2 group-hover:text-sky-400 transition-colors"
-              >
-                SQLiteBruv
-              </h3>
-              <p class="text-slate-400 text-sm mb-4">
-                A type-safe SQLite query builder with D1/Turso support.
-              </p>
-              <div class="flex items-center text-xs text-slate-500">
-                <svg
-                  class="w-4 h-4 mr-1"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
-                  />
-                </svg>
+              <div class="badge">Database ORM</div>
+              <h3>SQLiteBruv</h3>
+              <p>A type-safe SQLite query builder with D1/Turso support.</p>
+              <div class="flex items-center text-xs text-ink/60">
+                <i class="fab fa-github mr-1"></i>
                 <span class="mr-3">17</span>
                 <span>TypeScript • MIT</span>
               </div>
@@ -801,33 +583,16 @@
             <a
               href="https://github.com/CodeDynasty-dev/Docmach"
               target="_blank"
-              class="project-card modern-card group"
+              class="modern-card group"
             >
-              <div
-                class="aspect-video overflow-hidden bg-gradient-to-br from-cyan-500/20 to-blue-600/20 flex items-center justify-center rounded-lg mb-4"
-              >
-                <div class="text-white text-5xl font-bold">D</div>
+              <div class="aspect-video overflow-hidden bg-black flex items-center justify-center rounded-[11px] mb-4">
+                <div class="text-white text-5xl font-medium" style="font-family: var(--font-control-tnt)">D</div>
               </div>
-              <div class="badge mb-3">Static Site Generator</div>
-              <h3
-                class="text-xl font-bold text-white mb-2 group-hover:text-sky-400 transition-colors"
-              >
-                Docmach
-              </h3>
-              <p class="text-slate-400 text-sm mb-4">
-                A Markdown-powered static site generator for blogs and
-                documentation.
-              </p>
-              <div class="flex items-center text-xs text-slate-500">
-                <svg
-                  class="w-4 h-4 mr-1"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
-                  />
-                </svg>
+              <div class="badge">Static Site Generator</div>
+              <h3>Docmach</h3>
+              <p>A Markdown-powered static site generator for blogs and documentation.</p>
+              <div class="flex items-center text-xs text-ink/60">
+                <i class="fab fa-github mr-1"></i>
                 <span class="mr-3">1</span>
                 <span>TypeScript • MIT</span>
               </div>
@@ -835,41 +600,43 @@
           </div>
         </div>
       </section>
+
+      <!-- Newsletter Section -->
+      <section class="py-24 bg-black">
+        <div class="container mx-auto px-4">
+          <div class="max-w-3xl mx-auto text-center relative z-10">
+            <!-- Feature Section Header -->
+            <div class="feature-section-header">
+              <div class="sub">Newsletter</div>
+              <h2 class="title">
+                Stay in the <span class="cursive-word">Loop</span>
+              </h2>
+            </div>
+            <p class="text-slate-400 text-lg mb-8">
+              Get the latest updates on our projects, articles, and developer insights delivered directly to your inbox.
+            </p>
+            <form class="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                class="input-text"
+                required
+                aria-label="Email address"
+              />
+              <button type="submit" class="btn-solid-light text-base font-medium">
+                Subscribe
+              </button>
+            </form>
+            <p class="text-slate-500 text-sm mt-4">
+              No spam. We respect your privacy. Unsubscribe anytime.
+            </p>
+          </div>
+        </div>
+      </section>
     </main>
 
-    <!-- Newsletter Section -->
-    <section class="newsletter-section">
-      <div class="container mx-auto px-4">
-        <div class="max-w-3xl mx-auto text-center relative z-10">
-          <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
-            Stay in the <span class="gradient-text-premium">Loop</span>
-          </h2>
-          <p class="text-slate-400 text-lg mb-8">
-            Get the latest updates on our projects, articles, and developer
-            insights delivered to your inbox.
-          </p>
-          <form class="newsletter-form">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              class="newsletter-input"
-              required
-              aria-label="Email address"
-            />
-            <button type="submit" class="btn-premium">
-              <span class="btn-premium-glow"></span>
-              <span class="relative z-10">Subscribe</span>
-            </button>
-          </form>
-          <p class="text-slate-500 text-sm mt-4">
-            No spam, unsubscribe anytime. We respect your privacy.
-          </p>
-        </div>
-      </div>
-    </section>
-
     <!-- Footer -->
-    <footer class="bg-black/30 border-t border-white/10 py-16">
+    <footer class="bg-black border-t border-white/10 py-16">
       <div class="container mx-auto px-4">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           <!-- Brand Column -->
@@ -878,64 +645,59 @@
               <img
                 src="logo.png"
                 alt="CodeDynasty"
-                class="w-10 h-10 rounded-lg mr-3"
+                class="w-10 h-10 rounded-[11px] mr-3"
               />
-              <span class="text-xl font-bold text-white">CodeDynasty</span>
+              <span class="text-xl font-medium text-white">CodeDynasty</span>
             </div>
             <p class="text-slate-400 mb-6 max-w-md">
-              Building modern, performant software that empowers developers and
-              delights users. Open source tools for the next generation.
+              Building modern, performant software that empowers developers. Open source tools for the next generation.
             </p>
             <div class="flex gap-4">
               <a
                 href="https://github.com/CodeDynasty-dev"
                 target="_blank"
-                class="social-link"
+                class="w-10 h-10 rounded-[8px] bg-white/5 hover:bg-white/10 flex items-center justify-center text-slate-400 hover:text-white transition-colors"
               >
                 <i class="fab fa-github"></i>
               </a>
-              <a href="https://discord.codedynasty.dev" class="social-link">
-                <i class="fab fa-discord"></i>
-              </a>
               <a
-                href="https://twitter.com/codedynasty"
-                target="_blank"
-                class="social-link"
+                href="https://discord.codedynasty.dev"
+                class="w-10 h-10 rounded-[8px] bg-white/5 hover:bg-white/10 flex items-center justify-center text-slate-400 hover:text-white transition-colors"
               >
-                <i class="fab fa-twitter"></i>
+                <i class="fab fa-discord"></i>
               </a>
             </div>
           </div>
 
           <!-- Quick Links -->
           <div>
-            <h3 class="text-white font-semibold mb-4">Quick Links</h3>
+            <h3 class="text-white font-medium mb-4">Quick Links</h3>
             <ul class="space-y-3">
               <li>
                 <a
                   href="/"
-                  class="text-slate-400 hover:text-white transition-colors"
+                  class="text-slate-400 hover:text-white transition-colors text-sm"
                   >Home</a
                 >
               </li>
               <li>
                 <a
                   href="/blog.html"
-                  class="text-slate-400 hover:text-white transition-colors"
+                  class="text-slate-400 hover:text-white transition-colors text-sm"
                   >Blog</a
                 >
               </li>
               <li>
                 <a
                   href="https://github.com/CodeDynasty-dev"
-                  class="text-slate-400 hover:text-white transition-colors"
+                  class="text-slate-400 hover:text-white transition-colors text-sm"
                   >Projects</a
                 >
               </li>
               <li>
                 <a
                   href="/contact.html"
-                  class="text-slate-400 hover:text-white transition-colors"
+                  class="text-slate-400 hover:text-white transition-colors text-sm"
                   >Contact</a
                 >
               </li>
@@ -944,33 +706,33 @@
 
           <!-- Resources -->
           <div>
-            <h3 class="text-white font-semibold mb-4">Resources</h3>
+            <h3 class="text-white font-medium mb-4">Resources</h3>
             <ul class="space-y-3">
               <li>
                 <a
                   href="https://github.com/CodeDynasty-dev"
-                  class="text-slate-400 hover:text-white transition-colors"
+                  class="text-slate-400 hover:text-white transition-colors text-sm"
                   >Documentation</a
                 >
               </li>
               <li>
                 <a
                   href="https://discord.codedynasty.dev"
-                  class="text-slate-400 hover:text-white transition-colors"
+                  class="text-slate-400 hover:text-white transition-colors text-sm"
                   >Community</a
                 >
               </li>
               <li>
                 <a
                   href="https://github.com/CodeDynasty-dev"
-                  class="text-slate-400 hover:text-white transition-colors"
+                  class="text-slate-400 hover:text-white transition-colors text-sm"
                   >GitHub</a
                 >
               </li>
               <li>
                 <a
                   href="/contact.html"
-                  class="text-slate-400 hover:text-white transition-colors"
+                  class="text-slate-400 hover:text-white transition-colors text-sm"
                   >Support</a
                 >
               </li>
@@ -1023,6 +785,7 @@
         mobileMenuButton.addEventListener("click", toggleMobileMenu);
         closeMobileMenu.addEventListener("click", toggleMobileMenu);
 
+        // Close menu when clicking on a link
         document.querySelectorAll("#mobile-menu a").forEach((link) => {
           link.addEventListener("click", () => {
             mobileMenu.classList.remove("translate-x-0");
@@ -1031,6 +794,7 @@
           });
         });
 
+        // Close menu when pressing Escape key
         document.addEventListener("keydown", (e) => {
           if (
             e.key === "Escape" &&
@@ -1088,24 +852,26 @@
 
             const articleHTML = `
               <a href="${link}" class="group modern-card">
-                <div class="aspect-video overflow-hidden rounded-lg mb-4">
+                <div class="aspect-video overflow-hidden rounded-[11px] mb-4">
                   <img
                     src="${image}"
                     alt="${title}"
                     class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                 </div>
-                <div class="badge mb-3">${topic.split(",")[0].trim()}</div>
-                <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-sky-400 transition-colors">
+                <div class="flex items-center gap-2 mb-3">
+                  <div class="badge">${topic.split(",")[0].trim()}</div>
+                </div>
+                <h3 class="text-xl font-medium text-ink mb-3 group-hover:text-signal-blue transition-colors line-clamp-2" style="font-family: var(--font-control-tnt)">
                   ${title}
                 </h3>
-                <p class="text-slate-400 mb-4 line-clamp-2">
+                <p class="text-ink/80 text-sm mb-4 line-clamp-3">
                   ${description}
                 </p>
-                <div class="flex items-center text-sm text-slate-500">
+                <div class="flex items-center text-xs text-ink/60">
                   <span>Read article</span>
                   <svg
-                    class="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1"
+                    class="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -1128,11 +894,10 @@
           if (posts.length > 6) {
             const ctaHTML = `
               <div class="col-span-1 md:col-span-2 flex justify-center mt-8">
-                <a href="/blog.html" class="btn-premium group">
-                  <span class="btn-premium-glow"></span>
-                  <span class="relative z-10 flex items-center">
+                <a href="/blog.html" class="btn-solid-light">
+                  <span class="flex items-center">
                     <span class="mr-2">View All Articles</span>
-                    <span class="text-sm opacity-75">(${posts.length} total)</span>
+                    <span class="text-xs opacity-75">(${posts.length} total)</span>
                     <svg
                       class="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1"
                       fill="none"
