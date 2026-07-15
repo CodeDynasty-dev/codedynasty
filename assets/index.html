@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -30,537 +31,700 @@
   <meta name="twitter:creator" content="@codedynasty" />
   <meta name="twitter:domain" content="codedynasty.dev" />
   <style>
-    .overflow-hidden { overflow: hidden; }
-    .translate-x-0 { transform: translateX(0); }
-    .-translate-x-full { transform: translateX(-100%); }
+    .overflow-hidden {
+      overflow: hidden;
+    }
 
-    .nav-desktop { display: none; }
-    .nav-mobile { display: block; }
+    .translate-x-0 {
+      transform: translateX(0);
+    }
+
+    .-translate-x-full {
+      transform: translateX(-100%);
+    }
+
+    .nav-desktop {
+      display: none;
+    }
+
+    .nav-mobile {
+      display: block;
+    }
 
     @media (min-width: 768px) {
-      .nav-desktop { display: flex; }
-      .nav-mobile { display: none; }
-      .md-block { display: block; }
+      .nav-desktop {
+        display: flex;
+      }
+
+      .nav-mobile {
+        display: none;
+      }
+
+      .md-block {
+        display: block;
+      }
     }
 
     @media (min-width: 640px) {
-      .sm-flex-row { flex-direction: row; }
+      .sm-flex-row {
+        flex-direction: row;
+      }
     }
 
-    .modern-card:hover img { transform: scale(1.1); }
+    .modern-card:hover img {
+      transform: scale(1.1);
+    }
 
-    .hover-bg-subtle:hover { background-color: rgba(255, 255, 255, 0.05); }
-    .hover-bg-subtle-10:hover { background-color: rgba(255, 255, 255, 0.1); }
+    .hover-bg-subtle:hover {
+      background-color: rgba(255, 255, 255, 0.05);
+    }
 
-    .modern-card:hover .read-arrow { transform: translateX(4px); }
+    .hover-bg-subtle-10:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
 
-    .footer-brand { grid-column: 1 / -1; }
-    .footer-grid { grid-template-columns: 1fr; }
+    .modern-card:hover .read-arrow {
+      transform: translateX(4px);
+    }
+
+    .footer-brand {
+      grid-column: 1 / -1;
+    }
+
+    .footer-grid {
+      grid-template-columns: 1fr;
+    }
 
     @media (min-width: 768px) {
-      .footer-grid { grid-template-columns: 2fr 1fr 1fr; }
-      .footer-brand { grid-column: auto; }
-      .footer-bottom { flex-direction: row; justify-content: space-between; align-items: center; }
+      .footer-grid {
+        grid-template-columns: 2fr 1fr 1fr;
+      }
+
+      .footer-brand {
+        grid-column: auto;
+      }
+
+      .footer-bottom {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
     }
+
   </style>
 </head>
+
 <body>
 
-<header style="position: fixed; width: 100%; top: 0; z-index: 50; background-color: rgba(0, 0, 0, 0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
-  <nav class="container-max" style="height: 72px;">
-    <div class="nav-minimal" style="justify-content: space-between; border-bottom: none; background: transparent; padding: 0;">
-      <a href="/" aria-label="CodeDynasty Home" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
-        <div style="width: 40px; height: 40px; margin-right: var(--spacing-12);">
-          <img src="logo.png" style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-images);" alt="CodeDynasty Logo" />
+  <header
+    style="position: fixed; width: 100%; top: 0; z-index: 50; background-color: rgba(0, 0, 0, 0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
+    <nav class="container-max" style="height: 72px;">
+      <div class="nav-minimal"
+        style="justify-content: space-between; border-bottom: none; background: transparent; padding: 0;">
+        <a href="/" aria-label="CodeDynasty Home"
+          style="display: flex; align-items: center; text-decoration: none; color: inherit;">
+          <div style="width: 40px; height: 40px; margin-right: var(--spacing-12);">
+            <img src="logo.png"
+              style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-images);"
+              alt="CodeDynasty Logo" />
+          </div>
+          <span
+            style="font-size: var(--text-subheading); font-weight: var(--font-weight-medium); color: var(--color-whiteout);">CodeDynasty</span>
+        </a>
+
+        <button id="mobile-menu-button" class="nav-mobile" aria-label="Toggle menu"
+          style="background: none; border: none; color: var(--color-whiteout); cursor: pointer; padding: 0;">
+          <svg style="width: 24px; height: 24px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+          </svg>
+        </button>
+
+        <div class="nav-minimal nav-desktop"
+          style="align-items: center; gap: var(--spacing-16); border-bottom: none; background: transparent; width: auto;">
+          <a href="/blog.html" class="nav-link">Blog</a>
+          <a href="https://discord.codedynasty.dev" class="nav-link">Discord</a>
+          <a href="https://github.com/CodeDynasty-dev" class="nav-link" target="_blank">GitHub</a>
+          <a href="/contact.html" class="btn-ghost-nav">Contact</a>
         </div>
-        <span style="font-size: var(--text-subheading); font-weight: var(--font-weight-medium); color: var(--color-whiteout);">CodeDynasty</span>
-      </a>
+      </div>
+    </nav>
+  </header>
 
-      <button id="mobile-menu-button" class="nav-mobile" aria-label="Toggle menu" style="background: none; border: none; color: var(--color-whiteout); cursor: pointer; padding: 0;">
-        <svg style="width: 24px; height: 24px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-        </svg>
-      </button>
-
-      <div class="nav-minimal nav-desktop" style="align-items: center; gap: var(--spacing-16); border-bottom: none; background: transparent; width: auto;">
-        <a href="/blog.html" class="nav-link">Blog</a>
-        <a href="https://discord.codedynasty.dev" class="nav-link">Discord</a>
-        <a href="https://github.com/CodeDynasty-dev" class="nav-link" target="_blank">GitHub</a>
-        <a href="/contact.html" class="btn-ghost-nav">Contact</a>
+  <div id="mobile-menu" class="mobile-menu -translate-x-full"
+    style="position: fixed; inset: 0; z-index: 50; background-color: rgba(0, 0, 0, 0.95); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); transition: transform 0.3s ease-in-out; display: block;">
+    <div
+      style="padding: var(--spacing-32) var(--spacing-24); height: 100%; display: flex; flex-direction: column; max-width: var(--page-max-width); margin: 0 auto;">
+      <div
+        style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-48);">
+        <a href="/" aria-label="CodeDynasty Home"
+          style="display: flex; align-items: center; text-decoration: none; color: inherit;">
+          <div style="width: 40px; height: 40px; margin-right: var(--spacing-12);">
+            <img src="logo.png"
+              style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-images);"
+              alt="CodeDynasty Logo" />
+          </div>
+          <span
+            style="font-size: var(--text-subheading); font-weight: var(--font-weight-medium); color: var(--color-whiteout);">CodeDynasty</span>
+        </a>
+        <button id="close-mobile-menu"
+          style="background: none; border: none; color: rgba(255, 255, 255, 0.7); cursor: pointer; padding: 0; transition: color 0.2s ease;"
+          onmouseover="this.style.color='var(--color-whiteout)'"
+          onmouseout="this.style.color='rgba(255, 255, 255, 0.7)'">
+          <svg style="width: 24px; height: 24px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <nav style="flex: 1; display: flex; flex-direction: column; gap: var(--spacing-16);">
+        <a href="/blog.html" class="hover-bg-subtle"
+          style="color: rgba(255, 255, 255, 0.8); text-decoration: none; font-size: var(--text-body); padding: var(--spacing-12) var(--spacing-16); border-radius: var(--radius-lg); transition: color 0.2s ease, background-color 0.2s ease;">Blog</a>
+        <a href="https://discord.codedynasty.dev" class="hover-bg-subtle"
+          style="color: rgba(255, 255, 255, 0.8); text-decoration: none; font-size: var(--text-body); padding: var(--spacing-12) var(--spacing-16); border-radius: var(--radius-lg); transition: color 0.2s ease, background-color 0.2s ease;">Discord</a>
+        <a href="https://github.com/CodeDynasty-dev" target="_blank" class="hover-bg-subtle"
+          style="color: rgba(255, 255, 255, 0.8); text-decoration: none; font-size: var(--text-body); padding: var(--spacing-12) var(--spacing-16); border-radius: var(--radius-lg); transition: color 0.2s ease, background-color 0.2s ease;">GitHub</a>
+        <a href="/contact.html" class="hover-bg-subtle"
+          style="color: rgba(255, 255, 255, 0.8); text-decoration: none; font-size: var(--text-body); padding: var(--spacing-12) var(--spacing-16); border-radius: var(--radius-lg); transition: color 0.2s ease, background-color 0.2s ease;">Contact</a>
+      </nav>
+      <div style="padding-top: var(--spacing-24); border-top: 1px solid rgba(255, 255, 255, 0.1); margin-top: auto;">
+        <p style="color: rgba(255, 255, 255, 0.5); font-size: var(--text-caption); text-align: center;">&copy; 2025
+          CodeDynasty. All rights reserved.</p>
       </div>
     </div>
-  </nav>
-</header>
-
-<div id="mobile-menu" class="mobile-menu -translate-x-full" style="position: fixed; inset: 0; z-index: 50; background-color: rgba(0, 0, 0, 0.95); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); transition: transform 0.3s ease-in-out; display: block;">
-  <div style="padding: var(--spacing-32) var(--spacing-24); height: 100%; display: flex; flex-direction: column; max-width: var(--page-max-width); margin: 0 auto;">
-    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-48);">
-      <a href="/" aria-label="CodeDynasty Home" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
-        <div style="width: 40px; height: 40px; margin-right: var(--spacing-12);">
-          <img src="logo.png" style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-images);" alt="CodeDynasty Logo" />
-        </div>
-        <span style="font-size: var(--text-subheading); font-weight: var(--font-weight-medium); color: var(--color-whiteout);">CodeDynasty</span>
-      </a>
-      <button id="close-mobile-menu" style="background: none; border: none; color: rgba(255, 255, 255, 0.7); cursor: pointer; padding: 0; transition: color 0.2s ease;" onmouseover="this.style.color='var(--color-whiteout)'" onmouseout="this.style.color='rgba(255, 255, 255, 0.7)'">
-        <svg style="width: 24px; height: 24px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-        </svg>
-      </button>
-    </div>
-    <nav style="flex: 1; display: flex; flex-direction: column; gap: var(--spacing-16);">
-      <a href="/blog.html" class="hover-bg-subtle" style="color: rgba(255, 255, 255, 0.8); text-decoration: none; font-size: var(--text-body); padding: var(--spacing-12) var(--spacing-16); border-radius: var(--radius-lg); transition: color 0.2s ease, background-color 0.2s ease;">Blog</a>
-      <a href="https://discord.codedynasty.dev" class="hover-bg-subtle" style="color: rgba(255, 255, 255, 0.8); text-decoration: none; font-size: var(--text-body); padding: var(--spacing-12) var(--spacing-16); border-radius: var(--radius-lg); transition: color 0.2s ease, background-color 0.2s ease;">Discord</a>
-      <a href="https://github.com/CodeDynasty-dev" target="_blank" class="hover-bg-subtle" style="color: rgba(255, 255, 255, 0.8); text-decoration: none; font-size: var(--text-body); padding: var(--spacing-12) var(--spacing-16); border-radius: var(--radius-lg); transition: color 0.2s ease, background-color 0.2s ease;">GitHub</a>
-      <a href="/contact.html" class="hover-bg-subtle" style="color: rgba(255, 255, 255, 0.8); text-decoration: none; font-size: var(--text-body); padding: var(--spacing-12) var(--spacing-16); border-radius: var(--radius-lg); transition: color 0.2s ease, background-color 0.2s ease;">Contact</a>
-    </nav>
-    <div style="padding-top: var(--spacing-24); border-top: 1px solid rgba(255, 255, 255, 0.1); margin-top: auto;">
-      <p style="color: rgba(255, 255, 255, 0.5); font-size: var(--text-caption); text-align: center;">&copy; 2025 CodeDynasty. All rights reserved.</p>
-    </div>
   </div>
-</div>
 
-<main style="padding-top: 72px;">
+  <main style="padding-top: 72px;">
 
-  <section class="section-photo-bleed" style="background-image: url('/air-bg.png');">
-    <div style="position: relative; z-index: 10; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 0 var(--spacing-16); max-width: 1152px; margin: 0 auto; padding-top: var(--spacing-64); padding-bottom: var(--spacing-64);">
-      <div class="btn-pill-toggle" style="margin-bottom: var(--spacing-32); text-transform: uppercase; letter-spacing: 0.1em; padding: 4px 12px; font-size: var(--text-caption); background-color: rgba(255, 255, 255, 0.1); color: var(--color-whiteout); cursor: default;">Open Source First</div>
+    <section class="section-photo-bleed" style="background-image: url('/air-bg.png');">
+      <div
+        style="position: relative; z-index: 10; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 0 var(--spacing-16); max-width: 1152px; margin: 0 auto; padding-top: var(--spacing-64); padding-bottom: var(--spacing-64);">
+        <div class="btn-pill-toggle"
+          style="margin-bottom: var(--spacing-32); text-transform: uppercase; letter-spacing: 0.1em; padding: 4px 12px; font-size: var(--text-caption); background-color: rgba(255, 255, 255, 0.1); color: var(--color-whiteout); cursor: default;">
+          Open Source First</div>
 
         <!-- <h1 class="headline-display" style="margin-bottom: var(--spacing-24);">MAKE IT ONCE.</h1> -->
 
-      <h2 class="headline-dual" style="margin-bottom: var(--spacing-32); text-align: center; max-width: 48rem;">
-        Engineering the <span class="cursive-word">future</span> of open source tools.
-      </h2>
+        <h2 class="headline-dual" style="margin-bottom: var(--spacing-32); text-align: center; max-width: 48rem;">
+          Engineering the <span class="cursive-word">future</span> of open source tools.
+        </h2>
 
-      <p style="font-size: var(--text-body); color: var(--text-dark-secondary); max-width: 42rem; margin-bottom: var(--spacing-48); line-height: var(--leading-body);">
-        Building modern, performant software that empowers developers. CodeDynasty delivers modular, type-safe, and blazing fast solutions for the web ecosystem.
-      </p>
+        <p
+          style="font-size: var(--text-body); color: var(--text-dark-secondary); max-width: 42rem; margin-bottom: var(--spacing-48); line-height: var(--leading-body);">
+          Building modern, performant software that empowers developers. CodeDynasty delivers modular, type-safe, and
+          blazing fast solutions for the web ecosystem.
+        </p>
 
-      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: var(--spacing-48); margin-bottom: var(--spacing-48);">
-        <div style="text-align: center;">
-          <div style="color: var(--color-twilight-blue); font-weight: var(--font-weight-medium); font-size: var(--text-heading); margin-bottom: var(--spacing-4);">6+</div>
-          <div style="color: var(--text-dark-muted); font-size: var(--text-caption); text-transform: uppercase; letter-spacing: 0.05em;">Projects</div>
-        </div>
-        <div class="md-block" style="width: 1px; height: 40px; background-color: rgba(255, 255, 255, 0.1); align-self: center; display: none;"></div>
-        <div style="text-align: center;">
-          <div style="color: var(--color-twilight-blue); font-weight: var(--font-weight-medium); font-size: var(--text-heading); margin-bottom: var(--spacing-4);">100+</div>
-          <div style="color: var(--text-dark-muted); font-size: var(--text-caption); text-transform: uppercase; letter-spacing: 0.05em;">GitHub Stars</div>
-        </div>
-        <div class="md-block" style="width: 1px; height: 40px; background-color: rgba(255, 255, 255, 0.1); align-self: center; display: none;"></div>
-        <div style="text-align: center;">
-          <div style="color: var(--color-twilight-blue); font-weight: var(--font-weight-medium); font-size: var(--text-heading); margin-bottom: var(--spacing-4);">&infin;</div>
-          <div style="color: var(--text-dark-muted); font-size: var(--text-caption); text-transform: uppercase; letter-spacing: 0.05em;">Possibilities</div>
-        </div>
-      </div>
-
-      <div style="display: flex; flex-direction: column; align-items: center; gap: var(--spacing-16);" class="sm-flex-row">
-        <a href="https://github.com/CodeDynasty-dev" class="btn-ghost-nav" style="font-size: var(--text-body); padding: 10px 20px;">Explore Projects</a>
-        <a href="/contact.html" class="btn-solid-light" style="font-size: var(--text-body); padding: 10px 20px;">Get in Touch</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section-dark border-hairline-subtle" style="border-left: none; border-right: none; padding: var(--spacing-64) 0;">
-    <div class="container-max">
-      <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: var(--spacing-64); opacity: 0.7;">
-        <div style="display: flex; align-items: center; gap: var(--spacing-12);">
-          <i class="fab fa-github" style="font-size: var(--text-heading); color: var(--color-whiteout);"></i>
-          <div>
-            <div style="font-size: var(--text-caption); color: var(--text-dark-muted);">Trusted on</div>
-            <div style="color: var(--color-whiteout); font-weight: var(--font-weight-medium);">GitHub</div>
+        <div
+          style="display: flex; flex-wrap: wrap; justify-content: center; gap: var(--spacing-48); margin-bottom: var(--spacing-48);">
+          <div style="text-align: center;">
+            <div
+              style="color: var(--color-twilight-blue); font-weight: var(--font-weight-medium); font-size: var(--text-heading); margin-bottom: var(--spacing-4);">
+              6+</div>
+            <div
+              style="color: var(--text-dark-muted); font-size: var(--text-caption); text-transform: uppercase; letter-spacing: 0.05em;">
+              Projects</div>
+          </div>
+          <div class="md-block"
+            style="width: 1px; height: 40px; background-color: rgba(255, 255, 255, 0.1); align-self: center; display: none;">
+          </div>
+          <div style="text-align: center;">
+            <div
+              style="color: var(--color-twilight-blue); font-weight: var(--font-weight-medium); font-size: var(--text-heading); margin-bottom: var(--spacing-4);">
+              100+</div>
+            <div
+              style="color: var(--text-dark-muted); font-size: var(--text-caption); text-transform: uppercase; letter-spacing: 0.05em;">
+              GitHub Stars</div>
+          </div>
+          <div class="md-block"
+            style="width: 1px; height: 40px; background-color: rgba(255, 255, 255, 0.1); align-self: center; display: none;">
+          </div>
+          <div style="text-align: center;">
+            <div
+              style="color: var(--color-twilight-blue); font-weight: var(--font-weight-medium); font-size: var(--text-heading); margin-bottom: var(--spacing-4);">
+              &infin;</div>
+            <div
+              style="color: var(--text-dark-muted); font-size: var(--text-caption); text-transform: uppercase; letter-spacing: 0.05em;">
+              Possibilities</div>
           </div>
         </div>
-        <div style="display: flex; align-items: center; gap: var(--spacing-12);">
-          <i class="fab fa-npm" style="font-size: var(--text-heading); color: var(--color-whiteout);"></i>
-          <div>
-            <div style="font-size: var(--text-caption); color: var(--text-dark-muted);">Published on</div>
-            <div style="color: var(--color-whiteout); font-weight: var(--font-weight-medium);">NPM</div>
-          </div>
-        </div>
-        <div style="display: flex; align-items: center; gap: var(--spacing-12);">
-          <i class="fas fa-code" style="font-size: var(--text-heading); color: var(--color-whiteout);"></i>
-          <div>
-            <div style="font-size: var(--text-caption); color: var(--text-dark-muted);">Built with</div>
-            <div style="color: var(--color-whiteout); font-weight: var(--font-weight-medium);">TypeScript</div>
-          </div>
-        </div>
-        <div style="display: flex; align-items: center; gap: var(--spacing-12);">
-          <i class="fas fa-shield-alt" style="font-size: var(--text-heading); color: var(--color-whiteout);"></i>
-          <div>
-            <div style="font-size: var(--text-caption); color: var(--text-dark-muted);">Licensed</div>
-            <div style="color: var(--color-whiteout); font-weight: var(--font-weight-medium);">MIT</div>
-          </div>
+
+        <div style="display: flex; flex-direction: column; align-items: center; gap: var(--spacing-16);"
+          class="sm-flex-row">
+          <a href="https://github.com/CodeDynasty-dev" class="btn-ghost-nav"
+            style="font-size: var(--text-body); padding: 10px 20px;">Explore Projects</a>
+          <a href="/contact.html" class="btn-solid-light" style="font-size: var(--text-body); padding: 10px 20px;">Get
+            in Touch</a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section-dark" style="padding: var(--spacing-80) 0;">
-    <div class="container-max">
-      <div class="feature-section-header">
-        <div class="sub">Core Pillars</div>
-        <h2 class="title">Why <span class="cursive-word">CodeDynasty</span></h2>
-      </div>
-
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--spacing-32); max-width: var(--page-max-width); margin: 0 auto;">
-
-        <div class="card-haze">
-          <div style="color: var(--color-twilight-blue); font-size: var(--text-heading); margin-bottom: var(--spacing-16);">
-            <svg style="width: 32px; height: 32px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-            </svg>
+    <section class="section-dark border-hairline-subtle"
+      style="border-left: none; border-right: none; padding: var(--spacing-64) 0;">
+      <div class="container-max">
+        <div
+          style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: var(--spacing-64); opacity: 0.7;">
+          <div style="display: flex; align-items: center; gap: var(--spacing-12);">
+            <i class="fab fa-github" style="font-size: var(--text-heading); color: var(--color-whiteout);"></i>
+            <div>
+              <div style="font-size: var(--text-caption); color: var(--text-dark-muted);">Trusted on</div>
+              <div style="color: var(--color-whiteout); font-weight: var(--font-weight-medium);">GitHub</div>
+            </div>
           </div>
-          <h3 style="font-size: var(--text-subheading); margin-bottom: var(--spacing-12);">Lightning Fast</h3>
-          <p>Built for performance from the ground up. Speed, caching, and clean execution are baked into every module.</p>
+          <div style="display: flex; align-items: center; gap: var(--spacing-12);">
+            <i class="fab fa-npm" style="font-size: var(--text-heading); color: var(--color-whiteout);"></i>
+            <div>
+              <div style="font-size: var(--text-caption); color: var(--text-dark-muted);">Published on</div>
+              <div style="color: var(--color-whiteout); font-weight: var(--font-weight-medium);">NPM</div>
+            </div>
+          </div>
+          <div style="display: flex; align-items: center; gap: var(--spacing-12);">
+            <i class="fas fa-code" style="font-size: var(--text-heading); color: var(--color-whiteout);"></i>
+            <div>
+              <div style="font-size: var(--text-caption); color: var(--text-dark-muted);">Built with</div>
+              <div style="color: var(--color-whiteout); font-weight: var(--font-weight-medium);">TypeScript</div>
+            </div>
+          </div>
+          <div style="display: flex; align-items: center; gap: var(--spacing-12);">
+            <i class="fas fa-shield-alt" style="font-size: var(--text-heading); color: var(--color-whiteout);"></i>
+            <div>
+              <div style="font-size: var(--text-caption); color: var(--text-dark-muted);">Licensed</div>
+              <div style="color: var(--color-whiteout); font-weight: var(--font-weight-medium);">MIT</div>
+            </div>
+          </div>
         </div>
-
-        <div class="card-haze">
-          <div style="color: var(--color-twilight-blue); font-size: var(--text-heading); margin-bottom: var(--spacing-16);">
-            <svg style="width: 32px; height: 32px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
-            </svg>
-          </div>
-          <h3 style="font-size: var(--text-subheading); margin-bottom: var(--spacing-12);">Developer First</h3>
-          <p>Intuitive API design and detailed documentation. Zero bloat, maximum developer ergonomics.</p>
-        </div>
-
-        <div class="card-haze">
-          <div style="color: var(--color-twilight-blue); font-size: var(--text-heading); margin-bottom: var(--spacing-16);">
-            <svg style="width: 32px; height: 32px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-            </svg>
-          </div>
-          <h3 style="font-size: var(--text-subheading); margin-bottom: var(--spacing-12);">Type Safe</h3>
-          <p>Full TypeScript integration with strict contracts and type inference. Reduce runtime errors to zero.</p>
-        </div>
-
-        <div class="card-haze">
-          <div style="color: var(--color-twilight-blue); font-size: var(--text-heading); margin-bottom: var(--spacing-16);">
-            <svg style="width: 32px; height: 32px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
-            </svg>
-          </div>
-          <h3 style="font-size: var(--text-subheading); margin-bottom: var(--spacing-12);">Fully Customizable</h3>
-          <p>Modularity allows you to customize and extend behaviors without hacking core components.</p>
-        </div>
-
-        <div class="card-haze">
-          <div style="color: var(--color-twilight-blue); font-size: var(--text-heading); margin-bottom: var(--spacing-16);">
-            <svg style="width: 32px; height: 32px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-            </svg>
-          </div>
-          <h3 style="font-size: var(--text-subheading); margin-bottom: var(--spacing-12);">Community Driven</h3>
-          <p>Built openly. We integrate issues, feature requests, and community contributions to build better ecosystems.</p>
-        </div>
-
-        <div class="card-haze">
-          <div style="color: var(--color-twilight-blue); font-size: var(--text-heading); margin-bottom: var(--spacing-16);">
-            <svg style="width: 32px; height: 32px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
-            </svg>
-          </div>
-          <h3 style="font-size: var(--text-subheading); margin-bottom: var(--spacing-12);">Cloud Ready</h3>
-          <p>Perfect runtime abstraction for serverless, edge architectures, or docker containers. Deploy anywhere instantly.</p>
-        </div>
-
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section-dark" style="padding: var(--spacing-80) 0;">
-    <div class="container-max">
-      <div class="feature-section-header">
-        <div class="sub">Insights &amp; Analysis</div>
-        <h2 class="title">Latest <span class="cursive-word">Articles</span></h2>
-      </div>
-
-      <div id="articles-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--spacing-32); max-width: var(--page-max-width); margin: 0 auto;"></div>
-
-      <div style="text-align: center; margin-top: var(--spacing-64);">
-        <a href="/blog.html" class="btn-solid-light" style="font-size: var(--text-body); padding: 10px 20px;">
-          <span style="margin-right: var(--spacing-8);">Explore All Articles</span>
-          <svg style="width: 20px; height: 20px; transition: transform 0.3s ease;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-          </svg>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section-dark" style="padding: var(--spacing-80) 0;">
-    <div class="container-max">
-      <div class="feature-section-header">
-        <div class="sub">Our Creations</div>
-        <h2 class="title">Open Source <span class="cursive-word">Projects</span></h2>
-      </div>
-
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--spacing-32); max-width: var(--page-max-width); margin: 0 auto;">
-
-        <a href="https://github.com/CodeDynasty-dev/Jetpath" target="_blank" class="modern-card" style="cursor: pointer;">
-          <div style="aspect-ratio: 16/9; overflow: hidden; background-color: var(--color-black-void); display: flex; align-items: center; justify-content: center; border-radius: var(--radius-images); margin-bottom: var(--spacing-16);">
-            <div style="color: var(--color-whiteout); font-size: var(--text-heading); font-family: var(--font-control-tnt);">JP</div>
-          </div>
-          <div class="badge">API Framework</div>
-          <h3>Jetpath</h3>
-          <p>A performance-first cross-runtime API framework without the boilerplate.</p>
-          <div style="display: flex; align-items: center; font-size: var(--text-caption); color: rgba(27, 27, 27, 0.6);">
-            <i class="fab fa-github" style="margin-right: var(--spacing-4);"></i>
-            <span style="margin-right: var(--spacing-12);">16</span>
-            <span>TypeScript &bull; MIT</span>
-          </div>
-        </a>
-
-        <a href="https://github.com/CodeDynasty-dev/Cradova" target="_blank" class="modern-card" style="cursor: pointer;">
-          <div style="aspect-ratio: 16/9; overflow: hidden; background-color: var(--color-black-void); display: flex; align-items: center; justify-content: center; border-radius: var(--radius-images); margin-bottom: var(--spacing-16);">
-            <div style="color: var(--color-whiteout); font-size: var(--text-heading); font-family: var(--font-control-tnt);">C</div>
-          </div>
-          <div class="badge">UI Framework</div>
-          <h3>Cradova</h3>
-          <p>A modern UI framework for building fast and responsive web applications.</p>
-          <div style="display: flex; align-items: center; font-size: var(--text-caption); color: rgba(27, 27, 27, 0.6);">
-            <i class="fab fa-github" style="margin-right: var(--spacing-4);"></i>
-            <span style="margin-right: var(--spacing-12);">28</span>
-            <span>JavaScript &bull; MIT</span>
-          </div>
-        </a>
-
-        <a href="https://github.com/CodeDynasty-dev/Exabase" target="_blank" class="modern-card" style="cursor: pointer;">
-          <div style="aspect-ratio: 16/9; overflow: hidden; background-color: var(--color-black-void); display: flex; align-items: center; justify-content: center; border-radius: var(--radius-images); margin-bottom: var(--spacing-16);">
-            <div style="color: var(--color-whiteout); font-size: var(--text-heading); font-family: var(--font-control-tnt);">E</div>
-          </div>
-          <div class="badge">Database</div>
-          <h3>Exabase</h3>
-          <p>A scaling focused distributed NoSQL database with strong data consistency.</p>
-          <div style="display: flex; align-items: center; font-size: var(--text-caption); color: rgba(27, 27, 27, 0.6);">
-            <i class="fab fa-github" style="margin-right: var(--spacing-4);"></i>
-            <span style="margin-right: var(--spacing-12);">7</span>
-            <span>Go &bull; MIT</span>
-          </div>
-        </a>
-
-        <a href="https://github.com/CodeDynasty-dev/Jetflare" target="_blank" class="modern-card" style="cursor: pointer;">
-          <div style="aspect-ratio: 16/9; overflow: hidden; background-color: var(--color-black-void); display: flex; align-items: center; justify-content: center; border-radius: var(--radius-images); margin-bottom: var(--spacing-16);">
-            <div style="color: var(--color-whiteout); font-size: var(--text-heading); font-family: var(--font-control-tnt);">JF</div>
-          </div>
-          <div class="badge">API Client</div>
-          <h3>Jetflare</h3>
-          <p>A type-safe API client with built-in error handling and caching.</p>
-          <div style="display: flex; align-items: center; font-size: var(--text-caption); color: rgba(27, 27, 27, 0.6);">
-            <i class="fab fa-github" style="margin-right: var(--spacing-4);"></i>
-            <span style="margin-right: var(--spacing-12);">3</span>
-            <span>TypeScript &bull; MIT</span>
-          </div>
-        </a>
-
-        <a href="https://github.com/CodeDynasty-dev/SQLiteBruv" target="_blank" class="modern-card" style="cursor: pointer;">
-          <div style="aspect-ratio: 16/9; overflow: hidden; background-color: var(--color-black-void); display: flex; align-items: center; justify-content: center; border-radius: var(--radius-images); margin-bottom: var(--spacing-16);">
-            <div style="color: var(--color-whiteout); font-size: var(--text-heading); font-family: var(--font-control-tnt);">SB</div>
-          </div>
-          <div class="badge">Database ORM</div>
-          <h3>SQLiteBruv</h3>
-          <p>A type-safe SQLite query builder with D1/Turso support.</p>
-          <div style="display: flex; align-items: center; font-size: var(--text-caption); color: rgba(27, 27, 27, 0.6);">
-            <i class="fab fa-github" style="margin-right: var(--spacing-4);"></i>
-            <span style="margin-right: var(--spacing-12);">17</span>
-            <span>TypeScript &bull; MIT</span>
-          </div>
-        </a>
-
-        <a href="https://github.com/CodeDynasty-dev/Docmach" target="_blank" class="modern-card" style="cursor: pointer;">
-          <div style="aspect-ratio: 16/9; overflow: hidden; background-color: var(--color-black-void); display: flex; align-items: center; justify-content: center; border-radius: var(--radius-images); margin-bottom: var(--spacing-16);">
-            <div style="color: var(--color-whiteout); font-size: var(--text-heading); font-family: var(--font-control-tnt);">D</div>
-          </div>
-          <div class="badge">Static Site Generator</div>
-          <h3>Docmach</h3>
-          <p>A Markdown-powered static site generator for blogs and documentation.</p>
-          <div style="display: flex; align-items: center; font-size: var(--text-caption); color: rgba(27, 27, 27, 0.6);">
-            <i class="fab fa-github" style="margin-right: var(--spacing-4);"></i>
-            <span style="margin-right: var(--spacing-12);">1</span>
-            <span>TypeScript &bull; MIT</span>
-          </div>
-        </a>
-
-      </div>
-    </div>
-  </section>
-
-  <section class="section-dark" style="padding: var(--spacing-80) 0;">
-    <div class="container-max">
-      <div style="max-width: 48rem; margin: 0 auto; text-align: center; position: relative; z-index: 10;">
+    <section class="section-dark" style="padding: var(--spacing-80) 0;">
+      <div class="container-max">
         <div class="feature-section-header">
-          <div class="sub">Newsletter</div>
-          <h2 class="title">Stay in the <span class="cursive-word">Loop</span></h2>
+          <div class="sub">Core Pillars</div>
+          <h2 class="title">Why <span class="cursive-word">CodeDynasty</span></h2>
         </div>
-        <p style="color: var(--text-dark-muted); font-size: var(--text-body); margin-bottom: var(--spacing-32);">
-          Get the latest updates on our projects, articles, and developer insights delivered directly to your inbox.
-        </p>
-        <form class="sm-flex-row" style="display: flex; flex-direction: column; gap: var(--spacing-16); justify-content: center; max-width: 28rem; margin: 0 auto;">
-          <input type="email" placeholder="Enter your email" class="input-text" required aria-label="Email address" />
-          <button type="submit" class="btn-solid-light" style="font-size: var(--text-body); padding: 10px 20px;">Subscribe</button>
-        </form>
-        <p style="color: rgba(255, 255, 255, 0.4); font-size: var(--text-caption); margin-top: var(--spacing-16);">
-          No spam. We respect your privacy. Unsubscribe anytime.
-        </p>
+
+        <div
+          style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--spacing-32); max-width: var(--page-max-width); margin: 0 auto;">
+
+          <div class="card-haze">
+            <div
+              style="color: var(--color-twilight-blue); font-size: var(--text-heading); margin-bottom: var(--spacing-16);">
+              <svg style="width: 32px; height: 32px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <h3 style="font-size: var(--text-subheading); margin-bottom: var(--spacing-12);">Lightning Fast</h3>
+            <p>Built for performance from the ground up. Speed, caching, and clean execution are baked into every
+              module.</p>
+          </div>
+
+          <div class="card-haze">
+            <div
+              style="color: var(--color-twilight-blue); font-size: var(--text-heading); margin-bottom: var(--spacing-16);">
+              <svg style="width: 32px; height: 32px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+              </svg>
+            </div>
+            <h3 style="font-size: var(--text-subheading); margin-bottom: var(--spacing-12);">Developer First</h3>
+            <p>Intuitive API design and detailed documentation. Zero bloat, maximum developer ergonomics.</p>
+          </div>
+
+          <div class="card-haze">
+            <div
+              style="color: var(--color-twilight-blue); font-size: var(--text-heading); margin-bottom: var(--spacing-16);">
+              <svg style="width: 32px; height: 32px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
+            <h3 style="font-size: var(--text-subheading); margin-bottom: var(--spacing-12);">Type Safe</h3>
+            <p>Full TypeScript integration with strict contracts and type inference. Reduce runtime errors to zero.</p>
+          </div>
+
+          <div class="card-haze">
+            <div
+              style="color: var(--color-twilight-blue); font-size: var(--text-heading); margin-bottom: var(--spacing-16);">
+              <svg style="width: 32px; height: 32px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+              </svg>
+            </div>
+            <h3 style="font-size: var(--text-subheading); margin-bottom: var(--spacing-12);">Fully Customizable</h3>
+            <p>Modularity allows you to customize and extend behaviors without hacking core components.</p>
+          </div>
+
+          <div class="card-haze">
+            <div
+              style="color: var(--color-twilight-blue); font-size: var(--text-heading); margin-bottom: var(--spacing-16);">
+              <svg style="width: 32px; height: 32px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+              </svg>
+            </div>
+            <h3 style="font-size: var(--text-subheading); margin-bottom: var(--spacing-12);">Community Driven</h3>
+            <p>Built openly. We integrate issues, feature requests, and community contributions to build better
+              ecosystems.</p>
+          </div>
+
+          <div class="card-haze">
+            <div
+              style="color: var(--color-twilight-blue); font-size: var(--text-heading); margin-bottom: var(--spacing-16);">
+              <svg style="width: 32px; height: 32px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+              </svg>
+            </div>
+            <h3 style="font-size: var(--text-subheading); margin-bottom: var(--spacing-12);">Cloud Ready</h3>
+            <p>Perfect runtime abstraction for serverless, edge architectures, or docker containers. Deploy anywhere
+              instantly.</p>
+          </div>
+
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-</main>
-
-<footer class="footer-section" style="padding: var(--spacing-64) 0;">
-  <div class="container-max">
-    <div class="footer-grid" style="display: grid; gap: var(--spacing-48); margin-bottom: var(--spacing-48);">
-      <div class="footer-brand">
-        <div style="display: flex; align-items: center; margin-bottom: var(--spacing-16);">
-          <img src="logo.png" alt="CodeDynasty" style="width: 40px; height: 40px; border-radius: var(--radius-images); margin-right: var(--spacing-12);" />
-          <span style="font-size: var(--text-subheading); font-weight: var(--font-weight-medium); color: var(--color-whiteout);">CodeDynasty</span>
+    <section class="section-dark" style="padding: var(--spacing-80) 0;">
+      <div class="container-max">
+        <div class="feature-section-header">
+          <div class="sub">Insights &amp; Analysis</div>
+          <h2 class="title">Latest <span class="cursive-word">Articles</span></h2>
         </div>
-        <p style="color: var(--text-dark-muted); margin-bottom: var(--spacing-24); max-width: 28rem;">
-          Building modern, performant software that empowers developers. Open source tools for the next generation.
-        </p>
-        <div style="display: flex; gap: var(--spacing-16);">
-          <a href="https://github.com/CodeDynasty-dev" target="_blank" class="hover-bg-subtle-10" style="width: 40px; height: 40px; border-radius: var(--radius-buttons); background-color: rgba(255, 255, 255, 0.05); display: flex; align-items: center; justify-content: center; color: var(--text-dark-muted); transition: color 0.2s ease, background-color 0.2s ease;">
-            <i class="fab fa-github"></i>
+
+        <div id="articles-container"
+          style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--spacing-32); max-width: var(--page-max-width); margin: 0 auto;">
+        </div>
+
+        <div style="text-align: center; margin-top: var(--spacing-64);">
+          <a href="/blog.html" class="btn-solid-light" style="font-size: var(--text-body); padding: 10px 20px;">
+            <span style="margin-right: var(--spacing-8);">Explore All Articles</span>
+            <svg style="width: 20px; height: 20px; transition: transform 0.3s ease;" fill="none" stroke="currentColor"
+              viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
           </a>
-          <a href="https://discord.codedynasty.dev" class="hover-bg-subtle-10" style="width: 40px; height: 40px; border-radius: var(--radius-buttons); background-color: rgba(255, 255, 255, 0.05); display: flex; align-items: center; justify-content: center; color: var(--text-dark-muted); transition: color 0.2s ease, background-color 0.2s ease;">
-            <i class="fab fa-discord"></i>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-dark" style="padding: var(--spacing-80) 0;">
+      <div class="container-max">
+        <div class="feature-section-header">
+          <div class="sub">Our Creations</div>
+          <h2 class="title">Open Source <span class="cursive-word">Projects</span></h2>
+        </div>
+
+        <div
+          style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--spacing-32); max-width: var(--page-max-width); margin: 0 auto;">
+
+          <a href="https://github.com/CodeDynasty-dev/Jetpath" target="_blank" class="modern-card"
+            style="cursor: pointer;">
+            <div
+              style="aspect-ratio: 16/9; overflow: hidden; background-color: var(--color-black-void); display: flex; align-items: center; justify-content: center; border-radius: var(--radius-images); margin-bottom: var(--spacing-16);">
+              <div
+                style="color: var(--color-whiteout); font-size: var(--text-heading); font-family: var(--font-control-tnt);">
+                JP</div>
+            </div>
+            <div class="badge">API Framework</div>
+            <h3>Jetpath</h3>
+            <p>A performance-first cross-runtime API framework without the boilerplate.</p>
+            <div
+              style="display: flex; align-items: center; font-size: var(--text-caption); color: rgba(27, 27, 27, 0.6);">
+              <i class="fab fa-github" style="margin-right: var(--spacing-4);"></i>
+              <span style="margin-right: var(--spacing-12);">16</span>
+              <span>TypeScript &bull; MIT</span>
+            </div>
           </a>
+
+          <a href="https://github.com/CodeDynasty-dev/Cradova" target="_blank" class="modern-card"
+            style="cursor: pointer;">
+            <div
+              style="aspect-ratio: 16/9; overflow: hidden; background-color: var(--color-black-void); display: flex; align-items: center; justify-content: center; border-radius: var(--radius-images); margin-bottom: var(--spacing-16);">
+              <div
+                style="color: var(--color-whiteout); font-size: var(--text-heading); font-family: var(--font-control-tnt);">
+                C</div>
+            </div>
+            <div class="badge">UI Framework</div>
+            <h3>Cradova</h3>
+            <p>A modern UI framework for building fast and responsive web applications.</p>
+            <div
+              style="display: flex; align-items: center; font-size: var(--text-caption); color: rgba(27, 27, 27, 0.6);">
+              <i class="fab fa-github" style="margin-right: var(--spacing-4);"></i>
+              <span style="margin-right: var(--spacing-12);">28</span>
+              <span>JavaScript &bull; MIT</span>
+            </div>
+          </a>
+
+          <a href="https://github.com/CodeDynasty-dev/Exabase" target="_blank" class="modern-card"
+            style="cursor: pointer;">
+            <div
+              style="aspect-ratio: 16/9; overflow: hidden; background-color: var(--color-black-void); display: flex; align-items: center; justify-content: center; border-radius: var(--radius-images); margin-bottom: var(--spacing-16);">
+              <div
+                style="color: var(--color-whiteout); font-size: var(--text-heading); font-family: var(--font-control-tnt);">
+                E</div>
+            </div>
+            <div class="badge">Database</div>
+            <h3>Exabase</h3>
+            <p>A scaling focused distributed NoSQL database with strong data consistency.</p>
+            <div
+              style="display: flex; align-items: center; font-size: var(--text-caption); color: rgba(27, 27, 27, 0.6);">
+              <i class="fab fa-github" style="margin-right: var(--spacing-4);"></i>
+              <span style="margin-right: var(--spacing-12);">7</span>
+              <span>Go &bull; MIT</span>
+            </div>
+          </a>
+
+          <a href="https://github.com/CodeDynasty-dev/Jetflare" target="_blank" class="modern-card"
+            style="cursor: pointer;">
+            <div
+              style="aspect-ratio: 16/9; overflow: hidden; background-color: var(--color-black-void); display: flex; align-items: center; justify-content: center; border-radius: var(--radius-images); margin-bottom: var(--spacing-16);">
+              <div
+                style="color: var(--color-whiteout); font-size: var(--text-heading); font-family: var(--font-control-tnt);">
+                JF</div>
+            </div>
+            <div class="badge">API Client</div>
+            <h3>Jetflare</h3>
+            <p>A type-safe API client with built-in error handling and caching.</p>
+            <div
+              style="display: flex; align-items: center; font-size: var(--text-caption); color: rgba(27, 27, 27, 0.6);">
+              <i class="fab fa-github" style="margin-right: var(--spacing-4);"></i>
+              <span style="margin-right: var(--spacing-12);">3</span>
+              <span>TypeScript &bull; MIT</span>
+            </div>
+          </a>
+
+          <a href="https://github.com/CodeDynasty-dev/SQLiteBruv" target="_blank" class="modern-card"
+            style="cursor: pointer;">
+            <div
+              style="aspect-ratio: 16/9; overflow: hidden; background-color: var(--color-black-void); display: flex; align-items: center; justify-content: center; border-radius: var(--radius-images); margin-bottom: var(--spacing-16);">
+              <div
+                style="color: var(--color-whiteout); font-size: var(--text-heading); font-family: var(--font-control-tnt);">
+                SB</div>
+            </div>
+            <div class="badge">Database ORM</div>
+            <h3>SQLiteBruv</h3>
+            <p>A type-safe SQLite query builder with D1/Turso support.</p>
+            <div
+              style="display: flex; align-items: center; font-size: var(--text-caption); color: rgba(27, 27, 27, 0.6);">
+              <i class="fab fa-github" style="margin-right: var(--spacing-4);"></i>
+              <span style="margin-right: var(--spacing-12);">17</span>
+              <span>TypeScript &bull; MIT</span>
+            </div>
+          </a>
+
+          <a href="https://github.com/CodeDynasty-dev/Docmach" target="_blank" class="modern-card"
+            style="cursor: pointer;">
+            <div
+              style="aspect-ratio: 16/9; overflow: hidden; background-color: var(--color-black-void); display: flex; align-items: center; justify-content: center; border-radius: var(--radius-images); margin-bottom: var(--spacing-16);">
+              <div
+                style="color: var(--color-whiteout); font-size: var(--text-heading); font-family: var(--font-control-tnt);">
+                D</div>
+            </div>
+            <div class="badge">Static Site Generator</div>
+            <h3>Docmach</h3>
+            <p>A Markdown-powered static site generator for blogs and documentation.</p>
+            <div
+              style="display: flex; align-items: center; font-size: var(--text-caption); color: rgba(27, 27, 27, 0.6);">
+              <i class="fab fa-github" style="margin-right: var(--spacing-4);"></i>
+              <span style="margin-right: var(--spacing-12);">1</span>
+              <span>TypeScript &bull; MIT</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section-dark" style="padding: var(--spacing-80) 0;">
+      <div class="container-max">
+        <div style="max-width: 48rem; margin: 0 auto; text-align: center; position: relative; z-index: 10;">
+          <div class="feature-section-header">
+            <div class="sub">Newsletter</div>
+            <h2 class="title">Stay in the <span class="cursive-word">Loop</span></h2>
+          </div>
+          <p style="color: var(--text-dark-muted); font-size: var(--text-body); margin-bottom: var(--spacing-32);">
+            Get the latest updates on our projects, articles, and developer insights delivered directly to your inbox.
+          </p>
+          <form class="sm-flex-row"
+            style="display: flex; flex-direction: column; gap: var(--spacing-16); justify-content: center; max-width: 28rem; margin: 0 auto;">
+            <input type="email" placeholder="Enter your email" class="input-text" required aria-label="Email address" />
+            <button type="submit" class="btn-solid-light"
+              style="font-size: var(--text-body); padding: 10px 20px;">Subscribe</button>
+          </form>
+          <p style="color: rgba(255, 255, 255, 0.4); font-size: var(--text-caption); margin-top: var(--spacing-16);">
+            No spam. We respect your privacy. Unsubscribe anytime.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer-section" style="padding: var(--spacing-64) 0;">
+    <div class="container-max">
+      <div class="footer-grid" style="display: grid; gap: var(--spacing-48); margin-bottom: var(--spacing-48);">
+        <div class="footer-brand">
+          <div style="display: flex; align-items: center; margin-bottom: var(--spacing-16);">
+            <img src="logo.png" alt="CodeDynasty"
+              style="width: 40px; height: 40px; border-radius: var(--radius-images); margin-right: var(--spacing-12);" />
+            <span
+              style="font-size: var(--text-subheading); font-weight: var(--font-weight-medium); color: var(--color-whiteout);">CodeDynasty</span>
+          </div>
+          <p style="color: var(--text-dark-muted); margin-bottom: var(--spacing-24); max-width: 28rem;">
+            Building modern, performant software that empowers developers. Open source tools for the next generation.
+          </p>
+          <div style="display: flex; gap: var(--spacing-16);">
+            <a href="https://github.com/CodeDynasty-dev" target="_blank" class="hover-bg-subtle-10"
+              style="width: 40px; height: 40px; border-radius: var(--radius-buttons); background-color: rgba(255, 255, 255, 0.05); display: flex; align-items: center; justify-content: center; color: var(--text-dark-muted); transition: color 0.2s ease, background-color 0.2s ease;">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://discord.codedynasty.dev" class="hover-bg-subtle-10"
+              style="width: 40px; height: 40px; border-radius: var(--radius-buttons); background-color: rgba(255, 255, 255, 0.05); display: flex; align-items: center; justify-content: center; color: var(--text-dark-muted); transition: color 0.2s ease, background-color 0.2s ease;">
+              <i class="fab fa-discord"></i>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h3
+            style="color: var(--color-whiteout); font-weight: var(--font-weight-medium); margin-bottom: var(--spacing-16); font-size: var(--text-body);">
+            Quick Links</h3>
+          <ul
+            style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: var(--spacing-12);">
+            <li><a href="/" class="footer-link">Home</a></li>
+            <li><a href="/blog.html" class="footer-link">Blog</a></li>
+            <li><a href="https://github.com/CodeDynasty-dev" class="footer-link">Projects</a></li>
+            <li><a href="/contact.html" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3
+            style="color: var(--color-whiteout); font-weight: var(--font-weight-medium); margin-bottom: var(--spacing-16); font-size: var(--text-body);">
+            Resources</h3>
+          <ul
+            style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: var(--spacing-12);">
+            <li><a href="https://github.com/CodeDynasty-dev" class="footer-link">Documentation</a></li>
+            <li><a href="https://discord.codedynasty.dev" class="footer-link">Community</a></li>
+            <li><a href="https://github.com/CodeDynasty-dev" class="footer-link">GitHub</a></li>
+            <li><a href="/contact.html" class="footer-link">Support</a></li>
+          </ul>
         </div>
       </div>
 
-      <div>
-        <h3 style="color: var(--color-whiteout); font-weight: var(--font-weight-medium); margin-bottom: var(--spacing-16); font-size: var(--text-body);">Quick Links</h3>
-        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: var(--spacing-12);">
-          <li><a href="/" class="footer-link">Home</a></li>
-          <li><a href="/blog.html" class="footer-link">Blog</a></li>
-          <li><a href="https://github.com/CodeDynasty-dev" class="footer-link">Projects</a></li>
-          <li><a href="/contact.html" class="footer-link">Contact</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h3 style="color: var(--color-whiteout); font-weight: var(--font-weight-medium); margin-bottom: var(--spacing-16); font-size: var(--text-body);">Resources</h3>
-        <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: var(--spacing-12);">
-          <li><a href="https://github.com/CodeDynasty-dev" class="footer-link">Documentation</a></li>
-          <li><a href="https://discord.codedynasty.dev" class="footer-link">Community</a></li>
-          <li><a href="https://github.com/CodeDynasty-dev" class="footer-link">GitHub</a></li>
-          <li><a href="/contact.html" class="footer-link">Support</a></li>
-        </ul>
+      <div class="footer-bottom"
+        style="display: flex; flex-direction: column; align-items: center; gap: var(--spacing-16); padding-top: var(--spacing-32); border-top: 1px solid rgba(255, 255, 255, 0.1);">
+        <p style="color: rgba(255, 255, 255, 0.4); font-size: var(--text-caption);">&copy; 2025 CodeDynasty. Building
+          modern software for humanity.</p>
+        <div style="display: flex; gap: var(--spacing-24); font-size: var(--text-caption);">
+          <a href="/privacy" class="footer-link">Privacy</a>
+          <a href="/terms" class="footer-link">Terms</a>
+          <a href="/license" class="footer-link">License</a>
+        </div>
       </div>
     </div>
+  </footer>
 
-    <div class="footer-bottom" style="display: flex; flex-direction: column; align-items: center; gap: var(--spacing-16); padding-top: var(--spacing-32); border-top: 1px solid rgba(255, 255, 255, 0.1);">
-      <p style="color: rgba(255, 255, 255, 0.4); font-size: var(--text-caption);">&copy; 2025 CodeDynasty. Building modern software for humanity.</p>
-      <div style="display: flex; gap: var(--spacing-24); font-size: var(--text-caption);">
-        <a href="/privacy" class="footer-link">Privacy</a>
-        <a href="/terms" class="footer-link">Terms</a>
-        <a href="/license" class="footer-link">License</a>
-      </div>
-    </div>
-  </div>
-</footer>
+  <script src="/script/index.js"></script>
+  <script>
+    const mobileMenuButton = document.getElementById("mobile-menu-button");
+    const closeMobileMenu = document.getElementById("close-mobile-menu");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const body = document.body;
 
-<script src="/script/index.js"></script>
-<script>
-  const mobileMenuButton = document.getElementById("mobile-menu-button");
-  const closeMobileMenu = document.getElementById("close-mobile-menu");
-  const mobileMenu = document.getElementById("mobile-menu");
-  const body = document.body;
+    function toggleMenu() {
+      mobileMenu.classList.toggle("translate-x-0");
+      mobileMenu.classList.toggle("-translate-x-full");
+      body.classList.toggle("overflow-hidden");
+    }
 
-  function toggleMenu() {
-    mobileMenu.classList.toggle("translate-x-0");
-    mobileMenu.classList.toggle("-translate-x-full");
-    body.classList.toggle("overflow-hidden");
-  }
+    if (mobileMenuButton && closeMobileMenu && mobileMenu) {
+      mobileMenuButton.addEventListener("click", toggleMenu);
+      closeMobileMenu.addEventListener("click", toggleMenu);
 
-  if (mobileMenuButton && closeMobileMenu && mobileMenu) {
-    mobileMenuButton.addEventListener("click", toggleMenu);
-    closeMobileMenu.addEventListener("click", toggleMenu);
-
-    document.querySelectorAll("#mobile-menu a").forEach(function (link) {
-      link.addEventListener("click", function () {
-        mobileMenu.classList.remove("translate-x-0");
-        mobileMenu.classList.add("-translate-x-full");
-        body.classList.remove("overflow-hidden");
-      });
-    });
-
-    document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape" && mobileMenu.classList.contains("translate-x-0")) {
-        toggleMenu();
-      }
-    });
-  }
-
-  async function loadBlogPosts() {
-    try {
-      var response = await fetch("/docmach-manifest.json");
-      var manifest = await response.json();
-
-      var posts = manifest.pages.filter(function (page) {
-        return page.sourcePath.startsWith("posts/") && page.docmachTags && page.docmachTags.length > 0;
+      document.querySelectorAll("#mobile-menu a").forEach(function (link) {
+        link.addEventListener("click", function () {
+          mobileMenu.classList.remove("translate-x-0");
+          mobileMenu.classList.add("-translate-x-full");
+          body.classList.remove("overflow-hidden");
+        });
       });
 
-      posts.sort(function (a, b) {
-        var aParams = (a.docmachTags.find(function (tag) { return tag.type === "wrapper"; }) || {}).params || {};
-        var bParams = (b.docmachTags.find(function (tag) { return tag.type === "wrapper"; }) || {}).params || {};
-        return new Date(bParams.time_created || 0) - new Date(aParams.time_created || 0);
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" && mobileMenu.classList.contains("translate-x-0")) {
+          toggleMenu();
+        }
       });
+    }
 
-      var articlesContainer = document.getElementById("articles-container");
-      if (!articlesContainer) return;
+    async function loadBlogPosts() {
+      try {
+        var response = await fetch("/docmach-manifest.json");
+        var manifest = await response.json();
 
-      articlesContainer.innerHTML = "";
+        var posts = manifest.pages.filter(function (page) {
+          return page.sourcePath.startsWith("posts/") && page.docmachTags && page.docmachTags.length > 0;
+        });
 
-      var displayPosts = posts.slice(0, 6);
+        posts.sort(function (a, b) {
+          var aParams = (a.docmachTags.find(function (tag) { return tag.type === "wrapper"; }) || {}).params || {};
+          var bParams = (b.docmachTags.find(function (tag) { return tag.type === "wrapper"; }) || {}).params || {};
+          return new Date(bParams.time_created || 0) - new Date(aParams.time_created || 0);
+        });
 
-      displayPosts.forEach(function (post) {
-        var params = (post.docmachTags.find(function (tag) { return tag.type === "wrapper"; }) || {}).params || {};
-        var title = params.title || "Untitled";
-        var description = params.description || "";
-        var image = params.image || "/placeholder.png";
-        var topic = params.topic || "Article";
-        var link = post.link;
+        var articlesContainer = document.getElementById("articles-container");
+        if (!articlesContainer) return;
 
-        var articleEl = document.createElement("a");
-        articleEl.href = link;
-        articleEl.className = "modern-card";
-        articleEl.style.cssText = "cursor: pointer;";
+        articlesContainer.innerHTML = "";
 
-        articleEl.innerHTML =
-          '<div style="aspect-ratio: 16/9; overflow: hidden; border-radius: var(--radius-images); margin-bottom: var(--spacing-16);">' +
-          '<img src="' + image + '" alt="' + title + '" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;" />' +
-          '</div>' +
-          '<div style="display: flex; align-items: center; gap: var(--spacing-8); margin-bottom: var(--spacing-12);">' +
-          '<div class="badge">' + topic.split(",")[0].trim() + '</div>' +
-          '</div>' +
-          '<h3 style="transition: color 0.2s ease;">' + title + '</h3>' +
-          '<p style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">' + description + '</p>' +
-          '<div style="display: flex; align-items: center; font-size: var(--text-caption); color: rgba(27, 27, 27, 0.6);">' +
-          '<span>Read article</span>' +
-          '<svg class="read-arrow" style="width: 16px; height: 16px; margin-left: var(--spacing-4); transition: transform 0.3s ease;" fill="none" stroke="currentColor" viewBox="0 0 24 24">' +
-          '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />' +
-          '</svg>' +
-          '</div>';
+        var displayPosts = posts.slice(0, 6);
 
-        articlesContainer.appendChild(articleEl);
-      });
-    } catch (error) {
-      console.error("Error loading blog posts:", error);
-      var articlesContainer = document.getElementById("articles-container");
-      if (articlesContainer) {
-        articlesContainer.innerHTML =
-          '<p style="color: var(--text-dark-muted); text-align: center; grid-column: 1 / -1;">Unable to load articles at this time.</p>';
+        displayPosts.forEach(function (post) {
+          var params = (post.docmachTags.find(function (tag) { return tag.type === "wrapper"; }) || {}).params || {};
+          var title = params.title || "Untitled";
+          var description = params.description || "";
+          var image = params.image || "/placeholder.png";
+          var topic = params.topic || "Article";
+          var link = post.link;
+
+          var articleEl = document.createElement("a");
+          articleEl.href = link;
+          articleEl.className = "modern-card";
+          articleEl.style.cssText = "cursor: pointer;";
+
+          articleEl.innerHTML =
+            '<div style="aspect-ratio: 16/9; overflow: hidden; border-radius: var(--radius-images); margin-bottom: var(--spacing-16);">' +
+            '<img src="' + image + '" alt="' + title + '" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;" />' +
+            '</div>' +
+            '<div style="display: flex; align-items: center; gap: var(--spacing-8); margin-bottom: var(--spacing-12);">' +
+            '<div class="badge">' + topic.split(",")[0].trim() + '</div>' +
+            '</div>' +
+            '<h3 style="transition: color 0.2s ease;">' + title + '</h3>' +
+            '<p style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">' + description + '</p>' +
+            '<div style="display: flex; align-items: center; font-size: var(--text-caption); color: rgba(27, 27, 27, 0.6);">' +
+            '<span>Read article</span>' +
+            '<svg class="read-arrow" style="width: 16px; height: 16px; margin-left: var(--spacing-4); transition: transform 0.3s ease;" fill="none" stroke="currentColor" viewBox="0 0 24 24">' +
+            '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />' +
+            '</svg>' +
+            '</div>';
+
+          articlesContainer.appendChild(articleEl);
+        });
+      } catch (error) {
+        console.error("Error loading blog posts:", error);
+        var articlesContainer = document.getElementById("articles-container");
+        if (articlesContainer) {
+          articlesContainer.innerHTML =
+            '<p style="color: var(--text-dark-muted); text-align: center; grid-column: 1 / -1;">Unable to load articles at this time.</p>';
+        }
       }
     }
-  }
 
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", loadBlogPosts);
-  } else {
-    loadBlogPosts();
-  }
-</script>
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", loadBlogPosts);
+    } else {
+      loadBlogPosts();
+    }
+  </script>
 
 </body>
+
 </html>
