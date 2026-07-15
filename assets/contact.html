@@ -15,35 +15,52 @@
       name="description"
       content="Get in touch with CodeDynasty for support, suggestions, or contributions."
     />
+    <style>
+      .mobile-menu-closed { transform: translateX(-100%); }
+      .mobile-menu-open { transform: translateX(0); }
+      .r-flex { display: flex; }
+      .r-grid { display: grid; }
+      .r-none { display: none; }
+      .r-flex-dir-col { flex-direction: column; }
+      .r-justify-between { justify-content: space-between; }
+      .r-items-center { align-items: center; }
+      @media (min-width: 768px) {
+        .r-none-desktop { display: none; }
+        .r-flex-desktop { display: flex; }
+        .r-grid-3 { grid-template-columns: repeat(3, 1fr); }
+        .r-grid-4 { grid-template-columns: repeat(4, 1fr); }
+        .r-col-span-2 { grid-column: span 2; }
+        .r-flex-dir-row { flex-direction: row; }
+      }
+    </style>
   </head>
   <body>
-    <!-- Navigation -->
-    <header class="fixed w-full top-0 z-50 border-b border-white/10 bg-black/85 backdrop-blur-md">
-      <nav class="container mx-auto px-6">
-        <div class="flex justify-between items-center h-[72px]">
+    <header style="position:fixed;top:0;left:0;right:0;z-index:50;border-bottom:1px solid rgba(255,255,255,0.1);background-color:rgba(0,0,0,0.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);">
+      <nav style="max-width:var(--page-max-width);margin:0 auto;padding:0 var(--spacing-24);">
+        <div style="display:flex;justify-content:space-between;align-items:center;height:72px;">
           <a
             href="/"
-            class="flex items-center group"
+            style="display:flex;align-items:center;"
             aria-label="CodeDynasty Home"
           >
-            <div class="w-10 h-10 mr-3">
+            <div style="width:40px;height:40px;margin-right:var(--spacing-12);">
               <img
                 src="logo.png"
-                class="w-full h-full object-cover rounded-[11px]"
+                style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius-lg-2);"
                 alt="CodeDynasty Logo"
               />
             </div>
-            <span class="text-xl font-medium text-white">CodeDynasty</span>
+            <span style="font-size:var(--text-subheading);font-weight:var(--font-weight-medium);color:var(--color-whiteout);">CodeDynasty</span>
           </a>
 
-          <!-- Mobile menu button -->
           <button
             id="mobile-menu-button"
-            class="md:hidden text-white focus:outline-none"
+            class="r-flex r-none-desktop"
+            style="background:none;border:none;color:var(--color-whiteout);cursor:pointer;"
             aria-label="Toggle menu"
           >
             <svg
-              class="h-6 w-6"
+              style="width:24px;height:24px;"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -57,67 +74,40 @@
             </svg>
           </button>
 
-          <!-- Desktop Navigation -->
-          <div class="hidden md:flex items-center space-x-4">
-            <a
-              href="/"
-              class="px-3 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors"
-            >
-              Home
-            </a>
-            <a
-              href="/blog.html"
-              class="px-3 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors"
-            >
-              Blog
-            </a>
-            <a
-              href="https://discord.codedynasty.dev"
-              class="px-3 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors"
-            >
-              Discord
-            </a>
-            <a
-              href="https://github.com/CodeDynasty-dev"
-              class="px-3 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors"
-              target="_blank"
-            >
-              GitHub
-            </a>
-            <a
-              href="/contact.html"
-              class="btn-ghost-nav"
-            >
-              Contact
-            </a>
+          <div class="r-none r-flex-desktop r-items-center" style="gap:var(--spacing-16);">
+            <a href="/" class="nav-link">Home</a>
+            <a href="/blog.html" class="nav-link">Blog</a>
+            <a href="https://discord.codedynasty.dev" class="nav-link">Discord</a>
+            <a href="https://github.com/CodeDynasty-dev" target="_blank" class="nav-link">GitHub</a>
+            <a href="/contact.html" class="btn-ghost-nav">Contact</a>
           </div>
         </div>
       </nav>
     </header>
 
-    <!-- Mobile Menu Overlay -->
     <div
       id="mobile-menu"
-      class="fixed inset-0 z-50 bg-black/95 backdrop-blur-lg transform -translate-x-full transition-transform duration-300 ease-in-out md:hidden"
+      class="mobile-menu-closed"
+      style="position:fixed;top:0;left:0;right:0;bottom:0;z-index:50;background-color:rgba(0,0,0,0.95);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);transition:transform 300ms ease-in-out;"
     >
-      <div class="container mx-auto px-6 py-8 h-full flex flex-col">
-        <div class="flex justify-between items-center mb-12">
-          <a href="/" class="flex items-center" aria-label="CodeDynasty Home">
-            <div class="w-10 h-10 mr-3">
+      <div style="max-width:var(--page-max-width);margin:0 auto;padding:var(--spacing-32) var(--spacing-24);height:100%;display:flex;flex-direction:column;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--spacing-48);">
+          <a href="/" style="display:flex;align-items:center;" aria-label="CodeDynasty Home">
+            <div style="width:40px;height:40px;margin-right:var(--spacing-12);">
               <img
                 src="logo.png"
-                class="w-full h-full object-cover rounded-[11px]"
+                style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius-lg-2);"
                 alt="CodeDynasty Logo"
               />
             </div>
-            <span class="text-xl font-medium text-white">CodeDynasty</span>
+            <span style="font-size:var(--text-subheading);font-weight:var(--font-weight-medium);color:var(--color-whiteout);">CodeDynasty</span>
           </a>
           <button
             id="close-mobile-menu"
-            class="text-white/70 hover:text-white transition-colors"
+            style="background:none;border:none;color:rgba(255,255,255,0.7);cursor:pointer;"
           >
             <svg
-              class="h-6 w-6"
+              style="width:24px;height:24px;"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -131,53 +121,62 @@
             </svg>
           </button>
         </div>
-        <nav class="flex-1 flex flex-col space-y-4">
+        <nav style="flex:1;display:flex;flex-direction:column;gap:var(--spacing-16);">
           <a
             href="/"
-            class="text-white/80 hover:text-white text-lg py-3 px-4 rounded-lg hover:bg-white/5 transition-colors"
+            style="color:rgba(255,255,255,0.8);font-size:var(--text-subheading);padding:var(--spacing-12) var(--spacing-16);border-radius:var(--radius-lg);text-decoration:none;transition:color .2s ease,background-color .2s ease;"
+            onmouseover="this.style.color='var(--color-whiteout)';this.style.backgroundColor='rgba(255,255,255,0.05)';"
+            onmouseout="this.style.color='rgba(255,255,255,0.8)';this.style.backgroundColor='transparent';"
           >
             Home
           </a>
           <a
             href="/blog.html"
-            class="text-white/80 hover:text-white text-lg py-3 px-4 rounded-lg hover:bg-white/5 transition-colors"
+            style="color:rgba(255,255,255,0.8);font-size:var(--text-subheading);padding:var(--spacing-12) var(--spacing-16);border-radius:var(--radius-lg);text-decoration:none;transition:color .2s ease,background-color .2s ease;"
+            onmouseover="this.style.color='var(--color-whiteout)';this.style.backgroundColor='rgba(255,255,255,0.05)';"
+            onmouseout="this.style.color='rgba(255,255,255,0.8)';this.style.backgroundColor='transparent';"
           >
             Blog
           </a>
           <a
             href="https://discord.codedynasty.dev"
-            class="text-white/80 hover:text-white text-lg py-3 px-4 rounded-lg hover:bg-white/5 transition-colors"
+            style="color:rgba(255,255,255,0.8);font-size:var(--text-subheading);padding:var(--spacing-12) var(--spacing-16);border-radius:var(--radius-lg);text-decoration:none;transition:color .2s ease,background-color .2s ease;"
+            onmouseover="this.style.color='var(--color-whiteout)';this.style.backgroundColor='rgba(255,255,255,0.05)';"
+            onmouseout="this.style.color='rgba(255,255,255,0.8)';this.style.backgroundColor='transparent';"
           >
             Discord
           </a>
           <a
             href="https://github.com/CodeDynasty-dev"
             target="_blank"
-            class="text-white/80 hover:text-white text-lg py-3 px-4 rounded-lg hover:bg-white/5 transition-colors"
+            style="color:rgba(255,255,255,0.8);font-size:var(--text-subheading);padding:var(--spacing-12) var(--spacing-16);border-radius:var(--radius-lg);text-decoration:none;transition:color .2s ease,background-color .2s ease;"
+            onmouseover="this.style.color='var(--color-whiteout)';this.style.backgroundColor='rgba(255,255,255,0.05)';"
+            onmouseout="this.style.color='rgba(255,255,255,0.8)';this.style.backgroundColor='transparent';"
           >
             GitHub
           </a>
           <a
             href="/contact.html"
-            class="text-white/80 hover:text-white text-lg py-3 px-4 rounded-lg hover:bg-white/5 transition-colors"
+            style="color:rgba(255,255,255,0.8);font-size:var(--text-subheading);padding:var(--spacing-12) var(--spacing-16);border-radius:var(--radius-lg);text-decoration:none;transition:color .2s ease,background-color .2s ease;"
+            onmouseover="this.style.color='var(--color-whiteout)';this.style.backgroundColor='rgba(255,255,255,0.05)';"
+            onmouseout="this.style.color='rgba(255,255,255,0.8)';this.style.backgroundColor='transparent';"
           >
             Contact
           </a>
         </nav>
-        <div class="pt-6 border-t border-white/10 mt-auto">
-          <p class="text-white/50 text-sm text-center">
-            © 2025 CodeDynasty. All rights reserved.
+        <div style="padding-top:var(--spacing-24);border-top:1px solid rgba(255,255,255,0.1);margin-top:auto;">
+          <p style="color:rgba(255,255,255,0.5);font-size:var(--text-caption);text-align:center;">
+            &copy; 2025 CodeDynasty. All rights reserved.
           </p>
         </div>
       </div>
     </div>
 
-    <main class="pt-[72px]">
-      <!-- Contact Info Section -->
-      <section class="py-24 bg-black" style="background-image: url('/air-bg.png'); background-size: cover; background-position: center;">
-        <div class="container mx-auto px-4">
-          <div class="max-w-4xl mx-auto">
-            <!-- Feature Section Header -->
+    <main style="padding-top:72px;">
+      <section class="surface-dark" style="padding:96px 0;background-image:url('/air-bg.png');background-size:cover;background-position:center;">
+        <div style="max-width:var(--page-max-width);margin:0 auto;padding:0 var(--spacing-16);">
+          <div style="max-width:var(--page-max-width);margin:0 auto;">
+
             <div class="feature-section-header">
               <div class="sub">Get in Touch</div>
               <h2 class="title">
@@ -185,14 +184,14 @@
               </h2>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <!-- Email Haze Card -->
-              <div class="card-haze text-center">
-                <div class="text-twilight-blue text-3xl mb-4">
+            <div class="r-grid r-grid-3" style="gap:var(--spacing-32);grid-template-columns:1fr;">
+
+              <div class="card-haze" style="text-align:center;">
+                <div style="color:var(--color-twilight-blue);font-size:var(--text-heading);margin-bottom:var(--spacing-16);">
                   <i class="fas fa-envelope"></i>
                 </div>
-                <h3 class="text-xl font-medium mb-2">Email</h3>
-                <p class="text-ink/80 text-sm">
+                <h3 style="font-size:var(--text-subheading);font-weight:var(--font-weight-medium);margin-bottom:var(--spacing-8);color:var(--color-ink);font-family:var(--font-control-tnt);">Email</h3>
+                <p style="font-size:var(--text-caption);">
                   <a
                     href="mailto:contact@codedynasty.dev"
                     class="underline-link signal"
@@ -202,13 +201,12 @@
                 </p>
               </div>
 
-              <!-- GitHub Haze Card -->
-              <div class="card-haze text-center">
-                <div class="text-twilight-blue text-3xl mb-4">
+              <div class="card-haze" style="text-align:center;">
+                <div style="color:var(--color-twilight-blue);font-size:var(--text-heading);margin-bottom:var(--spacing-16);">
                   <i class="fab fa-github"></i>
                 </div>
-                <h3 class="text-xl font-medium mb-2">GitHub</h3>
-                <p class="text-ink/80 text-sm">
+                <h3 style="font-size:var(--text-subheading);font-weight:var(--font-weight-medium);margin-bottom:var(--spacing-8);color:var(--color-ink);font-family:var(--font-control-tnt);">GitHub</h3>
+                <p style="font-size:var(--text-caption);">
                   <a
                     href="https://github.com/CodeDynasty-dev"
                     target="_blank"
@@ -219,13 +217,12 @@
                 </p>
               </div>
 
-              <!-- Discord Haze Card -->
-              <div class="card-haze text-center">
-                <div class="text-twilight-blue text-3xl mb-4">
+              <div class="card-haze" style="text-align:center;">
+                <div style="color:var(--color-twilight-blue);font-size:var(--text-heading);margin-bottom:var(--spacing-16);">
                   <i class="fas fa-comments"></i>
                 </div>
-                <h3 class="text-xl font-medium mb-2">Discord</h3>
-                <p class="text-ink/80 text-sm">
+                <h3 style="font-size:var(--text-subheading);font-weight:var(--font-weight-medium);margin-bottom:var(--spacing-8);color:var(--color-ink);font-family:var(--font-control-tnt);">Discord</h3>
+                <p style="font-size:var(--text-caption);">
                   <a
                     href="https://discord.codedynasty.dev"
                     target="_blank"
@@ -235,42 +232,48 @@
                   </a>
                 </p>
               </div>
+
             </div>
+
           </div>
         </div>
       </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-black border-t border-white/10 py-16">
-      <div class="container mx-auto px-4">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-          <div class="md:col-span-2">
-            <div class="flex items-center mb-6">
-              <div class="w-10 h-10 mr-3">
+    <footer class="footer-section" style="padding:64px 0;">
+      <div style="max-width:var(--page-max-width);margin:0 auto;padding:0 var(--spacing-16);">
+        <div class="r-grid r-grid-4" style="grid-template-columns:1fr;gap:var(--spacing-48);margin-bottom:var(--spacing-48);">
+
+          <div class="r-col-span-2">
+            <div style="display:flex;align-items:center;margin-bottom:var(--spacing-16);">
+              <div style="width:40px;height:40px;margin-right:var(--spacing-12);">
                 <img
                   src="logo.png"
-                  class="w-full h-full object-cover rounded-[11px]"
+                  style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius-lg-2);"
                   alt="CodeDynasty Logo"
                 />
               </div>
-              <span class="text-xl font-medium text-white">CodeDynasty</span>
+              <span style="font-size:var(--text-subheading);font-weight:var(--font-weight-medium);color:var(--color-whiteout);">CodeDynasty</span>
             </div>
-            <p class="text-slate-400 mb-6 max-w-md">
+            <p class="text-dark-secondary" style="margin-bottom:var(--spacing-24);max-width:448px;">
               Building modern, performant software that empowers developers. Open source tools for the next generation.
             </p>
-            <div class="flex gap-4">
+            <div style="display:flex;gap:var(--spacing-16);">
               <a
                 href="https://github.com/CodeDynasty-dev"
-                class="w-10 h-10 rounded-[8px] bg-white/5 hover:bg-white/10 flex items-center justify-center text-slate-400 hover:text-white transition-colors"
                 target="_blank"
+                style="width:40px;height:40px;border-radius:var(--radius-buttons);background-color:rgba(255,255,255,0.05);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.55);transition:background-color .2s ease,color .2s ease;"
+                onmouseover="this.style.backgroundColor='rgba(255,255,255,0.1)';this.style.color='var(--color-whiteout)';"
+                onmouseout="this.style.backgroundColor='rgba(255,255,255,0.05)';this.style.color='rgba(255,255,255,0.55)';"
                 aria-label="GitHub"
               >
                 <i class="fab fa-github"></i>
               </a>
               <a
                 href="https://discord.codedynasty.dev"
-                class="w-10 h-10 rounded-[8px] bg-white/5 hover:bg-white/10 flex items-center justify-center text-slate-400 hover:text-white transition-colors"
+                style="width:40px;height:40px;border-radius:var(--radius-buttons);background-color:rgba(255,255,255,0.05);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.55);transition:background-color .2s ease,color .2s ease;"
+                onmouseover="this.style.backgroundColor='rgba(255,255,255,0.1)';this.style.color='var(--color-whiteout)';"
+                onmouseout="this.style.backgroundColor='rgba(255,255,255,0.05)';this.style.color='rgba(255,255,255,0.55)';"
                 aria-label="Discord"
               >
                 <i class="fab fa-discord"></i>
@@ -279,134 +282,76 @@
           </div>
 
           <div>
-            <h3 class="text-white font-medium mb-4">Quick Links</h3>
-            <ul class="space-y-3">
-              <li>
-                <a
-                  href="/"
-                  class="text-slate-400 hover:text-white transition-colors text-sm"
-                  >Home</a
-                >
-              </li>
-              <li>
-                <a
-                  href="/blog.html"
-                  class="text-slate-400 hover:text-white transition-colors text-sm"
-                  >Blog</a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://github.com/CodeDynasty-dev"
-                  class="text-slate-400 hover:text-white transition-colors text-sm"
-                  >Projects</a
-                >
-              </li>
-              <li>
-                <a
-                  href="/contact.html"
-                  class="text-slate-400 hover:text-white transition-colors text-sm"
-                  >Contact</a
-                >
-              </li>
+            <h3 style="color:var(--color-whiteout);font-weight:var(--font-weight-medium);margin-bottom:var(--spacing-16);">Quick Links</h3>
+            <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:var(--spacing-12);">
+              <li><a href="/" class="footer-link">Home</a></li>
+              <li><a href="/blog.html" class="footer-link">Blog</a></li>
+              <li><a href="https://github.com/CodeDynasty-dev" class="footer-link">Projects</a></li>
+              <li><a href="/contact.html" class="footer-link">Contact</a></li>
             </ul>
           </div>
 
           <div>
-            <h3 class="text-white font-medium mb-4">Resources</h3>
-            <ul class="space-y-3">
-              <li>
-                <a
-                  href="https://github.com/CodeDynasty-dev"
-                  class="text-slate-400 hover:text-white transition-colors text-sm"
-                  >Documentation</a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://discord.codedynasty.dev"
-                  class="text-slate-400 hover:text-white transition-colors text-sm"
-                  >Community</a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://github.com/CodeDynasty-dev"
-                  class="text-slate-400 hover:text-white transition-colors text-sm"
-                  >GitHub</a
-                >
-              </li>
-              <li>
-                <a
-                  href="/contact.html"
-                  class="text-slate-400 hover:text-white transition-colors text-sm"
-                  >Support</a
-                >
-              </li>
+            <h3 style="color:var(--color-whiteout);font-weight:var(--font-weight-medium);margin-bottom:var(--spacing-16);">Resources</h3>
+            <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:var(--spacing-12);">
+              <li><a href="https://github.com/CodeDynasty-dev" class="footer-link">Documentation</a></li>
+              <li><a href="https://discord.codedynasty.dev" class="footer-link">Community</a></li>
+              <li><a href="https://github.com/CodeDynasty-dev" class="footer-link">GitHub</a></li>
+              <li><a href="/contact.html" class="footer-link">Support</a></li>
             </ul>
+          </div>
+
+        </div>
+
+        <div class="r-flex r-flex-dir-col r-flex-dir-row r-justify-between r-items-center" style="padding-top:var(--spacing-32);border-top:1px solid rgba(255,255,255,0.1);gap:var(--spacing-16);">
+          <p class="text-dark-muted" style="font-size:var(--text-caption);">
+            &copy; 2025 CodeDynasty. Building modern software for humanity.
+          </p>
+          <div style="display:flex;gap:var(--spacing-24);font-size:var(--text-caption);">
+            <a href="/privacy" class="footer-link">Privacy</a>
+            <a href="/terms" class="footer-link">Terms</a>
+            <a href="/license" class="footer-link">License</a>
           </div>
         </div>
 
-        <div
-          class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4"
-        >
-          <p class="text-slate-500 text-sm">
-            &copy; 2025 CodeDynasty. Building modern software for humanity.
-          </p>
-          <div class="flex gap-6 text-sm">
-            <a
-              href="/privacy"
-              class="text-slate-500 hover:text-white transition-colors"
-              >Privacy</a
-            >
-            <a
-              href="/terms"
-              class="text-slate-500 hover:text-white transition-colors"
-              >Terms</a
-            >
-            <a
-              href="/license"
-              class="text-slate-500 hover:text-white transition-colors"
-              >License</a
-            >
-          </div>
-        </div>
       </div>
     </footer>
 
     <script>
-      // Mobile menu functionality
-      const mobileMenuButton = document.getElementById("mobile-menu-button");
-      const closeMobileMenu = document.getElementById("close-mobile-menu");
-      const mobileMenu = document.getElementById("mobile-menu");
-      const body = document.body;
+      var mobileMenuButton = document.getElementById("mobile-menu-button");
+      var closeMobileMenu = document.getElementById("close-mobile-menu");
+      var mobileMenu = document.getElementById("mobile-menu");
+
+      function openMobileMenu() {
+        mobileMenu.classList.remove("mobile-menu-closed");
+        mobileMenu.classList.add("mobile-menu-open");
+      }
+
+      function closeMenu() {
+        mobileMenu.classList.remove("mobile-menu-open");
+        mobileMenu.classList.add("mobile-menu-closed");
+      }
 
       function toggleMobileMenu() {
-        mobileMenu.classList.toggle("translate-x-0");
-        mobileMenu.classList.toggle("-translate-x-full");
-        body.classList.toggle("overflow-hidden");
+        if (mobileMenu.classList.contains("mobile-menu-open")) {
+          closeMenu();
+        } else {
+          openMobileMenu();
+        }
       }
 
       if (mobileMenuButton && closeMobileMenu && mobileMenu) {
         mobileMenuButton.addEventListener("click", toggleMobileMenu);
-        closeMobileMenu.addEventListener("click", toggleMobileMenu);
+        closeMobileMenu.addEventListener("click", closeMenu);
 
-        // Close menu when clicking on a link
-        document.querySelectorAll("#mobile-menu a").forEach((link) => {
-          link.addEventListener("click", () => {
-            mobileMenu.classList.remove("translate-x-0");
-            mobileMenu.classList.add("-translate-x-full");
-            body.classList.remove("overflow-hidden");
-          });
-        });
+        var menuLinks = document.querySelectorAll("#mobile-menu a");
+        for (var i = 0; i < menuLinks.length; i++) {
+          menuLinks[i].addEventListener("click", closeMenu);
+        }
 
-        // Close menu when pressing Escape key
-        document.addEventListener("keydown", (e) => {
-          if (
-            e.key === "Escape" &&
-            mobileMenu.classList.contains("translate-x-0")
-          ) {
-            toggleMobileMenu();
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape" && mobileMenu.classList.contains("mobile-menu-open")) {
+            closeMenu();
           }
         });
       }

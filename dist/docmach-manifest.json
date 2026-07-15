@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-07-15T13:41:15.328Z",
+  "generatedAt": "2026-07-15T19:45:58.807Z",
   "docsDirectory": "",
   "buildDirectory": "dist",
-  "totalPages": 26,
+  "totalPages": 24,
   "tree": {
     "name": "/",
     "type": "directory",
@@ -866,22 +866,6 @@
         ]
       },
       {
-        "name": "public",
-        "type": "directory",
-        "path": "/public",
-        "children": [
-          {
-            "name": "project-PRD.html",
-            "type": "file",
-            "path": "/public/project-PRD.html",
-            "link": "/public/project-PRD.html",
-            "sourcePath": "public/project-PRD.md",
-            "outputPath": "dist/public/project-PRD.html",
-            "docmachTags": []
-          }
-        ]
-      },
-      {
         "name": "DESIGN.html",
         "type": "file",
         "path": "/DESIGN.html",
@@ -933,15 +917,6 @@
         "link": "/instructions.html",
         "sourcePath": "instructions.md",
         "outputPath": "dist/instructions.html",
-        "docmachTags": []
-      },
-      {
-        "name": "project-PRD.html",
-        "type": "file",
-        "path": "/project-PRD.html",
-        "link": "/project-PRD.html",
-        "sourcePath": "project-PRD.md",
-        "outputPath": "dist/project-PRD.html",
         "docmachTags": []
       },
       {
@@ -1749,21 +1724,9 @@
       "docmachTags": []
     },
     {
-      "sourcePath": "project-PRD.md",
-      "outputPath": "dist/project-PRD.html",
-      "link": "/project-PRD.html",
-      "docmachTags": []
-    },
-    {
       "sourcePath": "Soviet Mathematicians Just Solved AI's Biggest Problem.md",
       "outputPath": "dist/Soviet Mathematicians Just Solved AI's Biggest Problem.html",
       "link": "/Soviet Mathematicians Just Solved AI's Biggest Problem.html",
-      "docmachTags": []
-    },
-    {
-      "sourcePath": "public/project-PRD.md",
-      "outputPath": "dist/public/project-PRD.html",
-      "link": "/public/project-PRD.html",
       "docmachTags": []
     },
     {

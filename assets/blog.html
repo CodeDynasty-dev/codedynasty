@@ -1,513 +1,264 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Blog - CodeDynasty</title>
-    <link rel="stylesheet" href="/bundle.css" />
-    <link rel="stylesheet" href="/styles/main.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-    />
-    <link rel="shortcut icon" href="logo.png" type="image/png" />
-    <meta
-      name="description"
-      content="CodeDynasty Blog - Technical articles on modern software development, AI, and technology innovation"
-    />
-    <meta
-      name="keywords"
-      content="code, programming, development, blog, articles, tutorials"
-    />
-    <meta name="author" content="CodeDynasty" />
-    <meta name="robots" content="index, follow" />
-    <meta name="theme-color" content="#000000" />
-    <meta property="og:title" content="Blog - CodeDynasty" />
-    <meta
-      property="og:description"
-      content="Technical articles on modern software development, AI, and technology innovation"
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://codedynasty.dev/blog.html" />
-    <meta property="og:image" content="logo.png" />
-    <meta name="twitter:card" content="summary_large_image" />
-  </head>
-  <body>
-    <!-- Navigation -->
-    <header class="fixed w-full top-0 z-50 border-b border-white/10 bg-black/85 backdrop-blur-md">
-      <nav class="container mx-auto px-6">
-        <div class="flex justify-between items-center h-[72px]">
-          <a
-            href="/"
-            class="flex items-center group"
-            aria-label="CodeDynasty Home"
-          >
-            <div class="w-10 h-10 mr-3">
-              <img
-                src="logo.png"
-                class="w-full h-full object-cover rounded-[11px]"
-                alt="CodeDynasty Logo"
-              />
-            </div>
-            <span class="text-xl font-medium text-white">CodeDynasty</span>
-          </a>
-
-          <!-- Mobile menu button -->
-          <button
-            id="mobile-menu-button"
-            class="md:hidden text-white focus:outline-none"
-            aria-label="Toggle menu"
-          >
-            <svg
-              class="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M4 6h16M4 12h16m-7 6h7"
-              />
-            </svg>
-          </button>
-
-          <!-- Desktop Navigation -->
-          <div class="hidden md:flex items-center space-x-4">
-            <a
-              href="/"
-              class="px-3 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors"
-            >
-              Home
-            </a>
-            <a
-              href="/blog.html"
-              class="px-3 py-2 text-sm font-medium text-white transition-colors"
-            >
-              Blog
-            </a>
-            <a
-              href="https://discord.codedynasty.dev"
-              class="px-3 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors"
-            >
-              Discord
-            </a>
-            <a
-              href="https://github.com/CodeDynasty-dev"
-              class="px-3 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors"
-              target="_blank"
-            >
-              GitHub
-            </a>
-            <a
-              href="/contact.html"
-              class="btn-ghost-nav"
-            >
-              Contact
-            </a>
-          </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog - CodeDynasty</title>
+  <link rel="stylesheet" href="/bundle.css" />
+  <link rel="stylesheet" href="/styles/main.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <link rel="shortcut icon" href="logo.png" type="image/png" />
+  <meta name="description" content="CodeDynasty Blog - Technical articles on modern software development, AI, and technology innovation" />
+  <meta name="keywords" content="code, programming, development, blog, articles, tutorials" />
+  <meta name="author" content="CodeDynasty" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#000000" />
+  <meta property="og:title" content="Blog - CodeDynasty" />
+  <meta property="og:description" content="Technical articles on modern software development, AI, and technology innovation" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://codedynasty.dev/blog.html" />
+  <meta property="og:image" content="logo.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <style>
+    .mobile-menu-closed { transform: translateX(-100%); }
+    .mobile-menu-open { transform: translateX(0); }
+    .overflow-hidden { overflow: hidden; }
+    @media (min-width: 768px) { .md-hidden { display: none; } .md-flex { display: flex; } }
+    @media (max-width: 767px) { .md-hidden { display: flex; } .md-flex { display: none; } }
+    @media (max-width: 640px) { .sm-hidden { display: none; } }
+    @media (min-width: 641px) { .sm-flex { display: flex; } }
+    .post-grid { display: grid; grid-template-columns: 1fr; gap: var(--spacing-32); }
+    @media (min-width: 769px) { .post-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1025px) { .post-grid { grid-template-columns: repeat(3, 1fr); } }
+    .modern-card:hover img { opacity: 0.9; }
+    .modern-card:hover .read-arrow { transform: translateX(4px); }
+  </style>
+</head>
+<body>
+<header class="nav-minimal" style="position: fixed; top: 0; left: 0; z-index: 50; height: 72px; width: 100%;">
+  <div class="container-max" style="display: flex; justify-content: space-between; align-items: center; width: 100%; height: 100%;">
+    <a href="/" style="display: flex; align-items: center; gap: 12px;" aria-label="CodeDynasty Home">
+      <div style="width: 40px; height: 40px;">
+        <img src="logo.png" style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-lg-2);" alt="CodeDynasty Logo" />
+      </div>
+      <span style="font-family: var(--font-control); font-weight: 500; font-size: 20px; line-height: 1.1; color: var(--color-whiteout);">CodeDynasty</span>
+    </a>
+    <button id="mobile-menu-button" class="md-hidden" style="background: none; border: none; color: var(--color-whiteout); cursor: pointer;" aria-label="Toggle menu">
+      <svg style="width: 24px; height: 24px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+      </svg>
+    </button>
+    <nav class="md-flex" style="align-items: center; gap: var(--spacing-16);">
+      <a href="/" class="nav-link">Home</a>
+      <a href="/blog.html" class="nav-link active">Blog</a>
+      <a href="https://discord.codedynasty.dev" class="nav-link">Discord</a>
+      <a href="https://github.com/CodeDynasty-dev" class="nav-link" target="_blank">GitHub</a>
+      <a href="/contact.html" class="btn-ghost-nav">Contact</a>
+    </nav>
+  </div>
+</header>
+<div id="mobile-menu" class="mobile-menu-closed" style="position: fixed; inset: 0; z-index: 50; background-color: var(--surface-dark-canvas); opacity: 0.95; transition: transform 0.3s ease;">
+  <div class="container-max" style="padding-top: var(--spacing-32); padding-bottom: var(--spacing-32); height: 100%; display: flex; flex-direction: column;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-48);">
+      <a href="/" style="display: flex; align-items: center; gap: 12px;" aria-label="CodeDynasty Home">
+        <div style="width: 40px; height: 40px;">
+          <img src="logo.png" style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-lg-2);" alt="CodeDynasty Logo" />
         </div>
-      </nav>
-    </header>
+        <span style="font-family: var(--font-control); font-weight: 500; font-size: 20px; line-height: 1.1; color: var(--color-whiteout);">CodeDynasty</span>
+      </a>
+      <button id="close-mobile-menu" style="background: none; border: none; color: rgba(255,255,255,0.7); cursor: pointer;">
+        <svg style="width: 24px; height: 24px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+    <nav style="flex: 1; display: flex; flex-direction: column; gap: var(--spacing-16);">
+      <a href="/" style="font-family: var(--font-control); font-weight: 500; font-size: 18px; line-height: 1.4; color: rgba(255,255,255,0.8); padding: 12px var(--spacing-16); border-radius: var(--radius-lg);">Home</a>
+      <a href="/blog.html" style="font-family: var(--font-control); font-weight: 500; font-size: 18px; line-height: 1.4; color: var(--color-whiteout); padding: 12px var(--spacing-16); border-radius: var(--radius-lg);">Blog</a>
+      <a href="https://discord.codedynasty.dev" style="font-family: var(--font-control); font-weight: 500; font-size: 18px; line-height: 1.4; color: rgba(255,255,255,0.8); padding: 12px var(--spacing-16); border-radius: var(--radius-lg);">Discord</a>
+      <a href="https://github.com/CodeDynasty-dev" target="_blank" style="font-family: var(--font-control); font-weight: 500; font-size: 18px; line-height: 1.4; color: rgba(255,255,255,0.8); padding: 12px var(--spacing-16); border-radius: var(--radius-lg);">GitHub</a>
+      <a href="/contact.html" style="font-family: var(--font-control); font-weight: 500; font-size: 18px; line-height: 1.4; color: rgba(255,255,255,0.8); padding: 12px var(--spacing-16); border-radius: var(--radius-lg);">Contact</a>
+    </nav>
+    <div style="padding-top: var(--spacing-24); border-top: 1px solid rgba(255,255,255,0.1); margin-top: auto;">
+      <p style="font-family: var(--font-control); font-weight: 500; font-size: var(--text-caption); line-height: var(--leading-caption); color: rgba(255,255,255,0.5); text-align: center;">&copy; 2025 CodeDynasty. All rights reserved.</p>
+    </div>
+  </div>
+</div>
 
-    <!-- Mobile Menu Overlay -->
-    <div
-      id="mobile-menu"
-      class="fixed inset-0 z-50 bg-black/95 backdrop-blur-lg transform -translate-x-full transition-transform duration-300 ease-in-out md:hidden"
-    >
-      <div class="container mx-auto px-6 py-8 h-full flex flex-col">
-        <div class="flex justify-between items-center mb-12">
-          <a href="/" class="flex items-center" aria-label="CodeDynasty Home">
-            <div class="w-10 h-10 mr-3">
-              <img
-                src="logo.png"
-                class="w-full h-full object-cover rounded-[11px]"
-                alt="CodeDynasty Logo"
-              />
-            </div>
-            <span class="text-xl font-medium text-white">CodeDynasty</span>
-          </a>
-          <button
-            id="close-mobile-menu"
-            class="text-white/70 hover:text-white transition-colors"
-          >
-            <svg
-              class="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
-          </button>
+<main style="padding-top: 72px;">
+  <section style="position: relative; overflow: hidden; background-color: var(--surface-dark-canvas); padding-top: var(--spacing-120); padding-bottom: var(--spacing-120); border-bottom: 1px solid rgba(255,255,255,0.1); background-image: url('/air-bg.png'); background-size: cover; background-position: center;">
+    <div class="container-max" style="text-align: center; position: relative; z-index: 1;">
+      <div style="display: inline-block; margin-bottom: var(--spacing-24);">
+        <span class="btn-pill-toggle" style="color: var(--color-whiteout); background-color: oklch(0% 0 0 / 0.1); font-size: var(--text-caption); padding: 4px 12px;">Technical Blog</span>
+      </div>
+      <h1 class="headline-dual" style="margin-bottom: var(--spacing-24);">Our <span class="cursive-word">Blog</span></h1>
+      <p style="font-family: var(--font-control); font-weight: 500; font-size: var(--text-subheading); line-height: var(--leading-subheading); color: rgba(255,255,255,0.7); max-width: 700px; margin: 0 auto;">
+        Deep dives into modern web development, AI, system architecture, and cutting-edge technology.
+      </p>
+    </div>
+  </section>
+
+  <section class="section-dark" style="padding-top: var(--spacing-120); padding-bottom: var(--spacing-120);">
+    <div class="container-max">
+      <div id="blog-posts-container" class="post-grid"></div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer-section" style="padding-top: var(--spacing-64); padding-bottom: var(--spacing-64);">
+  <div class="container-max">
+    <div style="display: grid; grid-template-columns: 1fr; gap: var(--spacing-48); margin-bottom: var(--spacing-48);">
+      <div style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: var(--spacing-24);">
+        <div style="width: 40px; height: 40px;">
+          <img src="logo.png" style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-lg-2);" alt="CodeDynasty Logo" />
         </div>
-        <nav class="flex-1 flex flex-col space-y-4">
-          <a
-            href="/"
-            class="text-white/80 hover:text-white text-lg py-3 px-4 rounded-lg hover:bg-white/5 transition-colors"
-          >
-            Home
-          </a>
-          <a
-            href="/blog.html"
-            class="text-white/80 hover:text-white text-lg py-3 px-4 rounded-lg hover:bg-white/5 transition-colors"
-          >
-            Blog
-          </a>
-          <a
-            href="https://discord.codedynasty.dev"
-            class="text-white/80 hover:text-white text-lg py-3 px-4 rounded-lg hover:bg-white/5 transition-colors"
-          >
-            Discord
-          </a>
-          <a
-            href="https://github.com/CodeDynasty-dev"
-            target="_blank"
-            class="text-white/80 hover:text-white text-lg py-3 px-4 rounded-lg hover:bg-white/5 transition-colors"
-          >
-            GitHub
-          </a>
-          <a
-            href="/contact.html"
-            class="text-white/80 hover:text-white text-lg py-3 px-4 rounded-lg hover:bg-white/5 transition-colors"
-          >
-            Contact
-          </a>
-        </nav>
-        <div class="pt-6 border-t border-white/10 mt-auto">
-          <p class="text-white/50 text-sm text-center">
-            © 2025 CodeDynasty. All rights reserved.
+        <div>
+          <span style="display: block; font-family: var(--font-control); font-weight: 500; font-size: 20px; line-height: 1.1; color: var(--color-whiteout); margin-bottom: var(--spacing-4);">CodeDynasty</span>
+          <p style="font-family: var(--font-control); font-weight: 500; font-size: var(--text-caption); line-height: var(--leading-caption); color: rgba(255,255,255,0.4); max-width: 448px;">
+            Building modern, performant software that empowers developers. Open source tools for the next generation.
           </p>
         </div>
+      </div>
+      <div style="display: flex; gap: var(--spacing-16);">
+        <a href="https://github.com/CodeDynasty-dev" target="_blank" aria-label="GitHub"
+           style="width: 40px; height: 40px; border-radius: var(--radius-buttons); background-color: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.4);"
+           onmouseover="this.style.color='var(--color-whiteout)'; this.style.backgroundColor='rgba(255,255,255,0.1)'"
+           onmouseout="this.style.color='rgba(255,255,255,0.4)'; this.style.backgroundColor='rgba(255,255,255,0.05)'">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://discord.codedynasty.dev" aria-label="Discord"
+           style="width: 40px; height: 40px; border-radius: var(--radius-buttons); background-color: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.4);"
+           onmouseover="this.style.color='var(--color-whiteout)'; this.style.backgroundColor='rgba(255,255,255,0.1)'"
+           onmouseout="this.style.color='rgba(255,255,255,0.4)'; this.style.backgroundColor='rgba(255,255,255,0.05)'">
+          <i class="fab fa-discord"></i>
+        </a>
       </div>
     </div>
-
-    <main class="pt-[72px]">
-      <!-- Hero Section -->
-      <section
-        class="relative overflow-hidden bg-black py-24 border-b border-white/10"
-        style="background-image: url('/air-bg.png'); background-size: cover; background-position: center;"
-      >
-        <div class="relative z-10 container mx-auto px-4 text-center">
-          <div class="inline-block px-3 py-1 text-xs font-medium text-white bg-white/10 rounded-[9999px] uppercase tracking-wider mb-6">
-            Technical Blog
-          </div>
-
-          <h1 class="headline-dual text-5xl md:text-7xl mb-6">
-            Our <span class="cursive-word">Blog</span>
-          </h1>
-
-          <p class="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed">
-            Deep dives into modern web development, AI, system architecture, and cutting-edge technology.
-          </p>
-        </div>
-      </section>
-
-      <!-- Blog Posts Grid -->
-      <section class="py-24 bg-black">
-        <div class="container mx-auto px-4">
-          <div
-            id="blog-posts-container"
-            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto"
-          >
-            <!-- Posts will be dynamically loaded here -->
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-black border-t border-white/10 py-16">
-      <div class="container mx-auto px-4">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-          <div class="md:col-span-2">
-            <div class="flex items-center mb-6">
-              <div class="w-10 h-10 mr-3">
-                <img
-                  src="logo.png"
-                  class="w-full h-full object-cover rounded-[11px]"
-                  alt="CodeDynasty Logo"
-                />
-              </div>
-              <span class="text-xl font-medium text-white">CodeDynasty</span>
-            </div>
-            <p class="text-slate-400 mb-6 max-w-md">
-              Building modern, performant software that empowers developers. Open source tools for the next generation.
-            </p>
-            <div class="flex gap-4">
-              <a
-                href="https://github.com/CodeDynasty-dev"
-                class="w-10 h-10 rounded-[8px] bg-white/5 hover:bg-white/10 flex items-center justify-center text-slate-400 hover:text-white transition-colors"
-                target="_blank"
-                aria-label="GitHub"
-              >
-                <i class="fab fa-github"></i>
-              </a>
-              <a
-                href="https://discord.codedynasty.dev"
-                class="w-10 h-10 rounded-[8px] bg-white/5 hover:bg-white/10 flex items-center justify-center text-slate-400 hover:text-white transition-colors"
-                aria-label="Discord"
-              >
-                <i class="fab fa-discord"></i>
-              </a>
-            </div>
-          </div>
-
-          <div>
-            <h3 class="text-white font-medium mb-4">Quick Links</h3>
-            <ul class="space-y-3">
-              <li>
-                <a
-                  href="/"
-                  class="text-slate-400 hover:text-white transition-colors text-sm"
-                  >Home</a
-                >
-              </li>
-              <li>
-                <a
-                  href="/blog.html"
-                  class="text-slate-400 hover:text-white transition-colors text-sm"
-                  >Blog</a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://github.com/CodeDynasty-dev"
-                  class="text-slate-400 hover:text-white transition-colors text-sm"
-                  >Projects</a
-                >
-              </li>
-              <li>
-                <a
-                  href="/contact.html"
-                  class="text-slate-400 hover:text-white transition-colors text-sm"
-                  >Contact</a
-                >
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 class="text-white font-medium mb-4">Resources</h3>
-            <ul class="space-y-3">
-              <li>
-                <a
-                  href="https://github.com/CodeDynasty-dev"
-                  class="text-slate-400 hover:text-white transition-colors text-sm"
-                  >Documentation</a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://discord.codedynasty.dev"
-                  class="text-slate-400 hover:text-white transition-colors text-sm"
-                  >Community</a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://github.com/CodeDynasty-dev"
-                  class="text-slate-400 hover:text-white transition-colors text-sm"
-                  >GitHub</a
-                >
-              </li>
-              <li>
-                <a
-                  href="/contact.html"
-                  class="text-slate-400 hover:text-white transition-colors text-sm"
-                  >Support</a
-                >
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div
-          class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4"
-        >
-          <p class="text-slate-500 text-sm">
-            &copy; 2025 CodeDynasty. Building modern software for humanity.
-          </p>
-          <div class="flex gap-6 text-sm">
-            <a
-              href="/privacy"
-              class="text-slate-500 hover:text-white transition-colors"
-              >Privacy</a
-            >
-            <a
-              href="/terms"
-              class="text-slate-500 hover:text-white transition-colors"
-              >Terms</a
-            >
-            <a
-              href="/license"
-              class="text-slate-500 hover:text-white transition-colors"
-              >License</a
-            >
-          </div>
-        </div>
+    <div style="padding-top: var(--spacing-32); border-top: 1px solid rgba(255,255,255,0.1); display: flex; flex-direction: column; align-items: center; gap: var(--spacing-16);">
+      <p style="font-family: var(--font-control); font-weight: 500; font-size: var(--text-caption); line-height: var(--leading-caption); color: rgba(255,255,255,0.3);">
+        &copy; 2025 CodeDynasty. Building modern software for humanity.
+      </p>
+      <div style="display: flex; gap: var(--spacing-24);">
+        <a href="/privacy" class="footer-link">Privacy</a>
+        <a href="/terms" class="footer-link">Terms</a>
+        <a href="/license" class="footer-link">License</a>
       </div>
-    </footer>
+    </div>
+  </div>
+</footer>
 
-    <script>
-      // Mobile menu functionality
-      const mobileMenuButton = document.getElementById("mobile-menu-button");
-      const closeMobileMenu = document.getElementById("close-mobile-menu");
-      const mobileMenu = document.getElementById("mobile-menu");
-      const body = document.body;
+<script>
+  (function() {
+    var menuBtn = document.getElementById("mobile-menu-button");
+    var closeBtn = document.getElementById("close-mobile-menu");
+    var menu = document.getElementById("mobile-menu");
+    var body = document.body;
 
-      function toggleMobileMenu() {
-        mobileMenu.classList.toggle("translate-x-0");
-        mobileMenu.classList.toggle("-translate-x-full");
-        body.classList.toggle("overflow-hidden");
-      }
-
-      if (mobileMenuButton && closeMobileMenu && mobileMenu) {
-        mobileMenuButton.addEventListener("click", toggleMobileMenu);
-        closeMobileMenu.addEventListener("click", toggleMobileMenu);
-
-        // Close menu when clicking on a link
-        document.querySelectorAll("#mobile-menu a").forEach((link) => {
-          link.addEventListener("click", () => {
-            mobileMenu.classList.remove("translate-x-0");
-            mobileMenu.classList.add("-translate-x-full");
-            body.classList.remove("overflow-hidden");
-          });
-        });
-
-        // Close menu when pressing Escape key
-        document.addEventListener("keydown", (e) => {
-          if (
-            e.key === "Escape" &&
-            mobileMenu.classList.contains("translate-x-0")
-          ) {
-            toggleMobileMenu();
-          }
-        });
-      }
-
-      // Load all blog posts
-      async function loadAllBlogPosts() {
-        try {
-          const response = await fetch("/docmach-manifest.json");
-          const manifest = await response.json();
-
-          // Filter only posts from the /posts directory
-          const posts = manifest.pages.filter(
-            (page) =>
-              page.sourcePath.startsWith("posts/") &&
-              page.docmachTags &&
-              page.docmachTags.length > 0
-          );
-
-          // Sort posts by date (latest first)
-          posts.sort((a, b) => {
-            const aParams =
-              a.docmachTags.find((tag) => tag.type === "wrapper")?.params || {};
-            const bParams =
-              b.docmachTags.find((tag) => tag.type === "wrapper")?.params || {};
-            const aDate = new Date(aParams.time_created || 0);
-            const bDate = new Date(bParams.time_created || 0);
-            return bDate - aDate;
-          });
-
-          const postsContainer = document.getElementById(
-            "blog-posts-container"
-          );
-          if (!postsContainer) return;
-
-          postsContainer.innerHTML = "";
-
-          // Render all posts
-          posts.forEach((post) => {
-            const params =
-              post.docmachTags.find((tag) => tag.type === "wrapper")?.params ||
-              {};
-            const title = params.title || "Untitled";
-            const description = params.description || "";
-            const image = params.image || "/placeholder.png";
-            const topic = params.topic || "Article";
-            const timeCreated = params.time_created || "";
-            const timeToRead = params.time_to_read || "";
-            const link = post.link;
-
-            const articleHTML = `
-              <a href="${link}" class="group modern-card">
-                <div class="aspect-video overflow-hidden rounded-[11px] mb-4">
-                  <img
-                    src="${image}"
-                    alt="${title}"
-                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                </div>
-                <div class="flex items-center gap-2 mb-3">
-                  <div class="badge">${topic.split(",")[0].trim()}</div>
-                  ${
-                    timeToRead
-                      ? `<span class="text-xs text-ink/65">${timeToRead}</span>`
-                      : ""
-                  }
-                </div>
-                <h3 class="text-xl font-medium text-ink mb-3 group-hover:text-signal-blue transition-colors line-clamp-2" style="font-family: var(--font-control-tnt)">
-                  ${title}
-                </h3>
-                <p class="text-ink/80 text-sm mb-4 line-clamp-3">
-                  ${description}
-                </p>
-                <div class="flex items-center justify-between text-xs text-ink/60">
-                  <span>${timeCreated}</span>
-                  <div class="flex items-center">
-                    <span>Read more</span>
-                    <svg
-                      class="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M9 5l7 7-7 7"
-                      />
-                    </svg>
-                  </div>
-                </div>
-              </a>
-            `;
-
-            postsContainer.innerHTML += articleHTML;
-          });
-
-          // Show message if no posts
-          if (posts.length === 0) {
-            postsContainer.innerHTML =
-              '<p class="text-slate-400 text-center col-span-full">No articles available yet.</p>';
-          }
-        } catch (error) {
-          console.error("Error loading blog posts:", error);
-          const postsContainer = document.getElementById(
-            "blog-posts-container"
-          );
-          if (postsContainer) {
-            postsContainer.innerHTML =
-              '<p class="text-slate-400 text-center col-span-full">Unable to load articles at this time.</p>';
-          }
-        }
-      }
-
-      // Load posts when DOM is ready
-      if (document.readyState === "loading") {
-        document.addEventListener("DOMContentLoaded", loadAllBlogPosts);
+    function toggleMenu() {
+      if (menu.classList.contains("mobile-menu-open")) {
+        menu.classList.remove("mobile-menu-open");
+        menu.classList.add("mobile-menu-closed");
+        body.classList.remove("overflow-hidden");
       } else {
-        loadAllBlogPosts();
+        menu.classList.remove("mobile-menu-closed");
+        menu.classList.add("mobile-menu-open");
+        body.classList.add("overflow-hidden");
       }
-    </script>
-  </body>
+    }
+
+    function closeMenu() {
+      menu.classList.remove("mobile-menu-open");
+      menu.classList.add("mobile-menu-closed");
+      body.classList.remove("overflow-hidden");
+    }
+
+    if (menuBtn && closeBtn && menu) {
+      menuBtn.addEventListener("click", toggleMenu);
+      closeBtn.addEventListener("click", toggleMenu);
+      document.querySelectorAll("#mobile-menu a").forEach(function(link) {
+        link.addEventListener("click", closeMenu);
+      });
+      document.addEventListener("keydown", function(e) {
+        if (e.key === "Escape" && menu.classList.contains("mobile-menu-open")) toggleMenu();
+      });
+    }
+  })();
+</script>
+
+<script>
+  (function() {
+    function loadPosts() {
+      fetch("/docmach-manifest.json")
+        .then(function(r) { return r.json(); })
+        .then(function(manifest) {
+          var posts = manifest.pages.filter(function(p) {
+            return p.sourcePath.startsWith("posts/") && p.docmachTags && p.docmachTags.length > 0;
+          });
+          posts.sort(function(a, b) {
+            var aP = (a.docmachTags.find(function(t) { return t.type === "wrapper"; }) || {}).params || {};
+            var bP = (b.docmachTags.find(function(t) { return t.type === "wrapper"; }) || {}).params || {};
+            return new Date(bP.time_created || 0) - new Date(aP.time_created || 0);
+          });
+          var container = document.getElementById("blog-posts-container");
+          if (!container) return;
+          container.innerHTML = "";
+
+          if (posts.length === 0) {
+            container.innerHTML = '<p style="font-family: var(--font-control); font-weight: 500; font-size: var(--text-body); color: rgba(255,255,255,0.3); text-align: center; grid-column: 1 / -1;">No articles available yet.</p>';
+            return;
+          }
+
+          posts.forEach(function(post) {
+            var params = (post.docmachTags.find(function(t) { return t.type === "wrapper"; }) || {}).params || {};
+            var title = params.title || "Untitled";
+            var description = params.description || "";
+            var image = params.image || "/placeholder.png";
+            var topic = params.topic || "Article";
+            var timeCreated = params.time_created || "";
+            var timeToRead = params.time_to_read || "";
+            var link = post.link;
+
+            var card = document.createElement("a");
+            card.href = link;
+            card.className = "modern-card";
+
+            card.innerHTML =
+              '<div style="aspect-ratio: 16/9; overflow: hidden; border-radius: var(--radius-images); margin-bottom: var(--spacing-16);">' +
+                '<img src="' + image + '" alt="' + title + '" style="width: 100%; height: 100%; object-fit: cover; transition: opacity 0.3s ease;" />' +
+              '</div>' +
+              '<div style="display: flex; align-items: center; gap: var(--spacing-8); margin-bottom: var(--spacing-12);">' +
+                '<div class="badge">' + topic.split(",")[0].trim() + '</div>' +
+                (timeToRead ? '<span style="font-family: var(--font-control); font-weight: 500; font-size: var(--text-caption); line-height: var(--leading-caption); color: rgba(27,27,27,0.4);">' + timeToRead + '</span>' : '') +
+              '</div>' +
+              '<h3 style="font-family: var(--font-control-tnt); font-weight: 500; font-size: var(--text-subheading); line-height: var(--leading-subheading); color: var(--color-ink); margin-top: var(--spacing-8); margin-bottom: var(--spacing-12); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">' + title + '</h3>' +
+              '<p style="font-family: var(--font-control); font-weight: 400; font-size: var(--text-body); line-height: var(--leading-body); color: rgba(27,27,27,0.8); margin-bottom: var(--spacing-16); flex: 1; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">' + description + '</p>' +
+              '<div style="display: flex; align-items: center; justify-content: space-between; font-family: var(--font-control); font-weight: 500; font-size: var(--text-caption); line-height: var(--leading-caption); color: rgba(27,27,27,0.4);">' +
+                '<span>' + timeCreated + '</span>' +
+                '<span style="display: flex; align-items: center;">Read more ' +
+                  '<svg class="read-arrow" style="width: 16px; height: 16px; margin-left: 4px; transition: transform 0.2s ease;" fill="none" stroke="currentColor" viewBox="0 0 24 24">' +
+                    '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />' +
+                  '</svg>' +
+                '</span>' +
+              '</div>';
+
+            container.appendChild(card);
+          });
+        })
+        .catch(function(err) {
+          console.error("Error loading blog posts:", err);
+          var container = document.getElementById("blog-posts-container");
+          if (container) {
+            container.innerHTML = '<p style="font-family: var(--font-control); font-weight: 500; font-size: var(--text-body); color: rgba(255,255,255,0.3); text-align: center; grid-column: 1 / -1;">Unable to load articles at this time.</p>';
+          }
+        });
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", loadPosts);
+    } else {
+      loadPosts();
+    }
+  })();
+</script>
+</body>
 </html>

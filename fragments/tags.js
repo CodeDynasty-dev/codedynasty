@@ -1,17 +1,14 @@
 export default function (params) {
   const tags = params?.tags?.split(",");
-  return `<div class="flex mb-4 flex-wrap gap-2">
+  return `<div style="display: flex; flex-wrap: wrap; gap: var(--spacing-8); margin-bottom: var(--spacing-16);">
             ${tags.map(
               (tag) => `<a
                   href="#"
-                  class="px-3 py-1 rounded-full text-sm hover:bg-primary-color hover:text-black transition-colors"
-                  style="
-                    background-color: rgba(0, 255, 170, 0.1);
-                    color: var(--primary-color);
-                  "
+                  class="btn-pill-toggle"
+                  style="font-size: var(--text-caption); padding: 4px 12px; color: var(--color-whiteout); background-color: oklch(0% 0 0 / 0.1);"
                 >
                   #${tag.trim()}
                 </a>`
-            )}
+            ).join("")}
             </div>`;
 }

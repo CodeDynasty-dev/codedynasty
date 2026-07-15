@@ -18,142 +18,104 @@
     <meta name="description" content="Friday Candour's portfolio" />
   </head>
   <body>
-    <header class="fixed w-full top-0 z-50 border-b border-white/10 bg-black/85 backdrop-blur-md">
-      <nav class="container mx-auto px-6">
-        <div class="flex justify-between items-center h-[72px]">
-          <a href="/" class="flex items-center group" aria-label="CodeDynasty Home">
-            <div class="w-10 h-10 mr-3">
-              <img
-                src="/logo.png"
-                class="w-full h-full object-cover rounded-[11px]"
-                alt="CodeDynasty Logo"
-              />
-            </div>
-            <span class="text-xl font-medium text-white">CodeDynasty</span>
-          </a>
-
-          <!-- Mobile menu button -->
-          <button
-            id="mobile-menu-button"
-            class="md:hidden text-white focus:outline-none"
-            aria-label="Toggle menu"
-          >
-            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-            </svg>
-          </button>
-
-          <!-- Desktop Navigation -->
-          <div class="hidden md:flex items-center space-x-4">
-            <a
-              href="/blog.html"
-              class="px-3 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors"
-            >
-              Blog
-            </a>
-            <a
-              href="https://discord.codedynasty.dev"
-              class="px-3 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors"
-            >
-              Discord
-            </a>
-            <a
-              href="https://github.com/CodeDynasty-dev"
-              class="px-3 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors"
-              target="_blank"
-            >
-              GitHub
-            </a>
-            <a
-              href="/contact.html"
-              class="btn-ghost-nav"
-            >
-              Contact
-            </a>
+    <header class="nav-minimal fixed top-0 left-0 z-50" style="height: 72px;">
+      <div class="container-max" style="display: flex; justify-content: space-between; align-items: center; width: 100%; height: 100%;">
+        <a href="/" style="display: flex; align-items: center; gap: 12px;" aria-label="CodeDynasty Home">
+          <div style="width: 40px; height: 40px;">
+            <img
+              src="/logo.png"
+              style="width: 100%; height: 100%; object-fit: cover; border-radius: 11px;"
+              alt="CodeDynasty Logo"
+            />
           </div>
-        </div>
-      </nav>
+          <span style="font-family: var(--font-control); font-weight: 500; font-size: 20px; line-height: 1.1; color: var(--color-whiteout);">CodeDynasty</span>
+        </a>
+
+        <button
+          id="mobile-menu-button"
+          class="md-hidden"
+          style="background: none; border: none; color: var(--color-whiteout); cursor: pointer; display: none;"
+          aria-label="Toggle menu"
+        >
+          <svg style="width: 24px; height: 24px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+          </svg>
+        </button>
+
+        <nav style="display: flex; align-items: center; gap: var(--spacing-16);">
+          <a href="/blog.html" class="nav-link">Blog</a>
+          <a href="https://discord.codedynasty.dev" class="nav-link">Discord</a>
+          <a href="https://github.com/CodeDynasty-dev" class="nav-link" target="_blank">GitHub</a>
+          <a href="/contact.html" class="btn-ghost-nav">Contact</a>
+        </nav>
+      </div>
     </header>
 
-    <!-- Mobile Menu Overlay -->
     <div
       id="mobile-menu"
-      class="fixed inset-0 z-50 bg-black/95 backdrop-blur-lg transform -translate-x-full transition-transform duration-300 ease-in-out md:hidden"
+      style="position: fixed; inset: 0; z-index: 50; background-color: var(--surface-dark-canvas); opacity: 0.95; transform: translateX(-100%); transition: transform 0.3s ease; display: none;"
     >
-      <div class="container mx-auto px-6 py-8 h-full flex flex-col">
-        <div class="flex justify-between items-center mb-12">
-          <a href="/" class="flex items-center" aria-label="CodeDynasty Home">
-            <div class="w-10 h-10 mr-3">
-              <img src="/logo.png" class="w-full h-full object-cover rounded-lg" alt="CodeDynasty Logo" />
+      <div class="container-max" style="padding-top: var(--spacing-32); padding-bottom: var(--spacing-32); height: 100%; display: flex; flex-direction: column;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-48);">
+          <a href="/" style="display: flex; align-items: center; gap: 12px;" aria-label="CodeDynasty Home">
+            <div style="width: 40px; height: 40px;">
+              <img src="/logo.png" style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-lg);" alt="CodeDynasty Logo" />
             </div>
-            <span class="text-xl font-bold text-white">CodeDynasty</span>
+            <span style="font-family: var(--font-control); font-weight: 500; font-size: 20px; line-height: 1.1; color: var(--color-whiteout);">CodeDynasty</span>
           </a>
-          <button id="close-mobile-menu" class="text-white/70 hover:text-white transition-colors">
-            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <button id="close-mobile-menu" style="background: none; border: none; color: rgba(255,255,255,0.7); cursor: pointer;">
+            <svg style="width: 24px; height: 24px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
         </div>
-        <nav class="flex-1 flex flex-col space-y-4">
-          <a href="https://discord.codedynasty.dev" class="text-white/80 hover:text-white text-lg py-3 px-4 rounded-lg hover:bg-white/5 transition-colors">
-            Discord
-          </a>
-          <a href="https://github.com/CodeDynasty-dev" target="_blank" class="text-white/80 hover:text-white text-lg py-3 px-4 rounded-lg hover:bg-white/5 transition-colors">
-            GitHub
-          </a>
-          <a href="/contact.html" class="text-white/80 hover:text-white text-lg py-3 px-4 rounded-lg hover:bg-white/5 transition-colors">
-            Contact
-          </a>
+        <nav style="flex: 1; display: flex; flex-direction: column; gap: var(--spacing-16);">
+          <a href="https://discord.codedynasty.dev" style="font-family: var(--font-control); font-weight: 500; font-size: 18px; line-height: 1.4; color: rgba(255,255,255,0.8); padding: 12px 16px; border-radius: var(--radius-lg); transition: background-color 0.2s ease;">Discord</a>
+          <a href="https://github.com/CodeDynasty-dev" target="_blank" style="font-family: var(--font-control); font-weight: 500; font-size: 18px; line-height: 1.4; color: rgba(255,255,255,0.8); padding: 12px 16px; border-radius: var(--radius-lg); transition: background-color 0.2s ease;">GitHub</a>
+          <a href="/contact.html" style="font-family: var(--font-control); font-weight: 500; font-size: 18px; line-height: 1.4; color: rgba(255,255,255,0.8); padding: 12px 16px; border-radius: var(--radius-lg); transition: background-color 0.2s ease;">Contact</a>
         </nav>
-        <div class="pt-6 border-t border-white/10 mt-auto">
-          <p class="text-white/50 text-sm text-center">© 2025 CodeDynasty. All rights reserved.</p>
+        <div style="padding-top: var(--spacing-24); border-top: 1px solid rgba(255,255,255,0.1); margin-top: auto;">
+          <p style="font-family: var(--font-control); font-weight: 500; font-size: var(--text-caption); line-height: var(--leading-caption); color: rgba(255,255,255,0.5); text-align: center;">&copy; 2025 CodeDynasty. All rights reserved.</p>
         </div>
       </div>
     </div>
 
     <script>
-      // Mobile menu functionality
       const mobileMenuButton = document.getElementById("mobile-menu-button");
       const closeMobileMenu = document.getElementById("close-mobile-menu");
       const mobileMenu = document.getElementById("mobile-menu");
       const body = document.body;
 
       function toggleMobileMenu() {
-        mobileMenu.classList.toggle("translate-x-0");
-        mobileMenu.classList.toggle("translate-x-full");
-        body.classList.toggle("overflow-hidden");
+        if (mobileMenu.style.transform === "translateX(0%)") {
+          mobileMenu.style.transform = "translateX(-100%)";
+        } else {
+          mobileMenu.style.transform = "translateX(0%)";
+        }
+        body.style.overflow = body.style.overflow === "hidden" ? "" : "hidden";
       }
 
       if (mobileMenuButton && closeMobileMenu && mobileMenu) {
         mobileMenuButton.addEventListener("click", toggleMobileMenu);
         closeMobileMenu.addEventListener("click", toggleMobileMenu);
-
-        // Close menu when clicking on a link
-        document.querySelectorAll("#mobile-menu a").forEach((link) => {
-          link.addEventListener("click", () => {
-            mobileMenu.classList.remove("translate-x-0");
-            mobileMenu.classList.add("translate-x-full");
-            body.classList.remove("overflow-hidden");
+        document.querySelectorAll("#mobile-menu a").forEach(function(link) {
+          link.addEventListener("click", function() {
+            mobileMenu.style.transform = "translateX(-100%)";
+            body.style.overflow = "";
           });
         });
-
-        // Close menu when pressing Escape key
-        document.addEventListener("keydown", (e) => {
-          if (
-            e.key === "Escape" &&
-            mobileMenu.classList.contains("translate-x-0")
-          ) {
+        document.addEventListener("keydown", function(e) {
+          if (e.key === "Escape" && mobileMenu.style.transform === "translateX(0%)") {
             toggleMobileMenu();
           }
         });
       }
     </script>
 
-    <main class="pt-20 pb-12">
-      <div class="container mx-auto px-4 md:px-6 mt-12">
-        <article class="mx-auto max-w-4xl post">
-          <div class="blog-content prose prose-invert prose-lg">
-            <img class="size-45 mx-auto my-12 rounded-[50%]" src="https://avatars.githubusercontent.com/u/75016347?v=4">
+    <main style="padding-top: 92px; padding-bottom: var(--spacing-48);">
+      <div class="container-max">
+        <article class="prose" style="max-width: 880px; margin: 0 auto;">
+          <img class="size-45 mx-auto my-12 rounded-[50%]" src="https://avatars.githubusercontent.com/u/75016347?v=4">
 <h1>Hi there! 👋 I’m Friday Candour</h1>
 <p>Imagine a world where technology doesn’t just function—it inspires.
 <br>
@@ -247,18 +209,15 @@ I’m always learning, always evolving—because in tech, standing still isn’t
 <br>
 <p><strong><em>&quot;Infinite scrolling won't solve your tech debt - I will.&quot;</em></strong></p>
 
-          </div>
         </article>
       </div>
     </main>
 
-    <footer class="bg-black border-t border-white/10 py-12">
-      <div class="container mx-auto px-4">
-        <div class="text-center">
-          <p class="text-slate-500 text-sm">
-            &copy; 2025 CodeDynasty. Building modern software for humanity.
-          </p>
-        </div>
+    <footer class="footer-section" style="padding-top: var(--spacing-48); padding-bottom: var(--spacing-48);">
+      <div class="container-max" style="text-align: center;">
+        <p style="font-family: var(--font-control); font-weight: 500; font-size: var(--text-caption); line-height: var(--leading-caption); color: rgba(255, 255, 255, 0.3);">
+          &copy; 2025 CodeDynasty. Building modern software for humanity.
+        </p>
       </div>
     </footer>
     <script src="/script/index.js"></script>

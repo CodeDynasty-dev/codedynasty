@@ -1,31 +1,31 @@
-/* Responsive rules & Blog post prose styles for Air Design System */
+/* ============================================
+   Air Design System — Post / Prose Styles
+   ============================================ */
 
 @media (max-width: 768px) {
   .container {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: var(--spacing-16);
+    padding-right: var(--spacing-16);
   }
-
   h1 {
-    font-size: 2rem !important;
-    line-height: 1.2;
+    font-size: var(--text-heading) !important;
+    line-height: var(--leading-heading);
   }
-
   h2 {
-    font-size: 1.75rem !important;
+    font-size: var(--text-subheading) !important;
+    line-height: var(--leading-subheading);
   }
-
   h3 {
-    font-size: 1.5rem !important;
+    font-size: var(--text-body) !important;
+    line-height: var(--leading-body);
   }
 }
 
-/* Post Prose Custom Styling */
 .prose {
   font-family: var(--font-control);
-  font-weight: 400;
+  font-weight: var(--font-weight-regular);
   color: var(--color-whiteout);
-  line-height: 1.6;
+  line-height: var(--leading-body);
 }
 
 .prose p {
@@ -34,7 +34,10 @@
   color: rgba(255, 255, 255, 0.85);
 }
 
-.prose h1, .prose h2, .prose h3, .prose h4 {
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4 {
   font-family: var(--font-control-tnt);
   font-weight: 500;
   margin-top: var(--spacing-48);
@@ -64,8 +67,8 @@
   text-decoration: underline;
   text-decoration-thickness: 2px;
   text-underline-offset: 4px;
-  transition: opacity 0.2s;
   padding: 0 4px;
+  transition: opacity 0.2s ease;
 }
 .prose a:hover {
   opacity: 0.8;
@@ -84,7 +87,8 @@
   color: rgba(255, 255, 255, 0.7);
 }
 
-.prose ul, .prose ol {
+.prose ul,
+.prose ol {
   margin: var(--spacing-24) 0;
   padding-left: var(--spacing-24);
 }
@@ -101,7 +105,6 @@
   display: block;
 }
 
-/* Code & Pre Blocks */
 .prose code {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   background-color: rgba(255, 255, 255, 0.08);
@@ -128,7 +131,6 @@
   border-radius: 0;
 }
 
-/* Tables */
 .prose table {
   width: 100%;
   border-collapse: collapse;
@@ -160,4 +162,135 @@
 
 .prose tr:hover {
   background-color: rgba(255, 255, 255, 0.02);
+}
+
+/* ============================================
+   Air Design System — Post Header
+   ============================================ */
+
+.post-header {
+  padding-top: var(--spacing-64);
+  padding-bottom: var(--spacing-48);
+}
+
+.post-meta {
+  font-family: var(--font-control);
+  font-weight: 500;
+  font-size: var(--text-caption);
+  line-height: var(--leading-caption);
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.post-topic-badge {
+  display: inline-flex;
+  align-items: center;
+  background-color: oklch(0% 0 0 / 0.1);
+  color: var(--color-whiteout);
+  font-size: var(--text-caption);
+  line-height: var(--leading-caption);
+  font-weight: 500;
+  padding: 4px 12px;
+  border-radius: var(--radius-pills);
+}
+
+/* ============================================
+   Air Design System — Reading Progress Bar
+   ============================================ */
+
+.reading-progress-container {
+  position: fixed;
+  top: 72px;
+  left: 0;
+  width: 100%;
+  z-index: 40;
+  height: 1px;
+  background-color: transparent;
+}
+
+.reading-progress-bar {
+  height: 100%;
+  background-color: var(--color-whiteout);
+  width: 0%;
+}
+
+/* ============================================
+   Air Design System — Share Widget (sidebar)
+   ============================================ */
+
+.share-sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-16);
+}
+
+.share-label {
+  font-family: var(--font-control);
+  font-weight: 500;
+  font-size: var(--text-caption);
+  line-height: var(--leading-caption);
+  color: rgba(255, 255, 255, 0.3);
+  margin-bottom: var(--spacing-4);
+}
+
+.share-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-buttons);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.55);
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+.share-btn:hover {
+  color: var(--color-whiteout);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ============================================
+   Air Design System — Code Block (within posts)
+   ============================================ */
+
+.code-block {
+  margin-top: var(--spacing-32);
+  margin-bottom: var(--spacing-32);
+  border-radius: var(--radius-cards);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: var(--color-ink);
+}
+
+.code-block-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px var(--spacing-16);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  font-family: var(--font-control);
+  font-size: var(--text-caption);
+  line-height: var(--leading-caption);
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.code-block .copy-code-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 12px;
+  border-radius: var(--radius-md);
+  font-family: var(--font-control);
+  font-size: var(--text-caption);
+  line-height: var(--leading-caption);
+  color: rgba(255, 255, 255, 0.4);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+.code-block .copy-code-btn:hover {
+  color: var(--color-whiteout);
+  background-color: rgba(255, 255, 255, 0.08);
 }
