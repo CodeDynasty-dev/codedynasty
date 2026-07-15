@@ -169,8 +169,8 @@
    ============================================ */
 
 .post-header {
-  padding-top: var(--spacing-64);
-  padding-bottom: var(--spacing-48);
+  padding-top: var(--spacing-80);
+  padding-bottom: var(--spacing-32);
 }
 
 .post-meta {
@@ -178,13 +178,13 @@
   font-weight: 500;
   font-size: var(--text-caption);
   line-height: var(--leading-caption);
-  color: rgba(255, 255, 255, 0.55);
+  color: rgba(255, 255, 255, 0.3);
 }
 
 .post-topic-badge {
   display: inline-flex;
   align-items: center;
-  background-color: oklch(0% 0 0 / 0.1);
+  background-color: rgba(255, 255, 255, 0.08);
   color: var(--color-whiteout);
   font-size: var(--text-caption);
   line-height: var(--leading-caption);
