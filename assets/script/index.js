@@ -23,6 +23,48 @@ cards.forEach((card) => {
   });
 });
 
+function initVideoParallax() {
+  var videoWrapper = document.getElementById("hero-video-wrapper");
+  var videoBg = document.getElementById("hero-video");
+  var headline = document.getElementById("hero-headline");
+  var bottomBlock = document.getElementById("hero-bottom-block");
+
+  if (!videoWrapper || !videoBg) return;
+
+  videoBg.addEventListener("loadedmetadata", function () {
+    videoBg.playbackRate = 1.25;
+  });
+
+  if (headline) headline.classList.add("visible");
+  if (bottomBlock) bottomBlock.classList.add("visible");
+
+  var cx = window.innerWidth / 2;
+  var cy = window.innerHeight / 2;
+  var currentX = 0;
+  var currentY = 0;
+  var targetX = 0;
+  var targetY = 0;
+
+  window.addEventListener("mousemove", function (e) {
+    targetX = ((e.clientX - cx) / cx) * 20;
+    targetY = ((e.clientY - cy) / cy) * 20;
+  });
+
+  window.addEventListener("resize", function () {
+    cx = window.innerWidth / 2;
+    cy = window.innerHeight / 2;
+  });
+
+  function animate() {
+    currentX += (targetX - currentX) * 0.06;
+    currentY += (targetY - currentY) * 0.06;
+    gsap.set(videoWrapper, { x: currentX, y: currentY });
+    requestAnimationFrame(animate);
+  }
+
+  requestAnimationFrame(animate);
+}
+
 // Share functionality
 function setupShareButtons() {
   const currentUrl = encodeURIComponent(window.location.href);
@@ -154,6 +196,7 @@ document.addEventListener("DOMContentLoaded", function () {
   initScrollAnimations();
   initParallaxEffect();
   initNewsletterForm();
+  initVideoParallax();
 });
 
 // Floating Particles System
