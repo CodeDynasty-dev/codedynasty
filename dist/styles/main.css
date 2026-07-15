@@ -642,27 +642,3 @@ img {
   mask-composite: exclude;
   pointer-events: none;
 }
-
-/* ============================================
-   Wanderful — Hero Animations
-   ============================================ */
-
-.hero-fade-in {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 1s ease-out, transform 1s ease-out;
-}
-
-.hero-fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.hero-fade-in-delayed {
-  opacity: 0;
-  transition: opacity 1s ease-out;
-}
-
-.hero-fade-in-delayed.visible {
-  opacity: 1;
-}

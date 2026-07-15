@@ -26,8 +26,6 @@ cards.forEach((card) => {
 function initVideoParallax() {
   var videoWrapper = document.getElementById("hero-video-wrapper");
   var videoBg = document.getElementById("hero-video");
-  var headline = document.getElementById("hero-headline");
-  var bottomBlock = document.getElementById("hero-bottom-block");
 
   if (!videoWrapper || !videoBg) return;
 
@@ -35,8 +33,15 @@ function initVideoParallax() {
     videoBg.playbackRate = 1.25;
   });
 
-  if (headline) headline.classList.add("visible");
-  if (bottomBlock) bottomBlock.classList.add("visible");
+  var headlineInner = document.getElementById("hero-headline-inner");
+  var bottomBlock = document.getElementById("hero-bottom-block");
+
+  if (headlineInner) {
+    gsap.fromTo(headlineInner, { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 1, ease: "power2.out" });
+  }
+  if (bottomBlock) {
+    gsap.fromTo(bottomBlock, { opacity: 0 }, { opacity: 1, duration: 1, delay: 0.3, ease: "power2.out" });
+  }
 
   var cx = window.innerWidth / 2;
   var cy = window.innerHeight / 2;
