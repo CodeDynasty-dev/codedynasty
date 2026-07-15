@@ -1,6 +1,14 @@
 @import "tailwindcss";
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;900&family=Anton&family=Caveat:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Barlow:wght@300;400;500;600&family=Inter:wght@300;400;500;600;700&family=Anton&family=Caveat:wght@400;500&display=swap');
+
+@font-face {
+  font-family: 'Dirtyline';
+  src: url('https://fonts.cdnfonts.com/s/15011/Dirtyline36DaysofType.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
 @theme {
   --color-whiteout: #ffffff;
@@ -117,7 +125,7 @@
    ============================================ */
 
 body {
-  font-family: var(--font-control);
+  font-family: 'Barlow', var(--font-control);
   background-color: var(--surface-dark-canvas);
   color: var(--color-whiteout);
   font-weight: var(--font-weight-medium);
@@ -599,4 +607,62 @@ img {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #444444;
+}
+
+/* ============================================
+   Wanderful — Liquid Glass Utility
+   ============================================ */
+
+.liquid-glass {
+  background: rgba(255, 255, 255, 0.01);
+  background-blend-mode: luminosity;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: none;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.liquid-glass::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.4px;
+  background: linear-gradient(180deg,
+      rgba(255, 255, 255, 0.45) 0%,
+      rgba(255, 255, 255, 0.15) 20%,
+      rgba(255, 255, 255, 0) 40%,
+      rgba(255, 255, 255, 0) 60%,
+      rgba(255, 255, 255, 0.15) 80%,
+      rgba(255, 255, 255, 0.45) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* ============================================
+   Wanderful — Hero Animations
+   ============================================ */
+
+.hero-fade-in {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.hero-fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-fade-in-delayed {
+  opacity: 0;
+  transition: opacity 1s ease-out;
+}
+
+.hero-fade-in-delayed.visible {
+  opacity: 1;
 }

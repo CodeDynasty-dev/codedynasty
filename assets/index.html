@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="/bundle.css" />
   <link rel="stylesheet" href="/styles/main.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <link rel="shortcut icon" href="logo.png" type="image/png" />
   <meta name="title" content="CodeDynasty" />
   <meta name="description" content="CodeDynasty - An open source space" />
@@ -116,38 +117,19 @@
 
 <body>
 
-  <header
-    style="position: fixed; width: 100%; top: 0; z-index: 50; background-color: rgba(0, 0, 0, 0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
-    <nav class="container-max" style="height: 72px;">
-      <div class="nav-minimal"
-        style="justify-content: space-between; border-bottom: none; background: transparent; padding: 0;">
-        <a href="/" aria-label="CodeDynasty Home"
-          style="display: flex; align-items: center; text-decoration: none; color: inherit;">
-          <div style="width: 40px; height: 40px; margin-right: var(--spacing-12);">
-            <img src="logo.png"
-              style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-images);"
-              alt="CodeDynasty Logo" />
-          </div>
-          <span
-            style="font-size: var(--text-subheading); font-weight: var(--font-weight-medium); color: var(--color-whiteout);">CodeDynasty</span>
-        </a>
+  <header style="position: fixed; width: 100%; top: 0; z-index: 50; padding: 32px 40px; display: flex; justify-content: space-between; align-items: center; box-sizing: border-box;">
+    <a href="/" aria-label="Wanderful Home" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
+      <span style="font-family: 'Inter', sans-serif; font-size: 17px; font-weight: 600; letter-spacing: -0.02em; color: #fff;">Wanderful<sup style="font-size: 9px; vertical-align: super;">TM</sup></span>
+    </a>
 
-        <button id="mobile-menu-button" class="nav-mobile" aria-label="Toggle menu"
-          style="background: none; border: none; color: var(--color-whiteout); cursor: pointer; padding: 0;">
-          <svg style="width: 24px; height: 24px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-          </svg>
-        </button>
-
-        <div class="nav-minimal nav-desktop"
-          style="align-items: center; gap: var(--spacing-16); border-bottom: none; background: transparent; width: auto;">
-          <a href="/blog.html" class="nav-link">Blog</a>
-          <a href="https://discord.codedynasty.dev" class="nav-link">Discord</a>
-          <a href="https://github.com/CodeDynasty-dev" class="nav-link" target="_blank">GitHub</a>
-          <a href="/contact.html" class="btn-ghost-nav">Contact</a>
-        </div>
-      </div>
+    <nav class="liquid-glass" style="border-radius: 9999px; padding: 8px 8px; display: flex; align-items: center; gap: 4px;">
+      <a href="#" style="font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.12em; color: rgba(255,255,255,0.9); text-decoration: none; padding: 6px 16px; border-radius: 9999px; transition: color 0.2s ease;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.9)'">JOURNEY</a>
+      <a href="#" style="font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.12em; color: rgba(255,255,255,0.9); text-decoration: none; padding: 6px 16px; border-radius: 9999px; transition: color 0.2s ease;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.9)'">BENEFITS</a>
+      <a href="#" style="font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.12em; color: rgba(255,255,255,0.9); text-decoration: none; padding: 6px 16px; border-radius: 9999px; transition: color 0.2s ease;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.9)'">JOURNAL</a>
+      <a href="#" style="font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.12em; color: rgba(255,255,255,0.9); text-decoration: none; padding: 6px 16px; border-radius: 9999px; transition: color 0.2s ease;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.9)'">GUIDEBOOK</a>
     </nav>
+
+    <a href="#" class="liquid-glass" style="border-radius: 9999px; padding: 10px 20px; font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.12em; color: rgba(255,255,255,0.9); text-decoration: none; transition: color 0.2s ease;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.9)'">GET ROAMING</a>
   </header>
 
   <div id="mobile-menu" class="mobile-menu -translate-x-full"
