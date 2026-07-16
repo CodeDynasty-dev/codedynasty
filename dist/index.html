@@ -52,6 +52,10 @@
       display: block;
     }
 
+    .nav-full {
+      display: none;
+    }
+
     @media (min-width: 768px) {
       .nav-desktop {
         display: flex;
@@ -60,9 +64,29 @@
       .nav-mobile {
         display: none;
       }
+    }
 
-      .md-block {
-        display: block;
+    @media (min-width: 1024px) {
+      .nav-full {
+        display: inline-flex;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .header-pad {
+        padding: 16px 20px !important;
+      }
+    }
+
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .header-pad {
+        padding: 20px 28px !important;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .header-pad {
+        padding: 32px 40px !important;
       }
     }
 
@@ -117,31 +141,35 @@
 
 <body>
 
-  <header
+  <header class="header-pad"
     style="position: fixed; width: 100%; top: 0; z-index: 50; padding: 32px 40px; display: flex; justify-content: space-between; align-items: center; box-sizing: border-box;">
     <a href="/" aria-label="CodeDynasty Home"
       style="display: flex; align-items: center; text-decoration: none; color: inherit;">
       <span
-        style="font-family: 'Caveat', cursive; font-size: 26px; font-weight: 400; font-style: italic; color: var(--color-whiteout); letter-spacing: -0.01em;">CodeDynasty</span>
+        style="font-family: 'Caveat', cursive; font-size: clamp(22px, 3vw, 26px); font-weight: 400; font-style: italic; color: var(--color-whiteout); letter-spacing: -0.01em; white-space: nowrap;">CodeDynasty</span>
     </a>
 
-    <nav class="nav-desktop" style="display: flex; align-items: center; gap: 4px;">
+    <nav class="nav-desktop" style="display: none; align-items: center; gap: 2px;">
       <a href="/blog.html"
-        style="font-family: var(--font-control); font-weight: 500; font-size: 13px; letter-spacing: 0.12em; color: rgba(255,255,255,0.55); text-decoration: none; padding: 6px 12px; border-radius: var(--radius-md); transition: color 0.2s ease;"
+        style="font-family: var(--font-control); font-weight: 500; font-size: 13px; letter-spacing: 0.08em; color: rgba(255,255,255,0.55); text-decoration: none; padding: 6px 10px; border-radius: var(--radius-md); transition: color 0.2s ease; white-space: nowrap;"
         onmouseover="this.style.color='var(--color-whiteout)'"
         onmouseout="this.style.color='rgba(255,255,255,0.55)'">Blog</a>
+      <a href="https://discord.codedynasty.dev"
+        style="font-family: var(--font-control); font-weight: 500; font-size: 13px; letter-spacing: 0.08em; color: rgba(255,255,255,0.55); text-decoration: none; padding: 6px 10px; border-radius: var(--radius-md); transition: color 0.2s ease; white-space: nowrap;"
+        onmouseover="this.style.color='var(--color-whiteout)'"
+        onmouseout="this.style.color='rgba(255,255,255,0.55)'">Discord</a>
       <a href="https://github.com/CodeDynasty-dev" target="_blank"
-        style="font-family: var(--font-control); font-weight: 500; font-size: 13px; letter-spacing: 0.12em; color: rgba(255,255,255,0.55); text-decoration: none; padding: 6px 12px; border-radius: var(--radius-md); transition: color 0.2s ease;"
+        style="font-family: var(--font-control); font-weight: 500; font-size: 13px; letter-spacing: 0.08em; color: rgba(255,255,255,0.55); text-decoration: none; padding: 6px 10px; border-radius: var(--radius-md); transition: color 0.2s ease; white-space: nowrap;"
         onmouseover="this.style.color='var(--color-whiteout)'"
         onmouseout="this.style.color='rgba(255,255,255,0.55)'">GitHub</a>
       <a href="/contact.html"
-        style="font-family: var(--font-control); font-weight: 500; font-size: 13px; letter-spacing: 0.12em; color: rgba(255,255,255,0.55); text-decoration: none; padding: 6px 12px; border-radius: var(--radius-md); transition: color 0.2s ease;"
+        style="font-family: var(--font-control); font-weight: 500; font-size: 13px; letter-spacing: 0.08em; color: rgba(255,255,255,0.55); text-decoration: none; padding: 6px 10px; border-radius: var(--radius-md); transition: color 0.2s ease; white-space: nowrap;"
         onmouseover="this.style.color='var(--color-whiteout)'"
         onmouseout="this.style.color='rgba(255,255,255,0.55)'">Contact</a>
     </nav>
 
-    <a href="https://github.com/CodeDynasty-dev" target="_blank" class="nav-desktop"
-      style="display: inline-flex; align-items: center; justify-content: center; background: transparent; border: 1px solid var(--color-whiteout); color: var(--color-whiteout); border-radius: var(--radius-buttons); font-family: var(--font-control); font-weight: 500; font-size: 13px; letter-spacing: 0.12em; padding: 10px 16px; text-decoration: none; transition: background-color 0.2s ease;"
+    <a href="https://github.com/CodeDynasty-dev" target="_blank" class="nav-full"
+      style="display: none; align-items: center; justify-content: center; background: transparent; border: 1px solid var(--color-whiteout); color: var(--color-whiteout); border-radius: var(--radius-buttons); font-family: var(--font-control); font-weight: 500; font-size: 13px; letter-spacing: 0.12em; padding: 10px 16px; text-decoration: none; transition: background-color 0.2s ease; white-space: nowrap;"
       onmouseover="this.style.backgroundColor='rgba(255,255,255,0.05)'"
       onmouseout="this.style.backgroundColor='transparent'">Explore Projects</a>
 
