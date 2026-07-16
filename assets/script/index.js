@@ -451,10 +451,6 @@ function createSupernovaOverlays(container) {
     container.appendChild(plasma);
   }
 }
-    gridLine.style.animationDelay = i * 1 + "s";
-    container.appendChild(gridLine);
-  }
-}
 
 // Scroll Animations
 function initScrollAnimations() {
