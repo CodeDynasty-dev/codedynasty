@@ -11,51 +11,91 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
   <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <meta name="description" content="Friday Candour's portfolio" />
+  <style>
+    .overflow-hidden { overflow: hidden; }
+
+    .nav-desktop { display: none; }
+    .nav-mobile { display: block; }
+    .nav-full { display: none; }
+
+    .mobile-menu-closed { transform: translateX(-100%); }
+    .mobile-menu-open { transform: translateX(0); }
+
+    @media (min-width: 768px) {
+      .nav-desktop { display: flex; }
+      .nav-mobile { display: none; }
+    }
+
+    @media (min-width: 1024px) {
+      .nav-full { display: inline-flex; }
+    }
+
+    @media (max-width: 767px) {
+      .header-pad { padding: 16px 20px !important; }
+    }
+
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .header-pad { padding: 20px 28px !important; }
+    }
+
+    @media (min-width: 1024px) {
+      .header-pad { padding: 32px 40px !important; }
+    }
+  </style>
 </head>
 
 <body>
-  <header class="nav-minimal fixed top-0 left-0 z-50" style="height: 72px;">
-    <div class="container-max"
-      style="display: flex; justify-content: space-between; align-items: center; width: 100%; height: 100%;">
-      <a href="/" style="display: flex; align-items: center; gap: 12px;" aria-label="CodeDynasty Home">
-        <div style="width: 40px; height: 40px;">
-          <img src="/logo.png" style="width: 100%; height: 100%; object-fit: cover; border-radius: 11px;"
-            alt="CodeDynasty Logo" />
-        </div>
-        <span
-          style="font-family: var(--font-control); font-weight: 500; font-size: 20px; line-height: 1.1; color: var(--color-whiteout);">CodeDynasty</span>
-      </a>
+  <header class="header-pad"
+    style="position: fixed; width: 100%; top: 0; z-index: 50; padding: 32px 40px; display: flex; justify-content: space-between; align-items: center; box-sizing: border-box;">
+    <a href="/" aria-label="CodeDynasty Home"
+      style="display: flex; align-items: center; text-decoration: none; color: inherit;">
+      <span
+        style="font-family: 'Caveat', cursive; font-size: clamp(22px, 3vw, 26px); font-weight: 400; font-style: italic; color: var(--color-whiteout); letter-spacing: -0.01em; white-space: nowrap;">CodeDynasty</span>
+    </a>
 
-      <button id="mobile-menu-button" class="md-hidden"
-        style="background: none; border: none; color: var(--color-whiteout); cursor: pointer; display: none;"
-        aria-label="Toggle menu">
-        <svg style="width: 24px; height: 24px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-        </svg>
-      </button>
+    <nav class="nav-desktop" style="align-items: center; gap: 2px;">
+      <a href="/blog.html"
+        style="font-family: var(--font-control); font-weight: 500; font-size: 13px; letter-spacing: 0.08em; color: rgba(255,255,255,0.55); text-decoration: none; padding: 6px 10px; border-radius: var(--radius-md); transition: color 0.2s ease; white-space: nowrap;"
+        onmouseover="this.style.color='var(--color-whiteout)'"
+        onmouseout="this.style.color='rgba(255,255,255,0.55)'">Blog</a>
+      <a href="https://discord.codedynasty.dev"
+        style="font-family: var(--font-control); font-weight: 500; font-size: 13px; letter-spacing: 0.08em; color: rgba(255,255,255,0.55); text-decoration: none; padding: 6px 10px; border-radius: var(--radius-md); transition: color 0.2s ease; white-space: nowrap;"
+        onmouseover="this.style.color='var(--color-whiteout)'"
+        onmouseout="this.style.color='rgba(255,255,255,0.55)'">Discord</a>
+      <a href="https://github.com/CodeDynasty-dev" target="_blank"
+        style="font-family: var(--font-control); font-weight: 500; font-size: 13px; letter-spacing: 0.08em; color: rgba(255,255,255,0.55); text-decoration: none; padding: 6px 10px; border-radius: var(--radius-md); transition: color 0.2s ease; white-space: nowrap;"
+        onmouseover="this.style.color='var(--color-whiteout)'"
+        onmouseout="this.style.color='rgba(255,255,255,0.55)'">GitHub</a>
+      <a href="/contact.html"
+        style="font-family: var(--font-control); font-weight: 500; font-size: 13px; letter-spacing: 0.08em; color: rgba(255,255,255,0.55); text-decoration: none; padding: 6px 10px; border-radius: var(--radius-md); transition: color 0.2s ease; white-space: nowrap;"
+        onmouseover="this.style.color='var(--color-whiteout)'"
+        onmouseout="this.style.color='rgba(255,255,255,0.55)'">Contact</a>
+    </nav>
 
-      <nav style="display: flex; align-items: center; gap: var(--spacing-16);">
-        <a href="/blog.html" class="nav-link">Blog</a>
-        <a href="https://github.com/CodeDynasty-dev" class="nav-link" target="_blank">GitHub</a>
-        <a href="/contact.html" class="btn-ghost-nav">Contact</a>
-      </nav>
-    </div>
+    <a href="https://github.com/CodeDynasty-dev" target="_blank" class="nav-full"
+      style="align-items: center; justify-content: center; background: transparent; border: 1px solid var(--color-whiteout); color: var(--color-whiteout); border-radius: var(--radius-buttons); font-family: var(--font-control); font-weight: 500; font-size: 13px; letter-spacing: 0.12em; padding: 10px 16px; text-decoration: none; transition: background-color 0.2s ease; white-space: nowrap;"
+      onmouseover="this.style.backgroundColor='rgba(255,255,255,0.05)'"
+      onmouseout="this.style.backgroundColor='transparent'">Explore Projects</a>
+
+    <button id="mobile-menu-button" class="nav-mobile" aria-label="Toggle menu"
+      style="background: none; border: none; color: #fff; cursor: pointer; padding: 8px;">
+      <svg style="width: 24px; height: 24px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+      </svg>
+    </button>
   </header>
 
-  <div id="mobile-menu"
-    style="position: fixed; inset: 0; z-index: 50; background-color: var(--surface-dark-canvas); opacity: 0.95; transform: translateX(-100%); transition: transform 0.3s ease; display: none;">
-    <div class="container-max"
-      style="padding-top: var(--spacing-32); padding-bottom: var(--spacing-32); height: 100%; display: flex; flex-direction: column;">
-      <div
-        style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-48);">
-        <a href="/" style="display: flex; align-items: center; gap: 12px;" aria-label="CodeDynasty Home">
-          <div style="width: 40px; height: 40px;">
-            <img src="/logo.png" style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-lg);"
-              alt="CodeDynasty Logo" />
-          </div>
+  <div id="mobile-menu" class="mobile-menu-closed"
+    style="position: fixed; inset: 0; z-index: 50; background-color: rgba(0,0,0,0.95); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); transition: transform 0.3s ease;">
+    <div
+      style="padding: var(--spacing-32) var(--spacing-24); height: 100%; display: flex; flex-direction: column; max-width: var(--page-max-width); margin: 0 auto;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-48);">
+        <a href="/" aria-label="CodeDynasty Home"
+          style="display: flex; align-items: center; text-decoration: none; color: inherit;">
           <span
-            style="font-family: var(--font-control); font-weight: 500; font-size: 20px; line-height: 1.1; color: var(--color-whiteout);">CodeDynasty</span>
+            style="font-family: 'Caveat', cursive; font-size: 26px; font-weight: 400; font-style: italic; color: var(--color-whiteout); letter-spacing: -0.01em;">CodeDynasty</span>
         </a>
         <button id="close-mobile-menu"
           style="background: none; border: none; color: rgba(255,255,255,0.7); cursor: pointer;">
@@ -65,10 +105,16 @@
         </button>
       </div>
       <nav style="flex: 1; display: flex; flex-direction: column; gap: var(--spacing-16);">
+        <a href="/blog.html"
+          style="font-family: var(--font-control); font-weight: 500; font-size: 18px; line-height: 1.4; color: rgba(255,255,255,0.8); padding: 12px 16px; border-radius: var(--radius-lg); text-decoration: none; transition: background-color 0.2s ease;">Blog</a>
+        <a href="https://discord.codedynasty.dev"
+          style="font-family: var(--font-control); font-weight: 500; font-size: 18px; line-height: 1.4; color: rgba(255,255,255,0.8); padding: 12px 16px; border-radius: var(--radius-lg); text-decoration: none; transition: background-color 0.2s ease;">Discord</a>
         <a href="https://github.com/CodeDynasty-dev" target="_blank"
-          style="font-family: var(--font-control); font-weight: 500; font-size: 18px; line-height: 1.4; color: rgba(255,255,255,0.8); padding: 12px 16px; border-radius: var(--radius-lg); transition: background-color 0.2s ease;">GitHub</a>
+          style="font-family: var(--font-control); font-weight: 500; font-size: 18px; line-height: 1.4; color: rgba(255,255,255,0.8); padding: 12px 16px; border-radius: var(--radius-lg); text-decoration: none; transition: background-color 0.2s ease;">GitHub</a>
         <a href="/contact.html"
-          style="font-family: var(--font-control); font-weight: 500; font-size: 18px; line-height: 1.4; color: rgba(255,255,255,0.8); padding: 12px 16px; border-radius: var(--radius-lg); transition: background-color 0.2s ease;">Contact</a>
+          style="font-family: var(--font-control); font-weight: 500; font-size: 18px; line-height: 1.4; color: rgba(255,255,255,0.8); padding: 12px 16px; border-radius: var(--radius-lg); text-decoration: none; transition: background-color 0.2s ease;">Contact</a>
+        <a href="https://github.com/CodeDynasty-dev" target="_blank"
+          style="font-family: var(--font-control); font-weight: 500; font-size: 18px; line-height: 1.4; color: rgba(255,255,255,0.8); padding: 12px 16px; border-radius: var(--radius-lg); text-decoration: none; transition: background-color 0.2s ease;">Explore Projects</a>
       </nav>
       <div style="padding-top: var(--spacing-24); border-top: 1px solid rgba(255,255,255,0.1); margin-top: auto;">
         <p
@@ -79,38 +125,41 @@
   </div>
 
   <script>
-    const mobileMenuButton = document.getElementById("mobile-menu-button");
-    const closeMobileMenu = document.getElementById("close-mobile-menu");
-    const mobileMenu = document.getElementById("mobile-menu");
-    const body = document.body;
+    (function () {
+      var menuBtn = document.getElementById("mobile-menu-button");
+      var closeBtn = document.getElementById("close-mobile-menu");
+      var menu = document.getElementById("mobile-menu");
+      var body = document.body;
 
-    function toggleMobileMenu() {
-      if (mobileMenu.style.transform === "translateX(0%)") {
-        mobileMenu.style.transform = "translateX(-100%)";
-      } else {
-        mobileMenu.style.transform = "translateX(0%)";
+      function openMenu() {
+        menu.classList.remove("mobile-menu-closed");
+        menu.classList.add("mobile-menu-open");
+        body.classList.add("overflow-hidden");
       }
-      body.style.overflow = body.style.overflow === "hidden" ? "" : "hidden";
-    }
+      function closeMenu() {
+        menu.classList.remove("mobile-menu-open");
+        menu.classList.add("mobile-menu-closed");
+        body.classList.remove("overflow-hidden");
+      }
+      function toggleMenu() {
+        if (menu.classList.contains("mobile-menu-open")) closeMenu();
+        else openMenu();
+      }
 
-    if (mobileMenuButton && closeMobileMenu && mobileMenu) {
-      mobileMenuButton.addEventListener("click", toggleMobileMenu);
-      closeMobileMenu.addEventListener("click", toggleMobileMenu);
-      document.querySelectorAll("#mobile-menu a").forEach(function (link) {
-        link.addEventListener("click", function () {
-          mobileMenu.style.transform = "translateX(-100%)";
-          body.style.overflow = "";
+      if (menuBtn && closeBtn && menu) {
+        menuBtn.addEventListener("click", toggleMenu);
+        closeBtn.addEventListener("click", toggleMenu);
+        document.querySelectorAll("#mobile-menu a").forEach(function (link) {
+          link.addEventListener("click", closeMenu);
         });
-      });
-      document.addEventListener("keydown", function (e) {
-        if (e.key === "Escape" && mobileMenu.style.transform === "translateX(0%)") {
-          toggleMobileMenu();
-        }
-      });
-    }
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape" && menu.classList.contains("mobile-menu-open")) toggleMenu();
+        });
+      }
+    })();
   </script>
 
-  <main style="padding-top: 92px; padding-bottom: var(--spacing-48);">
+  <main style="padding-top: 88px; padding-bottom: var(--spacing-48);">
     <div class="container-max">
       <article class="prose" style="max-width: 880px; margin: 0 auto;">
         <img class="size-45 mx-auto my-12 rounded-[50%]" src="https://avatars.githubusercontent.com/u/75016347?v=4">
