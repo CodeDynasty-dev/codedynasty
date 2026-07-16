@@ -268,44 +268,6 @@
 
   <script>
     (function () {
-      var menuBtn = document.getElementById("mobile-menu-button");
-      var closeBtn = document.getElementById("close-mobile-menu");
-      var menu = document.getElementById("mobile-menu");
-      var body = document.body;
-
-      function toggleMenu() {
-        if (menu.classList.contains("mobile-menu-open")) {
-          menu.classList.remove("mobile-menu-open");
-          menu.classList.add("mobile-menu-closed");
-          body.classList.remove("overflow-hidden");
-        } else {
-          menu.classList.remove("mobile-menu-closed");
-          menu.classList.add("mobile-menu-open");
-          body.classList.add("overflow-hidden");
-        }
-      }
-
-      function closeMenu() {
-        menu.classList.remove("mobile-menu-open");
-        menu.classList.add("mobile-menu-closed");
-        body.classList.remove("overflow-hidden");
-      }
-
-      if (menuBtn && closeBtn && menu) {
-        menuBtn.addEventListener("click", toggleMenu);
-        closeBtn.addEventListener("click", toggleMenu);
-        document.querySelectorAll("#mobile-menu a").forEach(function (link) {
-          link.addEventListener("click", closeMenu);
-        });
-        document.addEventListener("keydown", function (e) {
-          if (e.key === "Escape" && menu.classList.contains("mobile-menu-open")) toggleMenu();
-        });
-      }
-    })();
-  </script>
-
-  <script>
-    (function () {
       function loadPosts() {
         fetch("/docmach-manifest.json")
           .then(function (r) { return r.json(); })
