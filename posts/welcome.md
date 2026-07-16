@@ -72,8 +72,7 @@ If you're:
 
 Ready to join the dynasty? Here's how:
 
-1. Explore our latest articles
-2. Join our Discord community
+1. Explore our latest articles 
 3. Contribute to our open-source projects
 4. Share your knowledge through articles and tutorials
 

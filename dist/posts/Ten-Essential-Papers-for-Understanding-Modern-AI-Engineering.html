@@ -1,194 +1,263 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ten Essential Papers for Understanding Modern AI Engineering - CodeDynasty</title>
-    <link rel="stylesheet" href="/bundle.css" />
-    <link rel="stylesheet" href="/styles/main.css" />
-    <link rel="stylesheet" href="/styles/post.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css"
-    />
-    <meta name="description" content="A curated exploration of the foundational research papers that shaped modern AI engineering, from transformers to model alignment and practical deployment strategies." />
-    <meta name="keywords" content="code, programming, development" />
-    <meta name="author" content="Friday Candour" />
-    <meta name="robots" content="index, follow" />
-    <meta name="theme-color" content="#000000" />
-    <meta property="og:title" content="Ten Essential Papers for Understanding Modern AI Engineering" />
-    <meta property="og:description" content="A curated exploration of the foundational research papers that shaped modern AI engineering, from transformers to model alignment and practical deployment strategies." />
-    <meta property="og:url" content="https://codedynasty.dev" />
-    <meta property="og:image" content="https://codedynasty.dev/post-images/transformer.png" />
-    <meta property="og:type" content="article" />
-    <meta property="og:site_name" content="CodeDynasty" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Ten Essential Papers for Understanding Modern AI Engineering" />
-    <meta name="twitter:description" content="A curated exploration of the foundational research papers that shaped modern AI engineering, from transformers to model alignment and practical deployment strategies." />
-    <meta name="twitter:image" content="https://codedynasty.dev/post-images/transformer.png" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
-    <style>
-      .katex-display, .katex, .katex-mathml, .katex-html {
-        display: inline !important;
-      }
-      .mobile-menu-closed { transform: translateX(-100%); }
-      .mobile-menu-open { transform: translateX(0); }
-      @media (min-width: 768px) { .md-hidden { display: none; } .md-flex { display: flex; } .md-block { display: block; } }
-      @media (max-width: 767px) { .md-hidden { display: flex; } .md-flex { display: none; } .md-block { display: none; } }
-      @media (max-width: 1023px) { .lg-visible { display: none; } }
-      @media (min-width: 1024px) { .lg-visible { display: flex; } }
-      @media (max-width: 1023px) { .floating-actions { display: flex; } }
-      @media (min-width: 1024px) { .floating-actions { display: none; } }
-    </style>
-  </head>
-  <body>
-    <header class="nav-minimal" style="position: fixed; top: 0; left: 0; z-index: 50; height: 72px; width: 100%;">
-      <div class="container-max" style="display: flex; justify-content: space-between; align-items: center; width: 100%; height: 100%;">
-        <a href="/" style="display: flex; align-items: center; gap: 12px; text-decoration: none;" aria-label="CodeDynasty Home">
-          <div style="width: 40px; height: 40px;">
-            <img src="/logo.png" style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-lg-2);" alt="CodeDynasty Logo" />
-          </div>
-          <span style="font-family: var(--font-control); font-weight: 500; font-size: 20px; line-height: 1.1; color: var(--color-whiteout);">CodeDynasty</span>
-        </a>
 
-        <button id="mobile-menu-button" class="md-hidden" style="background: none; border: none; color: var(--color-whiteout); cursor: pointer;" aria-label="Toggle menu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ten Essential Papers for Understanding Modern AI Engineering - CodeDynasty</title>
+  <link rel="stylesheet" href="/bundle.css" />
+  <link rel="stylesheet" href="/styles/main.css" />
+  <link rel="stylesheet" href="/styles/post.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css" />
+  <meta name="description" content="A curated exploration of the foundational research papers that shaped modern AI engineering, from transformers to model alignment and practical deployment strategies." />
+  <meta name="keywords" content="code, programming, development" />
+  <meta name="author" content="Friday Candour" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#000000" />
+  <meta property="og:title" content="Ten Essential Papers for Understanding Modern AI Engineering" />
+  <meta property="og:description" content="A curated exploration of the foundational research papers that shaped modern AI engineering, from transformers to model alignment and practical deployment strategies." />
+  <meta property="og:url" content="https://codedynasty.dev" />
+  <meta property="og:image" content="https://codedynasty.dev/post-images/transformer.png" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="CodeDynasty" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Ten Essential Papers for Understanding Modern AI Engineering" />
+  <meta name="twitter:description" content="A curated exploration of the foundational research papers that shaped modern AI engineering, from transformers to model alignment and practical deployment strategies." />
+  <meta name="twitter:image" content="https://codedynasty.dev/post-images/transformer.png" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <style>
+    .katex-display,
+    .katex,
+    .katex-mathml,
+    .katex-html {
+      display: inline !important;
+    }
+
+    .mobile-menu-closed {
+      transform: translateX(-100%);
+    }
+
+    .mobile-menu-open {
+      transform: translateX(0);
+    }
+
+    @media (min-width: 768px) {
+      .md-hidden {
+        display: none;
+      }
+
+      .md-flex {
+        display: flex;
+      }
+
+      .md-block {
+        display: block;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .md-hidden {
+        display: flex;
+      }
+
+      .md-flex {
+        display: none;
+      }
+
+      .md-block {
+        display: none;
+      }
+    }
+
+    @media (max-width: 1023px) {
+      .lg-visible {
+        display: none;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .lg-visible {
+        display: flex;
+      }
+    }
+
+    @media (max-width: 1023px) {
+      .floating-actions {
+        display: flex;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .floating-actions {
+        display: none;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+  <header class="nav-minimal" style="position: fixed; top: 0; left: 0; z-index: 50; height: 72px; width: 100%;">
+    <div class="container-max"
+      style="display: flex; justify-content: space-between; align-items: center; width: 100%; height: 100%;">
+      <a href="/" style="display: flex; align-items: center; gap: 12px; text-decoration: none;"
+        aria-label="CodeDynasty Home">
+        <div style="width: 40px; height: 40px;">
+          <img src="/logo.png" style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-lg-2);"
+            alt="CodeDynasty Logo" />
+        </div>
+        <span
+          style="font-family: var(--font-control); font-weight: 500; font-size: 20px; line-height: 1.1; color: var(--color-whiteout);">CodeDynasty</span>
+      </a>
+
+      <button id="mobile-menu-button" class="md-hidden"
+        style="background: none; border: none; color: var(--color-whiteout); cursor: pointer;" aria-label="Toggle menu">
+        <svg style="width: 24px; height: 24px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </button>
+
+      <nav class="md-flex" style="align-items: center; gap: var(--spacing-16);">
+        <a href="/blog.html" class="nav-link">Blog</a>
+        <a href="https://github.com/CodeDynasty-dev" class="nav-link" target="_blank">GitHub</a>
+        <a href="/contact.html" class="btn-ghost-nav">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <div id="mobile-menu" class="mobile-menu-closed"
+    style="position: fixed; inset: 0; z-index: 50; background-color: var(--surface-dark-canvas); opacity: 0.95; transition: transform 0.3s ease;">
+    <div class="container-max"
+      style="padding-top: var(--spacing-32); padding-bottom: var(--spacing-32); height: 100%; display: flex; flex-direction: column;">
+      <div
+        style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-48);">
+        <a href="/" style="display: flex; align-items: center; gap: 12px;" aria-label="CodeDynasty Home">
+          <div style="width: 40px; height: 40px;">
+            <img src="/logo.png" style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-lg);"
+              alt="CodeDynasty Logo" />
+          </div>
+          <span
+            style="font-family: var(--font-control); font-weight: 500; font-size: 20px; line-height: 1.1; color: var(--color-whiteout);">CodeDynasty</span>
+        </a>
+        <button id="close-mobile-menu"
+          style="background: none; border: none; color: rgba(255,255,255,0.7); cursor: pointer;">
           <svg style="width: 24px; height: 24px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
-
-        <nav class="md-flex" style="align-items: center; gap: var(--spacing-16);">
-          <a href="/blog.html" class="nav-link">Blog</a>
-          <a href="https://discord.codedynasty.dev" class="nav-link">Discord</a>
-          <a href="https://github.com/CodeDynasty-dev" class="nav-link" target="_blank">GitHub</a>
-          <a href="/contact.html" class="btn-ghost-nav">Contact</a>
-        </nav>
       </div>
-    </header>
-
-    <div id="mobile-menu" class="mobile-menu-closed" style="position: fixed; inset: 0; z-index: 50; background-color: var(--surface-dark-canvas); opacity: 0.95; transition: transform 0.3s ease;">
-      <div class="container-max" style="padding-top: var(--spacing-32); padding-bottom: var(--spacing-32); height: 100%; display: flex; flex-direction: column;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-48);">
-          <a href="/" style="display: flex; align-items: center; gap: 12px;" aria-label="CodeDynasty Home">
-            <div style="width: 40px; height: 40px;">
-              <img src="/logo.png" style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-lg);" alt="CodeDynasty Logo" />
-            </div>
-            <span style="font-family: var(--font-control); font-weight: 500; font-size: 20px; line-height: 1.1; color: var(--color-whiteout);">CodeDynasty</span>
-          </a>
-          <button id="close-mobile-menu" style="background: none; border: none; color: rgba(255,255,255,0.7); cursor: pointer;">
-            <svg style="width: 24px; height: 24px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
-        </div>
-        <nav style="flex: 1; display: flex; flex-direction: column; gap: var(--spacing-16);">
-          <a href="https://discord.codedynasty.dev" style="font-family: var(--font-control); font-weight: 500; font-size: 18px; line-height: 1.4; color: rgba(255,255,255,0.8); padding: 12px var(--spacing-16); border-radius: var(--radius-lg); transition: background-color 0.2s ease;">Discord</a>
-          <a href="https://github.com/CodeDynasty-dev" target="_blank" style="font-family: var(--font-control); font-weight: 500; font-size: 18px; line-height: 1.4; color: rgba(255,255,255,0.8); padding: 12px var(--spacing-16); border-radius: var(--radius-lg); transition: background-color 0.2s ease;">GitHub</a>
-          <a href="/contact.html" style="font-family: var(--font-control); font-weight: 500; font-size: 18px; line-height: 1.4; color: rgba(255,255,255,0.8); padding: 12px var(--spacing-16); border-radius: var(--radius-lg); transition: background-color 0.2s ease;">Contact</a>
-        </nav>
-        <div style="padding-top: var(--spacing-24); border-top: 1px solid rgba(255,255,255,0.1); margin-top: auto;">
-          <p style="font-family: var(--font-control); font-weight: 500; font-size: var(--text-caption); line-height: var(--leading-caption); color: rgba(255,255,255,0.5); text-align: center;">&copy; 2025 CodeDynasty. All rights reserved.</p>
-        </div>
+      <nav style="flex: 1; display: flex; flex-direction: column; gap: var(--spacing-16);">
+        <a href="https://github.com/CodeDynasty-dev" target="_blank"
+          style="font-family: var(--font-control); font-weight: 500; font-size: 18px; line-height: 1.4; color: rgba(255,255,255,0.8); padding: 12px var(--spacing-16); border-radius: var(--radius-lg); transition: background-color 0.2s ease;">GitHub</a>
+        <a href="/contact.html"
+          style="font-family: var(--font-control); font-weight: 500; font-size: 18px; line-height: 1.4; color: rgba(255,255,255,0.8); padding: 12px var(--spacing-16); border-radius: var(--radius-lg); transition: background-color 0.2s ease;">Contact</a>
+      </nav>
+      <div style="padding-top: var(--spacing-24); border-top: 1px solid rgba(255,255,255,0.1); margin-top: auto;">
+        <p
+          style="font-family: var(--font-control); font-weight: 500; font-size: var(--text-caption); line-height: var(--leading-caption); color: rgba(255,255,255,0.5); text-align: center;">
+          &copy; 2025 CodeDynasty. All rights reserved.</p>
       </div>
     </div>
+  </div>
 
-    <main style="padding-top: 72px; padding-bottom: var(--spacing-48);">
-      <div class="reading-progress-container">
-        <div class="reading-progress-bar" style="width: 0%"></div>
-      </div>
+  <main style="padding-top: 72px; padding-bottom: var(--spacing-48);">
+    <div class="reading-progress-container">
+      <div class="reading-progress-bar" style="width: 0%"></div>
+    </div>
 
-      <section class="post-header" style="background-color: var(--surface-dark-canvas);">
-        <div class="container-max">
-          <div style="max-width: 880px; margin: 0 auto;">
-
-            <div style="margin-bottom: var(--spacing-20);">
-              <span class="post-topic-badge">AI Engineering, Machine Learning, Research</span>
-            </div>
-
-            <h1 style="font-family: var(--font-control-tnt); font-weight: 500; font-size: var(--text-heading-lg); line-height: var(--leading-heading-lg); color: var(--color-whiteout); margin-bottom: var(--spacing-32);">
-              Ten Essential Papers for Understanding Modern AI Engineering
-            </h1>
-
-            <div style="display: flex; flex-wrap: wrap; align-items: center; gap: var(--spacing-24);">
-              <div style="display: flex; align-items: center; gap: var(--spacing-12);">
-                <div style="width: 48px; height: 48px; border-radius: 9999px; overflow: hidden; border: 1px solid rgba(255,255,255,0.15);">
-                  <img
-                    src="https://avatars.githubusercontent.com/u/75016347"
-                    alt="Friday Candour"
-                    style="width: 100%; height: 100%; object-fit: cover; display: block;"
-                  />
-                </div>
-                <div>
-                  <span style="display: block; font-family: var(--font-control); font-weight: 500; font-size: var(--text-body); line-height: var(--leading-body); color: var(--color-whiteout);">Friday Candour</span>
-                  <span style="display: block; font-family: var(--font-control); font-weight: 500; font-size: var(--text-caption); line-height: var(--leading-caption); color: rgba(255,255,255,0.3);">Software Developer</span>
-                </div>
-              </div>
-
-              <div style="width: 1px; height: 24px; background-color: rgba(255,255,255,0.1);" class="md-block"></div>
-
-              <div style="display: flex; align-items: center; gap: var(--spacing-16); flex-wrap: wrap;">
-                <div style="display: flex; align-items: center; gap: var(--spacing-8);">
-                  <svg style="width: 14px; height: 14px; flex-shrink: 0;" fill="none" viewBox="0 0 24 24" stroke="rgba(255,255,255,0.3)">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
-                  <time datetime="09 12 2025" style="font-family: var(--font-control); font-weight: 500; font-size: var(--text-caption); line-height: var(--leading-caption); color: rgba(255,255,255,0.3); white-space: nowrap;">09 12 2025</time>
-                </div>
-                <div style="display: flex; align-items: center; gap: var(--spacing-8);">
-                  <svg style="width: 14px; height: 14px; flex-shrink: 0;" fill="none" viewBox="0 0 24 24" stroke="rgba(255,255,255,0.3)">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  <span style="font-family: var(--font-control); font-weight: 500; font-size: var(--text-caption); line-height: var(--leading-caption); color: rgba(255,255,255,0.3); white-space: nowrap;">12 min</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section style="margin-top: var(--spacing-48); margin-bottom: var(--spacing-48);">
-        <div class="container-max">
-          <div style="max-width: 1040px; margin: 0 auto;">
-            <div style="aspect-ratio: 16 / 9; overflow: hidden; border-radius: var(--radius-images); background-color: var(--color-ink);">
-              <img
-                src="/post-images/transformer.png"
-                alt="Ten Essential Papers for Understanding Modern AI Engineering"
-                style="width: 100%; height: 100%; object-fit: cover; display: block;"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
+    <section class="post-header" style="background-color: var(--surface-dark-canvas);">
       <div class="container-max">
-        <div style="display: flex; gap: var(--spacing-48); max-width: 1248px; margin: 0 auto;">
+        <div style="max-width: 880px; margin: 0 auto;">
 
-          <aside class="share-sidebar lg-visible" style="position: sticky; top: 96px; align-self: flex-start; width: 80px; flex-shrink: 0;">
-            <span class="share-label">SHARE</span>
-            <a href="#" class="share-btn" aria-label="Share on Twitter">
-              <i class="fab fa-twitter"></i>
-            </a>
-            <a href="#" class="share-btn" aria-label="Share on LinkedIn">
-              <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="#" class="share-btn" aria-label="Share on Facebook">
-              <i class="fab fa-facebook"></i>
-            </a>
-            <a href="#" class="share-btn copy-link-button" data-tooltip="Copy Link" aria-label="Copy link">
-              <i class="fas fa-link"></i>
-            </a>
-          </aside>
+          <div style="margin-bottom: var(--spacing-20);">
+            <span class="post-topic-badge">AI Engineering, Machine Learning, Research</span>
+          </div>
 
-          <article class="prose" style="flex: 1; max-width: 880px; min-width: 0;">
-            <docmach type="function" params="tags:AI,machine-learning,transformers,LLMs,research-papers,model-architecture,fine-tuning,RAG,agents,quantization" file="fragments/tags.js" />
+          <h1
+            style="font-family: var(--font-control-tnt); font-weight: 500; font-size: var(--text-heading-lg); line-height: var(--leading-heading-lg); color: var(--color-whiteout); margin-bottom: var(--spacing-32);">
+            Ten Essential Papers for Understanding Modern AI Engineering
+          </h1>
+
+          <div style="display: flex; flex-wrap: wrap; align-items: center; gap: var(--spacing-24);">
+            <div style="display: flex; align-items: center; gap: var(--spacing-12);">
+              <div
+                style="width: 48px; height: 48px; border-radius: 9999px; overflow: hidden; border: 1px solid rgba(255,255,255,0.15);">
+                <img src="https://avatars.githubusercontent.com/u/75016347" alt="Friday Candour"
+                  style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+              </div>
+              <div>
+                <span
+                  style="display: block; font-family: var(--font-control); font-weight: 500; font-size: var(--text-body); line-height: var(--leading-body); color: var(--color-whiteout);">Friday Candour</span>
+                <span
+                  style="display: block; font-family: var(--font-control); font-weight: 500; font-size: var(--text-caption); line-height: var(--leading-caption); color: rgba(255,255,255,0.3);">Software Developer</span>
+              </div>
+            </div>
+
+            <div style="width: 1px; height: 24px; background-color: rgba(255,255,255,0.1);" class="md-block"></div>
+
+            <div style="display: flex; align-items: center; gap: var(--spacing-16); flex-wrap: wrap;">
+              <div style="display: flex; align-items: center; gap: var(--spacing-8);">
+                <svg style="width: 14px; height: 14px; flex-shrink: 0;" fill="none" viewBox="0 0 24 24"
+                  stroke="rgba(255,255,255,0.3)">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                <time datetime="09 12 2025"
+                  style="font-family: var(--font-control); font-weight: 500; font-size: var(--text-caption); line-height: var(--leading-caption); color: rgba(255,255,255,0.3); white-space: nowrap;">09 12 2025</time>
+              </div>
+              <div style="display: flex; align-items: center; gap: var(--spacing-8);">
+                <svg style="width: 14px; height: 14px; flex-shrink: 0;" fill="none" viewBox="0 0 24 24"
+                  stroke="rgba(255,255,255,0.3)">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span
+                  style="font-family: var(--font-control); font-weight: 500; font-size: var(--text-caption); line-height: var(--leading-caption); color: rgba(255,255,255,0.3); white-space: nowrap;">12 min</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="margin-top: var(--spacing-48); margin-bottom: var(--spacing-48);">
+      <div class="container-max">
+        <div style="max-width: 1040px; margin: 0 auto;">
+          <div
+            style="aspect-ratio: 16 / 9; overflow: hidden; border-radius: var(--radius-images); background-color: var(--color-ink);">
+            <img src="/post-images/transformer.png" alt="Ten Essential Papers for Understanding Modern AI Engineering"
+              style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container-max">
+      <div style="display: flex; gap: var(--spacing-48); max-width: 1248px; margin: 0 auto;">
+
+        <aside class="share-sidebar lg-visible"
+          style="position: sticky; top: 96px; align-self: flex-start; width: 80px; flex-shrink: 0;">
+          <span class="share-label">SHARE</span>
+          <a href="#" class="share-btn" aria-label="Share on Twitter">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="#" class="share-btn" aria-label="Share on LinkedIn">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="#" class="share-btn" aria-label="Share on Facebook">
+            <i class="fab fa-facebook"></i>
+          </a>
+          <a href="#" class="share-btn copy-link-button" data-tooltip="Copy Link" aria-label="Copy link">
+            <i class="fas fa-link"></i>
+          </a>
+        </aside>
+
+        <article class="prose" style="flex: 1; max-width: 880px; min-width: 0;">
+          <docmach type="function" params="tags:AI,machine-learning,transformers,LLMs,research-papers,model-architecture,fine-tuning,RAG,agents,quantization" file="fragments/tags.js" />
 <p>The field of AI engineering has evolved rapidly over the past several years, driven by a series of breakthrough research papers. Understanding these foundational works provides essential context for the design decisions and trade-offs we face when building production AI systems today.</p>
 <h2>The Transformer Revolution</h2>
 <p>Neural networks have existed since the 1940s, yet their recent prominence stems from a specific architectural innovation. In 2017, researchers at Google published &quot;Attention Is All You Need,&quot; introducing the transformer architecture. This paper addressed three fundamental limitations of prior approaches:</p>
@@ -283,143 +352,126 @@
 <p>The field continues evolving rapidly. These foundational papers provide context for understanding current systems and anticipating future developments. The engineering challenge lies not just in understanding the research, but in making thoughtful trade-offs when building systems that work reliably in production.</p>
 
 
-          </article>
-        </div>
+        </article>
       </div>
-
-      <div class="container-max" style="margin-top: var(--spacing-64);">
-        <div style="max-width: 880px; margin: 0 auto;">
-
-          <div style="padding-top: var(--spacing-48); border-top: 1px solid rgba(255,255,255,0.1); margin-top: var(--spacing-64);">
-            <script
-              src="https://giscus.app/client.js"
-              data-repo="codedynasty-dev/codedynasty"
-              data-repo-id="R_kgDOOBViSg"
-              data-category="Ideas"
-              data-category-id="DIC_kwDOOBViSs4CqU7E"
-              data-mapping="pathname"
-              data-strict="1"
-              data-reactions-enabled="1"
-              data-emit-metadata="0"
-              data-input-position="top"
-              data-theme="noborder_dark"
-              data-lang="en"
-              data-loading="lazy"
-              crossorigin="anonymous"
-              async
-            ></script>
-          </div>
-        </div>
-      </div>
-
-    </main>
-
-    <div class="floating-actions" style="position: fixed; bottom: var(--spacing-24); right: var(--spacing-24); z-index: 40; flex-direction: column; gap: 12px;">
-      <button
-        id="mobile-share-button"
-        class="btn-solid-light"
-        style="width: 52px; height: 52px; border-radius: var(--radius-buttons); padding: 0;"
-      >
-        <i class="fas fa-share-alt"></i>
-      </button>
-      <a href="#" id="scroll-top" style="text-decoration: none;">
-        <button
-          class="btn-ghost-nav"
-          style="width: 52px; height: 52px; border-radius: var(--radius-buttons); padding: 0;"
-        >
-          <i class="fas fa-arrow-up"></i>
-        </button>
-      </a>
     </div>
 
-    <footer class="footer-section" style="padding-top: var(--spacing-64); padding-bottom: var(--spacing-64);">
-      <div class="container-max">
-        <div style="display: flex; flex-direction: column; align-items: center; gap: var(--spacing-24);">
-          <div style="display: flex; align-items: center; gap: 12px;">
-            <div style="width: 32px; height: 32px;">
-              <img src="/logo.png" style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-md);" alt="CodeDynasty Logo" />
-            </div>
-            <span style="font-family: var(--font-control); font-weight: 500; font-size: var(--text-body); line-height: var(--leading-body); color: var(--color-whiteout);">CodeDynasty</span>
-          </div>
-          <div style="display: flex; gap: var(--spacing-16);">
-            <a href="https://github.com/CodeDynasty-dev" target="_blank" aria-label="GitHub"
-               style="width: 36px; height: 36px; border-radius: var(--radius-buttons); background-color: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.4); transition: color 0.2s ease, background-color 0.2s ease;"
-               onmouseover="this.style.color='var(--color-whiteout)'; this.style.backgroundColor='rgba(255,255,255,0.1)'"
-               onmouseout="this.style.color='rgba(255,255,255,0.4)'; this.style.backgroundColor='rgba(255,255,255,0.05)'">
-              <i class="fab fa-github"></i>
-            </a>
-            <a href="https://discord.codedynasty.dev" aria-label="Discord"
-               style="width: 36px; height: 36px; border-radius: var(--radius-buttons); background-color: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.4); transition: color 0.2s ease, background-color 0.2s ease;"
-               onmouseover="this.style.color='var(--color-whiteout)'; this.style.backgroundColor='rgba(255,255,255,0.1)'"
-               onmouseout="this.style.color='rgba(255,255,255,0.4)'; this.style.backgroundColor='rgba(255,255,255,0.05)'">
-              <i class="fab fa-discord"></i>
-            </a>
-          </div>
-          <p style="font-family: var(--font-control); font-weight: 500; font-size: var(--text-caption); line-height: var(--leading-caption); color: rgba(255, 255, 255, 0.3);">
-            &copy; 2025 CodeDynasty. Building modern software for humanity.
-          </p>
+    <div class="container-max" style="margin-top: var(--spacing-64);">
+      <div style="max-width: 880px; margin: 0 auto;">
+
+        <div
+          style="padding-top: var(--spacing-48); border-top: 1px solid rgba(255,255,255,0.1); margin-top: var(--spacing-64);">
+          <script src="https://giscus.app/client.js" data-repo="codedynasty-dev/codedynasty" data-repo-id="R_kgDOOBViSg"
+            data-category="Ideas" data-category-id="DIC_kwDOOBViSs4CqU7E" data-mapping="pathname" data-strict="1"
+            data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="noborder_dark"
+            data-lang="en" data-loading="lazy" crossorigin="anonymous" async></script>
         </div>
       </div>
-    </footer>
+    </div>
 
-    <script src="/script/index.js"></script>
-    <script>
-      (function () {
-        var menuBtn = document.getElementById("mobile-menu-button");
-        var closeBtn = document.getElementById("close-mobile-menu");
-        var menu = document.getElementById("mobile-menu");
-        var body = document.body;
+  </main>
 
-        function openMenu() {
-          menu.classList.remove("mobile-menu-closed");
-          menu.classList.add("mobile-menu-open");
-          body.style.overflow = "hidden";
-        }
-        function closeMenu() {
-          menu.classList.remove("mobile-menu-open");
-          menu.classList.add("mobile-menu-closed");
-          body.style.overflow = "";
-        }
-        function toggleMenu() {
-          if (menu.classList.contains("mobile-menu-open")) closeMenu();
-          else openMenu();
-        }
+  <div class="floating-actions"
+    style="position: fixed; bottom: var(--spacing-24); right: var(--spacing-24); z-index: 40; flex-direction: column; gap: 12px;">
+    <button id="mobile-share-button" class="btn-solid-light"
+      style="width: 52px; height: 52px; border-radius: var(--radius-buttons); padding: 0;">
+      <i class="fas fa-share-alt"></i>
+    </button>
+    <a href="#" id="scroll-top" style="text-decoration: none;">
+      <button class="btn-ghost-nav"
+        style="width: 52px; height: 52px; border-radius: var(--radius-buttons); padding: 0;">
+        <i class="fas fa-arrow-up"></i>
+      </button>
+    </a>
+  </div>
 
-        if (menuBtn && closeBtn && menu) {
-          menuBtn.addEventListener("click", toggleMenu);
-          closeBtn.addEventListener("click", toggleMenu);
-          document.querySelectorAll("#mobile-menu a").forEach(function (link) {
-            link.addEventListener("click", closeMenu);
-          });
-          document.addEventListener("keydown", function (e) {
-            if (e.key === "Escape" && menu.classList.contains("mobile-menu-open")) toggleMenu();
-          });
-        }
-      })();
-    </script>
+  <footer class="footer-section" style="padding-top: var(--spacing-64); padding-bottom: var(--spacing-64);">
+    <div class="container-max">
+      <div style="display: flex; flex-direction: column; align-items: center; gap: var(--spacing-24);">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <div style="width: 32px; height: 32px;">
+            <img src="/logo.png" style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-md);"
+              alt="CodeDynasty Logo" />
+          </div>
+          <span
+            style="font-family: var(--font-control); font-weight: 500; font-size: var(--text-body); line-height: var(--leading-body); color: var(--color-whiteout);">CodeDynasty</span>
+        </div>
+        <div style="display: flex; gap: var(--spacing-16);">
+          <a href="https://github.com/CodeDynasty-dev" target="_blank" aria-label="GitHub"
+            style="width: 36px; height: 36px; border-radius: var(--radius-buttons); background-color: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.4); transition: color 0.2s ease, background-color 0.2s ease;"
+            onmouseover="this.style.color='var(--color-whiteout)'; this.style.backgroundColor='rgba(255,255,255,0.1)'"
+            onmouseout="this.style.color='rgba(255,255,255,0.4)'; this.style.backgroundColor='rgba(255,255,255,0.05)'">
+            <i class="fab fa-github"></i>
+          </a>
 
-    <script>
-      window.addEventListener("scroll", function () {
-        var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-        var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        var scrolled = (winScroll / height) * 100;
-        var progressBar = document.querySelector(".reading-progress-bar");
-        if (progressBar) {
-          progressBar.style.width = scrolled + "%";
-        }
-      });
-    </script>
+        </div>
+        <p
+          style="font-family: var(--font-control); font-weight: 500; font-size: var(--text-caption); line-height: var(--leading-caption); color: rgba(255, 255, 255, 0.3);">
+          &copy; 2025 CodeDynasty. Building modern software for humanity.
+        </p>
+      </div>
+    </div>
+  </footer>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        renderMathInElement(document.body, {
-          delimiters: [
-            { left: "$", right: "$", display: true },
-            { left: "$", right: "$", display: false },
-          ],
+  <script src="/script/index.js"></script>
+  <script>
+    (function () {
+      var menuBtn = document.getElementById("mobile-menu-button");
+      var closeBtn = document.getElementById("close-mobile-menu");
+      var menu = document.getElementById("mobile-menu");
+      var body = document.body;
+
+      function openMenu() {
+        menu.classList.remove("mobile-menu-closed");
+        menu.classList.add("mobile-menu-open");
+        body.style.overflow = "hidden";
+      }
+      function closeMenu() {
+        menu.classList.remove("mobile-menu-open");
+        menu.classList.add("mobile-menu-closed");
+        body.style.overflow = "";
+      }
+      function toggleMenu() {
+        if (menu.classList.contains("mobile-menu-open")) closeMenu();
+        else openMenu();
+      }
+
+      if (menuBtn && closeBtn && menu) {
+        menuBtn.addEventListener("click", toggleMenu);
+        closeBtn.addEventListener("click", toggleMenu);
+        document.querySelectorAll("#mobile-menu a").forEach(function (link) {
+          link.addEventListener("click", closeMenu);
         });
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape" && menu.classList.contains("mobile-menu-open")) toggleMenu();
+        });
+      }
+    })();
+  </script>
+
+  <script>
+    window.addEventListener("scroll", function () {
+      var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      var scrolled = (winScroll / height) * 100;
+      var progressBar = document.querySelector(".reading-progress-bar");
+      if (progressBar) {
+        progressBar.style.width = scrolled + "%";
+      }
+    });
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      renderMathInElement(document.body, {
+        delimiters: [
+          { left: "$", right: "$", display: true },
+          { left: "$", right: "$", display: false },
+        ],
       });
-    </script>
-  </body>
+    });
+  </script>
+</body>
+
 </html>
 
