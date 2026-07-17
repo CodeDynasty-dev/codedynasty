@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Eye Health: It's Time to Talk About It - CodeDynasty</title>
+  <link rel="stylesheet" href="/bundle.css" />
+  <link rel="stylesheet" href="/styles/main.css" />
+  <link rel="stylesheet" href="/styles/post.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <meta name="description" content="An exploration of eye health and how to protect it" />
+  <meta name="keywords" content="code, programming, development" />
+  <meta name="author" content="Friday Candour" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#000000" />
+  <meta property="og:title" content="Your Eye Health: It's Time to Talk About It" />
+  <meta property="og:description" content="An exploration of eye health and how to protect it" />
+  <meta property="og:url" content="https://codedynasty.dev" />
+  <meta property="og:image" content="https://codedynasty.dev/post-images/eye-health.webp" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="CodeDynasty" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Your Eye Health: It's Time to Talk About It" />
+  <meta name="twitter:description" content="An exploration of eye health and how to protect it" />
+  <meta name="twitter:image" content="https://codedynasty.dev/post-images/eye-health.webp" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <style>
+    .katex-display, .katex, .katex-mathml, .katex-html {
+      display: inline !important;
+    }
+
+    .overflow-hidden { overflow: hidden; }
+
+    .nav-desktop { display: none; }
+    .nav-mobile { display: block; }
+    .nav-full { display: none; }
+
+    .mobile-menu-closed { transform: translateX(-100%); }
+    .mobile-menu-open { transform: translateX(0); }
+
+    @media (min-width: 768px) {
+      .nav-desktop { display: flex; }
+      .nav-mobile { display: none; }
+    }
+
+    @media (min-width: 1024px) {
+      .nav-full { display: inline-flex; }
+    }
+
+    @media (max-width: 767px) {
+      .header-pad { padding: 16px 20px !important; }
+    }
+
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .header-pad { padding: 20px 28px !important; }
+    }
+
+    @media (min-width: 1024px) {
+      .header-pad { padding: 32px 40px !important; }
+    }
+
+    @media (max-width: 1023px) {
+      .lg-visible { display: none; }
+    }
+
+    @media (min-width: 1024px) {
+      .lg-visible { display: flex; }
+    }
+
+    @media (max-width: 1023px) {
+      .floating-actions { display: flex; }
+    }
+
+    @media (min-width: 1024px) {
+      .floating-actions { display: none; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header-pad"
+    style="position: fixed; width: 100%; top: 0; z-index: 50; padding: 32px 40px; display: flex; justify-content: space-between; align-items: center; box-sizing: border-box;">
+    <a href="/" aria-label="CodeDynasty Home"
+      style="display: flex; align-items: center; text-decoration: none; color: inherit;">
+      <span
+        style="font-family: 'Caveat', cursive; font-size: clamp(22px, 3vw, 26px); font-weight: 400; font-style: italic; color: var(--color-whiteout); letter-spacing: -0.01em; white-space: nowrap;">CodeDynasty</span>
+    </a>
+
+    <nav class="nav-desktop" style="align-items: center; gap: 2px;">
+      <a href="/blog.html"
+        style="font-family: var(--font-control); font-weight: 500; font-size: 13px; letter-spacing: 0.08em; color: rgba(255,255,255,0.55); text-decoration: none; padding: 6px 10px; border-radius: var(--radius-md); transition: color 0.2s ease; white-space: nowrap;"
+        onmouseover="this.style.color='var(--color-whiteout)'"
+        onmouseout="this.style.color='rgba(255,255,255,0.55)'">Blog</a>
+      <a href="https://discord.codedynasty.dev"
+        style="font-family: var(--font-control); font-weight: 500; font-size: 13px; letter-spacing: 0.08em; color: rgba(255,255,255,0.55); text-decoration: none; padding: 6px 10px; border-radius: var(--radius-md); transition: color 0.2s ease; white-space: nowrap;"
+        onmouseover="this.style.color='var(--color-whiteout)'"
+        onmouseout="this.style.color='rgba(255,255,255,0.55)'">Discord</a>
+      <a href="https://github.com/CodeDynasty-dev" target="_blank"
+        style="font-family: var(--font-control); font-weight: 500; font-size: 13px; letter-spacing: 0.08em; color: rgba(255,255,255,0.55); text-decoration: none; padding: 6px 10px; border-radius: var(--radius-md); transition: color 0.2s ease; white-space: nowrap;"
+        onmouseover="this.style.color='var(--color-whiteout)'"
+        onmouseout="this.style.color='rgba(255,255,255,0.55)'">GitHub</a>
+      <a href="/contact.html"
+        style="font-family: var(--font-control); font-weight: 500; font-size: 13px; letter-spacing: 0.08em; color: rgba(255,255,255,0.55); text-decoration: none; padding: 6px 10px; border-radius: var(--radius-md); transition: color 0.2s ease; white-space: nowrap;"
+        onmouseover="this.style.color='var(--color-whiteout)'"
+        onmouseout="this.style.color='rgba(255,255,255,0.55)'">Contact</a>
+    </nav>
+
+    <a href="https://github.com/CodeDynasty-dev" target="_blank" class="nav-full"
+      style="align-items: center; justify-content: center; background: transparent; border: 1px solid var(--color-whiteout); color: var(--color-whiteout); border-radius: var(--radius-buttons); font-family: var(--font-control); font-weight: 500; font-size: 13px; letter-spacing: 0.12em; padding: 10px 16px; text-decoration: none; transition: background-color 0.2s ease; white-space: nowrap;"
+      onmouseover="this.style.backgroundColor='rgba(255,255,255,0.05)'"
+      onmouseout="this.style.backgroundColor='transparent'">Explore Projects</a>
+
+    <button id="mobile-menu-button" class="nav-mobile" aria-label="Toggle menu"
+      style="background: none; border: none; color: #fff; cursor: pointer; padding: 8px;">
+      <svg style="width: 24px; height: 24px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+      </svg>
+    </button>
+  </header>
+
+  <div id="mobile-menu" class="mobile-menu-closed"
+    style="position: fixed; inset: 0; z-index: 50; background-color: rgba(0,0,0,0.95); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); transition: transform 0.3s ease;">
+    <div
+      style="padding: var(--spacing-32) var(--spacing-24); height: 100%; display: flex; flex-direction: column; max-width: var(--page-max-width); margin: 0 auto;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-48);">
+        <a href="/" aria-label="CodeDynasty Home"
+          style="display: flex; align-items: center; text-decoration: none; color: inherit;">
+          <span
+            style="font-family: 'Caveat', cursive; font-size: 26px; font-weight: 400; font-style: italic; color: var(--color-whiteout); letter-spacing: -0.01em;">CodeDynasty</span>
+        </a>
+        <button id="close-mobile-menu"
+          style="background: none; border: none; color: rgba(255,255,255,0.7); cursor: pointer;">
+          <svg style="width: 24px; height: 24px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <nav style="flex: 1; display: flex; flex-direction: column; gap: var(--spacing-16);">
+        <a href="/blog.html"
+          style="font-family: var(--font-control); font-weight: 500; font-size: 18px; line-height: 1.4; color: rgba(255,255,255,0.8); padding: 12px 16px; border-radius: var(--radius-lg); text-decoration: none; transition: background-color 0.2s ease;">Blog</a>
+        <a href="https://discord.codedynasty.dev"
+          style="font-family: var(--font-control); font-weight: 500; font-size: 18px; line-height: 1.4; color: rgba(255,255,255,0.8); padding: 12px 16px; border-radius: var(--radius-lg); text-decoration: none; transition: background-color 0.2s ease;">Discord</a>
+        <a href="https://github.com/CodeDynasty-dev" target="_blank"
+          style="font-family: var(--font-control); font-weight: 500; font-size: 18px; line-height: 1.4; color: rgba(255,255,255,0.8); padding: 12px 16px; border-radius: var(--radius-lg); text-decoration: none; transition: background-color 0.2s ease;">GitHub</a>
+        <a href="/contact.html"
+          style="font-family: var(--font-control); font-weight: 500; font-size: 18px; line-height: 1.4; color: rgba(255,255,255,0.8); padding: 12px 16px; border-radius: var(--radius-lg); text-decoration: none; transition: background-color 0.2s ease;">Contact</a>
+        <a href="https://github.com/CodeDynasty-dev" target="_blank"
+          style="font-family: var(--font-control); font-weight: 500; font-size: 18px; line-height: 1.4; color: rgba(255,255,255,0.8); padding: 12px 16px; border-radius: var(--radius-lg); text-decoration: none; transition: background-color 0.2s ease;">Explore Projects</a>
+      </nav>
+      <div style="padding-top: var(--spacing-24); border-top: 1px solid rgba(255,255,255,0.1); margin-top: auto;">
+        <p
+          style="font-family: var(--font-control); font-weight: 500; font-size: var(--text-caption); line-height: var(--leading-caption); color: rgba(255,255,255,0.5); text-align: center;">
+          &copy; 2025 CodeDynasty. All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var menuBtn = document.getElementById("mobile-menu-button");
+      var closeBtn = document.getElementById("close-mobile-menu");
+      var menu = document.getElementById("mobile-menu");
+      var body = document.body;
+
+      function openMenu() {
+        menu.classList.remove("mobile-menu-closed");
+        menu.classList.add("mobile-menu-open");
+        body.classList.add("overflow-hidden");
+      }
+      function closeMenu() {
+        menu.classList.remove("mobile-menu-open");
+        menu.classList.add("mobile-menu-closed");
+        body.classList.remove("overflow-hidden");
+      }
+      function toggleMenu() {
+        if (menu.classList.contains("mobile-menu-open")) closeMenu();
+        else openMenu();
+      }
+
+      if (menuBtn && closeBtn && menu) {
+        menuBtn.addEventListener("click", toggleMenu);
+        closeBtn.addEventListener("click", toggleMenu);
+        document.querySelectorAll("#mobile-menu a").forEach(function (link) {
+          link.addEventListener("click", closeMenu);
+        });
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape" && menu.classList.contains("mobile-menu-open")) toggleMenu();
+        });
+      }
+    })();
+  </script>
+
+  <main style="padding-top: 88px; padding-bottom: var(--spacing-48);">
+    <div class="reading-progress-container">
+      <div class="reading-progress-bar" style="width: 0%"></div>
+    </div>
+
+    <section class="post-header" style="background-color: var(--surface-dark-canvas);">
+      <div class="container-max">
+        <div style="max-width: 880px; margin: 0 auto;">
+
+          <div style="margin-bottom: var(--spacing-20);">
+            <span class="post-topic-badge">Eye health and how to protect it</span>
+          </div>
+
+          <h1
+            style="font-family: var(--font-control-tnt); font-weight: 500; font-size: var(--text-heading-lg); line-height: var(--leading-heading-lg); color: var(--color-whiteout); margin-bottom: var(--spacing-32);">
+            Your Eye Health: It's Time to Talk About It
+          </h1>
+
+          <div style="display: flex; flex-wrap: wrap; align-items: center; gap: var(--spacing-24);">
+            <div style="display: flex; align-items: center; gap: var(--spacing-12);">
+              <div
+                style="width: 48px; height: 48px; border-radius: 9999px; overflow: hidden; border: 1px solid rgba(255,255,255,0.15);">
+                <img src="https://avatars.githubusercontent.com/u/75016347" alt="Friday Candour"
+                  style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+              </div>
+              <div>
+                <span
+                  style="display: block; font-family: var(--font-control); font-weight: 500; font-size: var(--text-body); line-height: var(--leading-body); color: var(--color-whiteout);">Friday Candour</span>
+                <span
+                  style="display: block; font-family: var(--font-control); font-weight: 500; font-size: var(--text-caption); line-height: var(--leading-caption); color: rgba(255,255,255,0.3);">Software Developer</span>
+              </div>
+            </div>
+
+            <div style="width: 1px; height: 24px; background-color: rgba(255,255,255,0.1);" class="md-block"></div>
+
+            <div style="display: flex; align-items: center; gap: var(--spacing-16); flex-wrap: wrap;">
+              <div style="display: flex; align-items: center; gap: var(--spacing-8);">
+                <svg style="width: 14px; height: 14px; flex-shrink: 0;" fill="none" viewBox="0 0 24 24"
+                  stroke="rgba(255,255,255,0.3)">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                <time datetime="2026 9 17"
+                  style="font-family: var(--font-control); font-weight: 500; font-size: var(--text-caption); line-height: var(--leading-caption); color: rgba(255,255,255,0.3); white-space: nowrap;">2026 9 17</time>
+              </div>
+              <div style="display: flex; align-items: center; gap: var(--spacing-8);">
+                <svg style="width: 14px; height: 14px; flex-shrink: 0;" fill="none" viewBox="0 0 24 24"
+                  stroke="rgba(255,255,255,0.3)">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span
+                  style="font-family: var(--font-control); font-weight: 500; font-size: var(--text-caption); line-height: var(--leading-caption); color: rgba(255,255,255,0.3); white-space: nowrap;">3 min</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="margin-top: var(--spacing-48); margin-bottom: var(--spacing-48);">
+      <div class="container-max">
+        <div style="max-width: 1040px; margin: 0 auto;">
+          <div
+            style="aspect-ratio: 16 / 9; overflow: hidden; border-radius: var(--radius-images); background-color: var(--color-ink);">
+            <img src="/post-images/eye-health.webp" alt="Your Eye Health: It's Time to Talk About It"
+              style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container-max">
+      <div style="display: flex; gap: var(--spacing-48); max-width: 1248px; margin: 0 auto;">
+
+        <aside class="share-sidebar lg-visible"
+          style="position: sticky; top: 96px; align-self: flex-start; width: 80px; flex-shrink: 0;">
+          <span class="share-label">SHARE</span>
+          <a href="#" class="share-btn" aria-label="Share on Twitter">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="#" class="share-btn" aria-label="Share on LinkedIn">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="#" class="share-btn" aria-label="Share on Facebook">
+            <i class="fab fa-facebook"></i>
+          </a>
+          <a href="#" class="share-btn copy-link-button" data-tooltip="Copy Link" aria-label="Copy link">
+            <i class="fas fa-link"></i>
+          </a>
+        </aside>
+
+        <article class="prose" style="flex: 1; max-width: 880px; min-width: 0;">
+          <docmach type="function" params="tags:Eye health,vision,ophthalmology,preventative care,eye exams,macular degeneration,glaucoma,diabetic retinopathy,screen time,blue light,nutrition,20-20-20 rule,natural light,smoking,metabolic health,eye care" file="fragments/tags.js" />
+<p>As a developer thinking the long term effects of constantly staring at a screen for years gives me chills about my vision at an old age,</p>
+<p>i'm not going to be 80 till another 55 years, so i'm worried about the health of my vision as time goes on.</p>
+<p>when last did you have a full dilated eye exam?</p>
+<p>if you're like most people, it's been a long while, or maybe never. like seriously?</p>
+<p>Eye exams can help you detect serious health conditions before you even notice symptoms. But beyond that, our habits as developers are also a major factor in our long term eye health.</p>
+<h3><strong>Insights on Eye Health</strong></h3>
+<ul>
+<li><strong>The Aging Eye:</strong> While the natural stiffening of the lens (leading to reading difficulties) is a normal part of aging, other conditions like <strong>macular degeneration</strong>, <strong>glaucoma</strong>, and <strong>diabetic retinopathy</strong> are often linked to modifiable lifestyle factors.</li>
+</ul>
+<h3><strong>Drivers of Vision Loss</strong></h3>
+<ul>
+<li><strong>Sustained Near Focus:</strong> Constant use of screens and lack of breaks contributes to eye strain and myopia.</li>
+</ul>
+<ul>
+<li><strong>Recommendation:</strong> This is a common problem for us developers. <strong>We</strong> tend to forget to take breaks, <strong>We</strong> need to remember to take breaks. <strong>so I set alarms to remind me to take breaks.</strong></li>
+</ul>
+<ul>
+<li><strong>Lack of Daylight:</strong> Exposure to natural outdoor light is crucial for regulating eye growth and protecting against short-sightedness, as it triggers the release of retinal dopamine.</li>
+</ul>
+<ul>
+<li><strong>Recommendation:</strong> Most of our exposure to light is from our screens. <strong>take your computer outside, sit somewhere with natural light and code for a while, like my balcony.</strong></li>
+</ul>
+<ul>
+<li><strong>Smoking:</strong> A major risk factor that doubles the risk of age-related macular degeneration.</li>
+</ul>
+<ul>
+<li><strong>Recommendation:</strong> i don't know what to tell you about that pipe that literally damages every organ in your body, that's on you.</li>
+</ul>
+<ul>
+<li><strong>Metabolic Health:</strong> Chronically high blood sugar and blood pressure damage the delicate capillaries in the retina. The eye serves as a vital indicator of your overall cardiovascular health.</li>
+</ul>
+<ul>
+<li><strong>Recommendation:</strong> Keep your blood sugar and blood pressure in check. <strong>It's not just about your eyes, it's about your overall health.</strong></li>
+</ul>
+<h3><strong>Actionable Steps</strong></h3>
+<p><strong>1.</strong> <strong>Follow the 20-20-20 Rule:</strong> Every 20 minutes, look at something 20 feet away for 20 seconds to reduce strain.</p>
+<p><strong>2.</strong> <strong>Prioritize Natural Light:</strong> Spend time outdoors daily to support retinal health.</p>
+<p><strong>3.</strong> <strong>Nutrition:</strong> Eat for your eyes by consuming leafy greens (<em>lutein</em> and <em>zeaxanthin</em>) and oily fish (<em>omega-3s</em>), which support the macula and structural health of the retina.</p>
+<p><strong>4.</strong> <strong>Regular Screenings:</strong> Get a full dilated eye examination every two years from age 20-60, and every year from age 60 upwards, to catch conditions like glaucoma or macular degeneration early!</p>
+<p><strong>5.</strong> <strong>General Health:</strong> Managing your blood sugar, blood pressure, and sleep quality directly impacts your vision longevity.</p>
+<p>well that's it, now go take care of your eyes</p>
+<p><a href="https://www.youtube.com/watch?v=VH2iYNL5XG0">sources</a>.</p>
+
+
+        </article>
+      </div>
+    </div>
+
+    <div class="container-max" style="margin-top: var(--spacing-64);">
+      <div style="max-width: 880px; margin: 0 auto;">
+
+        <div
+          style="padding-top: var(--spacing-48); border-top: 1px solid rgba(255,255,255,0.1); margin-top: var(--spacing-64);">
+          <script src="https://giscus.app/client.js" data-repo="codedynasty-dev/codedynasty" data-repo-id="R_kgDOOBViSg"
+            data-category="Ideas" data-category-id="DIC_kwDOOBViSs4CqU7E" data-mapping="pathname" data-strict="1"
+            data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="noborder_dark"
+            data-lang="en" data-loading="lazy" crossorigin="anonymous" async></script>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <div class="floating-actions"
+    style="position: fixed; bottom: var(--spacing-24); right: var(--spacing-24); z-index: 40; flex-direction: column; gap: 12px;">
+    <button id="mobile-share-button" class="btn-solid-light"
+      style="width: 52px; height: 52px; border-radius: var(--radius-buttons); padding: 0;">
+      <i class="fas fa-share-alt"></i>
+    </button>
+    <a href="#" id="scroll-top" style="text-decoration: none;">
+      <button class="btn-ghost-nav"
+        style="width: 52px; height: 52px; border-radius: var(--radius-buttons); padding: 0;">
+        <i class="fas fa-arrow-up"></i>
+      </button>
+    </a>
+  </div>
+
+  <footer class="footer-section" style="padding-top: var(--spacing-64); padding-bottom: var(--spacing-64);">
+    <div class="container-max">
+      <div style="display: flex; flex-direction: column; align-items: center; gap: var(--spacing-24);">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <div style="width: 32px; height: 32px;">
+            <img src="/logo.png" style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-md);"
+              alt="CodeDynasty Logo" />
+          </div>
+          <span
+            style="font-family: var(--font-control); font-weight: 500; font-size: var(--text-body); line-height: var(--leading-body); color: var(--color-whiteout);">CodeDynasty</span>
+        </div>
+        <div style="display: flex; gap: var(--spacing-16);">
+          <a href="https://github.com/CodeDynasty-dev" target="_blank" aria-label="GitHub"
+            style="width: 36px; height: 36px; border-radius: var(--radius-buttons); background-color: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.4); transition: color 0.2s ease, background-color 0.2s ease;"
+            onmouseover="this.style.color='var(--color-whiteout)'; this.style.backgroundColor='rgba(255,255,255,0.1)'"
+            onmouseout="this.style.color='rgba(255,255,255,0.4)'; this.style.backgroundColor='rgba(255,255,255,0.05)'">
+            <i class="fab fa-github"></i>
+          </a>
+
+        </div>
+        <p
+          style="font-family: var(--font-control); font-weight: 500; font-size: var(--text-caption); line-height: var(--leading-caption); color: rgba(255, 255, 255, 0.3);">
+          &copy; 2025 CodeDynasty. Building modern software for humanity.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/script/index.js"></script>
+  <script>
+    window.addEventListener("scroll", function () {
+      var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      var scrolled = (winScroll / height) * 100;
+      var progressBar = document.querySelector(".reading-progress-bar");
+      if (progressBar) {
+        progressBar.style.width = scrolled + "%";
+      }
+    });
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      renderMathInElement(document.body, {
+        delimiters: [
+          { left: "$", right: "$", display: true },
+          { left: "$", right: "$", display: false },
+        ],
+      });
+    });
+  </script>
+</body>
+
+</html>
+

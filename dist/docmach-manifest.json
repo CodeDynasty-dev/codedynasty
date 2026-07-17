@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-07-16T04:50:33.706Z",
+  "generatedAt": "2026-07-17T04:04:19.344Z",
   "docsDirectory": "",
   "buildDirectory": "dist",
-  "totalPages": 24,
+  "totalPages": 25,
   "tree": {
     "name": "/",
     "type": "directory",
@@ -862,6 +862,54 @@
                 }
               }
             ]
+          },
+          {
+            "name": "your-eye-health-its-time-to-talk-about-it.html",
+            "type": "file",
+            "path": "/posts/your-eye-health-its-time-to-talk-about-it.html",
+            "link": "/posts/your-eye-health-its-time-to-talk-about-it.html",
+            "sourcePath": "posts/your-eye-health-its-time-to-talk-about-it.md",
+            "outputPath": "dist/posts/your-eye-health-its-time-to-talk-about-it.html",
+            "docmachTags": [
+              {
+                "type": "wrapper",
+                "file": "fragments/post-structure.html",
+                "params": {
+                  "author": "Friday Candour",
+                  "author_title": "Software Developer",
+                  "time_created": "2026 9 17",
+                  "time_to_read": "3 min",
+                  "title": "Your Eye Health: It's Time to Talk About It",
+                  "topic": "Eye health and how to protect it",
+                  "author_img": "https://avatars.githubusercontent.com/u/75016347",
+                  "image": "/post-images/eye-health.webp",
+                  "description": "An exploration of eye health and how to protect it"
+                },
+                "replacement": "content"
+              },
+              {
+                "type": "wrapper",
+                "file": "fragments/post-structure.html",
+                "params": {
+                  "author": "Friday Candour",
+                  "author_title": "Software Developer",
+                  "time_created": "2026 9 17",
+                  "time_to_read": "3 min",
+                  "title": "Your Eye Health: It's Time to Talk About It",
+                  "topic": "Eye health and how to protect it",
+                  "author_img": "https://avatars.githubusercontent.com/u/75016347",
+                  "image": "/post-images/eye-health.webp",
+                  "description": "An exploration of eye health and how to protect it"
+                }
+              },
+              {
+                "type": "function",
+                "file": "fragments/tags.js",
+                "params": {
+                  "tags": "Eye health,vision,ophthalmology,preventative care,eye exams,macular degeneration,glaucoma,diabetic retinopathy,screen time,blue light,nutrition,20-20-20 rule,natural light,smoking,metabolic health,eye care"
+                }
+              }
+            ]
           }
         ]
       },
@@ -978,6 +1026,51 @@
           "file": "fragments/tags.js",
           "params": {
             "tags": "V-JEPA,meta,computer-vision,machine-learning,non-generative-ai,yan-lecun"
+          }
+        }
+      ]
+    },
+    {
+      "sourcePath": "posts/your-eye-health-its-time-to-talk-about-it.md",
+      "outputPath": "dist/posts/your-eye-health-its-time-to-talk-about-it.html",
+      "link": "/posts/your-eye-health-its-time-to-talk-about-it.html",
+      "docmachTags": [
+        {
+          "type": "wrapper",
+          "file": "fragments/post-structure.html",
+          "params": {
+            "author": "Friday Candour",
+            "author_title": "Software Developer",
+            "time_created": "2026 9 17",
+            "time_to_read": "3 min",
+            "title": "Your Eye Health: It's Time to Talk About It",
+            "topic": "Eye health and how to protect it",
+            "author_img": "https://avatars.githubusercontent.com/u/75016347",
+            "image": "/post-images/eye-health.webp",
+            "description": "An exploration of eye health and how to protect it"
+          },
+          "replacement": "content"
+        },
+        {
+          "type": "wrapper",
+          "file": "fragments/post-structure.html",
+          "params": {
+            "author": "Friday Candour",
+            "author_title": "Software Developer",
+            "time_created": "2026 9 17",
+            "time_to_read": "3 min",
+            "title": "Your Eye Health: It's Time to Talk About It",
+            "topic": "Eye health and how to protect it",
+            "author_img": "https://avatars.githubusercontent.com/u/75016347",
+            "image": "/post-images/eye-health.webp",
+            "description": "An exploration of eye health and how to protect it"
+          }
+        },
+        {
+          "type": "function",
+          "file": "fragments/tags.js",
+          "params": {
+            "tags": "Eye health,vision,ophthalmology,preventative care,eye exams,macular degeneration,glaucoma,diabetic retinopathy,screen time,blue light,nutrition,20-20-20 rule,natural light,smoking,metabolic health,eye care"
           }
         }
       ]
