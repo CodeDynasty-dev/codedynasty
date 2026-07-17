@@ -6,7 +6,7 @@ time_to_read:3 min;
 title:Your Eye Health: It's Time to Talk About It;
 topic:Eye health and how to protect it;
 author_img:https://avatars.githubusercontent.com/u/75016347;
-image:/post-images/eye-health.webp;
+image:/post-images/Aging_human_eye_digital_decay.jpeg;
 description:An exploration of eye health and how to protect it;
 ">
 
