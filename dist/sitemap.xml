@@ -1,152 +1,158 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://codedynasty.dev/posts/new.html</loc>
-    <lastmod>2026-07-17T04:29:45.279Z</lastmod>
+    <loc>https://example.com/posts/new.html</loc>
+    <lastmod>2026-08-10T07:21:10.468Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://codedynasty.dev/posts/Beyond-the-Token-Why-Meaning-Matters-More-Than-Language.html</loc>
-    <lastmod>2026-07-17T04:29:45.279Z</lastmod>
+    <loc>https://example.com/posts/Beyond-the-Token-Why-Meaning-Matters-More-Than-Language.html</loc>
+    <lastmod>2026-08-10T07:21:10.468Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://codedynasty.dev/posts/your-eye-health-its-time-to-talk-about-it.html</loc>
-    <lastmod>2026-07-17T04:29:45.279Z</lastmod>
+    <loc>https://example.com/posts/your-eye-health-its-time-to-talk-about-it.html</loc>
+    <lastmod>2026-08-10T07:21:10.468Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://codedynasty.dev/posts/Beyond-Calculus-The-Mathematics-Every-Developer-Should-Reconsider.html</loc>
-    <lastmod>2026-07-17T04:29:45.279Z</lastmod>
+    <loc>https://example.com/posts/Beyond-Calculus-The-Mathematics-Every-Developer-Should-Reconsider.html</loc>
+    <lastmod>2026-08-10T07:21:10.468Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://codedynasty.dev/posts/the-statistical-mechanics-of-artificial-intelligence.html</loc>
-    <lastmod>2026-07-17T04:29:45.279Z</lastmod>
+    <loc>https://example.com/posts/the-statistical-mechanics-of-artificial-intelligence.html</loc>
+    <lastmod>2026-08-10T07:21:10.468Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://codedynasty.dev/posts/Byte-Latent-Transformers-and-Tokenization-Free-Language-Models.html</loc>
-    <lastmod>2026-07-17T04:29:45.279Z</lastmod>
+    <loc>https://example.com/posts/Byte-Latent-Transformers-and-Tokenization-Free-Language-Models.html</loc>
+    <lastmod>2026-08-10T07:21:10.468Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://codedynasty.dev/posts/EBMs.html</loc>
-    <lastmod>2026-07-17T04:29:45.279Z</lastmod>
+    <loc>https://example.com/posts/EBMs.html</loc>
+    <lastmod>2026-08-10T07:21:10.468Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://codedynasty.dev/posts/welcome.html</loc>
-    <lastmod>2026-07-17T04:29:45.279Z</lastmod>
+    <loc>https://example.com/posts/ai_data_centers_will_be_obsolete__geometric_reason.html</loc>
+    <lastmod>2026-08-10T07:21:10.468Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://codedynasty.dev/posts/The-Stanford-AI-Curriculum-Without-The-Stanford-Price-Tag.html</loc>
-    <lastmod>2026-07-17T04:29:45.279Z</lastmod>
+    <loc>https://example.com/posts/welcome.html</loc>
+    <lastmod>2026-08-10T07:21:10.468Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://codedynasty.dev/posts/Javascript-await-was-rogue-all-along.html</loc>
-    <lastmod>2026-07-17T04:29:45.279Z</lastmod>
+    <loc>https://example.com/posts/The-Stanford-AI-Curriculum-Without-The-Stanford-Price-Tag.html</loc>
+    <lastmod>2026-08-10T07:21:10.468Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://codedynasty.dev/posts/Grokking-When-Neural-Networks-Suddenly-Learn-to-Generalize.html</loc>
-    <lastmod>2026-07-17T04:29:45.279Z</lastmod>
+    <loc>https://example.com/posts/Javascript-await-was-rogue-all-along.html</loc>
+    <lastmod>2026-08-10T07:21:10.468Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://codedynasty.dev/posts/Ten-Essential-Papers-for-Understanding-Modern-AI-Engineering.html</loc>
-    <lastmod>2026-07-17T04:29:45.279Z</lastmod>
+    <loc>https://example.com/posts/Grokking-When-Neural-Networks-Suddenly-Learn-to-Generalize.html</loc>
+    <lastmod>2026-08-10T07:21:10.468Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://codedynasty.dev/posts/PyTorch-fundamentals-through-model-construction.html</loc>
-    <lastmod>2026-07-17T04:29:45.279Z</lastmod>
+    <loc>https://example.com/posts/Ten-Essential-Papers-for-Understanding-Modern-AI-Engineering.html</loc>
+    <lastmod>2026-08-10T07:21:10.468Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://codedynasty.dev/posts/Tiny-Recursive-Models-and-the-Design-of-Efficient-Reasoning-Systems.html</loc>
-    <lastmod>2026-07-17T04:29:45.279Z</lastmod>
+    <loc>https://example.com/posts/PyTorch-fundamentals-through-model-construction.html</loc>
+    <lastmod>2026-08-10T07:21:10.468Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://codedynasty.dev/posts/Reading-AI-Papers-A-Practitioners-Guide-to-Building-Technical-Foundations.html</loc>
-    <lastmod>2026-07-17T04:29:45.279Z</lastmod>
+    <loc>https://example.com/posts/Tiny-Recursive-Models-and-the-Design-of-Efficient-Reasoning-Systems.html</loc>
+    <lastmod>2026-08-10T07:21:10.468Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://codedynasty.dev/posts/The-Third-Layer-of-Intelligence-From-Patterns-to-Agency.html</loc>
-    <lastmod>2026-07-17T04:29:45.279Z</lastmod>
+    <loc>https://example.com/posts/Reading-AI-Papers-A-Practitioners-Guide-to-Building-Technical-Foundations.html</loc>
+    <lastmod>2026-08-10T07:21:10.468Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://codedynasty.dev/posts/Backpropagation-Gradients-and-Computational-Graphs.html</loc>
-    <lastmod>2026-07-17T04:29:45.279Z</lastmod>
+    <loc>https://example.com/posts/The-Third-Layer-of-Intelligence-From-Patterns-to-Agency.html</loc>
+    <lastmod>2026-08-10T07:21:10.468Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://codedynasty.dev/posts/Navigating-Machine-Learning-Algorithms.html</loc>
-    <lastmod>2026-07-17T04:29:45.279Z</lastmod>
+    <loc>https://example.com/posts/Backpropagation-Gradients-and-Computational-Graphs.html</loc>
+    <lastmod>2026-08-10T07:21:10.468Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://codedynasty.dev/posts/JavaScript-Microtasks-A-deep-look-and-comparision-to-defer.html</loc>
-    <lastmod>2026-07-17T04:29:45.279Z</lastmod>
+    <loc>https://example.com/posts/Navigating-Machine-Learning-Algorithms.html</loc>
+    <lastmod>2026-08-10T07:21:10.468Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://codedynasty.dev/friday.html</loc>
-    <lastmod>2026-07-17T04:29:45.279Z</lastmod>
+    <loc>https://example.com/posts/JavaScript-Microtasks-A-deep-look-and-comparision-to-defer.html</loc>
+    <lastmod>2026-08-10T07:21:10.468Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://codedynasty.dev/instructions-forum.html</loc>
-    <lastmod>2026-07-17T04:29:45.279Z</lastmod>
+    <loc>https://example.com/friday.html</loc>
+    <lastmod>2026-08-10T07:21:10.468Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://codedynasty.dev/Soviet Mathematicians Just Solved AI's Biggest Problem.html</loc>
-    <lastmod>2026-07-17T04:29:45.279Z</lastmod>
+    <loc>https://example.com/instructions-forum.html</loc>
+    <lastmod>2026-08-10T07:21:10.468Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://codedynasty.dev/DESIGN.html</loc>
-    <lastmod>2026-07-17T04:29:45.279Z</lastmod>
+    <loc>https://example.com/Soviet Mathematicians Just Solved AI's Biggest Problem.html</loc>
+    <lastmod>2026-08-10T07:21:10.468Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://codedynasty.dev/pages/ml-learning.html</loc>
-    <lastmod>2026-07-17T04:29:45.279Z</lastmod>
+    <loc>https://example.com/DESIGN.html</loc>
+    <lastmod>2026-08-10T07:21:10.468Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://codedynasty.dev/instructions.html</loc>
-    <lastmod>2026-07-17T04:29:45.279Z</lastmod>
+    <loc>https://example.com/pages/ml-learning.html</loc>
+    <lastmod>2026-08-10T07:21:10.468Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://example.com/instructions.html</loc>
+    <lastmod>2026-08-10T07:21:10.468Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>

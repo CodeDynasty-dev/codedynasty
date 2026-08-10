@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-07-17T04:32:50.493Z",
+  "generatedAt": "2026-08-10T07:21:10.466Z",
   "docsDirectory": "",
   "buildDirectory": "dist",
-  "totalPages": 25,
+  "totalPages": 26,
   "tree": {
     "name": "/",
     "type": "directory",
@@ -47,6 +47,47 @@
         "type": "directory",
         "path": "/posts",
         "children": [
+          {
+            "name": "ai_data_centers_will_be_obsolete__geometric_reason.html",
+            "type": "file",
+            "path": "/posts/ai_data_centers_will_be_obsolete__geometric_reason.html",
+            "link": "/posts/ai_data_centers_will_be_obsolete__geometric_reason.html",
+            "sourcePath": "posts/ai_data_centers_will_be_obsolete__geometric_reason.md",
+            "outputPath": "dist/posts/ai_data_centers_will_be_obsolete__geometric_reason.html",
+            "docmachTags": [
+              {
+                "type": "wrapper",
+                "file": "fragments/post-structure.html",
+                "params": {
+                  "author": "Friday Candour",
+                  "author_title": "Software Developer",
+                  "time_created": "2026 08 10",
+                  "time_to_read": "15 min",
+                  "title": "AI Data Centers Will Be Obsolete: Geometric Reasoning",
+                  "topic": "Machine Learning",
+                  "author_img": "https://avatars.githubusercontent.com/u/75016347",
+                  "image": "/post-images/geometric-reasoning.png",
+                  "description": "A tiny AI lab just cracked the code of geometric reasoning, outperforming giant supercomputers by up to three orders of magnitude."
+                },
+                "replacement": "content"
+              },
+              {
+                "type": "wrapper",
+                "file": "fragments/post-structure.html",
+                "params": {
+                  "author": "Friday Candour",
+                  "author_title": "Software Developer",
+                  "time_created": "2026 08 10",
+                  "time_to_read": "15 min",
+                  "title": "AI Data Centers Will Be Obsolete: Geometric Reasoning",
+                  "topic": "Machine Learning",
+                  "author_img": "https://avatars.githubusercontent.com/u/75016347",
+                  "image": "/post-images/geometric-reasoning.png",
+                  "description": "A tiny AI lab just cracked the code of geometric reasoning, outperforming giant supercomputers by up to three orders of magnitude."
+                }
+              }
+            ]
+          },
           {
             "name": "Backpropagation-Gradients-and-Computational-Graphs.html",
             "type": "file",
@@ -1244,6 +1285,44 @@
             "author_img": "https://avatars.githubusercontent.com/u/75016347",
             "image": "/post-images/ebms.png",
             "description": "The next era of AI is not LLMs, it's something else, and it's fascinating"
+          }
+        }
+      ]
+    },
+    {
+      "sourcePath": "posts/ai_data_centers_will_be_obsolete__geometric_reason.md",
+      "outputPath": "dist/posts/ai_data_centers_will_be_obsolete__geometric_reason.html",
+      "link": "/posts/ai_data_centers_will_be_obsolete__geometric_reason.html",
+      "docmachTags": [
+        {
+          "type": "wrapper",
+          "file": "fragments/post-structure.html",
+          "params": {
+            "author": "Friday Candour",
+            "author_title": "Software Developer",
+            "time_created": "2026 08 10",
+            "time_to_read": "15 min",
+            "title": "AI Data Centers Will Be Obsolete: Geometric Reasoning",
+            "topic": "Machine Learning",
+            "author_img": "https://avatars.githubusercontent.com/u/75016347",
+            "image": "/post-images/geometric-reasoning.png",
+            "description": "A tiny AI lab just cracked the code of geometric reasoning, outperforming giant supercomputers by up to three orders of magnitude."
+          },
+          "replacement": "content"
+        },
+        {
+          "type": "wrapper",
+          "file": "fragments/post-structure.html",
+          "params": {
+            "author": "Friday Candour",
+            "author_title": "Software Developer",
+            "time_created": "2026 08 10",
+            "time_to_read": "15 min",
+            "title": "AI Data Centers Will Be Obsolete: Geometric Reasoning",
+            "topic": "Machine Learning",
+            "author_img": "https://avatars.githubusercontent.com/u/75016347",
+            "image": "/post-images/geometric-reasoning.png",
+            "description": "A tiny AI lab just cracked the code of geometric reasoning, outperforming giant supercomputers by up to three orders of magnitude."
           }
         }
       ]
