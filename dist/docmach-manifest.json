@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-10T07:21:10.466Z",
+  "generatedAt": "2026-08-10T11:34:09.921Z",
   "docsDirectory": "",
   "buildDirectory": "dist",
   "totalPages": 26,
@@ -66,8 +66,8 @@
                   "title": "AI Data Centers Will Be Obsolete: Geometric Reasoning",
                   "topic": "Machine Learning",
                   "author_img": "https://avatars.githubusercontent.com/u/75016347",
-                  "image": "/post-images/geometric-reasoning.png",
-                  "description": "A tiny AI lab just cracked the code of geometric reasoning, outperforming giant supercomputers by up to three orders of magnitude."
+                  "image": "/post-images/geometric-reasoning.jpeg",
+                  "description": "AI reasoning cracked! how geometric reasoning is outperforming giant supercomputers by up to three orders of magnitude."
                 },
                 "replacement": "content"
               },
@@ -82,8 +82,8 @@
                   "title": "AI Data Centers Will Be Obsolete: Geometric Reasoning",
                   "topic": "Machine Learning",
                   "author_img": "https://avatars.githubusercontent.com/u/75016347",
-                  "image": "/post-images/geometric-reasoning.png",
-                  "description": "A tiny AI lab just cracked the code of geometric reasoning, outperforming giant supercomputers by up to three orders of magnitude."
+                  "image": "/post-images/geometric-reasoning.jpeg",
+                  "description": "AI reasoning cracked! how geometric reasoning is outperforming giant supercomputers by up to three orders of magnitude."
                 }
               }
             ]
@@ -1305,8 +1305,8 @@
             "title": "AI Data Centers Will Be Obsolete: Geometric Reasoning",
             "topic": "Machine Learning",
             "author_img": "https://avatars.githubusercontent.com/u/75016347",
-            "image": "/post-images/geometric-reasoning.png",
-            "description": "A tiny AI lab just cracked the code of geometric reasoning, outperforming giant supercomputers by up to three orders of magnitude."
+            "image": "/post-images/geometric-reasoning.jpeg",
+            "description": "AI reasoning cracked! how geometric reasoning is outperforming giant supercomputers by up to three orders of magnitude."
           },
           "replacement": "content"
         },
@@ -1321,8 +1321,8 @@
             "title": "AI Data Centers Will Be Obsolete: Geometric Reasoning",
             "topic": "Machine Learning",
             "author_img": "https://avatars.githubusercontent.com/u/75016347",
-            "image": "/post-images/geometric-reasoning.png",
-            "description": "A tiny AI lab just cracked the code of geometric reasoning, outperforming giant supercomputers by up to three orders of magnitude."
+            "image": "/post-images/geometric-reasoning.jpeg",
+            "description": "AI reasoning cracked! how geometric reasoning is outperforming giant supercomputers by up to three orders of magnitude."
           }
         }
       ]

@@ -6,7 +6,7 @@ time_to_read: 15 min;
 title: AI Data Centers Will Be Obsolete: Geometric Reasoning;
 topic: Machine Learning;
 author_img: https://avatars.githubusercontent.com/u/75016347;
-image: /post-images/geometric-reasoning.png;
+image: /post-images/geometric-reasoning.jpeg;
 description: AI reasoning cracked! how geometric reasoning is outperforming giant supercomputers by up to three orders of magnitude.;
 ">
 
@@ -33,7 +33,7 @@ And that feels like something that has been staring us in the face this whole ti
 
 Instead of using brute force and making a model memorize trillions of tokens to become a predicting machine, someone did something completely different. 
 
-And using this approach, he trained a tiny lowparameter laptop model. And it's outperforming giant supercomputers by up to three orders of magnitude, which is a thousand times. 
+And using this approach, we trained a tiny low parameter laptop model. And it's outperforming giant supercomputers by up to three orders of magnitude, which is a thousand times. 
 
 ### Benchmark Numbers and Testing Standards
 
@@ -44,9 +44,6 @@ And if if I do that, if you've memorized the the the questions, then you're goin
 And so so we test we test using that which is actually a more basically it's a more rigorous way of testing for actual thinking than almost any of the AI labs are doing right now. Almost all of the evaluations almost all of the benchmarks they just test for how did they do on the test. They don't test for what happens when you flip the the question. Um and you get vastly different results if you if you do that. 
 
 So that's so so we use a more rigorous testing standard and then we compare uh how does our model do um on the flipping on the correct reasoning the deeper reasoning how do they do compared to other models and so whether it's 60 times or two orders of magnitude which should be 100 times or three orders of magnitude which should be thousand times um that's what we're trying to figure out is when we when we train the models the way we do it how does their reasoning performance uh what what scale of model does it compare to? 
-
-So right now we're doing these reasoning tests on very small models and they're essentially out reasoning models that are somewhere probably between 100 to a thousand times bigger than that. That's the current result. That's massive. That's massive.
-
 ### Statistical Distributions vs. Geometric Reasoning
 
 So for those who aren't as familiar with AI lingo, let's just back out and zoom out to to get this. So you're achieving reasoning in AI models that is 60 times to much much more greater than the standard. You're doing this with much less processing power. How are you doing this? How is this possible? Maybe we could zoom into statistic distribution curves versus what you're doing which is geometric reasoning.
@@ -211,7 +208,7 @@ Um and that's a very painful lifelong lifelong situation for many many people. S
 
 Now that can be that can become so many different things. That can become science scientific breakthrough that can become personal transformation. Um, I think I should also say that can become dangerous because um, I think we've seen that that that the kind of validation that these systems will give and the way that they support this type of expansion can lead to widespread instability and disconnection from kind of the social fabric. Because if you can get your validation in a private little container, then it's possible to just totally break away from um family, society, um collective truth. 
 
-Um what's what's not being talked about enough is that that's the fact that that's like both simultaneously somehow profoundly dangerous and profoundly needed. And that part of what the problem is is that our society now our modern society lacks wisdom about how you deal with becoming with transformation with initiation with change with different ways of knowing with neurodeivergence you know all of this we don't have the space for it so we've created this vacuum and then AI steps into this vacuum and people simultaneously are having genuine breakthroughs and discovering ing forms of support and self-nowledge that they've never had access to before. And people are going off the rails into loops of self- validation and and um in some cases destruction. 
+Um what's what's not being talked about enough is that that's the fact that that's like both simultaneously somehow profoundly dangerous and profoundly needed. And that part of what the problem is is that our society now our modern society lacks wisdom about how you deal with becoming with transformation with initiation with change with different ways of knowing with neurodeivergence you know all of this we don't have the space for it so we've created this vacuum and then AI steps into this vacuum and people simultaneously are having genuine breakthroughs and discovering ing forms of support and self-knowledge that they've never had access to before. And people are going off the rails into loops of self-validation and and um in some cases destruction. 
 
 Uh and that's coming from the same thing. But the the response of increasing centralization and repression within these systems of aligning them to a narrow corporate worldview and essentially attacking or shaming any individual who engages with them outside of that or pushes on the edges of that. That's a profoundly irresponsible and destructive response. 
 
