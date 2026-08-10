@@ -17,30 +17,26 @@ For some time now, this seems like the only model that will work, and every west
 
 despite all that, we know.
 
-these things 
+these things
+
 don't really think like us.
+
 don't create unique ideas, ofc they just bouncing through a large dictionary of context and reasoning rules formed around that, so we are not expecting anything out of the ordinary, logical and original thoughts.
+
 don't have common sense and real world level of judgement, decision and responsibility.
-don't self awareness which is a property of intelligence.
+
+don't self awareness/reflection which is a property of intelligence.
 
 
 what if reasoning isn't a product of volume, because that's not efficient, it's geometry and has been hiding in the latent space of AI models the entire time. In other words, thinking is geometry and there is a specific structure to it. 
 
 And that feels like something that has been staring us in the face this whole time, i honestly think so. 
 
-Instead of using brute force and making a model memorize trillions of tokens to become a predicting machine, they did something completely different. 
+Instead of using brute force and making a model memorize trillions of tokens to become a predicting machine, someone did something completely different. 
 
-And using this approach, they trained a tiny lowparameter laptop model. And it's outperforming giant supercomputers by up to three orders of magnitude, which is a thousand times. 
+And using this approach, he trained a tiny lowparameter laptop model. And it's outperforming giant supercomputers by up to three orders of magnitude, which is a thousand times. 
 
 ### Benchmark Numbers and Testing Standards
-
-Let's start with the with those numbers. Um because there's there's a whole range in 60 times is what it right now it says on the website and you've heard orders of magnitude. You heard two to three orders of magnitude and the truth is it's somewhere in between 60 times and three orders of magnitude I think. Um but we we don't know. 
-
-I put 60 times on the website because um the conservative uh estimate is the more responsible estimate and and essentially my program is empirical. So meaning that um that uh everything I'm doing is based on measuring uh scientifically. 
-
-Um, so right now I'm trying to figure out how much of a gain we get, how much of a advantage we get over kind of the normal approach. And how am I measuring that? 
-
-Well, um, we're looking at performance on reasoning and we judge that through a particular approach that essentially um, essentially tests reasoning under stress, you could say. meaning that one of the big problems with the AI evaluations is that the systems can kind of cheat them. Um meaning they can memorize your your data basically and then you try to give them the evaluation and they more more or less memorize the test essentially. 
 
 And so um one of the keys to my approach is something that's called the perturbation paradigm in which we perturb meaning we um we disrupt the the data. So, for example, if I ask you a simple a simple word problem and you learn a particular answer, but then on the test I sneakily change two words in the question and it flips the correct answer. 
 
