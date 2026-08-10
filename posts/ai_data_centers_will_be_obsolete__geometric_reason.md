@@ -7,10 +7,9 @@ title: AI Data Centers Will Be Obsolete: Geometric Reasoning;
 topic: Machine Learning;
 author_img: https://avatars.githubusercontent.com/u/75016347;
 image: /post-images/geometric-reasoning.png;
-description: AI reasoning cracked, how geometric reasoning is outperforming giant supercomputers by up to three orders of magnitude.;
+description: AI reasoning cracked! how geometric reasoning is outperforming giant supercomputers by up to three orders of magnitude.;
 ">
 
-<!-- A tiny AI lab just cracked the code of geometric reasoning.  -->
 Let's rizzle a bit, current AI labs are brute forcing large datasets recursively to archive grokking at which point the llm is able to reason, create rules out of chaos. But this is inefficient, it takes a lot of processing power and data to achieve this.
 
 For some time now, this seems like the only model that will work, and every western and asian labs are spending several millions to prepare and train even the most basic of LLms.
