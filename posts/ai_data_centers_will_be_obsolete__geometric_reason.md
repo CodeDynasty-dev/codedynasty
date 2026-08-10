@@ -7,22 +7,34 @@ title: AI Data Centers Will Be Obsolete: Geometric Reasoning;
 topic: Machine Learning;
 author_img: https://avatars.githubusercontent.com/u/75016347;
 image: /post-images/geometric-reasoning.png;
-description: A tiny AI lab just cracked the code of geometric reasoning, outperforming giant supercomputers by up to three orders of magnitude.;
+description: AI reasoning cracked, how geometric reasoning is outperforming giant supercomputers by up to three orders of magnitude.;
 ">
 
-A tiny AI lab just cracked the code of geometric reasoning. 
+<!-- A tiny AI lab just cracked the code of geometric reasoning.  -->
+Let's rizzle a bit, current AI labs are brute forcing large datasets recursively to archive grokking at which point the llm is able to reason, create rules out of chaos. But this is inefficient, it takes a lot of processing power and data to achieve this.
+
+For some time now, this seems like the only model that will work, and every western and asian labs are spending several millions to prepare and train even the most basic of LLms.
+
+despite all that, we know.
+
+these things 
+don't really think like us.
+don't create unique ideas, ofc they just bouncing through a large dictionary of context and reasoning rules formed around that, so we are not expecting anything out of the ordinary, logical and original thoughts.
+don't have common sense and real world level of judgement, decision and responsibility.
+don't self awareness which is a property of intelligence.
+
+
+what if reasoning isn't a product of volume, because that's not efficient, it's geometry and has been hiding in the latent space of AI models the entire time. In other words, thinking is geometry and there is a specific structure to it. 
+
+And that feels like something that has been staring us in the face this whole time, i honestly think so. 
 
 Instead of using brute force and making a model memorize trillions of tokens to become a predicting machine, they did something completely different. 
 
-They found that reasoning isn't a product of volume, it's geometry and has been hiding in the [music] latent space of AI models the entire time. In other words, thinking [music] is geometry and there is a specific structure to it. 
-
-And using this approach, [music] they trained a tiny lowparameter laptop model. And it's outperforming giant supercomputers by up to three orders of magnitude, which is a thousand times. 
-
-Now, by the end of watching this video interview, you'll understand what geometric reasoning is and why it signals the complete dismantling of the entire era of brute force centralized computing and taking the most powerful technology on Earth out of the hands of the tech [music] giants and into the hands of the people.
+And using this approach, they trained a tiny lowparameter laptop model. And it's outperforming giant supercomputers by up to three orders of magnitude, which is a thousand times. 
 
 ### Benchmark Numbers and Testing Standards
 
-Let's start with the with those numbers. Um because there's there's a whole range in 60 times is what it right now it says on [music] the website and you've heard orders of magnitude. You heard two to three orders of magnitude and the truth is it's somewhere in between 60 times and three orders of magnitude I think. Um but we we don't know. 
+Let's start with the with those numbers. Um because there's there's a whole range in 60 times is what it right now it says on the website and you've heard orders of magnitude. You heard two to three orders of magnitude and the truth is it's somewhere in between 60 times and three orders of magnitude I think. Um but we we don't know. 
 
 I put 60 times on the website because um the conservative uh estimate is the more responsible estimate and and essentially my program is empirical. So meaning that um that uh everything I'm doing is based on measuring uh scientifically. 
 
