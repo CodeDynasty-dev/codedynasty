@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-10T11:34:09.921Z",
+  "generatedAt": "2026-08-10T11:38:16.127Z",
   "docsDirectory": "",
   "buildDirectory": "dist",
   "totalPages": 26,
@@ -48,12 +48,12 @@
         "path": "/posts",
         "children": [
           {
-            "name": "ai_data_centers_will_be_obsolete__geometric_reason.html",
+            "name": "ai_reasoning_cracked_via_geometric_patterns.html",
             "type": "file",
-            "path": "/posts/ai_data_centers_will_be_obsolete__geometric_reason.html",
-            "link": "/posts/ai_data_centers_will_be_obsolete__geometric_reason.html",
-            "sourcePath": "posts/ai_data_centers_will_be_obsolete__geometric_reason.md",
-            "outputPath": "dist/posts/ai_data_centers_will_be_obsolete__geometric_reason.html",
+            "path": "/posts/ai_reasoning_cracked_via_geometric_patterns.html",
+            "link": "/posts/ai_reasoning_cracked_via_geometric_patterns.html",
+            "sourcePath": "posts/ai_reasoning_cracked_via_geometric_patterns.md",
+            "outputPath": "dist/posts/ai_reasoning_cracked_via_geometric_patterns.html",
             "docmachTags": [
               {
                 "type": "wrapper",
@@ -1290,44 +1290,6 @@
       ]
     },
     {
-      "sourcePath": "posts/ai_data_centers_will_be_obsolete__geometric_reason.md",
-      "outputPath": "dist/posts/ai_data_centers_will_be_obsolete__geometric_reason.html",
-      "link": "/posts/ai_data_centers_will_be_obsolete__geometric_reason.html",
-      "docmachTags": [
-        {
-          "type": "wrapper",
-          "file": "fragments/post-structure.html",
-          "params": {
-            "author": "Friday Candour",
-            "author_title": "Software Developer",
-            "time_created": "2026 08 10",
-            "time_to_read": "15 min",
-            "title": "AI Data Centers Will Be Obsolete: Geometric Reasoning",
-            "topic": "Machine Learning",
-            "author_img": "https://avatars.githubusercontent.com/u/75016347",
-            "image": "/post-images/geometric-reasoning.jpeg",
-            "description": "AI reasoning cracked! how geometric reasoning is outperforming giant supercomputers by up to three orders of magnitude."
-          },
-          "replacement": "content"
-        },
-        {
-          "type": "wrapper",
-          "file": "fragments/post-structure.html",
-          "params": {
-            "author": "Friday Candour",
-            "author_title": "Software Developer",
-            "time_created": "2026 08 10",
-            "time_to_read": "15 min",
-            "title": "AI Data Centers Will Be Obsolete: Geometric Reasoning",
-            "topic": "Machine Learning",
-            "author_img": "https://avatars.githubusercontent.com/u/75016347",
-            "image": "/post-images/geometric-reasoning.jpeg",
-            "description": "AI reasoning cracked! how geometric reasoning is outperforming giant supercomputers by up to three orders of magnitude."
-          }
-        }
-      ]
-    },
-    {
       "sourcePath": "posts/welcome.md",
       "outputPath": "dist/posts/welcome.html",
       "link": "/posts/welcome.html",
@@ -1411,6 +1373,44 @@
           "file": "fragments/tags.js",
           "params": {
             "tags": "artificial intelligence,machine learning,self-study,stanford,deep learning,python,linear algebra,computer vision"
+          }
+        }
+      ]
+    },
+    {
+      "sourcePath": "posts/ai_reasoning_cracked_via_geometric_patterns.md",
+      "outputPath": "dist/posts/ai_reasoning_cracked_via_geometric_patterns.html",
+      "link": "/posts/ai_reasoning_cracked_via_geometric_patterns.html",
+      "docmachTags": [
+        {
+          "type": "wrapper",
+          "file": "fragments/post-structure.html",
+          "params": {
+            "author": "Friday Candour",
+            "author_title": "Software Developer",
+            "time_created": "2026 08 10",
+            "time_to_read": "15 min",
+            "title": "AI Data Centers Will Be Obsolete: Geometric Reasoning",
+            "topic": "Machine Learning",
+            "author_img": "https://avatars.githubusercontent.com/u/75016347",
+            "image": "/post-images/geometric-reasoning.jpeg",
+            "description": "AI reasoning cracked! how geometric reasoning is outperforming giant supercomputers by up to three orders of magnitude."
+          },
+          "replacement": "content"
+        },
+        {
+          "type": "wrapper",
+          "file": "fragments/post-structure.html",
+          "params": {
+            "author": "Friday Candour",
+            "author_title": "Software Developer",
+            "time_created": "2026 08 10",
+            "time_to_read": "15 min",
+            "title": "AI Data Centers Will Be Obsolete: Geometric Reasoning",
+            "topic": "Machine Learning",
+            "author_img": "https://avatars.githubusercontent.com/u/75016347",
+            "image": "/post-images/geometric-reasoning.jpeg",
+            "description": "AI reasoning cracked! how geometric reasoning is outperforming giant supercomputers by up to three orders of magnitude."
           }
         }
       ]
