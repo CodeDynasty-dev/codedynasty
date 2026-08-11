@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-08-10T11:38:16.127Z",
-  "docsDirectory": "",
+  "generatedAt": "2026-08-11T06:14:00.333Z",
+  "docsDirectory": "src",
   "buildDirectory": "dist",
-  "totalPages": 26,
+  "totalPages": 21,
   "tree": {
     "name": "/",
     "type": "directory",
@@ -18,7 +18,7 @@
             "type": "file",
             "path": "/pages/ml-learning.html",
             "link": "/pages/ml-learning.html",
-            "sourcePath": "pages/ml-learning.md",
+            "sourcePath": "src/pages/ml-learning.md",
             "outputPath": "dist/pages/ml-learning.html",
             "docmachTags": [
               {
@@ -52,7 +52,7 @@
             "type": "file",
             "path": "/posts/ai_reasoning_cracked_via_geometric_patterns.html",
             "link": "/posts/ai_reasoning_cracked_via_geometric_patterns.html",
-            "sourcePath": "posts/ai_reasoning_cracked_via_geometric_patterns.md",
+            "sourcePath": "src/posts/ai_reasoning_cracked_via_geometric_patterns.md",
             "outputPath": "dist/posts/ai_reasoning_cracked_via_geometric_patterns.html",
             "docmachTags": [
               {
@@ -93,7 +93,7 @@
             "type": "file",
             "path": "/posts/Backpropagation-Gradients-and-Computational-Graphs.html",
             "link": "/posts/Backpropagation-Gradients-and-Computational-Graphs.html",
-            "sourcePath": "posts/Backpropagation-Gradients-and-Computational-Graphs.md",
+            "sourcePath": "src/posts/Backpropagation-Gradients-and-Computational-Graphs.md",
             "outputPath": "dist/posts/Backpropagation-Gradients-and-Computational-Graphs.html",
             "docmachTags": [
               {
@@ -141,7 +141,7 @@
             "type": "file",
             "path": "/posts/Beyond-Calculus-The-Mathematics-Every-Developer-Should-Reconsider.html",
             "link": "/posts/Beyond-Calculus-The-Mathematics-Every-Developer-Should-Reconsider.html",
-            "sourcePath": "posts/Beyond-Calculus-The-Mathematics-Every-Developer-Should-Reconsider.md",
+            "sourcePath": "src/posts/Beyond-Calculus-The-Mathematics-Every-Developer-Should-Reconsider.md",
             "outputPath": "dist/posts/Beyond-Calculus-The-Mathematics-Every-Developer-Should-Reconsider.html",
             "docmachTags": [
               {
@@ -189,7 +189,7 @@
             "type": "file",
             "path": "/posts/Beyond-the-Token-Why-Meaning-Matters-More-Than-Language.html",
             "link": "/posts/Beyond-the-Token-Why-Meaning-Matters-More-Than-Language.html",
-            "sourcePath": "posts/Beyond-the-Token-Why-Meaning-Matters-More-Than-Language.md",
+            "sourcePath": "src/posts/Beyond-the-Token-Why-Meaning-Matters-More-Than-Language.md",
             "outputPath": "dist/posts/Beyond-the-Token-Why-Meaning-Matters-More-Than-Language.html",
             "docmachTags": [
               {
@@ -237,7 +237,7 @@
             "type": "file",
             "path": "/posts/Byte-Latent-Transformers-and-Tokenization-Free-Language-Models.html",
             "link": "/posts/Byte-Latent-Transformers-and-Tokenization-Free-Language-Models.html",
-            "sourcePath": "posts/Byte-Latent-Transformers-and-Tokenization-Free-Language-Models.md",
+            "sourcePath": "src/posts/Byte-Latent-Transformers-and-Tokenization-Free-Language-Models.md",
             "outputPath": "dist/posts/Byte-Latent-Transformers-and-Tokenization-Free-Language-Models.html",
             "docmachTags": [
               {
@@ -285,7 +285,7 @@
             "type": "file",
             "path": "/posts/EBMs.html",
             "link": "/posts/EBMs.html",
-            "sourcePath": "posts/EBMs.md",
+            "sourcePath": "src/posts/EBMs.md",
             "outputPath": "dist/posts/EBMs.html",
             "docmachTags": [
               {
@@ -326,7 +326,7 @@
             "type": "file",
             "path": "/posts/Grokking-When-Neural-Networks-Suddenly-Learn-to-Generalize.html",
             "link": "/posts/Grokking-When-Neural-Networks-Suddenly-Learn-to-Generalize.html",
-            "sourcePath": "posts/Grokking-When-Neural-Networks-Suddenly-Learn-to-Generalize.md",
+            "sourcePath": "src/posts/Grokking-When-Neural-Networks-Suddenly-Learn-to-Generalize.md",
             "outputPath": "dist/posts/Grokking-When-Neural-Networks-Suddenly-Learn-to-Generalize.html",
             "docmachTags": [
               {
@@ -374,7 +374,7 @@
             "type": "file",
             "path": "/posts/Javascript-await-was-rogue-all-along.html",
             "link": "/posts/Javascript-await-was-rogue-all-along.html",
-            "sourcePath": "posts/Javascript-await-was-rogue-all-along.md",
+            "sourcePath": "src/posts/Javascript-await-was-rogue-all-along.md",
             "outputPath": "dist/posts/Javascript-await-was-rogue-all-along.html",
             "docmachTags": [
               {
@@ -422,7 +422,7 @@
             "type": "file",
             "path": "/posts/JavaScript-Microtasks-A-deep-look-and-comparision-to-defer.html",
             "link": "/posts/JavaScript-Microtasks-A-deep-look-and-comparision-to-defer.html",
-            "sourcePath": "posts/JavaScript-Microtasks-A-deep-look-and-comparision-to-defer.md",
+            "sourcePath": "src/posts/JavaScript-Microtasks-A-deep-look-and-comparision-to-defer.md",
             "outputPath": "dist/posts/JavaScript-Microtasks-A-deep-look-and-comparision-to-defer.html",
             "docmachTags": [
               {
@@ -470,7 +470,7 @@
             "type": "file",
             "path": "/posts/Navigating-Machine-Learning-Algorithms.html",
             "link": "/posts/Navigating-Machine-Learning-Algorithms.html",
-            "sourcePath": "posts/Navigating-Machine-Learning-Algorithms.md",
+            "sourcePath": "src/posts/Navigating-Machine-Learning-Algorithms.md",
             "outputPath": "dist/posts/Navigating-Machine-Learning-Algorithms.html",
             "docmachTags": [
               {
@@ -518,7 +518,7 @@
             "type": "file",
             "path": "/posts/new.html",
             "link": "/posts/new.html",
-            "sourcePath": "posts/new.md",
+            "sourcePath": "src/posts/new.md",
             "outputPath": "dist/posts/new.html",
             "docmachTags": []
           },
@@ -527,7 +527,7 @@
             "type": "file",
             "path": "/posts/PyTorch-fundamentals-through-model-construction.html",
             "link": "/posts/PyTorch-fundamentals-through-model-construction.html",
-            "sourcePath": "posts/PyTorch-fundamentals-through-model-construction.md",
+            "sourcePath": "src/posts/PyTorch-fundamentals-through-model-construction.md",
             "outputPath": "dist/posts/PyTorch-fundamentals-through-model-construction.html",
             "docmachTags": [
               {
@@ -575,7 +575,7 @@
             "type": "file",
             "path": "/posts/Reading-AI-Papers-A-Practitioners-Guide-to-Building-Technical-Foundations.html",
             "link": "/posts/Reading-AI-Papers-A-Practitioners-Guide-to-Building-Technical-Foundations.html",
-            "sourcePath": "posts/Reading-AI-Papers-A-Practitioners-Guide-to-Building-Technical-Foundations.md",
+            "sourcePath": "src/posts/Reading-AI-Papers-A-Practitioners-Guide-to-Building-Technical-Foundations.md",
             "outputPath": "dist/posts/Reading-AI-Papers-A-Practitioners-Guide-to-Building-Technical-Foundations.html",
             "docmachTags": [
               {
@@ -623,7 +623,7 @@
             "type": "file",
             "path": "/posts/Ten-Essential-Papers-for-Understanding-Modern-AI-Engineering.html",
             "link": "/posts/Ten-Essential-Papers-for-Understanding-Modern-AI-Engineering.html",
-            "sourcePath": "posts/Ten-Essential-Papers-for-Understanding-Modern-AI-Engineering.md",
+            "sourcePath": "src/posts/Ten-Essential-Papers-for-Understanding-Modern-AI-Engineering.md",
             "outputPath": "dist/posts/Ten-Essential-Papers-for-Understanding-Modern-AI-Engineering.html",
             "docmachTags": [
               {
@@ -671,7 +671,7 @@
             "type": "file",
             "path": "/posts/The-Stanford-AI-Curriculum-Without-The-Stanford-Price-Tag.html",
             "link": "/posts/The-Stanford-AI-Curriculum-Without-The-Stanford-Price-Tag.html",
-            "sourcePath": "posts/The-Stanford-AI-Curriculum-Without-The-Stanford-Price-Tag.md",
+            "sourcePath": "src/posts/The-Stanford-AI-Curriculum-Without-The-Stanford-Price-Tag.md",
             "outputPath": "dist/posts/The-Stanford-AI-Curriculum-Without-The-Stanford-Price-Tag.html",
             "docmachTags": [
               {
@@ -719,7 +719,7 @@
             "type": "file",
             "path": "/posts/the-statistical-mechanics-of-artificial-intelligence.html",
             "link": "/posts/the-statistical-mechanics-of-artificial-intelligence.html",
-            "sourcePath": "posts/the-statistical-mechanics-of-artificial-intelligence.md",
+            "sourcePath": "src/posts/the-statistical-mechanics-of-artificial-intelligence.md",
             "outputPath": "dist/posts/the-statistical-mechanics-of-artificial-intelligence.html",
             "docmachTags": [
               {
@@ -767,7 +767,7 @@
             "type": "file",
             "path": "/posts/The-Third-Layer-of-Intelligence-From-Patterns-to-Agency.html",
             "link": "/posts/The-Third-Layer-of-Intelligence-From-Patterns-to-Agency.html",
-            "sourcePath": "posts/The-Third-Layer-of-Intelligence-From-Patterns-to-Agency.md",
+            "sourcePath": "src/posts/The-Third-Layer-of-Intelligence-From-Patterns-to-Agency.md",
             "outputPath": "dist/posts/The-Third-Layer-of-Intelligence-From-Patterns-to-Agency.html",
             "docmachTags": [
               {
@@ -815,7 +815,7 @@
             "type": "file",
             "path": "/posts/Tiny-Recursive-Models-and-the-Design-of-Efficient-Reasoning-Systems.html",
             "link": "/posts/Tiny-Recursive-Models-and-the-Design-of-Efficient-Reasoning-Systems.html",
-            "sourcePath": "posts/Tiny-Recursive-Models-and-the-Design-of-Efficient-Reasoning-Systems.md",
+            "sourcePath": "src/posts/Tiny-Recursive-Models-and-the-Design-of-Efficient-Reasoning-Systems.md",
             "outputPath": "dist/posts/Tiny-Recursive-Models-and-the-Design-of-Efficient-Reasoning-Systems.html",
             "docmachTags": [
               {
@@ -863,7 +863,7 @@
             "type": "file",
             "path": "/posts/welcome.html",
             "link": "/posts/welcome.html",
-            "sourcePath": "posts/welcome.md",
+            "sourcePath": "src/posts/welcome.md",
             "outputPath": "dist/posts/welcome.html",
             "docmachTags": [
               {
@@ -909,7 +909,7 @@
             "type": "file",
             "path": "/posts/your-eye-health-its-time-to-talk-about-it.html",
             "link": "/posts/your-eye-health-its-time-to-talk-about-it.html",
-            "sourcePath": "posts/your-eye-health-its-time-to-talk-about-it.md",
+            "sourcePath": "src/posts/your-eye-health-its-time-to-talk-about-it.md",
             "outputPath": "dist/posts/your-eye-health-its-time-to-talk-about-it.html",
             "docmachTags": [
               {
@@ -953,81 +953,18 @@
             ]
           }
         ]
-      },
-      {
-        "name": "DESIGN.html",
-        "type": "file",
-        "path": "/DESIGN.html",
-        "link": "/DESIGN.html",
-        "sourcePath": "DESIGN.md",
-        "outputPath": "dist/DESIGN.html",
-        "docmachTags": []
-      },
-      {
-        "name": "friday.html",
-        "type": "file",
-        "path": "/friday.html",
-        "link": "/friday.html",
-        "sourcePath": "friday.md",
-        "outputPath": "dist/friday.html",
-        "docmachTags": [
-          {
-            "type": "wrapper",
-            "file": "fragments/page-structure.html",
-            "params": {
-              "title": "friday candour",
-              "description": "Friday Candour's portfolio"
-            },
-            "replacement": "content"
-          },
-          {
-            "type": "wrapper",
-            "file": "fragments/page-structure.html",
-            "params": {
-              "title": "friday candour",
-              "description": "Friday Candour's portfolio"
-            }
-          }
-        ]
-      },
-      {
-        "name": "instructions-forum.html",
-        "type": "file",
-        "path": "/instructions-forum.html",
-        "link": "/instructions-forum.html",
-        "sourcePath": "instructions-forum.md",
-        "outputPath": "dist/instructions-forum.html",
-        "docmachTags": []
-      },
-      {
-        "name": "instructions.html",
-        "type": "file",
-        "path": "/instructions.html",
-        "link": "/instructions.html",
-        "sourcePath": "instructions.md",
-        "outputPath": "dist/instructions.html",
-        "docmachTags": []
-      },
-      {
-        "name": "Soviet Mathematicians Just Solved AI's Biggest Problem.html",
-        "type": "file",
-        "path": "/Soviet Mathematicians Just Solved AI's Biggest Problem.html",
-        "link": "/Soviet Mathematicians Just Solved AI's Biggest Problem.html",
-        "sourcePath": "Soviet Mathematicians Just Solved AI's Biggest Problem.md",
-        "outputPath": "dist/Soviet Mathematicians Just Solved AI's Biggest Problem.html",
-        "docmachTags": []
       }
     ]
   },
   "pages": [
     {
-      "sourcePath": "posts/new.md",
+      "sourcePath": "src/posts/new.md",
       "outputPath": "dist/posts/new.html",
       "link": "/posts/new.html",
       "docmachTags": []
     },
     {
-      "sourcePath": "posts/Beyond-the-Token-Why-Meaning-Matters-More-Than-Language.md",
+      "sourcePath": "src/posts/Beyond-the-Token-Why-Meaning-Matters-More-Than-Language.md",
       "outputPath": "dist/posts/Beyond-the-Token-Why-Meaning-Matters-More-Than-Language.html",
       "link": "/posts/Beyond-the-Token-Why-Meaning-Matters-More-Than-Language.html",
       "docmachTags": [
@@ -1072,7 +1009,7 @@
       ]
     },
     {
-      "sourcePath": "posts/your-eye-health-its-time-to-talk-about-it.md",
+      "sourcePath": "src/posts/your-eye-health-its-time-to-talk-about-it.md",
       "outputPath": "dist/posts/your-eye-health-its-time-to-talk-about-it.html",
       "link": "/posts/your-eye-health-its-time-to-talk-about-it.html",
       "docmachTags": [
@@ -1117,7 +1054,7 @@
       ]
     },
     {
-      "sourcePath": "posts/Beyond-Calculus-The-Mathematics-Every-Developer-Should-Reconsider.md",
+      "sourcePath": "src/posts/Beyond-Calculus-The-Mathematics-Every-Developer-Should-Reconsider.md",
       "outputPath": "dist/posts/Beyond-Calculus-The-Mathematics-Every-Developer-Should-Reconsider.html",
       "link": "/posts/Beyond-Calculus-The-Mathematics-Every-Developer-Should-Reconsider.html",
       "docmachTags": [
@@ -1162,7 +1099,7 @@
       ]
     },
     {
-      "sourcePath": "posts/the-statistical-mechanics-of-artificial-intelligence.md",
+      "sourcePath": "src/posts/the-statistical-mechanics-of-artificial-intelligence.md",
       "outputPath": "dist/posts/the-statistical-mechanics-of-artificial-intelligence.html",
       "link": "/posts/the-statistical-mechanics-of-artificial-intelligence.html",
       "docmachTags": [
@@ -1207,7 +1144,7 @@
       ]
     },
     {
-      "sourcePath": "posts/Byte-Latent-Transformers-and-Tokenization-Free-Language-Models.md",
+      "sourcePath": "src/posts/Byte-Latent-Transformers-and-Tokenization-Free-Language-Models.md",
       "outputPath": "dist/posts/Byte-Latent-Transformers-and-Tokenization-Free-Language-Models.html",
       "link": "/posts/Byte-Latent-Transformers-and-Tokenization-Free-Language-Models.html",
       "docmachTags": [
@@ -1252,7 +1189,7 @@
       ]
     },
     {
-      "sourcePath": "posts/EBMs.md",
+      "sourcePath": "src/posts/EBMs.md",
       "outputPath": "dist/posts/EBMs.html",
       "link": "/posts/EBMs.html",
       "docmachTags": [
@@ -1290,7 +1227,7 @@
       ]
     },
     {
-      "sourcePath": "posts/welcome.md",
+      "sourcePath": "src/posts/welcome.md",
       "outputPath": "dist/posts/welcome.html",
       "link": "/posts/welcome.html",
       "docmachTags": [
@@ -1333,7 +1270,7 @@
       ]
     },
     {
-      "sourcePath": "posts/The-Stanford-AI-Curriculum-Without-The-Stanford-Price-Tag.md",
+      "sourcePath": "src/posts/The-Stanford-AI-Curriculum-Without-The-Stanford-Price-Tag.md",
       "outputPath": "dist/posts/The-Stanford-AI-Curriculum-Without-The-Stanford-Price-Tag.html",
       "link": "/posts/The-Stanford-AI-Curriculum-Without-The-Stanford-Price-Tag.html",
       "docmachTags": [
@@ -1378,7 +1315,7 @@
       ]
     },
     {
-      "sourcePath": "posts/ai_reasoning_cracked_via_geometric_patterns.md",
+      "sourcePath": "src/posts/ai_reasoning_cracked_via_geometric_patterns.md",
       "outputPath": "dist/posts/ai_reasoning_cracked_via_geometric_patterns.html",
       "link": "/posts/ai_reasoning_cracked_via_geometric_patterns.html",
       "docmachTags": [
@@ -1416,7 +1353,7 @@
       ]
     },
     {
-      "sourcePath": "posts/Javascript-await-was-rogue-all-along.md",
+      "sourcePath": "src/posts/Javascript-await-was-rogue-all-along.md",
       "outputPath": "dist/posts/Javascript-await-was-rogue-all-along.html",
       "link": "/posts/Javascript-await-was-rogue-all-along.html",
       "docmachTags": [
@@ -1461,7 +1398,7 @@
       ]
     },
     {
-      "sourcePath": "posts/Grokking-When-Neural-Networks-Suddenly-Learn-to-Generalize.md",
+      "sourcePath": "src/posts/Grokking-When-Neural-Networks-Suddenly-Learn-to-Generalize.md",
       "outputPath": "dist/posts/Grokking-When-Neural-Networks-Suddenly-Learn-to-Generalize.html",
       "link": "/posts/Grokking-When-Neural-Networks-Suddenly-Learn-to-Generalize.html",
       "docmachTags": [
@@ -1506,7 +1443,7 @@
       ]
     },
     {
-      "sourcePath": "posts/Ten-Essential-Papers-for-Understanding-Modern-AI-Engineering.md",
+      "sourcePath": "src/posts/Ten-Essential-Papers-for-Understanding-Modern-AI-Engineering.md",
       "outputPath": "dist/posts/Ten-Essential-Papers-for-Understanding-Modern-AI-Engineering.html",
       "link": "/posts/Ten-Essential-Papers-for-Understanding-Modern-AI-Engineering.html",
       "docmachTags": [
@@ -1551,7 +1488,7 @@
       ]
     },
     {
-      "sourcePath": "posts/PyTorch-fundamentals-through-model-construction.md",
+      "sourcePath": "src/posts/PyTorch-fundamentals-through-model-construction.md",
       "outputPath": "dist/posts/PyTorch-fundamentals-through-model-construction.html",
       "link": "/posts/PyTorch-fundamentals-through-model-construction.html",
       "docmachTags": [
@@ -1596,7 +1533,7 @@
       ]
     },
     {
-      "sourcePath": "posts/Tiny-Recursive-Models-and-the-Design-of-Efficient-Reasoning-Systems.md",
+      "sourcePath": "src/posts/Tiny-Recursive-Models-and-the-Design-of-Efficient-Reasoning-Systems.md",
       "outputPath": "dist/posts/Tiny-Recursive-Models-and-the-Design-of-Efficient-Reasoning-Systems.html",
       "link": "/posts/Tiny-Recursive-Models-and-the-Design-of-Efficient-Reasoning-Systems.html",
       "docmachTags": [
@@ -1641,7 +1578,7 @@
       ]
     },
     {
-      "sourcePath": "posts/Reading-AI-Papers-A-Practitioners-Guide-to-Building-Technical-Foundations.md",
+      "sourcePath": "src/posts/Reading-AI-Papers-A-Practitioners-Guide-to-Building-Technical-Foundations.md",
       "outputPath": "dist/posts/Reading-AI-Papers-A-Practitioners-Guide-to-Building-Technical-Foundations.html",
       "link": "/posts/Reading-AI-Papers-A-Practitioners-Guide-to-Building-Technical-Foundations.html",
       "docmachTags": [
@@ -1686,7 +1623,7 @@
       ]
     },
     {
-      "sourcePath": "posts/The-Third-Layer-of-Intelligence-From-Patterns-to-Agency.md",
+      "sourcePath": "src/posts/The-Third-Layer-of-Intelligence-From-Patterns-to-Agency.md",
       "outputPath": "dist/posts/The-Third-Layer-of-Intelligence-From-Patterns-to-Agency.html",
       "link": "/posts/The-Third-Layer-of-Intelligence-From-Patterns-to-Agency.html",
       "docmachTags": [
@@ -1731,7 +1668,7 @@
       ]
     },
     {
-      "sourcePath": "posts/Backpropagation-Gradients-and-Computational-Graphs.md",
+      "sourcePath": "src/posts/Backpropagation-Gradients-and-Computational-Graphs.md",
       "outputPath": "dist/posts/Backpropagation-Gradients-and-Computational-Graphs.html",
       "link": "/posts/Backpropagation-Gradients-and-Computational-Graphs.html",
       "docmachTags": [
@@ -1776,7 +1713,7 @@
       ]
     },
     {
-      "sourcePath": "posts/Navigating-Machine-Learning-Algorithms.md",
+      "sourcePath": "src/posts/Navigating-Machine-Learning-Algorithms.md",
       "outputPath": "dist/posts/Navigating-Machine-Learning-Algorithms.html",
       "link": "/posts/Navigating-Machine-Learning-Algorithms.html",
       "docmachTags": [
@@ -1821,7 +1758,7 @@
       ]
     },
     {
-      "sourcePath": "posts/JavaScript-Microtasks-A-deep-look-and-comparision-to-defer.md",
+      "sourcePath": "src/posts/JavaScript-Microtasks-A-deep-look-and-comparision-to-defer.md",
       "outputPath": "dist/posts/JavaScript-Microtasks-A-deep-look-and-comparision-to-defer.html",
       "link": "/posts/JavaScript-Microtasks-A-deep-look-and-comparision-to-defer.html",
       "docmachTags": [
@@ -1866,49 +1803,7 @@
       ]
     },
     {
-      "sourcePath": "friday.md",
-      "outputPath": "dist/friday.html",
-      "link": "/friday.html",
-      "docmachTags": [
-        {
-          "type": "wrapper",
-          "file": "fragments/page-structure.html",
-          "params": {
-            "title": "friday candour",
-            "description": "Friday Candour's portfolio"
-          },
-          "replacement": "content"
-        },
-        {
-          "type": "wrapper",
-          "file": "fragments/page-structure.html",
-          "params": {
-            "title": "friday candour",
-            "description": "Friday Candour's portfolio"
-          }
-        }
-      ]
-    },
-    {
-      "sourcePath": "instructions-forum.md",
-      "outputPath": "dist/instructions-forum.html",
-      "link": "/instructions-forum.html",
-      "docmachTags": []
-    },
-    {
-      "sourcePath": "Soviet Mathematicians Just Solved AI's Biggest Problem.md",
-      "outputPath": "dist/Soviet Mathematicians Just Solved AI's Biggest Problem.html",
-      "link": "/Soviet Mathematicians Just Solved AI's Biggest Problem.html",
-      "docmachTags": []
-    },
-    {
-      "sourcePath": "DESIGN.md",
-      "outputPath": "dist/DESIGN.html",
-      "link": "/DESIGN.html",
-      "docmachTags": []
-    },
-    {
-      "sourcePath": "pages/ml-learning.md",
+      "sourcePath": "src/pages/ml-learning.md",
       "outputPath": "dist/pages/ml-learning.html",
       "link": "/pages/ml-learning.html",
       "docmachTags": [
@@ -1930,12 +1825,6 @@
           }
         }
       ]
-    },
-    {
-      "sourcePath": "instructions.md",
-      "outputPath": "dist/instructions.html",
-      "link": "/instructions.html",
-      "docmachTags": []
     }
   ]
 }

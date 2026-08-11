@@ -18,6 +18,7 @@
   "author": "Friday candour",
   "license": "MIT",
   "docmach": {
+    "docs-directory": "src",
     "build-directory": "dist",
     "assets-folder": "./assets"
   },
