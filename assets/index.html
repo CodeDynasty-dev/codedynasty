@@ -866,10 +866,11 @@
       try {
         var response = await fetch("/docmach-manifest.json");
         var manifest = await response.json();
-
-        var posts = manifest.pages.filter(function (page) {
-          return page.sourcePath.startsWith("posts/") && page.docmachTags && page.docmachTags.length > 0;
-        });
+        var posts = (manifest.tree.children[1].children);
+        // console.log(posts);
+        // var posts = manifest.tree.children.filter(function (page) {
+        //   return page.sourcePath.startsWith("posts/") && page.docmachTags && page.docmachTags.length > 0;
+        // });
 
         posts.sort(function (a, b) {
           var aParams = (a.docmachTags.find(function (tag) { return tag.type === "wrapper"; }) || {}).params || {};

@@ -26,6 +26,8 @@ That's the claim, and it's the thread of this whole thing. i sat through the lon
 
 Julian is the founder of a company called sophantic, and what they're building is essentially the opposite of the brute-force school. Instead of making a model memorize trillions of tokens to become a prediction machine, they train small models to actually reason, by structuring the reasoning as geometry inside the model's latent space. Using this approach they trained a tiny, low-parameter laptop model that's outperforming giant supercomputers by up to three orders of magnitude. A thousand times. Obviously, take that number with a grain of salt, more on that later.
 
+<img src="/post-images/perturbation.png" alt="perturbation">
+
 ### The trick that tells memorizers from thinkers
 
 The clearest way into this is what Julian calls the perturbation method. You perturb the data, meaning you sneakily flip two words in a question so the correct answer flips too. If the model memorized the questions, it gets it wrong. If it actually learned to reason, it gets it right. This is really fascinating tbh.
@@ -81,6 +83,11 @@ So with that flag in the open, here's what i'm willing to say. If the small-reas
 ### If any of this lands
 
 If you watched the full conversation and your reaction was somewhere around "holy cow, this could actually take AI out of the hands of three giants," Julian and sophantic are explicitly looking for people, engineers who get it, and investors who want to build the next thing instead of another GPU farm stretching across a desert. Real reasoners, small enough to live on your machine and actually learn. That's the version of this i can get behind.
+
+Well yeah not outta the box yet. But when it does... we'll see.
+
+<img src="/post-images/sophonic-ai-release-fig.png" alt="sophonic-ai-release-figure">
+
 
 Sources:
 

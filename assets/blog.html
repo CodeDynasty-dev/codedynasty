@@ -24,34 +24,62 @@
   <meta property="og:image" content="logo.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <style>
-    .overflow-hidden { overflow: hidden; }
+    .overflow-hidden {
+      overflow: hidden;
+    }
 
-    .nav-desktop { display: none; }
-    .nav-mobile { display: block; }
-    .nav-full { display: none; }
+    .nav-desktop {
+      display: none;
+    }
 
-    .mobile-menu-closed { transform: translateX(-100%); }
-    .mobile-menu-open { transform: translateX(0); }
+    .nav-mobile {
+      display: block;
+    }
+
+    .nav-full {
+      display: none;
+    }
+
+    .mobile-menu-closed {
+      transform: translateX(-100%);
+    }
+
+    .mobile-menu-open {
+      transform: translateX(0);
+    }
 
     @media (min-width: 768px) {
-      .nav-desktop { display: flex; }
-      .nav-mobile { display: none; }
+      .nav-desktop {
+        display: flex;
+      }
+
+      .nav-mobile {
+        display: none;
+      }
     }
 
     @media (min-width: 1024px) {
-      .nav-full { display: inline-flex; }
+      .nav-full {
+        display: inline-flex;
+      }
     }
 
     @media (max-width: 767px) {
-      .header-pad { padding: 16px 20px !important; }
+      .header-pad {
+        padding: 16px 20px !important;
+      }
     }
 
     @media (min-width: 768px) and (max-width: 1023px) {
-      .header-pad { padding: 20px 28px !important; }
+      .header-pad {
+        padding: 20px 28px !important;
+      }
     }
 
     @media (min-width: 1024px) {
-      .header-pad { padding: 32px 40px !important; }
+      .header-pad {
+        padding: 32px 40px !important;
+      }
     }
 
     .post-grid {
@@ -79,6 +107,7 @@
     .modern-card:hover .read-arrow {
       transform: translateX(4px);
     }
+
   </style>
 </head>
 
@@ -129,7 +158,8 @@
     style="position: fixed; inset: 0; z-index: 50; background-color: rgba(0,0,0,0.95); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); transition: transform 0.3s ease;">
     <div
       style="padding: var(--spacing-32) var(--spacing-24); height: 100%; display: flex; flex-direction: column; max-width: var(--page-max-width); margin: 0 auto;">
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-48);">
+      <div
+        style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-48);">
         <a href="/" aria-label="CodeDynasty Home"
           style="display: flex; align-items: center; text-decoration: none; color: inherit;">
           <span
@@ -154,7 +184,8 @@
         <a href="/contact.html"
           style="font-family: var(--font-control); font-weight: 500; font-size: 18px; line-height: 1.4; color: rgba(255,255,255,0.8); padding: 12px var(--spacing-16); border-radius: var(--radius-lg); text-decoration: none;">Contact</a>
         <a href="https://github.com/CodeDynasty-dev" target="_blank"
-          style="font-family: var(--font-control); font-weight: 500; font-size: 18px; line-height: 1.4; color: rgba(255,255,255,0.8); padding: 12px var(--spacing-16); border-radius: var(--radius-lg); text-decoration: none;">Explore Projects</a>
+          style="font-family: var(--font-control); font-weight: 500; font-size: 18px; line-height: 1.4; color: rgba(255,255,255,0.8); padding: 12px var(--spacing-16); border-radius: var(--radius-lg); text-decoration: none;">Explore
+          Projects</a>
       </nav>
       <div style="padding-top: var(--spacing-24); border-top: 1px solid rgba(255,255,255,0.1); margin-top: auto;">
         <p
@@ -272,9 +303,10 @@
         fetch("/docmach-manifest.json")
           .then(function (r) { return r.json(); })
           .then(function (manifest) {
-            var posts = manifest.pages.filter(function (p) {
-              return p.sourcePath.startsWith("posts/") && p.docmachTags && p.docmachTags.length > 0;
-            });
+            // var posts = manifest.pages.filter(function (p) {
+            //   return p.sourcePath.startsWith("posts/") && p.docmachTags && p.docmachTags.length > 0;
+            // });
+            var posts = (manifest.tree.children[1].children);
             posts.sort(function (a, b) {
               var aP = (a.docmachTags.find(function (t) { return t.type === "wrapper"; }) || {}).params || {};
               var bP = (b.docmachTags.find(function (t) { return t.type === "wrapper"; }) || {}).params || {};
