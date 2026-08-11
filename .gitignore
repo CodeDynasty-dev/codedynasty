@@ -9,7 +9,7 @@ fov
 research
 **.parquet
 **.csv
-
+.DS_Store
 instructions-forum.md
 instructions.md
 transcript.txt
