@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-08T23:07:37.304Z",
+  "generatedAt": "2026-11-08T23:15:06.400Z",
   "docsDirectory": "src",
   "buildDirectory": "dist",
   "totalPages": 22,
@@ -527,13 +527,13 @@
                 "params": {
                   "author": "Friday Candour",
                   "author_title": "Software Developer",
-                  "time_created": "2025-12-25",
-                  "time_to_read": "10 min",
-                  "title": "Navigating Machine Learning Algorithms - All Machine Learning algorithms explained",
+                  "time_created": "2026-11-09",
+                  "time_to_read": "7 min",
+                  "title": "NCM Model - are Memory  hungry LLMs Dead?",
                   "topic": "Machine Learning",
                   "author_img": "https://avatars.githubusercontent.com/u/75016347",
-                  "image": "/post-images/The-Strategic-Choice-Navigating-Machine-Learning-Algorithms.jpeg",
-                  "description": "A strategic guide to selecting the right machine learning algorithm, from linear regression to neural networks, focusing on trade-offs and first principles."
+                  "image": "/post-images/Crystal_transforming_into_text_t…_38b48a09.jpg",
+                  "description": "A team at Stanford decided to ditch this linear, token-by-token process and instead, they’ve borrowed a page from the playbook of modern image generation models"
                 },
                 "replacement": "content"
               },
@@ -543,13 +543,13 @@
                 "params": {
                   "author": "Friday Candour",
                   "author_title": "Software Developer",
-                  "time_created": "2025-12-25",
-                  "time_to_read": "10 min",
-                  "title": "Navigating Machine Learning Algorithms - All Machine Learning algorithms explained",
+                  "time_created": "2026-11-09",
+                  "time_to_read": "7 min",
+                  "title": "NCM Model - are Memory  hungry LLMs Dead?",
                   "topic": "Machine Learning",
                   "author_img": "https://avatars.githubusercontent.com/u/75016347",
-                  "image": "/post-images/The-Strategic-Choice-Navigating-Machine-Learning-Algorithms.jpeg",
-                  "description": "A strategic guide to selecting the right machine learning algorithm, from linear regression to neural networks, focusing on trade-offs and first principles."
+                  "image": "/post-images/Crystal_transforming_into_text_t…_38b48a09.jpg",
+                  "description": "A team at Stanford decided to ditch this linear, token-by-token process and instead, they’ve borrowed a page from the playbook of modern image generation models"
                 }
               },
               {
@@ -1861,13 +1861,13 @@
           "params": {
             "author": "Friday Candour",
             "author_title": "Software Developer",
-            "time_created": "2025-12-25",
-            "time_to_read": "10 min",
-            "title": "Navigating Machine Learning Algorithms - All Machine Learning algorithms explained",
+            "time_created": "2026-11-09",
+            "time_to_read": "7 min",
+            "title": "NCM Model - are Memory  hungry LLMs Dead?",
             "topic": "Machine Learning",
             "author_img": "https://avatars.githubusercontent.com/u/75016347",
-            "image": "/post-images/The-Strategic-Choice-Navigating-Machine-Learning-Algorithms.jpeg",
-            "description": "A strategic guide to selecting the right machine learning algorithm, from linear regression to neural networks, focusing on trade-offs and first principles."
+            "image": "/post-images/Crystal_transforming_into_text_t…_38b48a09.jpg",
+            "description": "A team at Stanford decided to ditch this linear, token-by-token process and instead, they’ve borrowed a page from the playbook of modern image generation models"
           },
           "replacement": "content"
         },
@@ -1877,13 +1877,13 @@
           "params": {
             "author": "Friday Candour",
             "author_title": "Software Developer",
-            "time_created": "2025-12-25",
-            "time_to_read": "10 min",
-            "title": "Navigating Machine Learning Algorithms - All Machine Learning algorithms explained",
+            "time_created": "2026-11-09",
+            "time_to_read": "7 min",
+            "title": "NCM Model - are Memory  hungry LLMs Dead?",
             "topic": "Machine Learning",
             "author_img": "https://avatars.githubusercontent.com/u/75016347",
-            "image": "/post-images/The-Strategic-Choice-Navigating-Machine-Learning-Algorithms.jpeg",
-            "description": "A strategic guide to selecting the right machine learning algorithm, from linear regression to neural networks, focusing on trade-offs and first principles."
+            "image": "/post-images/Crystal_transforming_into_text_t…_38b48a09.jpg",
+            "description": "A team at Stanford decided to ditch this linear, token-by-token process and instead, they’ve borrowed a page from the playbook of modern image generation models"
           }
         },
         {
