@@ -1,19 +1,20 @@
 <docmach type="wrapper" file="fragments/post-structure.html" replacement="content" params="
 author:Friday Candour;
 author_title: Software Developer;
-time_created:2025-12-25;
-time_to_read:10 min;
-title:Navigating Machine Learning Algorithms - All Machine Learning algorithms explained;
+time_created:2026-11-09;
+time_to_read:7 min;
+title:NCM Model - are Memory  hungry LLMs Dead?;
 topic:Machine Learning;
 author_img:https://avatars.githubusercontent.com/u/75016347;
-image:/post-images/The-Strategic-Choice-Navigating-Machine-Learning-Algorithms.jpeg;
-description:A strategic guide to selecting the right machine learning algorithm, from linear regression to neural networks, focusing on trade-offs and first principles.;
+image:/post-images/Crystal_transforming_into_text_t…_38b48a09.jpg;
+description:A team at Stanford decided to ditch this linear, token-by-token process and instead, they’ve borrowed a page from the playbook of modern image generation models;
 ">
+
+
 
 <docmach type="function" params="tags:machine-learning, algorithms, data-science, technical-strategy" file="fragments/tags.js" />
 
-
-![Crystal-transforming-into-text-t…_38b48a09](./Crystal_transforming_into_text_t…_38b48a09.jpg)
+ 
 
 # Why i can't enjoyably use AI model on my mac
 
@@ -42,7 +43,7 @@ It eats up available memory like hot pepper, creating a hardware bottleneck that
 
 ## NCM: Okay we need to Think in Layers, Not Tokens?
 
-The team at Stanford decided wants to ditch this linear, token-by-token and instead, they’ve borrowed a page from the playbook of modern image generation models, **diffusion models***. 
+The team at Stanford wants to ditch this linear, token-by-token and instead, they’ve borrowed a page from the playbook of modern image generation models, **diffusion models***. 
 
 Think about how an AI paints a picture: it starts with a blurry, rough outline and then iteratively adds finer details until you have a crisp, high-resolution result.
 
@@ -85,7 +86,7 @@ The parallel layers require more raw processing power, and we still need to see 
 
 The current path isn’t the only path. Our hardware limits aren't laws of physics; they're just design choices. And if a single paper from Stanford is any indication, the future of AI might be way more efficient than we dey think.
 
-
+Now i have a question for you, "What is a NCM with your understanding so far?"
 
 Original Stanford paper: https://arxiv.org/html/2610.14162v1
 
