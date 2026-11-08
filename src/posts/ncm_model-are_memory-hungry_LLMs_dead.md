@@ -25,7 +25,7 @@ Like you can't do deep AI research with claude opus (it against their usage poli
 
 Well enough rant, What is **NCM**?
 
-The biggest bottleneck of running top open models locally is **memory bandwidth** and sadly the ram costs are off the roof, if there's still a roof, sam altman wants your pc ram for his data center btw.
+The biggest bottleneck of running top open models locally is **memory bandwidth** and sadly the ram costs are off the roof, if there's still a roof, sam altman wants your pc ram for his data centre btw.
 
 A fascinating new research paper out of Stanford University proposed an architecture called **Next Concept Modeling (NCM)**, and if it holds up to the test, it could turn our current reliance on hyper-expensive memory chips into a bad investment, for what its worth, i don't think current AI investment are 100% secured against these kinds of innovations, but this is just my opinion.
 
