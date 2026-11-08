@@ -84,7 +84,7 @@ Imagine you don’t need the most expensive NVIDIA GPU just to run a capable mod
 
 The parallel layers require more raw processing power, and we still need to see if this architecture holds up when we move from smaller tests to massive, trillion-parameter models. But it serves as a wake-up call to the industry.
 
-The current path isn’t the only path. Our hardware limits aren't laws of physics; they're just design choices. And if a single paper from Stanford is any indication, the future of AI might be way more efficient than we think.
+The current path isn’t the only path. Our hardware limits aren't laws of physics; they're just design choices. And if a single paper from Stanford is any indication, the future of AI might be way more efficient than we do think.
 
 Now i have a question for you, "What is a NCM with your understanding so far?"
 
