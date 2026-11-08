@@ -6,7 +6,7 @@ time_to_read:7 min;
 title:NCM Model - are Memory  hungry LLMs Dead?;
 topic:Machine Learning;
 author_img:https://avatars.githubusercontent.com/u/75016347;
-image:/post-images/Crystal_transforming_into_text_t…_38b48a09.jpg;
+image:/post-images/Crystal_transforming.jpg;
 description:A team at Stanford decided to ditch this linear, token-by-token process and instead, they’ve borrowed a page from the playbook of modern image generation models;
 ">
 
