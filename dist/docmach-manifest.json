@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-08-11T08:18:27.136Z",
+  "generatedAt": "2026-11-08T23:07:37.304Z",
   "docsDirectory": "src",
   "buildDirectory": "dist",
-  "totalPages": 21,
+  "totalPages": 22,
   "tree": {
     "name": "/",
     "type": "directory",
@@ -472,6 +472,54 @@
             "link": "/posts/Navigating-Machine-Learning-Algorithms.html",
             "sourcePath": "src/posts/Navigating-Machine-Learning-Algorithms.md",
             "outputPath": "dist/posts/Navigating-Machine-Learning-Algorithms.html",
+            "docmachTags": [
+              {
+                "type": "wrapper",
+                "file": "fragments/post-structure.html",
+                "params": {
+                  "author": "Friday Candour",
+                  "author_title": "Software Developer",
+                  "time_created": "2025-12-25",
+                  "time_to_read": "10 min",
+                  "title": "Navigating Machine Learning Algorithms - All Machine Learning algorithms explained",
+                  "topic": "Machine Learning",
+                  "author_img": "https://avatars.githubusercontent.com/u/75016347",
+                  "image": "/post-images/The-Strategic-Choice-Navigating-Machine-Learning-Algorithms.jpeg",
+                  "description": "A strategic guide to selecting the right machine learning algorithm, from linear regression to neural networks, focusing on trade-offs and first principles."
+                },
+                "replacement": "content"
+              },
+              {
+                "type": "wrapper",
+                "file": "fragments/post-structure.html",
+                "params": {
+                  "author": "Friday Candour",
+                  "author_title": "Software Developer",
+                  "time_created": "2025-12-25",
+                  "time_to_read": "10 min",
+                  "title": "Navigating Machine Learning Algorithms - All Machine Learning algorithms explained",
+                  "topic": "Machine Learning",
+                  "author_img": "https://avatars.githubusercontent.com/u/75016347",
+                  "image": "/post-images/The-Strategic-Choice-Navigating-Machine-Learning-Algorithms.jpeg",
+                  "description": "A strategic guide to selecting the right machine learning algorithm, from linear regression to neural networks, focusing on trade-offs and first principles."
+                }
+              },
+              {
+                "type": "function",
+                "file": "fragments/tags.js",
+                "params": {
+                  "tags": "machine-learning, algorithms, data-science, technical-strategy"
+                }
+              }
+            ]
+          },
+          {
+            "name": "ncm_model-are_memory-hungry_LLMs_dead.html",
+            "type": "file",
+            "path": "/posts/ncm_model-are_memory-hungry_LLMs_dead.html",
+            "link": "/posts/ncm_model-are_memory-hungry_LLMs_dead.html",
+            "sourcePath": "src/posts/ncm_model-are_memory-hungry_LLMs_dead.md",
+            "outputPath": "dist/posts/ncm_model-are_memory-hungry_LLMs_dead.html",
             "docmachTags": [
               {
                 "type": "wrapper",
@@ -1798,6 +1846,51 @@
           "file": "fragments/tags.js",
           "params": {
             "tags": "JavaScript,Event Loop,Microtasks,Promises,Performance,queueMicrotask,Web Development,Asynchronous Programming"
+          }
+        }
+      ]
+    },
+    {
+      "sourcePath": "src/posts/ncm_model-are_memory-hungry_LLMs_dead.md",
+      "outputPath": "dist/posts/ncm_model-are_memory-hungry_LLMs_dead.html",
+      "link": "/posts/ncm_model-are_memory-hungry_LLMs_dead.html",
+      "docmachTags": [
+        {
+          "type": "wrapper",
+          "file": "fragments/post-structure.html",
+          "params": {
+            "author": "Friday Candour",
+            "author_title": "Software Developer",
+            "time_created": "2025-12-25",
+            "time_to_read": "10 min",
+            "title": "Navigating Machine Learning Algorithms - All Machine Learning algorithms explained",
+            "topic": "Machine Learning",
+            "author_img": "https://avatars.githubusercontent.com/u/75016347",
+            "image": "/post-images/The-Strategic-Choice-Navigating-Machine-Learning-Algorithms.jpeg",
+            "description": "A strategic guide to selecting the right machine learning algorithm, from linear regression to neural networks, focusing on trade-offs and first principles."
+          },
+          "replacement": "content"
+        },
+        {
+          "type": "wrapper",
+          "file": "fragments/post-structure.html",
+          "params": {
+            "author": "Friday Candour",
+            "author_title": "Software Developer",
+            "time_created": "2025-12-25",
+            "time_to_read": "10 min",
+            "title": "Navigating Machine Learning Algorithms - All Machine Learning algorithms explained",
+            "topic": "Machine Learning",
+            "author_img": "https://avatars.githubusercontent.com/u/75016347",
+            "image": "/post-images/The-Strategic-Choice-Navigating-Machine-Learning-Algorithms.jpeg",
+            "description": "A strategic guide to selecting the right machine learning algorithm, from linear regression to neural networks, focusing on trade-offs and first principles."
+          }
+        },
+        {
+          "type": "function",
+          "file": "fragments/tags.js",
+          "params": {
+            "tags": "machine-learning, algorithms, data-science, technical-strategy"
           }
         }
       ]
