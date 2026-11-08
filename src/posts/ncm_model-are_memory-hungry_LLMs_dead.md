@@ -21,7 +21,7 @@ description:A team at Stanford decided to ditch this linear, token-by-token proc
 Hey it's not only me, it's you too, we are dependent on cloud based llm provider to for everything AI, no privacy and a lot of restrictions, 
 
 
-Like you can't do deep AI research with claude opus (it against their usage policy go figure), last week Anthropic quietly made claude code refuse to clone games with the popular REA AI skill, they may be several restrictions you made have faced.
+Like you can't do deep AI research with claude opus (it against their usage policy go figure), last week Anthropic quietly made dropped an update on claude code to refuse when users try clone games with the popular REA AI skill, they are several restrictions you may have faced as well.
 
 Well enough rant, What is **NCM**?
 
